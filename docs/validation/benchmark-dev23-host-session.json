@@ -1,0 +1,1957 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAtUtc": "2026-11-04T13:09:49.612890+00:00",
+  "preflight": [
+    {
+      "timeUtc": "2026-11-04T13:09:49.637932+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 70500,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 61368,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 45388,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72968,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 60068,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 71300,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 63032,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 75952,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72392,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 34880,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 37364,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 41960,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 29200,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 74988,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:09:54.656505+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 70500,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 61368,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 75952,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 20352,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 73132,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:09:59.671234+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75952,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 73132,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:04.685540+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 66444,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:09.699245+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 73500,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:14.711961+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:19.724319+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:24.737002+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:29.749699+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:34.763196+00:00",
+      "processes": [
+        {
+          "pid": 72308,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 49004,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 75756,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:39.775484+00:00",
+      "processes": [
+        {
+          "pid": 71436,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 32824,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 68224,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:44.791703+00:00",
+      "processes": [
+        {
+          "pid": 71436,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 32824,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 68224,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:49.806097+00:00",
+      "processes": [
+        {
+          "pid": 71436,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 32824,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 68224,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:54.819188+00:00",
+      "processes": [
+        {
+          "pid": 71436,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 32824,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 68224,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:10:59.832414+00:00",
+      "processes": [
+        {
+          "pid": 60396,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 68072,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:04.846773+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:09.871145+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 75968,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 19628,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 16668,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 32548,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 46648,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 18532,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 66128,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 70120,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 20752,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:14.896286+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 19628,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 16668,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 32548,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 66128,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 70120,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53384,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 71644,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:19.913879+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 71644,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:24.940198+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 57340,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 42648,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 27892,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:29.976651+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 57340,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 42648,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 27892,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 34844,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:35.006448+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 57340,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 42648,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 27892,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 34844,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 14084,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:40.039027+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 57340,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 27892,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 34844,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 68736,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:45.057126+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 68736,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 74128,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:50.092336+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 68736,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 74128,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 43608,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 51480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 18188,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 42188,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:11:55.144870+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 68736,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 74128,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 43608,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 51480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 18188,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:00.173389+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 68736,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 74128,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 51480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 32924,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 70692,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:05.212838+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 68736,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 32924,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:10.253851+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 32924,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:15.278116+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 30740,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:20.293123+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 25292,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:25.307002+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:30.322878+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:35.346927+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:40.360963+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:45.387651+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:50.417982+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:12:55.434507+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 76432,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:00.447088+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:05.468784+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:10.490075+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:15.526797+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:20.568335+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:25.611613+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:30.630404+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 53452,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:35.644673+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 75288,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:40.658524+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:45.672908+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:50.686977+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:13:55.708627+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:00.733826+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:05.750353+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:10.764588+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:15.779287+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:20.792981+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:25.808039+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:30.821625+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:35.834019+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:40.872460+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:45.901751+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:50.922123+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:14:55.937947+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:00.952183+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:05.966092+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:10.980281+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:15.994642+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:21.009485+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:26.022923+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:31.035423+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:36.050042+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:41.064443+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:46.078667+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:51.093534+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:15:56.107932+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 5492,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:01.121661+00:00",
+      "processes": [
+        {
+          "pid": 27652,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 29732,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 19836,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:06.140346+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 17212,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 19480,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 59616,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 33684,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:11.154855+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:16.170673+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:21.185505+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:26.209179+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72900,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:31.228517+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72900,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:36.254634+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72900,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:41.281819+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72900,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:46.301488+00:00",
+      "processes": [
+        {
+          "pid": 7728,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 3508,
+          "name": "cargo.exe"
+        },
+        {
+          "pid": 56680,
+          "name": "rustc.exe"
+        },
+        {
+          "pid": 72900,
+          "name": "rustc.exe"
+        }
+      ]
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:51.317839+00:00",
+      "processes": []
+    },
+    {
+      "timeUtc": "2026-11-04T13:16:56.331696+00:00",
+      "processes": []
+    },
+    {
+      "timeUtc": "2026-11-04T13:17:01.344435+00:00",
+      "processes": []
+    }
+  ],
+  "compilerInterference": [],
+  "matrices": [
+    {
+      "stack": "base",
+      "driverExit": 0,
+      "command": [
+        "C:\\Users\\Main\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\tools\\qa\\benchmark_matrix.py",
+        "--java-home",
+        "C:/Users/Main/AppData/Local/Programs/Java/jdk-25.0.5+8",
+        "--fabric-jar",
+        "build/libs/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "--neoforge-jar",
+        "neoforge/build/libs/terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar",
+        "--fabric-qa",
+        "build/qa/runtime-dev23/terraforged-runtime-qa.jar",
+        "--neoforge-qa",
+        "build/qa/neoforge-runtime-dev23/terraforged-neoforge-runtime-qa.jar",
+        "--fabric-pack",
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T124354Z-db6e30\\qa-output\\presetpack",
+        "--neoforge-pack",
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T124354Z-289a8c\\qa-output\\presetpack",
+        "--stack",
+        "base",
+        "--trials",
+        "3",
+        "--label",
+        "dev23-base",
+        "--report",
+        "docs/validation/benchmark-dev23-base.json"
+      ]
+    },
+    {
+      "stack": "optimized",
+      "driverExit": 0,
+      "command": [
+        "C:\\Users\\Main\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\tools\\qa\\benchmark_matrix.py",
+        "--java-home",
+        "C:/Users/Main/AppData/Local/Programs/Java/jdk-25.0.5+8",
+        "--fabric-jar",
+        "build/libs/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "--neoforge-jar",
+        "neoforge/build/libs/terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar",
+        "--fabric-qa",
+        "build/qa/runtime-dev23/terraforged-runtime-qa.jar",
+        "--neoforge-qa",
+        "build/qa/neoforge-runtime-dev23/terraforged-neoforge-runtime-qa.jar",
+        "--fabric-pack",
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T124907Z-57f485\\qa-output\\presetpack",
+        "--neoforge-pack",
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T125145Z-959472\\qa-output\\presetpack",
+        "--stack",
+        "optimized",
+        "--trials",
+        "3",
+        "--label",
+        "dev23-optimized",
+        "--report",
+        "docs/validation/benchmark-dev23-optimized.json"
+      ]
+    }
+  ],
+  "scope": "No concurrent native Java/Cargo workload at launch; compiler process monitor throughout. General desktop/OS background activity is not eliminated.",
+  "quietWindowStartedAtUtc": "2026-11-04T13:17:06.347534+00:00",
+  "finishedAtUtc": "2026-11-04T13:28:09.114429+00:00"
+}

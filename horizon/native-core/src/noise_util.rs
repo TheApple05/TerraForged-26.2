@@ -211,3 +211,37 @@ pub fn val_coord_2d(seed: i32, x: i32, y: i32) -> f32 {
     n ^= 31337i32.wrapping_mul(y);
     n.wrapping_mul(n).wrapping_mul(n).wrapping_mul(60493) as f32 / 2.14748365E9f32
 }
+
+#[inline]
+pub fn coord_2d(seed: i32, x: i32, y: i32) -> (f32, f32) {
+    crate::noise_vectors::GRAD_2D[(hash_2d(seed, x, y) & 7) as usize]
+}
+
+#[inline]
+pub fn coord_2d_24(seed: i32, x: i32, y: i32) -> (f32, f32) {
+    let hash = hash_2d(seed, x, y);
+    let selector = (((hash & 0x3fffff) as f32 * 1.3333334f32) as i32) & 31;
+    crate::noise_vectors::GRAD_2D_24[selector as usize]
+}
+
+#[inline]
+pub fn cell(seed: i32, x: i32, y: i32) -> (f32, f32) {
+    crate::noise_vectors::CELL_2D[(hash_2d(seed, x, y) & 255) as usize]
+}
+
+#[inline]
+pub fn grad_coord_2d(seed: i32, x: i32, y: i32, xd: f32, yd: f32) -> f32 {
+    let (gx, gy) = coord_2d(seed, x, y);
+    xd * gx + yd * gy
+}
+
+#[inline]
+pub fn grad_coord_2d_24(seed: i32, x: i32, y: i32, xd: f32, yd: f32) -> f32 {
+    let (gx, gy) = coord_2d_24(seed, x, y);
+    xd * gx + yd * gy
+}
+
+#[inline]
+pub fn seed(x: i32, z: i32) -> i64 {
+    (x as u32 as u64 | ((z as u32 as u64) << 32)) as i64
+}

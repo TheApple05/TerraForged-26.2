@@ -1,0 +1,24 @@
+{
+  "repository": "TheApple05/TerraForged-26.2",
+  "commit": "b3da3829eb4e0bc501278cce48f5d890f7afa329",
+  "runs": [
+    {
+      "id": 41833980166,
+      "name": "Core regressions (not full port)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41833980166",
+      "run_attempt": 1,
+      "head_sha": "b3da3829eb4e0bc501278cce48f5d890f7afa329"
+    },
+    {
+      "id": 41833980179,
+      "name": "Package both 26.2 loaders (experimental)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41833980179",
+      "run_attempt": 1,
+      "head_sha": "b3da3829eb4e0bc501278cce48f5d890f7afa329"
+    }
+  ]
+}

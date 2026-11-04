@@ -1,0 +1,38 @@
+name: Horizon native noise foundation
+
+on:
+  push:
+    paths: ['horizon/native-core/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
+  pull_request:
+    paths: ['horizon/native-core/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  foundation:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install stable Rust
+        run: rustup toolchain install stable --profile minimal
+      - name: Check independent Java fixtures
+        run: |
+          python horizon/tools/generate_noise_vectors.py
+          python horizon/tools/verify_native_scalars.py --report build/qa/ci/native-scalars.json
+          python horizon/tools/verify_native_noise.py --report build/qa/ci/native-noise.json
+          python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
+      - name: Retain foundation reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-noise-${{ matrix.os }}-${{ github.sha }}
+          path: build/qa/ci/native-*.json
+          if-no-files-found: error
+          retention-days: 14

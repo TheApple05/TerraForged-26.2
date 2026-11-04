@@ -136,6 +136,7 @@ public final class RuntimeQaMod implements ModInitializer {
             }
             report.put("classicBiomeChecks", ClassicBiomeQa.verify(server, server.overworld()));
             report.put("cellSamplerCacheChecks", CellSamplerCacheQa.verify(server.overworld()));
+            report.put("kernelOracle", KernelOracleQa.export(server, output));
             report.put("classicPillarCandidateSearch", ClassicPillarCandidateQa.verify(server.overworld()));
             report.put("nativeColumnReplay", NativeColumnReplayQa.verify(server.overworld()));
             report.put("classicBiomeTargetQualification", ClassicBiomeTargetSearchQa.verify(server.overworld()));

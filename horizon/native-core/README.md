@@ -6,12 +6,32 @@ the prepared-terrain bundle and cannot yet generate a terrain tile or chunk.
 The initial scalar/hash routines preserve Java wrapping integers, float operation
 order, signed zero and the inherited negative-integer floor behavior. The probe
 checks the supported columns of the existing independently captured, pinned Java
-reference fixture. Unimplemented gradient/vector/noise/cell/tile stages remain
-in the [native milestone](../../docs/horizon/infinite-native-milestone.md).
+reference fixture. The vector tables and Perlin/Simplex static/fractal modules
+also match 34,976 independent Java records (56,080 values) in debug and release.
+This includes all 296 vector entries, negative boundaries, signed32 seed
+endpoints, zero/one/multiple octaves, interpolation modes and seed behavior.
+Other composed noises and the cell/tile pipeline remain unfinished in the
+[native milestone](../../docs/horizon/infinite-native-milestone.md).
 
 Run `python horizon/tools/verify_native_scalars.py` from the repository root.
 The verifier checks both debug and optimized Rust output, retains every mismatch,
 and never regenerates expected values from the Rust implementation.
+
+Run `python horizon/tools/verify_native_noise.py --report <new-report.json>` for
+the Perlin/Simplex foundation. The committed expected fixture came from two
+fresh runs of the genuine packaged Java23 classes, whose origins and source
+hashes are checked. `capture_noise_reference.py` is the separate Java-only
+capture tool; the native verifier never invokes it or updates expected values.
+`generate_noise_vectors.py` checks all vector literals against the source hash
+already frozen by the original core fixture. Each verifier refuses to overwrite
+existing evidence.
+
+Perlin deliberately uses its stored seed and ignores its compute-time seed;
+Simplex uses the compute-time seed. The unusual negative-integer floor and
+duplicate gradient entries are retained. Constructors bound octave counts to
+0..32 and report unsupported counts; arbitrary graph/parameter domains are not
+certified by these finite vectors. The crate has no external dependencies and
+forbids unsafe code.
 
 Original ReTerraForged MIT attribution is retained with the source and in
 `LICENSE-RETERRAFORGED`. The root Horizon component license also applies to new

@@ -4,12 +4,15 @@
 *.md text eol=lf
 *.json text eol=lf
 *.py text eol=lf
+*.rs text eol=lf
+*.toml text eol=lf
 *.yml text eol=lf
 *.properties text eol=lf
 *.ps1 text eol=lf
 # Captured reports/images are hashed byte for byte; preserve their original
 # line endings and diagnostic whitespace when committed or checked out.
 docs/validation/** -text whitespace=-trailing-space
+horizon/tests/fixtures/** -text whitespace=-trailing-space
 gradlew text eol=lf
 *.bat text eol=crlf
 *.jar binary

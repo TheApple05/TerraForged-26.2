@@ -4,17 +4,17 @@ An independent, unofficial revival of TerraForged for **Fabric and NeoForge**, f
 
 **Development status:** both loaders have passed real packaged client and dedicated-server workflows. The editor creates custom worlds, terrain renders, saves reload, and a normal world can load afterward without inheriting custom settings. The pinned Biomes O' Plenty, GlitchCore and TerraBlender stack also passes its recorded client/server checks. These are experimental candidates; no stable release or complete classic-parity claim is made.
 
-The current restoration candidate is **dev23**. All 17 classic biome definitions and a modern regional selector are implemented; the unforced survey reaches every variant on both loaders. Actual positive Bryce and grass-capped stone pillars now pass on both loaders. Final saved-biome, expanded modpack, Linux, network and performance acceptance is in progress in the [work record](docs/validation/modpack-readiness-worklog.md). The separate [Horizon prototype](horizon/README.md) reconstructs finite prepared terrain in native Rust; infinite native generation remains unfinished.
+The current restoration candidate is **dev23**. All 17 classic variants pass actual generation, saved-holder checks and cold reload on both loaders. The base and active-shader clients, pinned optimizer/content/structure stacks, real client joins and Linux generation/reload also pass. [Complete scoped acceptance](docs/validation/dev23-acceptance.json) binds 104 evidence files and 30 native images to the exact JARs. Both controlled performance matrices pass all 24 fresh trials and eight cold reloads; [measured results](docs/validation/dev23-performance.md) retain every trial and matched control. The two-loader prerelease is being assembled. The separate [Horizon port](horizon/README.md) has a verified finite native bridge and a Java-matched Perlin/Simplex foundation; infinite native generation remains unfinished.
 
-![Actual 26.2 river and forest capture](docs/validation/images/client-dev9-scenes/09-river.png)
+![Actual dev23 restored Bryce pillars](docs/validation/images/client-fabric-dev23-pillar-scenes/08-bryce.png)
 
-Actual Minecraft capture: Fabric dev9, seed `123456789`. [Scene evidence](docs/validation/client-dev9-scenes.json) records coordinates, terrain fields and verified camera poses. This is target-game evidence, not an original-version visual comparison.
+Actual Minecraft capture: Fabric dev23, seed `8675309`. [Scene evidence](docs/validation/client-fabric-dev23-pillar-scenes.json) records natural locations and verified render/camera readiness. [Visual review](docs/validation/visual-review-dev23.md) distinguishes visible pillars, nearby shader rendering and unfinished distant LOD quality from user visual acceptance.
 
 ## Use or build a candidate
 
 Use Minecraft Java **26.2** and **Java 25**, with either Fabric Loader **0.20.1** plus Fabric API **0.161.0+26.2**, or NeoForge **26.2.0.93**. Install the matching loader's JAR. [Installation and world-creation instructions](docs/INSTALLATION.md) cover the editor, preset folders, servers and building from source.
 
-The current package snapshots and SHA-256 values are in [the coherent dev23 build record](docs/validation/dual-loader-dev23-build.json). Dev11 remains the previous accepted delivery while dev23 completes qualification. Local Fabric JARs are in `build/libs`; NeoForge JARs are in `neoforge/build/libs`. GitHub's [packaging workflow](.github/workflows/package-candidates.yml) retains experimental artifacts. Only the exact hashes in runtime reports have their recorded game validation.
+The current package snapshots and SHA-256 values are in [the coherent dev23 build record](docs/validation/dual-loader-dev23-build.json). Dev23 has completed the recorded functional and controlled-performance qualification; dev11 remains historical evidence. Local Fabric JARs are in `build/libs`; NeoForge JARs are in `neoforge/build/libs`. GitHub's [packaging workflow](.github/workflows/package-candidates.yml) retains experimental artifacts. Only the exact hashes in runtime reports have their recorded game validation.
 
 ## Verification
 

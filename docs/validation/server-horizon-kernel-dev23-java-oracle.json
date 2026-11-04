@@ -1,0 +1,2295 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-04T13:30:18.634419+00:00",
+  "result": "passed",
+  "stage": "runtime",
+  "runtimeExecuted": true,
+  "javaVersionOutput": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)",
+  "installation": {
+    "template": "build/qa/server/template-mc26.2-loader0.20.1",
+    "installer": {
+      "version": "1.1.2",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.2/fabric-installer-1.1.2.jar",
+      "sha256": "61e035bf7bf70153e127440ce34de47c9036f0a2d0c65d1529454bd35ceefe4f",
+      "matchesPublished": true
+    },
+    "fabricApi": {
+      "version": "0.161.0+26.2",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.161.0+26.2/fabric-api-0.161.0+26.2.jar",
+      "sha256": "e5b858ceb13290c274e31cb888ff5a1a40cb91067e7ffab0b5b775aec51e216a",
+      "matchesPublished": true,
+      "path": "build/qa/server/downloads/fabric-api-0.161.0+26.2.jar"
+    },
+    "minecraft": {
+      "version": "26.2",
+      "metadataUrl": "https://piston-meta.mojang.com/v1/packages/09165f570b16394790c4e37c93b0918729615d17/26.2.json",
+      "metadataSha1": "09165f570b16394790c4e37c93b0918729615d17",
+      "metadataMatchesPublishedContentHash": true,
+      "serverSha1": "823e2250d24b3ddac457a60c92a6a941943fcd6a",
+      "serverSha256": "cdacdfb25898de5e4b4b0e5ddcc2722f77067e46605709c2d886c000ebb63ec5"
+    },
+    "loader": "0.20.1",
+    "launcherSha256": "121ae339b9b903aaf4fb7b3903fbb5c1e37246ebe14786c2109a2a1eb29e32bc"
+  },
+  "instance": "build/qa/server/instances/20261104T133018Z-c5fa95",
+  "artifact": {
+    "name": "terraforged-revival-0.1.0-dev.23+26.2.jar",
+    "id": "reterraforged",
+    "version": "0.1.0-dev.23+26.2",
+    "sha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886"
+  },
+  "extraMods": [
+    {
+      "name": "terraforged-kernel-oracle-qa.jar",
+      "id": "terraforged_runtime_qa",
+      "version": "0.1.0",
+      "sha256": "1cd16d63968fd47fe9bf88f9d375c177b1943da185e2dead7d83c7d272d5facb"
+    }
+  ],
+  "serverProperties": {
+    "server-ip": "127.0.0.1",
+    "server-port": 59363,
+    "online-mode": "false",
+    "enable-query": "false",
+    "enable-rcon": "false",
+    "level-name": "qa-world",
+    "level-seed": 8675309,
+    "level-type": "minecraft:normal",
+    "spawn-protection": 0,
+    "view-distance": 2,
+    "simulation-distance": 2,
+    "max-players": 1,
+    "sync-chunk-writes": "true",
+    "pause-when-empty-seconds": -1,
+    "max-tick-time": 60000,
+    "motd": "TerraForged isolated production QA",
+    "initial-enabled-packs": "vanilla,file/terraforged-qa"
+  },
+  "bindAddress": "127.0.0.1",
+  "port": 59363,
+  "developmentMode": false,
+  "qaMode": "generate",
+  "qaOutput": "build/qa/server/instances/20261104T133018Z-c5fa95/qa-output",
+  "rawLog": "build/qa/server/instances/20261104T133018Z-c5fa95/qa-runs/20261104T133018Z-c6ef/stdout.log",
+  "classLoadLog": "build/qa/server/instances/20261104T133018Z-c5fa95/qa-runs/20261104T133018Z-c6ef/class-load.log",
+  "customTerrainValidated": true,
+  "featureParityValidated": false,
+  "jvmCommand": [
+    "C:\\Users\\Main\\AppData\\Local\\Programs\\Java\\jdk-25.0.5+8\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx3G",
+    "-Dfabric.development=false",
+    "-Xlog:class+load=info:file=qa-runs/20261104T133018Z-c6ef/class-load.log:level,tags",
+    "-Dterraforged.qa.exportKernelOracle=true",
+    "-XX:ActiveProcessorCount=8",
+    "-Dterraforged.qa.mode=generate",
+    "-Dterraforged.qa.output=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T133018Z-c5fa95\\qa-output",
+    "-Dterraforged.qa.expectedModSha256=1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+    "-jar",
+    "fabric-server-launch.jar",
+    "nogui"
+  ],
+  "pid": 73716,
+  "processMemory": {
+    "peakResidentBytes": 1138405376,
+    "samples": 219,
+    "scope": "Entire owned Java process, including startup and shutdown",
+    "source": "Windows PeakWorkingSetSize",
+    "samplingIntervalSeconds": 0.1,
+    "errors": []
+  },
+  "serverReady": true,
+  "saveObserved": false,
+  "stopSent": false,
+  "companionServerStartedObserved": true,
+  "companionSaveCompleted": true,
+  "companionCleanStopObserved": true,
+  "processExitCode": 0,
+  "forcedStop": false,
+  "targetGameAndLoaderObserved": true,
+  "serverVersionObserved": true,
+  "artifactUnchanged": true,
+  "packagedArtifactOriginObserved": true,
+  "loadedModClassCount": 389,
+  "loadedModClassOrigins": [
+    {
+      "class": "raccoonman.reterraforged.mixin.plugin.MixinPlugin",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.terrablender.TBCompat",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.ModLoaderUtil",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.PlatformServices",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.PlatformServices$ProviderHolder",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.FabricPlatformServices",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.ModLoaderUtilImpl",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.RTFCommon",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.mixin.BiomeTemperatureInvoker",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.mixin.MixinBiomeGenerationSettings",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.server.RTFMinecraftServer",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.fabric.RTFFabric",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.registries.RTFBuiltInRegistries",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.registries.RTFRegistries",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.RegistryUtil",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.RegistryUtilImpl",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacements",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.AnyPlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.template.TemplateContext",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TreePlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TemplateDecorators",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TemplateDecorator",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TreeDecorator",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.RTFChanceModifiers",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.ChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.RangeChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.ElevationChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.BiomeEdgeChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.RTFPlacementModifiers",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.BlacklistDimensionFilter",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.poisson.FastPoissonModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.noise.module.Noise",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.LegacyCountExtraModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.RTFDensityFunctions",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.MarkerFunction",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction$Marker",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.MarkerFunction$Mapped",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.noise.module.Noises",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T133018Z-c5fa95/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    }
+  ],
+  "qaResult": {
+    "schemaVersion": 1,
+    "mode": "generate",
+    "qaThread": "Server thread",
+    "startedAt": "2026-11-04T13:30:35.332221400Z",
+    "serverStarted": true,
+    "saveCompleted": true,
+    "status": "passed",
+    "nodes": [
+      {
+        "at": "2026-11-04T13:30:35.334217700Z",
+        "detail": "Packaged origin and runtime recorded",
+        "status": "passed",
+        "name": "production-artifact"
+      },
+      {
+        "at": "2026-11-04T13:30:35.335217700Z",
+        "detail": "Custom preset entry, RTFRandomState, GeneratorContext and TileCache are present",
+        "status": "passed",
+        "name": "custom-generator-active"
+      },
+      {
+        "at": "2026-11-04T13:30:36.745335200Z",
+        "detail": "Full chunk and nine column/terrain samples recorded",
+        "status": "passed",
+        "name": "chunk-0,0"
+      },
+      {
+        "at": "2026-11-04T13:30:36.911865500Z",
+        "detail": "Full chunk and nine column/terrain samples recorded",
+        "status": "passed",
+        "name": "chunk--1,-1"
+      },
+      {
+        "at": "2026-11-04T13:30:37.575819600Z",
+        "detail": "Full chunk and nine column/terrain samples recorded",
+        "status": "passed",
+        "name": "chunk-7,0"
+      },
+      {
+        "at": "2026-11-04T13:30:37.726846600Z",
+        "detail": "Full chunk and nine column/terrain samples recorded",
+        "status": "passed",
+        "name": "chunk-8,-1"
+      },
+      {
+        "at": "2026-11-04T13:30:38.363162500Z",
+        "detail": "Full chunk and nine column/terrain samples recorded",
+        "status": "passed",
+        "name": "chunk--8,7"
+      },
+      {
+        "at": "2026-11-04T13:30:38.484889600Z",
+        "detail": "Full chunk and nine column/terrain samples recorded",
+        "status": "passed",
+        "name": "chunk--9,8"
+      },
+      {
+        "at": "2026-11-04T13:30:38.536148100Z",
+        "detail": "Actual server saveEverything completed with flush and force",
+        "status": "passed",
+        "name": "world-save-flush"
+      },
+      {
+        "at": "2026-11-04T13:30:42.796978500Z",
+        "detail": "Three production-helper assertions completed with real target holders",
+        "status": "passed",
+        "name": "biome-decorator-overrides"
+      }
+    ],
+    "notTested": [
+      "Visual parity",
+      "All presets and configuration extremes",
+      "All biomes or structures",
+      "Multiplayer clients",
+      "Unlisted third-party mod combinations",
+      "Controlled performance benchmark"
+    ],
+    "runtime": {
+      "minecraft": "26.2",
+      "java": "25.0.5",
+      "javaClassVersion": "69.0",
+      "developmentEnvironment": false,
+      "loader": "0.20.1",
+      "modVersion": "0.1.0-dev.23+26.2",
+      "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T133018Z-c5fa95\\mods\\terraforged-revival-0.1.0-dev.23+26.2.jar",
+      "modSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "expectedModSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "loaderModOrigins": [
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T133018Z-c5fa95\\mods\\terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    "generator": "terraforged-custom",
+    "workload": {
+      "fullHaloChunks": 0,
+      "name": "default",
+      "sampledChunkCount": 6,
+      "fullRequestedChunkCount": 6,
+      "reverseRequests": false
+    },
+    "generation": {
+      "seed": 8675309,
+      "minY": -64,
+      "maxY": 319,
+      "chunks": [
+        {
+          "status": "minecraft:full",
+          "tileX": 0,
+          "tileZ": 0,
+          "x": 0,
+          "z": 0
+        },
+        {
+          "status": "minecraft:full",
+          "tileX": -1,
+          "tileZ": -1,
+          "x": -1,
+          "z": -1
+        },
+        {
+          "status": "minecraft:full",
+          "tileX": 0,
+          "tileZ": 0,
+          "x": 7,
+          "z": 0
+        },
+        {
+          "status": "minecraft:full",
+          "tileX": 1,
+          "tileZ": -1,
+          "x": 8,
+          "z": -1
+        },
+        {
+          "status": "minecraft:full",
+          "tileX": -1,
+          "tileZ": 0,
+          "x": -8,
+          "z": 7
+        },
+        {
+          "status": "minecraft:full",
+          "tileX": -2,
+          "tileZ": 1,
+          "x": -9,
+          "z": 8
+        }
+      ],
+      "samples": [
+        {
+          "x": 0,
+          "z": 0,
+          "surfaceY": 86,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1036209576,
+            "height": 1050089532,
+            "heightErosion": -1160606188,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 0,
+          "z": 7,
+          "surfaceY": 74,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1040135296,
+            "height": 1050002002,
+            "heightErosion": -1160434493,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 919301270,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 0,
+          "z": 15,
+          "surfaceY": 75,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:tall_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1041047944,
+            "height": 1049764477,
+            "heightErosion": -1153334044,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 916607371,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 7,
+          "z": 0,
+          "surfaceY": 75,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1033529456,
+            "height": 1050020081,
+            "heightErosion": -1156159540,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 7,
+          "z": 7,
+          "surfaceY": 86,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032628096,
+            "height": 1049945527,
+            "heightErosion": -1157267757,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 914015288,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 7,
+          "z": 15,
+          "surfaceY": 73,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1038262496,
+            "height": 1049811273,
+            "heightErosion": -1149690430,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 924815137,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 15,
+          "z": 0,
+          "surfaceY": 84,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1040211964,
+            "height": 1050130948,
+            "heightErosion": -1157212459,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 979178261,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 15,
+          "z": 7,
+          "surfaceY": 86,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1041012084,
+            "height": 1050053242,
+            "heightErosion": -1154615767,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 15,
+          "z": 15,
+          "surfaceY": 87,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1037944656,
+            "height": 1049928592,
+            "heightErosion": -1153575616,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -16,
+          "z": -16,
+          "surfaceY": 79,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:lilac",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1030080208,
+            "height": 1050281841,
+            "heightErosion": -1153744688,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -16,
+          "z": -9,
+          "surfaceY": 76,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1030058528,
+            "height": 1050221722,
+            "heightErosion": -1157516356,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -16,
+          "z": -1,
+          "surfaceY": 77,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:tall_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1033768896,
+            "height": 1050140569,
+            "heightErosion": -1162945016,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -9,
+          "z": -16,
+          "surfaceY": 78,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:wildflowers",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1037076616,
+            "height": 1050338021,
+            "heightErosion": -1163438944,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -9,
+          "z": -9,
+          "surfaceY": 84,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1036813496,
+            "height": 1050200257,
+            "heightErosion": -1161451953,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -9,
+          "z": -1,
+          "surfaceY": 84,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032687496,
+            "height": 1050096787,
+            "heightErosion": -1159987661,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 944511624,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -1,
+          "z": -16,
+          "surfaceY": 78,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:wildflowers",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1035269336,
+            "height": 1050301701,
+            "heightErosion": -1152762641,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -1,
+          "z": -9,
+          "surfaceY": 78,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:tall_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1033274856,
+            "height": 1050192838,
+            "heightErosion": -1154563376,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 934059206,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -1,
+          "z": -1,
+          "surfaceY": 86,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1034405376,
+            "height": 1050116907,
+            "heightErosion": -1162827916,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 112,
+          "z": 0,
+          "surfaceY": 86,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1029062768,
+            "height": 1049994614,
+            "heightErosion": -1174314770,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 949773237,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": 112,
+          "z": 7,
+          "surfaceY": 86,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032461336,
+            "height": 1049974984,
+            "heightErosion": -1155360061,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 985185828,
+            "temperature": 1020054732,
+            "weirdness": -1105050842
+          }
+        },
+        {
+          "x": 112,
+          "z": 15,
+          "surfaceY": 88,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048474970,
+            "gradient": 1032263016,
+            "height": 1050015824,
+            "heightErosion": -1156549194,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 954976696,
+            "temperature": 1020054732,
+            "weirdness": -1105007644
+          }
+        },
+        {
+          "x": 119,
+          "z": 0,
+          "surfaceY": 83,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1025718768,
+            "height": 1049927989,
+            "heightErosion": -1172482627,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 950473168,
+            "temperature": 1020054732,
+            "weirdness": -1104998144
+          }
+        },
+        {
+          "x": 119,
+          "z": 7,
+          "surfaceY": 88,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1030939088,
+            "height": 1049912209,
+            "heightErosion": -1162046360,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 985573199,
+            "temperature": 1020054732,
+            "weirdness": -1104937762
+          }
+        },
+        {
+          "x": 119,
+          "z": 15,
+          "surfaceY": 75,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1027131328,
+            "height": 1050043740,
+            "heightErosion": -1163683144,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 953012897,
+            "temperature": 1020054732,
+            "weirdness": -1104856175
+          }
+        },
+        {
+          "x": 127,
+          "z": 0,
+          "surfaceY": 90,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1027146608,
+            "height": 1049890968,
+            "heightErosion": -1171636687,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 967244075,
+            "temperature": 1020054732,
+            "weirdness": -1104777582
+          }
+        },
+        {
+          "x": 127,
+          "z": 7,
+          "surfaceY": 85,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1015028640,
+            "height": 1049919562,
+            "heightErosion": -1168418860,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 967459505,
+            "temperature": 1020054732,
+            "weirdness": -1104679011
+          }
+        },
+        {
+          "x": 127,
+          "z": 15,
+          "surfaceY": 75,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1031817456,
+            "height": 1050059131,
+            "heightErosion": -1157489184,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 967449733,
+            "temperature": 1020054732,
+            "weirdness": -1104582092
+          }
+        },
+        {
+          "x": 128,
+          "z": -16,
+          "surfaceY": 73,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1009432512,
+            "height": 1049820563,
+            "heightErosion": -1175765077,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 969481621,
+            "temperature": 1020054732,
+            "weirdness": -1104903780
+          }
+        },
+        {
+          "x": 128,
+          "z": -9,
+          "surfaceY": 84,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1018429760,
+            "height": 1049849798,
+            "heightErosion": -1169728771,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 929439386,
+            "temperature": 1020054732,
+            "weirdness": -1104832816
+          }
+        },
+        {
+          "x": 128,
+          "z": -1,
+          "surfaceY": 89,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1020466880,
+            "height": 1049885477,
+            "heightErosion": -1174366327,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 975350892,
+            "temperature": 1020054732,
+            "weirdness": -1104746744
+          }
+        },
+        {
+          "x": 135,
+          "z": -16,
+          "surfaceY": 73,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1017203040,
+            "height": 1049827997,
+            "heightErosion": -1170311971,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 956959453,
+            "temperature": 1020054732,
+            "weirdness": -1104584888
+          }
+        },
+        {
+          "x": 135,
+          "z": -9,
+          "surfaceY": 73,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1012445312,
+            "height": 1049856179,
+            "heightErosion": -1175234062,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 938779717,
+            "temperature": 1020054732,
+            "weirdness": -1104514388
+          }
+        },
+        {
+          "x": 135,
+          "z": -1,
+          "surfaceY": 83,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:birch_leaves",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1026293168,
+            "height": 1049882907,
+            "heightErosion": -1166859889,
+            "moisture": 1045220557,
+            "riverMask": 1065353216,
+            "sediment": 950613830,
+            "temperature": 1020054732,
+            "weirdness": -1104394673
+          }
+        },
+        {
+          "x": 143,
+          "z": -16,
+          "surfaceY": 75,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1029983008,
+            "height": 1049912509,
+            "heightErosion": -1171967639,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1104056880
+          }
+        },
+        {
+          "x": 143,
+          "z": -9,
+          "surfaceY": 74,
+          "biome": "minecraft:birch_forest",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1024199168,
+            "height": 1049889107,
+            "heightErosion": -1168130253,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1104022319
+          }
+        },
+        {
+          "x": 143,
+          "z": -1,
+          "surfaceY": 74,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "badlands-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1030927248,
+            "height": 1049918899,
+            "heightErosion": -1162889843,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 899892757,
+            "temperature": 1020054732,
+            "weirdness": -1103871009
+          }
+        },
+        {
+          "x": -128,
+          "z": 112,
+          "surfaceY": 78,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1035300096,
+            "height": 1050529043,
+            "heightErosion": -1153060289,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 935209146,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -128,
+          "z": 119,
+          "surfaceY": 79,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1035493496,
+            "height": 1050449039,
+            "heightErosion": -1156619940,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -128,
+          "z": 127,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032542856,
+            "height": 1050369174,
+            "heightErosion": -1159163831,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -121,
+          "z": 112,
+          "surfaceY": 79,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1039240416,
+            "height": 1050446974,
+            "heightErosion": -1153663735,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -121,
+          "z": 119,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032296016,
+            "height": 1050389147,
+            "heightErosion": -1156538041,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -121,
+          "z": 127,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1027132848,
+            "height": 1050313100,
+            "heightErosion": -1158922979,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 883363273,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -113,
+          "z": 112,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032723856,
+            "height": 1050370264,
+            "heightErosion": -1157163266,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -113,
+          "z": 119,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1029707328,
+            "height": 1050318924,
+            "heightErosion": -1157842410,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -113,
+          "z": 127,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1026029888,
+            "height": 1050280967,
+            "heightErosion": -1167674688,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -144,
+          "z": 128,
+          "surfaceY": 78,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1038550936,
+            "height": 1050443295,
+            "heightErosion": -1155701572,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -144,
+          "z": 135,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1033708456,
+            "height": 1050313185,
+            "heightErosion": -1156058796,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -144,
+          "z": 143,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1028235408,
+            "height": 1050204456,
+            "heightErosion": -1154372065,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -137,
+          "z": 128,
+          "surfaceY": 78,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1036919696,
+            "height": 1050420933,
+            "heightErosion": -1156443090,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -137,
+          "z": 135,
+          "surfaceY": 78,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1033854736,
+            "height": 1050303877,
+            "heightErosion": -1157721117,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -137,
+          "z": 143,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1034690016,
+            "height": 1050218208,
+            "heightErosion": -1161994527,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -129,
+          "z": 128,
+          "surfaceY": 79,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:tall_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1032500096,
+            "height": 1050354244,
+            "heightErosion": -1156676788,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -129,
+          "z": 135,
+          "surfaceY": 76,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:grass_block",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1034706856,
+            "height": 1050261902,
+            "heightErosion": -1156999272,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        },
+        {
+          "x": -129,
+          "z": 143,
+          "surfaceY": 77,
+          "biome": "minecraft:plains",
+          "surfaceBlock": "minecraft:short_grass",
+          "terrain": "flats-hills",
+          "cellBiome": "TEMPERATE_FOREST",
+          "cellFloatBits": {
+            "erosion": 1048576000,
+            "gradient": 1025703888,
+            "height": 1050160523,
+            "heightErosion": -1157277209,
+            "moisture": -1100585370,
+            "riverMask": 1065353216,
+            "sediment": 0,
+            "temperature": 1020054732,
+            "weirdness": -1105059293
+          }
+        }
+      ],
+      "digestSha256": "49a2646543c4fb35c0bce4c01347e0c549139196fe9c379f4572f12df686d910",
+      "elapsedMillis": 3151
+    },
+    "classicBiomeChecks": {
+      "activeTerraForgedContext": true,
+      "classicBiomeVariants": true,
+      "sourceClass": "raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource",
+      "definitions": [
+        {
+          "id": "reterraforged:bryce",
+          "parent": "minecraft:badlands",
+          "possible": true,
+          "temperature": 2.0,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_badlands",
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_sandy",
+            "minecraft:has_structure/mineshaft_mesa",
+            "minecraft:has_structure/ruined_portal_mountain",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_badlands",
+            "minecraft:is_overworld",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:cold_steppe",
+          "parent": "minecraft:old_growth_spruce_taiga",
+          "possible": true,
+          "temperature": 0.2,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_dense_vegetation",
+            "c:is_dense_vegetation/overworld",
+            "c:is_old_growth",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:cold_marshland",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": 0.2,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:fir_forest",
+          "parent": "minecraft:taiga",
+          "possible": true,
+          "temperature": 0.25,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/pillager_outpost",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:has_structure/village_taiga",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:flower_plains",
+          "parent": "minecraft:flower_forest",
+          "possible": true,
+          "temperature": 0.7,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_floral",
+            "c:is_flower_forest",
+            "c:is_forest",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_temperate",
+            "c:is_temperate/overworld",
+            "c:is_tree/deciduous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/oak",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_forest",
+            "minecraft:is_overworld",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:frozen_lake",
+          "parent": "minecraft:frozen_river",
+          "possible": true,
+          "temperature": 0.0,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_aquatic",
+            "c:is_aquatic_icy",
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_river",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_river",
+            "minecraft:more_frequent_drowned_spawns",
+            "minecraft:reduce_water_ambient_spawns",
+            "minecraft:required_ocean_monument_surrounding",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:water_on_map_outlines",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:frozen_marsh",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": 0.14999,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:lake",
+          "parent": "minecraft:river",
+          "possible": true,
+          "temperature": 0.5,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_aquatic",
+            "c:is_overworld",
+            "c:is_river",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_river",
+            "minecraft:more_frequent_drowned_spawns",
+            "minecraft:reduce_water_ambient_spawns",
+            "minecraft:required_ocean_monument_surrounding",
+            "minecraft:water_on_map_outlines",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:marshland",
+          "parent": "minecraft:swamp",
+          "possible": true,
+          "temperature": 0.7,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_overworld",
+            "c:is_swamp",
+            "c:is_temperate",
+            "c:is_temperate/overworld",
+            "c:is_wet",
+            "c:is_wet/overworld",
+            "c:primary_wood_type",
+            "c:primary_wood_type/oak",
+            "minecraft:allows_surface_slime_spawns",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_swamp",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/swamp_hut",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:water_on_map_outlines",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:savanna_scrub",
+          "parent": "minecraft:savanna",
+          "possible": true,
+          "temperature": 2.0,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_savanna",
+            "c:is_sparse_vegetation",
+            "c:is_sparse_vegetation/overworld",
+            "c:is_tree/savanna",
+            "c:primary_wood_type",
+            "c:primary_wood_type/acacia",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/pillager_outpost",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:has_structure/village_savanna",
+            "minecraft:is_overworld",
+            "minecraft:is_savanna",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:shattered_savanna_scrub",
+          "parent": "minecraft:windswept_savanna",
+          "possible": true,
+          "temperature": 2.0,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_savanna",
+            "c:is_sparse_vegetation",
+            "c:is_sparse_vegetation/overworld",
+            "c:is_tree/savanna",
+            "c:is_windswept",
+            "c:primary_wood_type",
+            "c:primary_wood_type/acacia",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_mountain",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_savanna",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:snowy_fir_forest",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": -0.5,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:snowy_taiga_scrub",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": -0.5,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:steppe",
+          "parent": "minecraft:old_growth_spruce_taiga",
+          "possible": true,
+          "temperature": 1.2,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_savanna",
+            "c:is_sparse_vegetation",
+            "c:is_sparse_vegetation/overworld",
+            "c:is_tree/savanna",
+            "c:is_windswept",
+            "c:primary_wood_type",
+            "c:primary_wood_type/acacia",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_mountain",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_savanna",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:stone_forest",
+          "parent": "minecraft:jungle",
+          "possible": true,
+          "temperature": 0.95,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_dense_vegetation",
+            "c:is_dense_vegetation/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_jungle",
+            "c:is_overworld",
+            "c:is_tree/jungle",
+            "c:is_wet",
+            "c:is_wet/overworld",
+            "c:primary_wood_type",
+            "c:primary_wood_type/jungle",
+            "minecraft:has_structure/jungle_temple",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_jungle",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_jungle",
+            "minecraft:is_overworld",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:taiga_scrub",
+          "parent": "minecraft:taiga",
+          "possible": true,
+          "temperature": 0.25,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/pillager_outpost",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:has_structure/village_taiga",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:warm_beach",
+          "parent": "minecraft:warm_ocean",
+          "possible": true,
+          "temperature": 1.0,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_beach",
+            "c:is_overworld",
+            "c:is_sandy",
+            "c:is_temperate",
+            "c:is_temperate/overworld",
+            "c:is_wet",
+            "c:is_wet/overworld",
+            "minecraft:has_structure/buried_treasure",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/shipwreck_beached",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_beach",
+            "minecraft:is_overworld",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        }
+      ],
+      "registeredVariants": 17,
+      "structurallyDistinctPlacedAliases": 6,
+      "sourceCodecRoundTrip": true,
+      "possibleBiomes": 72
+    },
+    "cellSamplerCacheChecks": {
+      "requested": false
+    },
+    "kernelOracle": {
+      "schemaVersion": 1,
+      "requested": true,
+      "status": "passed-java-reference-capture-only",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "presetSha256": "3a0b37fff526b4a310aa593728a07cff1aca2d307cdd84026906a8b0ae2d1e4a",
+      "noiseRegistrySha256": "fcbc63e86f003aec5159d5b2255c53509a436be92df6f1b98bc5ac995faec6dd",
+      "noiseRegistryEntries": 26,
+      "fieldNames": [
+        "beachNoise",
+        "biome",
+        "biomeRegionEdge",
+        "biomeRegionId",
+        "continentEdge",
+        "continentId",
+        "continentX",
+        "continentZ",
+        "erosion",
+        "erosionMask",
+        "gradient",
+        "height",
+        "heightErosion",
+        "macroBiomeId",
+        "moisture",
+        "regionMoisture",
+        "regionTemperature",
+        "riverMask",
+        "sediment",
+        "temperature",
+        "terrain",
+        "terrainRegionEdge",
+        "terrainRegionId",
+        "weirdness"
+      ],
+      "captures": [
+        {
+          "worldSeed": 0,
+          "narrowedKernelSeed": 0,
+          "repeat": 0,
+          "file": "seed-0-repeat-0.bin.gz",
+          "sha256": "46aea71644cc563446bee4d72fff0f9cc0be87d7ad85bbc8db565a3654c6a706",
+          "bytes": 2192753,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 0,
+          "narrowedKernelSeed": 0,
+          "repeat": 1,
+          "file": "seed-0-repeat-1.bin.gz",
+          "sha256": "46aea71644cc563446bee4d72fff0f9cc0be87d7ad85bbc8db565a3654c6a706",
+          "bytes": 2192753,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": -1,
+          "narrowedKernelSeed": -1,
+          "repeat": 0,
+          "file": "seed-1-repeat-0.bin.gz",
+          "sha256": "a5198018dc608925edf9255d62c5456b7cf9125d77145bb40710c6d64ef5f4f9",
+          "bytes": 1415234,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": -1,
+          "narrowedKernelSeed": -1,
+          "repeat": 1,
+          "file": "seed-1-repeat-1.bin.gz",
+          "sha256": "a5198018dc608925edf9255d62c5456b7cf9125d77145bb40710c6d64ef5f4f9",
+          "bytes": 1415234,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": -2147483648,
+          "narrowedKernelSeed": -2147483648,
+          "repeat": 0,
+          "file": "seed-2-repeat-0.bin.gz",
+          "sha256": "fdbec5cfab5ed0a414fd41a9eb227d11cc3e48710d6536ac2c866ab5757d1863",
+          "bytes": 2152931,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": -2147483648,
+          "narrowedKernelSeed": -2147483648,
+          "repeat": 1,
+          "file": "seed-2-repeat-1.bin.gz",
+          "sha256": "fdbec5cfab5ed0a414fd41a9eb227d11cc3e48710d6536ac2c866ab5757d1863",
+          "bytes": 2152931,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 2147483647,
+          "narrowedKernelSeed": 2147483647,
+          "repeat": 0,
+          "file": "seed-3-repeat-0.bin.gz",
+          "sha256": "8b0da78d6ee8cc0adc220e3f3271af27ff8558a8c218f65df1c39f67db83e8ed",
+          "bytes": 1321157,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 2147483647,
+          "narrowedKernelSeed": 2147483647,
+          "repeat": 1,
+          "file": "seed-3-repeat-1.bin.gz",
+          "sha256": "8b0da78d6ee8cc0adc220e3f3271af27ff8558a8c218f65df1c39f67db83e8ed",
+          "bytes": 1321157,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 8675309,
+          "narrowedKernelSeed": 8675309,
+          "repeat": 0,
+          "file": "seed-4-repeat-0.bin.gz",
+          "sha256": "6c8c57df8e4d4a4be9e2b4870c94dbdfe80272e4ad41748b70965bbfa053fdde",
+          "bytes": 2201005,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 8675309,
+          "narrowedKernelSeed": 8675309,
+          "repeat": 1,
+          "file": "seed-4-repeat-1.bin.gz",
+          "sha256": "6c8c57df8e4d4a4be9e2b4870c94dbdfe80272e4ad41748b70965bbfa053fdde",
+          "bytes": 2201005,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 4303642605,
+          "narrowedKernelSeed": 8675309,
+          "repeat": 0,
+          "file": "seed-5-repeat-0.bin.gz",
+          "sha256": "632b43c2513f46b49c982223bfe561d7b5fb5c2761efed1bd64f532b09d9f699",
+          "bytes": 2200999,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        },
+        {
+          "worldSeed": 4303642605,
+          "narrowedKernelSeed": 8675309,
+          "repeat": 1,
+          "file": "seed-5-repeat-1.bin.gz",
+          "sha256": "632b43c2513f46b49c982223bfe561d7b5fb5c2761efed1bd64f532b09d9f699",
+          "bytes": 2200999,
+          "cellRecords": 51684,
+          "tileSizeFactor": 3,
+          "batchCount": 6
+        }
+      ],
+      "freshContextsAgree": true,
+      "scope": "Actual terrain/rivers/climate points and complete production-filtered tile backings/halos; no native output used",
+      "notCovered": [
+        "Native kernel implementation",
+        "Every landscape/seed/preset",
+        "Intermediate individual filter snapshots",
+        "Game chunks or native client"
+      ]
+    },
+    "classicPillarCandidateSearch": {
+      "requested": false
+    },
+    "nativeColumnReplay": {
+      "requested": false
+    },
+    "classicBiomeTargetQualification": {
+      "requested": false
+    },
+    "classicBiomeStoredChunkChecks": {
+      "requested": false
+    },
+    "finishedAt": "2026-11-04T13:30:42.796978500Z",
+    "cleanStopRequested": true,
+    "holdAfterGeneration": false
+  },
+  "customTerrainSampleCount": 54,
+  "customTerrainChunkCount": 6,
+  "worldLevelDatExists": true,
+  "regionFileCount": 0,
+  "errorLines": [
+    "[05:30:24] [main/ERROR]: Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: "
+  ],
+  "tail": [
+    "[05:30:35] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:30:35] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:30:35] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:30:35] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:30:35] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:30:35] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[05:30:35] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:35.334217700Z\",\"detail\":\"Packaged origin and runtime recorded\",\"status\":\"passed\",\"name\":\"production-artifact\"}",
+    "[05:30:35] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:35.335217700Z\",\"detail\":\"Custom preset entry, RTFRandomState, GeneratorContext and TileCache are present\",\"status\":\"passed\",\"name\":\"custom-generator-active\"}",
+    "[05:30:36] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:36.745335200Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk-0,0\"}",
+    "[05:30:36] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:36.911865500Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk--1,-1\"}",
+    "[05:30:37] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:37.575819600Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk-7,0\"}",
+    "[05:30:37] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:37.726846600Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk-8,-1\"}",
+    "[05:30:38] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:38.363162500Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk--8,7\"}",
+    "[05:30:38] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:38.484889600Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk--9,8\"}",
+    "[05:30:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:30:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:30:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:30:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:30:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:30:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:30:38] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[05:30:38] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:38.536148100Z\",\"detail\":\"Actual server saveEverything completed with flush and force\",\"status\":\"passed\",\"name\":\"world-save-flush\"}",
+    "[05:30:42] [Server thread/INFO]: [STDOUT]: TEMPLATE_BIOME_DECORATOR_QA=pass assertions=3",
+    "[05:30:42] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:30:42.796978500Z\",\"detail\":\"Three production-helper assertions completed with real target holders\",\"status\":\"passed\",\"name\":\"biome-decorator-overrides\"}",
+    "[05:30:42] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_RESULT_JSON={\"schemaVersion\":1,\"mode\":\"generate\",\"qaThread\":\"Server thread\",\"startedAt\":\"2026-11-04T13:30:35.332221400Z\",\"serverStarted\":true,\"saveCompleted\":true,\"status\":\"passed\",\"nodes\":[{\"at\":\"2026-11-04T13:30:35.334217700Z\",\"detail\":\"Packaged origin and runtime recorded\",\"status\":\"passed\",\"name\":\"production-artifact\"},{\"at\":\"2026-11-04T13:30:35.335217700Z\",\"detail\":\"Custom preset entry, RTFRandomState, GeneratorContext and TileCache are present\",\"status\":\"passed\",\"name\":\"custom-generator-active\"},{\"at\":\"2026-11-04T13:30:36.745335200Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk-0,0\"},{\"at\":\"2026-11-04T13:30:36.911865500Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk--1,-1\"},{\"at\":\"2026-11-04T13:30:37.575819600Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk-7,0\"},{\"at\":\"2026-11-04T13:30:37.726846600Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk-8,-1\"},{\"at\":\"2026-11-04T13:30:38.363162500Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk--8,7\"},{\"at\":\"2026-11-04T13:30:38.484889600Z\",\"detail\":\"Full chunk and nine column/terrain samples recorded\",\"status\":\"passed\",\"name\":\"chunk--9,8\"},{\"at\":\"2026-11-04T13:30:38.536148100Z\",\"detail\":\"Actual server saveEverything completed with flush and force\",\"status\":\"passed\",\"name\":\"world-save-flush\"},{\"at\":\"2026-11-04T13:30:42.796978500Z\",\"detail\":\"Three production-helper assertions completed with real target holders\",\"status\":\"passed\",\"name\":\"biome-decorator-overrides\"}],\"notTested\":[\"Visual parity\",\"All presets and configuration extremes\",\"All biomes or structures\",\"Multiplayer clients\",\"Unlisted third-party mod combinations\",\"Controlled performance benchmark\"],\"runtime\":{\"minecraft\":\"26.2\",\"java\":\"25.0.5\",\"javaClassVersion\":\"69.0\",\"developmentEnvironment\":false,\"loader\":\"",
+    "[05:30:42] [Server thread/INFO]: Stopping server",
+    "[05:30:42] [Server thread/INFO]: Saving players",
+    "[05:30:42] [Server thread/INFO]: Saving worlds",
+    "[05:30:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:30:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:30:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:30:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:30:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:30:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:30:43] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved"
+  ],
+  "limitations": [
+    "Default vanilla world boot unless a generated preset datapack and companion QA mode were supplied",
+    "No client rendering or visual terrain parity tested",
+    "Only isolated loopback/offline QA server state was used"
+  ],
+  "finishedAt": "2026-11-04T13:30:43.971162+00:00"
+}

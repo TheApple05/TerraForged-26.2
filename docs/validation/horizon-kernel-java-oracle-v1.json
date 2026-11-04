@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-independent-java-kernel-reference",
+  "nativeImplementationPassed": false,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "freshJvmsAgree": true,
+  "freshContextsAgree": true,
+  "uniqueSeedCases": 6,
+  "recordsPerCaptureSet": 310104,
+  "recordsAcrossBothContextRepeats": 620208,
+  "originalReports": {
+    "docs\\validation\\server-horizon-kernel-dev23-java-oracle.json": "6a3b0ced48c45763f8d74dc1523da722679d6c53662162e2b56437f12dadb263",
+    "docs\\validation\\server-horizon-kernel-dev23-java-oracle-repeat.json": "b4b381573956d9c2e5890a1ecdfb16c922969a1d16f53508f67e11b8e61e423b"
+  },
+  "captures": [
+    {
+      "worldSeed": 0,
+      "narrowedKernelSeed": 0,
+      "repeat": 0,
+      "file": "seed-0-repeat-0.bin.gz",
+      "sha256": "46aea71644cc563446bee4d72fff0f9cc0be87d7ad85bbc8db565a3654c6a706",
+      "bytes": 2192753,
+      "cellRecords": 51684,
+      "tileSizeFactor": 3,
+      "batchCount": 6,
+      "kernelSeed": 0,
+      "stages": {
+        "terrain": 121,
+        "rivers": 121,
+        "climate-true": 121,
+        "climate-false": 121,
+        "filtered-tile": 51200
+      },
+      "layouts": [
+        {
+          "tileX": -1,
+          "tileZ": -1,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        },
+        {
+          "tileX": 0,
+          "tileZ": 0,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        }
+      ],
+      "fields": [
+        [
+          "beachNoise",
+          "float"
+        ],
+        [
+          "biome",
+          "raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType"
+        ],
+        [
+          "biomeRegionEdge",
+          "float"
+        ],
+        [
+          "biomeRegionId",
+          "float"
+        ],
+        [
+          "continentEdge",
+          "float"
+        ],
+        [
+          "continentId",
+          "float"
+        ],
+        [
+          "continentX",
+          "int"
+        ],
+        [
+          "continentZ",
+          "int"
+        ],
+        [
+          "erosion",
+          "float"
+        ],
+        [
+          "erosionMask",
+          "boolean"
+        ],
+        [
+          "gradient",
+          "float"
+        ],
+        [
+          "height",
+          "float"
+        ],
+        [
+          "heightErosion",
+          "float"
+        ],
+        [
+          "macroBiomeId",
+          "float"
+        ],
+        [
+          "moisture",
+          "float"
+        ],
+        [
+          "regionMoisture",
+          "float"
+        ],
+        [
+          "regionTemperature",
+          "float"
+        ],
+        [
+          "riverMask",
+          "float"
+        ],
+        [
+          "sediment",
+          "float"
+        ],
+        [
+          "temperature",
+          "float"
+        ],
+        [
+          "terrain",
+          "raccoonman.reterraforged.world.worldgen.cell.terrain.Terrain"
+        ],
+        [
+          "terrainRegionEdge",
+          "float"
+        ],
+        [
+          "terrainRegionId",
+          "float"
+        ],
+        [
+          "weirdness",
+          "float"
+        ]
+      ],
+      "terrainObservations": {
+        "flats-badlands": 4726,
+        "hills": 46958
+      },
+      "biomeObservations": {
+        "GRASSLAND": 22722,
+        "TEMPERATE_FOREST": 28962
+      },
+      "cellBodySha256": "5a2248d8e8d1e43c2973c04088925353999d87f065d8687aba8bd3ba34d7ffde"
+    },
+    {
+      "worldSeed": -1,
+      "narrowedKernelSeed": -1,
+      "repeat": 0,
+      "file": "seed-1-repeat-0.bin.gz",
+      "sha256": "a5198018dc608925edf9255d62c5456b7cf9125d77145bb40710c6d64ef5f4f9",
+      "bytes": 1415234,
+      "cellRecords": 51684,
+      "tileSizeFactor": 3,
+      "batchCount": 6,
+      "kernelSeed": -1,
+      "stages": {
+        "terrain": 121,
+        "rivers": 121,
+        "climate-true": 121,
+        "climate-false": 121,
+        "filtered-tile": 51200
+      },
+      "layouts": [
+        {
+          "tileX": -1,
+          "tileZ": -1,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        },
+        {
+          "tileX": 0,
+          "tileZ": 0,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        }
+      ],
+      "fields": [
+        [
+          "beachNoise",
+          "float"
+        ],
+        [
+          "biome",
+          "raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType"
+        ],
+        [
+          "biomeRegionEdge",
+          "float"
+        ],
+        [
+          "biomeRegionId",
+          "float"
+        ],
+        [
+          "continentEdge",
+          "float"
+        ],
+        [
+          "continentId",
+          "float"
+        ],
+        [
+          "continentX",
+          "int"
+        ],
+        [
+          "continentZ",
+          "int"
+        ],
+        [
+          "erosion",
+          "float"
+        ],
+        [
+          "erosionMask",
+          "boolean"
+        ],
+        [
+          "gradient",
+          "float"
+        ],
+        [
+          "height",
+          "float"
+        ],
+        [
+          "heightErosion",
+          "float"
+        ],
+        [
+          "macroBiomeId",
+          "float"
+        ],
+        [
+          "moisture",
+          "float"
+        ],
+        [
+          "regionMoisture",
+          "float"
+        ],
+        [
+          "regionTemperature",
+          "float"
+        ],
+        [
+          "riverMask",
+          "float"
+        ],
+        [
+          "sediment",
+          "float"
+        ],
+        [
+          "temperature",
+          "float"
+        ],
+        [
+          "terrain",
+          "raccoonman.reterraforged.world.worldgen.cell.terrain.Terrain"
+        ],
+        [
+          "terrainRegionEdge",
+          "float"
+        ],
+        [
+          "terrainRegionId",
+          "float"
+        ],
+        [
+          "weirdness",
+          "float"
+        ]
+      ],
+      "terrainObservations": {
+        "ocean": 36173,
+        "badlands-hills": 279,
+        "coast": 16,
+        "beach": 15216
+      },
+      "biomeObservations": {
+        "GRASSLAND": 929,
+        "TEMPERATE_FOREST": 50755
+      },
+      "cellBodySha256": "e026b22d0394b7a7a75f564fb516cb73d489c24dc5b506769a918269edb96c71"
+    },
+    {
+      "worldSeed": -2147483648,
+      "narrowedKernelSeed": -2147483648,
+      "repeat": 0,
+      "file": "seed-2-repeat-0.bin.gz",
+      "sha256": "fdbec5cfab5ed0a414fd41a9eb227d11cc3e48710d6536ac2c866ab5757d1863",
+      "bytes": 2152931,
+      "cellRecords": 51684,
+      "tileSizeFactor": 3,
+      "batchCount": 6,
+      "kernelSeed": -2147483648,
+      "stages": {
+        "terrain": 121,
+        "rivers": 121,
+        "climate-true": 121,
+        "climate-false": 121,
+        "filtered-tile": 51200
+      },
+      "layouts": [
+        {
+          "tileX": -1,
+          "tileZ": -1,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        },
+        {
+          "tileX": 0,
+          "tileZ": 0,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        }
+      ],
+      "fields": [
+        [
+          "beachNoise",
+          "float"
+        ],
+        [
+          "biome",
+          "raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType"
+        ],
+        [
+          "biomeRegionEdge",
+          "float"
+        ],
+        [
+          "biomeRegionId",
+          "float"
+        ],
+        [
+          "continentEdge",
+          "float"
+        ],
+        [
+          "continentId",
+          "float"
+        ],
+        [
+          "continentX",
+          "int"
+        ],
+        [
+          "continentZ",
+          "int"
+        ],
+        [
+          "erosion",
+          "float"
+        ],
+        [
+          "erosionMask",
+          "boolean"
+        ],
+        [
+          "gradient",
+          "float"
+        ],
+        [
+          "height",
+          "float"
+        ],
+        [
+          "heightErosion",
+          "float"
+        ],
+        [
+          "macroBiomeId",
+          "float"
+        ],
+        [
+          "moisture",
+          "float"
+        ],
+        [
+          "regionMoisture",
+          "float"
+        ],
+        [
+          "regionTemperature",
+          "float"
+        ],
+        [
+          "riverMask",
+          "float"
+        ],
+        [
+          "sediment",
+          "float"
+        ],
+        [
+          "temperature",
+          "float"
+        ],
+        [
+          "terrain",
+          "raccoonman.reterraforged.world.worldgen.cell.terrain.Terrain"
+        ],
+        [
+          "terrainRegionEdge",
+          "float"
+        ],
+        [
+          "terrainRegionId",
+          "float"
+        ],
+        [
+          "weirdness",
+          "float"
+        ]
+      ],
+      "terrainObservations": {
+        "hills": 4651,
+        "mountains_2": 47031,
+        "river": 2
+      },
+      "biomeObservations": {
+        "GRASSLAND": 23162,
+        "TEMPERATE_FOREST": 28522
+      },
+      "cellBodySha256": "f3799e5eab9c7195701088b0680e5e30c544f1efd876ad5a1df1a6d64294510a"
+    },
+    {
+      "worldSeed": 2147483647,
+      "narrowedKernelSeed": 2147483647,
+      "repeat": 0,
+      "file": "seed-3-repeat-0.bin.gz",
+      "sha256": "8b0da78d6ee8cc0adc220e3f3271af27ff8558a8c218f65df1c39f67db83e8ed",
+      "bytes": 1321157,
+      "cellRecords": 51684,
+      "tileSizeFactor": 3,
+      "batchCount": 6,
+      "kernelSeed": 2147483647,
+      "stages": {
+        "terrain": 121,
+        "rivers": 121,
+        "climate-true": 121,
+        "climate-false": 121,
+        "filtered-tile": 51200
+      },
+      "layouts": [
+        {
+          "tileX": -1,
+          "tileZ": -1,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        },
+        {
+          "tileX": 0,
+          "tileZ": 0,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        }
+      ],
+      "fields": [
+        [
+          "beachNoise",
+          "float"
+        ],
+        [
+          "biome",
+          "raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType"
+        ],
+        [
+          "biomeRegionEdge",
+          "float"
+        ],
+        [
+          "biomeRegionId",
+          "float"
+        ],
+        [
+          "continentEdge",
+          "float"
+        ],
+        [
+          "continentId",
+          "float"
+        ],
+        [
+          "continentX",
+          "int"
+        ],
+        [
+          "continentZ",
+          "int"
+        ],
+        [
+          "erosion",
+          "float"
+        ],
+        [
+          "erosionMask",
+          "boolean"
+        ],
+        [
+          "gradient",
+          "float"
+        ],
+        [
+          "height",
+          "float"
+        ],
+        [
+          "heightErosion",
+          "float"
+        ],
+        [
+          "macroBiomeId",
+          "float"
+        ],
+        [
+          "moisture",
+          "float"
+        ],
+        [
+          "regionMoisture",
+          "float"
+        ],
+        [
+          "regionTemperature",
+          "float"
+        ],
+        [
+          "riverMask",
+          "float"
+        ],
+        [
+          "sediment",
+          "float"
+        ],
+        [
+          "temperature",
+          "float"
+        ],
+        [
+          "terrain",
+          "raccoonman.reterraforged.world.worldgen.cell.terrain.Terrain"
+        ],
+        [
+          "terrainRegionEdge",
+          "float"
+        ],
+        [
+          "terrainRegionId",
+          "float"
+        ],
+        [
+          "weirdness",
+          "float"
+        ]
+      ],
+      "terrainObservations": {
+        "ocean": 48206,
+        "flats-hills": 54,
+        "beach": 3424
+      },
+      "biomeObservations": {
+        "GRASSLAND": 1170,
+        "TEMPERATE_FOREST": 50514
+      },
+      "cellBodySha256": "02650c6abd9a2f8ea7e0471c33807b19b05e2dea81529c732d8afba44dcabc35"
+    },
+    {
+      "worldSeed": 8675309,
+      "narrowedKernelSeed": 8675309,
+      "repeat": 0,
+      "file": "seed-4-repeat-0.bin.gz",
+      "sha256": "6c8c57df8e4d4a4be9e2b4870c94dbdfe80272e4ad41748b70965bbfa053fdde",
+      "bytes": 2201005,
+      "cellRecords": 51684,
+      "tileSizeFactor": 3,
+      "batchCount": 6,
+      "kernelSeed": 8675309,
+      "stages": {
+        "terrain": 121,
+        "rivers": 121,
+        "climate-true": 121,
+        "climate-false": 121,
+        "filtered-tile": 51200
+      },
+      "layouts": [
+        {
+          "tileX": -1,
+          "tileZ": -1,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        },
+        {
+          "tileX": 0,
+          "tileZ": 0,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        }
+      ],
+      "fields": [
+        [
+          "beachNoise",
+          "float"
+        ],
+        [
+          "biome",
+          "raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType"
+        ],
+        [
+          "biomeRegionEdge",
+          "float"
+        ],
+        [
+          "biomeRegionId",
+          "float"
+        ],
+        [
+          "continentEdge",
+          "float"
+        ],
+        [
+          "continentId",
+          "float"
+        ],
+        [
+          "continentX",
+          "int"
+        ],
+        [
+          "continentZ",
+          "int"
+        ],
+        [
+          "erosion",
+          "float"
+        ],
+        [
+          "erosionMask",
+          "boolean"
+        ],
+        [
+          "gradient",
+          "float"
+        ],
+        [
+          "height",
+          "float"
+        ],
+        [
+          "heightErosion",
+          "float"
+        ],
+        [
+          "macroBiomeId",
+          "float"
+        ],
+        [
+          "moisture",
+          "float"
+        ],
+        [
+          "regionMoisture",
+          "float"
+        ],
+        [
+          "regionTemperature",
+          "float"
+        ],
+        [
+          "riverMask",
+          "float"
+        ],
+        [
+          "sediment",
+          "float"
+        ],
+        [
+          "temperature",
+          "float"
+        ],
+        [
+          "terrain",
+          "raccoonman.reterraforged.world.worldgen.cell.terrain.Terrain"
+        ],
+        [
+          "terrainRegionEdge",
+          "float"
+        ],
+        [
+          "terrainRegionId",
+          "float"
+        ],
+        [
+          "weirdness",
+          "float"
+        ]
+      ],
+      "terrainObservations": {
+        "flats-hills": 38003,
+        "badlands-hills": 13681
+      },
+      "biomeObservations": {
+        "GRASSLAND": 363,
+        "TEMPERATE_FOREST": 51321
+      },
+      "cellBodySha256": "75379aaed5dffe02872ec848b65a884cd30bc116aca5d3f469c71b63b54d0362"
+    },
+    {
+      "worldSeed": 4303642605,
+      "narrowedKernelSeed": 8675309,
+      "repeat": 0,
+      "file": "seed-5-repeat-0.bin.gz",
+      "sha256": "632b43c2513f46b49c982223bfe561d7b5fb5c2761efed1bd64f532b09d9f699",
+      "bytes": 2200999,
+      "cellRecords": 51684,
+      "tileSizeFactor": 3,
+      "batchCount": 6,
+      "kernelSeed": 8675309,
+      "stages": {
+        "terrain": 121,
+        "rivers": 121,
+        "climate-true": 121,
+        "climate-false": 121,
+        "filtered-tile": 51200
+      },
+      "layouts": [
+        {
+          "tileX": -1,
+          "tileZ": -1,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        },
+        {
+          "tileX": 0,
+          "tileZ": 0,
+          "size": 128,
+          "border": 16,
+          "total": 160
+        }
+      ],
+      "fields": [
+        [
+          "beachNoise",
+          "float"
+        ],
+        [
+          "biome",
+          "raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType"
+        ],
+        [
+          "biomeRegionEdge",
+          "float"
+        ],
+        [
+          "biomeRegionId",
+          "float"
+        ],
+        [
+          "continentEdge",
+          "float"
+        ],
+        [
+          "continentId",
+          "float"
+        ],
+        [
+          "continentX",
+          "int"
+        ],
+        [
+          "continentZ",
+          "int"
+        ],
+        [
+          "erosion",
+          "float"
+        ],
+        [
+          "erosionMask",
+          "boolean"
+        ],
+        [
+          "gradient",
+          "float"
+        ],
+        [
+          "height",
+          "float"
+        ],
+        [
+          "heightErosion",
+          "float"
+        ],
+        [
+          "macroBiomeId",
+          "float"
+        ],
+        [
+          "moisture",
+          "float"
+        ],
+        [
+          "regionMoisture",
+          "float"
+        ],
+        [
+          "regionTemperature",
+          "float"
+        ],
+        [
+          "riverMask",
+          "float"
+        ],
+        [
+          "sediment",
+          "float"
+        ],
+        [
+          "temperature",
+          "float"
+        ],
+        [
+          "terrain",
+          "raccoonman.reterraforged.world.worldgen.cell.terrain.Terrain"
+        ],
+        [
+          "terrainRegionEdge",
+          "float"
+        ],
+        [
+          "terrainRegionId",
+          "float"
+        ],
+        [
+          "weirdness",
+          "float"
+        ]
+      ],
+      "terrainObservations": {
+        "flats-hills": 38003,
+        "badlands-hills": 13681
+      },
+      "biomeObservations": {
+        "GRASSLAND": 363,
+        "TEMPERATE_FOREST": 51321
+      },
+      "cellBodySha256": "75379aaed5dffe02872ec848b65a884cd30bc116aca5d3f469c71b63b54d0362"
+    }
+  ],
+  "fieldNames": [
+    "beachNoise",
+    "biome",
+    "biomeRegionEdge",
+    "biomeRegionId",
+    "continentEdge",
+    "continentId",
+    "continentX",
+    "continentZ",
+    "erosion",
+    "erosionMask",
+    "gradient",
+    "height",
+    "heightErosion",
+    "macroBiomeId",
+    "moisture",
+    "regionMoisture",
+    "regionTemperature",
+    "riverMask",
+    "sediment",
+    "temperature",
+    "terrain",
+    "terrainRegionEdge",
+    "terrainRegionId",
+    "weirdness"
+  ],
+  "files": {
+    "noise-registry.json": "fcbc63e86f003aec5159d5b2255c53509a436be92df6f1b98bc5ac995faec6dd",
+    "preset.json": "3a0b37fff526b4a310aa593728a07cff1aca2d307cdd84026906a8b0ae2d1e4a",
+    "seed-0-repeat-0.bin.gz": "46aea71644cc563446bee4d72fff0f9cc0be87d7ad85bbc8db565a3654c6a706",
+    "seed-1-repeat-0.bin.gz": "a5198018dc608925edf9255d62c5456b7cf9125d77145bb40710c6d64ef5f4f9",
+    "seed-2-repeat-0.bin.gz": "fdbec5cfab5ed0a414fd41a9eb227d11cc3e48710d6536ac2c866ab5757d1863",
+    "seed-3-repeat-0.bin.gz": "8b0da78d6ee8cc0adc220e3f3271af27ff8558a8c218f65df1c39f67db83e8ed",
+    "seed-4-repeat-0.bin.gz": "6c8c57df8e4d4a4be9e2b4870c94dbdfe80272e4ad41748b70965bbfa053fdde",
+    "seed-5-repeat-0.bin.gz": "632b43c2513f46b49c982223bfe561d7b5fb5c2761efed1bd64f532b09d9f699"
+  },
+  "scope": "Actual terrain/rivers/climate points and complete production-filtered tile backings/halos; no native output used",
+  "notCovered": [
+    "Native kernel implementation",
+    "Every landscape/seed/preset",
+    "Intermediate individual filter snapshots",
+    "Game chunks or native client"
+  ],
+  "archiveVerifierSha256": "44bc358d35900c60928bef483705e3c1c5c30a320f783bdb74b210ab34a5e592"
+}

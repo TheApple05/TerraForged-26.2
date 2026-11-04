@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-utilities-only",
+  "startedAtUtc": "2026-11-04T13:28:47.509644+00:00",
+  "fixtureSha256": "8070efecb62e736c3d22c64e8e22922ac468c0350804d3f8e0bfe615f3d35dc5",
+  "upstreamCommit": "29239f1f164d19dbfcccaca4a8277d64e784207c",
+  "recordsPerProfile": 422,
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "outputSha256": "e5e0aa7b819c9f9ee735eed0df4f369c8e61f411d56b01a38896136b8881a0c7",
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "allJavaValuesMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "outputSha256": "e5e0aa7b819c9f9ee735eed0df4f369c8e61f411d56b01a38896136b8881a0c7",
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "allJavaValuesMatch": true
+    }
+  ],
+  "scope": "Frozen coordinate packing, signed-zero float packing, seed sequences and seeded FastRandom streams; no terrain activation.",
+  "notCovered": [
+    "Every public utility API/input",
+    "Arbitrary 64-bit seeds/gammas",
+    "Dedicated RNG rejection-loop corpus",
+    "Cell/tile/rivers",
+    "Native infinite generation"
+  ],
+  "sourceSha256Lf": {
+    "horizon/native-core/src/seed.rs": "7c296bc1bc07539034fd4f704e41b298d621173e9dd18158551ad7d78cf64430",
+    "horizon/native-core/src/pos_util.rs": "09237ff99c85e800b07e965d2af4b8cbc5132b1525ae51930f74212728dfcb6f",
+    "horizon/native-core/src/fast_random.rs": "475dbaf5fb1b3a71b159c4d4d4ed4d1b1b66677aef151e54721eb951513f024f",
+    "horizon/native-core/src/bin/utility_probe.rs": "293b0003ff5cd147c3aeeeafad73f486e8935e4563286fc127616b7f577c8ebc"
+  },
+  "finishedAtUtc": "2026-11-04T13:28:48.581656+00:00",
+  "verifierSha256": "0a8da7feadcfe80c275636a0f715b17a7a9173029849a3f84bfac17419dcbfec"
+}

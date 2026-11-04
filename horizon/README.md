@@ -11,6 +11,19 @@ terrain from the same blocks, and never invokes Java while playing. Missing
 chunks, wrong seeds, altered snapshots and unknown block/biome IDs fail. There
 is no vanilla terrain fallback outside the prepared area.
 
+The exact dev23 [native probe](../docs/validation/horizon-current-dev23.json)
+matches 884,736 block states, 13,824 quart-biome samples and 2,304 heightmap/LOD
+columns. The minimal hook change is merged into the user's Horizon repository
+as `21679eb68f770d3ac1c2cc1c51a535eea37787ab`, with the same tested source tree.
+The [dev23 package](../docs/validation/horizon-package-dev23.json) retains the
+finite-prototype label and contains neither snapshots nor prepared resources.
+
+Procedural work is isolated in [native-core](native-core/README.md). Its scalar,
+vector and Perlin/Simplex foundation matches independently captured Java raw
+float results in debug and release. It is not yet connected to world generation
+and is not included in the prepared bundle. The complete cell/tile and native
+density/surface/cave pipeline remains required for infinite terrain.
+
 The player-facing bundle is under `mixins/terraforged_prepared/`. It uses the
 actual Horizon world-generator constructor through horizon-mixins, pinned to
 Horizon `9dd5c4093977c718c5c0349032fd3a5434e86afc` and mixins

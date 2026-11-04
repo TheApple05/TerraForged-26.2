@@ -1,43 +1,57 @@
-# Development candidate installation
+# Install the development candidate
 
-Target: **Minecraft Java 26.2**, using **Java 25**. Current candidate: **0.1.0-dev.11+26.2**. These are development candidates for new test worlds; a stable release and broad modpack compatibility certification are still pending. See [runtime evidence](validation/runtime-summary.md) and [known feature gaps](FEATURE-PARITY.md).
+Use **Minecraft Java 26.2** and **Java 25**. Current candidate: **0.1.0-dev.23+26.2**. It is intended for new test worlds and modpack evaluation. Exact compatibility results are in [dev23 readiness](validation/dev23-readiness.md); [controlled performance qualification](validation/dev23-performance.md) passes on the recorded local workloads.
 
-## Choose the matching loader
+## Choose the loader
 
-- **Fabric:** install Fabric Loader 0.20.1 and Fabric API 0.161.0+26.2. Add the Fabric `terraforged-revival-â€¦+26.2.jar` to the instance's `mods` folder.
-- **NeoForge:** install NeoForge 26.2.0.93. Add `terraforged-revival-â€¦+26.2-neoforge.jar` to `mods`. Fabric API is not a NeoForge dependency.
+- Fabric Loader **0.20.1**, Fabric API **0.161.0+26.2**, and `terraforged-revival-0.1.0-dev.23+26.2.jar`.
+- NeoForge **26.2.0.93** and `terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar`. Fabric API is not needed here.
 
-Install one loader's TerraForged artifact per instance. The repository's historical `forge/` directory is reference source, not another supported 26.2 loader.
+Put only the matching production JAR in the instance's `mods` directory. Do not distribute QA companions, downloaded compatibility mods, developer fixtures or both loader builds together. The historical `forge/` directory is reference source.
 
-## Create a custom world
+[The coherent package record](validation/dual-loader-dev23-build.json) contains the exact SHA-256 values and build inputs. Both packages retain upstream licenses and notices.
 
-1. Open **Singleplayer â†’ Create New World â†’ World**.
-2. Keep the default world type and open **Customize** to enter **Presets & Defaults**.
-3. Select **Default**, then use **>>** to edit it. The remaining pages cover world, caves, climate, terrain, rivers, filters, structures, and miscellaneous settings.
-4. Set the seed and settings, then select **Done**. Minecraft shows its validation screen and returns when the generated preset datapack is ready.
-5. Create the world and accept Minecraft's settings confirmation if shown.
+## Create a world
 
-The actual Default editor, seed, repeated continent-scale changes, Done/export/reload, world creation, terrain rendering, and subsequent normal-world loading have production QA records. Other presets and every combination of controls still need coverage. The live preview is a diagnostic map; in-game terrain remains the visual acceptance reference.
+1. Open **Singleplayer > Create New World > World**.
+2. Keep the default world type and select **Customize**, opening **Presets & Defaults**.
+3. Select **Default**, then **>>** to edit it. The editor includes world, caves, climate, terrain, rivers, filters, structures and miscellaneous settings.
+4. Set the seed and settings, then **Done**. Wait for Minecraft's preset validation to finish.
+5. Create the world and accept the settings confirmation if shown.
 
-Saved preset JSON lives in `config/reterraforged/presets`. The **Preset Folder** button opens it. **Export Pack** writes a datapack ZIP under `config/reterraforged/exports`; **Export Folder** opens that directory.
+**Classic Biome Variants** independently controls the 17 restored variants. New built-in presets enable it. Older serialized presets lacking the field keep it disabled; enable it explicitly when desired. This is independent of custom biome vegetation. Modern cave biomes and third-party biome ownership are preserved by the selector.
 
-## Dedicated servers and modpacks
+Presets are saved under `config/reterraforged/presets`. **Preset Folder** opens that directory. **Export Pack** creates a datapack ZIP under `config/reterraforged/exports`; **Export Folder** opens it. Preview maps are diagnostics; actual terrain captures are the visual reference.
 
-Create and configure a new world through a matching-loader client, then copy its complete world folder to a stopped matching-loader server and set `level-name` to that folder. Keep the world datapacks and matching mod dependencies together. Do not put the QA companion JARs in a modpack.
+## Servers and modpacks
 
-Normal worlds remain available when a TerraForged preset datapack is absent. Switching settings does not regenerate existing chunks. Preset exports use loader-native biome-modifier registry paths; cross-loader migration of an exported pack is not yet validated.
+Create a new world with a matching-loader client, close it, and copy the complete world folder to a stopped matching-loader server. Set `level-name` to that folder and retain its datapacks and matching dependencies. Use an export made with the intended content stack so its biomes, modifiers and surface rules are represented.
 
-The pinned tested content stack is Biomes O' Plenty **26.2.0.0.28 beta**, GlitchCore **26.2.0.0.0 beta**, and TerraBlender **26.2.0.0.2** on each matching loader. The mod contains a narrowly guarded correction for that TerraBlender release's surface serializer registration. See [stack evidence and exact hashes](validation/modpack-biomesoplenty-dev10.md). These checks do not certify every biome/content mod that uses TerraBlender. Add a modpack's other world-generation mods incrementally and use the [issue tracker](https://github.com/TheApple05/TerraForged-26.2/issues) for failures, including loader/mod versions, seed, preset, and the crash report.
+The dedicated tests cover fresh generation and cold reload. Real loopback clients also join the combined BOP/Repurposed Structures/optimization stack on both loaders, synchronize all 17 classic definitions and receive terrain. This is one disposable offline QA identity, not public authentication or a multiplayer load test.
 
-## Build from source
+Normal worlds remain available without a TerraForged preset. Existing chunks are not regenerated when settings change. Classic-world import and cross-loader world/datapack migration are unverified.
 
-Use a full Java 25 JDK. On Windows the helper selects Java for this invocation without changing global settings:
+The [pinned compatibility inventory](validation/compatibility-26.2-artifacts.json) and [BOP inventory](validation/modpack-biomesoplenty-26.2-artifacts.json) record exact versions and hashes. Tested stacks include C2ME, Lithium, FerriteCore, BOP, GlitchCore, TerraBlender and Repurposed Structures. C2ME builds are alpha; BOP/GlitchCore builds are beta. ModernFix-mVUS is a separately tested **community port**, not an upstream 26.2 ModernFix release.
+
+Sodium/Iris/Distant Horizons with an active Complementary Reimagined shader passed the recorded nearby-render/client flow. Distant LODs were incomplete in brief captures; artifact-free far-distance rendering and FPS are not accepted. See [visual review](validation/visual-review-dev23.md). Each additional pack combination needs its own new-world check.
+
+## Performance settings
+
+`config/reterraforged/performance_internal.conf` is a UTF-8 properties file. It is created when absent. Defaults are `tileSize=3`, `batchCount=6`, and a worker count based on the JVM-visible CPU count. Restart after editing.
+
+Bounds are tile size 1..5, batch count 1..20 and worker count 1..twice the JVM-visible processors, capped at 256. Larger tiles increase memory quadratically. Invalid or unknown values are logged and retain the original file while safe defaults are used. Use the defaults for initial pack checks; measured local budgets are not minimum-hardware promises.
+
+## Build and reproduce
+
+Use a full Java 25 JDK:
 
 ```powershell
-& .\tools\gradle.ps1 -GradleArgs @('jar','-PexperimentalPackage','--console=plain')
-& .\tools\gradle.ps1 -GradleArgs @('--project-dir=neoforge','jar','-PexperimentalPackage','--console=plain')
+& .\tools\gradle.ps1 -JavaHome <JDK25> -GradleArgs @('jar','-PexperimentalPackage','--console=plain')
+& .\tools\gradle.ps1 -JavaHome <JDK25> -GradleArgs @('--project-dir=neoforge','jar','-PexperimentalPackage','--console=plain')
 ```
 
-Fabric output is under `build/libs`; NeoForge output is under `neoforge/build/libs`. Each package includes license notices. `tools/qa/package_candidates.py` records source/configuration snapshots and SHA-256 values for a coherent two-loader build. The GitHub packaging workflow retains experimental artifacts and does not perform client visual acceptance.
+Fabric outputs to `build/libs`; NeoForge to `neoforge/build/libs`. `tools/qa/package_candidates.py` creates immutable versioned candidates with source snapshots and SHA-256 records. The hosted packaging workflow checks both loaders; production game QA remains separate.
 
-To regenerate or check English translations from the actual Java provider, use `python tools/generate_language.py --java-home <JDK-directory>`; add `--write` to update the checked-in asset. The generator requires the resolved target classpath and compiled production classes from a previous build.
+The English provider produces 296 entries. Run `python tools/generate_language.py --java-home <JDK25>` to check the generated asset after a build, adding `--write` only for an intended update.
+
+Report reproducible failures in the [issue tracker](https://github.com/TheApple05/TerraForged-26.2/issues), including loader/mod versions, seed, preset, logs and crash report. The [feature inventory](FEATURE-PARITY.md) retains unsupported classic details, island spawning, broad preset extremes and migration gaps.

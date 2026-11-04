@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAtUtc": "2026-11-04T12:57:15.135953+00:00",
+  "performanceEvidence": false,
+  "scope": "Functional production export, own-stack preset consumption, actual generation and disk reload; optional actual structure checks",
+  "cases": [
+    {
+      "loader": "neoforge",
+      "case": "modernfix-community",
+      "status": "passed",
+      "artifactSha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+      "qaSha256": "51af6b7d045ab39d864302b6e12310a0217950b520e82b21b108fb9d11fddb78",
+      "extraMods": [
+        {
+          "slug": "modernfix-mvus",
+          "loader": "neoforge",
+          "projectId": "TjSm1wrD",
+          "title": "ModernFix-mVUS",
+          "publisherSourceUrl": "https://github.com/coredex-source/ModernFix---mVUS",
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": "https://github.com/coredex-source/ModernFix---mVUS/blob/1.21.10/LICENSE"
+          },
+          "versionId": "dyZhmjnd",
+          "versionNumber": "5.27.21+mc26.2",
+          "versionType": "release",
+          "datePublished": "2026-09-16T16:35:59.495509Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "modernfix-neoforge-5.27.21+mc26.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/TjSm1wrD/versions/dyZhmjnd/modernfix-neoforge-5.27.21%2Bmc26.2.jar",
+          "versionUrl": "https://modrinth.com/mod/modernfix-mvus/version/dyZhmjnd",
+          "publishedHashes": {
+            "sha512": "e6548dcba1ea0d54d58127966d2407d46a4b9cd09cb9cc34b8dbaa0fd05f49b1de60b6dc5b04ac3aacbc4ec5b6b19183ce17303e5994c03a7e7f0923031bd010",
+            "sha1": "6f4ac871338ecf0c51103f30d1327846854eca90"
+          },
+          "sha256": "857c90f486f271953ac9e3f8920486f930fd75e075611ad56a2d51d0ac2af767",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/neoforge/modernfix-neoforge-5.27.21+mc26.2.jar",
+          "bytes": 505514,
+          "communityPort": true,
+          "category": "mod"
+        }
+      ],
+      "exportReport": "docs/validation/server-dev23-neo-modernfix-neoforge-modernfix-community-export.json",
+      "exportReportSha256": "d510efe5c19e5694dd30239e39ec018a594ccbfc3a7cea95d07bd5748999a352",
+      "generationReport": "docs/validation/server-dev23-neo-modernfix-neoforge-modernfix-community-generation.json",
+      "reloadReport": "docs/validation/server-dev23-neo-modernfix-neoforge-modernfix-community-reload.json",
+      "generationReportSha256": "98ed49ed51bf38767f26f645dc5445d16248d8061bf5055dcf4424b1c0b3d0aa",
+      "reloadReportSha256": "67623357f2a4caf7beeb539fd7a97184b9d51d17c5f62af55e74e575a9a2d475",
+      "exportedFiles": 2044,
+      "consumedPackMatchesEveryExportedFile": true,
+      "generationDigest": "49a2646543c4fb35c0bce4c01347e0c549139196fe9c379f4572f12df686d910",
+      "reloadDigest": "49a2646543c4fb35c0bce4c01347e0c549139196fe9c379f4572f12df686d910",
+      "registeredClassicVariants": 17,
+      "classicSourceCodecRoundTrip": true,
+      "observedBiomes": [
+        "minecraft:birch_forest",
+        "minecraft:plains"
+      ],
+      "structureChecks": null,
+      "structureReloadChecks": null
+    }
+  ],
+  "notTested": [
+    "All modpacks",
+    "Client rendering",
+    "Multiplayer",
+    "Controlled performance"
+  ],
+  "failures": [],
+  "finishedAtUtc": "2026-11-04T12:59:05.532848+00:00",
+  "harnessSha256": "9bfb9446c7bb4d14d760784616665c7d3e2d60d9b5dbfb115ddb99226dfb8504"
+}

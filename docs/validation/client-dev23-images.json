@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "status": "archived-byte-exact",
+  "reports": [
+    {
+      "report": "docs/validation/client-fabric-dev23-base.json",
+      "reportSha256": "afbdc4e9b60a10794a99d1d393056bfd791e9ac1934a8cfc94495c4d875294ac",
+      "images": [
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/01-title.png",
+          "sha256": "fe23d0eed6f88410738015f456b6142b68500e78be3754c46ecbf9754f08d474",
+          "bytes": 652324,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/02-create-world.png",
+          "sha256": "d9c3236c2328450f19240f0087b15432f9d67d154507be74286ed1abbdf6fb15",
+          "bytes": 289756,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/03-preset-list.png",
+          "sha256": "aca5907a1e5d45113309f8035f1ad3e3731f76fcdd2845ebdfd49a9c53177a48",
+          "bytes": 268885,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/04-preset-editor-before.png",
+          "sha256": "290338b36c47655677bca16796e524347b81bff0b25d3c906d987a6ed5fa05ec",
+          "bytes": 251835,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/05-preset-editor-after.png",
+          "sha256": "51898ba2d48650ca8ee4e86b865520608164054bec46b11449cca4faedb5151c",
+          "bytes": 271602,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/06-custom-terrain.png",
+          "sha256": "347f64dcacfb12c8871b84184faee36174fe9ba818140b3404aeb3e1d5c10630",
+          "bytes": 886549,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-base/07-vanilla-after-custom.png",
+          "sha256": "a55ffcecfcea524219a5858cf4233dbc90ebef2afcf7034c921f4cc5e5bfb1b7",
+          "bytes": 1006227,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    },
+    {
+      "report": "docs/validation/client-neoforge-dev23-base.json",
+      "reportSha256": "3704bb8b6e194b5308e4e70d7a6b3b5a6b92597c48dbdb85599ee22f53fa3a5a",
+      "images": [
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/01-title.png",
+          "sha256": "20a701ff22a39fd3bbc7ee22a78ee050f63de1b4d4661898afabe2eb58e7f2d5",
+          "bytes": 631130,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/02-create-world.png",
+          "sha256": "2a7c13a37c4291437bd1b8e8e3c8ff301ef3b01859f95b5b0ff48a8d973d5b77",
+          "bytes": 290173,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/03-preset-list.png",
+          "sha256": "d560683122338d203bec690abaf2be52cf09f7878f1f8397db33483602f3edad",
+          "bytes": 269287,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/04-preset-editor-before.png",
+          "sha256": "94854300bce972a47c160fc577dd6d3f721f2698e9ee67c0489a8502b3375496",
+          "bytes": 251831,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/05-preset-editor-after.png",
+          "sha256": "1aae9901b73ebf1e31c8eba80e16ceb95104ad5ea3bfa8e7b2ac133a2d8b0923",
+          "bytes": 271388,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/06-custom-terrain.png",
+          "sha256": "8aaa5114bd41c67f0b18015441ff757abe81530035bbbede5d40d53199578f0d",
+          "bytes": 845059,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-base/07-vanilla-after-custom.png",
+          "sha256": "fd091f8800857374aa054326953507c13dce97abb8be3824ae3b982d1c94271f",
+          "bytes": 995714,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    },
+    {
+      "report": "docs/validation/client-fabric-dev23-content-shader.json",
+      "reportSha256": "d796741348faa690c1985782fdfe07dd5b361394abf1fb04aae640d2228ca3a0",
+      "images": [
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/01-title.png",
+          "sha256": "bf2b2939b4549cee91a104c865a6b7b59c520ef969f322e64c2346ae427043db",
+          "bytes": 651580,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/02-create-world.png",
+          "sha256": "9bb00498705862c3785197ba10b7efb95f5004149afaf181f08bc58ef9297b2a",
+          "bytes": 290118,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/03-preset-list.png",
+          "sha256": "5007aaa8076db82263673e2212e13a0ccfff1715a2424b45dca68913a55a6707",
+          "bytes": 269600,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/04-preset-editor-before.png",
+          "sha256": "a13a05f8fff3a63bad3abbf939412464ae5572e25cf56c364078e1dca05c87a1",
+          "bytes": 252100,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/05-preset-editor-after.png",
+          "sha256": "febc9ef96a22258a4cb296b004ba12481e6290105127ce46a9399bcadf8267c5",
+          "bytes": 271857,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/06-custom-terrain.png",
+          "sha256": "b96d55a9e0266c9e88652733f87bf831950cc2de8f1a0bb08ab99c775fad29d1",
+          "bytes": 2219115,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-content-shader/07-vanilla-after-custom.png",
+          "sha256": "1a7d20c1fe1fc3b1fd234301b958b3885ea0006ad3c3343db744d3e1dc48e5eb",
+          "bytes": 2103676,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    },
+    {
+      "report": "docs/validation/client-neoforge-dev23-content-shader.json",
+      "reportSha256": "9717ba00f8fe40c484093cbd5a736c21cfc4b2002f81a1bbfb18f0aa36316c86",
+      "images": [
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/01-title.png",
+          "sha256": "7468aa2e565d68f721f14fa11dd6f305422e3cb18581ab1a4b56d5526d8e8bab",
+          "bytes": 860917,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/02-create-world.png",
+          "sha256": "f8f38eb6af56a885c0b437cb5b8624edc5fdc715d9b929b6f4d34a102a7c1a81",
+          "bytes": 289770,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/03-preset-list.png",
+          "sha256": "70a4dda6a49ae16a99a66143a7a397a713c5b0739fb389fd7ec7a24f6cf787f3",
+          "bytes": 269125,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/04-preset-editor-before.png",
+          "sha256": "6d7306dcf05c46089281448bd40f25a5ff9a34129441a7830e41c7a00fc90ade",
+          "bytes": 251369,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/05-preset-editor-after.png",
+          "sha256": "9e71640c923f3ead601780305661c50881ee9845fae1b98f51d1b65d0059260e",
+          "bytes": 270433,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/06-custom-terrain.png",
+          "sha256": "a69abac957b5434af485d3a487264f3f282bc49d3aafcd83aa14dde26e53320a",
+          "bytes": 2246626,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-neoforge-dev23-content-shader/07-vanilla-after-custom.png",
+          "sha256": "bd4e4d9fa806f0f921e3b21a0d24cddf501e40f3625c9c3a3d1a1e5f5ab9f6ff",
+          "bytes": 2160524,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    }
+  ],
+  "imageCount": 28,
+  "scope": "Actual native Screenshot.grab output; archival checks do not establish visual approval."
+}

@@ -1,0 +1,72 @@
+{
+  "buildReport": "docs/validation/dual-loader-dev23-build.json",
+  "corpora": {
+    "fabric": "docs/validation/classic-biome-dev23-fabric-corpus.json",
+    "neoforge": "docs/validation/classic-biome-dev23-neoforge-corpus.json"
+  },
+  "compatibility": [
+    "docs/validation/compatibility-dev23-fabric.json",
+    "docs/validation/compatibility-dev23-neoforge-optimized.json",
+    "docs/validation/compatibility-dev23-neoforge-modernfix.json",
+    "docs/validation/compatibility-dev23-neoforge-content.json"
+  ],
+  "clients": [
+    {
+      "loader": "fabric",
+      "stack": "base",
+      "report": "docs/validation/client-fabric-dev23-base.json"
+    },
+    {
+      "loader": "fabric",
+      "stack": "shader-content",
+      "report": "docs/validation/client-fabric-dev23-content-shader.json"
+    },
+    {
+      "loader": "neoforge",
+      "stack": "base",
+      "report": "docs/validation/client-neoforge-dev23-base.json"
+    },
+    {
+      "loader": "neoforge",
+      "stack": "shader-content",
+      "report": "docs/validation/client-neoforge-dev23-content-shader.json"
+    }
+  ],
+  "imageArchives": [
+    "docs/validation/client-dev23-images.json",
+    "docs/validation/client-dev23-pillar-images.json"
+  ],
+  "loopbacks": {
+    "fabric": "docs/validation/loopback-fabric-dev23-content.json",
+    "neoforge": "docs/validation/loopback-neoforge-dev23-content.json"
+  },
+  "linux": {
+    "fabric": [
+      "docs/validation/server-linux-fabric-dev23-generation.json",
+      "docs/validation/server-linux-fabric-dev23-reload.json"
+    ],
+    "neoforge": [
+      "docs/validation/server-linux-neoforge-dev23-generation.json",
+      "docs/validation/server-linux-neoforge-dev23-reload.json"
+    ]
+  },
+  "cacheLifecycle": {
+    "fabric": "docs/validation/cache-lifecycle-fabric-dev23.json",
+    "neoforge": "docs/validation/cache-lifecycle-neoforge-dev23.json"
+  },
+  "cacheScopes": {
+    "fabric": "docs/validation/server-fabric-dev23-cache-scope-probe.json",
+    "neoforge": "docs/validation/server-neoforge-dev23-cache-scope-probe.json"
+  },
+  "nativeColumns": "docs/validation/native-columns-dev18-dev23.json",
+  "cacheReentry": {
+    "fabric": "docs/validation/server-fabric-dev23-cache-reentry-probe.json",
+    "neoforge": "docs/validation/server-neoforge-dev23-cache-reentry-probe.json"
+  },
+  "ci": "docs/validation/ci-dev23-source.json",
+  "benchmarkSession": "docs/validation/benchmark-dev23-host-session.json",
+  "benchmarks": [
+    "docs/validation/benchmark-dev23-base.json",
+    "docs/validation/benchmark-dev23-optimized.json"
+  ]
+}

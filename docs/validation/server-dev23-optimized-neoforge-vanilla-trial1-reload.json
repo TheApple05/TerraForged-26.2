@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 1,
+  "minecraft": "26.2",
+  "loader": "neoforge",
+  "neoforge": "26.2.0.93",
+  "preparation": {
+    "template": "build/qa/neoforge-server/template",
+    "neoforge": "26.2.0.93",
+    "minecraft": "26.2",
+    "installerUrl": "https://maven.neoforged.net/releases/net/neoforged/neoforge/26.2.0.93/neoforge-26.2.0.93-installer.jar",
+    "installerSha256": "7618883b9d87186281da2bd2a5e9a11af042ed15112bb63ccfc62bb0230ca699",
+    "matchesPublishedInstaller": true,
+    "minecraftMetadataSha1": "09165f570b16394790c4e37c93b0918729615d17",
+    "minecraftMetadataMatchesPublishedContentHash": true,
+    "minecraftServerSha1": "823e2250d24b3ddac457a60c92a6a941943fcd6a",
+    "argsFile": "libraries/net/neoforged/neoforge/26.2.0.93/win_args.txt"
+  },
+  "jvmCommand": [
+    "C:\\Users\\Main\\AppData\\Local\\Programs\\Java\\jdk-25.0.5+8\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx3G",
+    "-Xlog:class+load=info:file=qa-runs/2b2117f0dc/class-load.log:level,tags",
+    "-Dterraforged.qa.mode=benchmark-reload",
+    "-Dterraforged.qa.output=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T132606Z-ebc198\\qa-output",
+    "-Dterraforged.qa.expectedModSha256=61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+    "-Xms1G",
+    "-Xmx4G",
+    "-XX:+UseG1GC",
+    "-XX:ActiveProcessorCount=8",
+    "-Dterraforged.qa.vanillaControl=true",
+    "@libraries/net/neoforged/neoforge/26.2.0.93/win_args.txt",
+    "nogui"
+  ],
+  "instance": "build/qa/neoforge-server/instances/20261104T132606Z-ebc198",
+  "pid": 71088,
+  "artifact": "neoforge/build/libs/terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar",
+  "artifactSha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+  "extraMods": [
+    {
+      "path": "build/qa/neoforge-runtime-dev23/terraforged-neoforge-runtime-qa.jar",
+      "sha256": "51af6b7d045ab39d864302b6e12310a0217950b520e82b21b108fb9d11fddb78"
+    },
+    {
+      "path": "build/qa/modpack-compat-expanded/neoforge/c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+      "sha256": "d7d39638b373109a5f1ad85398850e8543bb3765f4087512f4a74a165c1ab66d"
+    },
+    {
+      "path": "build/qa/modpack-compat-expanded/neoforge/lithium-neoforge-0.25.3+mc26.2.jar",
+      "sha256": "7a080146f5c428e3a4a34cc3526c57c71cace5e962019081cb1d45c9d55dec7a"
+    },
+    {
+      "path": "build/qa/modpack-compat-expanded/neoforge/ferritecore-9.0.0-neoforge.jar",
+      "sha256": "a3292dadb1caf7ad220d3a4b68abff2ad58592ddd372160f9cf66c57d159b539"
+    }
+  ],
+  "serverProperties": {
+    "server-ip": "127.0.0.1",
+    "server-port": 59079,
+    "online-mode": "false",
+    "enable-query": "false",
+    "enable-rcon": "false",
+    "level-name": "qa-world",
+    "level-seed": 8675309,
+    "level-type": "minecraft:normal",
+    "view-distance": 2,
+    "simulation-distance": 2,
+    "max-players": 1,
+    "pause-when-empty-seconds": -1,
+    "max-tick-time": 60000,
+    "sync-chunk-writes": "true"
+  },
+  "developmentMode": false,
+  "qaMode": "benchmark-reload",
+  "rawLog": "build/qa/neoforge-server/instances/20261104T132606Z-ebc198/qa-runs/2b2117f0dc/stdout.log",
+  "forcedStop": false,
+  "processMemory": {
+    "peakResidentBytes": 1162412032,
+    "samples": 111,
+    "scope": "Entire owned Java process, including startup and shutdown",
+    "source": "Windows PeakWorkingSetSize",
+    "samplingIntervalSeconds": 0.1,
+    "errors": []
+  },
+  "logReaderCompleted": true,
+  "status": "passed",
+  "processExit": 0,
+  "ready": true,
+  "startupReached": true,
+  "saveObserved": true,
+  "cleanStop": true,
+  "artifactOriginObserved": true,
+  "targetGameObserved": true,
+  "artifactUnchanged": true,
+  "runtimeQa": {
+    "schemaVersion": 1,
+    "mode": "benchmark-reload",
+    "qaThread": "Server thread",
+    "startedAt": "2026-11-04T13:26:37.574554900Z",
+    "serverStarted": true,
+    "saveCompleted": true,
+    "status": "passed",
+    "nodes": [
+      {
+        "detail": "Packaged origin and runtime recorded",
+        "status": "passed",
+        "name": "production-artifact",
+        "at": "2026-11-04T13:26:37.576540700Z"
+      },
+      {
+        "detail": "All 64 full-height column hashes, heights and biome holders match the same world's saved baseline",
+        "status": "passed",
+        "name": "benchmark-reload-columns",
+        "at": "2026-11-04T13:26:38.309876500Z"
+      },
+      {
+        "detail": "64 persisted FULL chunks and 64 resident rereads; saved full-height columns verified",
+        "status": "passed",
+        "name": "benchmark-full-chunks",
+        "at": "2026-11-04T13:26:38.433696Z"
+      },
+      {
+        "detail": "Three production-helper assertions completed with real target holders",
+        "status": "passed",
+        "name": "biome-decorator-overrides",
+        "at": "2026-11-04T13:26:38.442333600Z"
+      }
+    ],
+    "notTested": [
+      "Visual parity",
+      "All presets and configuration extremes",
+      "All biomes or structures",
+      "Multiplayer clients",
+      "Unlisted third-party mod combinations",
+      "Performance outside this controlled benchmark"
+    ],
+    "runtime": {
+      "minecraft": "26.2",
+      "java": "25.0.5",
+      "javaClassVersion": "69.0",
+      "developmentEnvironment": false,
+      "loader": "26.2.0.93",
+      "modVersion": "0.1.0-dev.23+26.2",
+      "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T132606Z-ebc198\\mods\\terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar",
+      "modSha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+      "expectedModSha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+      "loaderModOrigins": [
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T132606Z-ebc198\\mods\\terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar"
+      ]
+    },
+    "generator": "vanilla-control",
+    "benchmarkEnvironment": {
+      "terrainPoolCoreSize": 8,
+      "vmName": "OpenJDK 64-Bit Server VM",
+      "maxHeapBytes": 4294967296,
+      "nativeWorldHeight": [
+        -64,
+        319
+      ],
+      "vmArguments": [
+        "-Xms512M",
+        "-Xmx3G",
+        "-Xlog:class+load=info:file=qa-runs/2b2117f0dc/class-load.log:level,tags",
+        "-Dterraforged.qa.mode=benchmark-reload",
+        "-Dterraforged.qa.output=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T132606Z-ebc198\\qa-output",
+        "-Dterraforged.qa.expectedModSha256=61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+        "-Xms1G",
+        "-Xmx4G",
+        "-XX:+UseG1GC",
+        "-XX:ActiveProcessorCount=8",
+        "-Dterraforged.qa.vanillaControl=true",
+        "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED",
+        "--add-exports=jdk.naming.dns/com.sun.jndi.dns=java.naming",
+        "-Djava.net.preferIPv6Addresses=system",
+        "-DlibraryDirectory=libraries"
+      ],
+      "seed": 8675309,
+      "java": "25.0.5",
+      "availableProcessors": 8,
+      "terrainSettings": "PerformanceConfig[tileSize=3, batchCount=6, threadCount=8]"
+    },
+    "performanceConfigProbe": {
+      "invalidFilePreserved": true,
+      "status": "passed",
+      "invalidInputsRejected": 9,
+      "validFileSettingsApplied": true,
+      "actualConcurrentWorkers": [
+        "TerraForged-terrain-1",
+        "TerraForged-terrain-2",
+        "TerraForged-terrain-3"
+      ],
+      "poolRestored": true,
+      "createdDefaults": true
+    },
+    "benchmarkPhases": [
+      {
+        "name": "disk-reload",
+        "requestedFullChunks": 64,
+        "originChunk": [
+          1024,
+          1024
+        ],
+        "elapsedNanos": 680839500,
+        "requestsPerSecond": 94.00159655836654,
+        "perRequestNanos": [
+          236676200,
+          15906600,
+          14489700,
+          12760300,
+          8493900,
+          12435500,
+          41779000,
+          31100100,
+          8577500,
+          5233900,
+          9468700,
+          10891800,
+          25759800,
+          4887300,
+          5544200,
+          5043900,
+          4979200,
+          2981400,
+          3759100,
+          4398300,
+          4415100,
+          4445700,
+          5611700,
+          4410100,
+          4682400,
+          4490000,
+          5069800,
+          4071000,
+          5569400,
+          5567200,
+          5075400,
+          4469800,
+          5206800,
+          4217400,
+          4781700,
+          4436600,
+          4709300,
+          4609900,
+          4565300,
+          5417800,
+          4663300,
+          6082000,
+          4429200,
+          5060100,
+          4126400,
+          4947400,
+          4484700,
+          3914100,
+          3980600,
+          5168600,
+          4690900,
+          4446800,
+          3999700,
+          4005500,
+          5691400,
+          6112700,
+          5645100,
+          3981800,
+          3991400,
+          6200700,
+          5525700,
+          4970300,
+          4440500,
+          4922500
+        ],
+        "medianRequestNanos": 4958850.0,
+        "p95RequestNanos": 25759800,
+        "loadedChunksBefore": 0,
+        "loadedChunksAfter": 54,
+        "heapUsedBytesAfter": 282066944,
+        "heapCommittedBytesAfter": 1073741824,
+        "heapPoolPeaks": [
+          {
+            "peakUsedBytes": 589299712,
+            "pool": "G1 Eden Space"
+          },
+          {
+            "peakUsedBytes": 123731968,
+            "pool": "G1 Old Gen"
+          },
+          {
+            "peakUsedBytes": 53477376,
+            "pool": "G1 Survivor Space"
+          }
+        ],
+        "gcCollections": 1,
+        "gcMillis": 19,
+        "observedBiomes": {
+          "minecraft:birch_forest": 35,
+          "minecraft:forest": 23,
+          "minecraft:meadow": 6
+        }
+      },
+      {
+        "name": "resident-reread",
+        "requestedFullChunks": 64,
+        "originChunk": [
+          1024,
+          1024
+        ],
+        "elapsedNanos": 1357500,
+        "requestsPerSecond": 47145.48802946593,
+        "perRequestNanos": [
+          48900,
+          6300,
+          4700,
+          4500,
+          3900,
+          4100,
+          4500,
+          10000,
+          4300,
+          4400,
+          4500,
+          3900,
+          4500,
+          4400,
+          23300,
+          4100,
+          4100,
+          4600,
+          4200,
+          4100,
+          4200,
+          4600,
+          4300,
+          5500,
+          4300,
+          4400,
+          4100,
+          4500,
+          3900,
+          4400,
+          4600,
+          4300,
+          5100,
+          4000,
+          4900,
+          3900,
+          4000,
+          3600,
+          3700,
+          3300,
+          4200,
+          3600,
+          3800,
+          3900,
+          4000,
+          4300,
+          4000,
+          4000,
+          3500,
+          3600,
+          5800,
+          4200,
+          3600,
+          3600,
+          3700,
+          3800,
+          5100,
+          3800,
+          4000,
+          4400,
+          4300,
+          4400,
+          4300,
+          3700
+        ],
+        "medianRequestNanos": 4200.0,
+        "p95RequestNanos": 6300,
+        "loadedChunksBefore": 54,
+        "loadedChunksAfter": 54,
+        "heapUsedBytesAfter": 282066944,
+        "heapCommittedBytesAfter": 1073741824,
+        "heapPoolPeaks": [
+          {
+            "peakUsedBytes": 111149056,
+            "pool": "G1 Eden Space"
+          },
+          {
+            "peakUsedBytes": 123731968,
+            "pool": "G1 Old Gen"
+          },
+          {
+            "peakUsedBytes": 47185920,
+            "pool": "G1 Survivor Space"
+          }
+        ],
+        "gcCollections": 0,
+        "gcMillis": 0,
+        "observedBiomes": {
+          "minecraft:birch_forest": 35,
+          "minecraft:forest": 23,
+          "minecraft:meadow": 6
+        }
+      }
+    ],
+    "benchmarkScope": [
+      "Each phase requests 64 FULL chunks in fixed x-major order",
+      "New regions include any native neighbor generation and first terrain-tile cost",
+      "Resident reread is a cache access measurement, not newly generated chunk throughput",
+      "No forced GC, no JVM warmup outside recorded startup, no FPS claim"
+    ],
+    "benchmarkColumnBaseline": {
+      "columnCount": 64,
+      "sha256": "3c15f6bf2072bfe195fe7b3ff6be55dd3c65b1ec12f6027762b8aea3a37f4b53",
+      "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T132606Z-ebc198\\qa-output\\benchmark-column-baseline.json"
+    },
+    "classicBiomeChecks": {
+      "activeTerraForgedContext": false
+    },
+    "cellSamplerCacheChecks": {
+      "requested": false
+    },
+    "classicPillarCandidateSearch": {
+      "requested": false
+    },
+    "nativeColumnReplay": {
+      "requested": false
+    },
+    "classicBiomeTargetQualification": {
+      "requested": false
+    },
+    "classicBiomeStoredChunkChecks": {
+      "requested": false
+    },
+    "finishedAt": "2026-11-04T13:26:38.442333600Z",
+    "cleanStopRequested": true,
+    "holdAfterGeneration": false
+  },
+  "customTerrainValidated": false,
+  "logTail": [
+    "[05:26:37] [Server thread/INFO] [TheSpeedyObjectFactory/]: Using TheSpeedyObjectFactory without Unsafe",
+    "Density function compilation finished in 9.132 ms",
+    "Density function compilation finished in 7.208 ms",
+    "[05:26:37] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Loading 0 persistent chunks...",
+    "[05:26:37] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Preparing spawn area: 100%",
+    "[05:26:37] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 13 ms",
+    "[05:26:37] [Server thread/INFO] [minecraft/DedicatedServer]: Done (0.763s)! For help, type \"help\"",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:26:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[05:26:37] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler",
+    "TERRAFORGED_QA_NODE_JSON={\"detail\":\"Packaged origin and runtime recorded\",\"status\":\"passed\",\"name\":\"production-artifact\",\"at\":\"2026-11-04T13:26:37.576540700Z\"}",
+    "TERRAFORGED_QA_NODE_JSON={\"detail\":\"All 64 full-height column hashes, heights and biome holders match the same world\\u0027s saved baseline\",\"status\":\"passed\",\"name\":\"benchmark-reload-columns\",\"at\":\"2026-11-04T13:26:38.309876500Z\"}",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "TERRAFORGED_QA_NODE_JSON={\"detail\":\"64 persisted FULL chunks and 64 resident rereads; saved full-height columns verified\",\"status\":\"passed\",\"name\":\"benchmark-full-chunks\",\"at\":\"2026-11-04T13:26:38.433696Z\"}",
+    "TEMPLATE_BIOME_DECORATOR_QA=pass assertions=3",
+    "TERRAFORGED_QA_NODE_JSON={\"detail\":\"Three production-helper assertions completed with real target holders\",\"status\":\"passed\",\"name\":\"biome-decorator-overrides\",\"at\":\"2026-11-04T13:26:38.442333600Z\"}",
+    "TERRAFORGED_QA_RESULT_JSON={\"schemaVersion\":1,\"mode\":\"benchmark-reload\",\"qaThread\":\"Server thread\",\"startedAt\":\"2026-11-04T13:26:37.574554900Z\",\"serverStarted\":true,\"saveCompleted\":true,\"status\":\"passed\",\"nodes\":[{\"detail\":\"Packaged origin and runtime recorded\",\"status\":\"passed\",\"name\":\"production-artifact\",\"at\":\"2026-11-04T13:26:37.576540700Z\"},{\"detail\":\"All 64 full-height column hashes, heights and biome holders match the same world\\u0027s saved baseline\",\"status\":\"passed\",\"name\":\"benchmark-reload-columns\",\"at\":\"2026-11-04T13:26:38.309876500Z\"},{\"detail\":\"64 persisted FULL chunks and 64 resident rereads; saved full-height columns verified\",\"status\":\"passed\",\"name\":\"benchmark-full-chunks\",\"at\":\"2026-11-04T13:26:38.433696Z\"},{\"detail\":\"Three production-helper assertions completed with real target holders\",\"status\":\"passed\",\"name\":\"biome-decorator-overrides\",\"at\":\"2026-11-04T13:26:38.442333600Z\"}],\"notTested\":[\"Visual parity\",\"All presets and configuration extremes\",\"All biomes or structures\",\"Multiplayer clients\",\"Unlisted third-party mod combinations\",\"Performance outside this controlled benchmark\"],\"runtime\":{\"minecraft\":\"26.2\",\"java\":\"25.0.5\",\"javaClassVersion\":\"69.0\",\"developmentEnvironment\":false,\"loader\":\"26.2.0.93\",\"modVersion\":\"0.1.0-dev.23+26.2\",\"modClassOrigin\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\neoforge-server\\\\instances\\\\20261104T132606Z-ebc198\\\\mods\\\\terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar\",\"modSha256\":\"61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce\",\"expectedModSha256\":\"61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce\",\"loaderModOrigins\":[\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\neoforge-server\\\\instances\\\\20261104T132606Z-ebc198\\\\mods\\\\terraforged-revival-0.1.0-dev.23+26.2-neoforge.jar\"]},\"generator\":\"vanilla-control\",\"benchmarkEnvironment\":{\"terrainPoolCoreSize\":8,\"vmName\":\"OpenJDK 64-Bit Server VM\",\"maxHeapBytes\":4294967296,\"nativeWorldHeight\":[-64,319],\"vmArguments\":[\"-Xms512M\",\"-Xmx3G\",\"-Xlog:class+load\\u0",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ServerLevel[qa-world]/minecraft:overworld: waiting for 900 chunks to unload",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:26:38] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[05:26:38] [C2ME Storage #3/INFO] [C2ME Storage/]: Storage thread Thread[#92,C2ME Storage #3,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #2/INFO] [C2ME Storage/]: Storage thread Thread[#91,C2ME Storage #2,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #1/INFO] [C2ME Storage/]: Storage thread Thread[#90,C2ME Storage #1,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #5/INFO] [C2ME Storage/]: Storage thread Thread[#94,C2ME Storage #5,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #6/INFO] [C2ME Storage/]: Storage thread Thread[#95,C2ME Storage #6,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #4/INFO] [C2ME Storage/]: Storage thread Thread[#93,C2ME Storage #4,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #9/INFO] [C2ME Storage/]: Storage thread Thread[#98,C2ME Storage #9,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #8/INFO] [C2ME Storage/]: Storage thread Thread[#97,C2ME Storage #8,8,SERVER] stopped",
+    "[05:26:38] [C2ME Storage #7/INFO] [C2ME Storage/]: Storage thread Thread[#96,C2ME Storage #7,8,SERVER] stopped",
+    "[05:26:38] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Closing FML Loader 463b74b6",
+    "[05:26:38] [main/INFO] [ne.ne.fm.ModLoader/]: Clearing ModLoader"
+  ],
+  "logTailContainsTruncatedLines": true,
+  "rawLogSha256": "ecd3c0478a2528f0b4606680a29d9f22fb58b4005be99db356f8d1021ea7d074",
+  "notTested": [
+    "Visual parity",
+    "Third-party modpacks",
+    "Multiplayer clients",
+    "All presets"
+  ]
+}

@@ -1,4 +1,21 @@
-# Packaged runtime validation
+# Runtime validation status
+
+Current **dev23** passes [functional acceptance](dev23-functional-acceptance.json) for both exact Java26.2 loader JARs. This binds 67 evidence files and 30 byte-exact native captures. [Readiness and limits](dev23-readiness.md) provide the detailed links.
+
+All 17 natural variants, positive Bryce/stone pillars, saved holders/source agreement and cold reload pass on both loaders. Both real base and active-shader clients complete the editor/preview/world/save/subsequent-vanilla flow. Dedicated optimization, community ModernFix and combined content/structure cases pass with their own exported packs, and real combined-stack client joins synchronize all variants and receive terrain. Both loaders also pass WSL Linux generation/reload.
+
+Exact final JAR cache lifecycle checks pass 3,511 assertions per loader with zero retained owners/polls. Real-world cell caches retain 24 raw fields and reduce repeated native-column calls from 384 to four. Independent dev18/final native-column replays match all 36 actual inputs per loader.
+
+Both controlled performance matrices pass all 24 fresh trials and eight cold reloads with no compiler interference or budget violations. [Complete scoped acceptance](dev23-acceptance.json) binds 104 evidence files and 30 images. [Measured timings](dev23-performance.md) retain all trials and matched controls. The next experimental release is being assembled.
+
+[Native visual review](visual-review-dev23.md) confirms visible pillars and nearby rendered shader terrain. Brief captures show incomplete distant LOD edges, so far-distance quality and FPS remain unaccepted. User aesthetic acceptance and original-version visual parity are separate gates.
+
+Horizon26.3 remains separate: the exact dev23 finite bridge passes native block/biome/heightmap/LOD and failure checks, and isolated Perlin/Simplex modules match independent Java raw-bit fixtures. Infinite generation and full native client/save acceptance remain unfinished.
+
+## Historical dev11 delivery record
+
+The following older record remains useful history. It does not replace dev23 qualification.
+
 
 These records use disposable **non-development** Minecraft Java 26.2 installations on Windows with Java 25. Existing user worlds, launcher profiles, accounts and global Java settings were not changed. Machine records retain UTC timestamps; the development log uses America/Los_Angeles.
 

@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-04T13:19:14.270118+00:00",
+  "result": "passed",
+  "stage": "runtime",
+  "runtimeExecuted": true,
+  "javaVersionOutput": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)",
+  "installation": {
+    "template": "build/qa/server/template-mc26.2-loader0.20.1",
+    "installer": {
+      "version": "1.1.2",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.2/fabric-installer-1.1.2.jar",
+      "sha256": "61e035bf7bf70153e127440ce34de47c9036f0a2d0c65d1529454bd35ceefe4f",
+      "matchesPublished": true
+    },
+    "fabricApi": {
+      "version": "0.161.0+26.2",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.161.0+26.2/fabric-api-0.161.0+26.2.jar",
+      "sha256": "e5b858ceb13290c274e31cb888ff5a1a40cb91067e7ffab0b5b775aec51e216a",
+      "matchesPublished": true,
+      "path": "build/qa/server/downloads/fabric-api-0.161.0+26.2.jar"
+    },
+    "minecraft": {
+      "version": "26.2",
+      "metadataUrl": "https://piston-meta.mojang.com/v1/packages/09165f570b16394790c4e37c93b0918729615d17/26.2.json",
+      "metadataSha1": "09165f570b16394790c4e37c93b0918729615d17",
+      "metadataMatchesPublishedContentHash": true,
+      "serverSha1": "823e2250d24b3ddac457a60c92a6a941943fcd6a",
+      "serverSha256": "cdacdfb25898de5e4b4b0e5ddcc2722f77067e46605709c2d886c000ebb63ec5"
+    },
+    "loader": "0.20.1",
+    "launcherSha256": "121ae339b9b903aaf4fb7b3903fbb5c1e37246ebe14786c2109a2a1eb29e32bc"
+  },
+  "instance": "build/qa/server/instances/20261104T131914Z-d0552d",
+  "artifact": {
+    "name": "terraforged-revival-0.1.0-dev.23+26.2.jar",
+    "id": "reterraforged",
+    "version": "0.1.0-dev.23+26.2",
+    "sha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886"
+  },
+  "extraMods": [
+    {
+      "name": "terraforged-runtime-qa.jar",
+      "id": "terraforged_runtime_qa",
+      "version": "0.1.0",
+      "sha256": "95e417534cc43db93e463df9b95ad3f4c183593f626a540f458b0844d09f0f1e"
+    }
+  ],
+  "serverProperties": {
+    "server-ip": "127.0.0.1",
+    "server-port": 58645,
+    "online-mode": "false",
+    "enable-query": "false",
+    "enable-rcon": "false",
+    "level-name": "qa-world",
+    "level-seed": 8675309,
+    "level-type": "minecraft:normal",
+    "spawn-protection": 0,
+    "view-distance": 2,
+    "simulation-distance": 2,
+    "max-players": 1,
+    "sync-chunk-writes": "true",
+    "pause-when-empty-seconds": -1,
+    "max-tick-time": 60000,
+    "motd": "TerraForged isolated production QA",
+    "initial-enabled-packs": "vanilla,file/terraforged-qa"
+  },
+  "bindAddress": "127.0.0.1",
+  "port": 58645,
+  "developmentMode": false,
+  "qaMode": "benchmark",
+  "qaOutput": "build/qa/server/instances/20261104T131914Z-d0552d/qa-output",
+  "rawLog": "build/qa/server/instances/20261104T131914Z-d0552d/qa-runs/20261104T131914Z-e539/stdout.log",
+  "classLoadLog": "build/qa/server/instances/20261104T131914Z-d0552d/qa-runs/20261104T131914Z-e539/class-load.log",
+  "customTerrainValidated": false,
+  "featureParityValidated": false,
+  "jvmCommand": [
+    "C:\\Users\\Main\\AppData\\Local\\Programs\\Java\\jdk-25.0.5+8\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx3G",
+    "-Dfabric.development=false",
+    "-Xlog:class+load=info:file=qa-runs/20261104T131914Z-e539/class-load.log:level,tags",
+    "-Xms1G",
+    "-Xmx4G",
+    "-XX:+UseG1GC",
+    "-XX:ActiveProcessorCount=8",
+    "-Dterraforged.qa.mode=benchmark",
+    "-Dterraforged.qa.output=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T131914Z-d0552d\\qa-output",
+    "-Dterraforged.qa.expectedModSha256=1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+    "-jar",
+    "fabric-server-launch.jar",
+    "nogui"
+  ],
+  "pid": 34548,
+  "processMemory": {
+    "peakResidentBytes": 1406562304,
+    "samples": 264,
+    "scope": "Entire owned Java process, including startup and shutdown",
+    "source": "Windows PeakWorkingSetSize",
+    "samplingIntervalSeconds": 0.1,
+    "errors": []
+  },
+  "serverReady": true,
+  "saveObserved": false,
+  "stopSent": false,
+  "companionServerStartedObserved": true,
+  "companionSaveCompleted": true,
+  "companionCleanStopObserved": true,
+  "processExitCode": 0,
+  "forcedStop": false,
+  "targetGameAndLoaderObserved": true,
+  "serverVersionObserved": true,
+  "artifactUnchanged": true,
+  "packagedArtifactOriginObserved": true,
+  "loadedModClassCount": 389,
+  "loadedModClassOrigins": [
+    {
+      "class": "raccoonman.reterraforged.mixin.plugin.MixinPlugin",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.terrablender.TBCompat",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.ModLoaderUtil",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.PlatformServices",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.PlatformServices$ProviderHolder",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.FabricPlatformServices",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.ModLoaderUtilImpl",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.RTFCommon",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.mixin.BiomeTemperatureInvoker",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.mixin.MixinBiomeGenerationSettings",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.server.RTFMinecraftServer",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.fabric.RTFFabric",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.registries.RTFBuiltInRegistries",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.registries.RTFRegistries",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.RegistryUtil",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.RegistryUtilImpl",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacements",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.AnyPlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.template.TemplateContext",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TreePlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TemplateDecorators",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TemplateDecorator",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TreeDecorator",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.RTFChanceModifiers",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.ChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.RangeChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.ElevationChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.BiomeEdgeChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.RTFPlacementModifiers",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.BlacklistDimensionFilter",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.poisson.FastPoissonModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.noise.module.Noise",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.LegacyCountExtraModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.RTFDensityFunctions",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.MarkerFunction",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction$Marker",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.MarkerFunction$Mapped",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.noise.module.Noises",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T131914Z-d0552d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+    }
+  ],
+  "qaResult": {
+    "schemaVersion": 1,
+    "mode": "benchmark",
+    "qaThread": "Server thread",
+    "startedAt": "2026-11-04T13:19:30.203870300Z",
+    "serverStarted": true,
+    "saveCompleted": true,
+    "status": "passed",
+    "nodes": [
+      {
+        "at": "2026-11-04T13:19:30.205870600Z",
+        "name": "production-artifact",
+        "status": "passed",
+        "detail": "Packaged origin and runtime recorded"
+      },
+      {
+        "at": "2026-11-04T13:19:42.625819700Z",
+        "name": "benchmark-full-chunks",
+        "status": "passed",
+        "detail": "128 FULL chunk requests in two new regions and 64 resident rereads; 64 full-height columns saved"
+      },
+      {
+        "at": "2026-11-04T13:19:42.638819Z",
+        "name": "biome-decorator-overrides",
+        "status": "passed",
+        "detail": "Three production-helper assertions completed with real target holders"
+      }
+    ],
+    "notTested": [
+      "Visual parity",
+      "All presets and configuration extremes",
+      "All biomes or structures",
+      "Multiplayer clients",
+      "Unlisted third-party mod combinations",
+      "Performance outside this controlled benchmark"
+    ],
+    "runtime": {
+      "minecraft": "26.2",
+      "java": "25.0.5",
+      "javaClassVersion": "69.0",
+      "developmentEnvironment": false,
+      "loader": "0.20.1",
+      "modVersion": "0.1.0-dev.23+26.2",
+      "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T131914Z-d0552d\\mods\\terraforged-revival-0.1.0-dev.23+26.2.jar",
+      "modSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "expectedModSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "loaderModOrigins": [
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T131914Z-d0552d\\mods\\terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    "generator": "terraforged-custom",
+    "benchmarkEnvironment": {
+      "nativeWorldHeight": [
+        -64,
+        319
+      ],
+      "maxHeapBytes": 4294967296,
+      "vmName": "OpenJDK 64-Bit Server VM",
+      "terrainPoolCoreSize": 8,
+      "terrainSettings": "PerformanceConfig[tileSize=3, batchCount=6, threadCount=8]",
+      "availableProcessors": 8,
+      "java": "25.0.5",
+      "seed": 8675309,
+      "vmArguments": [
+        "-Xms512M",
+        "-Xmx3G",
+        "-Dfabric.development=false",
+        "-Xlog:class+load=info:file=qa-runs/20261104T131914Z-e539/class-load.log:level,tags",
+        "-Xms1G",
+        "-Xmx4G",
+        "-XX:+UseG1GC",
+        "-XX:ActiveProcessorCount=8",
+        "-Dterraforged.qa.mode=benchmark",
+        "-Dterraforged.qa.output=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T131914Z-d0552d\\qa-output",
+        "-Dterraforged.qa.expectedModSha256=1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886"
+      ]
+    },
+    "performanceConfigProbe": {
+      "validFileSettingsApplied": true,
+      "invalidInputsRejected": 9,
+      "status": "passed",
+      "invalidFilePreserved": true,
+      "createdDefaults": true,
+      "poolRestored": true,
+      "actualConcurrentWorkers": [
+        "TerraForged-terrain-5",
+        "TerraForged-terrain-6",
+        "TerraForged-terrain-8"
+      ]
+    },
+    "benchmarkPhases": [
+      {
+        "name": "first-new-region",
+        "requestedFullChunks": 64,
+        "originChunk": [
+          1024,
+          1024
+        ],
+        "elapsedNanos": 6078376100,
+        "requestsPerSecond": 10.529128001802981,
+        "perRequestNanos": [
+          2133358700,
+          143357100,
+          104409500,
+          121867000,
+          139315700,
+          218411400,
+          524882500,
+          95471200,
+          80270100,
+          32940100,
+          33021200,
+          70986000,
+          40503800,
+          36350900,
+          34875300,
+          33849700,
+          75529400,
+          34743400,
+          28816500,
+          31175000,
+          47075900,
+          31967100,
+          54893400,
+          32236400,
+          65969400,
+          28428800,
+          30363100,
+          28557000,
+          30144400,
+          28852000,
+          29975400,
+          29176700,
+          94360100,
+          29390600,
+          36288000,
+          28905000,
+          31821300,
+          29097700,
+          28702800,
+          29968100,
+          71171200,
+          35012400,
+          28730700,
+          29413500,
+          30018900,
+          30431800,
+          28486000,
+          31929800,
+          386215700,
+          29569800,
+          29078200,
+          30048800,
+          28917400,
+          30193200,
+          117211900,
+          109620400,
+          68341400,
+          29718400,
+          30070400,
+          29151200,
+          27341900,
+          28560300,
+          29382000,
+          27556300
+        ],
+        "medianRequestNanos": 31875550.0,
+        "p95RequestNanos": 218411400,
+        "loadedChunksBefore": 529,
+        "loadedChunksAfter": 1429,
+        "heapUsedBytesAfter": 828375040,
+        "heapCommittedBytesAfter": 1073741824,
+        "heapPoolPeaks": [
+          {
+            "peakUsedBytes": 559939584,
+            "pool": "G1 Eden Space"
+          },
+          {
+            "peakUsedBytes": 307232768,
+            "pool": "G1 Old Gen"
+          },
+          {
+            "peakUsedBytes": 81788928,
+            "pool": "G1 Survivor Space"
+          }
+        ],
+        "gcCollections": 2,
+        "gcMillis": 59,
+        "observedBiomes": {
+          "minecraft:taiga": 52,
+          "minecraft:windswept_forest": 12
+        }
+      },
+      {
+        "name": "resident-reread",
+        "requestedFullChunks": 64,
+        "originChunk": [
+          1024,
+          1024
+        ],
+        "elapsedNanos": 290000,
+        "requestsPerSecond": 220689.6551724138,
+        "perRequestNanos": [
+          16200,
+          3400,
+          2800,
+          1900,
+          1900,
+          1700,
+          1800,
+          1600,
+          1600,
+          1500,
+          1500,
+          1600,
+          1500,
+          1600,
+          1400,
+          1600,
+          1600,
+          1400,
+          2000,
+          1400,
+          1400,
+          1500,
+          1400,
+          1600,
+          1700,
+          1500,
+          1700,
+          1400,
+          1400,
+          1400,
+          1500,
+          5700,
+          1700,
+          1600,
+          1800,
+          1600,
+          1800,
+          1500,
+          1900,
+          1600,
+          1800,
+          2600,
+          1700,
+          1700,
+          2100,
+          3300,
+          1500,
+          1400,
+          1800,
+          1600,
+          1700,
+          3100,
+          1800,
+          1500,
+          1400,
+          1500,
+          1600,
+          1700,
+          1500,
+          1500,
+          3000,
+          1800,
+          3900,
+          2600
+        ],
+        "medianRequestNanos": 1600.0,
+        "p95RequestNanos": 3400,
+        "loadedChunksBefore": 1429,
+        "loadedChunksAfter": 1429,
+        "heapUsedBytesAfter": 828375040,
+        "heapCommittedBytesAfter": 1073741824,
+        "heapPoolPeaks": [
+          {
+            "peakUsedBytes": 484442112,
+            "pool": "G1 Eden Space"
+          },
+          {
+            "peakUsedBytes": 307232768,
+            "pool": "G1 Old Gen"
+          },
+          {
+            "peakUsedBytes": 36700160,
+            "pool": "G1 Survivor Space"
+          }
+        ],
+        "gcCollections": 0,
+        "gcMillis": 0,
+        "observedBiomes": {
+          "minecraft:taiga": 52,
+          "minecraft:windswept_forest": 12
+        }
+      },
+      {
+        "name": "second-new-region",
+        "requestedFullChunks": 64,
+        "originChunk": [
+          2048,
+          -2048
+        ],
+        "elapsedNanos": 6021656900,
+        "requestsPerSecond": 10.628303980587138,
+        "perRequestNanos": [
+          2188473600,
+          89358400,
+          63237100,
+          72991900,
+          69390100,
+          70828300,
+          727017700,
+          108079600,
+          67422100,
+          25978300,
+          26077300,
+          26287100,
+          30365300,
+          30855600,
+          29062100,
+          28781000,
+          65019400,
+          27224600,
+          27821700,
+          30898100,
+          27953000,
+          27045500,
+          28968200,
+          28466800,
+          70099300,
+          29212800,
+          28969500,
+          29764200,
+          28574000,
+          29002000,
+          28050700,
+          28780700,
+          72167200,
+          27207000,
+          27690400,
+          29021100,
+          28650600,
+          28216200,
+          31111700,
+          32957600,
+          89939800,
+          32364700,
+          32987500,
+          30817500,
+          28745900,
+          28010800,
+          27780900,
+          28287800,
+          480661500,
+          29377300,
+          35250100,
+          30684100,
+          28013300,
+          29093400,
+          167474500,
+          145187100,
+          91585400,
+          30639900,
+          33785600,
+          32745500,
+          28959000,
+          28053700,
+          33834700,
+          28934700
+        ],
+        "medianRequestNanos": 29570750.0,
+        "p95RequestNanos": 167474500,
+        "loadedChunksBefore": 1429,
+        "loadedChunksAfter": 2329,
+        "heapUsedBytesAfter": 774897664,
+        "heapCommittedBytesAfter": 1073741824,
+        "heapPoolPeaks": [
+          {
+            "peakUsedBytes": 547356672,
+            "pool": "G1 Eden Space"
+          },
+          {
+            "peakUsedBytes": 472907776,
+            "pool": "G1 Old Gen"
+          },
+          {
+            "peakUsedBytes": 73400320,
+            "pool": "G1 Survivor Space"
+          }
+        ],
+        "gcCollections": 3,
+        "gcMillis": 57,
+        "observedBiomes": {
+          "minecraft:plains": 62,
+          "minecraft:river": 2
+        }
+      }
+    ],
+    "benchmarkScope": [
+      "Each phase requests 64 FULL chunks in fixed x-major order",
+      "New regions include any native neighbor generation and first terrain-tile cost",
+      "Resident reread is a cache access measurement, not newly generated chunk throughput",
+      "No forced GC, no JVM warmup outside recorded startup, no FPS claim"
+    ],
+    "benchmarkColumnBaseline": {
+      "columnCount": 64,
+      "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T131914Z-d0552d\\qa-output\\benchmark-column-baseline.json",
+      "sha256": "63e766f40e35d7eeb5e6f472bdaa8aee5ab6182279055c53cdcd03f2178756de"
+    },
+    "classicBiomeChecks": {
+      "activeTerraForgedContext": true,
+      "classicBiomeVariants": true,
+      "sourceClass": "raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource",
+      "definitions": [
+        {
+          "id": "reterraforged:bryce",
+          "parent": "minecraft:badlands",
+          "possible": true,
+          "temperature": 2.0,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_badlands",
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_sandy",
+            "minecraft:has_structure/mineshaft_mesa",
+            "minecraft:has_structure/ruined_portal_mountain",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_badlands",
+            "minecraft:is_overworld",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:cold_steppe",
+          "parent": "minecraft:old_growth_spruce_taiga",
+          "possible": true,
+          "temperature": 0.2,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_dense_vegetation",
+            "c:is_dense_vegetation/overworld",
+            "c:is_old_growth",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:cold_marshland",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": 0.2,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:fir_forest",
+          "parent": "minecraft:taiga",
+          "possible": true,
+          "temperature": 0.25,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/pillager_outpost",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:has_structure/village_taiga",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:flower_plains",
+          "parent": "minecraft:flower_forest",
+          "possible": true,
+          "temperature": 0.7,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_floral",
+            "c:is_flower_forest",
+            "c:is_forest",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_temperate",
+            "c:is_temperate/overworld",
+            "c:is_tree/deciduous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/oak",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_forest",
+            "minecraft:is_overworld",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:frozen_lake",
+          "parent": "minecraft:frozen_river",
+          "possible": true,
+          "temperature": 0.0,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_aquatic",
+            "c:is_aquatic_icy",
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_river",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_river",
+            "minecraft:more_frequent_drowned_spawns",
+            "minecraft:reduce_water_ambient_spawns",
+            "minecraft:required_ocean_monument_surrounding",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:water_on_map_outlines",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:frozen_marsh",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": 0.14999,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:lake",
+          "parent": "minecraft:river",
+          "possible": true,
+          "temperature": 0.5,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_aquatic",
+            "c:is_overworld",
+            "c:is_river",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_river",
+            "minecraft:more_frequent_drowned_spawns",
+            "minecraft:reduce_water_ambient_spawns",
+            "minecraft:required_ocean_monument_surrounding",
+            "minecraft:water_on_map_outlines",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:marshland",
+          "parent": "minecraft:swamp",
+          "possible": true,
+          "temperature": 0.7,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_overworld",
+            "c:is_swamp",
+            "c:is_temperate",
+            "c:is_temperate/overworld",
+            "c:is_wet",
+            "c:is_wet/overworld",
+            "c:primary_wood_type",
+            "c:primary_wood_type/oak",
+            "minecraft:allows_surface_slime_spawns",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_swamp",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/swamp_hut",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:water_on_map_outlines",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:savanna_scrub",
+          "parent": "minecraft:savanna",
+          "possible": true,
+          "temperature": 2.0,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_savanna",
+            "c:is_sparse_vegetation",
+            "c:is_sparse_vegetation/overworld",
+            "c:is_tree/savanna",
+            "c:primary_wood_type",
+            "c:primary_wood_type/acacia",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/pillager_outpost",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:has_structure/village_savanna",
+            "minecraft:is_overworld",
+            "minecraft:is_savanna",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:shattered_savanna_scrub",
+          "parent": "minecraft:windswept_savanna",
+          "possible": true,
+          "temperature": 2.0,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_savanna",
+            "c:is_sparse_vegetation",
+            "c:is_sparse_vegetation/overworld",
+            "c:is_tree/savanna",
+            "c:is_windswept",
+            "c:primary_wood_type",
+            "c:primary_wood_type/acacia",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_mountain",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_savanna",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:snowy_fir_forest",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": -0.5,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:snowy_taiga_scrub",
+          "parent": "minecraft:snowy_taiga",
+          "possible": true,
+          "temperature": -0.5,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_snowy",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/igloo",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:spawns_cold_variant_frogs",
+            "minecraft:spawns_snow_foxes",
+            "minecraft:spawns_white_rabbits",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:steppe",
+          "parent": "minecraft:old_growth_spruce_taiga",
+          "possible": true,
+          "temperature": 1.2,
+          "hasPrecipitation": false,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_dry",
+            "c:is_dry/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_overworld",
+            "c:is_rare",
+            "c:is_savanna",
+            "c:is_sparse_vegetation",
+            "c:is_sparse_vegetation/overworld",
+            "c:is_tree/savanna",
+            "c:is_windswept",
+            "c:primary_wood_type",
+            "c:primary_wood_type/acacia",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_mountain",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_overworld",
+            "minecraft:is_savanna",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:stone_forest",
+          "parent": "minecraft:jungle",
+          "possible": true,
+          "temperature": 0.95,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 1,
+          "tags": [
+            "c:is_dense_vegetation",
+            "c:is_dense_vegetation/overworld",
+            "c:is_hot",
+            "c:is_hot/overworld",
+            "c:is_jungle",
+            "c:is_overworld",
+            "c:is_tree/jungle",
+            "c:is_wet",
+            "c:is_wet/overworld",
+            "c:primary_wood_type",
+            "c:primary_wood_type/jungle",
+            "minecraft:has_structure/jungle_temple",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_jungle",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_jungle",
+            "minecraft:is_overworld",
+            "minecraft:spawns_warm_variant_farm_animals",
+            "minecraft:spawns_warm_variant_frogs",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:taiga_scrub",
+          "parent": "minecraft:taiga",
+          "possible": true,
+          "temperature": 0.25,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_cold",
+            "c:is_cold/overworld",
+            "c:is_overworld",
+            "c:is_taiga",
+            "c:is_tree/coniferous",
+            "c:primary_wood_type",
+            "c:primary_wood_type/spruce",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/pillager_outpost",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trail_ruins",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:has_structure/village_taiga",
+            "minecraft:is_overworld",
+            "minecraft:is_taiga",
+            "minecraft:spawns_cold_variant_farm_animals",
+            "minecraft:stronghold_biased_to",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        },
+        {
+          "id": "reterraforged:warm_beach",
+          "parent": "minecraft:warm_ocean",
+          "possible": true,
+          "temperature": 1.0,
+          "hasPrecipitation": true,
+          "recognizedTreeFeatures": 0,
+          "tags": [
+            "c:is_beach",
+            "c:is_overworld",
+            "c:is_sandy",
+            "c:is_temperate",
+            "c:is_temperate/overworld",
+            "c:is_wet",
+            "c:is_wet/overworld",
+            "minecraft:has_structure/buried_treasure",
+            "minecraft:has_structure/mineshaft",
+            "minecraft:has_structure/ruined_portal_standard",
+            "minecraft:has_structure/shipwreck_beached",
+            "minecraft:has_structure/stronghold",
+            "minecraft:has_structure/trial_chambers",
+            "minecraft:is_beach",
+            "minecraft:is_overworld",
+            "reterraforged:classic_variants"
+          ],
+          "missingInheritedParentTags": []
+        }
+      ],
+      "registeredVariants": 17,
+      "structurallyDistinctPlacedAliases": 6,
+      "sourceCodecRoundTrip": true,
+      "possibleBiomes": 72
+    },
+    "cellSamplerCacheChecks": {
+      "requested": false
+    },
+    "classicPillarCandidateSearch": {
+      "requested": false
+    },
+    "nativeColumnReplay": {
+      "requested": false
+    },
+    "classicBiomeTargetQualification": {
+      "requested": false
+    },
+    "classicBiomeStoredChunkChecks": {
+      "requested": false
+    },
+    "finishedAt": "2026-11-04T13:19:42.638819Z",
+    "cleanStopRequested": true,
+    "holdAfterGeneration": false
+  },
+  "customTerrainSampleCount": 0,
+  "customTerrainChunkCount": 0,
+  "worldLevelDatExists": true,
+  "regionFileCount": 0,
+  "errorLines": [
+    "[05:19:20] [main/ERROR]: Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: "
+  ],
+  "tail": [
+    "[05:19:26] [Server thread/INFO]: Preparing level \"qa-world\"",
+    "[05:19:26] [Server thread/INFO]: Selecting global world spawn...",
+    "[05:19:30] [Server thread/INFO]: Loading 0 persistent chunks...",
+    "[05:19:30] [Server thread/INFO]: Preparing spawn area: 100%",
+    "[05:19:30] [Server thread/INFO]: Time elapsed: 3145 ms",
+    "[05:19:30] [Server thread/INFO]: Done (3.361s)! For help, type \"help\"",
+    "[05:19:30] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:19:30] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:19:30] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:19:30] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:19:30] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:19:30] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:19:30] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[05:19:30] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:19:30.205870600Z\",\"name\":\"production-artifact\",\"status\":\"passed\",\"detail\":\"Packaged origin and runtime recorded\"}",
+    "[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[05:19:42] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:19:42.625819700Z\",\"name\":\"benchmark-full-chunks\",\"status\":\"passed\",\"detail\":\"128 FULL chunk requests in two new regions and 64 resident rereads; 64 full-height columns saved\"}",
+    "[05:19:42] [Server thread/INFO]: [STDOUT]: TEMPLATE_BIOME_DECORATOR_QA=pass assertions=3",
+    "[05:19:42] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"at\":\"2026-11-04T13:19:42.638819Z\",\"name\":\"biome-decorator-overrides\",\"status\":\"passed\",\"detail\":\"Three production-helper assertions completed with real target holders\"}",
+    "[05:19:42] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_RESULT_JSON={\"schemaVersion\":1,\"mode\":\"benchmark\",\"qaThread\":\"Server thread\",\"startedAt\":\"2026-11-04T13:19:30.203870300Z\",\"serverStarted\":true,\"saveCompleted\":true,\"status\":\"passed\",\"nodes\":[{\"at\":\"2026-11-04T13:19:30.205870600Z\",\"name\":\"production-artifact\",\"status\":\"passed\",\"detail\":\"Packaged origin and runtime recorded\"},{\"at\":\"2026-11-04T13:19:42.625819700Z\",\"name\":\"benchmark-full-chunks\",\"status\":\"passed\",\"detail\":\"128 FULL chunk requests in two new regions and 64 resident rereads; 64 full-height columns saved\"},{\"at\":\"2026-11-04T13:19:42.638819Z\",\"name\":\"biome-decorator-overrides\",\"status\":\"passed\",\"detail\":\"Three production-helper assertions completed with real target holders\"}],\"notTested\":[\"Visual parity\",\"All presets and configuration extremes\",\"All biomes or structures\",\"Multiplayer clients\",\"Unlisted third-party mod combinations\",\"Performance outside this controlled benchmark\"],\"runtime\":{\"minecraft\":\"26.2\",\"java\":\"25.0.5\",\"javaClassVersion\":\"69.0\",\"developmentEnvironment\":false,\"loader\":\"0.20.1\",\"modVersion\":\"0.1.0-dev.23+26.2\",\"modClassOrigin\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\server\\\\instances\\\\20261104T131914Z-d0552d\\\\mods\\\\terraforged-revival-0.1.0-dev.23+26.2.jar\",\"modSha256\":\"1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886\",\"expectedModSha256\":\"1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886\",\"loaderModOrigins\":[\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\server\\\\instances\\\\20261104T131914Z-d0552d\\\\mods\\\\terraforged-revival-0.1.0-dev.23+26.2.jar\"]},\"generator\":\"terraforged-custom\",\"benchmarkEnvironment\":{\"nativeWorldHeight\":[-64,319],\"maxHeapBytes\":4294967296,\"vmName\":\"OpenJDK 64-Bit Server VM\",\"terrainPoolCoreSize\":8,\"terrainSettings\":\"PerformanceConfig[tileSize\\u003d3, batchCount\\u003d6, threadCount\\u003d8]\",\"availableProcessors\":8,\"java\":\"25.0.5\",\"seed\":8675309,\"vmArguments\":[\"-Xms512M\",\"-Xmx3G\",\"-Dfabric.development\\u003dfalse\",\"-Xlog:class+load\\u003dinfo:fil",
+    "[05:19:42] [Server thread/INFO]: Stopping server",
+    "[05:19:42] [Server thread/INFO]: Saving players",
+    "[05:19:42] [Server thread/INFO]: Saving worlds",
+    "[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[05:19:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[05:19:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[05:19:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[05:19:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[05:19:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[05:19:43] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved"
+  ],
+  "limitations": [
+    "Default vanilla world boot unless a generated preset datapack and companion QA mode were supplied",
+    "No client rendering or visual terrain parity tested",
+    "Only isolated loopback/offline QA server state was used"
+  ],
+  "finishedAt": "2026-11-04T13:19:44.490422+00:00"
+}

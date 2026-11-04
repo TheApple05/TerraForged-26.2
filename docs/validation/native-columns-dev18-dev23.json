@@ -1,0 +1,1119 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAtUtc": "2026-11-04T12:57:15.158471+00:00",
+  "input": "docs/validation/classic-biome-dev18-ruined-portal-columns.json",
+  "inputSha256": "91b32b5edaaad2bcf108a64f4146463174e2417ebf5c26fddd1dd78d596f8444",
+  "runs": [
+    {
+      "loader": "fabric",
+      "version": "0.1.0-dev.18+26.2",
+      "report": "docs/validation/server-native-columns-18-23-fabric-old18.json",
+      "reportSha256": "aece69f29ce524a7fa90c65d21f359c2599fb3dccb9ee2fc94b5409d9474bc00",
+      "artifactSha256": "dd5b075b6fcdb26e31159c97401de8e493308142599e5e193cbf886a3e55eb94",
+      "replay": {
+        "requested": true,
+        "seed": 8675309,
+        "input": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-dev18-ruined-portal-columns.json",
+        "inputSha256": "91b32b5edaaad2bcf108a64f4146463174e2417ebf5c26fddd1dd78d596f8444",
+        "nativeApi": "ChunkGenerator.getBaseColumn(x,z,actualServerLevel,actualRandomState)",
+        "minY": -64,
+        "maxYInclusive": 319,
+        "columns": [
+          {
+            "nativeCallElapsedNanos": 106468700,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 114204200,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623"
+          },
+          {
+            "nativeCallElapsedNanos": 112146600,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9"
+          },
+          {
+            "nativeCallElapsedNanos": 143039500,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 114774400,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 102825300,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623"
+          },
+          {
+            "nativeCallElapsedNanos": 112564700,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9"
+          },
+          {
+            "nativeCallElapsedNanos": 111932400,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 98556700,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 105512600,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f"
+          },
+          {
+            "nativeCallElapsedNanos": 130307400,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d"
+          },
+          {
+            "nativeCallElapsedNanos": 118284700,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd"
+          },
+          {
+            "nativeCallElapsedNanos": 102378700,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 97155500,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f"
+          },
+          {
+            "nativeCallElapsedNanos": 134118800,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d"
+          },
+          {
+            "nativeCallElapsedNanos": 102620100,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd"
+          },
+          {
+            "nativeCallElapsedNanos": 121015400,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c"
+          },
+          {
+            "nativeCallElapsedNanos": 102323400,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d"
+          },
+          {
+            "nativeCallElapsedNanos": 100289200,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466"
+          },
+          {
+            "nativeCallElapsedNanos": 101243600,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 129103300,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 99781500,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f"
+          },
+          {
+            "nativeCallElapsedNanos": 105997000,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d"
+          },
+          {
+            "nativeCallElapsedNanos": 105357600,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd"
+          },
+          {
+            "nativeCallElapsedNanos": 108416900,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c"
+          },
+          {
+            "nativeCallElapsedNanos": 244385000,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d"
+          },
+          {
+            "nativeCallElapsedNanos": 115660300,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466"
+          },
+          {
+            "nativeCallElapsedNanos": 99615800,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 250181300,
+            "z": 15360,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "458dab8adf87a33c1410365bcd1115dffc5ec09351fac8da190c9c271ca244e4"
+          },
+          {
+            "nativeCallElapsedNanos": 238751500,
+            "z": 15360,
+            "blockStatesHashed": 384,
+            "x": 56672,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 202687400,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 202489000,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56672,
+            "columnSha256": "21b6de7cf6fd15b7ecfe15467b865f25f0bd8b84096278b413892ec540446f72"
+          },
+          {
+            "nativeCallElapsedNanos": 213955400,
+            "z": 15361,
+            "blockStatesHashed": 384,
+            "x": 56656,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 232131600,
+            "z": 15361,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "4c241af3e937911d58bf50bfde82fef920fe743cef4fa1fac99e855820971932"
+          },
+          {
+            "nativeCallElapsedNanos": 191997700,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56656,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 240381900,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          }
+        ],
+        "elapsedMillis": 5026.7763,
+        "scope": "Native exact-input functional column hashes after six baseline FULL chunks. Timings are diagnostics under uncontrolled functional load, not throughput benchmark evidence."
+      }
+    },
+    {
+      "loader": "fabric",
+      "version": "0.1.0-dev.23+26.2",
+      "report": "docs/validation/server-native-columns-18-23-fabric-candidate.json",
+      "reportSha256": "c2018e154c9fb53149898532f80903966b0f9d20aad094e89a33933c31d33f6d",
+      "artifactSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "replay": {
+        "requested": true,
+        "seed": 8675309,
+        "input": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-dev18-ruined-portal-columns.json",
+        "inputSha256": "91b32b5edaaad2bcf108a64f4146463174e2417ebf5c26fddd1dd78d596f8444",
+        "nativeApi": "ChunkGenerator.getBaseColumn(x,z,actualServerLevel,actualRandomState)",
+        "minY": -64,
+        "maxYInclusive": 319,
+        "columns": [
+          {
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "x": -79614,
+            "blockStatesHashed": 384,
+            "z": 32990,
+            "nativeCallElapsedNanos": 13128000
+          },
+          {
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32990,
+            "nativeCallElapsedNanos": 7581900
+          },
+          {
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9",
+            "x": -79614,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 6419500
+          },
+          {
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 7224000
+          },
+          {
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "x": -79614,
+            "blockStatesHashed": 384,
+            "z": 32990,
+            "nativeCallElapsedNanos": 8299900
+          },
+          {
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32990,
+            "nativeCallElapsedNanos": 9506000
+          },
+          {
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9",
+            "x": -79614,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 6631200
+          },
+          {
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 7197200
+          },
+          {
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "x": -79615,
+            "blockStatesHashed": 384,
+            "z": 32991,
+            "nativeCallElapsedNanos": 7014200
+          },
+          {
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f",
+            "x": -79607,
+            "blockStatesHashed": 384,
+            "z": 32991,
+            "nativeCallElapsedNanos": 9330900
+          },
+          {
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d",
+            "x": -79615,
+            "blockStatesHashed": 384,
+            "z": 33000,
+            "nativeCallElapsedNanos": 6992500
+          },
+          {
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd",
+            "x": -79607,
+            "blockStatesHashed": 384,
+            "z": 33000,
+            "nativeCallElapsedNanos": 7219700
+          },
+          {
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "x": -79615,
+            "blockStatesHashed": 384,
+            "z": 32991,
+            "nativeCallElapsedNanos": 7623600
+          },
+          {
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f",
+            "x": -79607,
+            "blockStatesHashed": 384,
+            "z": 32991,
+            "nativeCallElapsedNanos": 9183100
+          },
+          {
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d",
+            "x": -79615,
+            "blockStatesHashed": 384,
+            "z": 33000,
+            "nativeCallElapsedNanos": 6943600
+          },
+          {
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd",
+            "x": -79607,
+            "blockStatesHashed": 384,
+            "z": 33000,
+            "nativeCallElapsedNanos": 6803700
+          },
+          {
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c",
+            "x": -79616,
+            "blockStatesHashed": 384,
+            "z": 32992,
+            "nativeCallElapsedNanos": 8280400
+          },
+          {
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32992,
+            "nativeCallElapsedNanos": 9096400
+          },
+          {
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466",
+            "x": -79616,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 8842600
+          },
+          {
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 8168500
+          },
+          {
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "x": -79615,
+            "blockStatesHashed": 384,
+            "z": 32991,
+            "nativeCallElapsedNanos": 7140900
+          },
+          {
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f",
+            "x": -79607,
+            "blockStatesHashed": 384,
+            "z": 32991,
+            "nativeCallElapsedNanos": 8527000
+          },
+          {
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d",
+            "x": -79615,
+            "blockStatesHashed": 384,
+            "z": 33000,
+            "nativeCallElapsedNanos": 7017400
+          },
+          {
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd",
+            "x": -79607,
+            "blockStatesHashed": 384,
+            "z": 33000,
+            "nativeCallElapsedNanos": 8131100
+          },
+          {
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c",
+            "x": -79616,
+            "blockStatesHashed": 384,
+            "z": 32992,
+            "nativeCallElapsedNanos": 7100000
+          },
+          {
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32992,
+            "nativeCallElapsedNanos": 9024700
+          },
+          {
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466",
+            "x": -79616,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 6520800
+          },
+          {
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "x": -79608,
+            "blockStatesHashed": 384,
+            "z": 32999,
+            "nativeCallElapsedNanos": 7988300
+          },
+          {
+            "columnSha256": "458dab8adf87a33c1410365bcd1115dffc5ec09351fac8da190c9c271ca244e4",
+            "x": 56664,
+            "blockStatesHashed": 384,
+            "z": 15360,
+            "nativeCallElapsedNanos": 24796700
+          },
+          {
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "x": 56672,
+            "blockStatesHashed": 384,
+            "z": 15360,
+            "nativeCallElapsedNanos": 7342600
+          },
+          {
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "x": 56664,
+            "blockStatesHashed": 384,
+            "z": 15368,
+            "nativeCallElapsedNanos": 7459500
+          },
+          {
+            "columnSha256": "21b6de7cf6fd15b7ecfe15467b865f25f0bd8b84096278b413892ec540446f72",
+            "x": 56672,
+            "blockStatesHashed": 384,
+            "z": 15368,
+            "nativeCallElapsedNanos": 11900800
+          },
+          {
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "x": 56656,
+            "blockStatesHashed": 384,
+            "z": 15361,
+            "nativeCallElapsedNanos": 6117500
+          },
+          {
+            "columnSha256": "4c241af3e937911d58bf50bfde82fef920fe743cef4fa1fac99e855820971932",
+            "x": 56664,
+            "blockStatesHashed": 384,
+            "z": 15361,
+            "nativeCallElapsedNanos": 14254100
+          },
+          {
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "x": 56656,
+            "blockStatesHashed": 384,
+            "z": 15368,
+            "nativeCallElapsedNanos": 5625000
+          },
+          {
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "x": 56664,
+            "blockStatesHashed": 384,
+            "z": 15368,
+            "nativeCallElapsedNanos": 5519400
+          }
+        ],
+        "elapsedMillis": 324.6856,
+        "scope": "Native exact-input functional column hashes after six baseline FULL chunks. Timings are diagnostics under uncontrolled functional load, not throughput benchmark evidence."
+      }
+    },
+    {
+      "loader": "neoforge",
+      "version": "0.1.0-dev.18+26.2",
+      "report": "docs/validation/server-native-columns-18-23-neoforge-old18.json",
+      "reportSha256": "25759588b4d73f49027ac530d5c21e22d88b3ed52eb2314ede46b13132b0bfc0",
+      "artifactSha256": "74bf21b1ef047f53b56ef3bd28e536bc39b0d538adce0f76099dab74a603b65c",
+      "replay": {
+        "requested": true,
+        "seed": 8675309,
+        "input": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-dev18-ruined-portal-columns.json",
+        "inputSha256": "91b32b5edaaad2bcf108a64f4146463174e2417ebf5c26fddd1dd78d596f8444",
+        "nativeApi": "ChunkGenerator.getBaseColumn(x,z,actualServerLevel,actualRandomState)",
+        "minY": -64,
+        "maxYInclusive": 319,
+        "columns": [
+          {
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "nativeCallElapsedNanos": 61972300,
+            "z": 32990
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623",
+            "nativeCallElapsedNanos": 62265900,
+            "z": 32990
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9",
+            "nativeCallElapsedNanos": 54348800,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "nativeCallElapsedNanos": 53587500,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "nativeCallElapsedNanos": 58361200,
+            "z": 32990
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623",
+            "nativeCallElapsedNanos": 58540000,
+            "z": 32990
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9",
+            "nativeCallElapsedNanos": 55127600,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "nativeCallElapsedNanos": 62307600,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "nativeCallElapsedNanos": 57094000,
+            "z": 32991
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f",
+            "nativeCallElapsedNanos": 61537900,
+            "z": 32991
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d",
+            "nativeCallElapsedNanos": 61593600,
+            "z": 33000
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd",
+            "nativeCallElapsedNanos": 62407600,
+            "z": 33000
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "nativeCallElapsedNanos": 53251300,
+            "z": 32991
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f",
+            "nativeCallElapsedNanos": 54921100,
+            "z": 32991
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d",
+            "nativeCallElapsedNanos": 52462400,
+            "z": 33000
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd",
+            "nativeCallElapsedNanos": 55210800,
+            "z": 33000
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c",
+            "nativeCallElapsedNanos": 57699300,
+            "z": 32992
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d",
+            "nativeCallElapsedNanos": 63370300,
+            "z": 32992
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466",
+            "nativeCallElapsedNanos": 50694600,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "nativeCallElapsedNanos": 52597700,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e",
+            "nativeCallElapsedNanos": 52894800,
+            "z": 32991
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f",
+            "nativeCallElapsedNanos": 50020100,
+            "z": 32991
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d",
+            "nativeCallElapsedNanos": 52349800,
+            "z": 33000
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd",
+            "nativeCallElapsedNanos": 54926700,
+            "z": 33000
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c",
+            "nativeCallElapsedNanos": 53559600,
+            "z": 32992
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d",
+            "nativeCallElapsedNanos": 58484800,
+            "z": 32992
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466",
+            "nativeCallElapsedNanos": 55949500,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f",
+            "nativeCallElapsedNanos": 60375000,
+            "z": 32999
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "458dab8adf87a33c1410365bcd1115dffc5ec09351fac8da190c9c271ca244e4",
+            "nativeCallElapsedNanos": 131194900,
+            "z": 15360
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56672,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "nativeCallElapsedNanos": 128283600,
+            "z": 15360
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "nativeCallElapsedNanos": 122392300,
+            "z": 15368
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56672,
+            "columnSha256": "21b6de7cf6fd15b7ecfe15467b865f25f0bd8b84096278b413892ec540446f72",
+            "nativeCallElapsedNanos": 121149100,
+            "z": 15368
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56656,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "nativeCallElapsedNanos": 122793700,
+            "z": 15361
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "4c241af3e937911d58bf50bfde82fef920fe743cef4fa1fac99e855820971932",
+            "nativeCallElapsedNanos": 117493200,
+            "z": 15361
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56656,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "nativeCallElapsedNanos": 114651700,
+            "z": 15368
+          },
+          {
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08",
+            "nativeCallElapsedNanos": 119294200,
+            "z": 15368
+          }
+        ],
+        "elapsedMillis": 2575.6756,
+        "scope": "Native exact-input functional column hashes after six baseline FULL chunks. Timings are diagnostics under uncontrolled functional load, not throughput benchmark evidence."
+      }
+    },
+    {
+      "loader": "neoforge",
+      "version": "0.1.0-dev.23+26.2",
+      "report": "docs/validation/server-native-columns-18-23-neoforge-candidate.json",
+      "reportSha256": "8ea488303c07a24905cc2244850e4eb578bdfec0294b88ea0b2c79f79d3ec42d",
+      "artifactSha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+      "replay": {
+        "requested": true,
+        "seed": 8675309,
+        "input": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-dev18-ruined-portal-columns.json",
+        "inputSha256": "91b32b5edaaad2bcf108a64f4146463174e2417ebf5c26fddd1dd78d596f8444",
+        "nativeApi": "ChunkGenerator.getBaseColumn(x,z,actualServerLevel,actualRandomState)",
+        "minY": -64,
+        "maxYInclusive": 319,
+        "columns": [
+          {
+            "nativeCallElapsedNanos": 6183700,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 2522500,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623"
+          },
+          {
+            "nativeCallElapsedNanos": 2302500,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9"
+          },
+          {
+            "nativeCallElapsedNanos": 4013800,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 4180800,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 3863000,
+            "z": 32990,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4e5b61dc34d84dbb3645608a122f73c645e660683836d946f77d18212a4b8623"
+          },
+          {
+            "nativeCallElapsedNanos": 3245600,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79614,
+            "columnSha256": "a9494514ab33c02c066601d3e5951ad9ecae796bd2f85850cc4ee0a8e8a474b9"
+          },
+          {
+            "nativeCallElapsedNanos": 2888000,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 2453500,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 3333000,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f"
+          },
+          {
+            "nativeCallElapsedNanos": 2669800,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d"
+          },
+          {
+            "nativeCallElapsedNanos": 2224500,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd"
+          },
+          {
+            "nativeCallElapsedNanos": 3760200,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 2568000,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f"
+          },
+          {
+            "nativeCallElapsedNanos": 2177500,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d"
+          },
+          {
+            "nativeCallElapsedNanos": 2225200,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd"
+          },
+          {
+            "nativeCallElapsedNanos": 2456800,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c"
+          },
+          {
+            "nativeCallElapsedNanos": 2458600,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d"
+          },
+          {
+            "nativeCallElapsedNanos": 2654700,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466"
+          },
+          {
+            "nativeCallElapsedNanos": 2679600,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 2431300,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "0ba82e2b03f003379b624aaa78ed29d1253809d2f6f0707e0c8af15296eefc3e"
+          },
+          {
+            "nativeCallElapsedNanos": 2291700,
+            "z": 32991,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "2bc2f72097ec33973c31a5d2518b2e54bdbbea237e746bc0c6c0a5efa2a0838f"
+          },
+          {
+            "nativeCallElapsedNanos": 2058600,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79615,
+            "columnSha256": "da595fab2a64fe497e2cea17260d15afecc385cc46bddf5fd8ae7051d5e4f66d"
+          },
+          {
+            "nativeCallElapsedNanos": 2252300,
+            "z": 33000,
+            "blockStatesHashed": 384,
+            "x": -79607,
+            "columnSha256": "39cce07407bb48202a2478a97e54d14cd346b0e441e06b5b2322766d8e8259dd"
+          },
+          {
+            "nativeCallElapsedNanos": 2580800,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "5e2de704d63cf97c70fa5c301372cd02e231d1718df579ba4af32a115e90526c"
+          },
+          {
+            "nativeCallElapsedNanos": 2495700,
+            "z": 32992,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "4449ccea30a68376a15c0c3736f6d7272b956e73856b99d66e03a38ed0389e6d"
+          },
+          {
+            "nativeCallElapsedNanos": 2132800,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79616,
+            "columnSha256": "0b0ead83ee988c0f8ae620a5e8b92bac49d383634328d1ec779f0e3255729466"
+          },
+          {
+            "nativeCallElapsedNanos": 2304600,
+            "z": 32999,
+            "blockStatesHashed": 384,
+            "x": -79608,
+            "columnSha256": "15416160ba2335dc9350083ee04286ef0dfa1a8436ecf22c500c026cb3bdcf4f"
+          },
+          {
+            "nativeCallElapsedNanos": 3937700,
+            "z": 15360,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "458dab8adf87a33c1410365bcd1115dffc5ec09351fac8da190c9c271ca244e4"
+          },
+          {
+            "nativeCallElapsedNanos": 3079200,
+            "z": 15360,
+            "blockStatesHashed": 384,
+            "x": 56672,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 3978800,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 3184200,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56672,
+            "columnSha256": "21b6de7cf6fd15b7ecfe15467b865f25f0bd8b84096278b413892ec540446f72"
+          },
+          {
+            "nativeCallElapsedNanos": 3038400,
+            "z": 15361,
+            "blockStatesHashed": 384,
+            "x": 56656,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 3895000,
+            "z": 15361,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "4c241af3e937911d58bf50bfde82fef920fe743cef4fa1fac99e855820971932"
+          },
+          {
+            "nativeCallElapsedNanos": 2955700,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56656,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          },
+          {
+            "nativeCallElapsedNanos": 3359300,
+            "z": 15368,
+            "blockStatesHashed": 384,
+            "x": 56664,
+            "columnSha256": "f912a770b4efde0116d3c49a5c286225e1b1784f91753162ff1cee557bbb5b08"
+          }
+        ],
+        "elapsedMillis": 116.4307,
+        "scope": "Native exact-input functional column hashes after six baseline FULL chunks. Timings are diagnostics under uncontrolled functional load, not throughput benchmark evidence."
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "loader": "fabric",
+      "columns": 36,
+      "differences": [],
+      "allNativeColumnBlocksMatch": true,
+      "oldDiagnosticNativeCallTotalNanos": 5012655100,
+      "newDiagnosticNativeCallTotalNanos": 305952700
+    },
+    {
+      "loader": "neoforge",
+      "columns": 36,
+      "differences": [],
+      "allNativeColumnBlocksMatch": true,
+      "oldDiagnosticNativeCallTotalNanos": 2565164500,
+      "newDiagnosticNativeCallTotalNanos": 106837400
+    }
+  ],
+  "performanceEvidence": false,
+  "scope": "Actual native getBaseColumn on exact captured RuinedPortal inputs; all384 block states per column compared; timings are diagnostic",
+  "finishedAtUtc": "2026-11-04T13:00:28.266969+00:00",
+  "harnessSha256": "a759ae00845fd0953a44df08bb4d042018c5dbb83278de54def8a2ae041c8a07"
+}

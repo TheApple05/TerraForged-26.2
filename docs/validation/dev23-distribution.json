@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "assembled-accepted-prerelease",
+  "createdAtUtc": "2026-11-04T13:35:32.364272+00:00",
+  "minecraft": "26.2",
+  "version": "0.1.0-dev.23+26.2",
+  "stableRelease": false,
+  "artifacts": [
+    {
+      "loader": "fabric",
+      "file": "terraforged-revival-0.1.0-dev.23-fabric-mc26.2.jar",
+      "sha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "bytes": 1253436
+    },
+    {
+      "loader": "neoforge",
+      "file": "terraforged-revival-0.1.0-dev.23-neoforge-mc26.2.jar",
+      "sha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+      "bytes": 1201813
+    }
+  ],
+  "requirements": {
+    "java": "25",
+    "fabricLoader": "0.20.1",
+    "fabricApi": "0.161.0+26.2",
+    "neoforge": "26.2.0.93"
+  },
+  "acceptanceSha256": "564fe049b1f5e00956f3407748277af655ac66c019d6fa26eb2758321ddd3f3b",
+  "excluded": [
+    "QA companions",
+    "Third-party mods",
+    "Game resources",
+    "Horizon prototype"
+  ]
+}

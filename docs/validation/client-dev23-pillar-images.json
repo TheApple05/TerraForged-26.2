@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "archived-byte-exact",
+  "reports": [
+    {
+      "report": "docs/validation/client-fabric-dev23-pillar-scenes.json",
+      "reportSha256": "708359bd66731e670bf268dc347e8e67b0c2718440f1accc8c29eb8f9c77687e",
+      "images": [
+        {
+          "path": "docs/validation/images/client-fabric-dev23-pillar-scenes/08-bryce.png",
+          "sha256": "4d46385717b8c47fe70cc8a369aa5700d138045c5b95a0478589dd21778dd548",
+          "bytes": 1258802,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "path": "docs/validation/images/client-fabric-dev23-pillar-scenes/09-stone_forest.png",
+          "sha256": "2c888ad3c7ef3e78131eb32760a1f7ff625ce999844da697dccfef2858c3a694",
+          "bytes": 518638,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    }
+  ],
+  "imageCount": 2,
+  "scope": "Actual native Screenshot.grab output; archival checks do not establish visual approval."
+}
