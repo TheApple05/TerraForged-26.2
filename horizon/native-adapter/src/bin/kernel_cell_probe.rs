@@ -1,6 +1,7 @@
 mod support;
 use terraforged_native_adapter::{noise_registry::NoiseRegistry, preset::CellPresetInput};
 use terraforged_native_core::{cell::Cell, heightmap::Heightmap};
+use terraforged_native_core::{tile::TileBuffer, world_filters::WorldFilters};
 fn output(
     stage: &str,
     seed: i64,
@@ -18,7 +19,12 @@ fn output(
         .ok_or("unknown owned terrain")?
         .name()
         .into();
-    println!("{stage}/{seed}/{x}/{z}\t{}", fields.join(","));
+    let key = if let Some(tile) = stage.strip_prefix("filtered-tile/") {
+        format!("filtered-tile/{seed}/{tile}/{x}/{z}")
+    } else {
+        format!("{stage}/{seed}/{x}/{z}")
+    };
+    println!("{key}\t{}", fields.join(","));
     Ok(())
 }
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -53,6 +59,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let mut no = c;
             map.apply_climate(&mut no, x as f32, z as f32, false)?;
             output("climate-false", seed, x, z, &no, &map)?;
+        }
+        let filters = WorldFilters::new(&preset, seed as i32, map.levels)?;
+        for layout in query["layouts"].as_array().into_iter().flatten() {
+            let x = layout["tileX"].as_i64().unwrap() as i32;
+            let z = layout["tileZ"].as_i64().unwrap() as i32;
+            let border = layout["border"].as_i64().unwrap() as i32;
+            let mut tile = TileBuffer::new(x, z, 3, border >> 4)?;
+            assert_eq!(tile.size.size, layout["size"].as_i64().unwrap() as i32);
+            assert_eq!(tile.size.total, layout["total"].as_i64().unwrap() as i32);
+            tile.populate(&map)?;
+            filters.apply(&mut tile, true, &map.terrains)?;
+            for rz in 0..tile.size.total {
+                for rx in 0..tile.size.total {
+                    let wx = tile.block_x() - tile.size.border + rx;
+                    let wz = tile.block_z() - tile.size.border + rz;
+                    output(
+                        &format!("filtered-tile/{x}/{z}"),
+                        seed,
+                        wx,
+                        wz,
+                        &tile.cells[tile.size.index_of(rx, rz) as usize],
+                        &map,
+                    )?;
+                }
+            }
         }
     }
     Ok(())

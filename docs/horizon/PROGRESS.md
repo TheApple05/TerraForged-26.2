@@ -31,16 +31,19 @@ ordering also match independently captured Java data; see terrain-provider.md.
 Complete Heightmap terrain/climate construction now matches five-preset Java
 stage observations; heightmap-climate.md records the boundary and explicit guards.
 Terrain also matches all 726 terrain records from the older full kernel-v1 corpus.
-Filtered-tile construction remains required. The complete unfiltered Heightmap
-apply sampler now includes real procedural river generation and carving.
+The complete unfiltered Heightmap apply sampler now includes real procedural
+river generation and carving. Full tile generation/filtering is also implemented.
 River geometry, warps/domains, configurations, variance and fork conversions now
 match independent Java observations; see river-foundations.md. River, lake and
 wetland carvers now match 3,919,986 observed Java fields per native build profile;
 river-carvers.md records their scope. Network generation/traversal now matches
 72 Java maps and 1,920 nodes; river-networks.md records the details. The full
 unfiltered sampler also matches all 2,904 terrain/river/climate stage records from
-the preexisting kernel-v1 corpus in both native build profiles. Next complete
-filtered tile backings/halos, seams, cache ownership, query order and parallel work.
+the preexisting kernel-v1 corpus in both native build profiles. All 310,104 records
+from that corpus now match, including 12 complete filtered backings/halos; see
+tile-filters.md. Independent filter/brush/zoom cases also match 3,151,416 fields.
+Next complete the bounded production column/tile sampler, cache eviction/reload,
+seam characterization and performance, then real native density integration.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
 
 After that, connect the complete kernel to real native density, biome, surface,

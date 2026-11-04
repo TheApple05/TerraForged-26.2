@@ -1,5 +1,13 @@
 # Next milestone: the complete infinite cell/tile kernel
 
+Checkpoint: procedural cell stages and complete default filtered tile backings now
+match the independent Java corpus in debug/release (310,104 records / 7,442,496
+fields). Separate controlled filter/brush and actual zoomed-tile observations also
+match; see [tile qualification](tile-filters.md). The remaining acceptance sequence
+below still requires bounded production sampler ownership/performance and real
+native density/chunk/client/save integration. This document retains the original
+milestone contract; the frozen Java manifest is unchanged.
+
 The prepared-world bridge is a tested intermediate implementation. Infinite
 native TerraForged generation is still required. The next useful unit is the
 complete cell/tile pipeline for one exact default preset, exposed as a native

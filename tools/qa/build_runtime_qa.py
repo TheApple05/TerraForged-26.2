@@ -35,6 +35,7 @@ def main() -> int:
     parser.add_argument("--river-foundations", action="store_true", help="Include the optional genuine Java river geometry/configuration oracle (Fabric QA only).")
     parser.add_argument("--river-carvers", action="store_true", help="Include the optional genuine Java river/lake/wetland carving oracle (Fabric QA only).")
     parser.add_argument("--river-networks", action="store_true", help="Include the optional genuine Java river-network and complete-cell oracle (Fabric QA only).")
+    parser.add_argument("--tile-filters", action="store_true", help="Include the optional genuine Java filter/brush/zoomed-tile oracle (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -78,6 +79,8 @@ def main() -> int:
         sources.append(ROOT / "horizon/tests/java/NativeRiverCarverProbe.java")
     if args.river_networks:
         sources.append(ROOT / "horizon/tests/java/NativeRiverNetworkProbe.java")
+    if args.tile_filters:
+        sources.append(ROOT / "horizon/tests/java/NativeTileFilterProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
@@ -116,6 +119,8 @@ def main() -> int:
             archive.write(ROOT / "horizon/tests/inputs/river-carvers-v1.json", "terraforged-qa-river-carvers.json")
         if args.river_networks:
             archive.write(ROOT / "horizon/tests/inputs/river-networks-v1.json", "terraforged-qa-river-networks.json")
+        if args.tile_filters:
+            archive.write(ROOT / "horizon/tests/inputs/tile-filters-v1.json", "terraforged-qa-tile-filters.json")
         archive.writestr("fabric.mod.json", json.dumps(metadata, indent=2) + "\n")
         archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
             "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")

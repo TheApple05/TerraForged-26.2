@@ -1,7 +1,7 @@
 """Compare native terrain with the preexisting independent full Java kernel corpus.
 
-Native code receives only preset/registry/coordinates; no expected cells or snapshots.
-Rivers, climate and filtered-tile records are deliberately not claimed as matched.
+Native code receives only preset/registry/coordinate/layout inputs; no expected
+cells or snapshots. Only the explicitly selected stage set is compared.
 """
 from __future__ import annotations
 import argparse
@@ -28,14 +28,14 @@ def terrain_rows(path,stages=('terrain',)):
     if text()!='TerraForged kernel oracle v1':raise ValueError('Unexpected original kernel schema')
     seed=number('q');narrowed=number('i');fields=[(text(),text()) for _ in range(number('i'))]
     if narrowed!=(seed+2**31)%2**32-2**31 or len(fields)!=24:raise ValueError('Original kernel header changed')
-    result={};count=0
+    result={};count=0;tile=None
     while True:
         stage=text()
         if stage=='complete':
             if number('q')!=count or offset!=len(data):raise ValueError('Original kernel count/trailing bytes changed')
             break
         if stage=='tile-layout':
-            for _ in range(5):number('i')
+            tile=tuple(number('i') for _ in range(5))
             continue
         if stage not in ('terrain','rivers','climate-true','climate-false','filtered-tile'):raise ValueError('Unknown original stage')
         x=number('i');z=number('i');values=[]
@@ -48,18 +48,20 @@ def terrain_rows(path,stages=('terrain',)):
                 values.append('true' if b else 'false')
             else:values.append(text())
         if stage in stages:
-            key=f'{stage}/{seed}/{x}/{z}'
+            tile_key=f'{tile[0]}/{tile[1]}/' if stage=='filtered-tile' else ''
+            key=f'{stage}/{seed}/{tile_key}{x}/{z}'
             if key in result:raise ValueError('Duplicate original terrain point')
             result[key]=values
         count+=1
-    if len(result)!=121*len(stages):raise ValueError('Original selected stages incomplete')
+    if len(result)!=sum(51200 if stage=='filtered-tile' else 121 for stage in stages):raise ValueError('Original selected stages incomplete')
     return seed,result
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True)
-    p.add_argument('--stages',choices=['terrain','unfiltered'],default='terrain');args=p.parse_args()
+    p.add_argument('--stages',choices=['terrain','unfiltered','full'],default='terrain');args=p.parse_args()
     stages=('terrain',) if args.stages=='terrain' else ('terrain','rivers','climate-true','climate-false')
-    passed_status='passed-original-kernel-terrain-only' if args.stages=='terrain' else 'passed-original-kernel-unfiltered-stages'
+    if args.stages=='full':stages+=('filtered-tile',)
+    passed_status={'terrain':'passed-original-kernel-terrain-only','unfiltered':'passed-original-kernel-unfiltered-stages','full':'passed-original-kernel-all-stages'}[args.stages]
     if args.report.exists():p.error('Refusing to replace original-kernel terrain evidence')
     manifest=ROOT/'docs/validation/horizon-kernel-java-oracle-v1.json';metadata=json.loads(manifest.read_text(encoding='utf-8'))
     if metadata['status']!='frozen-independent-java-kernel-reference' or not metadata['freshJvmsAgree'] or not metadata['freshContextsAgree']:raise ValueError('Original independent kernel evidence absent')
@@ -69,15 +71,18 @@ def main():
     expected={};seeds=[]
     for capture in metadata['captures']:
         seed,values=terrain_rows(folder/capture['file'],stages);seeds.append(seed);expected.update(values)
-    if len(expected)!=726*len(stages) or len(seeds)!=6:raise ValueError('Six original seed cases required')
-    points=sorted({tuple(map(int,key.split('/')[-2:])) for key in expected})
+    if len(expected)!=6*sum(51200 if stage=='filtered-tile' else 121 for stage in stages) or len(seeds)!=6:raise ValueError('Six original seed cases required')
+    points=sorted({tuple(map(int,key.split('/')[-2:])) for key in expected if not key.startswith('filtered-tile/')})
     work=ROOT/'build/qa/horizon/kernel-terrain'/args.report.stem;work.mkdir(parents=True,exist_ok=True)
-    queries=work/'queries.json';queries.write_text(json.dumps({'seeds':seeds,'points':points})+'\n',encoding='utf-8',newline='\n')
+    layouts=metadata['captures'][0]['layouts'] if args.stages=='full' else []
+    for capture in metadata['captures']:
+        if args.stages=='full' and (capture['layouts']!=layouts or capture['tileSizeFactor']!=3):raise ValueError('Original tile input layout changed')
+    queries=work/'queries.json';queries.write_text(json.dumps({'seeds':seeds,'points':points,'layouts':layouts})+'\n',encoding='utf-8',newline='\n')
     report={'schemaVersion':1,'status':'failed','startedAtUtc':dt.datetime.now(dt.timezone.utc).isoformat(),'originalKernelManifestSha256':sha(manifest),
         'inputSha256':{name:sha(folder/name) for name in ['preset.json','noise-registry.json']},'queriesSha256':sha(queries),
         'recordsPerProfile':len(expected),'fieldsPerProfile':sum(map(len,expected.values())),'profiles':[],
         'scope':'Native '+args.stages+' stages against original full-kernel Java observations; no expected cell data is read by native code.',
-        'notCovered':(['River execution','Climate acceptance from this corpus'] if args.stages=='terrain' else [])+['Filtered tiles and halos','Native chunks/client/save/launcher']}
+        'notCovered':(['River execution','Climate acceptance from this corpus'] if args.stages=='terrain' else [])+(['Filtered tiles and halos'] if args.stages!='full' else [])+['Other presets or tile layouts from this corpus','Native chunks/client/save/launcher']}
     for profile in ('debug','release'):
         command=['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(ROOT/'horizon/native-adapter/Cargo.toml'),'--bin','kernel_terrain_probe' if args.stages=='terrain' else 'kernel_cell_probe']
         if profile=='release':command.append('--release')
