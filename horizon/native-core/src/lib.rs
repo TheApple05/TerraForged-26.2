@@ -1,7 +1,10 @@
 #![forbid(unsafe_code)]
 
+pub mod domain;
+pub mod erosion;
 pub mod fast_random;
 pub mod graph;
+pub mod line;
 mod math_table;
 pub mod noise_util;
 pub mod noise_vectors;

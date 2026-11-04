@@ -48,3 +48,9 @@ White/Cubic and three ridge/billow variants also match 128,458 independent Java
 fields per profile, including reported bounds and high octave behavior. See
 [noise sources](../../docs/horizon/noise-sources.md); use `--family sources` and
 `--family power` for the source corpus and fractional-power foundation.
+
+All 41 registered noise types, five domain types and two curve functions now have
+finite numerical fixture coverage in debug/release. See
+[final numerical modules](../../docs/horizon/noise-final-modules.md). This does
+not qualify visitors, registry loading, default cell/river/tile terrain, native
+chunks or client/save behavior.

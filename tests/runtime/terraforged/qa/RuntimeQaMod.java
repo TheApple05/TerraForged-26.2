@@ -163,6 +163,14 @@ public final class RuntimeQaMod implements ModInitializer {
                     "sha256", sha256(reference), "bytes", Files.size(reference)));
             }
             report.put("nativeColumnReplay", NativeColumnReplayQa.verify(server.overworld()));
+            if (Boolean.getBoolean("terraforged.qa.exportNoiseFinal")) {
+                require(!mode.startsWith("benchmark"), "Noise final capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-noise-final.tsv");
+                Class<?> probe = Class.forName("raccoonman.reterraforged.world.worldgen.noise.module.NativeNoiseFinalProbe");
+                probe.getMethod("main", String[].class).invoke(null, (Object) new String[] { reference.toString() });
+                report.put("noiseFinal", Map.of("status", "captured-genuine-java-graphs", "file", reference.toString(),
+                    "sha256", sha256(reference), "bytes", Files.size(reference)));
+            }
             report.put("classicBiomeTargetQualification", ClassicBiomeTargetSearchQa.verify(server.overworld()));
             report.put("classicBiomeStoredChunkChecks", ClassicBiomeChunkQa.verify(server, server.overworld()));
             TemplateBiomeDecoratorProbe.main(new String[0]);
