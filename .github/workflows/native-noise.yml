@@ -55,6 +55,7 @@ jobs:
           python horizon/tools/verify_native_registry.py --family continent --report build/qa/ci/native-continent.json
           python horizon/tools/verify_native_registry.py --family populators --report build/qa/ci/native-populators.json
           python horizon/tools/verify_native_registry.py --family terrain-factories --report build/qa/ci/native-terrain-factories.json
+          python horizon/tools/verify_native_registry.py --family terrain-provider --report build/qa/ci/native-terrain-provider.json
       - name: Retain foundation reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

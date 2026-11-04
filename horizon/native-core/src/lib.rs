@@ -27,4 +27,6 @@ pub mod simplex2;
 pub mod sources;
 pub mod terrain;
 pub mod terrain_factories;
+pub mod terrain_provider;
+pub mod volcano;
 pub mod worley;
