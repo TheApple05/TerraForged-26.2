@@ -3,6 +3,7 @@
 pub mod biome;
 pub mod bounds;
 pub mod cell;
+pub mod classic_biomes;
 pub mod climate;
 pub mod continent;
 pub mod density_primitives;

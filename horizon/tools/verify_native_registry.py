@@ -11,6 +11,8 @@ from verify_native_noise import rows
 
 ROOT=Path(__file__).resolve().parents[2]
 FAMILIES={
+    'classic-biomes':('classic-biomes-v1','classic_biome_probe','Published Java dev23 modern biome policy and exact raw-float region hash',
+                      'NATIVE_CLASSIC_BIOMES_OK exactRegionHash modernPolicy terrainIdentity eligibleFamilies nonfinitePassthrough','passed-classic-biome-policy-only'),
     'registry':('registry-v1','registry_probe','Bounded registry adapter, raw finite bits and explicit nonfinite classifications',
                 'NATIVE_REGISTRY_GUARDS_OK missing cycle type field enum identifier numeric octave power depth lookup','passed-registry-adapter-only'),
     'preset':('preset-v1','preset_probe','Five kernel setting groups and 49 source factory graphs',
