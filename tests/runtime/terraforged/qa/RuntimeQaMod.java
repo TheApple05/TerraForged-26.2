@@ -201,6 +201,20 @@ public final class RuntimeQaMod implements ModInitializer {
             require(((RTFRandomState) randomState).preset() != null, "Random state has no TerraForged preset");
             node(nodes, "custom-generator-active", "passed", "Custom preset entry, RTFRandomState, GeneratorContext and TileCache are present");
         }
+        if (raccoonman.reterraforged.world.worldgen.terrablender.TBCompat.isEnabled()) {
+            var sampler = level.getChunkSource().randomState().sampler();
+            require((Object) sampler instanceof raccoonman.reterraforged.world.worldgen.terrablender.TBClimateSampler,
+                "Loaded TerraBlender sampler is missing the compatibility interface");
+            var extended = (raccoonman.reterraforged.world.worldgen.terrablender.TBClimateSampler) (Object) sampler;
+            require(extended.getUniqueness() != null, "TerraBlender uniqueness density was not installed");
+            Object point = sampler.sample(0, 0, 0);
+            require(point instanceof raccoonman.reterraforged.world.worldgen.terrablender.TBTargetPoint,
+                "Sampled climate target is missing the compatibility interface");
+            double uniqueness = ((raccoonman.reterraforged.world.worldgen.terrablender.TBTargetPoint) point).getUniqueness();
+            require(Double.isFinite(uniqueness), "TerraBlender sampled uniqueness was not populated");
+            node(nodes, "terrablender-sampler-uniqueness", "passed",
+                "Actual global sampler and climate target carry finite uniqueness: " + uniqueness);
+        }
 
         List<Map<String, Object>> samples = new ArrayList<>();
         List<Map<String, Object>> chunkEvidence = new ArrayList<>();

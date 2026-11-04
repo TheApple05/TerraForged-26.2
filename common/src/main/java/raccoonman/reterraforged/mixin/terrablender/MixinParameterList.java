@@ -13,8 +13,9 @@ import raccoonman.reterraforged.world.worldgen.terrablender.TBTargetPoint;
 import terrablender.api.RegionType;
 import terrablender.worldgen.IExtendedParameterList;
 
-// TerraBlender adds the positional API at its default priority before this mixin.
-@Mixin(value = Climate.ParameterList.class, priority = 900)
+// INVOKE injection into another mixin's merged method requires a strictly
+// higher priority (InjectionPoint.checkPriority). Preparation follows merging.
+@Mixin(value = Climate.ParameterList.class, priority = 1100)
 class MixinParameterList<T> {
     @Unique
     private int reterraforged$maxIndex;
