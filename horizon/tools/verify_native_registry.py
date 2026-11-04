@@ -18,6 +18,8 @@ FAMILIES={
                  'NATIVE_CONTINENT_GUARDS_OK finiteQueries scaleBounds queryOrder parallelOwnership','passed-continent-geometry-only'),
     'populators':('populators-v1','populator_probe','RegionModule and 27 terrain/ocean/selector/region/continent blending graphs',
                   'NATIVE_POPULATOR_GUARDS_OK weights selectorBounds depthBudget nodeBudget parallelOwnership','passed-populator-composition-only'),
+    'terrain-factories':('terrain-factories-v1','terrain_factory_probe','Twenty original terrain factory branches, raw noise outputs, bounds, cells and constructor cursors',
+                         'NATIVE_TERRAIN_FACTORY_GUARDS_OK originalCursors ownedGraphs replayOrder parallelReaders','passed-terrain-factories-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 

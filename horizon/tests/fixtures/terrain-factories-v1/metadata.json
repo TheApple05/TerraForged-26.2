@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-terrain-factories-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "4a9035163ac73933839c6fd7cb3de9d146d8cf06e28e7db1e3311c39d122538f",
+  "inputsSha256": "87d09f05bd40ace9bdb542e734e1f191ce92b5b4cb5e05e2084cff26c0d08242",
+  "recordCount": 108361,
+  "factoryBranches": 20,
+  "settingCases": 4,
+  "signed32Seeds": 6,
+  "cellSamples": 58080,
+  "rawNoiseSamples": 49368,
+  "allCellFields": 24,
+  "producerReports": [
+    {
+      "report": "server-horizon-terrain-factories-oracle-v1a.json",
+      "sha256": "87b654050da4800a5a390c4e04c39086700797f471ee608029a58c80102cd656",
+      "pid": 76248,
+      "instance": "build/qa/server/instances/20261104T161202Z-b87d3d",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "7703ce2125f57797a939f9d81f0bd1349cafae1d72b86cb1d2ba4d42eaf25795",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.Populators source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.TerrainPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.OceanPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Levels source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.Seed source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cache2d source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.biome.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.biome.Weirdness source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.biome.BiomeParameter source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-b87d3d/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-terrain-factories-oracle-v1b.json",
+      "sha256": "c501093c03aaf50ba9771556abb092445f6cd19ad863cfae41fa06d9bf9baaab",
+      "pid": 16104,
+      "instance": "build/qa/server/instances/20261104T161202Z-85eb29",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "ac2476091a224d5588c695eeec7919803c2fe7478b70689c980595986779c731",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.Populators source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.TerrainPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.OceanPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Levels source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.Seed source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cache2d source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.biome.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.biome.Weirdness source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.biome.BiomeParameter source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T161202Z-85eb29/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "world/worldgen/cell/terrain/Populators.java": "f30bf7bce665d5b00cf45b25eca5e54344d77aea12f22ab6fb0438041518494c",
+    "world/worldgen/cell/terrain/populator/TerrainPopulator.java": "fceea9cd3d1089fc54dd5903a5858a636532848bd8f770d78508264306e30797",
+    "world/worldgen/cell/terrain/populator/OceanPopulator.java": "4271ef501a6a3d1e3fe7852e545e0d2ae610d1176324706c4b5b3627db9a4d57",
+    "world/worldgen/cell/heightmap/Levels.java": "d43a030691b7422216d4ea095407dba80ab5f28ece210fc7f1152e606b557d3b",
+    "world/worldgen/util/Seed.java": "363f692f8f1af4238b083a16e012b78222cbd340775d38fb50fce1fe7ee0ccd4",
+    "world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "world/worldgen/noise/module/Noises.java": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+    "world/worldgen/noise/module/Cache2d.java": "747ad42200c2a73c27a1ace0ebebbf95c7e3a41dcb0ce082d81e224092ee06af",
+    "world/worldgen/noise/module/Erosion.java": "5320dc3dd53ad61fd3033b8f748bbf7dba2d9c16f0549aca43dd2c86116d0452",
+    "world/worldgen/biome/Erosion.java": "c58d2355b3455188c2f48153e11168a4139a578eabe46decc52936e39d039704",
+    "world/worldgen/biome/Weirdness.java": "58894dbc8d5a7f6b6eecbcc8baa73bb10881d201a41933478cc70078565f72f1",
+    "world/worldgen/biome/BiomeParameter.java": "84050aa8a1ae2cbf371629919c1b9a0b28a8a9b92dc1c45dcc0848388828afa8",
+    "data/worldgen/preset/settings/TerrainSettings.java": "05d82bc61c3a7f6c77bccbdd7887d6c4eaff1c2a831c0bf0af80f6d106c9d8dd"
+  },
+  "oracleSourceSha256Lf": "127a30876d125f1c94660a5a3760aa954116277a2ac60357e0a1dcbbc2640d0a",
+  "scope": "Twenty original terrain factory branches, base/height/erosion/weirdness noise outputs, constructor cursor, metadata, all 24 Cell fields and Math.round corners.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "VolcanoPopulator",
+    "TerrainProvider construction/composite/shuffle order",
+    "River networks/cache",
+    "Whole terrain/climate/filtered tiles",
+    "Native chunks/client/save"
+  ]
+}

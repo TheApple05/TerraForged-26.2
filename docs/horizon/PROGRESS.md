@@ -26,6 +26,9 @@ terrain/river/climate cell pipeline in the original seed order.
 Region geometry, basic terrain/ocean populators, region/continent blending and
 weighted selection now match Java too; region-populators.md records their scope.
 The used Java Random methods and collection shuffle sequence are qualified.
+All 20 regular/fancy terrain factory branches now match Java observations in
+terrain-factories.md. VolcanoPopulator, TerrainProvider composite/seed/shuffle
+ordering and complete Heightmap construction remain to be integrated.
 Then compare every field against the frozen kernel-v1 observations, complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
