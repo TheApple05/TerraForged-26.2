@@ -1,8 +1,12 @@
 # TerraForged for Horizon: procedural port and prepared prototype
 
-This is an experimental **finite terrain bridge**, not the completed native
-TerraForged generator. Horizon currently targets Minecraft **26.3**; the Java
-port in this repository targets **26.2**.
+The procedural Rust port is in development for Horizon's Minecraft **26.3**
+target; the Java port in this repository targets **26.2**. The explicit native
+pipeline now generates real terrain and decorated regions in repeatable QA.
+See [native chunk evidence](../docs/horizon/native-chunks.md). World selection,
+classic native biomes/features and player/client/save acceptance remain work.
+
+The earlier experimental **finite terrain bridge** below is retained separately.
 
 The developer exporter runs the genuine packaged Java mod, completes FULL
 chunks and a one-chunk halo, and records all block states and quart biomes.
@@ -29,9 +33,11 @@ debug and release. The custom resource decoder also passes those observations
 through Horizon's JSON registry; see
 [resource integration](../docs/horizon/host-density-registry.md).
 See [graph integration](../docs/horizon/host-density-graph.md)
-and the [current checkpoint](../docs/horizon/PROGRESS.md). World activation,
-complete routers, biomes, surfaces, caves, decorations and structures remain
-integration work. The separate prepared bundle does not include this kernel.
+and the [current checkpoint](../docs/horizon/PROGRESS.md). An explicit default
+router and native pipeline are now exercised with real terrain/aquifers/
+materials/carvers/features. Player world selection, native classic biomes/
+features and full acceptance remain integration work. The separate prepared
+bundle does not include this kernel.
 
 The player-facing bundle is under `mixins/terraforged_prepared/`. It uses the
 actual Horizon world-generator constructor through horizon-mixins, pinned to

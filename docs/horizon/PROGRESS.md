@@ -55,7 +55,7 @@ The scoped custom-density resource decoder now also matches all 24,768 Java
 scalar/bulk observations through Horizon's real JSON registry in debug/release.
 Scope restoration, panic/error cleanup, thread isolation, vanilla passthrough
 and final world-owner release are exercised; see host-density-registry.md.
-This remains library-level integration, with no native world activation yet.
+The resource qualification remains distinct from the pipeline checks below.
 
 An explicit default 26.3 router plan now passes 22,464 eight-field integration
 records per profile using the player's existing vanilla definitions. Its five
@@ -64,15 +64,19 @@ World-local definition supply preserves the shared vanilla registry; surface
 units and vertical bounds are checked. See world-router.md for the narrower
 configuration support and remaining real-chunk/client/save acceptance.
 The ten cell density fields and custom clamp/spline/conditional-cache/noise
-primitives now match 430,254 independent Java fields in both profiles; see
-density-primitives.md. They are not bound into Horizon's density graph yet.
-Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
+primitives match 430,254 independent Java fields in both profiles; see
+density-primitives.md. Cell/noise/clamp bindings are integrated; custom spline
+and conditional-cache integration remains separate work.
 
-After that, connect the complete kernel to real native density, biome, surface,
-cave, decoration and structure execution. The 17 classic registered biome IDs,
-world-save reopen, actual client rendering, native mod combinations and launcher
-packaging remain required acceptance work. The palette's 11 internal climate
-categories are not those 17 registered biomes.
+The explicit default native pipeline now generates actual near/distant terrain
+chunks and decorates a real 3x3 region. Two fresh optimized processes agree on
+outputs/counters; cold regeneration and kernel-owner cleanup pass. The center
+executes 57 placed-feature roots with none unsupported or failed. See
+native-chunks.md. Automatic world selection, native classic biomes/features,
+source carver settings, spawn/structures/save/client, controlled performance and
+mod combinations remain unfinished. The palette's 11 internal climate
+categories are not the 17 registered classic biomes. Never substitute
+height-only fill, prerecorded terrain or a snapshot fallback.
 
 All expected numerical observations originate from the exact published Java JAR
 or original source-owned data, independently of Rust output. Capture/freezer and
@@ -80,5 +84,6 @@ verification tools refuse replacement. Failed reports remain alongside corrected
 runs. Windows/Linux CI reruns the native families and both Java loader builds.
 
 The Horizon resource boundary still applies: use only the user's own locally
-prepared26.3 resources. Do not fetch Minecraft game assets for this port. No
-native chunk/client/save acceptance has been claimed.
+prepared26.3 resources. Do not fetch Minecraft game assets for this port. The
+scoped native chunk prototype is qualified; full client/save/modpack acceptance
+has not been claimed.

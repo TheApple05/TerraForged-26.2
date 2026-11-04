@@ -15,13 +15,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mode: [graph, registry]
+        mode: [graph, registry, world]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Install stable Rust
-        run: rustup toolchain install stable --profile minimal --component clippy
+        run: rustup toolchain install stable --profile minimal --component clippy --component rustfmt
       - name: Check out pinned source tools only
         shell: bash
         run: |
@@ -39,12 +39,23 @@ jobs:
           cargo fetch --locked --manifest-path build/qa/horizon/host-source/Cargo.toml
           cargo build --locked --manifest-path build/qa/horizon/mixin-source/Cargo.toml -p horizon-mixins-cli
       - name: Assemble and stage the native bundle
-        run: python horizon/tools/stage_native_host.py ${{ matrix.mode == 'registry' && '--registry' || '' }} --horizon build/qa/horizon/host-source --mixins build/qa/horizon/mixin-source/target/debug/horizon-mixins --output build/qa/horizon/ci-host
+        run: python horizon/tools/stage_native_host.py ${{ matrix.mode == 'world' && '--world' || matrix.mode == 'registry' && '--registry' || '' }} --horizon build/qa/horizon/host-source --mixins build/qa/horizon/mixin-source/target/debug/horizon-mixins --output build/qa/horizon/ci-host
       - name: Check compiled densities and ownership
         shell: bash
         run: |
-          cargo clippy --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p ${{ matrix.mode == 'registry' && 'horizon-world' || 'horizon-core' }} --lib -- -D warnings
+          cargo clippy --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p ${{ matrix.mode != 'graph' && 'horizon-world' || 'horizon-core' }} --lib -- -D warnings
+      - name: Check density observations
+        if: matrix.mode != 'world'
+        shell: bash
+        run: |
           python horizon/tools/verify_host_density.py ${{ matrix.mode == 'registry' && '--registry' || '' }} --workspace build/qa/horizon/ci-host/staged --report build/qa/ci/native-host-density.json
+      - name: Check the pinned pipeline API and source-only lifecycle
+        if: matrix.mode == 'world'
+        shell: bash
+        run: |
+          mkdir -p build/qa/ci
+          python horizon/tools/generate_pipeline_forwarding.py --horizon build/qa/horizon/host-source --check > build/qa/ci/native-world-forwarding.log
+          cargo test --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p horizon-core --lib terraforged_ > build/qa/ci/native-world-lifecycle.log
       - name: Preserve qualification evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -52,6 +63,7 @@ jobs:
           name: native-host-density-${{ matrix.mode }}-${{ github.sha }}
           path: |
             build/qa/ci/native-host-density.json
+            build/qa/ci/native-world-*.log
             build/qa/horizon/ci-host/stage-result.json
             build/qa/horizon/ci-host/native-host-density/*.log
           if-no-files-found: warn

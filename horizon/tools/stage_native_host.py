@@ -29,7 +29,10 @@ def main() -> int:
     p.add_argument("--output", required=True, type=Path)
     p.add_argument("--registry", action="store_true", help="Also stage constructor-scoped custom density resource decoding; no world activation")
     p.add_argument("--router", action="store_true", help="Also stage world-local router definition supply; no world activation")
+    p.add_argument("--world", action="store_true", help="Also stage the explicit procedural pipeline factory for QA; no automatic world selection")
     a = p.parse_args()
+    if a.world:
+        a.router = True
     if a.router:
         a.registry = True
     output = a.output.resolve()
@@ -100,6 +103,17 @@ bindings = [
   { name = "depth", ty = "usize", value = "depth" },
 ]
 ''')
+    if a.world:
+        shutil.copy2(ROOT / "horizon/native-world/world_runtime.rs", bundle / "world_runtime.rs")
+        with (bundle / "horizon-mixin.toml").open("a", encoding="utf-8", newline="\n") as manifest:
+            manifest.write('''
+[[module]]
+id = "native-world-pipeline"
+file = "crates/horizon-world/src/worldgen/generator.rs"
+name = "terraforged_world"
+source = "world_runtime.rs"
+visibility = "pub"
+''')
     if a.router:
         shutil.copy2(ROOT / "horizon/native-world/supply_density.rs", bundle / "supply_density.rs")
         with (bundle / "horizon-mixin.toml").open("a", encoding="utf-8", newline="\n") as manifest:
@@ -125,6 +139,9 @@ bindings = [
         file = ROOT / "horizon/native-adapter/src" / name
         source_files[file.relative_to(ROOT).as_posix()] = sha(file)
         (kernel / "src" / destination).write_text(file.read_text(encoding="utf-8").replace("terraforged_native_core::", "crate::"), encoding="utf-8", newline="\n")
+    if a.world:
+        file = ROOT / "horizon/native-world/world_runtime.rs"
+        source_files[file.relative_to(ROOT).as_posix()] = sha(file)
     with (kernel / "src/lib.rs").open("a", encoding="utf-8", newline="\n") as lib:
         lib.write("\npub mod noise_registry;\npub mod preset_input;\npub mod router;\npub use serde_json;\n")
     shutil.copy2(ROOT / "horizon/native-core/LICENSE-RETERRAFORGED", kernel / "LICENSE-RETERRAFORGED")
@@ -158,9 +175,10 @@ workspace = true
               "hostSourceArchiveSha256": hashlib.sha256(archive).hexdigest(), "inputFiles": source_files,
               "planSha256": sha(plan), "cargoLockSha256": sha(stage / "Cargo.lock"),
               "stagedWorkspace": str(stage), "gameAssetsReadOrDownloaded": False,
-              "worldActivationIncluded": False, "sourceCheckoutModified": False}
+              "worldActivationIncluded": a.world, "sourceCheckoutModified": False}
     report["registryDecoderIncluded"] = a.registry
     report["routerDefinitionSupplyIncluded"] = a.router
+    report["automaticWorldSelectionIncluded"] = False
     (output / "stage-result.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2))
     return 0
