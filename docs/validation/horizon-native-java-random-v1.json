@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-noise-foundation-only",
+  "startedAtUtc": "2026-11-04T16:00:56.481420+00:00",
+  "fixtureSha256": "d6399a34809109823d841a1c17fcf49f722435cd5bd9c5d91f8464210a812208",
+  "javaOracle": {
+    "schemaVersion": 1,
+    "status": "frozen-java-random-reference",
+    "freshRunsAgree": true,
+    "fixtureSha256": "d6399a34809109823d841a1c17fcf49f722435cd5bd9c5d91f8464210a812208",
+    "recordCount": 2718,
+    "oracleSourceSha256Lf": "5ab2817527984a8f971288a166ade5df9722b29bc2622e26f409ee22d735530f",
+    "verifiedJdkClassOrigins": [
+      [
+        "java.util.Random source: shared objects file",
+        "java.util.Collections source: shared objects file"
+      ],
+      [
+        "java.util.Random source: shared objects file",
+        "java.util.Collections source: shared objects file"
+      ]
+    ],
+    "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n",
+    "nativeExpectedValuesUsed": false,
+    "scope": "Nine signed64 seeds, four used Random methods, eight bounded domains, resets, Collections.shuffle and post-shuffle draw checkpoints.",
+    "algorithmSpecification": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html",
+    "notCovered": [
+      "Gaussian/double/long/byte APIs",
+      "Thread-shared mutable Random",
+      "Complete river draw order or terrain-provider construction"
+    ]
+  },
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "outputSha256": "d6399a34809109823d841a1c17fcf49f722435cd5bd9c5d91f8464210a812208",
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "constructorGuardsObserved": true,
+      "allJavaValuesMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "outputSha256": "d6399a34809109823d841a1c17fcf49f722435cd5bd9c5d91f8464210a812208",
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "constructorGuardsObserved": true,
+      "allJavaValuesMatch": true
+    }
+  ],
+  "recordsPerProfile": 2718,
+  "valuesPerProfile": 67545,
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.1\nLLVM version: 23.1.1\n",
+  "family": "random",
+  "scope": "Used Java Random methods and Collections shuffle draw sequence; raw float bits, no native terrain activation.",
+  "notCovered": [
+    "Other noise modules or arbitrary graphs",
+    "Complete nonfinite/parameter domain",
+    "Cell/river/tile pipeline",
+    "Native density/surface/caves/decoration",
+    "Infinite generation",
+    "Native game save/rendering"
+  ],
+  "sourceSha256Lf": {
+    "horizon/native-core/src/bin/biome_probe.rs": "3b0afe8eddf02c79b44e855f2873c15ad5d20f8b24e6b153281def0f095bdc65",
+    "horizon/native-core/src/bin/cell_foundation_probe.rs": "93868fd06719515e63e1197b551d05ee260dc2eaee62d698fa68ee07044c8cbb",
+    "horizon/native-core/src/bin/core_probe.rs": "2135bffcbc11eb44efc5b5fb9290c004877d52e28acea3585465efbffa8485b4",
+    "horizon/native-core/src/bin/java_random_probe.rs": "81fbeab12d071a8d410b4c3fb6f92fb7eb4fa72e9e708e0fd0cd680e436ae5e4",
+    "horizon/native-core/src/bin/math_probe.rs": "d59d6066dd3ab530c01f1b130d367469a48ce2bf63aab5ee8467177821bbe20e",
+    "horizon/native-core/src/bin/noise_cellular_probe.rs": "51ffd88f5d336eeab041bf348f0ec609be6dfad1eca6981ab563a0e1a0ddb9e8",
+    "horizon/native-core/src/bin/noise_composition_probe.rs": "41c700b6e80149a052b629198be0e1697bdd8b94de6571666a47b48b2ef962a4",
+    "horizon/native-core/src/bin/noise_family_probe.rs": "7c832f40f9a405decb3b28135427bac776267fa40342cecf1ef584cbf0bfa01a",
+    "horizon/native-core/src/bin/noise_final_probe.rs": "2306f40a423accd957c8a053b39b8564b712cacebc3620db46e5dbd387bcf92d",
+    "horizon/native-core/src/bin/noise_probe.rs": "365ddc9f8419d0865d77f47d245327232a72d9d212def9efb1f45b4fcc892660",
+    "horizon/native-core/src/bin/noise_shaping_probe.rs": "a9dd6228d310db541328477e31d8964b6b7923edb7aac084b497165686d0da43",
+    "horizon/native-core/src/bin/noise_sources_probe.rs": "ec86d45f5a28f4f589c906ea86f1c04256a3f5fe2a795741bec74a9559835b00",
+    "horizon/native-core/src/bin/noise_visitor_probe.rs": "d21d3b05b954d04233593eca1d3c01307491e1c4809420e9fb4474f90e13338a",
+    "horizon/native-core/src/bin/power_probe.rs": "d1590fd2bc8666e2e1b4cfe7299c5a87ce6c099391bf770ddba304b5c000635e",
+    "horizon/native-core/src/bin/scalar_probe.rs": "96aee09dbbbf80bb388e74404bbf7f9443bb6d34d38894f551eae4ff5cf92758",
+    "horizon/native-core/src/bin/terrain_probe.rs": "953b4a326242df705bd647c7787c21203018c7528042019bc6a35502e555941d",
+    "horizon/native-core/src/bin/utility_probe.rs": "293b0003ff5cd147c3aeeeafad73f486e8935e4563286fc127616b7f577c8ebc",
+    "horizon/native-core/src/biome.rs": "c4790b89dd4a4c61df95a59a5bffc814c2751127fe068ba39a97eca50815195b",
+    "horizon/native-core/src/cell.rs": "427dc603546d4139f7e299dcefd4da667d58e094e95ea0dc65ce71293b4705e2",
+    "horizon/native-core/src/continent.rs": "b21113a3d6b3affe39aff8af17a6757ce72c8430234ee5bfb0792d8eab9ed6cf",
+    "horizon/native-core/src/domain.rs": "38b7caa65aa89b4330a9c47c08f0a88e59d9d38f9d0b4d49869670c529915a1c",
+    "horizon/native-core/src/erosion.rs": "8be6d70300e572672bc8b56c90067fed900bb85852b53a49282e5e0c90635b4e",
+    "horizon/native-core/src/fast_random.rs": "475dbaf5fb1b3a71b159c4d4d4ed4d1b1b66677aef151e54721eb951513f024f",
+    "horizon/native-core/src/graph.rs": "9e6e425f9325233c575daccb8a2ff909e1b28df08737bcb11ce103ed013e06d0",
+    "horizon/native-core/src/java_random.rs": "7b145f66ade7728cacb5334d5a53358dddc5e4c4efe07e11625b27b7ddaa6bed",
+    "horizon/native-core/src/layout.rs": "688bc4b0ecee85b9de189444b6485e98e9f6f1969c36134b7444539535b72979",
+    "horizon/native-core/src/lib.rs": "fc95cecaa9b55b4b049e93d523be065e8f852f3844ddc229cc247a1243227463",
+    "horizon/native-core/src/line.rs": "55679d7b6a7d39444dfc53a8c05489523c8adc2aa234f1acbfdeaf0c6e6361d7",
+    "horizon/native-core/src/math_table.rs": "a3e97af5cde9e96741262c7b6ce11d17c14107ff2e824525a4877d78a857f945",
+    "horizon/native-core/src/noise_util.rs": "99b3ca60416d08fc14df95cb27d719b00fcab9e67547c49090d2730d9f805bef",
+    "horizon/native-core/src/noise_vectors.rs": "aca424593d1b9c3fef680ea1920fcbcc9f8b7208b8fa3bb739b77d174602dfd0",
+    "horizon/native-core/src/noises.rs": "48f32c133c8a9cc8612668664728c4de2e31bdc6e26e9224ed3f754d84b53f4d",
+    "horizon/native-core/src/perlin.rs": "6dcbf9cc7281e7567bffd3974612ce8d742fbe6dfd3bf663e7bc99f396f1897b",
+    "horizon/native-core/src/perlin2.rs": "028fab2a85af2b79e2dfe115cf2c0a1abd550dcdc21dc663ecd5a41ef0b1a981",
+    "horizon/native-core/src/pos_util.rs": "09237ff99c85e800b07e965d2af4b8cbc5132b1525ae51930f74212728dfcb6f",
+    "horizon/native-core/src/preset.rs": "331c2cfc9174ce2748facf124f83c54b352c6db2c74a3541220908d42714a72a",
+    "horizon/native-core/src/region.rs": "0b1d12440f376983f282654676bf0745633b214290012ce8871ab3ca2e45a704",
+    "horizon/native-core/src/ridges.rs": "90319d54e4393469489330afb46451856c6f02291abe5aca8b312c987843b1f5",
+    "horizon/native-core/src/seed.rs": "7c296bc1bc07539034fd4f704e41b298d621173e9dd18158551ad7d78cf64430",
+    "horizon/native-core/src/simplex.rs": "09a9fa3aea602d3da6310c467af93fd6bc3fc96418094d828b4af1ee30c95b47",
+    "horizon/native-core/src/simplex2.rs": "0f2614e82178bc148180a76d13c8fd814a3e5aadd2c6e02a3cac9b250f963d1c",
+    "horizon/native-core/src/sources.rs": "0187f37e59fb6c21a5c62a1754beaf11dae8e51057835b45664c32106d7ddca3",
+    "horizon/native-core/src/terrain.rs": "119f99a192200b41aea878aa56dcf7164f7aebfbfe55b5f5f694404ced83403b",
+    "horizon/native-core/src/worley.rs": "f4d95f87851d6bf5bb2682620caf51f6de1604eee46abc4a13a7485eea734789",
+    "horizon/native-core/src/data/biome-types.bin": "3f1db49ae1ae89f8a1224a2534f9b5a3ff313a747047a1ad4257eb73384900c7",
+    "horizon/native-core/src/data/noiseutil-sine.bin": "f2999391380fe1b7a8deb687380fdb51b278fa88ffb8201e9beb2ae125a9db81",
+    "horizon/native-core/Cargo.toml": "90828d3f94df0a4249961250593854170168ab2de8191bc4d7d9540394152366",
+    "horizon/native-core/Cargo.lock": "51e811941ccbf1984b0a3a36b105742bb4053403c4adb5ac5acffbef3b80fa40"
+  },
+  "sourceNormalization": "LF for text source/configuration; binary lookup bytes exact",
+  "finishedAtUtc": "2026-11-04T16:00:59.025068+00:00",
+  "verifierSha256": "30a962094449ca3e1b15c4b926698833a3c041347e43d518b16bfe55e3279ec6"
+}

@@ -23,6 +23,9 @@ The MULTI_IMPROVED/default continent geometry now matches independent Java cell,
 center and edge/ocean search observations; see advanced-continent.md. Its river
 cache is not implemented. The next required milestone is constructing the full
 terrain/river/climate cell pipeline in the original seed order.
+Region geometry, basic terrain/ocean populators, region/continent blending and
+weighted selection now match Java too; region-populators.md records their scope.
+The used Java Random methods and collection shuffle sequence are qualified.
 Then compare every field against the frozen kernel-v1 observations, complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.

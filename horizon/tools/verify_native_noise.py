@@ -27,7 +27,7 @@ def rows(text):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--family', choices=['base','second','composition','math','core','sources','power','shaping','cellular','final','visitors','cell','terrain','biome'], default='base')
+    parser.add_argument('--family', choices=['base','second','composition','math','core','sources','power','shaping','cellular','final','visitors','cell','terrain','biome','random'], default='base')
     args = parser.parse_args()
     if args.report.exists():
         parser.error('Refusing to replace native parity evidence')
@@ -37,14 +37,14 @@ def main():
                     'power':'horizon/tests/fixtures/power-v1.tsv','shaping':'horizon/tests/fixtures/noise-shaping-v1.tsv',
                     'cellular':'horizon/tests/fixtures/noise-cellular-v1.tsv','final':'horizon/tests/fixtures/noise-final-v1.tsv','visitors':'horizon/tests/fixtures/noise-visitors-v1.tsv',
                     'cell':'horizon/tests/fixtures/cell-foundation-v1.tsv','terrain':'horizon/tests/fixtures/terrain-v1.tsv',
-                    'biome':'horizon/tests/fixtures/biome-v1/values.tsv'}[args.family]
+                    'biome':'horizon/tests/fixtures/biome-v1/values.tsv','random':'horizon/tests/fixtures/java-random-v1/values.tsv'}[args.family]
     metadata_file = (ROOT/'tests/core/reference-metadata.json' if args.family=='core' else
-                     fixture.parent/'metadata.json' if args.family in ('math','biome') else fixture.with_suffix('.json'))
-    metadata = json.loads(metadata_file.read_text())
+                     fixture.parent/'metadata.json' if args.family in ('math','biome','random') else fixture.with_suffix('.json'))
+    metadata = json.loads(metadata_file.read_text(encoding='utf-8'))
     expected_sha = metadata['fixture_sha256'] if args.family=='core' else metadata['valuesSha256'] if args.family=='math' else metadata['fixtureSha256']
     if digest(fixture) != expected_sha or (args.family!='core' and not metadata['freshRunsAgree']):
         raise ValueError('Independent Java oracle changed or lacks fresh-run agreement')
-    expected = rows(fixture.read_text())
+    expected = rows(fixture.read_text(encoding='utf-8'))
     if len(expected) != metadata.get('recordCount',metadata.get('record_count')):
         raise ValueError('Oracle record count changed')
     manifest = ROOT/'horizon/native-core/Cargo.toml'
@@ -55,7 +55,8 @@ def main():
         'recordsPerProfile':len(expected),'valuesPerProfile':sum(map(len,expected.values())),
         'rustc':subprocess.check_output(['rustc','+stable','-Vv'],text=True),
         'family':args.family,
-        'scope':('Source-owned climate category lookup, ranges and identity pairs' if args.family=='biome' else
+        'scope':('Used Java Random methods and Collections shuffle draw sequence' if args.family=='random' else
+                 'Source-owned climate category lookup, ranges and identity pairs' if args.family=='biome' else
                  'Terrain registry names/IDs/flags and inherited composite quirks' if args.family=='terrain' else
                  'Levels/Size arithmetic and 24 Cell default/copy/reset fields' if args.family=='cell' else
                  '144 visited Java graphs with exact callback traces' if args.family=='visitors' else
@@ -74,7 +75,7 @@ def main():
         command = ['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin',
                    {'base':'noise_probe','second':'noise_family_probe','composition':'noise_composition_probe',
                     'math':'math_probe','core':'core_probe','sources':'noise_sources_probe','power':'power_probe',
-                    'shaping':'noise_shaping_probe','cellular':'noise_cellular_probe','final':'noise_final_probe','visitors':'noise_visitor_probe','cell':'cell_foundation_probe','terrain':'terrain_probe','biome':'biome_probe'}[args.family]]
+                    'shaping':'noise_shaping_probe','cellular':'noise_cellular_probe','final':'noise_final_probe','visitors':'noise_visitor_probe','cell':'cell_foundation_probe','terrain':'terrain_probe','biome':'biome_probe','random':'java_random_probe'}[args.family]]
         if profile == 'release':
             command.append('--release')
         run = subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=90)
@@ -90,6 +91,7 @@ def main():
         guards = guards and (args.family!='final' or 'NATIVE_FINAL_GUARDS_OK terrace=2..4096 octaves=0..32 combinedDomainDepth=256' in run.stderr)
         guards = guards and (args.family!='terrain' or 'NATIVE_TERRAIN_GUARDS_OK ownedIds asciiNames invalidParents' in run.stderr)
         guards = guards and (args.family!='biome' or 'NATIVE_BIOME_GUARDS_OK invalidOrdinal noOutOfRangeFallback' in run.stderr)
+        guards = guards and (args.family!='random' or 'NATIVE_JAVA_RANDOM_GUARDS_OK positiveBound' in run.stderr)
         report['profiles'].append({'profile':profile,'exitCode':run.returncode,'outputSha256':digest(output),
             'differenceCount':len(differences),'firstDifferences':differences[:50],
             'constructorGuardsObserved':guards,

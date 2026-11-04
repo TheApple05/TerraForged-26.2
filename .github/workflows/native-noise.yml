@@ -43,6 +43,7 @@ jobs:
           python horizon/tools/verify_native_noise.py --family cell --report build/qa/ci/native-cell-foundation.json
           python horizon/tools/verify_native_noise.py --family terrain --report build/qa/ci/native-terrain.json
           python horizon/tools/verify_native_noise.py --family biome --report build/qa/ci/native-biome.json
+          python horizon/tools/verify_native_noise.py --family random --report build/qa/ci/native-java-random.json
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
       - name: Fetch locked registry adapter libraries
         run: cargo fetch --locked --manifest-path horizon/native-adapter/Cargo.toml
@@ -52,6 +53,7 @@ jobs:
           python horizon/tools/verify_native_registry.py --report build/qa/ci/native-registry.json
           python horizon/tools/verify_native_registry.py --family preset --report build/qa/ci/native-preset.json
           python horizon/tools/verify_native_registry.py --family continent --report build/qa/ci/native-continent.json
+          python horizon/tools/verify_native_registry.py --family populators --report build/qa/ci/native-populators.json
       - name: Retain foundation reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

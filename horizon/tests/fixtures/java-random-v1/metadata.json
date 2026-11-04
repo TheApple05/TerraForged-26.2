@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-java-random-reference",
+  "freshRunsAgree": true,
+  "fixtureSha256": "d6399a34809109823d841a1c17fcf49f722435cd5bd9c5d91f8464210a812208",
+  "recordCount": 2718,
+  "oracleSourceSha256Lf": "5ab2817527984a8f971288a166ade5df9722b29bc2622e26f409ee22d735530f",
+  "verifiedJdkClassOrigins": [
+    [
+      "java.util.Random source: shared objects file",
+      "java.util.Collections source: shared objects file"
+    ],
+    [
+      "java.util.Random source: shared objects file",
+      "java.util.Collections source: shared objects file"
+    ]
+  ],
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n",
+  "nativeExpectedValuesUsed": false,
+  "scope": "Nine signed64 seeds, four used Random methods, eight bounded domains, resets, Collections.shuffle and post-shuffle draw checkpoints.",
+  "algorithmSpecification": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html",
+  "notCovered": [
+    "Gaussian/double/long/byte APIs",
+    "Thread-shared mutable Random",
+    "Complete river draw order or terrain-provider construction"
+  ]
+}
