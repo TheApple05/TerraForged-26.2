@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "retained-ci-failure",
+  "commit": "106d547268cc118a486fc907d3d9bc29cf004f65",
+  "workflowRun": 41839845838,
+  "windowsJob": 126608206035,
+  "ubuntuJob": 126608205393,
+  "ubuntuConclusion": "success",
+  "windowsConclusion": "failure",
+  "windowsErrors": ["Frozen Java fixture bytes changed", "Original independent Java fixture changed"],
+  "windowsNoiseFoundationPassed": true,
+  "cause": "tests/core/reference-output.tsv was text=auto, so the hosted Windows checkout converted its LF bytes to CRLF. The newly added native scalar/utility readers intentionally enforce the frozen original byte hash.",
+  "correction": "Preserve the original fixture with -text in .gitattributes, retaining its unchanged LF Git blob. Run the multi-command check under bash so the first failed Python process stops the step on both OSes.",
+  "referenceFixtureSha256": "8070efecb62e736c3d22c64e8e22922ac468c0350804d3f8e0bfe615f3d35dc5",
+  "url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41839845838"
+}

@@ -23,6 +23,7 @@ jobs:
       - name: Install stable Rust
         run: rustup toolchain install stable --profile minimal
       - name: Check independent Java fixtures
+        shell: bash
         run: |
           python horizon/tools/generate_noise_vectors.py
           python horizon/tools/verify_native_scalars.py --report build/qa/ci/native-scalars.json
