@@ -29,6 +29,8 @@ FAMILIES={
                          'NATIVE_RIVER_FOUNDATIONS_OK sentinelIdentity exactRandomDraws wrappingConversions noCarvingOrNetworks','passed-river-foundations-only'),
     'river-carvers':('river-carvers-v1','river_carver_probe','Original river/lake/wetland mutations, bounds, fork widths, curves, RNG and double rounding',
                     'NATIVE_RIVER_CARVERS_OK exactMutations originalBounds forkRounding randomDraws noNetworks','passed-river-carvers-only'),
+    'river-networks':('river-networks-v1','river_network_probe','Original network generation/traversal and complete unfiltered Heightmap cells',
+                     'NATIVE_RIVER_NETWORKS_OK originalTree randomCheckpoints cachedReplay reverseOrder parallelReaders boundedOwnership lruRelease concurrentIdentity completeUnfilteredCells','passed-river-networks-and-unfiltered-cells-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 

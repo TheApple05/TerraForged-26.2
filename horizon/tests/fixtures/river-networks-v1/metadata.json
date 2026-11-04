@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-river-network-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "c5e4951d62f5b5e1e89fabe52dfba21013b581ef323d57e235276a1ced682b94",
+  "uncompressedValuesSha256": "c830a879b01951cd3b070d32f389012cd11157639039d6a76651978375cb3ecb",
+  "inputsSha256": "cd7109343d41c17d309873e40e08d0985b4962d9a2f11f16607a821a245ba24b",
+  "recordCount": 78972,
+  "fieldsPerProfile": 1687920,
+  "recordKinds": {
+    "map-info": 72,
+    "node": 1920,
+    "river": 1920,
+    "bounds": 1920,
+    "config": 1920,
+    "warp": 1920,
+    "curve": 1920,
+    "lake": 434,
+    "wetland": 562,
+    "rng": 72,
+    "map": 62424,
+    "full": 3888
+  },
+  "producerReports": [
+    {
+      "report": "server-horizon-river-networks-oracle-v1a.json",
+      "sha256": "a67117c535acbdd2bcb00210f40fff39474385cc323bc80226ae8bc0f7ea3c08",
+      "pid": 63288,
+      "instance": "build/qa/server/instances/20261104T172024Z-3cb488",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "bb978dee49510ff25eb6b6397926dc44656defd343ed3d57d2d55b4111341a26",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.simple.SimpleRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AdvancedContinentGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.BaseRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.Network source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverCarver source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.River source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.lake.Lake source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.wetland.Wetland source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.gen.GenWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.Rivermap source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.RiverCache source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Heightmap source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.climate.Climate source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-3cb488/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-river-networks-oracle-v1b.json",
+      "sha256": "dc00aa5f61566b3de51b26d7ed3de0a3f9f778c93873c12b342a0dd58d377463",
+      "pid": 45860,
+      "instance": "build/qa/server/instances/20261104T172024Z-c93cd6",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "7910cd7ba9697a8bbeaba68ac9776a0ef36f4f4a27d5f2b0a618fec1395608eb",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.simple.SimpleRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AdvancedContinentGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.BaseRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.Network source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverCarver source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.River source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.lake.Lake source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.wetland.Wetland source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.gen.GenWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.Rivermap source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.RiverCache source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Heightmap source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.climate.Climate source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T172024Z-c93cd6/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "cell/continent/simple/SimpleRiverGenerator.java": "10117beedb641aa62acbe541905d2ca64e8a4557673d35ca7c19d8123725691d",
+    "cell/continent/advanced/AdvancedContinentGenerator.java": "9bbb975806e7cd847ae3826da6557eb341b638f9f0d0aaaf16faa82888b30e9c",
+    "cell/rivermap/river/BaseRiverGenerator.java": "cffb649be9cd84d6314cd28f4047262b35006dc2d52427604c3ea4aab4a5a10e",
+    "cell/rivermap/river/Network.java": "2e9fad429613a4977b9d9e4c6a820092e45fd6dc11a7efebc4b2b7a9d8fab983",
+    "cell/rivermap/river/RiverCarver.java": "a1afbceaf531ffc64d75413e19ea25a499e42eaf666a2a7ff4586393bbe0762c",
+    "cell/rivermap/river/River.java": "80c3787e78d8db12bad763d1d80e1417cc7626f869a6d6b31b0cf87bca266985",
+    "cell/rivermap/river/RiverWarp.java": "465929d3951787e40675446ac6c0801fba01442ef28fe05a322680ec3edda9a6",
+    "cell/rivermap/river/RiverConfig.java": "994d824823e7603663288fba17e8eed2180f0da8678b0de9492142760393955f",
+    "cell/rivermap/lake/Lake.java": "fc694ba8e90b4b9dd3b9f42e8a541d05e0f713e229d835a26822dc7ebe157739",
+    "cell/rivermap/wetland/Wetland.java": "6f57699e2e16e58798cd59ef058f902bfb203f6bdc1b741b4bb929e33c548310",
+    "cell/rivermap/gen/GenWarp.java": "56ff44e37d59b7460c7178a5de404f2c772ada9d483e802f5c027c1414b6f1e7",
+    "cell/rivermap/Rivermap.java": "c8af9fa97d6a22fa6b8c04aadc9c7f6a06c9e05e377e54cb84d1551e4601f53a",
+    "cell/rivermap/RiverCache.java": "1e20e1c61eda1e52dfcd571c83a2a2a1a58bbd56be3b9b067ba6888e90381713",
+    "cell/heightmap/Heightmap.java": "940bf0689362e4a90d89926e4c6b441a1a5ca8fd4020f39766492406063bee97",
+    "cell/climate/Climate.java": "01212887078bb4535cb8d3cdc8d07855dcf23acc40c6ee3ce2f62eb88fe95077"
+  },
+  "oracleSourceSha256Lf": "42ae748e4ed17c509da321c5a842d9e71709a6f1c65cc6b1def18c961af895a3",
+  "scope": "Original cached river maps and construction tree/configuration/warp/curve/bounds, original staged random checkpoints, synthetic map carving and complete terrain-river-climate cells.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Every numeric/configuration domain",
+    "Java expiring-cache scheduling behavior",
+    "Filtered tiles/erosion/smoothing",
+    "Native density/chunks/client/save"
+  ]
+}
