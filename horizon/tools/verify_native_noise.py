@@ -27,10 +27,11 @@ def rows(text):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path, required=True)
+    parser.add_argument('--family', choices=['base','second'], default='base')
     args = parser.parse_args()
     if args.report.exists():
         parser.error('Refusing to replace native parity evidence')
-    fixture = ROOT/'horizon/tests/fixtures/noise-reference-v1.tsv'
+    fixture = ROOT/('horizon/tests/fixtures/noise-reference-v1.tsv' if args.family=='base' else 'horizon/tests/fixtures/noise-reference-v2.tsv')
     metadata = json.loads(fixture.with_suffix('.json').read_text())
     if digest(fixture) != metadata['fixtureSha256'] or not metadata['freshRunsAgree']:
         raise ValueError('Independent Java oracle changed or lacks fresh-run agreement')
@@ -38,17 +39,19 @@ def main():
     if len(expected) != metadata['recordCount']:
         raise ValueError('Oracle record count changed')
     manifest = ROOT/'horizon/native-core/Cargo.toml'
-    logroot = ROOT/'build/qa/horizon/native-noise'
+    logroot = ROOT/'build/qa/horizon/native-noise'/args.report.stem
     logroot.mkdir(parents=True, exist_ok=True)
     report = {'schemaVersion':1,'status':'failed','startedAtUtc':dt.datetime.now(dt.timezone.utc).isoformat(),
         'fixtureSha256':digest(fixture),'javaOracle':metadata,'profiles':[],
         'recordsPerProfile':len(expected),'valuesPerProfile':sum(map(len,expected.values())),
         'rustc':subprocess.check_output(['rustc','+stable','-Vv'],text=True),
-        'scope':'296 vectors, Perlin and Simplex sample/fractal values, raw float bits; no native terrain activation.',
+        'family':args.family,
+        'scope':'296 vectors and '+('Perlin/Simplex' if args.family=='base' else 'Perlin2/Simplex2')+' sample/fractal values, raw float bits; no native terrain activation.',
         'notCovered':['Other noise modules or arbitrary graphs','Complete nonfinite/parameter domain','Cell/river/tile pipeline',
                       'Native density/surface/caves/decoration','Infinite generation','Native game save/rendering']}
     for profile in ('debug','release'):
-        command = ['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin','noise_probe']
+        command = ['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin',
+                   'noise_probe' if args.family=='base' else 'noise_family_probe']
         if profile == 'release':
             command.append('--release')
         run = subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=90)

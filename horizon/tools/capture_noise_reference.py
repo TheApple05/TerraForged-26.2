@@ -20,11 +20,14 @@ def main():
     parser.add_argument('--java-home', type=Path, required=True)
     parser.add_argument('--jar', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--family', choices=['base','second'], default='base')
     args = parser.parse_args()
     metadata = args.output.with_suffix('.json')
     if args.output.exists() or metadata.exists():
         parser.error('Refusing to replace a frozen oracle')
-    source = ROOT/'horizon/tests/java/NativeNoiseProbe.java'
+    modules = ['Perlin','Simplex'] if args.family=='base' else ['Perlin2','Simplex2']
+    probe = 'NativeNoiseProbe' if args.family=='base' else 'NativeNoiseFamilyProbe'
+    source = ROOT/('horizon/tests/java/'+probe+'.java')
     jar = args.jar.resolve()
     cp = str(jar) + os.pathsep + (ROOT/'build/qa/target/compile-classpath.txt').read_text().strip()
     suffix = '.exe' if os.name == 'nt' else ''
@@ -41,12 +44,12 @@ def main():
             result = subprocess.run([str(args.java_home/'bin'/('java'+suffix)),
                 '-Xlog:class+load=info:file='+log.relative_to(ROOT).as_posix(),
                 '-cp',temporary+os.pathsep+cp,
-                'raccoonman.reterraforged.world.worldgen.noise.module.NativeNoiseProbe'],
+                'raccoonman.reterraforged.world.worldgen.noise.module.'+probe],
                 cwd=ROOT, capture_output=True, timeout=90)
             if result.returncode:
                 raise RuntimeError(result.stderr.decode(errors='replace'))
             text = log.read_text()
-            for name in ('NoiseUtil','module.Perlin','module.Simplex'):
+            for name in ['NoiseUtil']+['module.'+name for name in modules]:
                 expected = 'raccoonman.reterraforged.world.worldgen.noise.'+name+' source: '
                 lines = [line for line in text.splitlines() if expected in line]
                 if len(lines) != 1 or jar.name not in lines[0]:
@@ -60,13 +63,13 @@ def main():
         raise ValueError('Duplicate reference keys')
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_bytes(captures[0])
-    classes = ['NoiseUtil.java','module/Perlin.java','module/Simplex.java','function/Interpolation.java']
+    classes = ['NoiseUtil.java']+['module/'+name+'.java' for name in modules]+['function/Interpolation.java']
     srcroot = ROOT/'common/src/main/java/raccoonman/reterraforged/world/worldgen/noise'
     record = {'schemaVersion':1,'status':'frozen-java-reference','productionJarSha256':digest(jar),
         'sourceSha256Lf':{name:hashlib.sha256((srcroot/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in classes},
         'oracleSourceSha256Lf':hashlib.sha256(source.read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
         'fixtureSha256':digest(args.output),'recordCount':len(lines),'freshRunsAgree':True,
-        'scope':'296 literal vectors, Perlin static/fractal and Simplex static/fractal; independent of native output.',
+        'scope':'296 literal vectors and '+','.join(modules)+' static/fractal; independent of native output.',
         'captureJava':subprocess.check_output([str(args.java_home/'bin'/('java'+suffix)),'-version'],stderr=subprocess.STDOUT,text=True)}
     metadata.write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(record))

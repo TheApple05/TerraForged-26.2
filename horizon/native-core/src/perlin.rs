@@ -16,7 +16,7 @@ pub enum Interpolation {
 }
 
 impl Interpolation {
-    fn apply(self, t: f32) -> f32 {
+    pub(crate) fn apply(self, t: f32) -> f32 {
         match self {
             Interpolation::Linear => t,
             Interpolation::Curve3 => interp_hermite(t),
