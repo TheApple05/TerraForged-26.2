@@ -6,6 +6,11 @@
 pub use crate::math_table::{PI2, SQRT2, cos, sin, sqrt};
 
 #[inline]
+pub fn pow_f32(value: f32, power: f32) -> f32 {
+    (value as f64).powf(power as f64) as f32
+}
+
+#[inline]
 pub fn map_clamped_range(value: f32, min: f32, max: f32, range: f32) -> f32 {
     let clamped = clamp_f32(value, min, max);
     let dif = clamped - min;

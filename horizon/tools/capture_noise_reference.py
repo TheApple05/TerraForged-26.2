@@ -20,13 +20,15 @@ def main():
     parser.add_argument('--java-home', type=Path, required=True)
     parser.add_argument('--jar', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--family', choices=['base','second'], default='base')
+    parser.add_argument('--family', choices=['base','second','sources','power'], default='base')
     args = parser.parse_args()
     metadata = args.output.with_suffix('.json')
     if args.output.exists() or metadata.exists():
         parser.error('Refusing to replace a frozen oracle')
-    modules = ['Perlin','Simplex'] if args.family=='base' else ['Perlin2','Simplex2']
-    probe = 'NativeNoiseProbe' if args.family=='base' else 'NativeNoiseFamilyProbe'
+    modules = {'base':['Perlin','Simplex'],'second':['Perlin2','Simplex2'],
+               'sources':['White','Cubic','PerlinRidge','SimplexRidge','Billow','Perlin','Simplex2'],'power':[]}[args.family]
+    probe = {'base':'NativeNoiseProbe','second':'NativeNoiseFamilyProbe',
+             'sources':'NativeNoiseSourcesProbe','power':'NativePowerProbe'}[args.family]
     source = ROOT/('horizon/tests/java/'+probe+'.java')
     jar = args.jar.resolve()
     cp = str(jar) + os.pathsep + (ROOT/'build/qa/target/compile-classpath.txt').read_text().strip()
@@ -44,7 +46,7 @@ def main():
             result = subprocess.run([str(args.java_home/'bin'/('java'+suffix)),
                 '-Xlog:class+load=info:file='+log.relative_to(ROOT).as_posix(),
                 '-cp',temporary+os.pathsep+cp,
-                'raccoonman.reterraforged.world.worldgen.noise.module.'+probe],
+                ('' if args.family=='power' else 'raccoonman.reterraforged.world.worldgen.noise.module.')+probe],
                 cwd=ROOT, capture_output=True, timeout=90)
             if result.returncode:
                 raise RuntimeError(result.stderr.decode(errors='replace'))
@@ -69,7 +71,9 @@ def main():
         'sourceSha256Lf':{name:hashlib.sha256((srcroot/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in classes},
         'oracleSourceSha256Lf':hashlib.sha256(source.read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
         'fixtureSha256':digest(args.output),'recordCount':len(lines),'freshRunsAgree':True,
-        'scope':'296 literal vectors and '+','.join(modules)+' static/fractal; independent of native output.',
+        'scope':('Float Math.pow overload and spectral weights' if args.family=='power' else
+                 'White/Cubic/ridge/billow observations and reported metadata' if args.family=='sources' else
+                 '296 literal vectors and '+','.join(modules)+' static/fractal')+'; independent of native output.',
         'captureJava':subprocess.check_output([str(args.java_home/'bin'/('java'+suffix)),'-version'],stderr=subprocess.STDOUT,text=True)}
     metadata.write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(record))
