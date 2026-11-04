@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-preset-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "b1a9a7f83aa5d2e11a404176db2cbad0628ea83dd3e4819e5ec8a86fb76dde60",
+  "inputsSha256": "592f6d6dcec27f08a715834f8b381a94f0f6749ecb99b9f23a0374f00649c1be",
+  "recordCount": 85630,
+  "presetCases": 5,
+  "factoryGraphs": 49,
+  "producerReports": [
+    {
+      "report": "server-horizon-preset-model-oracle-v1a.json",
+      "sha256": "e87d75b9dece69a1dd17fd8ad19096f245c725ac883a289b72ab05e47c7ca4d2",
+      "pid": 52824,
+      "instance": "build/qa/server/instances/20261104T154411Z-fff524",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "e7fbd21d3c4f194adc48bac34da759f795abb4c62f522057fc987ba224dd603d",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.Preset source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.WorldSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.TerrainSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.ClimateSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.RiverSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.FilterSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.ControlPoints source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.PerlinRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.SimplexRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Billow source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cubic source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-fff524/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-preset-model-oracle-v1b.json",
+      "sha256": "56760e90ea2b14ead6f34bcf26c1040b4a42b3432b3376388651e263917521b4",
+      "pid": 72856,
+      "instance": "build/qa/server/instances/20261104T154411Z-c84615",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "0b1d28250a85e04fe43bd404e391a04091c164a2e9e52bb605ea905405c76f49",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.Preset source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.WorldSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.TerrainSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.ClimateSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.RiverSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.data.worldgen.preset.settings.FilterSettings source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.ControlPoints source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.PerlinRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.SimplexRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Billow source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cubic source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T154411Z-c84615/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "data/worldgen/preset/settings/Preset.java": "4d60b5e6814951ba39d77d0419f2ad7afa0523567be98f9867d17286fe817ae3",
+    "data/worldgen/preset/settings/WorldSettings.java": "d48b1c75a93b3b918519fa70c815ffc4889a7a43c051aa48cf6d012b49865663",
+    "data/worldgen/preset/settings/TerrainSettings.java": "05d82bc61c3a7f6c77bccbdd7887d6c4eaff1c2a831c0bf0af80f6d106c9d8dd",
+    "data/worldgen/preset/settings/ClimateSettings.java": "7372afb9cf45a2358bed608db6a85f3f4fe012fb1ab314895ac38fd982ef4a41",
+    "data/worldgen/preset/settings/RiverSettings.java": "c341a5e4e15f12b97291c2ed805599dc4e3c2ff43645611f038f9a6c30f992aa",
+    "data/worldgen/preset/settings/FilterSettings.java": "da334bc84c719763c05ad642f89d4e1d8ec979bf64c7f630945c2bf7d4063946",
+    "data/worldgen/preset/settings/Presets.java": "91040bfdd8cec671bd58b1450561f7f964ffb5bf1f3a9bef8ee59161f3b6f9d1",
+    "data/worldgen/preset/settings/ContinentType.java": "c56faa791f2ac1a157679d04559fdd5d82ea0b3dec5fad18c2529393d3259622",
+    "data/worldgen/preset/settings/SpawnType.java": "0c8d8fd6d5d60b253111df91c2d23c9295f2898dd9d571d0c15fcb324e983f60",
+    "world/worldgen/cell/heightmap/ControlPoints.java": "fc3fe8193ecd00fb66e237a88868c4bfb531f5a2affd4e75d3044d4e4b923b08",
+    "world/worldgen/cell/continent/MushroomIslandPopulator.java": "ca724a861e407215128f0b8e6670477db9f43f006b38be10dc7a5f5ee2b23868",
+    "world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "world/worldgen/noise/module/Noises.java": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352"
+  },
+  "oracleSourceSha256Lf": "cb6a0e3f329c8e3a25d1d9bc7b5cf21574e67cc97195391382bfba05000396bc",
+  "scope": "Five cell-kernel setting groups, source optional defaults, control-point fallback, range helpers and 49 factory graphs; no full native terrain execution.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Cave/structure/miscellaneous execution",
+    "All preset/configuration domains",
+    "Continent/river/filtered-tile pipeline",
+    "Native client/save/launcher integration"
+  ]
+}

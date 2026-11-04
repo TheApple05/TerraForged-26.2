@@ -27,7 +27,7 @@ impl fmt::Display for DecodeError {
     }
 }
 impl std::error::Error for DecodeError {}
-type Result<T> = std::result::Result<T, DecodeError>;
+pub(crate) type Result<T> = std::result::Result<T, DecodeError>;
 impl From<GraphError> for DecodeError {
     fn from(error: GraphError) -> Self {
         Self(format!("Graph resource/parameter limit: {error:?}"))
@@ -36,7 +36,7 @@ impl From<GraphError> for DecodeError {
 fn error(message: impl Into<String>) -> DecodeError {
     DecodeError(message.into())
 }
-fn json(text: &str) -> Result<Value> {
+pub(crate) fn json(text: &str) -> Result<Value> {
     if text.len() > MAX_BYTES {
         return Err(error("Registry JSON exceeds 16 MiB"));
     }
@@ -98,21 +98,21 @@ fn identifier(text: &str) -> Result<String> {
     }
     Ok(format!("{namespace}:{path}"))
 }
-fn object(value: &Value) -> Result<&Map<String, Value>> {
+pub(crate) fn object(value: &Value) -> Result<&Map<String, Value>> {
     value.as_object().ok_or_else(|| error("Expected object"))
 }
-fn get<'a>(value: &'a Value, key: &str) -> Result<&'a Value> {
+pub(crate) fn get<'a>(value: &'a Value, key: &str) -> Result<&'a Value> {
     object(value)?
         .get(key)
         .ok_or_else(|| error(format!("Missing field {key}")))
 }
-fn string(value: &Value) -> Result<&str> {
+pub(crate) fn string(value: &Value) -> Result<&str> {
     value.as_str().ok_or_else(|| error("Expected string"))
 }
-fn field_string<'a>(value: &'a Value, key: &str) -> Result<&'a str> {
+pub(crate) fn field_string<'a>(value: &'a Value, key: &str) -> Result<&'a str> {
     string(get(value, key)?)
 }
-fn number(value: &Value) -> Result<f32> {
+pub(crate) fn number(value: &Value) -> Result<f32> {
     let Value::Number(number) = value else {
         return Err(error("Expected float number"));
     };
@@ -126,10 +126,10 @@ fn number(value: &Value) -> Result<f32> {
     }
     Ok(f)
 }
-fn float(value: &Value, key: &str) -> Result<f32> {
+pub(crate) fn float(value: &Value, key: &str) -> Result<f32> {
     number(get(value, key)?)
 }
-fn int(value: &Value, key: &str) -> Result<i32> {
+pub(crate) fn int(value: &Value, key: &str) -> Result<i32> {
     let n = get(value, key)?
         .as_i64()
         .ok_or_else(|| error(format!("Expected integral signed32 field {key}")))?;
@@ -143,7 +143,7 @@ fn interpolation(value: &str) -> Result<Interpolation> {
         _ => Err(error(format!("Unknown interpolation {value}"))),
     }
 }
-fn distance(value: &str) -> Result<DistanceFunction> {
+pub(crate) fn distance(value: &str) -> Result<DistanceFunction> {
     match value {
         "EUCLIDEAN" => Ok(DistanceFunction::Euclidean),
         "MANHATTAN" => Ok(DistanceFunction::Manhattan),

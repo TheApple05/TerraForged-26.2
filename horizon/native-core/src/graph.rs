@@ -59,7 +59,14 @@ pub enum GraphError {
     IterationLimit,
     InvalidSpline,
     InvalidSteps,
+    InvalidSourceParameters(&'static str),
 }
+impl std::fmt::Display for GraphError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{self:?}")
+    }
+}
+impl std::error::Error for GraphError {}
 
 pub(crate) fn dependency_cost(
     dependencies: impl IntoIterator<Item = (u16, usize)>,
@@ -1399,7 +1406,7 @@ impl Noise {
     }
 }
 
-fn java_min(a: f32, b: f32) -> f32 {
+pub(crate) fn java_min(a: f32, b: f32) -> f32 {
     if a.is_nan() {
         return a;
     }
@@ -1409,7 +1416,7 @@ fn java_min(a: f32, b: f32) -> f32 {
     if a <= b { a } else { b }
 }
 
-fn java_max(a: f32, b: f32) -> f32 {
+pub(crate) fn java_max(a: f32, b: f32) -> f32 {
     if a.is_nan() {
         return a;
     }
