@@ -1,0 +1,1187 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAtUtc": "2026-11-04T15:08:02.657764+00:00",
+  "javaOracle": {
+    "schemaVersion": 1,
+    "status": "frozen-genuine-java-registry-reference",
+    "freshRunsAgree": true,
+    "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+    "producerReports": [
+      {
+        "report": "server-horizon-noise-registry-oracle-v2a.json",
+        "sha256": "187409158152fc188dab00bb7f58dcc6ba2a3c9143a124257dbcd3793b66a9f9",
+        "pid": 61368,
+        "instance": "build/qa/server/instances/20261104T150703Z-d0edd0",
+        "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+        "classLoadLogSha256": "1f117120b09986e7d984e91ba98b705a5e6d6556cafbe778faa0711144b6f0d9",
+        "verifiedOriginalClassOrigins": [
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Constant source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Sin source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.White source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.PerlinRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.SimplexRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Worley source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.WorleyEdge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Billow source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cubic source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Line source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.ShiftSeed source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Frequency source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Add source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Multiply source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Power source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.PowerCurve source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Curve source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Gradient source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Terrace source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.AdvancedTerrace source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Invert source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Blend source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Alpha source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Boost source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Steps source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Abs source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Map source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Clamp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Threshold source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Min source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Max source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Warp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LinearSpline source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cache2d source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyTemperature source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyMoisture source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises$HolderHolder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.DomainWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.DirectionWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.DirectWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.AddWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.CompoundWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.function.SCurveFunction source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.NoiseUtil source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.function.Interpolation source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-d0edd0/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+        ]
+      },
+      {
+        "report": "server-horizon-noise-registry-oracle-v2b.json",
+        "sha256": "783806d9537e6862ec0e843b18934fec649bc0c840cdff71aeca7bb400c5bd9c",
+        "pid": 44316,
+        "instance": "build/qa/server/instances/20261104T150703Z-e2ff17",
+        "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+        "classLoadLogSha256": "0fc7d265123d39eb3b2abbc568ed3620e4158d41fb4679392171e8df77178a65",
+        "verifiedOriginalClassOrigins": [
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Constant source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Sin source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.White source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.PerlinRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.SimplexRidge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Worley source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.WorleyEdge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Billow source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cubic source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Line source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.ShiftSeed source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Frequency source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Add source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Multiply source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Power source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.PowerCurve source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Curve source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Gradient source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Terrace source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.AdvancedTerrace source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Invert source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Blend source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Alpha source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Boost source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Steps source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Abs source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Map source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Clamp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Threshold source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Min source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Max source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Warp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LinearSpline source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Cache2d source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyTemperature source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyMoisture source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises$HolderHolder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.DomainWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.DirectionWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.DirectWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.AddWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.CompoundWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.function.SCurveFunction source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.NoiseUtil source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+          "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.function.Interpolation source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T150703Z-e2ff17/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+        ]
+      }
+    ],
+    "fixtureSha256": "94a7ded8ff6cee846b7e9ae196adc961b58f60af98cba05b43fa2e1a7366ec3a",
+    "inputsSha256": "e6e94467eda1c1331596e288c42186dafdd152677c13b697a67f7422c4346f2a",
+    "recordCount": 130128,
+    "rootCount": 78,
+    "successfulRoots": 75,
+    "expectedRejectedInputs": [
+      "qa:linear_spline",
+      "qa:linear_spline_numeric",
+      "qa:linear_spline_empty"
+    ],
+    "actualRegistryEntries": 26,
+    "syntheticCodecInputs": 52,
+    "sourceSha256Lf": {
+      "Constant": "29a632a40cb0158b5c3540d53a423a513d1be10828a715f7b2880ffe07459b43",
+      "Sin": "ed59913903cbe52e0bd901a6f73fc8e0ea30c53f3d39d5eb72f6280b6fb7e92b",
+      "White": "95795d449477288f489d866d64ae80aff2c74d116b60e4531f356dd8fdaad465",
+      "Perlin": "30bc31c35f9801ecfebdbbe121313ed4efa6afa3ce07bce97a227159346b8816",
+      "Perlin2": "18dd75b0b30cd963bb526ae547046ce859b1ea08fb017f7026a014a6f2096183",
+      "PerlinRidge": "481916e7f3eea17ce475e38fbd553bc33e8ef759aed6c98dd27f0a8113518c7e",
+      "Simplex": "7b154b3c6804afc33248ca6b2c2942c9a94d54aeac1e0d58ed95a70671908a9a",
+      "Simplex2": "d248bac6fdcc75e56368ccbb9ce938731c4bc44e87b11f2816631ce43557fda4",
+      "SimplexRidge": "45d8fc50034b0793d83c1213f0c02f58a1492aeb3885776dbcca8331c710a7eb",
+      "Worley": "15c5911263366a66589d8d945d2ab5f8c879ef3f0424a318fe17bc5d3cc41217",
+      "WorleyEdge": "a4e576c38a3be9fc889fa08457c413cb316e06f4b086d6a82032f294a276b539",
+      "Billow": "185c12d27ad07e1370ad47ef3651948f53fd4f64a94df7f2a6543e146a859ac9",
+      "Cubic": "0f1376eb1e163cdf614159abf2523d5025c2c575ba9d91066f9fb5c2ea7b66f4",
+      "Line": "5d703372d3a8cbffcc8bca47cd564ddf2ad9ecd3de526b466a86df6541bbbea1",
+      "ShiftSeed": "81b5c7a251df0729bc61905248d9a00bbfb357ddd31bf052bada47ddb5e8db9c",
+      "Frequency": "09431a307a613406d3a0ba500b329ce16366208e3cf55c65f0b7d1176d375d5a",
+      "Add": "d3b16a276e0b78220bd67099d1baa61620fe81882f2bea3aadf70b4761b37bd8",
+      "Multiply": "924cd3a9f55094d1b76ce357f4c2b3dc0ce6cfc93136b561d9d1947f9f9e74fa",
+      "Power": "0961da806f3c7de7fdb7ea8bed4acd6d85299dbe1ffe46a16235afe22d72b5a3",
+      "PowerCurve": "2407ac770545af77aedf638f06d3677d6c2f61be04686e7412dacf17858c1376",
+      "Curve": "67eed5e2f9e80589bb678c09d39db11fd5e0dd4de9d74b061ca809b8ee776a6b",
+      "Gradient": "1ad217cfc913e611bd797b98136f787057e29b35648f68662023a65c30d662f0",
+      "Terrace": "087602c39508e0d32b1302d4a92abf039201958cae823867e0aaf646a2b95851",
+      "AdvancedTerrace": "b6a3d720ebdfe1d5429e917852e54ea060f34d97821ff5ca2d5649fb2ffb2256",
+      "Invert": "b31aaf6f8b8c60ddeadd887cf6ddba76e10d87370fdb54d17c48551a548f3969",
+      "Blend": "a9705b9078e623c685f58bdfa821913bbc7c20c25f16091fc1c49f261dc89971",
+      "Alpha": "fdc239b827ecf750abc7687427eb5fac30f46f1a2cf4b26992782ecf87903ad8",
+      "Boost": "b7b4bbe22c396ce71e0d60d076ea472d84f5eba94fe581703600f4ebe47ad1fd",
+      "Steps": "fdd83dc40edee520549308cb0099080364f2423bb69dc118385d8b64a5d535be",
+      "Abs": "e43f10c01dc1034078c34b5611aa40a95d5f726c90035701adc595a002460cc3",
+      "Map": "2de900f168aaae3e865f24d579726ea6eac014190efe404bcd25870d44034843",
+      "Clamp": "0e4d08ac8698d147c63407da9dd449ef4498fddc3e5cd93ffef5d1a27ccba50e",
+      "Threshold": "ed268ad7975f6fa6474ccbf12418a25b87f02126fb885014199eed0543461bc1",
+      "Min": "6cc0fec91d0c53360c09581ccd0c3bd96c677901b258302f4b6fab20902c0363",
+      "Max": "c506b286eb20b044874a602fe3013d533932f28bd096bf414689505e3b1aa06e",
+      "Warp": "4785bdda27a74dfa9c162be3e84ed49f990e177a11d0650c2138284dd79d630d",
+      "Erosion": "5320dc3dd53ad61fd3033b8f748bbf7dba2d9c16f0549aca43dd2c86116d0452",
+      "LinearSpline": "1429ee741705d118c0e2a375722d706d3e3a25e719eb20513d97bc8b2cf06389",
+      "Cache2d": "747ad42200c2a73c27a1ace0ebebbf95c7e3a41dcb0ce082d81e224092ee06af",
+      "LegacyTemperature": "1a27a5c7b339970c0178a890864a5b2314b81c5daac48656ba32b30d6712126e",
+      "LegacyMoisture": "e06d214f74a3c1081ccbf07ffcdcb58fa30211da752175bbec7e16754dbdf9a0",
+      "Noises$HolderHolder": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+      "domain.DomainWarp": "d64372619f1bcc4b9954be399ea3c5cbfd8dc556ce8c52846af3e9abd23d5e9e",
+      "domain.DirectionWarp": "8091c6fa5933bdd2c767508b0db21b9a114727d60c3de8f2e1b54b90acce81d9",
+      "domain.DirectWarp": "a77ad3514be3fbf538e71ea2e3095494f72a06cdad9291c3c46efc6e0a9bf290",
+      "domain.AddWarp": "3e3e189af212e067638799afd0ed7acfddb1a9a7689abb96cc7844fae969319e",
+      "domain.CompoundWarp": "9a21ca826f9b471d88a12075b40ebbeeb0663888ea7e17307624d88577e4ad9c",
+      "function.SCurveFunction": "fa2b00998ca121e1103884ca1caee528b1187f82d64e1023ceea08659af111ca",
+      "NoiseUtil": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+      "function.Interpolation": "422742353f669ce13af9fcbbc22647692cd7865bc6602a9c9fc4c815ada8ad3a"
+    },
+    "oracleSourceSha256Lf": "7dd5b9c09f497c4319bf650d389afe897e6fcc15c32721c729148b59804e92b5",
+    "nonfiniteSampleRecords": 3420,
+    "scope": "Actual registry values plus genuine JSON codec parsing/rejection across all 41 types, high octaves, references and decimal rounding.",
+    "nativeExpectedValuesUsed": false,
+    "notCovered": [
+      "Every codec parameter/input domain",
+      "Native cell/river/tile pipeline",
+      "Native game activation"
+    ]
+  },
+  "fixtureSha256": "94a7ded8ff6cee846b7e9ae196adc961b58f60af98cba05b43fa2e1a7366ec3a",
+  "inputsSha256": "e6e94467eda1c1331596e288c42186dafdd152677c13b697a67f7422c4346f2a",
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 3221225725,
+      "outputSha256": "d64ebe407bfeef2f9f1b52739521bffd4f1f4ae38c0736de09fa70a3969fc727",
+      "differenceCount": 130128,
+      "firstDifferences": [
+        {
+          "key": "graph/qa:abs",
+          "expected": [
+            "Abs",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:add",
+          "expected": [
+            "Add",
+            "3e000000",
+            "3fd00000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:advanced_terrace",
+          "expected": [
+            "AdvancedTerrace",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:alpha",
+          "expected": [
+            "Alpha",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:billow",
+          "expected": [
+            "Billow",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:blend",
+          "expected": [
+            "Blend",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:boost",
+          "expected": [
+            "Boost",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:cache",
+          "expected": [
+            "Cache2d",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:clamp",
+          "expected": [
+            "Clamp",
+            "00000000",
+            "3f666666"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:constant",
+          "expected": [
+            "Constant",
+            "3f000000",
+            "3f000000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:cubic",
+          "expected": [
+            "Cubic",
+            "bfa80000",
+            "3fa80000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:curve",
+          "expected": [
+            "Curve",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:erosion",
+          "expected": [
+            "Erosion",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:frequency",
+          "expected": [
+            "Frequency",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:gradient",
+          "expected": [
+            "Gradient",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:high-perlin",
+          "expected": [
+            "Perlin",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:high-perlin2",
+          "expected": [
+            "Perlin2",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:invert",
+          "expected": [
+            "Invert",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:legacy_moisture",
+          "expected": [
+            "LegacyMoisture",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:legacy_temperature",
+          "expected": [
+            "LegacyTemperature",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:line",
+          "expected": [
+            "Line",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:map",
+          "expected": [
+            "Map",
+            "00000000",
+            "40000000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:max",
+          "expected": [
+            "Max",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:min",
+          "expected": [
+            "Min",
+            "00000000",
+            "3f000000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:multiply",
+          "expected": [
+            "Multiply",
+            "00000000",
+            "3f100000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:perlin",
+          "expected": [
+            "Perlin",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:perlin2",
+          "expected": [
+            "Perlin2",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:perlin_ridge",
+          "expected": [
+            "PerlinRidge",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:power",
+          "expected": [
+            "Power",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:power_curve",
+          "expected": [
+            "PowerCurve",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:reference",
+          "expected": [
+            "Add",
+            "3e7c0000",
+            "3f9f8000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:round/0",
+          "expected": [
+            "Constant",
+            "80000000",
+            "80000000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:round/1",
+          "expected": [
+            "Constant",
+            "00000000",
+            "00000000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:round/2",
+          "expected": [
+            "Constant",
+            "3f800001",
+            "3f800001"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:round/3",
+          "expected": [
+            "Constant",
+            "3f800000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:round/4",
+          "expected": [
+            "Constant",
+            "bf800001",
+            "bf800001"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:round/5",
+          "expected": [
+            "Constant",
+            "00000001",
+            "00000001"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:shift",
+          "expected": [
+            "ShiftSeed",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:simplex",
+          "expected": [
+            "Simplex",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:simplex2",
+          "expected": [
+            "Simplex2",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:simplex_ridge",
+          "expected": [
+            "SimplexRidge",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:sin",
+          "expected": [
+            "Sin",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:steps",
+          "expected": [
+            "Steps",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:terrace",
+          "expected": [
+            "Terrace",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:threshold",
+          "expected": [
+            "Threshold",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:warp",
+          "expected": [
+            "Warp",
+            "3e000000",
+            "3f900000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:white",
+          "expected": [
+            "White",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:worley",
+          "expected": [
+            "Worley",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/qa:worley_edge",
+          "expected": [
+            "WorleyEdge",
+            "00000000",
+            "3f800000"
+          ],
+          "actual": null
+        },
+        {
+          "key": "graph/reterraforged:climate/biome_edge_shape",
+          "expected": [
+            "Add",
+            "bf000000",
+            "3f000000"
+          ],
+          "actual": null
+        }
+      ],
+      "rejectionGuardsObserved": false,
+      "allJavaValuesMatch": false
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "outputSha256": "d64ebe407bfeef2f9f1b52739521bffd4f1f4ae38c0736de09fa70a3969fc727",
+      "differenceCount": 1735,
+      "firstDifferences": [
+        {
+          "key": "graph/qa:round/0",
+          "expected": [
+            "Constant",
+            "80000000",
+            "80000000"
+          ],
+          "actual": [
+            "Constant",
+            "00000000",
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/0",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/1",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/10",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/11",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/12",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/13",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/14",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/15",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/16",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/2",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/3",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/4",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/5",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/6",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/7",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/8",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/0/9",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/0",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/1",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/10",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/11",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/12",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/13",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/14",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/15",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/16",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/2",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/3",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/4",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/5",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/6",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/7",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/8",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/1/9",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/0",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/1",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/10",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/11",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/12",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/13",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/14",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/15",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/16",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/2",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/3",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/4",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/5",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/6",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        },
+        {
+          "key": "sample/qa:round/0/-1/10/7",
+          "expected": [
+            "80000000"
+          ],
+          "actual": [
+            "00000000"
+          ]
+        }
+      ],
+      "rejectionGuardsObserved": true,
+      "allJavaValuesMatch": false
+    }
+  ],
+  "recordsPerProfile": 130128,
+  "fieldsPerProfile": 130278,
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.1\nLLVM version: 23.1.1\n",
+  "scope": "Bounded registry adapter, raw finite bits and explicit nonfinite classifications; no native terrain activation.",
+  "notCovered": [
+    "Every invalid/codec parameter domain",
+    "Preset or cell/river/filtered-tile pipeline",
+    "Native density/surface/chunks",
+    "Client/save/launcher integration"
+  ],
+  "sourceSha256Lf": {
+    "horizon/native-adapter/Cargo.lock": "5b9264ab576d315c2f1d5c893fb050ab6bbf24369b3d68b2c50a42e772f234ae",
+    "horizon/native-adapter/Cargo.toml": "b2af89a7c40eb26f25bbc4c942713eaafc8e16da08f370f97d158a9f73484d04",
+    "horizon/native-adapter/src/bin/registry_probe.rs": "ec1d5a0fdc679fe1c973b5ee416bfbba919bf39768a533d61cb64a139a3f9c77",
+    "horizon/native-adapter/src/lib.rs": "63ca02915551088a29afed75ae706441e856aaef5f659735bcc7eed1d8ac37e8",
+    "horizon/native-adapter/src/noise_registry.rs": "92ee960366d55d91752a618febbded1be8c9e5b3622166bc99850898f2a8647a",
+    "horizon/native-core/Cargo.lock": "51e811941ccbf1984b0a3a36b105742bb4053403c4adb5ac5acffbef3b80fa40",
+    "horizon/native-core/Cargo.toml": "90828d3f94df0a4249961250593854170168ab2de8191bc4d7d9540394152366",
+    "horizon/native-core/src/bin/core_probe.rs": "2135bffcbc11eb44efc5b5fb9290c004877d52e28acea3585465efbffa8485b4",
+    "horizon/native-core/src/bin/math_probe.rs": "d59d6066dd3ab530c01f1b130d367469a48ce2bf63aab5ee8467177821bbe20e",
+    "horizon/native-core/src/bin/noise_cellular_probe.rs": "51ffd88f5d336eeab041bf348f0ec609be6dfad1eca6981ab563a0e1a0ddb9e8",
+    "horizon/native-core/src/bin/noise_composition_probe.rs": "41c700b6e80149a052b629198be0e1697bdd8b94de6571666a47b48b2ef962a4",
+    "horizon/native-core/src/bin/noise_family_probe.rs": "7c832f40f9a405decb3b28135427bac776267fa40342cecf1ef584cbf0bfa01a",
+    "horizon/native-core/src/bin/noise_final_probe.rs": "2306f40a423accd957c8a053b39b8564b712cacebc3620db46e5dbd387bcf92d",
+    "horizon/native-core/src/bin/noise_probe.rs": "365ddc9f8419d0865d77f47d245327232a72d9d212def9efb1f45b4fcc892660",
+    "horizon/native-core/src/bin/noise_shaping_probe.rs": "a9dd6228d310db541328477e31d8964b6b7923edb7aac084b497165686d0da43",
+    "horizon/native-core/src/bin/noise_sources_probe.rs": "ec86d45f5a28f4f589c906ea86f1c04256a3f5fe2a795741bec74a9559835b00",
+    "horizon/native-core/src/bin/noise_visitor_probe.rs": "d21d3b05b954d04233593eca1d3c01307491e1c4809420e9fb4474f90e13338a",
+    "horizon/native-core/src/bin/power_probe.rs": "d1590fd2bc8666e2e1b4cfe7299c5a87ce6c099391bf770ddba304b5c000635e",
+    "horizon/native-core/src/bin/scalar_probe.rs": "96aee09dbbbf80bb388e74404bbf7f9443bb6d34d38894f551eae4ff5cf92758",
+    "horizon/native-core/src/bin/utility_probe.rs": "293b0003ff5cd147c3aeeeafad73f486e8935e4563286fc127616b7f577c8ebc",
+    "horizon/native-core/src/data/noiseutil-sine.bin": "f2999391380fe1b7a8deb687380fdb51b278fa88ffb8201e9beb2ae125a9db81",
+    "horizon/native-core/src/domain.rs": "38b7caa65aa89b4330a9c47c08f0a88e59d9d38f9d0b4d49869670c529915a1c",
+    "horizon/native-core/src/erosion.rs": "8be6d70300e572672bc8b56c90067fed900bb85852b53a49282e5e0c90635b4e",
+    "horizon/native-core/src/fast_random.rs": "475dbaf5fb1b3a71b159c4d4d4ed4d1b1b66677aef151e54721eb951513f024f",
+    "horizon/native-core/src/graph.rs": "9e62e1af5d8147aa8b7761db61d1674dec599bf3d5712c041d3af009bfbf195a",
+    "horizon/native-core/src/lib.rs": "f73646819336c77cd5d14da98a531c69042d8a56b252b53f5cae69aa6f677bb2",
+    "horizon/native-core/src/line.rs": "55679d7b6a7d39444dfc53a8c05489523c8adc2aa234f1acbfdeaf0c6e6361d7",
+    "horizon/native-core/src/math_table.rs": "a3e97af5cde9e96741262c7b6ce11d17c14107ff2e824525a4877d78a857f945",
+    "horizon/native-core/src/noise_util.rs": "99b3ca60416d08fc14df95cb27d719b00fcab9e67547c49090d2730d9f805bef",
+    "horizon/native-core/src/noise_vectors.rs": "aca424593d1b9c3fef680ea1920fcbcc9f8b7208b8fa3bb739b77d174602dfd0",
+    "horizon/native-core/src/perlin.rs": "6dcbf9cc7281e7567bffd3974612ce8d742fbe6dfd3bf663e7bc99f396f1897b",
+    "horizon/native-core/src/perlin2.rs": "028fab2a85af2b79e2dfe115cf2c0a1abd550dcdc21dc663ecd5a41ef0b1a981",
+    "horizon/native-core/src/pos_util.rs": "09237ff99c85e800b07e965d2af4b8cbc5132b1525ae51930f74212728dfcb6f",
+    "horizon/native-core/src/ridges.rs": "90319d54e4393469489330afb46451856c6f02291abe5aca8b312c987843b1f5",
+    "horizon/native-core/src/seed.rs": "7c296bc1bc07539034fd4f704e41b298d621173e9dd18158551ad7d78cf64430",
+    "horizon/native-core/src/simplex.rs": "09a9fa3aea602d3da6310c467af93fd6bc3fc96418094d828b4af1ee30c95b47",
+    "horizon/native-core/src/simplex2.rs": "0f2614e82178bc148180a76d13c8fd814a3e5aadd2c6e02a3cac9b250f963d1c",
+    "horizon/native-core/src/sources.rs": "0187f37e59fb6c21a5c62a1754beaf11dae8e51057835b45664c32106d7ddca3",
+    "horizon/native-core/src/worley.rs": "f4d95f87851d6bf5bb2682620caf51f6de1604eee46abc4a13a7485eea734789"
+  },
+  "finishedAtUtc": "2026-11-04T15:08:14.478110+00:00",
+  "verifierSha256": "b542de23ab9d1eec7e59d514be8b083f36d9ad32f5cd1608f6cd28fa2e978bda"
+}

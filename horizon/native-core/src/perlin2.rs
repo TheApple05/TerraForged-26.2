@@ -29,7 +29,7 @@ impl Perlin2 {
         gain: f32,
         interpolation: Interpolation,
     ) -> Result<Self, Perlin2Error> {
-        if !(0..=32).contains(&octaves) {
+        if !(0..=256).contains(&octaves) {
             return Err(Perlin2Error::InvalidOctaves(octaves));
         }
         let min = Self::min_impl(octaves, gain);

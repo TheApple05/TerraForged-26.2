@@ -1,0 +1,13 @@
+[package]
+name = "terraforged-native-adapter"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "Explicit bounded TerraForged registry adapters; no native terrain activation"
+
+[dependencies]
+terraforged-native-core = { path = "../native-core" }
+serde_json = { version = "=1.0.151", features = ["arbitrary_precision"] }
+
+[workspace]
