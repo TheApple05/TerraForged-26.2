@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-unmodified-java-classic-pillar-math",
+  "capturedAtUtc": "2026-11-04T22:28:26.006520+00:00",
+  "recordCount": 24037,
+  "inputsSha256": "1b23b8904f51293a992d83099dd12eddfb0708ec2d9ee669fec01f9e909f10ac",
+  "fixtureSha256": "95bf8e641812fddae1cb0cde3901bdf2cc7ad51077ef50a8156d8f1d6ffdc42a",
+  "uncompressedValuesSha256": "8a5a9ac8a8c673310fb8a36458700f910cdccfcb4192bfdc949a0f7fc41aa273",
+  "sourceSha256Lf": {
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/ClassicPillarMath.java": "9f30f38ab5e64c77e4bbb3d0597375ceead5930f3f91cbe07693fb07cf4bb0bf",
+    "horizon/tests/java/NativeClassicPillarMathProbe.java": "40fa35c44b9315dcc03b41c2955b10ece476af44455bf0de19fe982b010ab086"
+  },
+  "producerReports": [
+    {
+      "pid": 35036,
+      "exitCode": 0,
+      "records": 24037,
+      "outputSha256": "8a5a9ac8a8c673310fb8a36458700f910cdccfcb4192bfdc949a0f7fc41aa273",
+      "logSha256": "676f2ed1c37f6ea8cb7918e147b3cd31621c70415b6e9b324411b44e1af84b34"
+    },
+    {
+      "pid": 64500,
+      "exitCode": 0,
+      "records": 24037,
+      "outputSha256": "8a5a9ac8a8c673310fb8a36458700f910cdccfcb4192bfdc949a0f7fc41aa273",
+      "logSha256": "12129cce5c8ce32911bea5224023964dc2706c5d8231ea1a4342ebdb81aada66"
+    }
+  ],
+  "freshJavaRunsAgree": true,
+  "legacyTerraceReferenceSha256": "f6775d1e014df64c8a3171a5dd07e1f76a20013345c3a4f38ac296d20989d9c1",
+  "nativeExpectedValuesUsed": false,
+  "nanPayloadBitsCompared": false,
+  "scope": "Exact finite/infinite/zero f32 results and integer heights; NaN results compare as NaN. Unmodified project math source, plus an independently frozen original Noise2D terrace reference. No game APIs or downloads.",
+  "notCovered": [
+    "Pillar noise shapes/palettes",
+    "Biome boundary masks",
+    "Block placement",
+    "Native world integration or scenery"
+  ]
+}
