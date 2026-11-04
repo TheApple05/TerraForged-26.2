@@ -206,7 +206,7 @@ bindings = [
     for file in sorted((ROOT / "horizon/native-core/src").rglob("*")):
         if file.is_file() and "bin" not in file.relative_to(ROOT / "horizon/native-core/src").parts:
             source_files[file.relative_to(ROOT).as_posix()] = sha(file)
-    for name, destination in (("noise_registry.rs", "noise_registry.rs"), ("preset.rs", "preset_input.rs"), ("router.rs", "router.rs")):
+    for name, destination in (("noise_registry.rs", "noise_registry.rs"), ("preset.rs", "preset_input.rs"), ("router.rs", "router.rs"), ("spawn.rs", "spawn.rs")):
         file = ROOT / "horizon/native-adapter/src" / name
         source_files[file.relative_to(ROOT).as_posix()] = sha(file)
         (kernel / "src" / destination).write_text(file.read_text(encoding="utf-8").replace("terraforged_native_core::", "crate::"), encoding="utf-8", newline="\n")
@@ -214,7 +214,7 @@ bindings = [
         file = ROOT / "horizon/native-world/world_runtime.rs"
         source_files[file.relative_to(ROOT).as_posix()] = sha(file)
     with (kernel / "src/lib.rs").open("a", encoding="utf-8", newline="\n") as lib:
-        lib.write("\npub mod noise_registry;\npub mod preset_input;\npub mod router;\npub use serde_json;\n")
+        lib.write("\npub mod noise_registry;\npub mod preset_input;\npub mod router;\npub mod spawn;\npub use serde_json;\n")
     if a.entry:
         data_dir=kernel / "data"
         data_dir.mkdir(exist_ok=True)

@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "completedAtUtc": "2026-11-04T23:26:15.402184+00:00",
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "+stable",
+        "fmt",
+        "--manifest-path",
+        "horizon/native-adapter/Cargo.toml",
+        "--check"
+      ],
+      "exitCode": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "cargo",
+        "+stable",
+        "clippy",
+        "--offline",
+        "--locked",
+        "--manifest-path",
+        "horizon/native-adapter/Cargo.toml",
+        "--lib",
+        "--bin",
+        "spawn_center_probe",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exitCode": 0,
+      "logSha256": "adfa42fef48eab5df482c01e225c430635d17c842f19c749436ac4c361f2292c"
+    },
+    {
+      "command": [
+        "cargo",
+        "+stable",
+        "test",
+        "--offline",
+        "--locked",
+        "--manifest-path",
+        "horizon/native-adapter/Cargo.toml",
+        "--lib"
+      ],
+      "exitCode": 0,
+      "logSha256": "8a162f1c21beae0e79a0b66b77508f73881f07a74d1f63b576fd19d5c92ceaaf"
+    }
+  ]
+}

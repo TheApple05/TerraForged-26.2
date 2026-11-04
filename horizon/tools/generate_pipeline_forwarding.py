@@ -33,6 +33,7 @@ def main():
         names=re.findall(r'\b(\w+)\s*:(?!:)',arguments)
         if name=='release_caches':
             body='self.inner.release_caches();\nif let Err(error) = self.kernel.release_caches() { log::error!("TerraForged cache release failed: {error:?}"); }'
+        elif name=='spawn_position':body='Ok(self.spawn)'
         else:body='self.inner.'+name+'('+', '.join(names)+')'
         methods.append(signature+' {\n'+body+'\n}')
     expected='generate decorate data cache_census release_caches end_island_origins sea_level level surface_sample lod_grid structure_starts structure_start unsupported_features use_saved_start forget_structure_starts ring_positions may_start_answers spawn_position region_random locate set_old_world debug_density_line find_closest_biome noise_biomes jigsaw_pieces'.split()

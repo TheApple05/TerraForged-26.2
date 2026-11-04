@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-independent-configured-spawn-centers",
+  "completedAtUtc": "2026-11-04T23:20:14.798263+00:00",
+  "referenceMetadataSha256": "6fc802b39154144e85b3d66d295450ccd21cc8058881ab3a3667eda19efdf12a",
+  "nativeSourceSha256": "069cfdb5dd3010b7203d40290be1b86bd08ba74061ae9078549d24b63e65d00d",
+  "probeSourceSha256": "7ddcaf11d73d9c96d2c9008a5f191eca33e681bc744a27513fcc4afa72fc045d",
+  "verifierSourceSha256": "bb0068c0f19773bcb25de0c69259f177cf42c97964d7535c6b679b5d2afded70",
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "records": 24,
+      "executableSha256": "653d302d0edaf4518ba9060f85d8812d0aab4e6b4db2bff0abab618d339e56f6",
+      "outputSha256": "5f83612d34003d32b2342b3917f095b23c6036de9706d17503b8a0872089c1c2",
+      "allJavaObservationsMatch": true,
+      "invalidModeGuardsObserved": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "records": 24,
+      "executableSha256": "ca3701bbb2664fc931e596440556c24c1e070091d843b12e9ae91a46c98ceed9",
+      "outputSha256": "5f83612d34003d32b2342b3917f095b23c6036de9706d17503b8a0872089c1c2",
+      "allJavaObservationsMatch": true,
+      "invalidModeGuardsObserved": true
+    }
+  ],
+  "scope": "Default preset, eight long seeds (including int wrapping), all three packaged SpawnType.getSearchCenter methods. ISLANDS retains source origin fallback; no new island search is claimed.",
+  "notCovered": [
+    "Actual player placement or safe-spawn height selection",
+    "Other presets",
+    "Native controlled startup performance"
+  ]
+}

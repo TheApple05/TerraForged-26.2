@@ -65,6 +65,14 @@ pub fn open(
         .legacy_random = legacy;
     settings["noise_router"] = plan.router;
     let kernel = state.sampler.clone();
+    // The Java preset has no climate spawn targets and supplies its configured
+    // center directly; inheriting vanilla's search is both different and costly.
+    settings["spawn_target"] = serde_json::json!([]);
+    let spawn = horizon_core::density::terraforged_runtime::kernel::spawn::search_center(
+        &preset.original,
+        kernel.heightmap(),
+    )
+    .map_err(|error| resource(error.to_string()))?;
     let weak = Arc::downgrade(&kernel);
     let inner = terraforged_registry::with_state(
         state,
@@ -95,7 +103,11 @@ pub fn open(
     .map_err(resource)??;
     Ok(OpenedNative {
         generator: OverworldGenerator {
-            pipeline: Arc::new(NativePipeline { inner, kernel }),
+            pipeline: Arc::new(NativePipeline {
+                inner,
+                kernel,
+                spawn,
+            }),
             noise_clamped: None,
         },
         kernel: weak,
@@ -105,6 +117,7 @@ pub fn open(
 struct NativePipeline {
     inner: Arc<dyn SeededPipeline>,
     kernel: Arc<KernelSampler>,
+    spawn: [i32; 2],
 }
 
 // Pipeline forwarding follows below. Regenerate with the source-only helper.
@@ -207,7 +220,7 @@ impl SeededPipeline for NativePipeline {
         self.inner.may_start_answers(_worker, _chunk)
     }
     fn spawn_position(&self) -> Result<[i32; 2], GeneratorError> {
-        self.inner.spawn_position()
+        Ok(self.spawn)
     }
     fn region_random(
         &self,

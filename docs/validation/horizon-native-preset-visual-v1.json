@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-native-ui-spawn-and-rendering-smoke-only",
+  "reviewedAtUtc": "2026-11-04T23:48:59.424898+00:00",
+  "reportSha256": "e31cddb292abef0a45e81df712ba9c8e5544b523a13a4965efcb773be461c0e0",
+  "hmodSha256": "609fe326edd8a1fc5c59383f2c1bf8a1660209df5b79103cef5c1946a980a8e4",
+  "directlyReviewedImages": [
+    {
+      "path": "docs/validation/horizon-native-preset-ui-v5/selector.png",
+      "sha256": "9a067a3cccf0dbbb26f6c74fc3ac180918ffc294202e770c58d1390613112556"
+    },
+    {
+      "path": "docs/validation/horizon-native-preset-ui-v5/natural-spawn.png",
+      "sha256": "aeb13f6b265b653130fc217982196936ef5393baed1a0a624514112750135a13"
+    },
+    {
+      "path": "docs/validation/horizon-native-preset-ui-v5/game-0.png",
+      "sha256": "0a946fe84f7053286835fbf3800098bd82bab8248f536cbfd08cabdfd2d0fc7b"
+    },
+    {
+      "path": "docs/validation/horizon-native-preset-ui-v5/game-1.png",
+      "sha256": "4f6467d71ac3b4261b049ab7d1f79a92ccf162f3b31e1c918e4e84885d86b380"
+    }
+  ],
+  "observations": [
+    "Translated TerraForged selector and unchanged structures/bonus defaults",
+    "Healthy survival player on snowy, rocky land near configured continent center",
+    "Forested terrain at origin with visible birch/oak trees, flowers and ground",
+    "Distant desert with cacti, sand and a water gully after a fresh process reopen"
+  ],
+  "sceneryQualityQualified": false,
+  "seamsQualified": false,
+  "completeServerQueuesProven": false,
+  "limitations": [
+    "Six-chunk view visibly clips distant terrain; smoke evidence only",
+    "v2 and v4 sparse origin/distant images caught the first client chunk batch and are rejected as terrain-quality evidence",
+    "v3 used a relative turn as an absolute rotation and timed out with no drawn terrain",
+    "All 17 native biome resources/features, source carvers, structure coverage, launcher installation, native modpack compatibility and controlled performance remain open"
+  ]
+}

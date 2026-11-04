@@ -1,5 +1,8 @@
 # Native world selector and real creation
 
+The subsequent [configured spawn correction and wider UI validation](configured-spawn.md)
+qualify the actual generator center and replace the sparse terrain views described below.
+
 The source integration now pins `TheApple05/horizon` commit
 `61680d714bad3496a0ca5cef31537166f1232c4b` (fork PR7). Its bounded custom-preset
 API adds metadata callbacks to the ordinary selector and saved-generator reader.

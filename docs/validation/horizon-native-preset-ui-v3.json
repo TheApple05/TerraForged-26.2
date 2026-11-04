@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAtUtc": "2026-11-04T23:12:07.651203+00:00",
+  "horizonRevision": "61680d714bad3496a0ca5cef31537166f1232c4b",
+  "stageResultSha256": "241ebf71497d3bf1f5f68ad5ee811feafd706d49b705b38dd3266c5b6b752cb5",
+  "verifierSourceSha256": "d40856461788e183f55f53e0a81537ef658180b7f831564f8ab439edc6ac942a",
+  "hmodSha256": "532d1594a520530c0b44014e616376aab915c578afa6559ca1c7fa93a855c806",
+  "qaSpawnSupplied": false,
+  "creationViaUi": true,
+  "structuresEnabled": true,
+  "commandsEnabledViaUiForQa": true,
+  "renderDistanceChunks": 3,
+  "gameAssetsDownloaded": false,
+  "runs": [],
+  "notCovered": [
+    "All 17 native biome resources/features",
+    "Source carver configuration",
+    "Original TerraForged spawn algorithm parity",
+    "Structure placement coverage",
+    "Standard launcher native-build installation",
+    "Controlled native performance and mod combinations"
+  ],
+  "fixtureProbeSha256": "40bcc27fe3081b01b1f82b0cc81a02844de942a0d20f260bce057f0417a49742",
+  "artifactsSha256": {
+    "horizon-client.exe": "ce2c40f6f42951b249e8b82a0940e993cf48f741dbe87387af21cbd274f51e29",
+    "horizon-ctl.exe": "15a1cd3725e1f7afa2b6856c72edc4fde3d32671a43d8efac5c54e311da72ff4",
+    "terraforged_save_fixture.exe": "b711cb886f47ee5b8115cb76a2fe6f8dc79f36153d070e0d21678c1a2303c7e2"
+  },
+  "presetCycle": [
+    "minecraft:normal",
+    "minecraft:flat",
+    "minecraft:large_biomes",
+    "minecraft:amplified",
+    "minecraft:single_biome_surface",
+    "terraforged:default"
+  ],
+  "creationMenu": {
+    "allow_commands": true,
+    "bonus_chest": false,
+    "creative": false,
+    "difficulty": "normal",
+    "fields": {
+      "name": "TerraForged UI QA",
+      "seed": "8675309"
+    },
+    "focus": "seed",
+    "generate_structures": true,
+    "hardcore": false,
+    "mode": "create-world",
+    "tab": "world",
+    "world_type": "terraforged:default"
+  },
+  "creationScreenshot": {
+    "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged-native\\build\\qa\\horizon\\native-preset-ui-v3\\horizon-native-preset-ui-v3\\native-preset-ui.png",
+    "sha256": "2140e69a593451dbdae89e56a8cc87b2049956f691f57f74936443746f652dd8"
+  },
+  "naturalSpawnVisibleTerrainState": {
+    "block_entities": 1,
+    "border": {
+      "center": [
+        0.0,
+        0.0
+      ],
+      "size": 59999968.0
+    },
+    "carts": [],
+    "chunks": 16,
+    "creative": false,
+    "day_time": 176,
+    "debug": {
+      "advanced_tooltips": false,
+      "chunk_borders": false,
+      "clipboard": null,
+      "hitboxes": false,
+      "overlay": false,
+      "pause_menu": true,
+      "pause_on_lost_focus": true
+    },
+    "destroying": [],
+    "dimension": "minecraft:overworld",
+    "dirty_light": 0,
+    "display": {
+      "height": 1080,
+      "refresh_hz": 60,
+      "scale": 1.0,
+      "width": 1920
+    },
+    "fangs_vertices": 0,
+    "fight": {
+      "alive_crystals": 0,
+      "crystal_list": [],
+      "crystals": 0,
+      "dragon": null,
+      "exit_portal": null,
+      "killed": false,
+      "players": false,
+      "respawn": null
+    },
+    "fishing": null,
+    "fps": 29.994337,
+    "frames": 5055,
+    "generated_chunks": 16,
+    "heard": {},
+    "held": null,
+    "input": {
+      "counts": {
+        "agent": 14,
+        "game": 0,
+        "user": 0
+      },
+      "events": 14,
+      "last_origin": "agent",
+      "last_user_age_s": null,
+      "recording": null,
+      "replay": null,
+      "user_since_agent": 0
+    },
+    "keys": [],
+    "lightning": {
+      "bolts": 0,
+      "flash": 0,
+      "flashes": 0,
+      "struck": 0
+    },
+    "lod": {
+      "active_tiles": 0,
+      "cached_tiles": 0,
+      "detail_target_columns": 0,
+      "distance": 0,
+      "effective_distance": 0,
+      "far_detail": "full",
+      "levels": [],
+      "pending_observations": 0,
+      "refined_samples": 0,
+      "refined_target_columns": 0,
+      "resident_quads": 0,
+      "sampled_target_tiles": 0,
+      "source": "none",
+      "source_attempted": false,
+      "target_tiles": 0,
+      "terrain_distance": 3
+    },
+    "maps": [],
+    "meshed_sections": 87,
+    "mobs": 68,
+    "music": null,
+    "name_tags": [],
+    "objects": [],
+    "offhand": null,
+    "particles": {
+      "glow": 18,
+      "tinted_leaves": 9
+    },
+    "pending_chunks": 0,
+    "pending_uploads": 0,
+    "physical_keys": [],
+    "pickups": {},
+    "pitch": -25.0,
+    "player": {
+      "food": 20,
+      "health": 20.0,
+      "max_health": null,
+      "on_ground": true,
+      "position": [
+        118.5,
+        79.0,
+        46.5
+      ],
+      "velocity": [
+        0.0,
+        -0.0784000015258789,
+        0.0
+      ]
+    },
+    "projectiles": [],
+    "render_distance": 3,
+    "renderer": {
+      "arena_bytes": 31457280,
+      "backend": "Vulkan",
+      "culled_sections": [
+        [
+          0,
+          1
+        ],
+        0.0
+      ],
+      "device_type": "discrete",
+      "drawn_sections": 1,
+      "driver": "NVIDIA 616.92",
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "gpu_allocated_bytes": 191513392,
+      "gpu_culling": false,
+      "gpu_fading": null,
+      "gpu_frame": false,
+      "gpu_reserved_bytes": 279191552,
+      "present_mode": "Immediate",
+      "resident_sections": 27,
+      "section_draw_calls": 1,
+      "section_draws": 2,
+      "section_vertex_bytes": 678816,
+      "size": [
+        1280,
+        720
+      ],
+      "uploaded_bytes": 1093872,
+      "vendor": "nvidia"
+    },
+    "riding": null,
+    "rockets": 0,
+    "screen": "playing",
+    "selected": 1,
+    "server": {
+      "address": "local",
+      "chat": [],
+      "chunks": 16,
+      "dead_players": [],
+      "decode_errors": 0,
+      "dimension": "minecraft:overworld",
+      "entities": {
+        "minecraft:bat": 15,
+        "minecraft:cow": 3,
+        "minecraft:creeper": 15,
+        "minecraft:glow_squid": 2,
+        "minecraft:sheep": 4,
+        "minecraft:skeleton": 10,
+        "minecraft:spider": 3,
+        "minecraft:zombie": 16
+      },
+      "entity_id": 1,
+      "food": 20,
+      "game_mode": 0,
+      "health": 20.0,
+      "joined": true,
+      "loaded": true,
+      "lying_players": [],
+      "name": "TerraForgedQA",
+      "own_body": false,
+      "player_equipment": [],
+      "player_model": true,
+      "player_positions": [],
+      "players": [
+        "TerraForgedQA"
+      ],
+      "status": "Loading terrain...",
+      "text_display_vertices": 0,
+      "text_displays": 0
+    },
+    "sidebar": null,
+    "sounds": {
+      "channels": 0,
+      "decoded": 0,
+      "decoded_mib": 0,
+      "events": [],
+      "handles": 0,
+      "instances": 0,
+      "playing": 0,
+      "queued": 0,
+      "ticking": 0,
+      "used": [
+        0,
+        0
+      ]
+    },
+    "stopped_sounds": {},
+    "streaming": {
+      "decorating": 0,
+      "finishing": 0,
+      "generating": 0,
+      "lighting": 0,
+      "meshing": 0,
+      "protos": 0,
+      "queued": 0
+    },
+    "target": null,
+    "ticks": 3353,
+    "tridents": 0,
+    "uptime_seconds": 180.0600312,
+    "using": null,
+    "yaw": 0.0
+  },
+  "naturalSpawnState": {
+    "busy": null,
+    "dialog": {
+      "open": null,
+      "screen": null
+    },
+    "dimension": "minecraft:overworld",
+    "gamemode": "survival",
+    "held": null,
+    "input": {
+      "counts": {
+        "agent": 14,
+        "game": 0,
+        "user": 0
+      },
+      "events": 14,
+      "last_origin": "agent",
+      "last_user_age_s": null,
+      "recording": null,
+      "replay": null,
+      "user_since_agent": 0
+    },
+    "looking_at": {
+      "block": null,
+      "entity": null,
+      "kind": "none"
+    },
+    "menu": null,
+    "mining": null,
+    "paused": false,
+    "player": {
+      "absorption": 0.0,
+      "air": 300,
+      "block_pos": [
+        118,
+        79,
+        46
+      ],
+      "death_time": null,
+      "effects": [],
+      "eye": [
+        118.5,
+        80.62000000476837,
+        46.5
+      ],
+      "fall_flying": false,
+      "flying": false,
+      "food": 20,
+      "fov_modifier": 1.0,
+      "health": 20.0,
+      "hurt_time": 0,
+      "on_ground": true,
+      "pitch": -25.0,
+      "portal_effect": 0.0,
+      "position": [
+        118.5,
+        79.0,
+        46.5
+      ],
+      "saturation": 5.0,
+      "shield_cooldown": 0,
+      "sneaking": false,
+      "sprinting": false,
+      "velocity": [
+        0.0,
+        -0.0784000015258789,
+        0.0
+      ],
+      "xp": {
+        "level": 0,
+        "progress": 0.0,
+        "total": 0
+      },
+      "yaw": 0.0
+    },
+    "pointer_grabbed": true,
+    "screen": "playing",
+    "selected": 1,
+    "sleeping": null,
+    "swings": 0,
+    "ticks": 3354,
+    "time": {
+      "day": 0,
+      "day_time": 177,
+      "time_of_day": 177
+    },
+    "using": null,
+    "weather": {
+      "raining": false,
+      "thundering": false
+    },
+    "world": "TerraForged UI QA"
+  },
+  "naturalSpawnScreenshot": {
+    "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged-native\\build\\qa\\horizon\\native-preset-ui-v3\\horizon-native-preset-ui-v3\\natural-spawn.png",
+    "sha256": "6ffbb8116c97093338cd4a83fc2cddb25ea4f72f17bd436c0318920b84c2d357"
+  },
+  "worldPath": "C:\\Users\\Main\\Documents\\Codex\\TerraForged-native\\build\\qa\\horizon\\native-preset-ui-v3\\horizon-native-preset-ui-v3\\homes\\horizon_home\\saves\\TerraForged UI QA",
+  "error": "Requested terrain did not become visible",
+  "checkedResourcesUnchanged": true,
+  "checkedResourceCopyUnchanged": true,
+  "checkedResourceFilesSha256": {
+    "horizon-prepare.json": "5e5ab6316e2ebec4705abe4495266564b7897557f0194dad037f05823a266094",
+    "horizon-resources.json": "db3d64ba7b779dbda278aded406318940cdf37674fbdd2d1128fd20ea5e31c42",
+    "facts.json": "1d24883ee807b0b71473f0bbf8ed548ddaf712148caeb3fcc7aa13ab973a97b0",
+    "worldgen/biome_parameters/nether.json": "26188f1278c9ea2c737a9b0acb5c0c0d4d40c8b3b4eb7ab2526b4791c1493110",
+    "worldgen/biome_parameters/overworld.json": "ca63573e405dba0ef1010d6b324feeaa7d6b5c4dc895ffb6daf0988f1e44ef79",
+    "worldgen/biome_tags.json": "4006b76c24f616cb457a6fdad816db9b27f4528fe6daaed5747f1f79cf6225cf",
+    "worldgen/biomes.json": "9b26dc3b662627dc3bbbf8da209f287882ce79ff4daf8f454b994ddc7510df99",
+    "worldgen/block_flags.json": "fa2a580d2157e1a137bf4ea5ab73f77601f5aa2b165246d8c34699c7dd2b06d7",
+    "worldgen/block_tags.json": "36975358262568f32bf84778d63d9989a36e7394ed4796d70a34809a8f4a64f0",
+    "worldgen/blocks/placement-definitions.json": "f8a972ec87c2352500af6481158a3192bdbf699951025639bea744e4127b97c4",
+    "worldgen/blocks/structure-blocks.json": "b7a06d839993527c3b7290e57fded16aed71b283de123d4b50e3aad75b73b842",
+    "worldgen/blocks/survival-extra-definitions.json": "170f2db5bc97a49fa25cc249540aa7f04beea455cdbaf43742ed9415f5090a02",
+    "worldgen/blocks/survival-rules.json": "8805c18b3195bb1eac1f1e5281333df56e2892505f64023e5403c58ce2ec4368",
+    "worldgen/carvers.json": "b09cf69ff328cad7836da8cd9565d0fb7ecf8bc35aebf17815f40f32a6a0ca4e",
+    "worldgen/conditions.json": "54a470a4513fb34a23e0fe66b0a5129a468dbd0002f5b2839437a9861a6005b9",
+    "worldgen/densities.json": "28fe94e1b7cf3a06edfa2337319c03b5374c15bf18235570ee76e9c498c2f450",
+    "worldgen/feature_tags.json": "d66b2f97400514fc3c03b0dd8a60a93257071ab274dc132f41b79d6a454b074a",
+    "worldgen/features.json": "1dc5430167695697df7077ae0ef1d1a652265e05c47634f2fc3f04750d697431",
+    "worldgen/fluid_tags.json": "f1e5eb6d22ea7effbb118a2282709cfdeef1bfae4516b775a55ad7a4df29d7d0",
+    "worldgen/noises.json": "310b240c9b70586bb704ca44a915766a8d41d6a073183324c37184fcb317a992",
+    "worldgen/placed_features.json": "f49132b63263b9e8d763175860c1c90a10dc9977f01820fa878624e06434f136",
+    "worldgen/processor_lists.json": "379cb308ae3126cf85dbc25f95934bd48207103da44b15e7d4be5fae3c1a25b1",
+    "worldgen/rules.json": "b55f222351487a07b3e96c437d07368015c428d3d0475c5287114171397d66d9",
+    "worldgen/settings.json": "dcc7d892420fb3faadab36c935ef0d2d8709a038a8fb944c00e354f417b3b586",
+    "worldgen/state_providers.json": "ad62f6d6be27b3b2d4223fe4c2e45558e1ed79fddceb4acbbff2d049c59f4a6e",
+    "worldgen/structure_sets.json": "636fb973c14d8b31b5fa83668a448e180721fddcc659c8e9f2beb6f21da80a3d",
+    "worldgen/structures.json": "b4bb5a1283d68745c1939ac0f2e5523970c1a0f734ada1038ba496a592d4aa6f",
+    "worldgen/template_pools.json": "c9f648c6bd163f1427832d54a78640dcb48e0648a13e212fc18b2d4a4d41a844",
+    "worldgen/world_presets.json": "14012a0d843e669038b0f347ed5b214b5179086679ccee5670bef9cf03c1a497"
+  },
+  "completedAtUtc": "2026-11-04T23:23:39.439529+00:00"
+}

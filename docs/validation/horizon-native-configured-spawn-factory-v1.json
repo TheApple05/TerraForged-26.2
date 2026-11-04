@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-staged-native-spawn-factory",
+  "completedAtUtc": "2026-11-04T23:37:59.787679+00:00",
+  "horizonRevision": "61680d714bad3496a0ca5cef31537166f1232c4b",
+  "stageResultSha256": "b4b7dd3d0a5f60ef1024a9655f0f16f183a0a800b73ee8a0ae7d9de295b23985",
+  "probeSourceSha256": "c68f30fdbf45aeacc634c5a1fdcc5e6fe71cf81e64d07d26cdac16109a842fb8",
+  "verifierSourceSha256": "b8c20adb5e57aa942ebdbb992186a76c565580e5bbfdc21254a71dc137d2423d",
+  "referenceSha256": "5f83612d34003d32b2342b3917f095b23c6036de9706d17503b8a0872089c1c2",
+  "expectedJavaConfiguredCenter": [
+    2298,
+    -6656
+  ],
+  "compileExitCode": 0,
+  "executableSha256": "4bd3b3a3ac1d86bb3ed86fb90002eb61aa617b89cc37a5f60bd18dc961f522da",
+  "runs": [
+    {
+      "exitCode": 0,
+      "processSeconds": 3.9530000000086147,
+      "kernelCenter": [
+        2298,
+        -6656
+      ],
+      "generatorCenter": [
+        2298,
+        -6656
+      ],
+      "spawnCallSeconds": 1e-06,
+      "logSha256": "1e8a23d02f054951c91769ae7a66cbbed9f1065061a5f93093e89ddd99b53565"
+    },
+    {
+      "exitCode": 0,
+      "processSeconds": 3.202999999979511,
+      "kernelCenter": [
+        2298,
+        -6656
+      ],
+      "generatorCenter": [
+        2298,
+        -6656
+      ],
+      "spawnCallSeconds": 4e-07,
+      "logSha256": "7b8939aef647982fe23f33b074e9599027825d12bbb8838cb3c4380a916c8417"
+    }
+  ],
+  "resourcesUnchanged": true,
+  "resourceFilesSha256": {
+    "facts.json": "1d24883ee807b0b71473f0bbf8ed548ddaf712148caeb3fcc7aa13ab973a97b0",
+    "worldgen/biome_parameters/nether.json": "26188f1278c9ea2c737a9b0acb5c0c0d4d40c8b3b4eb7ab2526b4791c1493110",
+    "worldgen/biome_parameters/overworld.json": "ca63573e405dba0ef1010d6b324feeaa7d6b5c4dc895ffb6daf0988f1e44ef79",
+    "worldgen/biome_tags.json": "4006b76c24f616cb457a6fdad816db9b27f4528fe6daaed5747f1f79cf6225cf",
+    "worldgen/biomes.json": "9b26dc3b662627dc3bbbf8da209f287882ce79ff4daf8f454b994ddc7510df99",
+    "worldgen/block_flags.json": "fa2a580d2157e1a137bf4ea5ab73f77601f5aa2b165246d8c34699c7dd2b06d7",
+    "worldgen/block_tags.json": "36975358262568f32bf84778d63d9989a36e7394ed4796d70a34809a8f4a64f0",
+    "worldgen/blocks/placement-definitions.json": "f8a972ec87c2352500af6481158a3192bdbf699951025639bea744e4127b97c4",
+    "worldgen/blocks/structure-blocks.json": "b7a06d839993527c3b7290e57fded16aed71b283de123d4b50e3aad75b73b842",
+    "worldgen/blocks/survival-extra-definitions.json": "170f2db5bc97a49fa25cc249540aa7f04beea455cdbaf43742ed9415f5090a02",
+    "worldgen/blocks/survival-rules.json": "8805c18b3195bb1eac1f1e5281333df56e2892505f64023e5403c58ce2ec4368",
+    "worldgen/carvers.json": "b09cf69ff328cad7836da8cd9565d0fb7ecf8bc35aebf17815f40f32a6a0ca4e",
+    "worldgen/conditions.json": "54a470a4513fb34a23e0fe66b0a5129a468dbd0002f5b2839437a9861a6005b9",
+    "worldgen/densities.json": "28fe94e1b7cf3a06edfa2337319c03b5374c15bf18235570ee76e9c498c2f450",
+    "worldgen/feature_tags.json": "d66b2f97400514fc3c03b0dd8a60a93257071ab274dc132f41b79d6a454b074a",
+    "worldgen/features.json": "1dc5430167695697df7077ae0ef1d1a652265e05c47634f2fc3f04750d697431",
+    "worldgen/fluid_tags.json": "f1e5eb6d22ea7effbb118a2282709cfdeef1bfae4516b775a55ad7a4df29d7d0",
+    "worldgen/noises.json": "310b240c9b70586bb704ca44a915766a8d41d6a073183324c37184fcb317a992",
+    "worldgen/placed_features.json": "f49132b63263b9e8d763175860c1c90a10dc9977f01820fa878624e06434f136",
+    "worldgen/processor_lists.json": "379cb308ae3126cf85dbc25f95934bd48207103da44b15e7d4be5fae3c1a25b1",
+    "worldgen/rules.json": "b55f222351487a07b3e96c437d07368015c428d3d0475c5287114171397d66d9",
+    "worldgen/settings.json": "dcc7d892420fb3faadab36c935ef0d2d8709a038a8fb944c00e354f417b3b586",
+    "worldgen/state_providers.json": "ad62f6d6be27b3b2d4223fe4c2e45558e1ed79fddceb4acbbff2d049c59f4a6e",
+    "worldgen/structure_sets.json": "636fb973c14d8b31b5fa83668a448e180721fddcc659c8e9f2beb6f21da80a3d",
+    "worldgen/structures.json": "b4bb5a1283d68745c1939ac0f2e5523970c1a0f734ada1038ba496a592d4aa6f",
+    "worldgen/template_pools.json": "c9f648c6bd163f1427832d54a78640dcb48e0648a13e212fc18b2d4a4d41a844",
+    "worldgen/world_presets.json": "14012a0d843e669038b0f347ed5b214b5179086679ccee5670bef9cf03c1a497"
+  },
+  "gameAssetsDownloaded": false,
+  "timingsAreControlledPerformanceEvidence": false,
+  "notCovered": [
+    "Actual player spawn and height selection",
+    "Other seeds in this factory smoke (separate adapter fixture covers eight)",
+    "Source carvers, native biome features, standard launcher, native modpacks and performance"
+  ]
+}

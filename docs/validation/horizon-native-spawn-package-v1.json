@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-native-package-readers",
+  "startedAtUtc": "2026-11-04T23:50:35.587937+00:00",
+  "horizonRevision": "61680d714bad3496a0ca5cef31537166f1232c4b",
+  "stageResultSha256": "b4b7dd3d0a5f60ef1024a9655f0f16f183a0a800b73ee8a0ae7d9de295b23985",
+  "driverSha256": "22e39c2923466d0923affa4400e586be18e09186df2ad78d54048ffb9a1ab933",
+  "compileExitCode": 0,
+  "originalSha256": "774e40ac378938272644c21d7254d118d77a0920e1b55ce763a816480cb88cf3",
+  "packageSha256": "609fe326edd8a1fc5c59383f2c1bf8a1660209df5b79103cef5c1946a980a8e4",
+  "packagedSourcesMatchStagedBundle": true,
+  "gameAssetsReadOrDownloaded": false,
+  "notCovered": [
+    "Native build via launcher",
+    "Client rendering",
+    "Save-file round trip",
+    "Biome/features/structures/spawn/performance/modpack acceptance"
+  ],
+  "executableSha256": "c9a0aa53ca68258eac9ce2c27cd18417bc1e386d152785f0f53792d81660700b",
+  "exitCode": 0,
+  "observations": {
+    "containsWasm": false,
+    "contentFiles": [
+      "assets/terraforged/lang/en_us.json",
+      "data/terraforged/worldgen/world_preset/default.json"
+    ],
+    "id": "terraforged_native",
+    "mismatchedVersionRejection": "native manifest and mixin identity/revision differ",
+    "namespaces": [
+      "terraforged_native",
+      "terraforged",
+      "reterraforged"
+    ],
+    "nativeFiles": 81,
+    "originalRejection": "unexpected native source: README-TERRAFORGED.txt",
+    "rustSources": 67,
+    "status": "passed-native-package-readers",
+    "version": "0.1.0"
+  },
+  "completedAtUtc": "2026-11-04T23:50:35.777505+00:00"
+}

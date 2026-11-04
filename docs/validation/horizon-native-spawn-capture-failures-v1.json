@@ -1,0 +1,20 @@
+{
+  "status": "failed-reference-attempts-preserved",
+  "attempts": [
+    {
+      "version": "v1",
+      "error": "No preset noise registry was installed in the flat QA world; the genuine context rejected its missing ground resource.",
+      "logSha256": "33e798e11f5b8c5c16643b238b284387fcc80a094bebedd9b0d14e6d651f6db9",
+      "producerSnapshotSha256": "5a9150fe1b77b9ff83d7b69f9205789e20c50272201c3bb46c45e5456ae6cc71"
+    },
+    {
+      "version": "v2",
+      "error": "The QA producer wrote custom noise JSON into the vanilla noise directory; registry loading correctly rejected that schema.",
+      "logSha256": "42777e1cfbd1c96d0aaf3db8d64ecec2b7a9bd7d5661e393cf62fba69e0e080a",
+      "producerSnapshotSha256": "5e1f0e00bbca9098031edba54b9e543e9bf646ea677af397748e0dd7bdb66846"
+    }
+  ],
+  "nativeExpectedValuesUsed": false,
+  "gameAssetsDownloaded": false,
+  "acceptedFixtureProduced": false
+}

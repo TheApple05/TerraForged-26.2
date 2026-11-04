@@ -25,10 +25,15 @@ def main():
     for name in ('HORIZON_HOME','HORIZON_LAUNCHER_HOME','XDG_DATA_HOME','XDG_CONFIG_HOME','HORIZON_LAUNCHER_TRASH','HORIZON_LAUNCHER_CLIPBOARD','HORIZON_LAUNCHER_DESKTOP'):
         path=work/'homes'/name.lower();path.mkdir(parents=True);env[name]=str(path.resolve())
     game=Path(env['HORIZON_HOME']);socket=game/'control.sock';resources=work/'prepared-resources'
-    (game/'options.txt').write_text('onboardAccessibility:false\nrenderDistance:3\nsimulationDistance:3\nmaxFps:30\ntutorialStep:none\n',encoding='utf-8')
+    (game/'options.txt').write_text('onboardAccessibility:false\nrenderDistance:6\nsimulationDistance:3\nmaxFps:30\ntutorialStep:none\n',encoding='utf-8')
     checked=[source/'horizon-prepare.json',source/'horizon-resources.json',source/'facts.json']+sorted((source/'worldgen').rglob('*.json'))
     before={path.relative_to(source).as_posix():sha(path) for path in checked}
-    report={'schemaVersion':1,'status':'failed','startedAtUtc':dt.datetime.now(dt.timezone.utc).isoformat(),'horizonRevision':stage['horizonRevision'],'stageResultSha256':sha(stage_file),'verifierSourceSha256':sha(work/'verifier-source.py'),'hmodSha256':sha(artifact),'qaSpawnSupplied':False,'creationViaUi':True,'structuresEnabled':True,'commandsEnabledViaUiForQa':True,'renderDistanceChunks':3,'gameAssetsDownloaded':False,'runs':[],'notCovered':['All 17 native biome resources/features','Source carver configuration','Original TerraForged spawn algorithm parity','Structure placement coverage','Standard launcher native-build installation','Controlled native performance and mod combinations']}
+    report={'schemaVersion':1,'status':'failed','startedAtUtc':dt.datetime.now(dt.timezone.utc).isoformat(),'horizonRevision':stage['horizonRevision'],'stageResultSha256':sha(stage_file),'verifierSourceSha256':sha(work/'verifier-source.py'),'hmodSha256':sha(artifact),'qaSpawnSupplied':False,'creationViaUi':True,'structuresEnabled':True,'commandsEnabledViaUiForQa':True,'renderDistanceChunks':6,'gameAssetsDownloaded':False,'runs':[],'notCovered':['All 17 native biome resources/features','Source carver configuration','Original TerraForged spawn-height and player-placement parity','Structure placement coverage','Standard launcher native-build installation','Controlled native performance and mod combinations']}
+    spawn_reference=ROOT/'horizon/tests/fixtures/native-spawn-v1/values.tsv'
+    if spawn_reference.exists():
+        centers=dict(line.split('\t') for line in spawn_reference.read_text(encoding='utf-8').splitlines())
+        report['independentJavaConfiguredSearchCenter']=[int(n) for n in centers['8675309/CONTINENT_CENTER'].split(',')]
+        report['spawnReferenceSha256']=sha(spawn_reference)
     process=None;log=None;sequence=0
     suffix='.exe' if os.name=='nt' else '';target=workspace/'target/fast';client=target/('horizon-client'+suffix);ctl=target/('horizon-ctl'+suffix);fixture=target/('terraforged_save_fixture'+suffix)
     def run(command,label,timeout=120):
@@ -61,13 +66,19 @@ def main():
         deadline=time.monotonic()+420
         while time.monotonic()<deadline:
             snapshot=control(['status']);block=control(['block',str(x),str(y),str(z)]);renderer=snapshot.get('renderer') or {}
-            if block.get('loaded') and snapshot.get('chunks',0)>=9 and renderer.get('drawn_sections',0)>0 and not snapshot.get('pending_chunks',0) and not snapshot.get('pending_uploads',0) and not any((snapshot.get('streaming') or {}).values()):return snapshot
+            if block.get('loaded') and snapshot.get('chunks',0)>=81 and renderer.get('resident_sections',0)>0 and renderer.get('drawn_sections',0)>0 and not snapshot.get('pending_chunks',0) and not snapshot.get('pending_uploads',0) and not any((snapshot.get('streaming') or {}).values()):
+                control(['wait','20'],30)
+                return snapshot
             time.sleep(.5)
         raise RuntimeError('Requested terrain did not become visible')
     def screenshot(name):
         path=work/(name+'.png');control(['screenshot',str(path)],60)
         if not path.exists() or path.stat().st_size<1024:raise RuntimeError('Screenshot missing')
         return {'path':str(path),'sha256':sha(path)}
+    def look(yaw,pitch):
+        player=control(['state'])['player']
+        control(['turn',str(yaw-player['yaw']),str(pitch-player['pitch'])])
+        control(['wait','20'],30)
     try:
         shutil.copytree(source,resources)
         if not all(sha(resources/name)==digest for name,digest in before.items()):raise ValueError('Copied resources differ')
@@ -79,7 +90,7 @@ def main():
         world=None
         for index in range(2):
             log=(work/f'game-{index}.log').open('w',encoding='utf-8');smoke=work/f'game-{index}-smoke.json'
-            command=[str(client),'--resources',str(resources),'--game-dir',str(game),'--home',str(game),'--dev-mod',str(artifact),'--name','TerraForgedQA','--offscreen','--control','--control-socket',str(socket),'--render-distance','3','--width','1280','--height','720','--timeout-seconds','900','--smoke-report',str(smoke)]
+            command=[str(client),'--resources',str(resources),'--game-dir',str(game),'--home',str(game),'--dev-mod',str(artifact),'--name','TerraForgedQA','--offscreen','--control','--control-socket',str(socket),'--render-distance','6','--width','1280','--height','720','--timeout-seconds','900','--smoke-report',str(smoke)]
             if world:command+=['--world',str(world)]
             started=time.monotonic();process=subprocess.Popen(command,cwd=game,env=env,stdout=log,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
             for attempt in range(180):
@@ -113,22 +124,24 @@ def main():
                 if (game/'saves').exists() and any(p.name=='level.dat' for p in (game/'saves').rglob('level.dat')):raise RuntimeError('A world existed before the UI Create action')
                 control(['click-button','Create New World'],240)
                 natural=poll(lambda s:s.get('screen')=='playing' and s.get('player') is not None,420,'waiting for natural spawn')
+                control(['wait-ready','180'],210)
                 natural=poll(lambda s:(s.get('player') or {}).get('on_ground') and (s.get('player') or {}).get('health',0)>0,120,'waiting for a living grounded player')
                 if natural.get('gamemode')!='survival':raise RuntimeError('Creation did not enter survival')
                 control(['wait','60'],30)
                 natural=control(['state'])
                 if not (natural.get('player') or {}).get('on_ground') or (natural.get('player') or {}).get('health',0)<20:raise RuntimeError('Natural survival spawn was not healthy and grounded after settling')
-                control(['turn','0','-25'])
+                look(0,25)
                 position=natural['player']['block_pos'];report['naturalSpawnVisibleTerrainState']=visible(*position)
                 report['naturalSpawnState']=control(['state']);report['naturalSpawnScreenshot']=screenshot('natural-spawn')
                 worlds=[p.parent for p in (game/'saves').rglob('level.dat')]
                 if len(worlds)!=1:raise RuntimeError('Expected exactly one UI-created world')
                 world=worlds[0];report['worldPath']=str(world)
-                control(['command','gamemode spectator @s']);control(['command','tp @s 8.5 90 8.5']);control(['turn','135','-35'])
+                control(['command','gamemode spectator @s']);control(['command','tp @s 8.5 90 8.5']);look(135,20)
                 rendered=visible(8,75,8)
             else:
                 poll(lambda s:s.get('screen')=='playing' and s.get('player') is not None,420,'reopening UI-created world')
-                control(['command','tp @s 16392 80 -32760']);rendered=visible(16392,65,-32760)
+                control(['wait-ready','180'],210)
+                control(['command','tp @s 16392 80 -32760']);look(135,20);rendered=visible(16392,65,-32760)
             state=control(['state']);image=screenshot(f'game-{index}')
             control(['quit'],120);code=process.wait(timeout=120);process=None;log.close();log=None
             if code:raise RuntimeError(f'Client exit {code}')
