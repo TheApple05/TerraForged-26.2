@@ -4,6 +4,27 @@
   "target_minecraft": "26.2",
   "repository": "https://github.com/TheApple05/TerraForged-26.2",
   "github_fork": false,
-  "status": "Research in progress; upstream source selection pending",
-  "sources": []
+  "sources": [
+    {
+      "repository": "https://github.com/racoonman2/ReTerraForged",
+      "branch": "1.20.1",
+      "commit": "29239f1f164d19dbfcccaca4a8277d64e784207c",
+      "upstream_version": "0.0.6",
+      "minecraft": "1.20.1",
+      "role": "Imported preservation baseline",
+      "import": "Root tree except upstream README.md and .gitignore; files subsequently adapted by recorded commits",
+      "license": "MIT; individual file headers also apply",
+      "notice": "licenses/ReTerraForged-MIT.txt"
+    },
+    {
+      "repository": "https://github.com/TerraForged/TerraForged",
+      "branch": "0.2.x",
+      "commit": "3ada751ac25cd3eecee5d198870a3abb89734f52",
+      "upstream_version": "0.2.16",
+      "minecraft": "1.16.5",
+      "role": "Original stable feature and visual reference; no source tree imported",
+      "license": "MIT; individual file headers also apply",
+      "notice": "licenses/TerraForged-MIT.txt"
+    }
+  ]
 }
