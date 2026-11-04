@@ -11,7 +11,9 @@ The user confirmed **Minecraft Java Edition 26.2** on November 3, 2026. This is 
 - [TerraForged](https://github.com/TerraForged/TerraForged), the original mod and terrain engine.
 - [ReTerraForged](https://github.com/racoonman2/ReTerraForged), the subsequent modernization effort.
 
-All imported code must retain its license and attribution. New history in this repository does not imply original authorship of upstream code. Exact commits and imported paths are recorded in [source provenance](docs/SOURCE-PROVENANCE.json).
+All imported code retains its license and attribution. New history in this repository does not imply original authorship of upstream code. Exact commits and imported paths are recorded in [source provenance](docs/SOURCE-PROVENANCE.json). The root license is MIT, with an LGPL-2.1-only language-provider component described in [third-party notices](THIRD_PARTY_NOTICES.md).
+
+The implementation starts from ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1f164d19dbfcccaca4a8277d64e784207c`. Original TerraForged **1.16.5 / 0.2.16**, commit `3ada751ac25cd3eecee5d198870a3abb89734f52`, is the classic feature/visual reference. Newer branches contain experimental or omitted generation paths; [the audit](docs/research/upstream-audit.md) explains the selection.
 
 ## Project record
 
@@ -20,5 +22,6 @@ All imported code must retain its license and attribution. New history in this r
 - [Regression and acceptance protocol](docs/VALIDATION.md)
 - [Upstream audit](docs/research/upstream-audit.md)
 - [Target toolchain research](docs/research/target-toolchain.md)
+- [GitHub work tracker](https://github.com/TheApple05/TerraForged-26.2/issues)
 
 Research records distinguish observed behavior, proposed implementation, and untested assumptions. Never install an experimental build into an existing world you care about; validation uses isolated, disposable worlds.
