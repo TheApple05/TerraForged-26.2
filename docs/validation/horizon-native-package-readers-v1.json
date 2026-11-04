@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAtUtc": "2026-11-04T20:20:07.612551+00:00",
+  "horizonRevision": "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5",
+  "stageResultSha256": "495fc20c882fe808c0901693e04ee316888558160e011974a5beff777f076f0c",
+  "driverSha256": "702255525a8045176c3aaa217b060e360a9e673bfd94f25801a94fd8a54edec5",
+  "compileExitCode": 0,
+  "originalSha256": "774e40ac378938272644c21d7254d118d77a0920e1b55ce763a816480cb88cf3",
+  "packageSha256": "f588ef6be69dc37954382d82472b05ee3ca5cba5fbc7a70984a361e9a617f55f",
+  "packagedSourcesMatchStagedBundle": true,
+  "gameAssetsReadOrDownloaded": false,
+  "notCovered": [
+    "Native build via launcher",
+    "Client rendering",
+    "Save-file round trip",
+    "Biome/features/structures/spawn/performance/modpack acceptance"
+  ],
+  "executableSha256": "a9563ba3a6c188a2b81ee8109f42a6f07946742d7ba443a10515f951102ca01d",
+  "exitCode": 1,
+  "completedAtUtc": "2026-11-04T20:20:07.813641+00:00"
+}

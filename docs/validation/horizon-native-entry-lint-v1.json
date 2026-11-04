@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-warnings-denied-native-entry-library",
+  "horizonRevision": "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5",
+  "command": "cargo +stable clippy --offline --locked --manifest-path <staged>/Cargo.toml -p horizon-world --lib --message-format short -- -D warnings",
+  "exitCode": 0,
+  "logSha256": "e67749666a7279daf702bd7a69409ea961ab1fa932ecce2db42816f4cd0c3087",
+  "stageResultSha256": "b079a9d9ffe07a3395b139a2ad1eb457dc8e560f987c3054ac27c29562efe49a",
+  "notCovered": [
+    "Full game/launcher build",
+    "Actual save-file round trip",
+    "Native player acceptance"
+  ]
+}

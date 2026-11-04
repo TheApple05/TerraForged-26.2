@@ -3,7 +3,9 @@
 The procedural Rust port is in development for Horizon's Minecraft **26.3**
 target; the Java port in this repository targets **26.2**. The explicit native
 pipeline now generates real terrain and decorated regions in repeatable QA.
-See [native chunk evidence](../docs/horizon/native-chunks.md). World selection,
+See [native chunk evidence](../docs/horizon/native-chunks.md). The explicit
+native preset/saved stem now selects that pipeline in constructor QA; see
+[selection evidence](../docs/horizon/world-entry.md). Create-world UI support,
 classic native biomes/features and player/client/save acceptance remain work.
 
 The earlier experimental **finite terrain bridge** below is retained separately.
@@ -35,8 +37,8 @@ through Horizon's JSON registry; see
 See [graph integration](../docs/horizon/host-density-graph.md)
 and the [current checkpoint](../docs/horizon/PROGRESS.md). An explicit default
 router and native pipeline are now exercised with real terrain/aquifers/
-materials/carvers/features. Player world selection, native classic biomes/
-features and full acceptance remain integration work. The separate prepared
+materials/carvers/features. Player UI support, native classic biomes/features
+and full acceptance remain integration work. The separate prepared
 bundle does not include this kernel.
 
 The player-facing bundle is under `mixins/terraforged_prepared/`. It uses the

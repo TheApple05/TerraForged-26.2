@@ -72,11 +72,19 @@ The explicit default native pipeline now generates actual near/distant terrain
 chunks and decorates a real 3x3 region. Two fresh optimized processes agree on
 outputs/counters; cold regeneration and kernel-owner cleanup pass. The center
 executes 57 placed-feature roots with none unsupported or failed. See
-native-chunks.md. Automatic world selection, native classic biomes/features,
+native-chunks.md. Native classic biomes/features,
 source carver settings, spawn/structures/save/client, controlled performance and
 mod combinations remain unfinished. The palette's 11 internal climate
 categories are not the 17 registered classic biomes. Never substitute
 height-only fill, prerecorded terrain or a snapshot fallback.
+
+The explicit native preset and saved stem now select this pipeline through the
+real constructor in two fresh optimized processes. Dimension-override and saved
+world precedence preserve existing vanilla worlds. See world-entry.md and
+native-world-entry-v1 evidence. The create-world UI still exposes only built-in
+engine presets, so player selection and actual on-disk save acceptance remain
+work. A source-only combined package is undergoing real mod-reader checks;
+packaging alone does not establish launcher or rendered-client acceptance.
 
 All expected numerical observations originate from the exact published Java JAR
 or original source-owned data, independently of Rust output. Capture/freezer and
