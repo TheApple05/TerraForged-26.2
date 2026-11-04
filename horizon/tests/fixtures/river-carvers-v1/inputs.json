@@ -1,0 +1,273 @@
+{
+  "levels": [
+    [
+      256,
+      63
+    ],
+    [
+      384,
+      96
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "geometries": [
+    [
+      0,
+      0,
+      1000,
+      250
+    ],
+    [
+      -1000,
+      -1000,
+      -250,
+      -500
+    ],
+    [
+      10,
+      20,
+      10,
+      20
+    ]
+  ],
+  "profiles": [
+    {
+      "order": 0,
+      "main": true,
+      "bedWidth": 4,
+      "bankWidth": 15,
+      "bedDepth": 5,
+      "bankMin": 1,
+      "bankMax": 5,
+      "length": 5000,
+      "fade": 0.2
+    },
+    {
+      "order": 2147483647,
+      "main": true,
+      "bedWidth": -2147483648,
+      "bankWidth": 2147483647,
+      "bedDepth": -2147483648,
+      "bankMin": 2147483647,
+      "bankMax": -2147483648,
+      "length": 2147483647,
+      "fade": -0.0
+    }
+  ],
+  "carverSettings": [
+    {
+      "valleySize": 275,
+      "fadeIn": 0.7,
+      "connecting": false,
+      "curve": [
+        2,
+        -0.5
+      ]
+    },
+    {
+      "valleySize": 0,
+      "fadeIn": 0,
+      "connecting": true,
+      "curve": [
+        0.4,
+        1
+      ]
+    },
+    {
+      "valleySize": 25,
+      "fadeIn": 1.5,
+      "connecting": true,
+      "curve": [
+        4,
+        5
+      ]
+    },
+    {
+      "valleySize": -50,
+      "fadeIn": -0.2,
+      "connecting": false,
+      "curve": [
+        3,
+        0.25
+      ]
+    }
+  ],
+  "tBits": [
+    "be800000",
+    "80000000",
+    "00000000",
+    "3dcccccd",
+    "3eb33333",
+    "3f333333",
+    "3f800000",
+    "3fa00000",
+    "7fc01234"
+  ],
+  "offsets": [
+    -400,
+    -275,
+    -25,
+    -4,
+    -1,
+    0,
+    1,
+    25,
+    275,
+    400
+  ],
+  "grid": [
+    -400,
+    -275,
+    -100,
+    -25,
+    0,
+    25,
+    100,
+    275,
+    400
+  ],
+  "cellCases": [
+    {
+      "height": 0,
+      "mask": 1,
+      "terrain": 0,
+      "edge": 0
+    },
+    {
+      "height": 0.24,
+      "mask": 0.5,
+      "terrain": 1,
+      "edge": 0.1
+    },
+    {
+      "height": 0.25,
+      "mask": 1,
+      "terrain": 8,
+      "edge": 0.5
+    },
+    {
+      "height": 0.5,
+      "mask": 1,
+      "terrain": 8,
+      "edge": 1
+    },
+    {
+      "height": 0.3,
+      "mask": 0.75,
+      "terrain": 2,
+      "edge": 0.25
+    },
+    {
+      "height": 1,
+      "mask": 0.25,
+      "terrain": 16,
+      "edge": 0.75
+    }
+  ],
+  "lakeCases": [
+    {
+      "chance": 0.3,
+      "minStartDistance": 0.0,
+      "maxStartDistance": 0.03,
+      "depth": 10,
+      "sizeMin": 75,
+      "sizeMax": 150,
+      "minBankHeight": 2,
+      "maxBankHeight": 10
+    },
+    {
+      "chance": -0.25,
+      "minStartDistance": -1,
+      "maxStartDistance": 2,
+      "depth": -2147483648,
+      "sizeMin": -2147483648,
+      "sizeMax": 2147483647,
+      "minBankHeight": 2147483647,
+      "maxBankHeight": -2147483648
+    }
+  ],
+  "lakeCenters": [
+    [
+      0,
+      0
+    ],
+    [
+      -1000,
+      -1000
+    ],
+    [
+      1000,
+      -1000
+    ]
+  ],
+  "lakeShapes": [
+    [
+      40,
+      1
+    ],
+    [
+      100,
+      0.5
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      30,
+      -1
+    ]
+  ],
+  "wetlandRadii": [
+    0,
+    25,
+    100
+  ],
+  "randomSeeds": [
+    0,
+    1,
+    -1,
+    -9223372036854775808,
+    9223372036854775807,
+    8675309
+  ],
+  "curveValues": [
+    -0.25,
+    -0.0,
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.25
+  ],
+  "doubleRoundBits": [
+    "0000000000000000",
+    "8000000000000000",
+    "0000000000000001",
+    "8000000000000001",
+    "3fdfffffffffffff",
+    "3fe0000000000000",
+    "3fe0000000000001",
+    "bfdfffffffffffff",
+    "bfe0000000000000",
+    "bfe0000000000001",
+    "3ff7ffffffffffff",
+    "3ff8000000000000",
+    "3ff8000000000001",
+    "bff7ffffffffffff",
+    "bff8000000000000",
+    "bff8000000000001",
+    "43dfffffffffffff",
+    "43e0000000000000",
+    "c3e0000000000000",
+    "7fefffffffffffff",
+    "ffefffffffffffff",
+    "7ff0000000000000",
+    "fff0000000000000",
+    "7ff8000000001234"
+  ]
+}

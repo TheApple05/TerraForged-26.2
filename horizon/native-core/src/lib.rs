@@ -1,6 +1,7 @@
 #![forbid(unsafe_code)]
 
 pub mod biome;
+pub mod bounds;
 pub mod cell;
 pub mod climate;
 pub mod continent;
@@ -10,6 +11,7 @@ pub mod fast_random;
 pub mod graph;
 pub mod heightmap;
 pub mod java_random;
+pub mod lake;
 pub mod layout;
 pub mod line;
 mod math_table;
@@ -24,6 +26,7 @@ pub mod preset;
 pub mod region;
 pub mod ridges;
 pub mod river;
+pub mod river_carver;
 pub mod river_config;
 pub mod river_domain;
 pub mod river_warp;
@@ -35,4 +38,5 @@ pub mod terrain;
 pub mod terrain_factories;
 pub mod terrain_provider;
 pub mod volcano;
+pub mod wetland;
 pub mod worley;
