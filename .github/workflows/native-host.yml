@@ -2,9 +2,9 @@ name: Horizon procedural density integration
 
 on:
   push:
-    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/native-host/**', 'horizon/native-world/**', 'horizon/tests/**', 'horizon/tools/**', '.github/workflows/native-host.yml']
+    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/native-host/**', 'horizon/native-world/**', 'horizon/native-content/**', 'horizon/tests/**', 'horizon/tools/**', '.github/workflows/native-host.yml']
   pull_request:
-    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/native-host/**', 'horizon/native-world/**', 'horizon/tests/**', 'horizon/tools/**', '.github/workflows/native-host.yml']
+    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/native-host/**', 'horizon/native-world/**', 'horizon/native-content/**', 'horizon/tests/**', 'horizon/tools/**', '.github/workflows/native-host.yml']
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mode: [graph, registry, world]
+        mode: [graph, registry, world, entry]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -39,18 +39,18 @@ jobs:
           cargo fetch --locked --manifest-path build/qa/horizon/host-source/Cargo.toml
           cargo build --locked --manifest-path build/qa/horizon/mixin-source/Cargo.toml -p horizon-mixins-cli
       - name: Assemble and stage the native bundle
-        run: python horizon/tools/stage_native_host.py ${{ matrix.mode == 'world' && '--world' || matrix.mode == 'registry' && '--registry' || '' }} --horizon build/qa/horizon/host-source --mixins build/qa/horizon/mixin-source/target/debug/horizon-mixins --output build/qa/horizon/ci-host
+        run: python horizon/tools/stage_native_host.py ${{ matrix.mode == 'entry' && '--entry' || matrix.mode == 'world' && '--world' || matrix.mode == 'registry' && '--registry' || '' }} --horizon build/qa/horizon/host-source --mixins build/qa/horizon/mixin-source/target/debug/horizon-mixins --output build/qa/horizon/ci-host
       - name: Check compiled densities and ownership
         shell: bash
         run: |
           cargo clippy --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p ${{ matrix.mode != 'graph' && 'horizon-world' || 'horizon-core' }} --lib -- -D warnings
       - name: Check density observations
-        if: matrix.mode != 'world'
+        if: matrix.mode == 'graph' || matrix.mode == 'registry'
         shell: bash
         run: |
           python horizon/tools/verify_host_density.py ${{ matrix.mode == 'registry' && '--registry' || '' }} --workspace build/qa/horizon/ci-host/staged --report build/qa/ci/native-host-density.json
       - name: Check the pinned pipeline API and source-only lifecycle
-        if: matrix.mode == 'world'
+        if: matrix.mode == 'world' || matrix.mode == 'entry'
         shell: bash
         run: |
           mkdir -p build/qa/ci
