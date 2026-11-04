@@ -60,6 +60,8 @@ jobs:
           python horizon/tools/verify_kernel_terrain.py --report build/qa/ci/native-original-kernel-terrain.json
           python horizon/tools/verify_native_registry.py --family river-foundations --report build/qa/ci/native-river-foundations.json
           python horizon/tools/verify_native_registry.py --family river-carvers --report build/qa/ci/native-river-carvers.json
+          python horizon/tools/verify_native_registry.py --family river-networks --report build/qa/ci/native-river-networks.json
+          python horizon/tools/verify_kernel_terrain.py --stages unfiltered --report build/qa/ci/native-original-kernel-unfiltered.json
       - name: Retain foundation reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

@@ -20,9 +20,8 @@ preset model and source noise factories are covered in preset-model.md. These
 are finite numerical qualifications; none is an activated Horizon generator.
 
 The MULTI_IMPROVED/default continent geometry now matches independent Java cell,
-center and edge/ocean search observations; see advanced-continent.md. Its river
-cache is not implemented. The next required milestone is constructing the full
-terrain/river/climate cell pipeline in the original seed order.
+center and edge/ocean search observations; see advanced-continent.md. Its native
+river maps now use an owned bounded cache without global polling threads.
 Region geometry, basic terrain/ocean populators, region/continent blending and
 weighted selection now match Java too; region-populators.md records their scope.
 The used Java Random methods and collection shuffle sequence are qualified.
@@ -32,13 +31,15 @@ ordering also match independently captured Java data; see terrain-provider.md.
 Complete Heightmap terrain/climate construction now matches five-preset Java
 stage observations; heightmap-climate.md records the boundary and explicit guards.
 Terrain also matches all 726 terrain records from the older full kernel-v1 corpus.
-River networks/carving and filtered-tile construction remain required. There is
-no full apply sampler until the real river stage is ported and qualified.
+Filtered-tile construction remains required. The complete unfiltered Heightmap
+apply sampler now includes real procedural river generation and carving.
 River geometry, warps/domains, configurations, variance and fork conversions now
 match independent Java observations; see river-foundations.md. River, lake and
 wetland carvers now match 3,919,986 observed Java fields per native build profile;
-river-carvers.md records their scope. Network generation remains unfinished.
-Then compare every field against the frozen kernel-v1 observations, complete
+river-carvers.md records their scope. Network generation/traversal now matches
+72 Java maps and 1,920 nodes; river-networks.md records the details. The full
+unfiltered sampler also matches all 2,904 terrain/river/climate stage records from
+the preexisting kernel-v1 corpus in both native build profiles. Next complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
 

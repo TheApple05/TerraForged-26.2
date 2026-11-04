@@ -1,5 +1,4 @@
-//! Original Heightmap terrain/climate stages. River execution is intentionally absent
-//! until its real native implementation is qualified; this is not a full cell sampler.
+//! Original Heightmap terrain, river and climate stages. Tile filters remain separate.
 use crate::{
     cell::Cell,
     climate::Climate,
@@ -12,6 +11,9 @@ use crate::{
     populator::Populator as P,
     preset::{ContinentType, ControlPoints, KernelPreset},
     region::{RegionConfig, RegionModule},
+    river_cache::RiverCache,
+    river_generator::RiverGenerator,
+    rivermap::Rivermap,
     seed::Seed,
     terrain::TerrainRegistry,
     terrain_factories as f, terrain_provider,
@@ -31,6 +33,7 @@ pub struct Heightmap {
     beach_noise: N,
     pub terrains: TerrainRegistry,
     pub seed_cursor_after: i32,
+    rivers: Arc<RiverCache>,
 }
 impl Heightmap {
     /// Arguments are resolved registry values; source HolderHolder bindings are
@@ -124,6 +127,10 @@ impl Heightmap {
             general.fancy_mountains,
         )?)?;
         let continent = Arc::new(AdvancedContinent::new(&mut seed, world)?);
+        let rivers = Arc::new(RiverCache::new(
+            RiverGenerator::new(continent.clone(), preset, levels, seed.root())?,
+            32,
+        )?);
         let climate = Climate::new(
             &mut seed,
             continent.clone(),
@@ -167,7 +174,33 @@ impl Heightmap {
             beach_noise,
             terrains,
             seed_cursor_after: seed.get(),
+            rivers,
         })
+    }
+    pub fn get_rivermap(&self, x: i32, z: i32) -> R<Arc<Rivermap>> {
+        self.rivers.get(x, z)
+    }
+    pub fn river_cache_len(&self) -> R<usize> {
+        self.rivers.len()
+    }
+    pub fn clear_river_cache(&self) -> R<()> {
+        self.rivers.clear()
+    }
+    pub fn apply_rivers(&self, cell: &mut Cell, x: f32, z: f32, map: &Rivermap) -> R<()> {
+        if !x.is_finite() || !z.is_finite() {
+            return Err(GraphError::InvalidSourceParameters(
+                "finite native river coordinates",
+            ));
+        }
+        map.apply(cell, x, z, &self.terrains)?;
+        crate::volcano::Volcano::modify_type(cell, &self.levels);
+        Ok(())
+    }
+    pub fn apply(&self, cell: &mut Cell, x: f32, z: f32, apply_climate: bool) -> R<()> {
+        self.apply_terrain(cell, x, z)?;
+        let map = self.get_rivermap(cell.continent_x, cell.continent_z)?;
+        self.apply_rivers(cell, x, z, &map)?;
+        self.apply_climate(cell, x, z, apply_climate)
     }
     pub fn apply_terrain(&self, cell: &mut Cell, x: f32, z: f32) -> R<()> {
         if !x.is_finite() || !z.is_finite() {

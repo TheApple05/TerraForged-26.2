@@ -255,6 +255,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("riverFoundations", Map.of("status", "captured-genuine-java-river-foundations", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportRiverNetworks")) {
+                require(!mode.startsWith("benchmark"), "Network capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-river-networks.tsv");
+                Path inputs = output.resolve("native-river-networks.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativeRiverNetworkProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("riverNetworks", Map.of("status", "captured-genuine-java-river-networks", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             if (Boolean.getBoolean("terraforged.qa.exportRiverCarvers")) {
                 require(!mode.startsWith("benchmark"), "Carving capture is forbidden during benchmarks");
                 Path reference = output.resolve("native-river-carvers.tsv");
