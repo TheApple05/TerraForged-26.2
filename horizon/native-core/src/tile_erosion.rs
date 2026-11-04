@@ -46,7 +46,9 @@ impl TerrainPos {
     }
 }
 impl Erosion {
-    pub fn brush(&self,index:usize)->Option<&[(usize,f32)]> {self.brushes.get(index).map(Vec::as_slice)}
+    pub fn brush(&self, index: usize) -> Option<&[(usize, f32)]> {
+        self.brushes.get(index).map(Vec::as_slice)
+    }
     pub fn new(seed: i32, size: i32, settings: ErosionSettings, modifier: Modifier) -> R<Self> {
         if !(16..=512).contains(&size) {
             return Err(GraphError::InvalidSourceParameters(

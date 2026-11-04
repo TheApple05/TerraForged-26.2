@@ -22,6 +22,14 @@ pub struct WorldFilters {
     erosion: Mutex<Option<(i32, Arc<Erosion>)>>,
 }
 impl WorldFilters {
+    pub fn clear_brush_cache(&self) -> R<()> {
+        *self
+            .erosion
+            .lock()
+            .map_err(|_| GraphError::InvalidSourceParameters("erosion brush cache poisoned"))? =
+            None;
+        Ok(())
+    }
     pub fn new(preset: &KernelPreset, seed: i32, levels: Levels) -> R<Self> {
         let s = &preset.filters;
         if !(0..=4096).contains(&s.erosion.droplets_per_chunk)

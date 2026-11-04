@@ -1,0 +1,10 @@
+{
+  "worldSeed": 8675309,
+  "tileFactor": 3,
+  "borderChunks": 1,
+  "cacheCapacity": 8,
+  "maxInFlight": 4,
+  "tiles": [[0, 0], [1, 0], [-500, 250], [1000, -1000]],
+  "warmColumns": 65536,
+  "trials": 3
+}
