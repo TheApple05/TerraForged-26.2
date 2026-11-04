@@ -2,6 +2,7 @@
 
 pub mod fast_random;
 pub mod graph;
+mod math_table;
 pub mod noise_util;
 pub mod noise_vectors;
 pub mod perlin;
