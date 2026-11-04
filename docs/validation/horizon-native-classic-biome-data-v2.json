@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-native-resource-transform",
+  "error": "Error: \"Missing installed parent resource minecraft:coral/tube_block\"",
+  "transformSourceSha256": "380d11c14af0120e2a04c8139e72cb2deae2aee0f1c30a005f4abf0f05cdf61a",
+  "probeInputSha256": "3044c27ff7cf6da7a0d39531b0e338d9779ed0736880f02aa826a41abde4359d",
+  "verifierSourceSha256": "5fe2994ec1964014633886f6635886867466f9a0b9814883103178064b20f87f",
+  "scope": "The real installed-resource probe exposed an inline placed-feature object being traversed as a selector entry. This failure is retained before fixing that distinction.",
+  "gameAssetsDownloaded": false
+}

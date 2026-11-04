@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Install stable Rust
-        run: rustup toolchain install stable --profile minimal
+        run: rustup toolchain install stable --profile minimal --component clippy --component rustfmt
       - name: Check independent Java fixtures
         shell: bash
         run: |
@@ -47,6 +47,11 @@ jobs:
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
       - name: Fetch locked registry adapter libraries
         run: cargo fetch --locked --manifest-path horizon/native-adapter/Cargo.toml
+      - name: Check native biome resource transformations
+        run: |
+          cargo fmt --manifest-path horizon/native-adapter/Cargo.toml --check
+          cargo clippy --offline --locked --manifest-path horizon/native-adapter/Cargo.toml --lib --bin classic_biome_data_probe -- -D warnings
+          cargo test --offline --locked --manifest-path horizon/native-adapter/Cargo.toml --lib
       - name: Check actual registry and codec observations
         shell: bash
         run: |
