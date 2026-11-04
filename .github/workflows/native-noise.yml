@@ -66,6 +66,7 @@ jobs:
           python horizon/tools/verify_kernel_terrain.py --stages full --report build/qa/ci/native-original-kernel-full.json
           python horizon/tools/verify_tile_cache_lifecycle.py --report build/qa/ci/native-tile-cache-lifecycle.json
           python horizon/tools/verify_kernel_terrain.py --stages sampled --report build/qa/ci/native-cached-columns.json
+          python horizon/tools/verify_native_registry.py --family density-primitives --report build/qa/ci/native-density-primitives.json
       - name: Retain foundation reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

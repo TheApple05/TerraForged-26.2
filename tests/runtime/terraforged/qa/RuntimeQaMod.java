@@ -273,6 +273,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("tileFilters", Map.of("status", "captured-genuine-java-tile-filters", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportDensityPrimitives")) {
+                require(!mode.startsWith("benchmark"), "Density capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-density-primitives.tsv");
+                Path inputs = output.resolve("native-density-primitives.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativeDensityPrimitiveProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("densityPrimitives", Map.of("status", "captured-genuine-java-density-primitives", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             if (Boolean.getBoolean("terraforged.qa.exportRiverCarvers")) {
                 require(!mode.startsWith("benchmark"), "Carving capture is forbidden during benchmarks");
                 Path reference = output.resolve("native-river-carvers.tsv");
