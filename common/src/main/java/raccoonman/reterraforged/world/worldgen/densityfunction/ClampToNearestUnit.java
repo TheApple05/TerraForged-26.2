@@ -1,14 +1,15 @@
 package raccoonman.reterraforged.world.worldgen.densityfunction;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.levelgen.DensityFunction;
 
 public record ClampToNearestUnit(DensityFunction function, int resolution) implements DensityFunction {
-	public static final Codec<ClampToNearestUnit> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-		DensityFunction.HOLDER_HELPER_CODEC.fieldOf("function").forGetter(ClampToNearestUnit::function),
+	public static final MapCodec<ClampToNearestUnit> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+		DensityFunction.CODEC.fieldOf("function").forGetter(ClampToNearestUnit::function),
 		Codec.INT.fieldOf("resolution").forGetter(ClampToNearestUnit::resolution)
 	).apply(instance, ClampToNearestUnit::new));
 	
@@ -26,8 +27,8 @@ public record ClampToNearestUnit(DensityFunction function, int resolution) imple
 	}
 
 	@Override
-	public DensityFunction mapAll(Visitor visitor) {
-		return visitor.apply(new ClampToNearestUnit(this.function.mapAll(visitor), this.resolution));
+	public DensityFunction mapChildren(Visitor visitor) {
+		return new ClampToNearestUnit(visitor.apply(this.function), this.resolution);
 	}
 
 	@Override
@@ -42,7 +43,7 @@ public record ClampToNearestUnit(DensityFunction function, int resolution) imple
 
 	@Override
 	public KeyDispatchDataCodec<ClampToNearestUnit> codec() {
-		return new KeyDispatchDataCodec<>(CODEC);
+		return KeyDispatchDataCodec.of(CODEC);
 	}
 	
 	private double computeClamped(double value) {

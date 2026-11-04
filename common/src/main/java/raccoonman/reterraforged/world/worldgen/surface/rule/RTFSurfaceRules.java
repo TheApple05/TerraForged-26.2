@@ -2,7 +2,7 @@ package raccoonman.reterraforged.world.worldgen.surface.rule;
 
 import java.util.List;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,7 +22,7 @@ public class RTFSurfaceRules {
 		return new StrataRule(name, selector, strata, iterations);
 	}
 	
-	public static void register(String name, Codec<? extends SurfaceRules.RuleSource> value) {
+	public static void register(String name, MapCodec<? extends SurfaceRules.RuleSource> value) {
 		RegistryUtil.register(BuiltInRegistries.MATERIAL_RULE, name, value);
 	}
 }

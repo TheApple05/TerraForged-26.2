@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import org.jetbrains.annotations.Nullable;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.SectionPos;
@@ -104,13 +105,13 @@ public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) imp
 	}
 	
 	public record Marker(Field field) implements MarkerFunction {
-		public static final Codec<Marker> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+		public static final MapCodec<Marker> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			Field.CODEC.fieldOf("field").forGetter(Marker::field)
 		).apply(instance, Marker::new));
 		
 		@Override
 		public KeyDispatchDataCodec<Marker> codec() {
-			return new KeyDispatchDataCodec<>(CODEC);
+			return KeyDispatchDataCodec.of(CODEC);
 		}
 
 		@Override

@@ -10,7 +10,7 @@ public interface MarkerFunction extends DensityFunction.SimpleFunction {
 		throw new UnsupportedOperationException();
 	}
 	
-    DensityFunction mapAll(Visitor visitor);
+    // 26.2 supplies recursive mapAll via mapChildren; leaf markers have no density children.
 		
 	@Override
 	default double minValue() {

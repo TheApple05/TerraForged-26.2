@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.Holder;
@@ -28,7 +29,7 @@ import raccoonman.reterraforged.world.worldgen.noise.module.Noises;
 import raccoonman.reterraforged.world.worldgen.surface.RTFSurfaceSystem;
 
 public record StrataRule(Identifier name, Holder<Noise> selector, List<Strata> strata, int iterations) implements SurfaceRules.RuleSource {
-	public static final Codec<StrataRule> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+	public static final MapCodec<StrataRule> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 		Identifier.CODEC.fieldOf("name").forGetter(StrataRule::name),
 		Noise.CODEC.fieldOf("selector").forGetter(StrataRule::selector),
 		Strata.CODEC.listOf().fieldOf("strata").forGetter(StrataRule::strata),
@@ -49,8 +50,8 @@ public record StrataRule(Identifier name, Holder<Noise> selector, List<Strata> s
 	}
 
 	@Override
-	public KeyDispatchDataCodec<StrataRule> codec() {
-		return new KeyDispatchDataCodec<>(CODEC);
+	public MapCodec<StrataRule> codec() {
+		return CODEC;
 	}
 	
 	private List<List<Layer>> generateStrata(RandomSource random) {

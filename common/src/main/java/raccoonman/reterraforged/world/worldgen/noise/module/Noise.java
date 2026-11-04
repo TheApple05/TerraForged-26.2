@@ -1,6 +1,7 @@
 package raccoonman.reterraforged.world.worldgen.noise.module;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.Holder;
 import net.minecraft.resources.RegistryFileCodec;
@@ -13,7 +14,7 @@ public interface Noise {
         if (noise instanceof Noises.HolderHolder holderHolder) {
             return holderHolder.holder();
         }
-        return new Holder.Direct<>(noise);
+        return Holder.direct(noise);
     });
     
 	float compute(float x, float z, int seed);
@@ -24,7 +25,7 @@ public interface Noise {
 	
 	Noise mapAll(Visitor visitor);
 	
-	Codec<? extends Noise> codec();
+	MapCodec<? extends Noise> codec();
 	
 	public interface Visitor {
 		Noise apply(Noise input);

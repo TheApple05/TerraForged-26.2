@@ -1,19 +1,20 @@
 package raccoonman.reterraforged.world.worldgen.noise.module;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import raccoonman.reterraforged.world.worldgen.noise.NoiseUtil;
 import raccoonman.reterraforged.world.worldgen.noise.function.Interpolation;
 
 record SimplexRidge(float frequency, int octaves, float lacunarity, float gain, Interpolation interpolation, float[] spectralWeights, float min, float max) implements Noise {
-	public static final Codec<PerlinRidge> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-		Codec.FLOAT.fieldOf("frequency").forGetter(PerlinRidge::frequency),
-		Codec.INT.fieldOf("octaves").forGetter(PerlinRidge::octaves),
-		Codec.FLOAT.fieldOf("lacunarity").forGetter(PerlinRidge::lacunarity),
-		Codec.FLOAT.fieldOf("gain").forGetter(PerlinRidge::gain),
-		Interpolation.CODEC.fieldOf("interpolation").forGetter(PerlinRidge::interpolation)
-	).apply(instance, PerlinRidge::new));
+	public static final MapCodec<SimplexRidge> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+		Codec.FLOAT.fieldOf("frequency").forGetter(SimplexRidge::frequency),
+		Codec.INT.fieldOf("octaves").forGetter(SimplexRidge::octaves),
+		Codec.FLOAT.fieldOf("lacunarity").forGetter(SimplexRidge::lacunarity),
+		Codec.FLOAT.fieldOf("gain").forGetter(SimplexRidge::gain),
+		Interpolation.CODEC.fieldOf("interpolation").forGetter(SimplexRidge::interpolation)
+	).apply(instance, SimplexRidge::new));
 	
 	public SimplexRidge(float frequency, int octaves, float lacunarity, float gain, Interpolation interpolation) {
 		this(frequency, octaves, lacunarity, gain, interpolation, calculateSpectralWeights(lacunarity));
@@ -63,7 +64,7 @@ record SimplexRidge(float frequency, int octaves, float lacunarity, float gain, 
 	}
 
 	@Override
-	public Codec<PerlinRidge> codec() {
+	public MapCodec<SimplexRidge> codec() {
 		return CODEC;
 	}
 	

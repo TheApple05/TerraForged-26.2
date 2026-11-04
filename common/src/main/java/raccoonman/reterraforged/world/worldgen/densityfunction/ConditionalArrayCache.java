@@ -1,14 +1,15 @@
 package raccoonman.reterraforged.world.worldgen.densityfunction;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.levelgen.DensityFunction;
 
 public record ConditionalArrayCache(DensityFunction function) implements MarkerFunction {
-	public static final Codec<ConditionalArrayCache> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-		DensityFunction.HOLDER_HELPER_CODEC.fieldOf("function").forGetter(ConditionalArrayCache::function)
+	public static final MapCodec<ConditionalArrayCache> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+		DensityFunction.CODEC.fieldOf("function").forGetter(ConditionalArrayCache::function)
 	).apply(instance, ConditionalArrayCache::new));
 
 	@Override
@@ -18,12 +19,12 @@ public record ConditionalArrayCache(DensityFunction function) implements MarkerF
 	
 	@Override
 	public KeyDispatchDataCodec<ConditionalArrayCache> codec() {
-		return new KeyDispatchDataCodec<>(CODEC);
+		return KeyDispatchDataCodec.of(CODEC);
 	}
 
 	@Override
-	public DensityFunction mapAll(Visitor visitor) {
-		return visitor.apply(new ConditionalArrayCache(this.function.mapAll(visitor)));
+	public DensityFunction mapChildren(Visitor visitor) {
+		return new ConditionalArrayCache(visitor.apply(this.function));
 	}
 	
 	public class Cache implements MarkerFunction.Mapped {

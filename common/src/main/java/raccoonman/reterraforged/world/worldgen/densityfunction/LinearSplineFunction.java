@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.util.ExtraCodecs;
@@ -16,9 +17,14 @@ import net.minecraft.world.level.levelgen.DensityFunctions;
 import raccoonman.reterraforged.world.worldgen.noise.NoiseUtil;
 
 public record LinearSplineFunction(DensityFunction input, List<Pair<Double, DensityFunction>> points, double minValue, double maxValue) implements DensityFunction {
-	public static final Codec<LinearSplineFunction> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-		DensityFunction.HOLDER_HELPER_CODEC.fieldOf("input").forGetter(LinearSplineFunction::input),
-		ExtraCodecs.nonEmptyList(Codec.pair(Codec.DOUBLE, DensityFunction.HOLDER_HELPER_CODEC).listOf()).fieldOf("points").forGetter(LinearSplineFunction::points)
+	private static final Codec<Pair<Double, DensityFunction>> POINT_CODEC = RecordCodecBuilder.<Pair<Double, DensityFunction>>create(instance -> instance.group(
+		Codec.DOUBLE.fieldOf("location").forGetter(Pair::getFirst),
+		DensityFunction.CODEC.fieldOf("value").forGetter(Pair::getSecond)
+	).apply(instance, Pair::of));
+
+	public static final MapCodec<LinearSplineFunction> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+		DensityFunction.CODEC.fieldOf("input").forGetter(LinearSplineFunction::input),
+		ExtraCodecs.nonEmptyList(POINT_CODEC.listOf()).fieldOf("points").forGetter(LinearSplineFunction::points)
 	).apply(instance, LinearSplineFunction::new));
 	
 	public LinearSplineFunction(DensityFunction input, List<Pair<Double, DensityFunction>> points) {
@@ -59,15 +65,15 @@ public record LinearSplineFunction(DensityFunction input, List<Pair<Double, Dens
 	}
 
 	@Override
-	public DensityFunction mapAll(Visitor visitor) {
-		return visitor.apply(new LinearSplineFunction(this.input.mapAll(visitor), this.points.stream().map((point) -> {
+	public DensityFunction mapChildren(Visitor visitor) {
+		return new LinearSplineFunction(visitor.apply(this.input), this.points.stream().map((point) -> {
 			return Pair.of(point.getFirst(), visitor.apply(point.getSecond()));
-		}).toList()));
+		}).toList());
 	}
 
 	@Override
 	public KeyDispatchDataCodec<LinearSplineFunction> codec() {
-		return new KeyDispatchDataCodec<>(CODEC);
+		return KeyDispatchDataCodec.of(CODEC);
 	}
 
 	public static LinearSplineFunction.Builder builder(DensityFunction input) {

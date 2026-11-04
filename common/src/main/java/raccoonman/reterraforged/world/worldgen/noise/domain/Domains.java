@@ -1,6 +1,7 @@
 package raccoonman.reterraforged.world.worldgen.noise.domain;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 
 import raccoonman.reterraforged.platform.RegistryUtil;
 import raccoonman.reterraforged.registries.RTFBuiltInRegistries;
@@ -53,7 +54,7 @@ public class Domains {
 		return new DirectWarp();
 	}
 	
-	private static void register(String name, Codec<? extends Domain> value) {
+	private static void register(String name, MapCodec<? extends Domain> value) {
 		RegistryUtil.register(RTFBuiltInRegistries.DOMAIN_TYPE, name, value);
 	}
 }

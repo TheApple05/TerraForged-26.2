@@ -1,6 +1,6 @@
 package raccoonman.reterraforged.world.worldgen.densityfunction;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -34,7 +34,7 @@ public class RTFDensityFunctions {
 		return new ConditionalArrayCache(function);
 	}
 	
-	private static void register(String name, Codec<? extends DensityFunction> type) {
+	private static void register(String name, MapCodec<? extends DensityFunction> type) {
 		RegistryUtil.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, name, type);
 	}
 }
