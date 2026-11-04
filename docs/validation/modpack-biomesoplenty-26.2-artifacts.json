@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "selection": "Latest official Modrinth files explicitly supporting26.2 and each exact loader; beta labels retained",
+  "artifacts": [
+    {
+      "loader": "fabric",
+      "projectId": "HXF82T3G",
+      "versionId": "MNZPk6V0",
+      "versionNumber": "26.2.0.0.28",
+      "versionType": "beta",
+      "datePublished": "2026-09-07T18:52:27.600513Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "s3dmwKy5",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "file": "build/qa/modpack-compat/fabric/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+      "filename": "BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/HXF82T3G/versions/MNZPk6V0/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+      "modrinthVersionUrl": "https://modrinth.com/mod/biomes-o-plenty/version/MNZPk6V0",
+      "publishedHashes": {
+        "sha512": "78308db65ecc3c75065adb227e678c8ee3edefe934cbe9e66a9887bab4fea40fd97f7be985dca144760371aee83cebb083cb799f21c3683adc972eb8384b71fa",
+        "sha1": "bf43109e92b00d81b98e28121dc75c513caff6d0"
+      },
+      "sha256": "e3a5571eb77225e800f8fc4334d452904705e945c26767bfb091f42889ae14b4",
+      "bytes": 23252511,
+      "publishedHashesMatch": true,
+      "jarDeclaredDependencies": {
+        "fabricloader": "*",
+        "fabric-api": "*",
+        "minecraft": "26.2",
+        "java": ">=17",
+        "glitchcore": ">=26.2.0.0.0",
+        "terrablender": ">=26.2.0.0.1"
+      },
+      "jarDeclaredModVersion": "26.2.0.0.28"
+    },
+    {
+      "loader": "fabric",
+      "projectId": "s3dmwKy5",
+      "versionId": "SDUCBYRU",
+      "versionNumber": "26.2.0.0.0",
+      "versionType": "beta",
+      "datePublished": "2026-06-28T04:20:58.138059Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "file": "build/qa/modpack-compat/fabric/GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+      "filename": "GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/s3dmwKy5/versions/SDUCBYRU/GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+      "modrinthVersionUrl": "https://modrinth.com/mod/glitchcore/version/SDUCBYRU",
+      "publishedHashes": {
+        "sha512": "b3c7a07bd6b2b636e125b0d6541d6cb9b3c6f94d8032a50b021a4e95d6d8d0147c57fb4a378e12d0d009b7ea854991710407703efe9207af91cd3d586e50f470",
+        "sha1": "5e7b26c4cced1cce7784d811dfc91e69a54679c5"
+      },
+      "sha256": "f6c31bd291d1d19322dd0a7ec344df2c88e2d516d1985f09ffe50ef33a34afdc",
+      "bytes": 334860,
+      "publishedHashesMatch": true,
+      "jarDeclaredDependencies": {
+        "fabricloader": "*",
+        "fabric-api": "*",
+        "minecraft": "26.2",
+        "java": ">=21"
+      },
+      "jarDeclaredModVersion": "26.2.0.0.0"
+    },
+    {
+      "loader": "neoforge",
+      "projectId": "HXF82T3G",
+      "versionId": "Kpuzuokl",
+      "versionNumber": "26.2.0.0.28",
+      "versionType": "beta",
+      "datePublished": "2026-09-07T18:52:27.516066Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "s3dmwKy5",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "file": "build/qa/modpack-compat/neoforge/BiomesOPlenty-neoforge-26.2-26.2.0.0.28.jar",
+      "filename": "BiomesOPlenty-neoforge-26.2-26.2.0.0.28.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/HXF82T3G/versions/Kpuzuokl/BiomesOPlenty-neoforge-26.2-26.2.0.0.28.jar",
+      "modrinthVersionUrl": "https://modrinth.com/mod/biomes-o-plenty/version/Kpuzuokl",
+      "publishedHashes": {
+        "sha1": "86f540d07cb53136ff4f01633e39b4169b602222",
+        "sha512": "e7f2b975dd60da492b37055d93bb268e211a9b767afbb08bf72815cb26a613fd0d54493c02fbd8f504faac444251a2d4bd973250fe5825b122193273fe096f99"
+      },
+      "sha256": "7e609751018648b80156065522e4350856ccae0be6b56660898ac2cc48ccefb5",
+      "bytes": 23013005,
+      "publishedHashesMatch": true,
+      "jarDeclaredDependencies": {
+        "biomesoplenty": [
+          {
+            "modId": "neoforge",
+            "required": true,
+            "versionRange": "[26.2,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "glitchcore",
+            "required": true,
+            "versionRange": "[26.2.0.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "terrablender",
+            "required": true,
+            "versionRange": "[26.2.0.0.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "jarDeclaredModVersion": "26.2.0.0.28"
+    },
+    {
+      "loader": "neoforge",
+      "projectId": "s3dmwKy5",
+      "versionId": "POAebwFo",
+      "versionNumber": "26.2.0.0.0",
+      "versionType": "beta",
+      "datePublished": "2026-06-28T04:20:57.790932Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "file": "build/qa/modpack-compat/neoforge/GlitchCore-neoforge-26.2-26.2.0.0.0.jar",
+      "filename": "GlitchCore-neoforge-26.2-26.2.0.0.0.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/s3dmwKy5/versions/POAebwFo/GlitchCore-neoforge-26.2-26.2.0.0.0.jar",
+      "modrinthVersionUrl": "https://modrinth.com/mod/glitchcore/version/POAebwFo",
+      "publishedHashes": {
+        "sha512": "3d8a05aa40beb03b7e3490a7da4bc5839daf5ac4e357daa4a8cb42fbaa221101192857d8cb7bea780a21a90bf3d810d61dd5d0ca184157cffc4442ff7ee7f1c4",
+        "sha1": "ed6a68cb80febcb5d03a76e5231f2aeaa372538a"
+      },
+      "sha256": "03c99db2b40d8f982c5b8d99435f74541c100065843bd2c7443b41366c211b33",
+      "bytes": 97831,
+      "publishedHashesMatch": true,
+      "jarDeclaredDependencies": {
+        "glitchcore": [
+          {
+            "modId": "neoforge",
+            "required": true,
+            "versionRange": "[26.2,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "jarDeclaredModVersion": "26.2.0.0.0"
+    },
+    {
+      "loader": "fabric",
+      "project": "TerraBlender",
+      "mavenCoordinate": "com.github.glitchfiend:TerraBlender-fabric:26.2-26.2.0.0.2",
+      "file": "build/qa/modpack-compat/fabric/TerraBlender-fabric-26.2-26.2.0.0.2.jar",
+      "sha256": "72b64ba3eacf0d6956706467c952abb58f364beac9f6be896fb67d14621b2bf7",
+      "source": "Existing exact resolved Gradle compile dependency; official project https://github.com/Glitchfiend/TerraBlender",
+      "jarDeclaredDependencies": {
+        "fabricloader": "*",
+        "fabric-api": "*",
+        "minecraft": "26.2",
+        "java": ">=17"
+      },
+      "jarDeclaredModVersion": "26.2.0.0.2"
+    },
+    {
+      "loader": "neoforge",
+      "project": "TerraBlender",
+      "mavenCoordinate": "com.github.glitchfiend:TerraBlender-neoforge:26.2-26.2.0.0.2",
+      "file": "build/qa/modpack-compat/neoforge/TerraBlender-neoforge-26.2-26.2.0.0.2.jar",
+      "sha256": "b862ff5bd541c9d23d54025100ceef822db7c9d6bfe4e03a25aa4294191af92b",
+      "source": "Existing exact resolved Gradle compile dependency; official project https://github.com/Glitchfiend/TerraBlender",
+      "jarDeclaredDependencies": {
+        "terrablender": [
+          {
+            "modId": "neoforge",
+            "required": true,
+            "versionRange": "[26.2,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "jarDeclaredModVersion": "26.2.0.0.2"
+    }
+  ],
+  "dependencyEvidenceNote": "The official Modrinth dependency list omits TerraBlender for these BOP files. Decisive in-JAR metadata requires TerraBlender>=26.2.0.0.1 on both loaders; pinned26.2.0.0.2 is included. Required GlitchCore and FabricAPI declarations also inspected."
+}

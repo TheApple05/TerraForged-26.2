@@ -76,6 +76,36 @@ public final class RuntimeQaMod implements ModInitializer {
             Files.createDirectories(output);
             report.put("runtime", provenance());
             node(nodes, "production-artifact", "passed", "Packaged origin and runtime recorded");
+            if (raccoonman.reterraforged.world.worldgen.terrablender.TBCompat.isEnabled()) {
+                Object registered = net.minecraft.core.registries.BuiltInRegistries.MATERIAL_RULE
+                    .getValue(Identifier.parse("terrablender:merged"));
+                Object expected = Class.forName("terrablender.worldgen.surface.NamespacedSurfaceRuleSource")
+                    .getField("CODEC").get(null);
+                require(registered instanceof com.mojang.serialization.MapCodec<?>,
+                    "TerraBlender merged surface serializer is not the required MapCodec: " + registered);
+                require(registered == expected, "TerraBlender merged surface serializer has the wrong MapCodec identity");
+                report.put("terrablenderMaterialRuleCodec", Map.of("registry", "minecraft:worldgen/material_rule",
+                    "id", "terrablender:merged", "actualValueClass", registered.getClass().getName(),
+                    "requiredMapCodecType", true, "exactNamespacedSurfaceRuleCodecIdentity", true));
+                node(nodes, "terrablender-material-rule-codec", "passed",
+                    "Actual material_rule/terrablender:merged entry is the exact NamespacedSurfaceRuleSource MapCodec");
+            }
+            if (raccoonman.reterraforged.platform.ModLoaderUtil.isLoaded("biomesoplenty")) {
+                List<String> registered = server.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.BIOME)
+                    .keySet().stream().filter(id -> id.getNamespace().equals("biomesoplenty"))
+                    .map(Object::toString).sorted().toList();
+                require(!registered.isEmpty(), "Loaded Biomes O' Plenty registered no biomes");
+                List<String> possible = server.overworld().getChunkSource().getGenerator().getBiomeSource().possibleBiomes().stream()
+                    .map(holder -> holder.unwrapKey().orElseThrow().identifier())
+                    .filter(id -> id.getNamespace().equals("biomesoplenty"))
+                    .map(Object::toString).sorted().toList();
+                require(!possible.isEmpty(), "Loaded Biomes O' Plenty is absent from the actual overworld possible-biome set");
+                report.put("biomeContentMod", Map.of("modId", "biomesoplenty", "registeredBiomeCount", registered.size(),
+                    "registeredBiomeIds", registered, "overworldPossibleBiomeCount", possible.size(),
+                    "overworldPossibleBiomeIds", possible, "everyBiomeReachableOrGenerated", false));
+                node(nodes, "biomesoplenty-registered-biomes", "passed", registered.size()
+                    + " actual registered biomes; " + possible.size() + " in overworld possible-biome set (not proof all are reachable)");
+            }
             switch (mode) {
                 case "export" -> exportPreset(server, output, report, nodes);
                 case "generate", "reload" -> sampleWorld(server, output, mode, report, nodes);

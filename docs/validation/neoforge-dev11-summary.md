@@ -1,0 +1,13 @@
+# NeoForge dev11 validation
+
+Exact JAR: `neoforge/build/libs/terraforged-revival-0.1.0-dev.11+26.2-neoforge.jar`, SHA-256 `7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845`. Target: Minecraft Java 26.2, NeoForge 26.2.0.93, Java 25. The [coherent two-loader build](dual-loader-dev11-build.json) passes with unchanged source/configuration snapshots. [Actual class-byte comparison](dev10-dev11-class-comparison.json) shows only `PresetConfigScreen.class` changed from dev10; every non-client class is byte-identical.
+
+[Base client](neoforge-client-dev11-fullflow.json) and [complete content-stack client](neoforge-client-modpack-dev11-fullflow.json) both pass with the exact JAR, packaged provenance, clean exit 0 and no critical runtime errors. The content stack uses the pinned TerraBlender 26.2.0.0.2, Biomes O' Plenty 26.2.0.0.28 beta and GlitchCore 26.2.0.0.0 beta [recorded artifacts](modpack-biomesoplenty-26.2-artifacts.json).
+
+Both runs exercise the actual editor, four Font-fit checks, slider/preview regeneration, Done/export/reload, creation/rendering of custom seed 123456789, save/disconnect and subsequent vanilla seed 8675309 in the same process. The new immediate-Done gate observes **GenericMessageScreen while the preset is not ready**, with safe screen ownership. World creation proceeds only after the preset appears in the restored parent context. The dev10 unsafe-parent reproduction remains separate evidence.
+
+Base feature-sorter checks cover 2,702 custom / 2,587 vanilla references across 55 possible biomes. Content checks cover 5,450 / 5,217 across 114 possible biomes. Namespace inventories assert 22 `reterraforged` preset modifiers in custom worlds and 0 in subsequent vanilla worlds. Other namespaces are recorded without requiring a zero total or mutating their entries.
+
+All fourteen actual PNGs were viewed and copied unchanged into [base images](images/neoforge-client-dev11/) and [content images](images/neoforge-client-modpack-dev11/). Capture limitations remain explicit: the base vanilla image points down, and the content custom-world image contains the pause menu. Those frames are not claimed as exact-pose or unobscured surface evidence. The remaining UI images and content vanilla view are useful; functional runtime gates are independent of screenshot presentation.
+
+These are **Windows runtime** checks. Dedicated-server/content-stack results and Linux build CI have their own reports; they are not inferred from this client run. Classic feature parity, every preset, structures, multiplayer, full block determinism, generation performance and user visual acceptance remain outside this bounded result.

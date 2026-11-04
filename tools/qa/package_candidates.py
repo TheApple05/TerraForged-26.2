@@ -91,7 +91,11 @@ def main() -> int:
             "Visual parity", "Third-party modpack compatibility"]}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps(report, indent=2))
+    print(json.dumps({"status": report["status"], "version": args.version,
+        "packages": [{"loader": item["loader"], "status": item["status"],
+            "sha256": item.get("artifact", {}).get("sha256"),
+            "sourceChangedDuringRun": item["sourceChangedDuringRun"]} for item in reports],
+        "report": str(args.report)}, indent=2))
     return 0 if report["status"] == "passed" else 1
 
 

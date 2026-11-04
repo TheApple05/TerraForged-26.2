@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-03",
+  "target": "Minecraft 26.2 packaged Fabric QA client",
+  "owned_pid": 68692,
+  "attempts": 2,
+  "error": "window capture timed out: timed out waiting on channel",
+  "native_ui_actions_after_second_failure": false,
+  "next_step": "Use a separate client QA companion to export actual game-rendered screenshots and verify screen flows; do not infer a visual pass from process launch."
+}

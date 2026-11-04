@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "inputs": [
+    {
+      "path": "docs\\validation\\server-2026-11-03-dev2-generation-2.json",
+      "sha256": "0cd01631dc1802eee92efcb15f24d95c1d4b0137e6c3fa41a199a572eddfadf4"
+    },
+    {
+      "path": "docs\\validation\\neoforge-dev7-generation.json",
+      "sha256": "c4eb1ba0263d41a1983687c961295e8e9795c18c016db6dff7397a78bc7a1caa"
+    }
+  ],
+  "seed": 8675309,
+  "sampleCount": 54,
+  "fields": [
+    "terrain",
+    "cellBiome",
+    "cellFloatBits",
+    "biome"
+  ],
+  "differences": [],
+  "postFeatureObservationsDiffer": [],
+  "terrainFieldDigest": "8fe362a79ecc3226274d2ef98cb96d44f59fbd7ad0a40b8bbf3bdcfc6372dae7",
+  "scope": "Exact recorded field/classification/biome comparison; not complete block, visual or all-seed parity"
+}

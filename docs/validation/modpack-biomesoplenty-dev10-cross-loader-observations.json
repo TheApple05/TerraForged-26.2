@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "scope": "Same54sample columns/seed8675309/legacy-default settings, separate loader-native complete-stack exports; not a block-parity acceptance gate",
+  "sources": [
+    "server-modpack-biomesoplenty-fabric-dev10-generation.json",
+    "modpack-biomesoplenty-neoforge-dev10-generation.json"
+  ],
+  "crossLoaderParityClaimed": false,
+  "fieldDifferenceCounts": {
+    "surfaceBlock": 5,
+    "surfaceY": 2,
+    "biome": 1
+  },
+  "rawCellTerrainAndCellBiomeMatchesAll54": true,
+  "differences": [
+    {
+      "x": 0,
+      "z": 0,
+      "differences": {
+        "surfaceBlock": [
+          "biomesoplenty:clover",
+          "minecraft:short_grass"
+        ]
+      }
+    },
+    {
+      "x": -1,
+      "z": -1,
+      "differences": {
+        "surfaceBlock": [
+          "biomesoplenty:clover",
+          "minecraft:short_grass"
+        ]
+      }
+    },
+    {
+      "x": 119,
+      "z": 15,
+      "differences": {
+        "surfaceBlock": [
+          "biomesoplenty:pink_daffodil",
+          "biomesoplenty:clover"
+        ]
+      }
+    },
+    {
+      "x": 128,
+      "z": -16,
+      "differences": {
+        "surfaceY": [
+          76,
+          73
+        ],
+        "surfaceBlock": [
+          "biomesoplenty:high_grass",
+          "minecraft:grass_block"
+        ]
+      }
+    },
+    {
+      "x": 143,
+      "z": -1,
+      "differences": {
+        "surfaceY": [
+          74,
+          77
+        ],
+        "biome": [
+          "biomesoplenty:prairie",
+          "biomesoplenty:overgrown_greens"
+        ],
+        "surfaceBlock": [
+          "minecraft:grass_block",
+          "biomesoplenty:high_grass"
+        ]
+      }
+    }
+  ]
+}

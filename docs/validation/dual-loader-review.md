@@ -19,3 +19,7 @@ Reviewed on 2026-11-04T08:13:17.126782+00:00. Source snapshot fingerprint: `94d8
 Primary evidence was the exact locally resolved NeoForge26.2.0.93 source JAR and patched Minecraft26.2.0.93 source JAR, the resolved TerraBlender Neo JAR metadata, and current project source. Existing [dedicated production boot](neoforge-dev5-first-boot.json) supports basic class separation only; other agents are running newer package tests.
 
 No new builds or test processes were launched for this review. It does not cover every terrain algorithm, custom preset extreme, cross-loader exported-pack interchange, third-party registry implementation, multiplayer login, or Neo client rendering. A successful cloner design is not evidence that every external mod codec supports every datapack export operation.
+
+## Subsequent runtime finding
+
+The later real Biomes O' Plenty stack check exposed an upstream TerraBlender MapCodec registration defect that this bounded platform source review did not establish. See [decision0014](../decisions/0014-terrablender-material-rule-codec.md) and the retained failed runtime reports. This reinforces the separation between a scoped source review and dependency-stack acceptance.

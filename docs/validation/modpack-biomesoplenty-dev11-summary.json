@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "checkedAtUtc": "2026-11-04T09:05:35.073646+00:00",
+  "minecraft": "26.2",
+  "java": "25.0.5",
+  "artifactManifest": "modpack-biomesoplenty-26.2-artifacts.json",
+  "classComparisonEvidence": "dev10-dev11-class-comparison.json",
+  "scope": "Exact finaldev11 dedicated BOP-stack generation and reload, consuming qualified same-loader full-stack exportdev10. Only one client UI class changed; exports not repeated.",
+  "stacks": [
+    {
+      "loader": "fabric",
+      "status": "passed",
+      "productionSha256": "9c72b55fe91202ba85bbfc1489eebc91b5a1a6b4412373130b73230659d792f0",
+      "qaBuildReport": "modpack-biomesoplenty-fabric-dev11-qa-build.json",
+      "reports": {
+        "generation": "server-modpack-biomesoplenty-fabric-dev11-generation.json",
+        "reload": "server-modpack-biomesoplenty-fabric-dev11-reload.json"
+      },
+      "sourceExportCandidate": "dev10",
+      "sourceExportReport": "server-modpack-biomesoplenty-fabric-dev10-export.json",
+      "sourceExportProductionSha256": "6c698372e83d450464d56f896599f1b4cf7e838d5921a831e8a9b28256d663ae",
+      "allConsumedPackFileHashesMatchValidatedExport": true,
+      "consumedPackFileCount": 2745,
+      "consumedPackInventoryDigestSha256": "90dab66117175368cad899a61dd28f5595266fc7118f22388b05d0b58929b370",
+      "backendClassesIdenticalToDev10": true,
+      "allProcessesExitZero": true,
+      "normalWatchdogMillis": 60000,
+      "exactArtifactAndProductionOriginVerified": true,
+      "materialRuleMapCodecTypeAndIdentityVerified": true,
+      "finiteTerraBlenderUniquenessVerified": true,
+      "registeredBopBiomeCount": 68,
+      "overworldPossibleBopBiomeCount": 59,
+      "sampledFullChunks": 6,
+      "sampledColumns": 54,
+      "actualBopBiomeObservations": {
+        "biomesoplenty:overgrown_greens": 35,
+        "biomesoplenty:prairie": 19
+      },
+      "reloadDigestMatches": true,
+      "generationAndReloadDigestSha256": "5cc0aef185570698c625da0f9bdf71377b9dbce75f341c145c276a03fd06ada0",
+      "portOrSerializationErrors": [],
+      "knownOshiPerflibDiagnosticCount": 2
+    },
+    {
+      "loader": "neoforge",
+      "status": "passed",
+      "productionSha256": "7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845",
+      "qaBuildReport": "modpack-biomesoplenty-neoforge-dev11-qa-build.json",
+      "reports": {
+        "generation": "modpack-biomesoplenty-neoforge-dev11-generation.json",
+        "reload": "modpack-biomesoplenty-neoforge-dev11-reload.json"
+      },
+      "sourceExportCandidate": "dev10",
+      "sourceExportReport": "modpack-biomesoplenty-neoforge-dev10-export.json",
+      "sourceExportProductionSha256": "87c45cfdc49e4e3b9427314aa0c58ad97e149cf852097741492768d9f40bfb9a",
+      "allConsumedPackFileHashesMatchValidatedExport": true,
+      "consumedPackFileCount": 2749,
+      "consumedPackInventoryDigestSha256": "0c58bca0cb8ed5054c9565b4d978b576944ab40b060f0aef75a6c32424fabce3",
+      "backendClassesIdenticalToDev10": true,
+      "allProcessesExitZero": true,
+      "normalWatchdogMillis": 60000,
+      "exactArtifactAndProductionOriginVerified": true,
+      "materialRuleMapCodecTypeAndIdentityVerified": true,
+      "finiteTerraBlenderUniquenessVerified": true,
+      "registeredBopBiomeCount": 68,
+      "overworldPossibleBopBiomeCount": 59,
+      "sampledFullChunks": 6,
+      "sampledColumns": 54,
+      "actualBopBiomeObservations": {
+        "biomesoplenty:overgrown_greens": 35,
+        "biomesoplenty:prairie": 19
+      },
+      "reloadDigestMatches": true,
+      "generationAndReloadDigestSha256": "7325be5d489c2f134b2ea12c33293dded651317f25dbe3c71b49e31e38fbb6b6",
+      "portOrSerializationErrors": [],
+      "knownOshiPerflibDiagnosticCount": 2
+    }
+  ],
+  "notClaimed": [
+    "A repeated dedicated export underdev11",
+    "Full fresh-world/cross-loader block identity",
+    "Every BOP biome reachable",
+    "All modpacks compatible",
+    "Client results or user visual acceptance from these dedicated tests"
+  ],
+  "pendingRuns": []
+}

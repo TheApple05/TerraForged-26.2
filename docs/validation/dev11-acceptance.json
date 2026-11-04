@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-11-04T09:18:34.763407+00:00",
+  "status": "passed-scoped-development-candidate",
+  "minecraft": "26.2",
+  "version": "0.1.0-dev.11+26.2",
+  "artifacts": [
+    {
+      "path": "build/libs/terraforged-revival-0.1.0-dev.11+26.2.jar",
+      "sha256": "9c72b55fe91202ba85bbfc1489eebc91b5a1a6b4412373130b73230659d792f0",
+      "bytes": 1199785,
+      "classes": 572,
+      "platformProviders": [
+        "raccoonman.reterraforged.platform.fabric.FabricPlatformServices"
+      ],
+      "qaClassesPackaged": false,
+      "languageEntries": 277,
+      "licenseNoticesPresent": true
+    },
+    {
+      "path": "neoforge/build/libs/terraforged-revival-0.1.0-dev.11+26.2-neoforge.jar",
+      "sha256": "7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845",
+      "bytes": 1147716,
+      "classes": 565,
+      "platformProviders": [
+        "raccoonman.reterraforged.platform.neoforge.NeoForgePlatformServices"
+      ],
+      "qaClassesPackaged": false,
+      "languageEntries": 277,
+      "licenseNoticesPresent": true
+    }
+  ],
+  "productionClients": [
+    {
+      "loader": "fabric",
+      "stack": "base",
+      "report": "docs/validation/client-2026-11-04-dev11-full-flow.json",
+      "images": "docs/validation/images/client-dev11",
+      "status": "passed",
+      "reportSha256": "c91e3661d543feaaba5f287b816ebbb2ffe691d7953da64bda4c7a9c263c612b",
+      "artifactSha256": "9c72b55fe91202ba85bbfc1489eebc91b5a1a6b4412373130b73230659d792f0",
+      "processExit": 0,
+      "safeImmediateDone": true,
+      "archivedScreenshotsVerified": 7
+    },
+    {
+      "loader": "fabric",
+      "stack": "bop-beta-stack",
+      "report": "docs/validation/client-2026-11-04-dev11-biomesoplenty-full-flow.json",
+      "images": "docs/validation/images/client-dev11-biomesoplenty",
+      "status": "passed",
+      "reportSha256": "5214f5279045d6351443936e48c80485c7b5eb8c1eec9107b757b445374aefc6",
+      "artifactSha256": "9c72b55fe91202ba85bbfc1489eebc91b5a1a6b4412373130b73230659d792f0",
+      "processExit": 0,
+      "safeImmediateDone": true,
+      "archivedScreenshotsVerified": 7
+    },
+    {
+      "loader": "neoforge",
+      "stack": "base",
+      "report": "docs/validation/neoforge-client-dev11-fullflow.json",
+      "images": "docs/validation/images/neoforge-client-dev11",
+      "status": "passed",
+      "reportSha256": "1ea6d1e9fbf6da97e945080541da5dcfec47e26b484503246b876f2b96f83c0d",
+      "artifactSha256": "7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845",
+      "processExit": 0,
+      "safeImmediateDone": true,
+      "archivedScreenshotsVerified": 7
+    },
+    {
+      "loader": "neoforge",
+      "stack": "bop-beta-stack",
+      "report": "docs/validation/neoforge-client-modpack-dev11-fullflow.json",
+      "images": "docs/validation/images/neoforge-client-modpack-dev11",
+      "status": "passed",
+      "reportSha256": "4b212f1c904888957d33220b5b5e7fc9c264b5f75da6cede65dbded98852907a",
+      "artifactSha256": "7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845",
+      "processExit": 0,
+      "safeImmediateDone": true,
+      "archivedScreenshotsVerified": 7
+    }
+  ],
+  "dedicatedServerEvidence": "docs/validation/modpack-biomesoplenty-dev11-summary.json",
+  "serverReportSha256": "cd3087b34a353b82c345baf7d15e30647718f67f1bb1fe978e5d5318efd9b3e0",
+  "buildReportSha256": "905de7d2f5febc952c212600004c8401b637800d9d807c9d676d0e80c47a9a80",
+  "serverStatus": "passed-both-loaders-generation-and-reload",
+  "stableRelease": false,
+  "userVisualAcceptance": false,
+  "checkerSha256": "39faaad826a3d8cd86c84a0c6ff641d321323e4a235d4e164a0f52de3bd415a3",
+  "limits": [
+    "Pinned beta content stack only; not all modpacks",
+    "No complete classic feature/visual parity",
+    "No complete post-feature block determinism",
+    "Windows runtime; Linux CI compilation is separate",
+    "Specific Neo camera/menu capture limitations remain in the visual-review notes"
+  ]
+}

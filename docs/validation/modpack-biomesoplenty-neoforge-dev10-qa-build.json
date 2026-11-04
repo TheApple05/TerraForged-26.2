@@ -1,0 +1,19 @@
+{
+  "status": "built",
+  "compileExit": 0,
+  "output": "build\\qa\\modpack-compat\\neoforge-qa-dev10\\terraforged-neoforge-runtime-qa.jar",
+  "sha256": "21b003bedfbe29e189757fffb917580b2b0a4bbb921a8ba69b1aab02a106a6af",
+  "sharedProbeSourceSha256Lf": "dd367565b34412b56e6042044eb1b590c9ca6b65e93043c505924f8997035017",
+  "generatedAdapterSha256Lf": "c9a9eebb562dffb933a4ba406739edba0f005e081f533c3f1175897fba3167dd",
+  "productionJarSha256": "87c45cfdc49e4e3b9427314aa0c58ad97e149cf852097741492768d9f40bfb9a",
+  "adapterChanges": [
+    "NeoForge ServerStartedEvent entrypoint",
+    "NeoForge production/metadata provenance",
+    "Relocate biome probe to test module and invoke same package-private helper reflectively to avoid split packages"
+  ],
+  "notEvidenceOf": [
+    "Server boot",
+    "Preset export",
+    "Custom generation"
+  ]
+}

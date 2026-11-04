@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "mode": "bounded-scene-survey",
+  "status": "passed",
+  "startedAt": "2026-11-04T08:38:16.354676800Z",
+  "stages": [
+    {
+      "detail": "Bounded direct heightmap search; no chunk or tile requests in search loop",
+      "name": "search-started",
+      "at": "2026-11-04T08:38:31.311091Z"
+    },
+    {
+      "detail": "3 candidate categories selected within the recorded bound",
+      "name": "search-complete",
+      "at": "2026-11-04T08:38:31.361091100Z"
+    },
+    {
+      "detail": "Actual chunks rendered; classificationVerified=true",
+      "name": "scene-mountain",
+      "at": "2026-11-04T08:38:59.397978800Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T083755Z-665724\\qa-output\\screenshots\\08-mountain.png",
+      "name": "screenshot-08-mountain.png",
+      "at": "2026-11-04T08:38:59.498431200Z"
+    },
+    {
+      "detail": "Actual chunks rendered; classificationVerified=true",
+      "name": "scene-river",
+      "at": "2026-11-04T08:39:28.897308800Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T083755Z-665724\\qa-output\\screenshots\\09-river.png",
+      "name": "screenshot-09-river.png",
+      "at": "2026-11-04T08:39:29.247955Z"
+    },
+    {
+      "detail": "Actual chunks rendered; classificationVerified=true",
+      "name": "scene-coast",
+      "at": "2026-11-04T08:39:56.849594800Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T083755Z-665724\\qa-output\\screenshots\\10-coast.png",
+      "name": "screenshot-10-coast.png",
+      "at": "2026-11-04T08:39:57.017027800Z"
+    },
+    {
+      "detail": "Actual integrated world save/disconnect completed",
+      "name": "copied-world-saved",
+      "at": "2026-11-04T08:39:59.038982200Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/validation/images/client-dev9-scenes/08-mountain.png",
+      "width": 1280,
+      "bytes": 380807,
+      "height": 720,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "a52123d4152267172a26d49d85b934e6acbd87de4c602c5f30dfb19e5c5a829b"
+    },
+    {
+      "path": "docs/validation/images/client-dev9-scenes/09-river.png",
+      "width": 1280,
+      "bytes": 1167965,
+      "height": 720,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "6e787912606cfbf21cc0da52d3aaa1c1b36a63e3378e97e1a44feb26cc7f7b0a"
+    },
+    {
+      "path": "docs/validation/images/client-dev9-scenes/10-coast.png",
+      "width": 1280,
+      "bytes": 622764,
+      "height": 720,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "00ca473d0e9470568ffe253c5404fc8e25144570cdd29fb4e8c021a7bc8230ef"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "mountain",
+      "seed": 123456789,
+      "target": [
+        1531,
+        180,
+        -6108
+      ],
+      "camera": [
+        1435.5,
+        220.0,
+        -6011.5,
+        -135.0,
+        16.416441
+      ],
+      "cameraSurfaceHeight": 138,
+      "rawSearchCell": {
+        "erosion": -0.40319723,
+        "temperature": 0.775,
+        "terrain": "mountain_chain",
+        "moisture": 0.0,
+        "weirdness": -0.6751866,
+        "category": "HIGHLAND",
+        "height": 0.7037304,
+        "continentEdge": 0.8348093,
+        "biomeType": "DESERT",
+        "riverMask": 1.0
+      },
+      "actualCachedTileCell": {
+        "erosion": -0.40319723,
+        "temperature": 0.775,
+        "terrain": "mountain_chain",
+        "moisture": 0.0,
+        "weirdness": -0.6751866,
+        "category": "HIGHLAND",
+        "height": 0.700862,
+        "continentEdge": 0.8348093,
+        "biomeType": "DESERT",
+        "riverMask": 1.0
+      },
+      "classificationVerified": true,
+      "customGeneratorActive": true,
+      "actualBiome": "minecraft:badlands",
+      "surfaceBlock": "minecraft:terracotta",
+      "preparationMillis": 8041,
+      "explicitFullChunkRequests": [
+        [
+          95,
+          -382
+        ],
+        [
+          89,
+          -376
+        ]
+      ],
+      "preparedAt": "2026-11-04T08:38:39.452960Z",
+      "actualPlayerPose": [
+        1435.5,
+        220.0,
+        -6011.5,
+        -135.0,
+        16.416441
+      ],
+      "actualRenderedCameraPose": [
+        1435.5,
+        221.61999988555908,
+        -6011.5,
+        -135.0,
+        16.416441
+      ],
+      "poseHeldByQa": "Actual first-person spectator pose held while mouse is released; entity and rendered-camera rotation/position verified before capture",
+      "capturedAt": "2026-11-04T08:38:59.396971100Z",
+      "renderDistance": 12,
+      "settleTicks": 400,
+      "screenshot": "docs/validation/images/client-dev9-scenes/08-mountain.png"
+    },
+    {
+      "kind": "river",
+      "seed": 123456789,
+      "target": [
+        4091,
+        63,
+        -8668
+      ],
+      "camera": [
+        3995.5,
+        103.0,
+        -8571.5,
+        -135.0,
+        16.416441
+      ],
+      "cameraSurfaceHeight": 66,
+      "rawSearchCell": {
+        "erosion": -0.05,
+        "temperature": -0.3,
+        "terrain": "river",
+        "moisture": 0.2,
+        "weirdness": -0.03,
+        "category": "RIVER",
+        "height": 0.2390673,
+        "continentEdge": 1.0,
+        "biomeType": "TAIGA",
+        "riverMask": 1.4126301e-05
+      },
+      "actualCachedTileCell": {
+        "erosion": -0.05,
+        "temperature": -0.3,
+        "terrain": "river",
+        "moisture": 0.2,
+        "weirdness": -0.03,
+        "category": "RIVER",
+        "height": 0.2390673,
+        "continentEdge": 1.0,
+        "biomeType": "TAIGA",
+        "riverMask": 1.4126301e-05
+      },
+      "classificationVerified": true,
+      "customGeneratorActive": true,
+      "actualBiome": "minecraft:river",
+      "surfaceBlock": "minecraft:water",
+      "preparationMillis": 9458,
+      "explicitFullChunkRequests": [
+        [
+          255,
+          -542
+        ],
+        [
+          249,
+          -536
+        ]
+      ],
+      "preparedAt": "2026-11-04T08:39:08.959840900Z",
+      "actualPlayerPose": [
+        3995.5,
+        103.0,
+        -8571.5,
+        -135.0,
+        16.416441
+      ],
+      "actualRenderedCameraPose": [
+        3995.5,
+        104.61999988555908,
+        -8571.5,
+        -135.0,
+        16.416441
+      ],
+      "poseHeldByQa": "Actual first-person spectator pose held while mouse is released; entity and rendered-camera rotation/position verified before capture",
+      "capturedAt": "2026-11-04T08:39:28.896308400Z",
+      "renderDistance": 12,
+      "settleTicks": 400,
+      "screenshot": "docs/validation/images/client-dev9-scenes/09-river.png"
+    },
+    {
+      "kind": "coast",
+      "seed": 123456789,
+      "target": [
+        7675,
+        63,
+        -2524
+      ],
+      "camera": [
+        7579.5,
+        103.0,
+        -2427.5,
+        -135.0,
+        16.416441
+      ],
+      "cameraSurfaceHeight": 70,
+      "rawSearchCell": {
+        "erosion": 0.25,
+        "temperature": -0.725,
+        "terrain": "coast",
+        "moisture": -0.225,
+        "weirdness": -0.15833335,
+        "category": "COAST",
+        "height": 0.24335822,
+        "continentEdge": 0.32974824,
+        "biomeType": "TUNDRA",
+        "riverMask": 1.0
+      },
+      "actualCachedTileCell": {
+        "erosion": 0.25,
+        "temperature": -0.725,
+        "terrain": "coast",
+        "moisture": -0.225,
+        "weirdness": -0.15833335,
+        "category": "COAST",
+        "height": 0.24336079,
+        "continentEdge": 0.32974824,
+        "biomeType": "TUNDRA",
+        "riverMask": 1.0
+      },
+      "classificationVerified": true,
+      "customGeneratorActive": true,
+      "actualBiome": "minecraft:snowy_plains",
+      "surfaceBlock": "minecraft:grass_block",
+      "preparationMillis": 7649,
+      "explicitFullChunkRequests": [
+        [
+          479,
+          -158
+        ],
+        [
+          473,
+          -152
+        ]
+      ],
+      "preparedAt": "2026-11-04T08:39:36.904311300Z",
+      "actualPlayerPose": [
+        7579.5,
+        103.0,
+        -2427.5,
+        -135.0,
+        16.416441
+      ],
+      "actualRenderedCameraPose": [
+        7579.5,
+        104.61999988555908,
+        -2427.5,
+        -135.0,
+        16.416441
+      ],
+      "poseHeldByQa": "Actual first-person spectator pose held while mouse is released; entity and rendered-camera rotation/position verified before capture",
+      "capturedAt": "2026-11-04T08:39:56.849594800Z",
+      "renderDistance": 12,
+      "settleTicks": 400,
+      "screenshot": "docs/validation/images/client-dev9-scenes/10-coast.png"
+    }
+  ],
+  "notTested": [
+    "All seeds/presets/terrain types",
+    "Exact classic visual parity",
+    "NeoForge scene survey",
+    "Third-party mods",
+    "User visual acceptance"
+  ],
+  "runtime": {
+    "java": "25.0.5",
+    "loader": "0.20.1",
+    "developmentEnvironment": false,
+    "minecraft": "26.2",
+    "modSha256": "4a827bc62444e2ba11116513c507e36aacfdef39f9f27224d2cfaaf862873f94",
+    "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T083755Z-665724\\mods\\terraforged-revival-0.1.0-dev.9+26.2.jar"
+  },
+  "search": {
+    "seed": 123456789,
+    "anchor": [
+      5115,
+      -5084
+    ],
+    "coarseGrid": "16x16 at 512-block spacing around anchor",
+    "refinement": "Only missing river/coast categories, at most 16x16 at 16-block spacing around nearest coarse cell",
+    "heightmapSamples": 256,
+    "maximumHeightmapSamples": 768,
+    "elapsedMillis": 6,
+    "timeBoundMillis": 20000,
+    "tileRequestsDuringSearch": 0,
+    "chunkRequestsDuringSearch": 0,
+    "matchingSampleCounts": {
+      "coast": 19,
+      "mountain": 50,
+      "river": 2
+    },
+    "missingScenesUnverified": [],
+    "searchApi": "Actual GeneratorContext.generator.getHeightmap().apply(cell,x,z,true), unfiltered candidate classification"
+  },
+  "customGeneratorActive": true,
+  "sceneCoverageComplete": true,
+  "phase": "save",
+  "finishedAt": "2026-11-04T08:39:59.041989Z",
+  "cleanStopRequested": true,
+  "runtimeReport": "docs/validation/client-2026-11-04-dev9-scenes.json",
+  "actualProcessExitCode": 0,
+  "criticalRuntimeErrors": [],
+  "instance": "build/qa/client/instances/20261104T083755Z-665724",
+  "visualInspection": {
+    "reviewer": "Codex client QA agent",
+    "cameraPosesVerified": true,
+    "acceptedScenes": [
+      "mountain",
+      "river"
+    ],
+    "clearCoastlineView": "unverified",
+    "findings": [
+      "Terracotta mountain-chain summit in badlands is visible.",
+      "Water channel through taiga is visible.",
+      "Coast terrain flag and actual cached cell are verified, but the snowy scene framing/fog does not clearly show the shoreline/ocean.",
+      "All images come from actual game framebuffer with held and observed first-person camera poses."
+    ],
+    "scope": "One seed and three bounded candidate areas; no full classic parity, broad biome coverage or NeoForge scene-survey claim."
+  }
+}

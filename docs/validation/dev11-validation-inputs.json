@@ -1,0 +1,10 @@
+{
+  "buildReport": "docs/validation/dual-loader-dev11-build.json",
+  "serverReport": "docs/validation/modpack-biomesoplenty-dev11-summary.json",
+  "clients": [
+    {"loader": "fabric", "stack": "base", "report": "docs/validation/client-2026-11-04-dev11-full-flow.json", "images": "docs/validation/images/client-dev11"},
+    {"loader": "fabric", "stack": "bop-beta-stack", "report": "docs/validation/client-2026-11-04-dev11-biomesoplenty-full-flow.json", "images": "docs/validation/images/client-dev11-biomesoplenty"},
+    {"loader": "neoforge", "stack": "base", "report": "docs/validation/neoforge-client-dev11-fullflow.json", "images": "docs/validation/images/neoforge-client-dev11"},
+    {"loader": "neoforge", "stack": "bop-beta-stack", "report": "docs/validation/neoforge-client-modpack-dev11-fullflow.json", "images": "docs/validation/images/neoforge-client-modpack-dev11"}
+  ]
+}

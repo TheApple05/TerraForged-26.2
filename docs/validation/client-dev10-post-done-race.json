@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "result": "reproduced-production-post-Done-screen-race",
+  "artifactSha256": "6c698372e83d450464d56f896599f1b4cf7e838d5921a831e8a9b28256d663ae",
+  "instance": "build/qa/client/instances/20261104T085503Z-43ddbe",
+  "runtimeReport": "docs/validation/client-2026-11-04-dev10-post-done-before-fix.json",
+  "actualProcessExitCode": 0,
+  "immediatePostDone": {
+    "parentVisible": true,
+    "editorVisible": false,
+    "screenClass": "net.minecraft.client.gui.screens.worldselection.CreateWorldScreen",
+    "observedAt": "2026-11-04T08:55:33.169344300Z",
+    "safeScreenOwnership": false,
+    "appliedPresetReady": false
+  },
+  "error": {
+    "message": "java.lang.IllegalStateException: World creation became interactive immediately after Done before preset datapack validation completed",
+    "stackTrace": "java.lang.IllegalStateException: World creation became interactive immediately after Done before preset datapack validation completed\r\n\tat knot//raccoonman.reterraforged.client.gui.screen.presetconfig.ClientQaMod.require(ClientQaMod.java:518)\r\n\tat knot//raccoonman.reterraforged.client.gui.screen.presetconfig.ClientQaMod.tick(ClientQaMod.java:224)\r\n\tat knot//net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.lambda$static$3(ClientTickEvents.java:43)\r\n\tat knot//net.minecraft.client.Minecraft.handler$zil000$fabric-lifecycle-events-v1$onEndTick(Minecraft.java:4162)\r\n\tat knot//net.minecraft.client.Minecraft.tick(Minecraft.java:1956)\r\n\tat knot//net.minecraft.client.Minecraft.runTick(Minecraft.java:1250)\r\n\tat knot//net.minecraft.client.Minecraft.run(Minecraft.java:959)\r\n\tat knot//net.minecraft.client.main.Main.main(Main.java:292)\r\n\tat net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517)\r\n\tat net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)\r\n\tat net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)\r\n"
+  },
+  "diagnosis": "PresetConfigScreen.onClose restored CreateWorldScreen after Done while asynchronous vanilla datapack validation was incomplete. The earlier QA readiness wait concealed the interactive fast-click window.",
+  "expectedCorrection": "Only restore parent when the current screen is still the editor; preserve vanilla validation wait/error/completion screen ownership.",
+  "probeSourceSha256Lf": "3d27da6dbf8241e9348a101e32d61c5f5357bb10dc5820e779764de72dc45d19",
+  "validationScope": "Actual packaged10 client callback and immediate screen/context state, not a source-only assumption."
+}

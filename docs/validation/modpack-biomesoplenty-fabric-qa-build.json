@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "status": "built",
+  "compileExit": 0,
+  "jar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\modpack-compat\\fabric-qa\\terraforged-runtime-qa.jar",
+  "sha256": "440e010ca82fde8222c39bcd6ff1cb54698348bdc5a7b5763ac8bd2ceef2a419",
+  "compileAgainst": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.8+26.2.jar",
+  "productionJarSha256": "ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585",
+  "sourceSha256Lf": {
+    "tests/runtime/terraforged/qa/RuntimeQaMod.java": "aba5f8f1067e4b1d6358dc25037013bb313dcc07e7f23758c73e009026400006",
+    "tests/terrain/TemplateBiomeDecoratorProbe.java": "75b2d53e042ed0db56e08b7f6f865e258a98bd3f85073102813dd9d3bc677971"
+  },
+  "notEvidenceOf": [
+    "Successful server launch",
+    "Preset export",
+    "Custom world generation",
+    "Visual parity"
+  ]
+}

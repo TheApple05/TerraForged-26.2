@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAt": "2026-11-04T08:23:00.277456900Z",
+  "stages": [
+    {
+      "detail": "Real title screen and production artifact verified",
+      "name": "title-ready",
+      "at": "2026-11-04T08:23:08.563382300Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\01-title.png",
+      "name": "screenshot-01-title.png",
+      "at": "2026-11-04T08:23:08.794537300Z"
+    },
+    {
+      "detail": "Actual CreateWorldScreen loaded its real world-creation resources",
+      "name": "create-world-ready",
+      "at": "2026-11-04T08:23:12.692276300Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\02-create-world.png",
+      "name": "screenshot-02-create-world.png",
+      "at": "2026-11-04T08:23:13.213115500Z"
+    },
+    {
+      "detail": "5 actual list rows rendered",
+      "name": "preset-list-ready",
+      "at": "2026-11-04T08:23:14.607550900Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\03-preset-list.png",
+      "name": "screenshot-03-preset-list.png",
+      "at": "2026-11-04T08:23:14.723176700Z"
+    },
+    {
+      "detail": "Real legacy preset editor generated and uploaded its preview texture",
+      "name": "preset-editor-ready",
+      "at": "2026-11-04T08:23:16.707227Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\04-preset-editor-before.png",
+      "name": "screenshot-04-preset-editor-before.png",
+      "at": "2026-11-04T08:23:16.844230200Z"
+    },
+    {
+      "detail": "Actual setting changed and a replacement preview tile was rendered",
+      "name": "slider-preview-updated",
+      "at": "2026-11-04T08:23:18.358555500Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\05-preset-editor-after.png",
+      "name": "screenshot-05-preset-editor-after.png",
+      "at": "2026-11-04T08:23:18.526243700Z"
+    },
+    {
+      "detail": "Eight actual setting changes each regenerated a finite nonconstant 65536-cell preview",
+      "name": "repeated-slider-previews",
+      "at": "2026-11-04T08:23:19.895660200Z"
+    },
+    {
+      "detail": "Production close path released the actual preview resources",
+      "name": "preset-editor-closed",
+      "at": "2026-11-04T08:23:29.974037300Z"
+    },
+    {
+      "detail": "Actual Done button exported the preset pack and reloaded it into the real world-creation context",
+      "name": "preset-datapack-applied",
+      "at": "2026-11-04T08:23:32.657829200Z"
+    },
+    {
+      "detail": "Activated actual Create New World button with applied TerraForged datapack and selected seed",
+      "name": "new-world-create-button",
+      "at": "2026-11-04T08:23:32.684832200Z"
+    },
+    {
+      "detail": "Selected actual Yes callback for new isolated QA world",
+      "name": "new-world-experimental-warning",
+      "at": "2026-11-04T08:23:32.730359300Z"
+    },
+    {
+      "detail": "Real integrated world remained loaded for 400 ticks after camera setup; global modifier count unchanged",
+      "name": "custom-world-rendered",
+      "at": "2026-11-04T08:24:13.954010500Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\06-custom-terrain.png",
+      "name": "screenshot-06-custom-terrain.png",
+      "at": "2026-11-04T08:24:14.359254200Z"
+    },
+    {
+      "detail": "Actual integrated-world disconnect and save completed",
+      "name": "copied-world-saved",
+      "at": "2026-11-04T08:24:17.155243600Z"
+    },
+    {
+      "detail": "Real integrated world remained loaded for 400 ticks after camera setup; global modifier count unchanged",
+      "name": "vanilla-world-rendered",
+      "at": "2026-11-04T08:24:45.818036200Z"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\qa-output\\screenshots\\07-vanilla-after-custom.png",
+      "name": "screenshot-07-vanilla-after-custom.png",
+      "at": "2026-11-04T08:24:46.204978800Z"
+    },
+    {
+      "detail": "Actual integrated-world disconnect and save completed",
+      "name": "copied-world-saved",
+      "at": "2026-11-04T08:24:49.422657100Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "a09544f447c36dc4f4f16ab8fda55b495b60d657947c083253639253f1fee200",
+      "screenClass": "net.minecraft.client.gui.screens.TitleScreen",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/01-title.png",
+      "bytes": 651306
+    },
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "8ff6594375e4cd16bbc1e98e3cab0ca60cd5fe0397135d379c31e51c697d587d",
+      "screenClass": "net.minecraft.client.gui.screens.worldselection.CreateWorldScreen",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/02-create-world.png",
+      "bytes": 280129
+    },
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "3e5f685710106d9d6feaff5d8d59449dd6818f041d362118bac705682a968202",
+      "screenClass": "raccoonman.reterraforged.client.gui.screen.presetconfig.PresetConfigScreen",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/03-preset-list.png",
+      "bytes": 269387
+    },
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "b44911efacb12662afa7f4fedbafccc37d1eb808c478fe82fa30c694b5ac2363",
+      "screenClass": "raccoonman.reterraforged.client.gui.screen.presetconfig.PresetConfigScreen",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/04-preset-editor-before.png",
+      "bytes": 242548
+    },
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "c4230ed690666b80037a5f2d024012f415b826f5b7fe884f753ed873d3386f7a",
+      "screenClass": "raccoonman.reterraforged.client.gui.screen.presetconfig.PresetConfigScreen",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/05-preset-editor-after.png",
+      "bytes": 260190
+    },
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "0182a84199a8fd85e84d7247dbe24ae38d1dd222811184efc24771b50c58c143",
+      "screenClass": "in-world",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/06-custom-terrain.png",
+      "bytes": 1314263
+    },
+    {
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "63dd310455e838eeb69cabea16e17708ab3648b26ec5575917e7537ad1dcb761",
+      "screenClass": "in-world",
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev8/07-vanilla-after-custom.png",
+      "bytes": 1730795
+    }
+  ],
+  "preset": "Legacy default, selected through the actual preset-list callback",
+  "previewSeed": 123456789,
+  "sliderChanges": [
+    {
+      "before": 3000,
+      "after": 7094,
+      "preview": {
+        "heightSha256": "d7a25c1ef51fea83280f4a6a18aa1cbcf908950f4731b7786ad0da5937b79eca",
+        "continentScale": 7094,
+        "minHeight": 0.040600095,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.80448085,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 7094,
+      "after": 3565,
+      "preview": {
+        "heightSha256": "43f01d640bb0a1e9a042d68e6ece394b6526fb07cdcfffa4bf84c794d0c75f49",
+        "continentScale": 3565,
+        "minHeight": 0.032809947,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.80753756,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 3565,
+      "after": 5545,
+      "preview": {
+        "heightSha256": "ecc8509a2d4c5021f390df0417a971ad03c62252c53686214d40cd72b1b59d5e",
+        "continentScale": 5545,
+        "minHeight": 0.03610045,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.8108658,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 5545,
+      "after": 7525,
+      "preview": {
+        "heightSha256": "f469267441473c634f365de39fd61c3e5b1591e6393549a3ebc08f645909c9ae",
+        "continentScale": 7525,
+        "minHeight": 0.03671665,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.79612064,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 7525,
+      "after": 1585,
+      "preview": {
+        "heightSha256": "400d96fb4aa0ea3e50294a60d9faf6e6fd1a97ec476d96836f81be66f4bc917c",
+        "continentScale": 1585,
+        "minHeight": 0.02504186,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.7820173,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 1585,
+      "after": 3565,
+      "preview": {
+        "heightSha256": "43f01d640bb0a1e9a042d68e6ece394b6526fb07cdcfffa4bf84c794d0c75f49",
+        "continentScale": 3565,
+        "minHeight": 0.032809947,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.80753756,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 3565,
+      "after": 5545,
+      "preview": {
+        "heightSha256": "ecc8509a2d4c5021f390df0417a971ad03c62252c53686214d40cd72b1b59d5e",
+        "continentScale": 5545,
+        "minHeight": 0.03610045,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.8108658,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    },
+    {
+      "before": 5545,
+      "after": 3000,
+      "preview": {
+        "heightSha256": "2fdebf9741728b14641d6269bf80ea90213a0c119e8fb60216817c1b1c87e59b",
+        "continentScale": 3000,
+        "minHeight": 0.026860114,
+        "seed": 123456789,
+        "textureHeight": 256,
+        "cells": 65536,
+        "textureWidth": 256,
+        "maxHeight": 0.8095268,
+        "textureId": "reterraforged:preview/framebuffer_0"
+      }
+    }
+  ],
+  "notTested": [
+    "Every setting/page",
+    "Other mod combinations",
+    "NeoForge client",
+    "Visual acceptance by user"
+  ],
+  "runtime": {
+    "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T082244Z-dc0be1\\mods\\terraforged-revival-0.1.0-dev.8+26.2.jar",
+    "java": "25.0.5",
+    "modSha256": "ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585",
+    "developmentEnvironment": false,
+    "minecraft": "26.2",
+    "loader": "0.20.1",
+    "modVersion": "0.1.0-dev.8+26.2"
+  },
+  "globalModifierBaseline": 0,
+  "presetListRows": 5,
+  "presetListTextFit": [
+    {
+      "field": "input.hint",
+      "fontWidth": 62,
+      "innerWidth": 82,
+      "widthRule": "Actual EditBox.getInnerWidth()",
+      "fits": true,
+      "widgetWidth": 90,
+      "text": "Preset name"
+    },
+    {
+      "field": "openPresetFolder",
+      "fontWidth": 71,
+      "innerWidth": 86,
+      "widthRule": "Actual AbstractButton label margin of 2 pixels on both sides",
+      "fits": true,
+      "widgetWidth": 90,
+      "text": "Preset Folder"
+    },
+    {
+      "field": "openExportFolder",
+      "fontWidth": 71,
+      "innerWidth": 86,
+      "widthRule": "Actual AbstractButton label margin of 2 pixels on both sides",
+      "fits": true,
+      "widgetWidth": 90,
+      "text": "Export Folder"
+    },
+    {
+      "field": "exportAsDatapack",
+      "fontWidth": 61,
+      "innerWidth": 86,
+      "widthRule": "Actual AbstractButton label margin of 2 pixels on both sides",
+      "fits": true,
+      "widgetWidth": 90,
+      "text": "Export Pack"
+    }
+  ],
+  "previewBefore": {
+    "heightSha256": "2fdebf9741728b14641d6269bf80ea90213a0c119e8fb60216817c1b1c87e59b",
+    "continentScale": 3000,
+    "minHeight": 0.026860114,
+    "seed": 123456789,
+    "textureHeight": 256,
+    "cells": 65536,
+    "textureWidth": 256,
+    "maxHeight": 0.8095268,
+    "textureId": "reterraforged:preview/framebuffer_0"
+  },
+  "visibleTranslations": {
+    "reterraforged.gui.worldSettings.title": "World Settings",
+    "reterraforged.gui.slider.continentScale": "Continent Scale",
+    "reterraforged.gui.button.seed": "Seed",
+    "reterraforged.gui.label.previewArea": "Area: "
+  },
+  "sliderChange": {
+    "before": 3000,
+    "setting": "world.continent.continentScale",
+    "input": "Actual AbstractSliderButton.onClick(MouseButtonEvent,false) and onRelease",
+    "after": 7094
+  },
+  "previewAfter": {
+    "heightSha256": "d7a25c1ef51fea83280f4a6a18aa1cbcf908950f4731b7786ad0da5937b79eca",
+    "continentScale": 7094,
+    "minHeight": 0.040600095,
+    "seed": 123456789,
+    "textureHeight": 256,
+    "cells": 65536,
+    "textureWidth": 256,
+    "maxHeight": 0.80448085,
+    "textureId": "reterraforged:preview/framebuffer_0"
+  },
+  "restoredBaselinePreviewDigest": "2fdebf9741728b14641d6269bf80ea90213a0c119e8fb60216817c1b1c87e59b",
+  "presetApplication": {
+    "actualDoneButton": true,
+    "realDatapackReload": true,
+    "continentScale": 3000,
+    "seed": 123456789,
+    "presetKey": "reterraforged:preset"
+  },
+  "terrainRendering": {
+    "featureSorter": {
+      "steps": 11,
+      "identityConsistent": true,
+      "featureReferencesChecked": 2702,
+      "possibleBiomes": 55
+    },
+    "camera": [
+      5115.5,
+      103.0,
+      -5083.5,
+      -135.0,
+      25.0
+    ],
+    "world": "TerraForged Client Qa",
+    "surfaceHeight": 83,
+    "globalModifierCount": 0,
+    "mode": "spectator",
+    "customGeneratorActive": true,
+    "createdThroughActualUi": true,
+    "copiedWorldOnly": false,
+    "worldSeed": 123456789
+  },
+  "terrainCaptureSettings": {
+    "settleTicks": 400,
+    "renderDistance": 12
+  },
+  "vanillaTerrainRendering": {
+    "featureSorter": {
+      "steps": 11,
+      "identityConsistent": true,
+      "featureReferencesChecked": 2587,
+      "possibleBiomes": 55
+    },
+    "camera": [
+      18.5,
+      84.0,
+      81.5,
+      -135.0,
+      25.0
+    ],
+    "world": "TerraForgedVanillaQa",
+    "surfaceHeight": 64,
+    "globalModifierCount": 0,
+    "mode": "spectator",
+    "customGeneratorActive": false,
+    "createdThroughActualUi": false,
+    "copiedWorldOnly": true,
+    "worldSeed": 8675309
+  },
+  "phase": "world-close",
+  "finishedAt": "2026-11-04T08:24:49.424653600Z",
+  "cleanStopRequested": true,
+  "actualProcessExitCode": 0,
+  "runtimeReport": "docs/validation/client-2026-11-04-dev8-full-flow.json",
+  "instance": "build/qa/client/instances/20261104T082244Z-dc0be1",
+  "visualInspection": {
+    "reviewer": "Codex client QA agent",
+    "inspected": [
+      "03-preset-list.png",
+      "04-preset-editor-before.png",
+      "06-custom-terrain.png",
+      "07-vanilla-after-custom.png"
+    ],
+    "findings": [
+      "All four revised list controls fit without truncation or label scrolling.",
+      "World-settings labels and preview render normally.",
+      "Custom surface shows rolling grassy plains, flowers, animals and lava pool; closer20-block camera and12-chunk view give a clear terrain image.",
+      "Vanilla world after custom displays forest, shoreline and ocean."
+    ],
+    "surfaceCaptureAccepted": true,
+    "scope": "One default preset/seed and camera; no full classic visual parity, every-biome or modpack compatibility claim."
+  },
+  "criticalRuntimeErrors": []
+}

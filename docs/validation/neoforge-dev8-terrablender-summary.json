@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "minecraft": "26.2",
+  "loader": "NeoForge26.2.0.93",
+  "productionJar": "terraforged-revival-0.1.0-dev.8+26.2-neoforge.jar",
+  "productionSha256": "5031e101f82f9076c198c97f765f8bb5c87799ff5e9ce2a98ff43d17a9ea3878",
+  "terraBlenderVersion": "26.2.0.0.2",
+  "qaCompanionSha256": "03b2118b09120c37d42677125c1a759c927b4b4e714da400cb7cf8f92ae54daf",
+  "qaSourceSha256Lf": "02ef3c934d1c0509db055cc311de93fbe44d618c8938b472ccfd23f9fea70ed7",
+  "checks": [
+    {
+      "report": "neoforge-dev8-terrablender-generation.json",
+      "passed": true,
+      "normalWatchdogMillis": 60000,
+      "sampledChunks": 6,
+      "sampledColumns": 54,
+      "finiteUniquenessAssertion": "Actual global sampler and climate target carry finite uniqueness: 0.22231745719909668",
+      "terraBlenderLoadedClassCount": 108,
+      "terraBlenderLoadedClassExamples": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.terrablender.TBCompat source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/terraforged-revival-0.1.0-dev.8+26.2-neoforge.jar",
+        "[info][class,load] terrablender.worldgen.IExtendedBiomeSource source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/TerraBlender-neoforge-26.2-26.2.0.0.2.jar",
+        "[info][class,load] terrablender.worldgen.IExtendedMultiNoiseBiomeSource source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/TerraBlender-neoforge-26.2-26.2.0.0.2.jar",
+        "[info][class,load] terrablender.mixin.MultiNoiseBiomeSourceAccess source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/TerraBlender-neoforge-26.2-26.2.0.0.2.jar"
+      ],
+      "installedTerraBlenderSha256": "b862ff5bd541c9d23d54025100ceef822db7c9d6bfe4e03a25aa4294191af92b",
+      "generationDigestSha256": "5fab505bc818ab96a66e2a65d644e5671bcc9029f1922af372df694d8fc00db1",
+      "generationElapsedMillis": 7243
+    },
+    {
+      "report": "neoforge-dev8-terrablender-reload.json",
+      "passed": true,
+      "normalWatchdogMillis": 60000,
+      "sampledChunks": 6,
+      "sampledColumns": 54,
+      "finiteUniquenessAssertion": "Actual global sampler and climate target carry finite uniqueness: 0.22231745719909668",
+      "terraBlenderLoadedClassCount": 105,
+      "terraBlenderLoadedClassExamples": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.terrablender.TBCompat source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/terraforged-revival-0.1.0-dev.8+26.2-neoforge.jar",
+        "[info][class,load] terrablender.worldgen.IExtendedBiomeSource source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/TerraBlender-neoforge-26.2-26.2.0.0.2.jar",
+        "[info][class,load] terrablender.worldgen.IExtendedMultiNoiseBiomeSource source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/TerraBlender-neoforge-26.2-26.2.0.0.2.jar",
+        "[info][class,load] terrablender.mixin.MultiNoiseBiomeSourceAccess source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T082248Z-0a619a/mods/TerraBlender-neoforge-26.2-26.2.0.0.2.jar"
+      ],
+      "installedTerraBlenderSha256": "b862ff5bd541c9d23d54025100ceef822db7c9d6bfe4e03a25aa4294191af92b",
+      "generationDigestSha256": "5fab505bc818ab96a66e2a65d644e5671bcc9029f1922af372df694d8fc00db1",
+      "generationElapsedMillis": 2652
+    }
+  ],
+  "reloadDigestMatches": true,
+  "scopeLimits": [
+    "One seed8675309 and legacy-default preset",
+    "TerraBlender installed without an additional content-biome mod in this pair of runs",
+    "No proof every third-party biome is reachable or all biome mods are compatible",
+    "No client rendering or performance benchmark"
+  ]
+}

@@ -1,54 +1,42 @@
 # TerraForged for Minecraft Java 26.2
 
-An independent, unofficial revival of TerraForged, focused on preserving its terrain algorithms, visual character, and customization.
+An independent, unofficial revival of TerraForged for **Fabric and NeoForge**, focused on its terrain, rivers, customization, and use in modern modpacks.
 
-**Status: the experimental Fabric 26.2 package generates custom terrain, saves, and reloads in an isolated production server. Fabric client validation and NeoForge implementation are in progress. No release is published yet.** Both Fabric and NeoForge are requested targets for modpack use.
+**Development status:** both loaders have passed real packaged client and dedicated-server workflows. The editor creates custom worlds, terrain renders, saves reload, and a normal world can load afterward without inheriting custom settings. The pinned Biomes O' Plenty, GlitchCore and TerraBlender stack also passes its recorded client/server checks. These are experimental candidates; no stable release or complete classic-parity claim is made.
 
-The user confirmed **Minecraft Java Edition 26.2** on November 3, 2026. This is a new repository, not a GitHub fork. It is private during initial development; repository visibility is separate from software licensing.
+![Actual 26.2 river and forest capture](docs/validation/images/client-dev9-scenes/09-river.png)
 
-## Original work
+Actual Minecraft capture: Fabric dev9, seed `123456789`. [Scene evidence](docs/validation/client-dev9-scenes.json) records coordinates, terrain fields and verified camera poses. This is target-game evidence, not an original-version visual comparison.
 
-- [TerraForged](https://github.com/TerraForged/TerraForged), the original mod and terrain engine.
-- [ReTerraForged](https://github.com/racoonman2/ReTerraForged), the subsequent modernization effort.
+## Use or build a candidate
 
-All imported code retains its license and attribution. New history in this repository does not imply original authorship of upstream code. Exact commits and imported paths are recorded in [source provenance](docs/SOURCE-PROVENANCE.json). The root license is MIT, with an LGPL-2.1-only language-provider component described in [third-party notices](THIRD_PARTY_NOTICES.md).
+Use Minecraft Java **26.2** and **Java 25**, with either Fabric Loader **0.20.1** plus Fabric API **0.161.0+26.2**, or NeoForge **26.2.0.93**. Install the matching loader's JAR. [Installation and world-creation instructions](docs/INSTALLATION.md) cover the editor, preset folders, servers and building from source.
 
-The implementation starts from ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1f164d19dbfcccaca4a8277d64e784207c`. Original TerraForged **1.16.5 / 0.2.16**, commit `3ada751ac25cd3eecee5d198870a3abb89734f52`, is the classic feature/visual reference. Newer branches contain experimental or omitted generation paths; [the audit](docs/research/upstream-audit.md) explains the selection.
+The current package snapshots and SHA-256 values are in [the dev11 build record](docs/validation/dual-loader-dev11-build.json). Local Fabric JARs are in `build/libs`; NeoForge JARs are in `neoforge/build/libs`. GitHub's [packaging workflow](.github/workflows/package-candidates.yml) retains experimental artifacts. Only the exact hashes in runtime reports have their recorded game validation.
+
+## Verification
+
+The project tests the actual packaged JARs in disposable non-development installations. Recorded checks cover real preset export, active custom generators, editor/preview events, actual Create New World callbacks, feature-holder consistency, custom-to-vanilla world transitions, saves, reloads, and game-owned screenshots. Larger Fabric checks finish 144 full chunks and compare 576 sampled terrain fields/biomes across request orders. Core mathematical fixtures and cache regressions run separately on Linux and Windows; both loaders also package independently on Ubuntu CI.
+
+[Runtime results](docs/validation/runtime-summary.md) distinguish passing checks, retained failures, and unverified scope. They include corrected cache deadlock, UI rendering/input, lazy-holder race, biome-feature lifecycle, and optional TerraBlender integration defects. Sampled terrain agreement does not establish complete block determinism: vanilla-generator controls also show decoration-order effects.
 
 ## Project record
 
 - [Porting plan and completion criteria](docs/PORTING.md)
 - [Development log](docs/DEVLOG.md)
+- [Feature inventory and known classic gaps](docs/FEATURE-PARITY.md)
 - [Regression and acceptance protocol](docs/VALIDATION.md)
-- [Packaged runtime results and current limitations](docs/validation/runtime-summary.md)
-- [Classic feature inventory](docs/FEATURE-PARITY.md)
 - [Upstream audit](docs/research/upstream-audit.md)
 - [Target toolchain research](docs/research/target-toolchain.md)
 - [GitHub work tracker](https://github.com/TheApple05/TerraForged-26.2/issues)
 
-## First verified foundation
+## Original work and licensing
 
-The unchanged noise/math utilities pass **2,167 frozen upstream-derived records across four isolated Java 25 JVM runs**, including shuffled and parallel sampling. A mutation self-test confirms that a changed hash kernel is rejected. This covers four mathematical utility classes, not full terrain, chunk seams, or gameplay. See [the exact scope and commands](docs/validation/core-regression.md).
+This is a **new repository, not a GitHub fork**, private during initial development. It is not an official TerraForged release.
 
-With Python 3.9+ and a full Java 25 JDK selected in `JAVA_HOME`:
+- [TerraForged](https://github.com/TerraForged/TerraForged), the original mod and terrain engine.
+- [ReTerraForged](https://github.com/racoonman2/ReTerraForged), the subsequent modernization effort.
 
-```shell
-python tools/verify_core.py --self-test
-```
+The implementation baseline is ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1f164d19dbfcccaca4a8277d64e784207c`. Original TerraForged **1.16.5 / 0.2.16**, commit `3ada751ac25cd3eecee5d198870a3abb89734f52`, is the classic reference. [The audit](docs/research/upstream-audit.md) explains why newer experimental/stripped branches were not substituted. Seventeen classic custom biome variants and other inherited gaps remain explicitly inventoried; a complete classic restoration is not implied by the modern port.
 
-CI runs the same scoped checks on Linux and Windows. A passing kernel workflow does not mean the full 26.2 mod builds or runs.
-
-The complete source compiler pass succeeded with the pinned Java 25/Fabric toolchain. [Compiler evidence](docs/validation/target-build-2026-11-03-compile.json) and the prior failed inventories are retained. Additional checks passed for [density adapters](docs/validation/density-regression.md), exact [legacy vegetation RNG parity](docs/validation/legacy-patch-parity-2026-11-03.json), and [dimension data](docs/validation/dimension-data-2026-11-03.json).
-
-Packaged validation found and corrected a tile-cache deadlock and a slider event bug. The corrected Fabric package passes two fresh custom-world generation runs and a save/reload run with the normal watchdog. A sampled tree canopy differed between fresh runs at a chunk edge; broader checks are investigating decoration completion before claiming whole-world determinism. [Runtime evidence](docs/validation/runtime-summary.md) records the artifact hashes, failures, and exact scope.
-
-On Windows, `tools/gradle.ps1` selects Java 25 for this project without changing global Java settings:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/gradle.ps1 compileJava --console=plain
-python tools/diagnose_port.py --report build/qa/target/local.json
-```
-
-Experimental packaging requires `jar -PexperimentalPackage` for isolated runtime checks. It is not a release designation. See [the build layout and validation boundaries](docs/decisions/0001-build-layout.md).
-
-Research records distinguish observed behavior, proposed implementation, and untested assumptions. Never install an experimental build into an existing world you care about; validation uses isolated, disposable worlds.
+Imported code retains attribution and license notices. New history does not imply original authorship of upstream code. See [source provenance](docs/SOURCE-PROVENANCE.json) and [third-party notices](THIRD_PARTY_NOTICES.md). The root license is MIT, with the retained LGPL-2.1-only language-provider component and its license text included in both packages.

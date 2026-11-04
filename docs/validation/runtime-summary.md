@@ -1,26 +1,45 @@
 # Packaged runtime validation
 
-These results use isolated disposable Minecraft Java 26.2 installations, not a development launch. Dates in the project log use America/Los_Angeles; machine records retain UTC timestamps. No existing user worlds, launcher profiles, accounts, or global Java settings are changed.
+These records use disposable **non-development** Minecraft Java 26.2 installations on Windows with Java 25. Existing user worlds, launcher profiles, accounts and global Java settings were not changed. Machine records retain UTC timestamps; the development log uses America/Los_Angeles.
 
-## Fabric candidate
+## Current candidate: dev11
 
-The corrected candidate is `terraforged-revival-0.1.0-dev.2+26.2.jar`, SHA-256 `94471bb542a308982bfb29c7340ed14dbf3494922cfd9f935c5f32b0485e80bd`. It uses Java 25, Fabric Loader 0.20.1, and Fabric API 0.161.0+26.2. The separate QA companion is not included in the production JAR. This candidate predates the shared dual-loader service migration now in progress; later packages require fresh runtime checks.
+- **Fabric:** `terraforged-revival-0.1.0-dev.11+26.2.jar`, SHA-256 `9c72b55fe91202ba85bbfc1489eebc91b5a1a6b4412373130b73230659d792f0`. Loader 0.20.1, Fabric API 0.161.0+26.2.
+- **NeoForge:** `terraforged-revival-0.1.0-dev.11+26.2-neoforge.jar`, SHA-256 `7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845`. NeoForge 26.2.0.93.
 
-- [Initial production boot](server-2026-11-03-initial.json): the earlier dev.1 package loads, saves a vanilla world, and exits cleanly. This establishes loading only.
-- [Real preset export](server-2026-11-03-export.json): actual server registries export 1,934 files, including 1,933 JSON files and the custom preset. Three actual biome-decorator helper assertions pass.
-- [Corrected fresh run 1](server-2026-11-03-dev2-generation-1.json) and [fresh run 2](server-2026-11-03-dev2-generation-2.json): custom preset registry entry, `RTFRandomState`, `GeneratorContext`, and `TileCache` are present; six full chunks and 54 column/terrain samples are recorded. Seed 8675309. Workload times were 2,780 and 2,668 ms, excluding installation/startup. Both use the normal 60,000 ms watchdog, save with flush, and exit 0 without forced termination. These small workloads are not performance benchmarks.
-- [Save/reload](server-2026-11-03-dev2-reload.json): the first world reloads and matches its saved sample digest exactly, then saves and exits 0.
+[Coherent build evidence](dual-loader-dev11-build.json) records the full source sets, actual toolchains, unchanged before/after snapshots, exactly one loader provider, 277 translations, license notices and no packaged QA classes. Separate QA companions are never part of the production mod. [Installation instructions](../INSTALLATION.md) distinguish the two artifacts.
 
-The requested chunks are `(0,0)`, `(-1,-1)`, `(7,0)`, `(8,-1)`, `(-8,7)`, and `(-9,8)`. Both fresh runs agree on all sampled terrain cell fields and biomes. Their aggregate sample digests differ at one column, `(15,0)`: grass at Y75 in the first run versus birch leaves at Y84 in the second. The first run and its reload agree (`be2e05a712f87baebbd82265961f3682d47c57bef40172276fce26af3b9fd2d2`); the second fresh run has digest `5fab505bc818ab96a66e2a65d644e5671bcc9029f1922af372df694d8fc00db1`. Neighbor decoration timing is being investigated. This is not recorded as a passing fresh-world determinism check.
+## Client and world creation
 
-## Failures retained and corrected
+Both loader clients exercise the actual registered editor, real translated widgets, four Font/inner-width checks, eight slider updates, a 65,536-cell preview digest restored after resetting settings, the real Done callback, datapack export/reload and Create New World callback. They generate/render/save custom seed `123456789`, then load/render/save vanilla seed `8675309` in the same process with no custom context left behind.
 
-The [initial custom generation attempt](server-2026-11-03-generation-initial.json) hit the watchdog. An independent [thread-trace analysis](tile-cache-deadlock.md) identified a reentrant ForkJoin wait while `LazyCallable` held a non-reentrant lock. `CacheEntry` now waits on its already single-shot future without that lock. The [312-assertion regression](cache-reentry-2026-11-03.json) reproduces the original deadlock and passes for the correction. The successful normal-watchdog runs above use the corrected artifact. A successful watchdog-disabled diagnostic run remains recorded and is not used to excuse the failure.
+- [Fabric base workflow](client-dev11-full-flow.json) and [NeoForge base workflow](neoforge-client-dev11-fullflow.json).
+- [Fabric content-stack workflow](client-dev11-biomesoplenty-full-flow.json) and [NeoForge content-stack workflow](neoforge-client-modpack-dev11-fullflow.json).
+- Base custom/vanilla feature-sorter identity checks cover 2,702 / 2,587 references. The content stack covers 5,450 / 5,217 across 114 possible biomes. Native modifier assertions distinguish this preset's namespace from legitimate entries owned by other mods.
+- Exact installed JAR origin/hash, non-development mode, actual game/dependency versions, clean process exit and critical runtime error checks are recorded per run. Real Screenshot API PNGs are retained under `images/`.
 
-The migrated slider initially bypassed its superclass event handling. [Before](slider-before-fix.json) and [after](slider-reviewed.json) reports preserve the actual event regression; 29 assertions now cover click, drag, keyboard, callbacks, labels, and bounds.
+The stricter immediate-Done probe [reproduces a dev10 race](client-2026-11-04-dev10-post-done-before-fix.json): the parent Create World screen was visible while the applied preset was absent. Dev11 retains vanilla's loading screen until actual settings are ready; [decision 0015](../decisions/0015-preset-validation-screen-ownership.md) records the fix and acceptance gate. This is separate from the earlier tests that merely waited before trying to create a world.
 
-## Client and NeoForge gates
+## Dedicated servers and representative content stack
 
-The Fabric production client reached its native window with the actual package. Desktop capture then timed out twice, so that owned QA process was stopped deliberately; [the report](client-2026-11-03-dev2.json) records an aborted review rather than a game crash or a passing visual test. A separate companion now uses the actual game screenshot API to inspect real screens and terrain. See [capture limitation](client-capture-limitation.json).
+The pinned stack is Biomes O' Plenty **26.2.0.0.28 beta**, GlitchCore **26.2.0.0.0 beta**, and TerraBlender **26.2.0.0.2**, with matching loader builds. [Artifact metadata](modpack-biomesoplenty-26.2-artifacts.json) contains published hash verification, SHA-256 values, exact URLs and decisive in-JAR dependency declarations. BOP's JAR requires TerraBlender even where marketplace dependency lists omit it.
 
-NeoForge 26.2 is requested alongside Fabric. Its loader bindings and independent build are in progress. A Fabric result does not establish NeoForge support. No published release, third-party biome-mod compatibility, full classic parity, multiplayer validation, or user visual acceptance is claimed here.
+The [dev10 complete-stack checks](modpack-biomesoplenty-dev10.md) export 2,745 Fabric / 2,749 NeoForge files and consume each loader's own newly generated pack. All 68 registered BOP biome entries are written, 59 BOP biomes remain in the overworld source, and all 54 sampled columns contain actual BOP `overgrown_greens` or `prairie` biomes. Actual custom preset/context/tile-cache, corrected serializer identity, finite uniqueness, flushed save and clean exit pass. Each saved world's recorded digest matches its disk reload.
+
+[Exact dev11 dedicated checks](modpack-biomesoplenty-dev11-summary.json) repeat generation/reload with the new JAR hashes and qualified same-loader dev10 packs, checking every consumed file hash. [Class-byte comparison](dev10-dev11-class-comparison.json) proves only the client preset screen changed; all backend classes are identical. These are new dev11 server executions, not renamed dev10 results. The normal 60,000 ms watchdog stays enabled.
+
+The first real content stack exposed a TerraBlender registration defect that loading TerraBlender alone did not catch. [Decision 0014](../decisions/0014-terrablender-material-rule-codec.md) retains failed dev8 exports, a failed dev9 injection selector, exact bytecode diagnosis and the narrow successful registration-boundary correction. Original surface rules are preserved rather than stripped or silently skipped.
+
+## Terrain, concurrency and visual scope
+
+[Expanded Fabric boundary checks](server-stress-summary.md) finish 144 FULL chunks before sampling 576 columns. Raw terrain fields/classifications and biome observations agree across opposite request orders; each saved recorded digest survives reload. The corrected later [dev8 TerraBlender workload](server-2026-11-04-dev8-terrablender.json) and [reload](server-2026-11-04-dev8-terrablender-reload.json) also exercise 144 FULL chunks, finite actual sampler/target uniqueness and normal-watchdog saves. Workload times are observations, not controlled performance benchmarks.
+
+Complete post-feature block determinism is **not** established. Trees, coral, ores and dripstone vary with feature order, and an explicit vanilla-generator control also shows these interactions. [Content-stack cross-loader observations](modpack-biomesoplenty-dev10-cross-loader-observations.json) preserve the exact 54-column comparison: terrain fields/classifications agree, while some surface observations and one biome-at-observed-height ID differ. No cross-loader block/biome identity claim follows.
+
+The [bounded scene survey](client-dev9-scenes.json) searches 256 direct heightmap samples, then generates actual selected areas and verifies filtered mountain/river/coast classifications and rendered camera poses. [Mountain](images/client-dev9-scenes/08-mountain.png) and [river](images/client-dev9-scenes/09-river.png) views were inspected. The snowy coast view has weak shoreline framing, so clear coastline visual coverage remains unverified. These dev9 captures are labeled separately from final dev11 client evidence. No original-version visual comparison or user acceptance is claimed.
+
+## Retained failures and remaining gates
+
+The records include the original watchdog/cache self-deadlock, slider callback/precision defects, duplicate screen blur, lazy-holder preview race, stale Fabric feature sorting and cross-world modifier ownership. Focused regressions and actual corrected-package runs accompany each correction. Desktop capture failures and QA-driver/camera mistakes are explicitly separated from mod failures. See the development log and numbered decisions.
+
+Still open: full classic restoration (including 17 missing classic custom biome variants), every preset and control extreme, imported/invalid configuration diagnostics, original reference screenshots/user review, multiplayer, Linux game runtime, other biome/structure/performance/render mod combinations, controlled performance budgets, and existing classic-world migration. These experimental builds are a working modern port within the tested scope, not a stable release or universal modpack certification.

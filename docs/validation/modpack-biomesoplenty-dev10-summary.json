@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "checkedAtUtc": "2026-11-04T08:50:23.619953+00:00",
+  "minecraft": "26.2",
+  "java": "25.0.5",
+  "preset": "Actual legacy-default export generated with the complete same-loader stack",
+  "seed": 8675309,
+  "dependencies": "Pinned BOP26.2.0.0.28 beta, GlitchCore26.2.0.0.0 beta, TerraBlender26.2.0.0.2; FabricAPI0.161.0+26.2 onFabric",
+  "artifactManifest": "modpack-biomesoplenty-26.2-artifacts.json",
+  "stacks": [
+    {
+      "loader": "fabric",
+      "status": "passed",
+      "productionSha256": "6c698372e83d450464d56f896599f1b4cf7e838d5921a831e8a9b28256d663ae",
+      "reports": {
+        "export": "server-modpack-biomesoplenty-fabric-dev10-export.json",
+        "generation": "server-modpack-biomesoplenty-fabric-dev10-generation.json",
+        "reload": "server-modpack-biomesoplenty-fabric-dev10-reload.json"
+      },
+      "allThreeProcessesExitZero": true,
+      "allThreeNormalWatchdogMillis": 60000,
+      "allThreeProductionOriginAndShaVerified": true,
+      "actualMapCodecTypeAndIdentityVerified": true,
+      "finiteTerraBlenderUniquenessVerified": true,
+      "registeredBopBiomes": 68,
+      "overworldPossibleBopBiomes": 59,
+      "sampledFullChunks": 6,
+      "sampledColumns": 54,
+      "observedBopBiomes": {
+        "biomesoplenty:overgrown_greens": 35,
+        "biomesoplenty:prairie": 19
+      },
+      "reloadDigestMatches": true,
+      "generationAndReloadDigestSha256": "aae34f91f28ccfb39e038c809e9040da6efecde2699c1b7b4bd58d2ec572e815",
+      "ownStackExportConsumed": true,
+      "exportFileCount": 2745,
+      "consumedPackFileInventoryDigestSha256": "90dab66117175368cad899a61dd28f5595266fc7118f22388b05d0b58929b370",
+      "loadedBopClassCount": 1194,
+      "loadedBopClassExamples": [
+        "[info][class,load] biomesoplenty.fabric.core.BiomesOPlentyFabric source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T084518Z-16bf7b/mods/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+        "[info][class,load] biomesoplenty.core.BiomesOPlenty source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T084518Z-16bf7b/mods/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+        "[info][class,load] biomesoplenty.init.ModConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T084518Z-16bf7b/mods/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+        "[info][class,load] biomesoplenty.config.GenerationConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T084518Z-16bf7b/mods/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar"
+      ],
+      "generationElapsedMillis": 6109,
+      "reloadElapsedMillis": 1077,
+      "all68RegisteredBopBiomeEntriesWritten": true,
+      "portOrSerializationErrorLines": [],
+      "hostCounterDiagnostics": [
+        {
+          "mode": "export",
+          "lineCount": 1,
+          "classification": "Existing OSHI Windows Perflib English-counter lookup failure; no system registry edits were made"
+        },
+        {
+          "mode": "generation",
+          "lineCount": 1,
+          "classification": "Existing OSHI Windows Perflib English-counter lookup failure; no system registry edits were made"
+        },
+        {
+          "mode": "reload",
+          "lineCount": 1,
+          "classification": "Existing OSHI Windows Perflib English-counter lookup failure; no system registry edits were made"
+        }
+      ]
+    },
+    {
+      "loader": "neoforge",
+      "status": "passed",
+      "productionSha256": "87c45cfdc49e4e3b9427314aa0c58ad97e149cf852097741492768d9f40bfb9a",
+      "reports": {
+        "export": "modpack-biomesoplenty-neoforge-dev10-export.json",
+        "generation": "modpack-biomesoplenty-neoforge-dev10-generation.json",
+        "reload": "modpack-biomesoplenty-neoforge-dev10-reload.json"
+      },
+      "allThreeProcessesExitZero": true,
+      "allThreeNormalWatchdogMillis": 60000,
+      "allThreeProductionOriginAndShaVerified": true,
+      "actualMapCodecTypeAndIdentityVerified": true,
+      "finiteTerraBlenderUniquenessVerified": true,
+      "registeredBopBiomes": 68,
+      "overworldPossibleBopBiomes": 59,
+      "sampledFullChunks": 6,
+      "sampledColumns": 54,
+      "observedBopBiomes": {
+        "biomesoplenty:overgrown_greens": 36,
+        "biomesoplenty:prairie": 18
+      },
+      "reloadDigestMatches": true,
+      "generationAndReloadDigestSha256": "7356e2badb0d1cc9b2e2a460f15759b9af3571c47dccee526a78be0afb80453c",
+      "ownStackExportConsumed": true,
+      "exportFileCount": 2749,
+      "consumedPackFileInventoryDigestSha256": "0c58bca0cb8ed5054c9565b4d978b576944ab40b060f0aef75a6c32424fabce3",
+      "loadedBopClassCount": 1217,
+      "loadedBopClassExamples": [
+        "[info][class,load] biomesoplenty.neoforge.core.BiomesOPlentyNeoForge source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T084518Z-5cccb8/mods/BiomesOPlenty-neoforge-26.2-26.2.0.0.28.jar",
+        "[info][class,load] biomesoplenty.neoforge.core.BiomesOPlentyNeoForge$$Lambda/0x000000003be09d80 source: biomesoplenty.neoforge.core.BiomesOPlentyNeoForge",
+        "[info][class,load] biomesoplenty.neoforge.core.BiomesOPlentyNeoForge$$Lambda/0x000000003be105b8 source: biomesoplenty.neoforge.core.BiomesOPlentyNeoForge",
+        "[info][class,load] biomesoplenty.core.BiomesOPlenty source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/neoforge-server/instances/20261104T084518Z-5cccb8/mods/BiomesOPlenty-neoforge-26.2-26.2.0.0.28.jar"
+      ],
+      "generationElapsedMillis": 5553,
+      "reloadElapsedMillis": 1123,
+      "all68RegisteredBopBiomeEntriesWritten": true,
+      "portOrSerializationErrorLines": [],
+      "hostCounterDiagnostics": [
+        {
+          "mode": "export",
+          "lineCount": 1,
+          "classification": "Existing OSHI Windows Perflib English-counter lookup failure; no system registry edits were made"
+        },
+        {
+          "mode": "generation",
+          "lineCount": 1,
+          "classification": "Existing OSHI Windows Perflib English-counter lookup failure; no system registry edits were made"
+        },
+        {
+          "mode": "reload",
+          "lineCount": 1,
+          "classification": "Existing OSHI Windows Perflib English-counter lookup failure; no system registry edits were made"
+        }
+      ]
+    }
+  ],
+  "failedEarlierRunsRetained": [
+    "server-modpack-biomesoplenty-fabric-dev8-export.json",
+    "modpack-biomesoplenty-neoforge-dev8-export.json",
+    "server-modpack-biomesoplenty-fabric-dev9-export.json",
+    "modpack-biomesoplenty-neoforge-dev9-export.json"
+  ],
+  "limits": [
+    "Only this pinned content-mod stack, one seed and legacy-default preset",
+    "68biomes registered and59overworldpossible, but only overgrown_greens/prairie actually sampled",
+    "No claim every biome is reachable or all modpacks compatible",
+    "Cross-loader full block/biome parity not claimed; see separate observation comparison",
+    "No content-stack client rendering, multiplayer clients, long exploration, or performance benchmark",
+    "Downloaded third-party mod JARs and exported resources remain ignored QA artifacts"
+  ],
+  "pendingRuns": []
+}

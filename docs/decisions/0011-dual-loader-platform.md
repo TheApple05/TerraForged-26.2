@@ -18,9 +18,11 @@ NeoForge registers the editor with `RegisterPresetEditorsEvent`. Its chunk tile 
 
 ## Evidence and limits
 
-- The dev5 Fabric and NeoForge packages compile with no source exclusions. NeoForge compiles 382 common and 8 loader-specific Java files; Fabric compiles the same common files with its own bindings.
+- The dev8 Fabric and NeoForge packages compile with no source exclusions. NeoForge compiles 382 common and 8 loader-specific Java files; Fabric compiles the same common files with its own bindings (397 Java files total).
 - The exact NeoForge dev5 JAR passed an isolated **production** loader boot, vanilla-world save and clean stop with exit 0. The report records the installed JAR hash and observed production class origin: [`neoforge-dev5-first-boot.json`](../validation/neoforge-dev5-first-boot.json).
-- Package hashes, metadata and class counts are recorded in [`dual-loader-dev5-build.json`](../validation/dual-loader-dev5-build.json).
+- Current package hashes, metadata, class counts and unchanged source snapshots are recorded in [`dual-loader-dev8-build.json`](../validation/dual-loader-dev8-build.json). Earlier candidate reports are retained.
+- The exact NeoForge dev8 package passed custom server generation, save and reload with matching sample digests: [`neoforge-dev8-generation.json`](../validation/neoforge-dev8-generation.json), [`neoforge-dev8-reload.json`](../validation/neoforge-dev8-reload.json).
+- The same package passed the real client editor, font-fit checks, new custom-world creation and rendering, then a vanilla world in the same process with no TerraForged context. All seven game-rendered screenshots were inspected: [`neoforge-client-dev8-fullflow.json`](../validation/neoforge-client-dev8-fullflow.json).
 - Vanilla startup is not proof of custom generation, client editor behavior, TerraBlender compatibility or arbitrary modpack compatibility. Those require separate runtime reports.
 - Loader-native biome modifier paths differ intentionally. Export presets through the loader that will consume them; cross-loader exported-pack migration is not yet validated.
 

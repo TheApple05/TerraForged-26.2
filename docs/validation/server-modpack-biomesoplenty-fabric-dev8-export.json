@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-04T08:28:09.357468+00:00",
+  "result": "failed-runtime",
+  "stage": "runtime",
+  "runtimeExecuted": true,
+  "javaVersionOutput": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)",
+  "installation": {
+    "template": "build/qa/server/template-mc26.2-loader0.20.1",
+    "installer": {
+      "version": "1.1.2",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.2/fabric-installer-1.1.2.jar",
+      "sha256": "61e035bf7bf70153e127440ce34de47c9036f0a2d0c65d1529454bd35ceefe4f",
+      "matchesPublished": true
+    },
+    "fabricApi": {
+      "version": "0.161.0+26.2",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.161.0+26.2/fabric-api-0.161.0+26.2.jar",
+      "sha256": "e5b858ceb13290c274e31cb888ff5a1a40cb91067e7ffab0b5b775aec51e216a",
+      "matchesPublished": true,
+      "path": "build/qa/server/downloads/fabric-api-0.161.0+26.2.jar"
+    },
+    "minecraft": {
+      "version": "26.2",
+      "metadataUrl": "https://piston-meta.mojang.com/v1/packages/09165f570b16394790c4e37c93b0918729615d17/26.2.json",
+      "serverSha1": "823e2250d24b3ddac457a60c92a6a941943fcd6a",
+      "serverSha256": "cdacdfb25898de5e4b4b0e5ddcc2722f77067e46605709c2d886c000ebb63ec5"
+    },
+    "loader": "0.20.1",
+    "launcherSha256": "121ae339b9b903aaf4fb7b3903fbb5c1e37246ebe14786c2109a2a1eb29e32bc"
+  },
+  "instance": "build/qa/server/instances/20261104T082810Z-b70903",
+  "artifact": {
+    "name": "terraforged-revival-0.1.0-dev.8+26.2.jar",
+    "id": "reterraforged",
+    "version": "0.1.0-dev.8+26.2",
+    "sha256": "ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585"
+  },
+  "extraMods": [
+    {
+      "name": "terraforged-runtime-qa.jar",
+      "id": "terraforged_runtime_qa",
+      "version": "0.1.0",
+      "sha256": "440e010ca82fde8222c39bcd6ff1cb54698348bdc5a7b5763ac8bd2ceef2a419"
+    },
+    {
+      "name": "TerraBlender-fabric-26.2-26.2.0.0.2.jar",
+      "id": "terrablender",
+      "version": "26.2.0.0.2",
+      "sha256": "72b64ba3eacf0d6956706467c952abb58f364beac9f6be896fb67d14621b2bf7"
+    },
+    {
+      "name": "BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+      "id": "biomesoplenty",
+      "version": "26.2.0.0.28",
+      "sha256": "e3a5571eb77225e800f8fc4334d452904705e945c26767bfb091f42889ae14b4"
+    },
+    {
+      "name": "GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+      "id": "glitchcore",
+      "version": "26.2.0.0.0",
+      "sha256": "f6c31bd291d1d19322dd0a7ec344df2c88e2d516d1985f09ffe50ef33a34afdc"
+    }
+  ],
+  "serverProperties": {
+    "server-ip": "127.0.0.1",
+    "server-port": 58089,
+    "online-mode": "false",
+    "enable-query": "false",
+    "enable-rcon": "false",
+    "level-name": "qa-world",
+    "level-seed": 8675309,
+    "level-type": "minecraft:normal",
+    "spawn-protection": 0,
+    "view-distance": 2,
+    "simulation-distance": 2,
+    "max-players": 1,
+    "sync-chunk-writes": "true",
+    "pause-when-empty-seconds": -1,
+    "max-tick-time": 60000,
+    "motd": "TerraForged isolated production QA"
+  },
+  "bindAddress": "127.0.0.1",
+  "port": 58089,
+  "developmentMode": false,
+  "qaMode": "export",
+  "qaOutput": "build/qa/server/instances/20261104T082810Z-b70903/qa-output",
+  "rawLog": "build/qa/server/instances/20261104T082810Z-b70903/qa-runs/20261104T082810Z-8e10/stdout.log",
+  "classLoadLog": "build/qa/server/instances/20261104T082810Z-b70903/qa-runs/20261104T082810Z-8e10/class-load.log",
+  "customTerrainValidated": false,
+  "featureParityValidated": false,
+  "pid": 53060,
+  "serverReady": true,
+  "saveObserved": false,
+  "stopSent": false,
+  "companionServerStartedObserved": true,
+  "companionSaveCompleted": true,
+  "companionCleanStopObserved": true,
+  "processExitCode": 0,
+  "forcedStop": false,
+  "targetGameAndLoaderObserved": true,
+  "serverVersionObserved": true,
+  "artifactUnchanged": true,
+  "packagedArtifactOriginObserved": true,
+  "loadedModClassCount": 284,
+  "loadedModClassOrigins": [
+    {
+      "class": "raccoonman.reterraforged.mixin.plugin.MixinPlugin",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.terrablender.TBCompat",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.ModLoaderUtil",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.PlatformServices",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.PlatformServices$ProviderHolder",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.FabricPlatformServices",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.ModLoaderUtilImpl",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.RTFCommon",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.mixin.BiomeTemperatureInvoker",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.mixin.MixinBiomeGenerationSettings",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.server.RTFMinecraftServer",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.fabric.RTFFabric",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.registries.RTFBuiltInRegistries",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.registries.RTFRegistries",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.RegistryUtil",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.platform.fabric.RegistryUtilImpl",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacements",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.AnyPlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.template.TemplateContext",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.placement.TreePlacement",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TemplateDecorators",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TemplateDecorator",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.template.decorator.TreeDecorator",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.RTFChanceModifiers",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.ChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.RangeChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.ElevationChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.chance.BiomeEdgeChanceModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.RTFPlacementModifiers",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.BlacklistDimensionFilter",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.poisson.FastPoissonModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.noise.module.Noise",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.feature.placement.LegacyCountExtraModifier",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.RTFDensityFunctions",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.MarkerFunction",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction$Marker",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.MarkerFunction$Mapped",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    },
+    {
+      "class": "raccoonman.reterraforged.world.worldgen.noise.module.Noises",
+      "source": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T082810Z-b70903/mods/terraforged-revival-0.1.0-dev.8+26.2.jar"
+    }
+  ],
+  "qaResult": {
+    "schemaVersion": 1,
+    "mode": "export",
+    "startedAt": "2026-11-04T08:28:33.079242800Z",
+    "serverStarted": true,
+    "saveCompleted": false,
+    "status": "failed",
+    "nodes": [
+      {
+        "detail": "Packaged origin and runtime recorded",
+        "at": "2026-11-04T08:28:33.083243100Z",
+        "name": "production-artifact",
+        "status": "passed"
+      },
+      {
+        "detail": "68 actual registered biomes; 59 in overworld possible-biome set (not proof all are reachable)",
+        "at": "2026-11-04T08:28:33.087243400Z",
+        "name": "biomesoplenty-registered-biomes",
+        "status": "passed"
+      },
+      {
+        "detail": "java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -> KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}",
+        "at": "2026-11-04T08:28:33.671943500Z",
+        "name": "callback",
+        "status": "failed"
+      }
+    ],
+    "notTested": [
+      "Visual parity",
+      "All presets and configuration extremes",
+      "All biomes or structures",
+      "Multiplayer clients",
+      "Third-party mod combinations",
+      "Performance benchmark"
+    ],
+    "runtime": {
+      "minecraft": "26.2",
+      "java": "25.0.5",
+      "javaClassVersion": "69.0",
+      "developmentEnvironment": false,
+      "loader": "0.20.1",
+      "modVersion": "0.1.0-dev.8+26.2",
+      "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T082810Z-b70903\\mods\\terraforged-revival-0.1.0-dev.8+26.2.jar",
+      "modSha256": "ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585",
+      "expectedModSha256": "ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585",
+      "loaderModOrigins": [
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T082810Z-b70903\\mods\\terraforged-revival-0.1.0-dev.8+26.2.jar"
+      ]
+    },
+    "biomeContentMod": {
+      "modId": "biomesoplenty",
+      "registeredBiomeIds": [
+        "biomesoplenty:auroral_garden",
+        "biomesoplenty:bayou",
+        "biomesoplenty:bog",
+        "biomesoplenty:cold_desert",
+        "biomesoplenty:coniferous_forest",
+        "biomesoplenty:crag",
+        "biomesoplenty:crystalline_chasm",
+        "biomesoplenty:dead_forest",
+        "biomesoplenty:dryland",
+        "biomesoplenty:dune_beach",
+        "biomesoplenty:end_corruption",
+        "biomesoplenty:end_flats",
+        "biomesoplenty:end_reef",
+        "biomesoplenty:end_wilds",
+        "biomesoplenty:erupting_inferno",
+        "biomesoplenty:field",
+        "biomesoplenty:fir_clearing",
+        "biomesoplenty:floodplain",
+        "biomesoplenty:forested_field",
+        "biomesoplenty:fungal_jungle",
+        "biomesoplenty:glowing_grotto",
+        "biomesoplenty:gravel_beach",
+        "biomesoplenty:highland",
+        "biomesoplenty:hot_springs",
+        "biomesoplenty:jade_cliffs",
+        "biomesoplenty:lavender_field",
+        "biomesoplenty:lush_desert",
+        "biomesoplenty:lush_savanna",
+        "biomesoplenty:maple_woods",
+        "biomesoplenty:marsh",
+        "biomesoplenty:mediterranean_forest",
+        "biomesoplenty:moor",
+        "biomesoplenty:muskeg",
+        "biomesoplenty:mystic_grove",
+        "biomesoplenty:old_growth_dead_forest",
+        "biomesoplenty:old_growth_woodland",
+        "biomesoplenty:ominous_woods",
+        "biomesoplenty:orchard",
+        "biomesoplenty:origin_valley",
+        "biomesoplenty:overgrown_greens",
+        "biomesoplenty:pasture",
+        "biomesoplenty:prairie",
+        "biomesoplenty:pumpkin_patch",
+        "biomesoplenty:rainforest",
+        "biomesoplenty:redwood_forest",
+        "biomesoplenty:rocky_rainforest",
+        "biomesoplenty:rocky_shrubland",
+        "biomesoplenty:scrubland",
+        "biomesoplenty:seasonal_forest",
+        "biomesoplenty:shrubland",
+        "biomesoplenty:snowblossom_grove",
+        "biomesoplenty:snowy_coniferous_forest",
+        "biomesoplenty:snowy_fir_clearing",
+        "biomesoplenty:snowy_maple_woods",
+        "biomesoplenty:spider_nest",
+        "biomesoplenty:subtropics",
+        "biomesoplenty:tropics",
+        "biomesoplenty:tundra",
+        "biomesoplenty:undergrowth",
+        "biomesoplenty:visceral_heap",
+        "biomesoplenty:volcanic_plains",
+        "biomesoplenty:volcano",
+        "biomesoplenty:wasteland",
+        "biomesoplenty:wasteland_steppe",
+        "biomesoplenty:wetland",
+        "biomesoplenty:wintry_origin_valley",
+        "biomesoplenty:withered_abyss",
+        "biomesoplenty:woodland"
+      ],
+      "everyBiomeReachableOrGenerated": false,
+      "overworldPossibleBiomeIds": [
+        "biomesoplenty:auroral_garden",
+        "biomesoplenty:bayou",
+        "biomesoplenty:bog",
+        "biomesoplenty:cold_desert",
+        "biomesoplenty:coniferous_forest",
+        "biomesoplenty:crag",
+        "biomesoplenty:dead_forest",
+        "biomesoplenty:dryland",
+        "biomesoplenty:dune_beach",
+        "biomesoplenty:field",
+        "biomesoplenty:fir_clearing",
+        "biomesoplenty:floodplain",
+        "biomesoplenty:forested_field",
+        "biomesoplenty:fungal_jungle",
+        "biomesoplenty:glowing_grotto",
+        "biomesoplenty:gravel_beach",
+        "biomesoplenty:highland",
+        "biomesoplenty:hot_springs",
+        "biomesoplenty:jade_cliffs",
+        "biomesoplenty:lavender_field",
+        "biomesoplenty:lush_desert",
+        "biomesoplenty:lush_savanna",
+        "biomesoplenty:maple_woods",
+        "biomesoplenty:marsh",
+        "biomesoplenty:mediterranean_forest",
+        "biomesoplenty:moor",
+        "biomesoplenty:muskeg",
+        "biomesoplenty:mystic_grove",
+        "biomesoplenty:old_growth_dead_forest",
+        "biomesoplenty:old_growth_woodland",
+        "biomesoplenty:ominous_woods",
+        "biomesoplenty:orchard",
+        "biomesoplenty:origin_valley",
+        "biomesoplenty:overgrown_greens",
+        "biomesoplenty:pasture",
+        "biomesoplenty:prairie",
+        "biomesoplenty:pumpkin_patch",
+        "biomesoplenty:rainforest",
+        "biomesoplenty:redwood_forest",
+        "biomesoplenty:rocky_rainforest",
+        "biomesoplenty:rocky_shrubland",
+        "biomesoplenty:scrubland",
+        "biomesoplenty:seasonal_forest",
+        "biomesoplenty:shrubland",
+        "biomesoplenty:snowblossom_grove",
+        "biomesoplenty:snowy_coniferous_forest",
+        "biomesoplenty:snowy_fir_clearing",
+        "biomesoplenty:snowy_maple_woods",
+        "biomesoplenty:spider_nest",
+        "biomesoplenty:subtropics",
+        "biomesoplenty:tropics",
+        "biomesoplenty:tundra",
+        "biomesoplenty:volcanic_plains",
+        "biomesoplenty:volcano",
+        "biomesoplenty:wasteland",
+        "biomesoplenty:wasteland_steppe",
+        "biomesoplenty:wetland",
+        "biomesoplenty:wintry_origin_valley",
+        "biomesoplenty:woodland"
+      ],
+      "overworldPossibleBiomeCount": 59,
+      "registeredBiomeCount": 68
+    },
+    "export": {
+      "presetPack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T082810Z-b70903\\qa-output\\presetpack",
+      "cache": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T082810Z-b70903\\qa-output\\cache-export-b8bf3641-3d14-4be5-865e-ede162a2bd26",
+      "fileCount": 1001,
+      "jsonFileCount": 1001
+    },
+    "error": {
+      "type": "java.util.concurrent.CompletionException",
+      "stackTrace": "java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -> KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\r\n\tat java.base/java.util.concurrent.CompletableFuture.wrapInCompletionException(CompletableFuture.java:323)\r\n\tat java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:359)\r\n\tat java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:364)\r\n\tat java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1180)\r\n\tat java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:531)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1794)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)\r\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)\r\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)\r\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)\r\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)\r\nCaused by: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -> KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\r\n\tat knot//net.minecraft.core.Cloner.lambda$clone$0(Cloner.java:23)\r\n\tat knot//com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287)\r\n\tat knot//net.minecraft.core.Cloner.clone(Cloner.java:23)\r\n\tat knot//net.minecraft.core.RegistrySetBuilder.lambda$createLazyFullPatchedRegistries$5(RegistrySetBuilder.java:387)\r\n\tat knot//net.minecraft.core.RegistrySetBuilder$LazyHolder.value(RegistrySetBuilder.java:47)\r\n\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$dumpRegistryCap$1(DataGenUtilImpl.java:60)\r\n\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)\r\n\tat java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1788)\r\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)\r\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)\r\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:635)\r\n\tat java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:291)\r\n\tat java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:652)\r\n\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$dumpRegistryCap$0(DataGenUtilImpl.java:61)\r\n\tat java.base/java.util.Optional.map(Optional.java:260)\r\n\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.dumpRegistryCap(DataGenUtilImpl.java:56)\r\n\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$run$1(DataGenUtilImpl.java:49)\r\n\tat java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:288)\r\n\tat java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)\r\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)\r\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)\r\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:635)\r\n\tat java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:291)\r\n\tat java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:652)\r\n\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$run$0(DataGenUtilImpl.java:49)\r\n\tat java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1171)\r\n\t... 7 more\r\n",
+      "message": "java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -> KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}"
+    },
+    "finishedAt": "2026-11-04T08:28:33.672946300Z",
+    "cleanStopRequested": true
+  },
+  "customTerrainSampleCount": 0,
+  "customTerrainChunkCount": 0,
+  "worldLevelDatExists": true,
+  "regionFileCount": 0,
+  "errorLines": [
+    "[00:28:20] [main/ERROR]: Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+    "[00:28:33] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_RESULT_JSON={\"schemaVersion\":1,\"mode\":\"export\",\"startedAt\":\"2026-11-04T08:28:33.079242800Z\",\"serverStarted\":true,\"saveCompleted\":false,\"status\":\"failed\",\"nodes\":[{\"detail\":\"Packaged origin and runtime recorded\",\"at\":\"2026-11-04T08:28:33.083243100Z\",\"name\":\"production-artifact\",\"status\":\"passed\"},{\"detail\":\"68 actual registered biomes; 59 in overworld possible-biome set (not proof all are reachable)\",\"at\":\"2026-11-04T08:28:33.087243400Z\",\"name\":\"biomesoplenty-registered-biomes\",\"status\":\"passed\"},{\"detail\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -\\u003e KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\",\"at\":\"2026-11-04T08:28:33.671943500Z\",\"name\":\"callback\",\"status\":\"failed\"}],\"notTested\":[\"Visual parity\",\"All presets and configuration extremes\",\"All biomes or structures\",\"Multiplayer clients\",\"Third-party mod combinations\",\"Performance benchmark\"],\"runtime\":{\"minecraft\":\"26.2\",\"java\":\"25.0.5\",\"javaClassVersion\":\"69.0\",\"developmentEnvironment\":false,\"loader\":\"0.20.1\",\"modVersion\":\"0.1.0-dev.8+26.2\",\"modClassOrigin\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\server\\\\instances\\\\20261104T082810Z-b70903\\\\mods\\\\terraforged-revival-0.1.0-dev.8+26.2.jar\",\"modSha256\":\"ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585\",\"expectedModSha256\":\"ec4cb94cf0dd3da55ca543bfee6eb145a61bb3310b02db7cc08d29f2f58d8585\",\"loaderModOrigins\":[\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\server\\\\instances\\\\20261104T082810Z-b70903\\\\mods\\\\terraforged-revival-0.1.0-dev.8+26.2.jar\"]},\"biomeContentMod\":{\"modId\":\"biomesoplenty\",\"registeredBiomeIds\":[\"biomesoplenty:auroral_garden\",\"biomesoplenty:bayou\",\"biomesoplenty:bog\",\"biomesoplenty:cold_desert\",\"biomesoplenty:coniferous_forest\",\"biomesoplenty:crag\",\"biomesoplenty:crystalline_chasm\",\"biomesoplenty:dead_forest\",\"biomesoplenty:dryland\",\"biomesoplenty:dune_beach\",\"biomesoplenty:end_corruption\",\"biomesoplenty:end_flats\",\"biomesoplenty:end_reef\",\"biomesoplenty:end_wilds\",\"biomesoplenty:erupting_inferno\",\"biomesoplenty:field\",\"biomesoplenty:fir_clearing\",\"biomesoplenty:floodplain\",\"biomesoplenty:forested_field\",\"biomesoplenty:fungal_jungle\",\"biomesoplenty:glowing_grotto\",\"biomesoplenty:gravel_beach\",\"biomesoplenty:highland\",\"biomesoplenty:hot_springs\",\"biomesoplenty:jade_cliffs\",\"biomesoplenty:lavender_field\",\"biomesoplenty:lush_desert\",\"biomesoplenty:lush_savanna\",\"biomesoplenty:maple_woods\",\"biomesoplenty:marsh\",\"biomesoplenty:mediterranean_forest\",\"biomesoplenty:moor\",\"biomesoplenty:muskeg\",\"biomesoplenty:mystic_grove\",\"biomesoplenty:old_growth_dead_forest\",\"biomesoplenty:old_growth_woodland\",\"biomesoplenty:ominous_woods\",\"biomesoplenty:orchard\",\"biomesoplenty:origin_valley\",\"biomesoplenty:overgrown_greens\",\"biomesoplenty:pasture\",\"biomesoplenty:prairie\",\"biomesoplenty:pumpkin_patch\",\"biomesoplenty:rainforest\",\"biomesoplenty:redwood_forest\",\"biomesoplenty:rocky_rainforest\",\"biomesoplenty:rocky_shrubland\",\"biomesoplenty:scrubland\",\"biomesoplenty:seasonal_forest\",\"biomesoplenty:shrubland\",\"biomesoplenty:snowblossom_grove\",\"biomesoplenty:snowy_coniferous_forest\",\"biomesoplenty:snowy_fir_clearing\",\"biomesoplenty:snowy_maple_woods\",\"biomesoplenty:spider_nest\",\"biomesoplenty:subtropics\",\"biomesoplenty:tropics\",\"biomesoplenty:tundra\",\"biomesoplenty:undergrowth\",\"biomesoplenty:visceral_heap\",\"biomesoplenty:volcanic_plains\",\"biomesoplenty:volcano\",\"biomesoplenty:wasteland\",\"biomesoplenty:wasteland_steppe\",\"biomesoplenty:wetland\",\"biomesoplenty:wintry_origin_valley\",\"biomesoplenty:withered_abyss\",\"biomesoplenty:woodland\"],\"everyBiomeReachableOrGenerated\":false,\"overworldPossibleBiomeIds\":[\"biomesoplenty:auroral_garden\",\"biomesoplenty:bayou\",\"biomesoplenty:bog\",\"biomesoplenty:cold_desert\",\"biomesoplenty:coniferous_forest\",\"biomesoplenty:crag\",\"biomesoplenty:dead_forest\",\"biomesoplenty:dryland\",\"biomesoplenty:dune_beach\",\"biomesoplenty:field\",\"biomesoplenty:fir_clearing\",\"biomesoplenty:floodplain\",\"biomesoplenty:forested_field\",\"biomesoplenty:fungal_jungle\",\"biomesoplenty:glowing_grotto\",\"biomesoplenty:gravel_beach\",\"biomesoplenty:highland\",\"biomesoplenty:hot_springs\",\"biomesoplenty:jade_cliffs\",\"biomesoplenty:lavender_field\",\"biomesoplenty:lush_desert\",\"biomesoplenty:lush_savanna\",\"biomesoplenty:maple_woods\",\"biomesoplenty:marsh\",\"biomesoplenty:mediterranean_forest\",\"biomesoplenty:moor\",\"biomesoplenty:muskeg\",\"biomesoplenty:mystic_grove\",\"biomesoplenty:old_growth_dead_forest\",\"biomesoplenty:old_growth_woodland\",\"biomesoplenty:ominous_woods\",\"biomesoplenty:orchard\",\"biomesoplenty:origin_valley\",\"biomesoplenty:overgrown_greens\",\"biomesoplenty:pasture\",\"biomesoplenty:prairie\",\"biomesoplenty:pumpkin_patch\",\"biomesoplenty:rainforest\",\"biomesoplenty:redwood_forest\",\"biomesoplenty:rocky_rainforest\",\"biomesoplenty:rocky_shrubland\",\"biomesoplenty:scrubland\",\"biomesoplenty:seasonal_forest\",\"biomesoplenty:shrubland\",\"biomesoplenty:snowblossom_grove\",\"biomesoplenty:snowy_coniferous_forest\",\"biomesoplenty:snowy_fir_clearing\",\"biomesoplenty:snowy_maple_woods\",\"biomesoplenty:spider_nest\",\"biomesoplenty:subtropics\",\"biomesoplenty:tropics\",\"biomesoplenty:tundra\",\"biomesoplenty:volcanic_plains\",\"biomesoplenty:volcano\",\"biomesoplenty:wasteland\",\"biomesoplenty:wasteland_steppe\",\"biomesoplenty:wetland\",\"biomesoplenty:wintry_origin_valley\",\"biomesoplenty:woodland\"],\"overworldPossibleBiomeCount\":59,\"registeredBiomeCount\":68},\"export\":{\"presetPack\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\server\\\\instances\\\\20261104T082810Z-b70903\\\\qa-output\\\\presetpack\",\"cache\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\server\\\\instances\\\\20261104T082810Z-b70903\\\\qa-output\\\\cache-export-b8bf3641-3d14-4be5-865e-ede162a2bd26\",\"fileCount\":1001,\"jsonFileCount\":1001},\"error\":{\"type\":\"java.util.concurrent.CompletionException\",\"stackTrace\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -\\u003e KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.wrapInCompletionException(CompletableFuture.java:323)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:359)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:364)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1180)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:531)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1794)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)\\r\\nCaused by: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -\\u003e KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\\r\\n\\tat knot//net.minecraft.core.Cloner.lambda$clone$0(Cloner.java:23)\\r\\n\\tat knot//com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287)\\r\\n\\tat knot//net.minecraft.core.Cloner.clone(Cloner.java:23)\\r\\n\\tat knot//net.minecraft.core.RegistrySetBuilder.lambda$createLazyFullPatchedRegistries$5(RegistrySetBuilder.java:387)\\r\\n\\tat knot//net.minecraft.core.RegistrySetBuilder$LazyHolder.value(RegistrySetBuilder.java:47)\\r\\n\\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$dumpRegistryCap$1(DataGenUtilImpl.java:60)\\r\\n\\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)\\r\\n\\tat java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1788)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:635)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:291)\\r\\n\\tat java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:652)\\r\\n\\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$dumpRegistryCap$0(DataGenUtilImpl.java:61)\\r\\n\\tat java.base/java.util.Optional.map(Optional.java:260)\\r\\n\\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.dumpRegistryCap(DataGenUtilImpl.java:56)\\r\\n\\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$run$1(DataGenUtilImpl.java:49)\\r\\n\\tat java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:288)\\r\\n\\tat java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:635)\\r\\n\\tat java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:291)\\r\\n\\tat java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:652)\\r\\n\\tat knot//raccoonman.reterraforged.platform.fabric.DataGenUtilImpl$Provider.lambda$run$0(DataGenUtilImpl.java:49)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1171)\\r\\n\\t... 7 more\\r\\n\",\"message\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -\\u003e KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\"},\"finishedAt\":\"2026-11-04T08:28:33.672946300Z\",\"cleanStopRequested\":true}"
+  ],
+  "tail": [
+    "[00:28:28] [Server thread/INFO]: Default game type: SURVIVAL",
+    "[00:28:28] [Server thread/INFO]: Generating keypair",
+    "[00:28:28] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:58089",
+    "[00:28:28] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[00:28:28] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+    "[00:28:28] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[00:28:28] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[00:28:28] [Server thread/INFO]: Preparing level \"qa-world\"",
+    "[00:28:29] [Server thread/INFO]: Selecting global world spawn...",
+    "[00:28:32] [Server thread/INFO]: Loading 0 persistent chunks...",
+    "[00:28:32] [Server thread/INFO]: Preparing spawn area: 100%",
+    "[00:28:32] [Server thread/INFO]: Time elapsed: 3697 ms",
+    "[00:28:32] [Server thread/INFO]: Done (3.995s)! For help, type \"help\"",
+    "[00:28:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[00:28:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[00:28:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[00:28:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[00:28:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[00:28:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[00:28:33] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[00:28:33] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"detail\":\"Packaged origin and runtime recorded\",\"at\":\"2026-11-04T08:28:33.083243100Z\",\"name\":\"production-artifact\",\"status\":\"passed\"}",
+    "[00:28:33] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"detail\":\"68 actual registered biomes; 59 in overworld possible-biome set (not proof all are reachable)\",\"at\":\"2026-11-04T08:28:33.087243400Z\",\"name\":\"biomesoplenty-registered-biomes\",\"status\":\"passed\"}",
+    "[00:28:33] [Server thread/INFO]: Starting provider: vanilla/Registries",
+    "[00:28:33] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_NODE_JSON={\"detail\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -\\u003e KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\",\"at\":\"2026-11-04T08:28:33.671943500Z\",\"name\":\"callback\",\"status\":\"failed\"}",
+    "[00:28:33] [Server thread/INFO]: [STDOUT]: TERRAFORGED_QA_RESULT_JSON={\"schemaVersion\":1,\"mode\":\"export\",\"startedAt\":\"2026-11-04T08:28:33.079242800Z\",\"serverStarted\":true,\"saveCompleted\":false,\"status\":\"failed\",\"nodes\":[{\"detail\":\"Packaged origin and runtime recorded\",\"at\":\"2026-11-04T08:28:33.083243100Z\",\"name\":\"production-artifact\",\"status\":\"passed\"},{\"detail\":\"68 actual registered biomes; 59 in overworld possible-biome set (not proof all are reachable)\",\"at\":\"2026-11-04T08:28:33.087243400Z\",\"name\":\"biomesoplenty-registered-biomes\",\"status\":\"passed\"},{\"detail\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Failed to encode: Unregistered holder in ResourceKey[minecraft:root / minecraft:worldgen/material_rule]: Direct{RecordCodec[UnitDecoder[terrablender.worldgen.surface.NamespacedSurfaceRuleSource$$Lambda/0x0000000024c82248@70237463] * Field[base: KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]] * Field[sources: UnboundedMapCodec[String -\\u003e KeyDispatchCodec[Field[type: String[comapFlatMapped][comapFlatMapped][mapResult WithLifecycle[net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4 net.minecraft.core.Registry$$Lambda/0x00000000244bc038@6ec585f4]][flatComapMapped]] java.util.function.Function$$Lambda/0x000000002434c5b8@24a0a2a java.util.function.Function$$Lambda/0x000000002434c5b8@60a9d6f8]]]]}\",\"at\":\"2026-11-04T08:28:33.671943500Z\",\"name\":\"callback\",\"status\":\"failed\"}],\"notTested\":[\"Visual parity\",\"All presets and configuration extremes\",\"All biomes or structures\",\"Multiplayer clients\",\"Third-party mod combinations\",\"Performance benchmark\"],\"runtime\":{\"minecraft\":\"26.2\",\"java\":\"25.0.5\",\"javaClassVersion\":\"69.0\",\"developmentEnvironment\":false,\"loader\"",
+    "[00:28:33] [Server thread/INFO]: Stopping server",
+    "[00:28:33] [Server thread/INFO]: Saving players",
+    "[00:28:33] [Server thread/INFO]: Saving worlds",
+    "[00:28:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[00:28:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[00:28:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[00:28:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[00:28:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[00:28:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[00:28:34] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved"
+  ],
+  "limitations": [
+    "Default vanilla world boot unless a generated preset datapack and companion QA mode were supplied",
+    "No client rendering or visual terrain parity tested",
+    "Only isolated loopback/offline QA server state was used"
+  ],
+  "finishedAt": "2026-11-04T08:28:34.765239+00:00"
+}
