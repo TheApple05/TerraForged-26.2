@@ -21,4 +21,12 @@ Dates use America/Los_Angeles. This log records outcomes and evidence, not an as
 - Created GitHub issues [#1](https://github.com/TheApple05/TerraForged-26.2/issues/1) through [#4](https://github.com/TheApple05/TerraForged-26.2/issues/4) for reference parity, 26.2 generation migration, customization, and release validation.
 - Chose Fabric as the first integration target using Java 25. Forge source remains in history/tree as a reference and is not advertised as supported on 26.2.
 
-Next: establish reproducible algorithm checks and exercise the full source against the actual target compiler.
+### First algorithm characterization
+
+- Implemented dependency-free compilation of four unchanged production utility classes, with frozen reference outputs independently extracted from the pinned upstream commit.
+- Passed 2,167 records in four separate Java 25 processes (serial twice, shuffled, four-worker parallel); the integrator reran verification successfully. Fixture SHA-256: `8070efecb62e736c3d22c64e8e22922ac468c0350804d3f8e0bfe615f3d35dc5`.
+- Verified that a hash-kernel mutation in a temporary copy is rejected. No production algorithm change was made.
+- Recorded inherited `NoiseUtil.floor(-1.0f) == -2` semantics rather than silently changing deterministic generation.
+- Added explicitly scoped Linux/Windows CI for these kernel checks. CI outcome is separate from the verified local result.
+
+Next: finish the full-source target compilation diagnostic, then migrate actual 26.2 API adapters using that evidence.

@@ -25,4 +25,7 @@
 
 ## Current results
 
-No target-generation or packaged-mod checks have run yet. Results will be recorded under `docs/validation/` with their exact scope.
+- **Passed:** unchanged math/hash utility slice, 2,167 reference records across four independent Java 25 processes, shuffled/parallel comparison, and temporary mutation detection. See [core regression evidence](validation/core-regression.md) and [integrator verification](validation/core-reviewed.json).
+- **Unverified:** complete noise composition, continents/climate/rivers/erosion, real chunk/tile seams, target gameplay, packaged mod, UI, server parity, visual approval, and generation performance.
+
+Results live under `docs/validation/` with their exact scope.

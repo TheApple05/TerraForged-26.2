@@ -24,4 +24,16 @@ The implementation starts from ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1
 - [Target toolchain research](docs/research/target-toolchain.md)
 - [GitHub work tracker](https://github.com/TheApple05/TerraForged-26.2/issues)
 
+## First verified foundation
+
+The unchanged noise/math utilities pass **2,167 frozen upstream-derived records across four isolated Java 25 JVM runs**, including shuffled and parallel sampling. A mutation self-test confirms that a changed hash kernel is rejected. This covers four mathematical utility classes, not full terrain, chunk seams, or gameplay. See [the exact scope and commands](docs/validation/core-regression.md).
+
+With Python 3.9+ and a full Java 25 JDK selected in `JAVA_HOME`:
+
+```shell
+python tools/verify_core.py --self-test
+```
+
+CI runs the same scoped checks on Linux and Windows. A passing kernel workflow does not mean the full 26.2 mod builds or runs.
+
 Research records distinguish observed behavior, proposed implementation, and untested assumptions. Never install an experimental build into an existing world you care about; validation uses isolated, disposable worlds.

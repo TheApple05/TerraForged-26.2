@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "https://github.com/racoonman2/ReTerraForged",
+  "upstream_commit": "29239f1f164d19dbfcccaca4a8277d64e784207c",
+  "source_sha256_lf": {
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/PosUtil.java": "4ac21ba634bed9d9f64bcd538c74fa330b042352f990bca99631f6beff65c654",
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/Seed.java": "363f692f8f1af4238b083a16e012b78222cbd340775d38fb50fce1fe7ee0ccd4",
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/FastRandom.java": "eb40fa36cd2860bfdcb77d4cadffb1138d6537fd638168bb83c3bb9f0f6c3f2f"
+  },
+  "probe_sha256_lf": "dace4deea703019470d1d38358c1c6deb0f9a75a178fd5c736e2ec940a37c759",
+  "fixture_sha256": "8070efecb62e736c3d22c64e8e22922ac468c0350804d3f8e0bfe615f3d35dc5",
+  "record_count": 2167,
+  "capture_java": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)",
+  "scope": "Unchanged math/hash/gradient kernels and utility classes; not full terrain or Minecraft integration"
+}
