@@ -51,6 +51,7 @@ jobs:
         run: |
           python horizon/tools/verify_native_registry.py --report build/qa/ci/native-registry.json
           python horizon/tools/verify_native_registry.py --family preset --report build/qa/ci/native-preset.json
+          python horizon/tools/verify_native_registry.py --family continent --report build/qa/ci/native-continent.json
       - name: Retain foundation reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

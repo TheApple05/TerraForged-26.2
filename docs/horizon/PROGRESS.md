@@ -19,8 +19,10 @@ height levels, coordinate layout, terrain inheritance/composites and the origina
 preset model and source noise factories are covered in preset-model.md. These
 are finite numerical qualifications; none is an activated Horizon generator.
 
-The next required milestone is constructing the actual MULTI_IMPROVED/default
-continent and full terrain/river/climate cell pipeline in the original seed order.
+The MULTI_IMPROVED/default continent geometry now matches independent Java cell,
+center and edge/ocean search observations; see advanced-continent.md. Its river
+cache is not implemented. The next required milestone is constructing the full
+terrain/river/climate cell pipeline in the original seed order.
 Then compare every field against the frozen kernel-v1 observations, complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
