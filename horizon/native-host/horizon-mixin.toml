@@ -3,7 +3,7 @@ id = "terraforged_native"
 version = "0.1.0"
 
 [compatibility]
-horizon_revision = "0e0f70ff1f8191479dbb5b1b173a74d38d324005"
+horizon_revision = "61680d714bad3496a0ca5cef31537166f1232c4b"
 
 [[crate]]
 id = "kernel"

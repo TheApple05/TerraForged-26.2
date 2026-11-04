@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-before-source-staging",
+  "horizonRevision": "61680d714bad3496a0ca5cef31537166f1232c4b",
+  "errorCode": "E_MODULE",
+  "error": "Support module source cannot have file attributes or a shebang; the module-level inner doc comment triggers that check.",
+  "stageLogSha256": "ef6307e2f6a9fec89e460fa2c59c386ee3eeb316d590ad982c361720a3360f6d",
+  "moduleSourceSha256": "28aa662f22c2a04755fe2655e1b899ec3103bbd008d43b41d07aa9c496631289",
+  "gameStarted": false,
+  "gameAssetsDownloaded": false
+}

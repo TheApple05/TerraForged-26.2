@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-client-library-build-before-game-launch",
+  "horizonRevision": "61680d714bad3496a0ca5cef31537166f1232c4b",
+  "errorCode": "E0277",
+  "error": "Native preset recognizer compared NBT JavaString values directly with str; both comparisons failed type checking.",
+  "buildLogSha256": "44cf37c0e69a2f91217510a1cebdf7cbb9a66a3f5a1b6bd61c628a2c99275f78",
+  "stageResultSha256": "1053dc9a9ed44d51da5a2062339c98f6820f486e44700011d93f22f68e02055a",
+  "moduleSourceSha256": "251f15cbaf36cd93acf7b1489d80ad2df060ba32398d9a01ebaf0d906905abb8",
+  "gameStarted": false,
+  "gameAssetsDownloaded": false
+}
