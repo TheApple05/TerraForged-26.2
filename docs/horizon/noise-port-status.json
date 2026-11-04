@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "scope": "Registered custom noise codecs; numerical implementation only, no native terrain activation",
+  "registrySourceSha256Lf": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+  "registeredTypes": 41,
+  "numericallyVerifiedTypes": 4,
+  "types": [
+    {
+      "id": "reterraforged:constant",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:sin",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:white",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:perlin",
+      "status": "sample-fractal-fixture-verified",
+      "nativeType": "Perlin"
+    },
+    {
+      "id": "reterraforged:perlin2",
+      "status": "sample-fractal-fixture-verified",
+      "nativeType": "Perlin2"
+    },
+    {
+      "id": "reterraforged:perlin_ridge",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:simplex",
+      "status": "sample-fractal-fixture-verified",
+      "nativeType": "Simplex"
+    },
+    {
+      "id": "reterraforged:simplex2",
+      "status": "sample-fractal-fixture-verified",
+      "nativeType": "Simplex2"
+    },
+    {
+      "id": "reterraforged:simplex_ridge",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:worley",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:worley_edge",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:billow",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:cubic",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:line",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:shift",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:frequency",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:add",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:multiply",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:power",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:power_curve",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:curve",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:gradient",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:terrace",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:advanced_terrace",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:invert",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:blend",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:alpha",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:boost",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:steps",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:abs",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:map",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:clamp",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:threshold",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:min",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:max",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:warp",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:erosion",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:linear_spline",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:cache",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:legacy_temperature",
+      "status": "not-ported",
+      "nativeType": null
+    },
+    {
+      "id": "reterraforged:legacy_moisture",
+      "status": "not-ported",
+      "nativeType": null
+    }
+  ],
+  "separateFoundation": "Scalar/hash/vector and coordinate/seed/RNG routines are independently verified; this does not implement arbitrary graphs, cell/tile terrain or Horizon density integration."
+}

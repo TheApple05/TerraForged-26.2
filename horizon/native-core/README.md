@@ -10,6 +10,9 @@ reference fixture. The vector tables and Perlin/Simplex static/fractal modules
 also match 34,976 independent Java records (56,080 values) in debug and release.
 This includes all 296 vector entries, negative boundaries, signed32 seed
 endpoints, zero/one/multiple octaves, interpolation modes and seed behavior.
+Perlin2/Simplex2 now match a second independently captured 34,976-record corpus
+(56,080 values per profile). These retain the 24-gradient Perlin variant and
+Simplex2's exact normalization/scaler, not aliases of the first families.
 Other composed noises and the cell/tile pipeline remain unfinished in the
 [native milestone](../../docs/horizon/infinite-native-milestone.md).
 
@@ -22,6 +25,10 @@ the Perlin/Simplex foundation. The committed expected fixture came from two
 fresh runs of the genuine packaged Java23 classes, whose origins and source
 hashes are checked. `capture_noise_reference.py` is the separate Java-only
 capture tool; the native verifier never invokes it or updates expected values.
+Add `--family second` to the native verifier to check Perlin2/Simplex2. Its
+independent expected fixture is `noise-reference-v2.tsv`; neither verifier
+replaces prior reports or reference bytes. `capture_noise_reference.py` accepts
+the same family option and still runs two genuine fresh Java processes.
 `generate_noise_vectors.py` checks all vector literals against the source hash
 already frozen by the original core fixture. Each verifier refuses to overwrite
 existing evidence.

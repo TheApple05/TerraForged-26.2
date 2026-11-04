@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-java-reference",
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "sourceSha256Lf": {
+    "NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "module/Perlin2.java": "18dd75b0b30cd963bb526ae547046ce859b1ea08fb017f7026a014a6f2096183",
+    "module/Simplex2.java": "d248bac6fdcc75e56368ccbb9ce938731c4bc44e87b11f2816631ce43557fda4",
+    "function/Interpolation.java": "422742353f669ce13af9fcbbc22647692cd7865bc6602a9c9fc4c815ada8ad3a"
+  },
+  "oracleSourceSha256Lf": "ba2a75b8d93b6a51597d885dfaf7e3ccc007375d0595617f8d80945cd55034c3",
+  "fixtureSha256": "cc925fbb7c64ba4984843d9e88ff1d7cd6ebb5b3ea5ec23b0575c8833615b660",
+  "recordCount": 34976,
+  "freshRunsAgree": true,
+  "scope": "296 literal vectors and Perlin2,Simplex2 static/fractal; independent of native output.",
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+}
