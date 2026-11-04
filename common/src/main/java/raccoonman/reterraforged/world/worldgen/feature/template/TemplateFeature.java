@@ -6,10 +6,12 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -69,8 +71,7 @@ public class TemplateFeature extends Feature<Config<?>> {
 	        Paste paste = pasteType.get(template);
 	        T buffer = placement.createContext();
 	        if (paste.apply(world, buffer, pos, mirror, rotation, placement, config.paste())) {
-	            Identifier biome = world.getBiome(pos).unwrapKey().map(ResourceKey::registry).orElse(null);
-	            for (TemplateDecorator<T> decorator : decoratorConfig.getDecorators(biome)) {
+	            for (TemplateDecorator<T> decorator : decoratorsForBiome(decoratorConfig, world.getBiome(pos))) {
 	                decorator.apply(world, buffer, rand, modified);
 	            }
 	            return true;
@@ -80,6 +81,11 @@ public class TemplateFeature extends Feature<Config<?>> {
         } else {
         	throw new IllegalStateException();
         }
+    }
+
+    static <T extends TemplateContext> List<TemplateDecorator<T>> decoratorsForBiome(DecoratorConfig<T> config, Holder<Biome> biome) {
+        Identifier biomeId = biome.unwrapKey().map(ResourceKey::identifier).orElse(null);
+        return config.getDecorators(biomeId);
     }
 
 	private static Identifier nextTemplate(List<Identifier> templates, RandomSource random) {

@@ -4,7 +4,10 @@ import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.biome.AmbientMoodSettings;
+import net.minecraft.util.ARGB;
+import net.minecraft.world.attribute.AmbientSounds;
+import net.minecraft.world.attribute.BackgroundMusic;
+import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
@@ -24,22 +27,31 @@ public class RTFBiomes {
     }
 
     private static Biome biome(boolean hasPrecipitation, float skyColor, float downfall, int waterColor, int waterFogColor, @Nullable Integer grassColorOverride, @Nullable Integer foliageColorOverride, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder generationSettings, @Nullable Music music) {
-        BiomeSpecialEffects.Builder specialEffects = new BiomeSpecialEffects.Builder()
-        	.waterColor(waterColor)
-        	.waterFogColor(waterFogColor).fogColor(12638463).skyColor(calculateSkyColor(skyColor)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music);
+        BiomeSpecialEffects.Builder specialEffects = new BiomeSpecialEffects.Builder().waterColor(waterColor);
         if (grassColorOverride != null) {
             specialEffects.grassColorOverride(grassColorOverride);
         }
         if (foliageColorOverride != null) {
             specialEffects.foliageColorOverride(foliageColorOverride);
         }
-        return new Biome.BiomeBuilder().hasPrecipitation(hasPrecipitation).temperature(skyColor).downfall(downfall).specialEffects(specialEffects.build()).mobSpawnSettings(mobSpawnSettings.build()).generationSettings(generationSettings.build()).build();
+        Biome.BiomeBuilder biome = new Biome.BiomeBuilder().hasPrecipitation(hasPrecipitation)
+                .temperature(skyColor).downfall(downfall)
+                .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, ARGB.opaque(waterFogColor))
+                .setAttribute(EnvironmentAttributes.FOG_COLOR, ARGB.opaque(12638463))
+                .setAttribute(EnvironmentAttributes.SKY_COLOR, calculateSkyColor(skyColor))
+                .setAttribute(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
+                .specialEffects(specialEffects.build()).mobSpawnSettings(mobSpawnSettings.build())
+                .generationSettings(generationSettings.build());
+        if (music != null) {
+            biome.setAttribute(EnvironmentAttributes.BACKGROUND_MUSIC, new BackgroundMusic(music));
+        }
+        return biome.build();
     }
 
     private static int calculateSkyColor(float f) {
         float g = f;
         g /= 3.0f;
         g = Mth.clamp(g, -1.0f, 1.0f);
-        return Mth.hsvToRgb(0.62222224f - g * 0.05f, 0.5f + g * 0.1f, 1.0f);
+        return ARGB.opaque(Mth.hsvToRgb(0.62222224f - g * 0.05f, 0.5f + g * 0.1f, 1.0f));
     }
 }

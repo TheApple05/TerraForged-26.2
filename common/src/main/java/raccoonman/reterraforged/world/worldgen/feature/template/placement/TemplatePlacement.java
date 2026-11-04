@@ -3,6 +3,7 @@ package raccoonman.reterraforged.world.worldgen.feature.template.placement;
 import java.util.function.Function;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelAccessor;
@@ -19,5 +20,5 @@ public interface TemplatePlacement<T extends TemplateContext> {
     
     T createContext();
     
-    Codec<? extends TemplatePlacement<T>> codec();
+    MapCodec<? extends TemplatePlacement<T>> codec();
 }

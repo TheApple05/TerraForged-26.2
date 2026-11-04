@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
@@ -22,7 +23,7 @@ import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noises;
 
 public class FastPoissonModifier extends PlacementModifier {
-	public static final Codec<FastPoissonModifier> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+	public static final MapCodec<FastPoissonModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 		Codec.INT.fieldOf("radius").forGetter((p) -> p.radius),
 		Codec.FLOAT.fieldOf("scale").forGetter((p) -> p.scale),
 		Codec.FLOAT.fieldOf("jitter").forGetter((p) -> p.jitter),
@@ -61,8 +62,8 @@ public class FastPoissonModifier extends PlacementModifier {
 		long levelSeed = level.getSeed();
 		int seed = (int) levelSeed + 234523;
 		ChunkPos chunkPos = chunk.getPos();
-        int chunkX = chunkPos.x;
-        int chunkZ = chunkPos.z;
+        int chunkX = chunkPos.x();
+        int chunkZ = chunkPos.z();
         FastPoisson poisson = FastPoisson.LOCAL_POISSON.get();
         DensityNoise density = this.getDensityNoise(seed, chunkPos, level.getLevel().getChunkSource().randomState());
         FastPoissonContext poissonConfig = new FastPoissonContext(this.radius, this.jitter, this.scale, density);
@@ -83,7 +84,7 @@ public class FastPoissonModifier extends PlacementModifier {
 		
 		if (this.biomeFade > BiomeVariance.MIN_FADE) {
 			if((Object) randomState instanceof RTFRandomState rtfRandomState) {
-				Tile.Chunk reader = rtfRandomState.generatorContext().cache.provideAtChunk(chunkPos.x, chunkPos.z).getChunkReader(chunkPos.x, chunkPos.z);
+				Tile.Chunk reader = rtfRandomState.generatorContext().cache.provideAtChunk(chunkPos.x(), chunkPos.z()).getChunkReader(chunkPos.x(), chunkPos.z());
 				if (reader != null) {
 					biomeVariance = new BiomeVariance(reader, this.biomeFade);
 				}

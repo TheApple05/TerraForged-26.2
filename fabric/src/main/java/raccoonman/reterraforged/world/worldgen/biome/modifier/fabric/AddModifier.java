@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModificationContext;
@@ -18,7 +18,7 @@ import raccoonman.reterraforged.world.worldgen.biome.modifier.Filter;
 import raccoonman.reterraforged.world.worldgen.biome.modifier.Order;
 
 record AddModifier(Order order, GenerationStep.Decoration step, Optional<Filter> biomes, HolderSet<PlacedFeature> features) implements FabricBiomeModifier {
-	public static final Codec<AddModifier> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+	public static final MapCodec<AddModifier> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 		Order.CODEC.fieldOf("order").forGetter(AddModifier::order),
 		GenerationStep.Decoration.CODEC.fieldOf("step").forGetter(AddModifier::step),
 		Filter.CODEC.optionalFieldOf("biomes").forGetter(AddModifier::biomes),
@@ -26,13 +26,13 @@ record AddModifier(Order order, GenerationStep.Decoration step, Optional<Filter>
 	).apply(instance, AddModifier::new));
 
 	@Override
-	public Codec<AddModifier> codec() {
+	public MapCodec<AddModifier> codec() {
 		return CODEC;
 	}
 
 	@Override
 	public void apply(BiomeSelectionContext selectionContext, BiomeModificationContext modificationContext) {
-		if(this.biomes.isPresent() && !this.biomes.get().test(selectionContext.getBiomeRegistryEntry())) {
+		if(this.biomes.isPresent() && !this.biomes.get().test(selectionContext.getBiomeHolder())) {
 			return;
 		}
 		
