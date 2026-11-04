@@ -19,7 +19,7 @@
     "terrablender.MixinClimateSampler",
     "terrablender.MixinTargetPoint",
     "terrablender.MixinNoiseChunk",
-    "terrablender.MixinBuiltInRegistries"
+    "terrablender.MixinRegistry"
   ],
   "client": [
     "ScreenInvoker",
