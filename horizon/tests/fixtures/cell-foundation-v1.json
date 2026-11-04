@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-java-reference",
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "sourceSha256Lf": {
+    "cell/Cell.java": "931f88001501f707299fd030999d56f91174f955eade30fac1f7a7e85c42aa1c",
+    "cell/heightmap/Levels.java": "d43a030691b7422216d4ea095407dba80ab5f28ece210fc7f1152e606b557d3b",
+    "densityfunction/tile/Size.java": "c7e01d7b95075dc1c5a3ee7ac27c47e20080b573ae96f8bfeec73e099dc9e2c9",
+    "cell/terrain/TerrainType.java": "7b3107ea316b1b0ca86459fb1fd521998320785cf0e2b8ed4c9e1fba472898e7",
+    "cell/terrain/Terrain.java": "e654dbffda5af3f8c83fd2a8685b4e8406aac330c0526b22b98a1f696661eb22",
+    "cell/biome/type/BiomeType.java": "09f424c8ed84794d2cbe1ae7a5cf196052fb187d7a5ea405587f49c484f82ab3",
+    "noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139"
+  },
+  "oracleSourceSha256Lf": "f81e7548c402045e3972fa7d8946f5895d2666b44fab7deada525493e29fbe49",
+  "fixtureSha256": "3b83508fdf6fca0a628804a30d0c0bcff8cf49a19dffe55b13dfebee2385e41c",
+  "recordCount": 30974,
+  "freshRunsAgree": true,
+  "scope": "Levels/Size arithmetic and all 24 Cell default/copy/reset fields; no terrain hierarchy or climate lookup; independent of native output.",
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+}
