@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "status": "published-verified-prerelease",
+  "repository": "TheApple05/TerraForged-26.2",
+  "tag": "v0.1.0-dev.24+26.2",
+  "id": 434496871,
+  "url": "https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.24%2B26.2",
+  "targetCommit": "c99d9a81306779c089c3a61ee59d2bf888c222f3",
+  "privateRepository": false,
+  "fork": false,
+  "prerelease": true,
+  "draft": false,
+  "ci": [
+    {
+      "name": "Core regressions (not full port)",
+      "id": 41909692085,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41909692085",
+      "head_sha": "45285ce67799fcff98873f20cf0e31c1096c23b6"
+    },
+    {
+      "name": "Horizon native noise foundation",
+      "id": 41909692169,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41909692169",
+      "head_sha": "45285ce67799fcff98873f20cf0e31c1096c23b6"
+    },
+    {
+      "name": "Horizon procedural density integration",
+      "id": 41909692234,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41909692234",
+      "head_sha": "45285ce67799fcff98873f20cf0e31c1096c23b6"
+    },
+    {
+      "name": "Package both 26.2 loaders (experimental)",
+      "id": 41909692189,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41909692189",
+      "head_sha": "45285ce67799fcff98873f20cf0e31c1096c23b6"
+    },
+    {
+      "name": "Core regressions (not full port)",
+      "id": 41920028099,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41920028099",
+      "head_sha": "c99d9a81306779c089c3a61ee59d2bf888c222f3"
+    }
+  ],
+  "allAssetsDownloadedAndSha256Verified": true,
+  "sourceCommit": "45285ce67799fcff98873f20cf0e31c1096c23b6",
+  "validationSha256": "cdb066e3c19e6068b4d96576cba19e470893bf68ec91c87573c6c8e844f721f1",
+  "assets": [
+    {
+      "id": 711071013,
+      "name": "BUILD.json",
+      "sha256": "95dae83db924acf08c5a67b291a7ab96964158cb67e80b23de4c47ab16a8cbb0",
+      "bytes": 11559,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/BUILD.json"
+    },
+    {
+      "id": 711071060,
+      "name": "dev24-cache-fabric.json",
+      "sha256": "59edec530fbbc07f75d1501867d3f9e7045d496d7a7ced67c23d6d2f08f4c365",
+      "bytes": 3004,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-cache-fabric.json"
+    },
+    {
+      "id": 711071129,
+      "name": "dev24-cache-neoforge.json",
+      "sha256": "cca77c1b0d516bef824fe68c1f33acf957bb4e6c3ebb8601b8a7d354c1967872",
+      "bytes": 3059,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-cache-neoforge.json"
+    },
+    {
+      "id": 711071183,
+      "name": "dev24-cache-regressions.json",
+      "sha256": "6a708843c510f0c5d41885d094aa04ecbcc87b64f7136976a2cdd8621f79502b",
+      "bytes": 1042,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-cache-regressions.json"
+    },
+    {
+      "id": 711071228,
+      "name": "dev24-classic-biome-policy.json",
+      "sha256": "e98bcd8e28c3990438be30a6aa96d29ff7d753ad7ecfd7c3fcc4541039776e7b",
+      "bytes": 680,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-classic-biome-policy.json"
+    },
+    {
+      "id": 711071256,
+      "name": "dev24-classic-pillars.json",
+      "sha256": "848f84ec896d5bb567f11208c9d3be23951d2d61110887a535f629cf95620f61",
+      "bytes": 1655,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-classic-pillars.json"
+    },
+    {
+      "id": 711071279,
+      "name": "dev24-core-regressions.json",
+      "sha256": "c8fb2e3c9c1ff70780ff45e9cc6af5b717fa352566a8de87eb0043043c7a3aad",
+      "bytes": 3063,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-core-regressions.json"
+    },
+    {
+      "id": 711071342,
+      "name": "dev24-jar-comparison.json",
+      "sha256": "a344c72c56b6373b8fe74a78c7395aa4137b2f54a584c3f62cf99959383d88e0",
+      "bytes": 205,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/dev24-jar-comparison.json"
+    },
+    {
+      "id": 711071383,
+      "name": "distribution.json",
+      "sha256": "1bf0782f8803c24b97c4bbb59251e13139657915cc6c37cf4351f72d45b2007e",
+      "bytes": 983,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/distribution.json"
+    },
+    {
+      "id": 711071418,
+      "name": "INSTALLATION.md",
+      "sha256": "f0ac5234d7d5669be2521f5bac09a4b772f5ef9b78a9b85b13763351e2e535dc",
+      "bytes": 6063,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/INSTALLATION.md"
+    },
+    {
+      "id": 711071453,
+      "name": "RELEASE-COMMIT.txt",
+      "sha256": "bb8f78f1c3d92a42aed7c154e44188921f3451ada3d9bc9f71984226c95b2534",
+      "bytes": 42,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/RELEASE-COMMIT.txt"
+    },
+    {
+      "id": 711071503,
+      "name": "RELEASE-NOTES.md",
+      "sha256": "1eba4478afde26bcbf47a9716da8b69af15ad6010fe20f79601bbfb27585da05",
+      "bytes": 1814,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/RELEASE-NOTES.md"
+    },
+    {
+      "id": 711071544,
+      "name": "server-dev24-release-fabric.json",
+      "sha256": "c960d52667a3f8587b40ccaa7ed9422252beb18bd2b411498822a3b499fbb48d",
+      "bytes": 18589,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/server-dev24-release-fabric.json"
+    },
+    {
+      "id": 711071597,
+      "name": "server-dev24-release-neoforge.json",
+      "sha256": "209affb51fcaa4e9a7c3046c7d4c6ecc3a0191052bbae5c1d4edc925cb3174df",
+      "bytes": 8441,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/server-dev24-release-neoforge.json"
+    },
+    {
+      "id": 711071635,
+      "name": "SOURCE-COMMIT.txt",
+      "sha256": "6a30439b8f5bd9a78a87c499d64b78c604fe50ebe8fbc043defbc210c005a824",
+      "bytes": 42,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/SOURCE-COMMIT.txt"
+    },
+    {
+      "id": 711071684,
+      "name": "terraforged-revival-0.1.0-dev.24-fabric-mc26.2.jar",
+      "sha256": "008963fd0cc3adc61e92841e4bbc6f99bef8a207bf7be74a74243d9b4bc1cfc1",
+      "bytes": 1253436,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/terraforged-revival-0.1.0-dev.24-fabric-mc26.2.jar"
+    },
+    {
+      "id": 711071762,
+      "name": "terraforged-revival-0.1.0-dev.24-neoforge-mc26.2.jar",
+      "sha256": "160ee46029412681a4fbf3418366cf943a6143598345db049207df0d7b0a516b",
+      "bytes": 1201813,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/terraforged-revival-0.1.0-dev.24-neoforge-mc26.2.jar"
+    },
+    {
+      "id": 711071803,
+      "name": "VALIDATION.json",
+      "sha256": "cdb066e3c19e6068b4d96576cba19e470893bf68ec91c87573c6c8e844f721f1",
+      "bytes": 1803,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/VALIDATION.json"
+    },
+    {
+      "id": 711071837,
+      "name": "SHA256SUMS",
+      "sha256": "76cb167b0d302b3ec65d0eb136e0a607c32189559b0bba83fd6b09db350ada97",
+      "bytes": 1685,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/v0.1.0-dev.24%2B26.2/SHA256SUMS"
+    }
+  ]
+}
