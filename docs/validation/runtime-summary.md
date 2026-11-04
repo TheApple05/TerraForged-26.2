@@ -9,6 +9,8 @@ These records use disposable **non-development** Minecraft Java 26.2 installatio
 
 [Coherent build evidence](dual-loader-dev11-build.json) records the full source sets, actual toolchains, unchanged before/after snapshots, exactly one loader provider, 277 translations, license notices and no packaged QA classes. Separate QA companions are never part of the production mod. [Installation instructions](../INSTALLATION.md) distinguish the two artifacts.
 
+[Independent CI evidence](github-actions-2026-11-04.json) confirms both Ubuntu package jobs and Linux/Windows kernel/cache jobs passed for the committed source. CI artifacts are separate from the exact Windows runtime-hashed JARs. Run `python tools/qa/verify_candidate_evidence.py` with those local JARs present to verify both artifact hashes, all four client workflows, 28 unchanged archived PNGs and the dedicated-server evidence. [Delivery metadata](dev11-delivery.json) records the local two-loader test bundle and checksum.
+
 ## Client and world creation
 
 Both loader clients exercise the actual registered editor, real translated widgets, four Font/inner-width checks, eight slider updates, a 65,536-cell preview digest restored after resetting settings, the real Done callback, datapack export/reload and Create New World callback. They generate/render/save custom seed `123456789`, then load/render/save vanilla seed `8675309` in the same process with no custom context left behind.

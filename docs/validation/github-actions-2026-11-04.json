@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-11-04T09:24:17.779Z",
+  "sourceCommit": "b625a86f4b7d462d8079fae0fd7f065d612ab110",
+  "status": "passed",
+  "runs": [
+    {
+      "id": 41806790596,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41806790596",
+      "scope": "Both full source sets compile/package on Ubuntu; experimental artifacts retained",
+      "jobs": [
+        {
+          "name": "fabric / Java 25",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "neoforge / Java 25",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 41806789410,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41806789410",
+      "scope": "Kernel fixtures/mutation detection and future-cache regression on Linux and Windows",
+      "jobs": [
+        {
+          "name": "Java 25 utilities / ubuntu-latest",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Java 25 utilities / windows-latest",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "scopeLimit": "CI build and scoped regressions only. Windows game runtime evidence is separate; CI artifacts are not silently substituted for the runtime-hashed local JARs."
+}
