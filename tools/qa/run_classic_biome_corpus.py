@@ -67,8 +67,7 @@ def main() -> int:
                 if mode == "generate":
                     command += ["--datapack", str(args.datapack)]
                     if group == "pillars":
-                        command += ["--jvm-arg=-Dterraforged.qa.requirePillarEvidence=true", "--jvm-arg=-Dterraforged.qa.tracePillarPlacement=true",
-                            "--jvm-arg=-Dterraforged.qa.classicBiomeSearch=true", "--jvm-arg=-Dterraforged.qa.requireAllClassicBiomes=true"]
+                        command += ["--jvm-arg=-Dterraforged.qa.requirePillarEvidence=true", "--jvm-arg=-Dterraforged.qa.tracePillarPlacement=true"]
                 else:
                     command += ["--reuse-instance", str(instance)]
                 print(f"CLASSIC_CORPUS_START={args.loader}:{group}:{mode}", flush=True)

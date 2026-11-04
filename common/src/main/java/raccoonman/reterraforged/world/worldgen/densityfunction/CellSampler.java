@@ -27,11 +27,25 @@ import raccoonman.reterraforged.world.worldgen.util.PosUtil;
 
 public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) implements MarkerFunction.Mapped {
 	private static final ThreadLocal<Cache2d> CELL = ThreadLocal.withInitial(Cache2d::new);
+    private static final ThreadLocal<Cache2d> ACCURATE_CELL = ThreadLocal.withInitial(() -> new Cache2d(1, true));
+    private static final ThreadLocal<Integer> ACCURATE_DEPTH = ThreadLocal.withInitial(() -> 0);
+
+    /** Scope exact parent-biome resolution without making spawn heuristics generate terrain tiles. */
+    public static <T> T withAccurateSampling(Supplier<T> action) {
+        int previous = ACCURATE_DEPTH.get();
+        ACCURATE_DEPTH.set(previous + 1);
+        try {
+            return action.get();
+        } finally {
+            if (previous == 0) ACCURATE_DEPTH.remove();
+            else ACCURATE_DEPTH.set(previous);
+        }
+    }
 	
 	@Override
 	public double compute(FunctionContext ctx) {
 		WorldLookup worldLookup = this.deferredLookup.get();
-		Cell cell = CELL.get().getAndUpdate(worldLookup, ctx.blockX(), ctx.blockZ(), true);
+		Cell cell = (ACCURATE_DEPTH.get() > 0 ? ACCURATE_CELL : CELL).get().getAndUpdate(worldLookup, ctx.blockX(), ctx.blockZ(), true);
 		return this.field.read(cell, worldLookup.getHeightmap());
 	}
 
@@ -48,19 +62,23 @@ public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) imp
 	public static class Cache2d {
         private final long[] positions;
         private final Cell[] cells;
+        private final boolean accurate;
         private WeakReference<WorldLookup> owner = new WeakReference<>(null);
         private boolean climate;
         private int size;
         private int next;
 
         /** The global caller only needs one entry, without retaining its world. */
-        public Cache2d() { this(1); }
+        public Cache2d() { this(1, false); }
 
         /** Small per-NoiseChunk cache; four interpolation corners must survive Y changes. */
-        public Cache2d(int capacity) {
+        public Cache2d(int capacity) { this(capacity, false); }
+
+        private Cache2d(int capacity, boolean accurate) {
             if (capacity < 1 || capacity > 64) throw new IllegalArgumentException("Cell cache capacity must be 1..64");
             this.positions = new long[capacity];
             this.cells = new Cell[capacity];
+            this.accurate = accurate;
         }
 
         public synchronized Cell getAndUpdate(WorldLookup lookup, int blockX, int blockZ, boolean sampleClimate) {
@@ -73,7 +91,10 @@ public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) imp
             // waits. Keep the unfinished cell private, including the one-entry cache.
             Cell cell = new Cell();
             try {
-                lookup.applyCell(cell, blockX, blockZ, false, sampleClimate);
+                // Global biome queries must agree before/after terrain generation
+                // and reload. Native one-column structure samplers retain their
+                // deliberately approximate, bounded per-NoiseChunk path.
+                lookup.applyCell(cell, blockX, blockZ, this.accurate, sampleClimate);
             } catch (RuntimeException | Error failure) {
                 this.size = this.next = 0;
                 throw failure;

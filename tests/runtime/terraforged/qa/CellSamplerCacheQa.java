@@ -99,6 +99,7 @@ public final class CellSamplerCacheQa {
                 require(Double.doubleToRawLongBits(sampler.compute(point)) == Double.doubleToRawLongBits((double) Float.intBitsToFloat(
                     (Integer) sample(lookup, x, z, true).get("biomeRegionId"))), "Shared static ThreadLocal reused another world's region");
             }
+            scopedSampling(lookupA, x + 64, z + 64);
             // Bound the local table and verify evicted reader snapshots remain intact.
             Cell held = cached.getAndUpdate(lookupA, x, z, false);
             var heldSnapshot = snapshot(held);
@@ -141,12 +142,40 @@ public final class CellSamplerCacheQa {
         WorldLookup lookup = context.lookup;
         cache.getAndUpdate(lookup, x, z, false);
         new CellSampler(() -> lookup, CellSampler.Field.BIOME_REGION).compute(new DensityFunction.SinglePointContext(x, 80, z));
+        CellSampler.withAccurateSampling(() -> new CellSampler(() -> lookup, CellSampler.Field.BIOME_REGION)
+            .compute(new DensityFunction.SinglePointContext(x, 80, z)));
         Released result = new Released(new WeakReference<>(lookup), new WeakReference<>(context));
         context.close();
         return result;
     }
 
     private record Released(WeakReference<WorldLookup> lookup, WeakReference<GeneratorContext> context) {}
+
+    private static void scopedSampling(CountingLookup lookup, int x, int z) {
+        var sampler = new CellSampler(() -> lookup, CellSampler.Field.HEIGHT);
+        var point = new DensityFunction.SinglePointContext(x, 80, z);
+        sampler.compute(point);
+        require(!lookup.lastLoad, "Ordinary spawn/climate sampling unexpectedly forced a terrain tile");
+        double actual = CellSampler.withAccurateSampling(() -> sampler.compute(point));
+        require(lookup.lastLoad, "Scoped biome sampling did not request completed terrain");
+        Cell expected = new Cell();
+        lookup.applyCell(expected, x, z, true, true);
+        require(Double.doubleToRawLongBits(actual) == Double.doubleToRawLongBits((double) expected.height),
+            "Scoped biome sample differs from the actual filtered terrain cell");
+        boolean propagated = false;
+        try {
+            CellSampler.withAccurateSampling(() -> {
+                CellSampler.withAccurateSampling(() -> sampler.compute(new DensityFunction.SinglePointContext(x + 4, 80, z)));
+                require(lookup.lastLoad, "Nested scope lost accurate sampling");
+                throw new IllegalStateException("expected-scope-cleanup-probe");
+            });
+        } catch (IllegalStateException expectedFailure) {
+            propagated = expectedFailure.getMessage().equals("expected-scope-cleanup-probe");
+        }
+        require(propagated, "Accurate scope swallowed or changed the expected exception");
+        sampler.compute(new DensityFunction.SinglePointContext(x + 8, 80, z));
+        require(!lookup.lastLoad, "Accurate scope leaked into later spawn/climate sampling after an exception");
+    }
 
     private static void reentry(CountingLookup a, CountingLookup b, int x, int z) throws Exception {
         var switched = new CellSampler.Cache2d(16);
@@ -187,10 +216,12 @@ public final class CellSamplerCacheQa {
 
     private static final class CountingLookup extends WorldLookup {
         int calls;
+        boolean lastLoad;
         Runnable onNext;
         CountingLookup(GeneratorContext context) { super(context); }
         @Override public boolean applyCell(Cell cell, int x, int z, boolean load, boolean climate) {
             calls++;
+            lastLoad = load;
             Runnable nested = this.onNext;
             this.onNext = null;
             if (nested != null) nested.run();

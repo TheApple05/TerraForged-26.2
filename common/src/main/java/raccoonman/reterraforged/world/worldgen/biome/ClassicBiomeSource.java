@@ -56,15 +56,19 @@ public final class ClassicBiomeSource extends BiomeSource {
 
     @Override
     public Holder<Biome> getNoiseBiome(int quartX, int quartY, int quartZ, Climate.Sampler sampler) {
-        Holder<Biome> original = this.delegate.getNoiseBiome(quartX, quartY, quartZ, sampler);
-        if (!((Object) sampler instanceof RTFClimateSampler climateSampler)) return original;
+        if (!((Object) sampler instanceof RTFClimateSampler climateSampler)) return this.delegate.getNoiseBiome(quartX, quartY, quartZ, sampler);
         GeneratorContext context = climateSampler.getGeneratorContext();
-        if (context == null || !context.preset.miscellaneous().classicBiomeVariants || quartY < 0) return original;
-        ResourceKey<Biome> originalKey = original.unwrapKey().orElse(null);
-        if (originalKey == null || !eligible(originalKey)) return original;
+        if (context == null || !context.preset.miscellaneous().classicBiomeVariants) return this.delegate.getNoiseBiome(quartX, quartY, quartZ, sampler);
         try (Resource<Cell> resource = Cell.getResource()) {
             Cell cell = resource.get();
-            context.lookup.applyCell(cell, QuartPos.toBlock(quartX), QuartPos.toBlock(quartZ), true);
+            // Resolve both the parent and variant from the completed filtered
+            // terrain. A cold cache must not change a saved biome query.
+            context.lookup.applyCell(cell, QuartPos.toBlock(quartX), QuartPos.toBlock(quartZ), true, true);
+            Holder<Biome> original = raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler.withAccurateSampling(
+                () -> this.delegate.getNoiseBiome(quartX, quartY, quartZ, sampler));
+            if (quartY < 0) return original;
+            ResourceKey<Biome> originalKey = original.unwrapKey().orElse(null);
+            if (originalKey == null || !eligible(originalKey)) return original;
             ResourceKey<Biome> replacement = selectKey(originalKey, cell);
             return this.byKey.getOrDefault(replacement, original);
         }

@@ -107,14 +107,17 @@ public final class StructureQa {
             }).map(holder -> (Holder<Structure>) holder).toList();
             require(!wanted.isEmpty(), "Locate target is absent: " + namespace);
             long time = System.nanoTime();
-            var found = generator.findNearestMapStructure(level, HolderSet.direct(wanted), new BlockPos(0, 80, 0), 8, false);
-            require(found != null, "Bounded native locate found no " + namespace + " mineshaft within eight placement regions");
+            // RS uses spacing one with 0.00115/0.0008 frequency. An eight-chunk
+            // radius has less than one expected candidate before biome checks.
+            int radius = namespace.equals("minecraft") ? 8 : 64;
+            var found = generator.findNearestMapStructure(level, HolderSet.direct(wanted), new BlockPos(0, 80, 0), radius, false);
+            require(found != null, "Bounded native locate found no " + namespace + " mineshaft within " + radius + " placement regions");
             BlockPos pos = found.getFirst();
             var chunk = level.getChunk(SectionPos.blockToSectionCoord(pos.getX()), SectionPos.blockToSectionCoord(pos.getZ()));
             var structureStart = chunk.getStartForStructure(found.getSecond().value());
             require(structureStart != null && structureStart.isValid(), "Located structure did not survive actual FULL generation");
             locate.add(Map.of("id", found.getSecond().unwrapKey().orElseThrow().identifier().toString(),
-                "position", List.of(pos.getX(), pos.getY(), pos.getZ()), "radiusPlacementRegions", 8,
+                "position", List.of(pos.getX(), pos.getY(), pos.getZ()), "radiusPlacementRegions", radius,
                 "actualFullChunk", chunk.getPos().toString(), "validNaturalStart", true,
                 "pieces", structureStart.getPieces().size(), "elapsedMillis", (System.nanoTime() - time) / 1_000_000));
         }
