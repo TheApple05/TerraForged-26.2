@@ -25,6 +25,8 @@ FAMILIES={
                         'NATIVE_TERRAIN_PROVIDER_GUARDS_OK ownedRegistry originalOrder volcanoBranches replayOrder parallelReaders','passed-terrain-provider-only'),
     'heightmap-climate':('heightmap-climate-v1','heightmap_climate_probe','Complete terrain and climate stages without river or filtered-tile execution',
                          'NATIVE_HEIGHTMAP_CLIMATE_GUARDS_OK supportedContinent derivedScales finiteQueries ownedTerrain reverseOrder parallelReaders noRiverExecution','passed-terrain-climate-stages-only'),
+    'river-foundations':('river-foundations-v1','river_foundation_probe','River/lake/wetland configuration, variance, geometry, warp and domain functions',
+                         'NATIVE_RIVER_FOUNDATIONS_OK sentinelIdentity exactRandomDraws wrappingConversions noCarvingOrNetworks','passed-river-foundations-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 

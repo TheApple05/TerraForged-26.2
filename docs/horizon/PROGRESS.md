@@ -34,6 +34,9 @@ stage observations; heightmap-climate.md records the boundary and explicit guard
 Terrain also matches all 726 terrain records from the older full kernel-v1 corpus.
 River networks/carving and filtered-tile construction remain required. There is
 no full apply sampler until the real river stage is ported and qualified.
+River geometry, warps/domains, configurations, variance and fork conversions now
+match independent Java observations; see river-foundations.md. Carvers and network
+generation remain separate unfinished work.
 Then compare every field against the frozen kernel-v1 observations, complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.

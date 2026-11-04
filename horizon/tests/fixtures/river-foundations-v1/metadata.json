@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-river-foundations-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "6d269abf02968072c367807e54ea6c9596e61a4aad48f8c1c26a20c382378dc2",
+  "uncompressedValuesSha256": "4e5aeaaf491572a8772f02bd6cb5f1edb01cb0480edc96d3ac8514574b9984a4",
+  "inputsSha256": "c127fab858e709745160ec0fd41bde4973cd43a3b045417ba73ef3ff9cfb8fab",
+  "recordCount": 35055,
+  "riverGeometries": 45,
+  "warpObjects": 22,
+  "warpSamples": 14850,
+  "genDomainRecords": 1944,
+  "forkConfigurations": 648,
+  "producerReports": [
+    {
+      "report": "server-horizon-river-foundations-oracle-v1a.json",
+      "sha256": "5b2f30e73070fdd54d083d0acf7590e5d3ea306783e3707809ee5a408977544a",
+      "pid": 9832,
+      "instance": "build/qa/server/instances/20261104T165401Z-a4eee2",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "de9296944116e4f09e43abaf030e9b7d28878de587ef2805fff70d2d5ca2bd69",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.River source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverConfig$Builder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.lake.LakeConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.lake.LakeConfig$Builder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.wetland.WetlandConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.gen.GenWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Levels source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.Variance source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Line source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.Domains source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-a4eee2/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-river-foundations-oracle-v1b.json",
+      "sha256": "745fb09e90274a0cbb1fae5e2e6fe26b4d78c09fe9a190d66b709a553039d99a",
+      "pid": 30736,
+      "instance": "build/qa/server/instances/20261104T165401Z-aff377",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "4caee91f7fcdd0e9713049a8a1a79d2e7d7bd3d71ea68c78ca76887e9673e0a7",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.River source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.RiverConfig$Builder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.lake.LakeConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.lake.LakeConfig$Builder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.wetland.WetlandConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.gen.GenWarp source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Levels source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.Variance source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Line source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.domain.Domains source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T165401Z-aff377/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "world/worldgen/cell/rivermap/river/River.java": "80c3787e78d8db12bad763d1d80e1417cc7626f869a6d6b31b0cf87bca266985",
+    "world/worldgen/cell/rivermap/river/RiverWarp.java": "465929d3951787e40675446ac6c0801fba01442ef28fe05a322680ec3edda9a6",
+    "world/worldgen/cell/rivermap/river/RiverConfig.java": "994d824823e7603663288fba17e8eed2180f0da8678b0de9492142760393955f",
+    "world/worldgen/cell/rivermap/river/Range.java": "3efeb3e57c3a2056b0d9c26c936ab1b0677e77fd24e08654b495f0c965788a75",
+    "world/worldgen/cell/rivermap/lake/LakeConfig.java": "dea20dbf062ed191680d1991f93f7563a932c5fa1c2ad8f0f72da552a1cf1b08",
+    "world/worldgen/cell/rivermap/wetland/WetlandConfig.java": "1a7979f4129fc4265a9557f051e7bce55910274e81e38cfa0d1f9c3dd592e3dd",
+    "world/worldgen/cell/rivermap/gen/GenWarp.java": "56ff44e37d59b7460c7178a5de404f2c772ada9d483e802f5c027c1414b6f1e7",
+    "world/worldgen/cell/heightmap/Levels.java": "d43a030691b7422216d4ea095407dba80ab5f28ece210fc7f1152e606b557d3b",
+    "world/worldgen/util/Variance.java": "4eeaf00f7f51f18d08e38f92b18b440bcd18dbb9592566c158fa13c8fbb2154f",
+    "world/worldgen/noise/module/Line.java": "5d703372d3a8cbffcc8bca47cd564ddf2ad9ecd3de526b466a86df6541bbbea1",
+    "world/worldgen/noise/module/Simplex2.java": "d248bac6fdcc75e56368ccbb9ce938731c4bc44e87b11f2816631ce43557fda4",
+    "world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "world/worldgen/noise/domain/Domains.java": "43a03c893f81383bdb0da8d4c03c89f20ac6b1ec4cbbf5f5c64d77acec356833",
+    "data/worldgen/preset/settings/RiverSettings.java": "c341a5e4e15f12b97291c2ed805599dc4e3c2ff43645611f038f9a6c30f992aa"
+  },
+  "oracleSourceSha256Lf": "d6c8b7a0615a89a62b6c84b060c06425cefac5194172f4a2d8ba0fb5ae6ba14d",
+  "scope": "Original river configuration/forks, variance and random checkpoints, geometry, angle/intersection/bounds, sentinel-sensitive warps and generation domains. Finite raw bits and explicit NaN classifications.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Arbitrary mutable Java object aliasing",
+    "Every numeric domain",
+    "River carving/networks/cache",
+    "Filtered tiles/erosion/smoothing",
+    "Native chunks/client/save"
+  ]
+}

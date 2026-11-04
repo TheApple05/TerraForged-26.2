@@ -246,6 +246,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("heightmapClimate", Map.of("status", "captured-genuine-java-heightmap-climate", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportRiverFoundations")) {
+                require(!mode.startsWith("benchmark"), "River foundation capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-river-foundations.tsv");
+                Path inputs = output.resolve("native-river-foundations.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativeRiverFoundationProbe");
+                probe.getMethod("capture", Path.class, Path.class).invoke(null, reference, inputs);
+                report.put("riverFoundations", Map.of("status", "captured-genuine-java-river-foundations", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             report.put("status", "passed");
         } catch (Throwable failure) {
             report.put("error", describe(failure));
