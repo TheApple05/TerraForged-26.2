@@ -22,6 +22,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=ROOT / "build/qa/runtime/terraforged-runtime-qa.jar")
     parser.add_argument("--noise-composition", action="store_true", help="Include the optional same-package genuine Java graph oracle (Fabric QA only).")
     parser.add_argument("--noise-shaping", action="store_true", help="Include the optional same-package genuine Java shaping oracle (Fabric QA only).")
+    parser.add_argument("--noise-cellular", action="store_true", help="Include the optional same-package genuine Java cellular oracle (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -39,6 +40,8 @@ def main() -> int:
         sources.append(ROOT / "horizon/tests/java/NativeNoiseCompositionProbe.java")
     if args.noise_shaping:
         sources.append(ROOT / "horizon/tests/java/NativeNoiseShapingProbe.java")
+    if args.noise_cellular:
+        sources.append(ROOT / "horizon/tests/java/NativeNoiseCellularProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
