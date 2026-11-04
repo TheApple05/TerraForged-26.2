@@ -13,6 +13,7 @@
 # line endings and diagnostic whitespace when committed or checked out.
 docs/validation/** -text whitespace=-trailing-space
 horizon/tests/fixtures/** -text whitespace=-trailing-space
+horizon/tests/inputs/** -text
 tests/core/reference-output.tsv -text whitespace=-trailing-space
 gradlew text eol=lf
 *.bat text eol=crlf

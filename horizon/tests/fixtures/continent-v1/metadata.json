@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-continent-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "b96356888bb49f9067f72402d834c197f3edac55ac3ea217b44745e25b1e0931",
+  "inputsSha256": "9b82bc9eebd74a54aaec28dbfca7137c4bfd80c14d89ab14277393362132e349",
+  "recordCount": 26113,
+  "presetCases": 4,
+  "signed32Seeds": 6,
+  "cellSamples": 25392,
+  "allCellFields": 24,
+  "producerReports": [
+    {
+      "report": "server-horizon-continent-oracle-v2a.json",
+      "sha256": "01b404e123ec1df19f6f146085e043a9228156c7894ede6bdd842f2c370c7f6b",
+      "pid": 71412,
+      "instance": "build/qa/server/instances/20261104T155555Z-3b9004",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "c53124100f2ef8a3e0ee460677090fa4952555f4f66e3386694bf98bfdceffaf",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AbstractContinent source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AdvancedContinentGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.GeneratorContext source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.simple.SimpleRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.BaseRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.Cell source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.Seed source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-3b9004/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-continent-oracle-v2b.json",
+      "sha256": "ac831e3d31a59a8c030fdb16527840783cf2c381891c9f923a01e535329825bb",
+      "pid": 53424,
+      "instance": "build/qa/server/instances/20261104T155555Z-09f4e9",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "c179bf4a8560b50e5f21839ef5a95a992dc7863e2c8e5de806af2cbb082a7ecc",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AbstractContinent source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AdvancedContinentGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.GeneratorContext source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.simple.SimpleRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.rivermap.river.BaseRiverGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.Cell source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.Seed source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Perlin2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Simplex2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T155555Z-09f4e9/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "world/worldgen/cell/continent/advanced/AbstractContinent.java": "8de317c681159779ed4602cef0dc520c02aeb4778e5c435c4c7157c9bdc3f72b",
+    "world/worldgen/cell/continent/advanced/AdvancedContinentGenerator.java": "9bbb975806e7cd847ae3826da6557eb341b638f9f0d0aaaf16faa82888b30e9c",
+    "world/worldgen/cell/continent/simple/SimpleRiverGenerator.java": "10117beedb641aa62acbe541905d2ca64e8a4557673d35ca7c19d8123725691d",
+    "world/worldgen/cell/rivermap/river/BaseRiverGenerator.java": "cffb649be9cd84d6314cd28f4047262b35006dc2d52427604c3ea4aab4a5a10e",
+    "world/worldgen/cell/heightmap/ControlPoints.java": "fc3fe8193ecd00fb66e237a88868c4bfb531f5a2affd4e75d3044d4e4b923b08",
+    "world/worldgen/cell/Cell.java": "931f88001501f707299fd030999d56f91174f955eade30fac1f7a7e85c42aa1c",
+    "world/worldgen/util/Seed.java": "363f692f8f1af4238b083a16e012b78222cbd340775d38fb50fce1fe7ee0ccd4",
+    "world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "world/worldgen/noise/module/Noises.java": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+    "world/worldgen/noise/domain/DomainWarp.java": "d64372619f1bcc4b9954be399ea3c5cbfd8dc556ce8c52846af3e9abd23d5e9e"
+  },
+  "oracleSourceSha256Lf": "343cf058ddefe85b8385c40d6c782a75aec5860d538500e09310a654c4fb3804",
+  "scope": "Original advanced continent, constructor seed cursor, default/dirty cells, corrected centers, edge/ocean searches and geometry helpers.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Other continent types",
+    "River networks/cache",
+    "Whole terrain/climate/filtered tiles",
+    "Native chunks/client/save"
+  ]
+}

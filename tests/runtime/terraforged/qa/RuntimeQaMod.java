@@ -201,6 +201,15 @@ public final class RuntimeQaMod implements ModInitializer {
                     "sha256", sha256(reference),"inputs",inputs.toString(),"inputsSha256",sha256(inputs)));
             }
             node(nodes, "biome-decorator-overrides", "passed", "Three production-helper assertions completed with real target holders");
+            if (Boolean.getBoolean("terraforged.qa.exportContinent")) {
+                require(!mode.startsWith("benchmark"), "Continent capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-continent.tsv");
+                Path inputs = output.resolve("native-continent.inputs.json");
+                Class<?> probe = Class.forName("raccoonman.reterraforged.world.worldgen.cell.continent.advanced.NativeContinentProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("continent", Map.of("status", "captured-genuine-java-continent", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             report.put("status", "passed");
         } catch (Throwable failure) {
             report.put("error", describe(failure));

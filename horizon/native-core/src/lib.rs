@@ -2,6 +2,7 @@
 
 pub mod biome;
 pub mod cell;
+pub mod continent;
 pub mod domain;
 pub mod erosion;
 pub mod fast_random;
