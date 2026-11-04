@@ -1,0 +1,11 @@
+# 0015: Keep vanilla's preset validation screen in control
+
+The default and content-stack client workflows initially waited for `Preset.KEY` after pressing Done. Source review found that this wait hid an interactive race: `PresetConfigScreen.applyPreset` delegates to Minecraft's asynchronous datapack validation, but the subsequent unconditional `onClose` immediately replaced its loading screen with the parent Create World screen. A user could press Create before the applied preset was ready.
+
+The stricter probe reproduced this against the immutable dev10 package: immediately after the actual Done callback, `appliedPresetReady=false`, `screenClass=CreateWorldScreen`, `parentVisible=true`, and `safeScreenOwnership=false`. [The retained baseline report](../validation/client-2026-11-04-dev10-post-done-before-fix.json) records the expected assertion failure and clean QA shutdown. This was not a fabricated delay or a compiler-only inference.
+
+`PresetConfigScreen.onClose` now restores the parent only if the editor is still the current screen. Closing still releases the page/preview resources. If applying the preset has handed control to a vanilla loading, confirmation or error screen, the editor leaves that screen in place. Actual 26.2 `CreateWorldScreen.applyNewPackConfig` updates the settings and returns to the parent through its existing asynchronous completion handler. No custom reload state machine or sleeps are added to production.
+
+The client probe checks screen ownership immediately after Done, permits the real `GenericMessageScreen` while loading, detects a validation failure screen, and requires both the returned parent and the actual loaded preset before creating a world. It then retains the full new-world/render/save/vanilla-reload checks on both loaders. Corrected candidate results are separate runtime records; passing the baseline's prior readiness wait is not accepted as evidence for this race.
+
+The [dev10/dev11 class comparison](../validation/dev10-dev11-class-comparison.json) confirms that only `PresetConfigScreen.class` changes. Every non-client class is byte-identical; package version metadata also changes. Exact dev11 production runtime checks still use the new JAR hashes rather than assuming artifact identity from that comparison.

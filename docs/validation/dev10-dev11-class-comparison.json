@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "scope": "Actual packaged class bytes, dev10 versus GUI-only dev11",
+  "comparisons": [
+    {
+      "loader": "fabric",
+      "dev10Sha256": "6c698372e83d450464d56f896599f1b4cf7e838d5921a831e8a9b28256d663ae",
+      "dev11Sha256": "9c72b55fe91202ba85bbfc1489eebc91b5a1a6b4412373130b73230659d792f0",
+      "oldClassCount": 572,
+      "newClassCount": 572,
+      "changedClasses": [
+        "raccoonman/reterraforged/client/gui/screen/presetconfig/PresetConfigScreen.class"
+      ],
+      "nonClientClassDifferences": [],
+      "backendBytecodeUnchanged": true
+    },
+    {
+      "loader": "neoforge",
+      "dev10Sha256": "87c45cfdc49e4e3b9427314aa0c58ad97e149cf852097741492768d9f40bfb9a",
+      "dev11Sha256": "7f1ba4f0dd38259b4995fc445afeae637aded12144cb813affc16b5c83158845",
+      "oldClassCount": 565,
+      "newClassCount": 565,
+      "changedClasses": [
+        "raccoonman/reterraforged/client/gui/screen/presetconfig/PresetConfigScreen.class"
+      ],
+      "nonClientClassDifferences": [],
+      "backendBytecodeUnchanged": true
+    }
+  ],
+  "notEvidenceOf": [
+    "Complete runtime compatibility",
+    "Resource equality",
+    "User visual acceptance"
+  ]
+}

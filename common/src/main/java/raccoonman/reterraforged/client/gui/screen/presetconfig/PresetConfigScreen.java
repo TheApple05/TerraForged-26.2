@@ -28,7 +28,7 @@ import raccoonman.reterraforged.data.worldgen.Datapacks;
 import raccoonman.reterraforged.data.worldgen.preset.settings.Preset;
 import raccoonman.reterraforged.mixin.CreateWorldScreenInvoker;
 
-//FIXME pressing the create world screen before the pack is copied will fuck the game up (surprisingly noone seems to have run into this?)
+/** Edits a preset and delegates datapack validation to the parent world screen. */
 public class PresetConfigScreen extends LinkedPageScreen {
 	private CreateWorldScreen parent;
 	
@@ -41,7 +41,11 @@ public class PresetConfigScreen extends LinkedPageScreen {
 	public void onClose() {
 		super.onClose();
 
-		this.minecraft.gui.setScreen(this.parent);
+		// Applying a preset hands control to vanilla's asynchronous validation
+		// screen. Keep that screen (and any error/confirmation) until it returns.
+		if (this.minecraft.gui.screen() == this) {
+			this.minecraft.gui.setScreen(this.parent);
+		}
 	}
 	
 	public void setSeed(long seed) {
