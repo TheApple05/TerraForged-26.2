@@ -25,8 +25,12 @@ def main() -> int:
     base.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="generate-", dir=base) as temp:
         work = Path(temp)
+        sources = [ROOT / "tests/resources/LanguageAssetGenerator.java"] + [
+            ROOT / "common/src/main/java/raccoonman/reterraforged" / name for name in (
+                "client/data/RTFLanguageProvider.java", "client/data/LanguageProvider.java",
+                "client/data/RTFTranslationKeys.java", "client/gui/Tooltips.java")]
         subprocess.run([str(javac), "--release", "25", "-proc:none", "-encoding", "UTF-8",
-                        "-cp", classpath, "-d", temp, str(ROOT / "tests/resources/LanguageAssetGenerator.java")],
+                        "-cp", classpath, "-d", temp, *map(str, sources)],
                        check=True, cwd=ROOT, timeout=60)
         subprocess.run([str(java), "-cp", temp + os.pathsep + classpath,
                         "LanguageAssetGenerator", str(work / "output")], check=True, cwd=ROOT, timeout=60)

@@ -20,7 +20,7 @@ public final class RTFLanguageProvider {
 			this.add(RTFTranslationKeys.MUD_SWAMPS_METADATA_DESCRIPTION, "Changes the swamp material to mud");
 			this.add(RTFTranslationKeys.NO_ERROR_MESSAGE, "{No error message}");
 			
-			this.add(RTFTranslationKeys.GUI_INPUT_PROMPT, "Type preset name");
+			this.add(RTFTranslationKeys.GUI_INPUT_PROMPT, "Preset name");
 			
 			this.add(RTFTranslationKeys.GUI_SELECT_PRESET_MISSING_LEGACY_PRESETS, "Couldn't find any legacy presets");
 			this.add(RTFTranslationKeys.GUI_SELECT_PRESET_TITLE, "Presets & Defaults");
@@ -43,9 +43,9 @@ public final class RTFLanguageProvider {
 			this.add(RTFTranslationKeys.GUI_BUTTON_CREATE, "Create");
 			this.add(RTFTranslationKeys.GUI_BUTTON_COPY, "Copy");
 			this.add(RTFTranslationKeys.GUI_BUTTON_DELETE, "Delete");
-			this.add(RTFTranslationKeys.GUI_BUTTON_OPEN_PRESET_FOLDER, "Open Preset Folder");
-			this.add(RTFTranslationKeys.GUI_BUTTON_OPEN_EXPORT_FOLDER, "Open Export Folder");
-			this.add(RTFTranslationKeys.GUI_BUTTON_EXPORT_AS_DATAPACK, "Export As Datapack");
+			this.add(RTFTranslationKeys.GUI_BUTTON_OPEN_PRESET_FOLDER, "Preset Folder");
+			this.add(RTFTranslationKeys.GUI_BUTTON_OPEN_EXPORT_FOLDER, "Export Folder");
+			this.add(RTFTranslationKeys.GUI_BUTTON_EXPORT_AS_DATAPACK, "Export Pack");
 			this.add(RTFTranslationKeys.GUI_BUTTON_EXPORT_SUCCESS, "Exported Preset");
 			this.add(RTFTranslationKeys.GUI_BUTTON_SEED, "Seed");
 			this.add(RTFTranslationKeys.GUI_BUTTON_CONTINENT_TYPE, "Continent Type");
