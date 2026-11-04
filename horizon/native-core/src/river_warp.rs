@@ -58,7 +58,7 @@ impl RiverWarp {
         )
     }
     pub fn test(&self, t: f32) -> bool {
-        !self.none && t >= 0.0 && t <= 1.0
+        !self.none && (0.0..=1.0).contains(&t)
     }
     pub fn offset(&self, x: f32, z: f32, t: f32, river: &River) -> (f32, f32) {
         let alpha = self.warp_alpha(t);

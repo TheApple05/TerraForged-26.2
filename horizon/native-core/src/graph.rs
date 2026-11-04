@@ -703,6 +703,7 @@ impl Noise {
         )
     }
 
+    #[allow(clippy::should_implement_trait)] // Fallible source graph factory, not value addition.
     pub fn add(a: Self, b: Self) -> Result<Self, GraphError> {
         Self::make(
             Node::Add(a.clone(), b.clone()),

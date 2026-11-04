@@ -126,6 +126,7 @@ impl Domain {
             &cost,
         )
     }
+    #[allow(clippy::should_implement_trait)] // Fallible source graph factory, not value addition.
     pub fn add(a: Self, b: Self) -> Result<Self, GraphError> {
         let cost = [a.cost(), b.cost()];
         Self::make(Node::Add(a, b), &cost)

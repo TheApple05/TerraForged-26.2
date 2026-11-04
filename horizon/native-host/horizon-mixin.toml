@@ -1,0 +1,18 @@
+[mod]
+id = "terraforged_native"
+version = "0.1.0"
+
+[compatibility]
+horizon_revision = "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5"
+
+[[crate]]
+id = "kernel"
+path = "kernel"
+dependent = "horizon-core"
+
+[[module]]
+id = "density-runtime"
+file = "crates/horizon-core/src/density/mod.rs"
+name = "terraforged_runtime"
+source = "density_runtime.rs"
+visibility = "pub"

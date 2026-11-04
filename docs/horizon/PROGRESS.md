@@ -46,8 +46,10 @@ The bounded production column/tile sampler now matches 196,608 original Java
 core columns across six seeds, including negative addressing and eviction/reload.
 Its failure/unwind/concurrent-publication lifecycle tests pass in both profiles.
 An optimized kernel-only benchmark is recorded in column-sampler.md. Native
-density/chunks, seam characterization, real client/save and mod combinations
-remain required; kernel timings are not game/FPS acceptance.
+density bindings now have a separate real-graph qualification in
+host-density-graph.md. Full router/world integration, seam characterization,
+real client/save and mod combinations remain required; kernel timings are not
+game/FPS acceptance.
 The ten cell density fields and custom clamp/spline/conditional-cache/noise
 primitives now match 430,254 independent Java fields in both profiles; see
 density-primitives.md. They are not bound into Horizon's density graph yet.

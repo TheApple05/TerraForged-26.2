@@ -2,9 +2,9 @@ name: Horizon native noise foundation
 
 on:
   push:
-    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
+    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/native-host/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
   pull_request:
-    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
+    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/native-host/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
   workflow_dispatch:
 
 permissions:

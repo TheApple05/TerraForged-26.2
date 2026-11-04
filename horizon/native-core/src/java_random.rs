@@ -38,12 +38,13 @@ impl JavaRandom {
     pub fn next_f32(&mut self) -> f32 {
         self.next(24) as f32 / (1u32 << 24) as f32
     }
+    #[allow(clippy::manual_isolate_lowest_one)] // Preserve the Java algorithm and older host MSRV.
     pub fn bounded_i32(&mut self, bound: i32) -> Result<i32, InvalidBound> {
         if bound <= 0 {
             return Err(InvalidBound);
         }
         if (bound & bound.wrapping_neg()) == bound {
-            return Ok(((bound as i64) * (self.next(31) as i64) >> 31) as i32);
+            return Ok((((bound as i64) * (self.next(31) as i64)) >> 31) as i32);
         }
         loop {
             let bits = self.next(31) as i32;

@@ -1,4 +1,4 @@
-# TerraForged for Horizon: prepared terrain prototype
+# TerraForged for Horizon: procedural port and prepared prototype
 
 This is an experimental **finite terrain bridge**, not the completed native
 TerraForged generator. Horizon currently targets Minecraft **26.3**; the Java
@@ -22,10 +22,13 @@ Procedural work is isolated in [native-core](native-core/README.md). Complete
 cell/river/climate stages and filtered tiles now match all310,104 independent Java
 kernel records in debug/release. The bounded cached column sampler matches
 196,608 observed columns, with lifecycle checks and an optimized kernel benchmark.
-Custom density primitives also have independent coverage. See the
-[current checkpoint](../docs/horizon/PROGRESS.md). This kernel is not connected to
-Horizon world generation or included in the prepared bundle yet; native density,
-biomes, surfaces, caves, decorations and structures remain integration work.
+Custom density primitives also have independent coverage. The assembled native
+bundle now binds procedural cells/noise/clamps into real compiled Horizon
+density graphs, matching 24,768 independent Java scalar/bulk observations in
+debug and release. See [graph integration](../docs/horizon/host-density-graph.md)
+and the [current checkpoint](../docs/horizon/PROGRESS.md). World activation,
+complete routers, biomes, surfaces, caves, decorations and structures remain
+integration work. The separate prepared bundle does not include this kernel.
 
 The player-facing bundle is under `mixins/terraforged_prepared/`. It uses the
 actual Horizon world-generator constructor through horizon-mixins, pinned to

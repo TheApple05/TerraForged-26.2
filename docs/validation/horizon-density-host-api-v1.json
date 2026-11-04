@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "rust-passed-full-pr-ready-failed-baseline-python",
+  "horizonPatchCommit": "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5",
+  "pullRequest": "https://github.com/TheApple05/horizon/pull/2",
+  "trackedFilesChanged": 2,
+  "addedLines": 51,
+  "rust": {
+    "publicTreePassed": true,
+    "formatPassed": true,
+    "workspaceClippyWarningsDeniedPassed": true,
+    "prReadyTouchedTestsPassed": 132,
+    "separateCoreLibraryTestsPassed": 124,
+    "separateCoreLibraryTestsIgnored": 3
+  },
+  "python": {
+    "testsRun": 631,
+    "failures": 1,
+    "skipped": 13,
+    "fullPrReadyPassed": false,
+    "gitBashFailureReproducedOnUnchangedBaseline": true,
+    "wslUbuntuTargetedTestsPassed": 2,
+    "fullWslPythonSuiteRun": false
+  },
+  "logs": {
+    "core-tests.log": {
+      "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\density-host-isolation\\core-tests.log",
+      "sha256": "26e2c0bf50207e6e01ffb7bb1a94107a149ffc2b74050a029ab8cacb90fdbbaa"
+    },
+    "pr-ready-output.log": {
+      "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\density-host-isolation\\pr-ready-output.log",
+      "sha256": "ca2cb5fb945c9d785847ec9bb8774792e1d2a422de1cd0f0577dfb0915853255"
+    },
+    "pr-ready-output-v2.log": {
+      "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\density-host-isolation\\pr-ready-output-v2.log",
+      "sha256": "d067b220f987dcd711b292b8d736d3ef9301fb7c7e95e696b11ceb759baa9430"
+    }
+  },
+  "scopeCountCaveat": "Second pr_ready counted untracked temporary Cargo output; moved outside worktree after the run. Published Git patch is two files, 51 added lines.",
+  "notCovered": [
+    "World activation",
+    "Full native graph/router integration",
+    "Native chunk/client/save/packaging"
+  ]
+}
