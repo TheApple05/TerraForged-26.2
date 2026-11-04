@@ -29,7 +29,11 @@ The used Java Random methods and collection shuffle sequence are qualified.
 All 20 regular/fancy terrain factory branches now match Java observations in
 terrain-factories.md. VolcanoPopulator and TerrainProvider composite/seed/shuffle
 ordering also match independently captured Java data; see terrain-provider.md.
-Complete Heightmap, river, climate and filtered-tile construction remain required.
+Complete Heightmap terrain/climate construction now matches five-preset Java
+stage observations; heightmap-climate.md records the boundary and explicit guards.
+Terrain also matches all 726 terrain records from the older full kernel-v1 corpus.
+River networks/carving and filtered-tile construction remain required. There is
+no full apply sampler until the real river stage is ported and qualified.
 Then compare every field against the frozen kernel-v1 observations, complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.

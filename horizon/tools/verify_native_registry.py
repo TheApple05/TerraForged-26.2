@@ -23,6 +23,8 @@ FAMILIES={
                          'NATIVE_TERRAIN_FACTORY_GUARDS_OK originalCursors ownedGraphs replayOrder parallelReaders','passed-terrain-factories-only'),
     'terrain-provider':('terrain-provider-v1','terrain_provider_probe','Terrain provider construction/composite/shuffle order, selection and original volcano mutations',
                         'NATIVE_TERRAIN_PROVIDER_GUARDS_OK ownedRegistry originalOrder volcanoBranches replayOrder parallelReaders','passed-terrain-provider-only'),
+    'heightmap-climate':('heightmap-climate-v1','heightmap_climate_probe','Complete terrain and climate stages without river or filtered-tile execution',
+                         'NATIVE_HEIGHTMAP_CLIMATE_GUARDS_OK supportedContinent derivedScales finiteQueries ownedTerrain reverseOrder parallelReaders noRiverExecution','passed-terrain-climate-stages-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
