@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-capture-launch-before-observations",
+  "error": "The Java launch used a relative classes path with the QA directory as cwd; the probe main class was not found. No fixture was accepted.",
+  "processLogSha256": "2ac45c610a33001c317752a2a963c05d3be9cab95a95290e4d89dddc0a7777ff",
+  "captureSourceSha256": "bf7ed45420f4239b6699ea449b2d79881de3b802dea19c8fbae531a7f38815fa",
+  "nativeExpectedValuesUsed": false,
+  "gameAssetsDownloaded": false
+}

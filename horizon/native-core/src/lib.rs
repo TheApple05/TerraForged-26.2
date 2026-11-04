@@ -54,3 +54,5 @@ pub mod world_filters;
 pub mod worley;
 
 pub mod classic_pillars;
+
+pub mod pillar_sampler;

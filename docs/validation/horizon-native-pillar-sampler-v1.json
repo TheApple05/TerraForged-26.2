@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-independent-pillar-sampler",
+  "completedAtUtc": "2026-11-04T23:08:29.435114+00:00",
+  "recordsPerProfile": 38336,
+  "referenceMetadataSha256": "f752bd04937f3cfd3e9add215353b6787da1da939f42a24561b6c219d7ca3b2c",
+  "nativeSourceSha256": "9b36dd9294353af8f675ef9a439efc56093e63cc413ca63f3871863f0dc84bef",
+  "probeSourceSha256": "221ddc7c13cffab2e2bc35a49f6f2e7cc2f654d84c0d28265e57849de845f79d",
+  "verifierSourceSha256": "2002a82e61bd59bd4e29b6593ebd0090f276a3e7c669b60853c3a5cd37164825",
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "recordCount": 38336,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "executableSha256": "c3ae5d4fe1be8ec5217d97f23877b236964023e6be7b25671cd00623dcac6896",
+      "outputSha256": "9eba1802877b9230b22277a418ce75880465f1ac81baa0908f23c77583e533f2",
+      "allJavaObservationsMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "recordCount": 38336,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "executableSha256": "0e7648cf3b0a2c0b5bd944e1023836715dea041c4f0c391f5b3aebc2d15ec061",
+      "outputSha256": "9eba1802877b9230b22277a418ce75880465f1ac81baa0908f23c77583e533f2",
+      "allJavaObservationsMatch": true
+    }
+  ],
+  "scope": "Packaged BRYCE/STONE_A/STONE_B static graphs and private palette methods via reflection; detail/bands and stone material expressions projected from the place method. Six root seeds, distant/negative coordinates, palette boundaries and material rows.",
+  "notCovered": [
+    "Filtered cell masks",
+    "Biome boundary tapering",
+    "Height clipping in actual worlds",
+    "Block writes or feature execution",
+    "Natural scenery, structures or performance"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "failed-plain-jvm-fabric-registry-access",
+  "error": "The genuine packaged Noises initializer reached FabricRegistryBuilder before loader mixins were active. No fixture was accepted. Replaced with real Fabric server capture.",
+  "processLogSha256": "d6b4155746c0f0ffd4b4a6dd49eb6388759f5d04e655320e09e622bc660660a9",
+  "nativeExpectedValuesUsed": false,
+  "gameAssetsDownloaded": false
+}
