@@ -43,10 +43,10 @@ impl RiverCache {
         // Java PosUtil.pack: left signed coordinate occupies the upper 32 bits.
         let id = ((x as u32 as u64) << 32) | (z as u32 as u64);
         let map = Arc::new(self.generator.generate(x, z, id as i64)?);
-        if state.maps.len() == self.capacity {
-            if let Some(old) = state.order.pop_front() {
-                state.maps.remove(&old);
-            }
+        if state.maps.len() == self.capacity
+            && let Some(old) = state.order.pop_front()
+        {
+            state.maps.remove(&old);
         }
         state.maps.insert(key, map.clone());
         state.order.push_back(key);
@@ -59,6 +59,9 @@ impl RiverCache {
             .map_err(|_| GraphError::InvalidSourceParameters("river cache poisoned"))?
             .maps
             .len())
+    }
+    pub fn is_empty(&self) -> Result<bool, GraphError> {
+        Ok(self.len()? == 0)
     }
     pub fn clear(&self) -> Result<(), GraphError> {
         *self

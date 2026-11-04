@@ -16,7 +16,7 @@ pub struct Levels {
 impl Levels {
     pub fn new(height: i32, sea_level: i32) -> Self {
         let world_height = if height > 1 { height } else { 1 };
-        let unit = 1i32 as f32 / world_height as f32;
+        let unit = 1.0f32 / world_height as f32;
         let water_level = sea_level;
         let ground_level = water_level.wrapping_add(1);
         let water_y = if water_level.wrapping_sub(1) < world_height {

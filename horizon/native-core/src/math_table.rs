@@ -19,6 +19,7 @@ pub fn sin(radians: f32) -> f32 {
 }
 
 #[inline]
+#[allow(clippy::approx_constant)] // Source uses 1.5708, whose bits differ from FRAC_PI_2.
 pub fn cos(radians: f32) -> f32 {
     sin(radians + 1.5708f32)
 }

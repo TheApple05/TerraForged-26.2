@@ -129,16 +129,16 @@ impl TileWorkCache {
                 {
                     state.flights.remove(&key);
                 }
-                if state.generation == generation {
-                    if let Ok(tile) = &outcome {
-                        if state.tiles.len() == self.capacity {
-                            if let Some(old) = state.order.pop_front() {
-                                state.tiles.remove(&old);
-                            }
-                        }
-                        state.tiles.insert(key, tile.clone());
-                        state.order.push_back(key);
+                if state.generation == generation
+                    && let Ok(tile) = &outcome
+                {
+                    if state.tiles.len() == self.capacity
+                        && let Some(old) = state.order.pop_front()
+                    {
+                        state.tiles.remove(&old);
                     }
+                    state.tiles.insert(key, tile.clone());
+                    state.order.push_back(key);
                 }
                 outcome
             }

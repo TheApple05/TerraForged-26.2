@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-warnings-denied-assembled-host-library",
+  "horizonRevision": "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5",
+  "command": "cargo +stable clippy --offline --locked --manifest-path <staged>/Cargo.toml -p horizon-core --lib --message-format short -- -D warnings",
+  "exitCode": 0,
+  "logSha256": "d2ac54bf55c4ff0aac2b5324715714aca8771942ec07772c6861f35a835571dc",
+  "stageResultSha256": "c89f397606a9405b0826022ca22fa0d86f6e36cc10e89cb4fc9f8badbc245f1b",
+  "previousFailure": {
+    "count": 23,
+    "logSha256": "edb6cdb1c8b31c6d2cf577d6c4afb55a32b24b74545e4522df38614778139d19"
+  },
+  "notCovered": [
+    "Full game/launcher build",
+    "World activation",
+    "Native world acceptance"
+  ]
+}

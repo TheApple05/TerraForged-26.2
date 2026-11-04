@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-host-density-reference",
+  "freshRunsAgree": true,
+  "recordCount": 24768,
+  "recordKinds": {
+    "scalar": 10368,
+    "volume": 14400
+  },
+  "fixtureSha256": "608e7047dfc98ee1990fa888d395f89a8d7c7f969e54f330261154dbe0dce482",
+  "uncompressedValuesSha256": "5ed96f7034781269b55b75c69664eb04b8a1bd51969e0cad8e163c60185698bd",
+  "inputsSha256": "caec3168f6e879304e42b64654545b5be07a425dac6651469355d32cd31776c4",
+  "producerReports": [
+    {
+      "report": "server-horizon-host-density-oracle-v2a.json",
+      "sha256": "aa7e92e3431bb6b16ececaaab821bc28567354cd02a15d7ff5484aba7409b650",
+      "pid": 35876,
+      "instance": "build/qa/server/instances/20261104T184320Z-ddd38a",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "3e1882d1720add0fe97e70ca5fd3cebab771b39728701a39a88e6920c854969d",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.ClampToNearestUnit source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.WorldLookup source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.GeneratorContext source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$1 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$3 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$4 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$5 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$6 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$7 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$8 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$9 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$10 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-ddd38a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-host-density-oracle-v2b.json",
+      "sha256": "fe49ef78fad5af2cc95f0d53e08584da1598912c7c2721b7b62bce8ede9975f0",
+      "pid": 70772,
+      "instance": "build/qa/server/instances/20261104T184320Z-7cc108",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "7e140ed57cf9be770c416e246a99c21ff9e1daefac729344fe41ac246438e581",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.ClampToNearestUnit source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.NoiseFunction source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.WorldLookup source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.GeneratorContext source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$1 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$3 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$4 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$5 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$6 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$7 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$8 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$9 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler$Field$10 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T184320Z-7cc108/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "oracleSourceSha256Lf": "37577ba30e51b2dea924f9cd8d622a2a3aa5b7b501ec146aba445ce8d3e5c274",
+  "nativeOutputsRead": false,
+  "scope": "Actual mapped cell densities over filtered tiles, original clamp and noise wrappers, one addition graph; scalar and bulk results narrowed to the Horizon f32 interface.",
+  "notCovered": [
+    "Full density router conversion",
+    "Original f64 vanilla chunk execution",
+    "Every preset or numeric domain",
+    "Native chunks/client/save/packaging"
+  ]
+}

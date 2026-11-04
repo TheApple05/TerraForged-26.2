@@ -27,7 +27,7 @@ impl Lake {
         let lake_radius = radius * multiplier;
         let valley = 275.0 * multiplier;
         let mut lake = Lake {
-            valley: valley,
+            valley,
             valley2: valley * valley,
             lake_distance2: 0.0,
             valley_distance2: 0.0,
@@ -37,7 +37,7 @@ impl Lake {
             depth: config.depth,
             bank_min: config.bank_min,
             bank_max: config.bank_max,
-            center: center,
+            center,
         };
         lake.bank_alpha_max = java_min(1.0, lake.bank_alpha_min + 0.275);
         lake.bank_alpha_range = lake.bank_alpha_max - lake.bank_alpha_min;
@@ -46,6 +46,7 @@ impl Lake {
         lake
     }
 
+    #[allow(clippy::manual_clamp)] // Keep the independently observed Java comparison branches.
     pub fn apply(&self, cell: &mut Cell, x: f32, z: f32) {
         let distance2 = self.get_distance2(x, z);
         if distance2 > self.valley2 {

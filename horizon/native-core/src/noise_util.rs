@@ -228,6 +228,7 @@ pub fn hash_2d(seed: i32, x: i32, y: i32) -> i32 {
 }
 
 #[inline]
+#[allow(clippy::excessive_precision)] // Preserve the original decimal constant's f32 rounding.
 pub fn val_coord_2d(seed: i32, x: i32, y: i32) -> f32 {
     let mut n = seed;
     n ^= 1619i32.wrapping_mul(x);

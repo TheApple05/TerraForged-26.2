@@ -291,6 +291,11 @@ pub struct LakeConfigBuilder {
     pub distance_max: f32,
 }
 
+impl Default for LakeConfigBuilder {
+    fn default() -> Self {
+        Self::new()
+    }
+}
 impl LakeConfigBuilder {
     pub fn new() -> Self {
         Self {
