@@ -1,0 +1,14 @@
+.reference/
+.tools/
+.gradle/
+.idea/
+**/build/
+**/run/
+**/runs/
+*.iml
+*.log
+__pycache__/
+.env
+.env.*
+!*.example
+local.properties
