@@ -1,0 +1,105 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+def shared = new Properties()
+file('../gradle.properties').withInputStream { shared.load(it) }
+group = shared.maven_group
+version = providers.gradleProperty('mod_version').orElse(shared.mod_version).get()
+base.archivesName = shared.archives_base_name
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.architectury.dev/' }
+    maven { url = 'https://maven.minecraftforge.net/' }
+}
+
+sourceSets {
+    main {
+        // All common terrain and UI files participate in both loader builds.
+        java.setSrcDirs(['../common/src/main/java', 'src/main/java'])
+        resources.setSrcDirs(['../common/src/main/resources', 'src/main/resources'])
+    }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    withSourcesJar()
+}
+
+neoForge {
+    version = project.neo_version
+    accessTransformers = files('src/main/resources/META-INF/accesstransformer.cfg')
+    runs {
+        client { client() }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods {
+        reterraforged { sourceSet(sourceSets.main) }
+    }
+}
+
+dependencies {
+    compileOnly("com.github.glitchfiend:TerraBlender-neoforge:${project.terrablender_version}") {
+        transitive = false
+    }
+    compileOnly 'com.electronwill.night-config:toml:3.6.7'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+    options.compilerArgs.addAll(['-proc:none', '-Xmaxerrs', '10000', '-Xdiags:verbose'])
+}
+
+tasks.named('processResources') {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand version: project.version, neo_version: project.neo_version
+    }
+}
+
+tasks.register('writePortClasspath') {
+    group = 'verification'
+    doLast {
+        def output = layout.buildDirectory.file('qa/target/compile-classpath.txt').get().asFile
+        output.parentFile.mkdirs()
+        output.text = configurations.compileClasspath.asPath
+        println 'NeoForge classpath written to build/qa/target/compile-classpath.txt'
+    }
+}
+
+tasks.register('portToolchain') {
+    group = 'verification'
+    dependsOn 'writePortClasspath'
+    doLast {
+        println 'NEOFORGE_TOOLCHAIN_JSON=' + groovy.json.JsonOutput.toJson([
+            minecraft: shared.minecraft_version,
+            neoforge: project.neo_version,
+            modDevGradle: '2.0.148',
+            gradle: gradle.gradleVersion,
+            java: System.getProperty('java.version'),
+            commonSourceFiles: fileTree('../common/src/main/java').matching { include '**/*.java' }.files.size(),
+            totalSourceFiles: sourceSets.main.allJava.files.size(),
+            sourceExclusions: [],
+            annotationProcessing: false,
+            accessTransformer: 'META-INF/accesstransformer.cfg'
+        ])
+    }
+}
+
+tasks.named('jar') {
+    archiveClassifier = 'neoforge'
+    from('../LICENSE')
+    from('../THIRD_PARTY_NOTICES.md')
+    from('../licenses') { into 'META-INF/licenses' }
+    doFirst {
+        if (!project.hasProperty('experimentalPackage')) {
+            throw new GradleException('Use -PexperimentalPackage only for isolated validation of this unfinished port.')
+        }
+    }
+}

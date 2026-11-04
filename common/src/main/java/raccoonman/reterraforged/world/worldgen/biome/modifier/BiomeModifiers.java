@@ -14,12 +14,12 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import raccoonman.reterraforged.platform.RegistryUtil;
 import raccoonman.reterraforged.registries.RTFBuiltInRegistries;
-import raccoonman.reterraforged.world.worldgen.biome.modifier.fabric.BiomeModifiersImpl;
+import raccoonman.reterraforged.platform.PlatformServices;
 
 public class BiomeModifiers {
 	
 	public static void bootstrap() {
-		BiomeModifiersImpl.bootstrap();
+		PlatformServices.get().bootstrapBiomeModifiers();
 	}
 
 	@SafeVarargs
@@ -41,7 +41,7 @@ public class BiomeModifiers {
 	}
 	
 	public static BiomeModifier add(Order order, GenerationStep.Decoration step, Optional<Pair<Filter.Behavior, HolderSet<Biome>>> biomes, HolderSet<PlacedFeature> features) {
-		return BiomeModifiersImpl.add(order, step, biomes, features);
+		return PlatformServices.get().addBiomeModifier(order, step, biomes, features);
 	}
 
 	public static BiomeModifier replace(GenerationStep.Decoration step, Map<ResourceKey<PlacedFeature>, Holder<PlacedFeature>> replacements) {
@@ -53,7 +53,7 @@ public class BiomeModifiers {
 	}
 	
 	public static BiomeModifier replace(GenerationStep.Decoration step, Optional<HolderSet<Biome>> biomes, Map<ResourceKey<PlacedFeature>, Holder<PlacedFeature>> replacements) {
-		return BiomeModifiersImpl.replace(step, biomes, replacements);
+		return PlatformServices.get().replaceBiomeModifier(step, biomes, replacements);
 	}
 	
 	public static void register(String name, MapCodec<? extends BiomeModifier> value) {

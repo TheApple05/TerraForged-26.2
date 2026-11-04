@@ -5,6 +5,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import raccoonman.reterraforged.RTFCommon;
+import raccoonman.reterraforged.platform.PlatformServices;
 import raccoonman.reterraforged.data.worldgen.preset.settings.Preset;
 import raccoonman.reterraforged.world.worldgen.biome.modifier.BiomeModifier;
 import raccoonman.reterraforged.world.worldgen.feature.chance.ChanceModifier;
@@ -22,10 +23,10 @@ public class RTFRegistries {
 	public static final ResourceKey<Registry<MapCodec<? extends ChanceModifier>>> CHANCE_MODIFIER_TYPE = createKey("worldgen/chance_modifier_type");
 	public static final ResourceKey<Registry<MapCodec<? extends TemplatePlacement<?>>>> TEMPLATE_PLACEMENT_TYPE = createKey("worldgen/template_placement_type");
 	public static final ResourceKey<Registry<MapCodec<? extends TemplateDecorator<?>>>> TEMPLATE_DECORATOR_TYPE = createKey("worldgen/template_decorator_type");
-	public static final ResourceKey<Registry<MapCodec<? extends BiomeModifier>>> BIOME_MODIFIER_TYPE = createKey("forge:biome_modifier_serializers");
+	public static final ResourceKey<Registry<MapCodec<? extends BiomeModifier>>> BIOME_MODIFIER_TYPE = PlatformServices.get().biomeModifierTypeKey();
 	public static final ResourceKey<Registry<MapCodec<? extends StructureRule>>> STRUCTURE_RULE_TYPE = createKey("worldgen/structure_rule_type");
 	public static final ResourceKey<Registry<Noise>> NOISE = createKey("worldgen/noise");
-	public static final ResourceKey<Registry<BiomeModifier>> BIOME_MODIFIER = createKey("forge:biome_modifier");
+	public static final ResourceKey<Registry<BiomeModifier>> BIOME_MODIFIER = PlatformServices.get().biomeModifierRegistryKey();
 	public static final ResourceKey<Registry<StructureRule>> STRUCTURE_RULE = createKey("worldgen/structure_rule");
 
 	@Deprecated

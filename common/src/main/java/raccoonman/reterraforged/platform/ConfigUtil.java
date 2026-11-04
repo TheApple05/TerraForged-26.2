@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import raccoonman.reterraforged.RTFCommon;
-import raccoonman.reterraforged.platform.fabric.ConfigUtilImpl;
 
 public class ConfigUtil {
 	public static final Path RTF_CONFIG_PATH = getConfigPath().resolve(RTFCommon.MOD_ID);
@@ -20,7 +19,7 @@ public class ConfigUtil {
 	}
 	
 	public static Path getConfigPath() {
-		return ConfigUtilImpl.getConfigPath();
+		return PlatformServices.get().getConfigPath();
 	}
 	
 	static {

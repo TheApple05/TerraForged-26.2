@@ -8,7 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.RegistryDataLoader;
 import raccoonman.reterraforged.data.worldgen.preset.settings.Preset;
 import raccoonman.reterraforged.registries.RTFRegistries;
-import raccoonman.reterraforged.world.worldgen.biome.modifier.BiomeModifier;
+import raccoonman.reterraforged.platform.PlatformServices;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.structure.rule.StructureRule;
 
@@ -23,8 +23,14 @@ public final class RegistryPatches {
         RegistryDataLoader.DIMENSION_REGISTRIES.forEach(data -> data.runWithArguments(cloners::addCodec));
         cloners.addCodec(RTFRegistries.PRESET, Preset.DIRECT_CODEC);
         cloners.addCodec(RTFRegistries.NOISE, Noise.DIRECT_CODEC);
-        cloners.addCodec(RTFRegistries.BIOME_MODIFIER, BiomeModifier.CODEC);
+        PlatformServices.get().addPlatformRegistryCloners(cloners);
         cloners.addCodec(RTFRegistries.STRUCTURE_RULE, StructureRule.DIRECT_CODEC);
-        return builder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), original, cloners).full();
+        HolderLookup.Provider patched = builder.buildPatch(
+            RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), original, cloners).full();
+        // 26.2's LazyHolder clears its supplier on first resolution and is not
+        // safe for concurrent first reads. Resolve the complete noise registry
+        // here before preview tile workers receive this new registry view.
+        patched.lookupOrThrow(RTFRegistries.NOISE).listElements().forEach(holder -> holder.value());
+        return patched;
     }
 }

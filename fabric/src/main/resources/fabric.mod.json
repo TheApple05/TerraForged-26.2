@@ -16,6 +16,7 @@
   },
   "license": ["MIT", "LGPL-2.1-only"],
   "environment": "*",
+  "accessWidener": "terraforged-26.2.accesswidener",
   "entrypoints": {
     "main": [
       "raccoonman.reterraforged.fabric.RTFFabric"

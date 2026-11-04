@@ -6,6 +6,10 @@ group = project.maven_group
 version = project.mod_version
 base.archivesName = project.archives_base_name
 
+loom {
+    accessWidenerPath = file('common/src/main/resources/terraforged-26.2.accesswidener')
+}
+
 repositories {
     mavenCentral()
     maven { url = 'https://maven.architectury.dev/' }
@@ -44,8 +48,8 @@ java {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.release = 25
-    // Diagnostic omits legacy AW and Mixin AP: obsolete descriptors can abort
-    // before javac exposes the actual source migration work. See decision 0001.
+    // Only reviewed 26.2 access rules are applied. Mixin AP remains a separate
+    // validation stage after source migration; see decision 0001.
     options.compilerArgs.addAll(['-proc:none', '-Xmaxerrs', '10000', '-Xdiags:verbose'])
 }
 
@@ -82,7 +86,7 @@ tasks.register('portToolchain') {
             sourceFiles: sourceSets.main.allJava.files.size(),
             sourceRoots: sourceSets.main.java.srcDirs.collect { relativePath(it) }.sort(),
             excludedJavaSources: [],
-            accessWidenerApplied: false,
+            accessWidenerApplied: true,
             annotationProcessing: false,
             expectPlatformWeaving: false,
             classpath: configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts.collect {
@@ -93,10 +97,15 @@ tasks.register('portToolchain') {
     }
 }
 
-// This is a compiler diagnostic, not a release build. Metadata, platform dispatch,
-// access widening and runtime mixins are still unported.
+// Candidate packages are for isolated runtime validation. The explicit guard
+// prevents an unfinished candidate being mistaken for a validated release.
 tasks.named('jar') {
+    from('LICENSE')
+    from('THIRD_PARTY_NOTICES.md')
+    from('licenses') { into('META-INF/licenses') }
     doFirst {
-        throw new GradleException('Packaging is blocked until the 26.2 runtime migration is validated; see docs/decisions/0001-build-layout.md.')
+        if (!project.hasProperty('experimentalPackage')) {
+            throw new GradleException('Use -PexperimentalPackage only for isolated validation of this unfinished port; see docs/decisions/0001-build-layout.md.')
+        }
     }
 }

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "minecraft": "26.2",
+  "jdk": "Temurin25.0.5+8",
+  "gradle": "9.5.1",
+  "experimental": true,
+  "sourceExclusions": [],
+  "packages": [
+    {
+      "loader": "fabric",
+      "jar": "build/libs/terraforged-revival-0.1.0-dev.5+26.2.jar",
+      "sha256": "1c635ce93432e25c994f6a4a8252d102299d6b6dc0fcc5b29930318c22f894ae",
+      "bytes": 1198595,
+      "classes": 570,
+      "platformProvider": "raccoonman.reterraforged.platform.fabric.FabricPlatformServices",
+      "qaClassesPackaged": false,
+      "licenseNoticesPresent": true,
+      "languageEntries": 277,
+      "buildLog": "build/qa/neoforge-research/fabric-dev5.log",
+      "compileAndPackage": "passed",
+      "toolchain": {
+        "loom": "1.17.21",
+        "loader": "0.20.1",
+        "fabricApi": "0.161.0+26.2"
+      }
+    },
+    {
+      "loader": "neoforge",
+      "jar": "neoforge/build/libs/terraforged-revival-0.1.0-dev.5+26.2-neoforge.jar",
+      "sha256": "f24f1484d79afe6d7e06788d79b7edac32eece516fb7ea8e246bb0ab3a3cb2ff",
+      "bytes": 1146326,
+      "classes": 564,
+      "platformProvider": "raccoonman.reterraforged.platform.neoforge.NeoForgePlatformServices",
+      "qaClassesPackaged": false,
+      "licenseNoticesPresent": true,
+      "languageEntries": 277,
+      "buildLog": "build/qa/neoforge-research/neo-build-5.log",
+      "compileAndPackage": "passed",
+      "toolchain": {
+        "minecraft": "26.2",
+        "neoforge": "26.2.0.93",
+        "modDevGradle": "2.0.148",
+        "gradle": "9.5.1",
+        "java": "25.0.5",
+        "commonSourceFiles": 382,
+        "totalSourceFiles": 390,
+        "sourceExclusions": [],
+        "annotationProcessing": false,
+        "accessTransformer": "META-INF/accesstransformer.cfg"
+      }
+    }
+  ],
+  "notEvidenceOf": [
+    "Client launch",
+    "Custom world generation",
+    "Third-party modpack compatibility",
+    "Visual parity"
+  ]
+}

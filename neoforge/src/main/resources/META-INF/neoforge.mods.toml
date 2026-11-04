@@ -1,0 +1,39 @@
+license="MIT AND LGPL-2.1-only"
+issueTrackerURL="https://github.com/TheApple05/TerraForged-26.2/issues"
+
+[[mods]]
+modId="reterraforged"
+version="${version}"
+displayName="TerraForged Revival"
+authors="dags, Won-Ton, racoonman2, TerraForged 26.2 contributors"
+displayURL="https://github.com/TheApple05/TerraForged-26.2"
+description='''An independent, unofficial TerraForged revival for Minecraft Java 26.2. Development build.'''
+
+[[mixins]]
+config="reterraforged-common.mixins.json"
+[[mixins]]
+config="reterraforged-neoforge.mixins.json"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+
+[[dependencies.reterraforged]]
+modId="neoforge"
+type="required"
+versionRange="[${neo_version},)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.reterraforged]]
+modId="minecraft"
+type="required"
+versionRange="[26.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.reterraforged]]
+modId="terrablender"
+type="optional"
+versionRange="[26.2.0.0.2,)"
+ordering="AFTER"
+side="BOTH"
