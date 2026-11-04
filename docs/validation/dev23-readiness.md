@@ -17,7 +17,7 @@ Candidate **0.1.0-dev.23+26.2**, frozen by [coherent build](dual-loader-dev23-bu
 
 ## Performance and delivery gate
 
-The predeclared [controlled protocol](performance-protocol.md) passes three fresh trials per generator and loader in base and optimization stacks, matched vanilla controls, two 64-request new regions, resident rereads and cold saved-column verification. All 24 generation trials and eight cold reloads pass with no compiler interference or budget violations. [Results](dev23-performance.md) retain every measured value; [complete acceptance](dev23-acceptance.json) binds 104 evidence files and 30 images. Exact dev23 nested cache probes also pass 801 assertions per loader. Release assembly is in progress.
+The predeclared [controlled protocol](performance-protocol.md) passes three fresh trials per generator and loader in base and optimization stacks, matched vanilla controls, two 64-request new regions, resident rereads and cold saved-column verification. All 24 generation trials and eight cold reloads pass with no compiler interference or budget violations. [Results](dev23-performance.md) retain every measured value; [complete acceptance](dev23-acceptance.json) binds 104 evidence files and 30 images. Exact dev23 nested cache probes also pass 801 assertions per loader. [The two-loader prerelease is published](https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.23%2B26.2); all seven assets were downloaded and hash-verified.
 
 ## Horizon is a separate target
 

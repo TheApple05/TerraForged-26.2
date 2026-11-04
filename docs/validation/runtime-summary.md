@@ -6,7 +6,7 @@ All 17 natural variants, positive Bryce/stone pillars, saved holders/source agre
 
 Exact final JAR cache lifecycle checks pass 3,511 assertions per loader with zero retained owners/polls. Real-world cell caches retain 24 raw fields and reduce repeated native-column calls from 384 to four. Independent dev18/final native-column replays match all 36 actual inputs per loader.
 
-Both controlled performance matrices pass all 24 fresh trials and eight cold reloads with no compiler interference or budget violations. [Complete scoped acceptance](dev23-acceptance.json) binds 104 evidence files and 30 images. [Measured timings](dev23-performance.md) retain all trials and matched controls. The next experimental release is being assembled.
+Both controlled performance matrices pass all 24 fresh trials and eight cold reloads with no compiler interference or budget violations. [Complete scoped acceptance](dev23-acceptance.json) binds 104 evidence files and 30 images. [Measured timings](dev23-performance.md) retain all trials and matched controls. [Dev23 is published as a prerelease](https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.23%2B26.2), with both loader JARs, checksums and validation notes. All seven remote assets were downloaded and hash-verified.
 
 [Native visual review](visual-review-dev23.md) confirms visible pillars and nearby rendered shader terrain. Brief captures show incomplete distant LOD edges, so far-distance quality and FPS remain unaccepted. User aesthetic acceptance and original-version visual parity are separate gates.
 

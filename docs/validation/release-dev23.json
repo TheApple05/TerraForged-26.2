@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "published-verified-prerelease",
+  "repository": "TheApple05/TerraForged-26.2",
+  "tag": "v0.1.0-dev.23+26.2",
+  "id": 433976629,
+  "url": "https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.23%2B26.2",
+  "targetCommit": "a5381773145c72f13efe0be918ee302a39967685",
+  "privateRepository": true,
+  "fork": false,
+  "prerelease": true,
+  "draft": false,
+  "ci": [
+    {
+      "name": "Core regressions (not full port)",
+      "id": 41840186400,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41840186400",
+      "head_sha": "a5381773145c72f13efe0be918ee302a39967685"
+    },
+    {
+      "name": "Horizon native noise foundation",
+      "id": 41840186517,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41840186517",
+      "head_sha": "a5381773145c72f13efe0be918ee302a39967685"
+    },
+    {
+      "name": "Package both 26.2 loaders (experimental)",
+      "id": 41840186388,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/TerraForged-26.2/actions/runs/41840186388",
+      "head_sha": "a5381773145c72f13efe0be918ee302a39967685"
+    }
+  ],
+  "allAssetsDownloadedAndSha256Verified": true,
+  "acceptanceSha256": "564fe049b1f5e00956f3407748277af655ac66c019d6fa26eb2758321ddd3f3b",
+  "assets": [
+    {
+      "id": 709658065,
+      "name": "distribution.json",
+      "sha256": "d8544f69447e896cc81051bdd5a48ba480035464bb0393c761f67ff9e53efd5f",
+      "bytes": 1031,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/distribution.json"
+    },
+    {
+      "id": 709658127,
+      "name": "INSTALLATION.md",
+      "sha256": "c485c5adffd41122bbfe2517e7b696dd71226ce14f2203ae242921d45fce81db",
+      "bytes": 5508,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/INSTALLATION.md"
+    },
+    {
+      "id": 709658172,
+      "name": "RELEASE-NOTES.md",
+      "sha256": "e9070e99b7ce91ce02a7a2ed659f31cbe30f9b731269e35296bec54a81e5b639",
+      "bytes": 3143,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/RELEASE-NOTES.md"
+    },
+    {
+      "id": 709658240,
+      "name": "terraforged-revival-0.1.0-dev.23-fabric-mc26.2.jar",
+      "sha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "bytes": 1253436,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/terraforged-revival-0.1.0-dev.23-fabric-mc26.2.jar"
+    },
+    {
+      "id": 709658361,
+      "name": "terraforged-revival-0.1.0-dev.23-neoforge-mc26.2.jar",
+      "sha256": "61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce",
+      "bytes": 1201813,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/terraforged-revival-0.1.0-dev.23-neoforge-mc26.2.jar"
+    },
+    {
+      "id": 709658438,
+      "name": "VALIDATION.json",
+      "sha256": "564fe049b1f5e00956f3407748277af655ac66c019d6fa26eb2758321ddd3f3b",
+      "bytes": 16338,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/VALIDATION.json"
+    },
+    {
+      "id": 709658500,
+      "name": "SHA256SUMS",
+      "sha256": "53bd4d85ab27cfbae410e0328179ae345b37c81ac7b6c1cc62ce757bfbda865f",
+      "bytes": 573,
+      "url": "https://github.com/TheApple05/TerraForged-26.2/releases/download/untagged-7271bbf2deabcbd648a3/SHA256SUMS"
+    }
+  ]
+}
