@@ -30,6 +30,50 @@ enum Node {
     Compound(Domain, Domain),
 }
 impl Domain {
+    pub fn map_all<F>(&self, visitor: &mut F) -> Result<Self, GraphError>
+    where
+        F: FnMut(Noise) -> Result<Noise, GraphError>,
+    {
+        match &self.0.node {
+            Node::Direct => Ok(self.clone()),
+            Node::Direction {
+                direction,
+                strength,
+            } => Self::direction(direction.map_all(visitor)?, strength.map_all(visitor)?),
+            Node::Add(a, b) => Self::add(a.map_all(visitor)?, b.map_all(visitor)?),
+            Node::Compound(a, b) => Self::compound(a.map_all(visitor)?, b.map_all(visitor)?),
+            Node::Warp {
+                _x,
+                _z,
+                mapped_x,
+                mapped_z,
+                distance,
+            } => {
+                let x = _x.map_all(visitor)?;
+                let z = _z.map_all(visitor)?;
+                let mapped_x = mapped_x.map_all(visitor)?;
+                let mapped_z = mapped_z.map_all(visitor)?;
+                let distance = distance.map_all(visitor)?;
+                let costs = [
+                    x.cost(),
+                    z.cost(),
+                    mapped_x.cost(),
+                    mapped_z.cost(),
+                    distance.cost(),
+                ];
+                Self::make(
+                    Node::Warp {
+                        _x: x,
+                        _z: z,
+                        mapped_x,
+                        mapped_z,
+                        distance,
+                    },
+                    &costs,
+                )
+            }
+        }
+    }
     fn make(node: Node, dependencies: &[(u16, usize)]) -> Result<Self, GraphError> {
         let (depth, expanded_nodes) = crate::graph::dependency_cost(dependencies.iter().copied())?;
         Ok(Self(Arc::new(Data {

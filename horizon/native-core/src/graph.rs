@@ -115,6 +115,7 @@ impl CurveFunction {
 #[derive(Debug)]
 enum Node {
     Constant(f32),
+    Holder(Noise),
     Perlin(Perlin),
     Perlin2(Perlin2),
     Simplex(Simplex),
@@ -172,6 +173,7 @@ enum Node {
         ramp: Noise,
         cliff: Noise,
         ramp_height: Noise,
+        blend_range: f32,
         steps: Vec<TerraceStep>,
     },
     AdvancedTerrace {
@@ -280,6 +282,21 @@ impl Noise {
     pub fn constant(value: f32) -> Result<Self, GraphError> {
         Self::make(Node::Constant(value), value, value, &[])
     }
+    pub fn holder(input: Self) -> Result<Self, GraphError> {
+        Self::make(
+            Node::Holder(input.clone()),
+            input.min_value(),
+            input.max_value(),
+            &[&input],
+        )
+    }
+    pub fn constant_value(&self) -> Option<f32> {
+        if let Node::Constant(value) = self.0.node {
+            Some(value)
+        } else {
+            None
+        }
+    }
     pub(crate) fn cost(&self) -> (u16, usize) {
         (self.0.depth, self.0.expanded_nodes)
     }
@@ -352,6 +369,7 @@ impl Noise {
                 ramp: ramp.clone(),
                 cliff: cliff.clone(),
                 ramp_height: ramp_height.clone(),
+                blend_range,
                 steps,
             },
             input.min_value(),
@@ -790,6 +808,7 @@ impl Noise {
     pub fn compute(&self, x: f32, z: f32, seed: i32) -> f32 {
         match &self.0.node {
             Node::Constant(value) => *value,
+            Node::Holder(input) => input.compute(x, z, seed),
             Node::Perlin(n) => n.compute(x, z, seed),
             Node::Perlin2(n) => n.compute(x, z, seed),
             Node::Simplex(n) => n.compute(x, z, seed),
@@ -911,6 +930,7 @@ impl Noise {
                 cliff,
                 ramp_height,
                 steps,
+                ..
             } => {
                 let value = noise_util::clamp_f32(input.compute(x, z, seed), 0.0, 0.999999);
                 let index = noise_util::floor_legacy(value * steps.len() as f32) as usize;
@@ -1138,6 +1158,244 @@ impl Noise {
                 min + amount * (max - min)
             }
         }
+    }
+}
+
+impl Noise {
+    /// Source record name, including the bound-holder adapter used by codecs.
+    pub fn kind(&self) -> &'static str {
+        match self.0.node {
+            Node::Constant(_) => "Constant",
+            Node::Holder(_) => "HolderHolder",
+            Node::Perlin(_) => "Perlin",
+            Node::Perlin2(_) => "Perlin2",
+            Node::Simplex(_) => "Simplex",
+            Node::Simplex2(_) => "Simplex2",
+            Node::White(_) => "White",
+            Node::Cubic(_) => "Cubic",
+            Node::PerlinRidge(_) => "PerlinRidge",
+            Node::SimplexRidge(_) => "SimplexRidge",
+            Node::Billow(_) => "Billow",
+            Node::Worley { .. } => "Worley",
+            Node::WorleyEdge { .. } => "WorleyEdge",
+            Node::LegacyTemperature { .. } => "LegacyTemperature",
+            Node::LegacyMoisture { .. } => "LegacyMoisture",
+            Node::LinearSpline { .. } => "LinearSpline",
+            Node::Cache { .. } => "Cache2d",
+            Node::Warp { .. } => "Warp",
+            Node::Erosion { .. } => "Erosion",
+            Node::Line { .. } => "Line",
+            Node::Terrace { .. } => "Terrace",
+            Node::AdvancedTerrace { .. } => "AdvancedTerrace",
+            Node::Sin { .. } => "Sin",
+            Node::Power { .. } => "Power",
+            Node::PowerCurve { .. } => "PowerCurve",
+            Node::Curve { .. } => "Curve",
+            Node::Gradient { .. } => "Gradient",
+            Node::Blend { .. } => "Blend",
+            Node::Alpha { .. } => "Alpha",
+            Node::Boost { .. } => "Boost",
+            Node::Steps { .. } => "Steps",
+            Node::Threshold { .. } => "Threshold",
+            Node::Add(..) => "Add",
+            Node::Multiply(..) => "Multiply",
+            Node::Frequency { .. } => "Frequency",
+            Node::ShiftSeed { .. } => "ShiftSeed",
+            Node::Abs(_) => "Abs",
+            Node::Invert(_) => "Invert",
+            Node::Min(..) => "Min",
+            Node::Max(..) => "Max",
+            Node::Clamp { .. } => "Clamp",
+            Node::Map { .. } => "Map",
+        }
+    }
+    /// Exact source traversal, including its exceptional wrapper/visitor behavior.
+    pub fn map_all<F>(&self, visitor: &mut F) -> Result<Self, GraphError>
+    where
+        F: FnMut(Self) -> Result<Self, GraphError>,
+    {
+        let mapped = match &self.0.node {
+            Node::Constant(_)
+            | Node::Perlin(_)
+            | Node::Perlin2(_)
+            | Node::Simplex(_)
+            | Node::Simplex2(_)
+            | Node::White(_)
+            | Node::Cubic(_)
+            | Node::PerlinRidge(_)
+            | Node::SimplexRidge(_)
+            | Node::Billow(_)
+            | Node::WorleyEdge { .. }
+            | Node::LegacyTemperature { .. } => self.clone(),
+            Node::Holder(input) => Self::holder(input.map_all(visitor)?)?,
+            Node::Worley {
+                frequency,
+                jitter,
+                function,
+                metric,
+                lookup,
+            } => Self::worley(
+                *frequency,
+                *jitter,
+                *function,
+                *metric,
+                lookup.map_all(visitor)?,
+            )?,
+            Node::LegacyMoisture { input, power } => {
+                Self::legacy_moisture(input.map_all(visitor)?, *power)?
+            }
+            Node::LinearSpline { input, points } => {
+                let input = input.map_all(visitor)?;
+                let points = points
+                    .iter()
+                    .map(|(position, value)| Ok((*position, visitor(value.clone())?)))
+                    .collect::<Result<Vec<_>, GraphError>>()?;
+                Self::linear_spline(input, points)?
+            }
+            Node::Cache { input, .. } => Self::cache(input.map_all(visitor)?)?,
+            Node::Warp { input, domain } => {
+                Self::warp(input.map_all(visitor)?, domain.map_all(visitor)?)?
+            }
+            Node::Erosion { input, config } => {
+                return Self::erosion(input.map_all(visitor)?, config.clone());
+            }
+            Node::Line {
+                geometry,
+                radius,
+                fade_in,
+                fade_out,
+            } => {
+                return Self::line(
+                    geometry.clone(),
+                    radius.clone(),
+                    fade_in.clone(),
+                    fade_out.clone(),
+                );
+            }
+            Node::Terrace {
+                input,
+                ramp,
+                cliff,
+                ramp_height,
+                blend_range,
+                steps,
+            } => Self::terrace(
+                input.map_all(visitor)?,
+                ramp.map_all(visitor)?,
+                cliff.map_all(visitor)?,
+                ramp_height.map_all(visitor)?,
+                *blend_range,
+                steps.len() as i32,
+            )?,
+            Node::AdvancedTerrace {
+                source,
+                modulation,
+                mask,
+                slope,
+                blend_min,
+                blend_max,
+                steps,
+                octaves,
+            } => {
+                return Self::advanced_terrace(
+                    source.map_all(visitor)?,
+                    modulation.map_all(visitor)?,
+                    mask.map_all(visitor)?,
+                    slope.map_all(visitor)?,
+                    *blend_min,
+                    *blend_max,
+                    *steps,
+                    *octaves,
+                );
+            }
+            Node::Sin { frequency, alpha } => Self::sin(*frequency, alpha.map_all(visitor)?)?,
+            Node::Power { input, power } => Self::power(input.map_all(visitor)?, *power)?,
+            Node::PowerCurve { input, power, .. } => {
+                return Self::power_curve(input.map_all(visitor)?, *power);
+            }
+            Node::Curve { input, function } => Self::curve(input.map_all(visitor)?, *function)?,
+            Node::Gradient {
+                input,
+                lower,
+                upper,
+                strength,
+            } => Self::gradient(
+                input.map_all(visitor)?,
+                lower.map_all(visitor)?,
+                upper.map_all(visitor)?,
+                strength.map_all(visitor)?,
+            )?,
+            Node::Blend {
+                alpha,
+                lower,
+                upper,
+                mid,
+                range,
+                interpolation,
+            } => Self::blend(
+                alpha.map_all(visitor)?,
+                lower.map_all(visitor)?,
+                upper.map_all(visitor)?,
+                *mid,
+                *range,
+                *interpolation,
+            )?,
+            Node::Alpha { input, alpha } => {
+                Self::alpha(input.map_all(visitor)?, alpha.map_all(visitor)?)?
+            }
+            Node::Boost { input, iterations } => Self::boost(input.map_all(visitor)?, *iterations)?,
+            Node::Steps {
+                input,
+                steps,
+                slope_min,
+                slope_max,
+                curve,
+            } => Self::steps(
+                input.map_all(visitor)?,
+                steps.map_all(visitor)?,
+                slope_min.map_all(visitor)?,
+                slope_max.map_all(visitor)?,
+                *curve,
+            )?,
+            Node::Threshold {
+                input,
+                lower,
+                upper,
+                threshold,
+            } => Self::threshold(
+                input.map_all(visitor)?,
+                lower.map_all(visitor)?,
+                upper.map_all(visitor)?,
+                threshold.map_all(visitor)?,
+            )?,
+            Node::Add(a, b) => Self::add(a.map_all(visitor)?, b.map_all(visitor)?)?,
+            Node::Multiply(a, b) => Self::multiply(a.map_all(visitor)?, b.map_all(visitor)?)?,
+            Node::Frequency {
+                input,
+                x_freq,
+                z_freq,
+            } => Self::frequency(
+                input.map_all(visitor)?,
+                x_freq.map_all(visitor)?,
+                z_freq.map_all(visitor)?,
+            )?,
+            Node::ShiftSeed { input, shift } => Self::shift_seed(input.map_all(visitor)?, *shift)?,
+            Node::Abs(input) => input.map_all(visitor)?,
+            Node::Invert(input) => Self::invert(input.map_all(visitor)?)?,
+            Node::Min(a, b) => return Self::minimum(a.map_all(visitor)?, b.map_all(visitor)?),
+            Node::Max(a, b) => Self::maximum(a.map_all(visitor)?, b.map_all(visitor)?)?,
+            Node::Clamp { input, min, max } => Self::clamp(
+                input.map_all(visitor)?,
+                min.map_all(visitor)?,
+                max.map_all(visitor)?,
+            )?,
+            Node::Map { alpha, from, to } => Self::map(
+                alpha.map_all(visitor)?,
+                from.map_all(visitor)?,
+                to.map_all(visitor)?,
+            )?,
+        };
+        visitor(mapped)
     }
 }
 

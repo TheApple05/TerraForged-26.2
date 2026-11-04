@@ -172,6 +172,14 @@ public final class RuntimeQaMod implements ModInitializer {
                     "sha256", sha256(reference), "bytes", Files.size(reference)));
             }
             report.put("classicBiomeTargetQualification", ClassicBiomeTargetSearchQa.verify(server.overworld()));
+            if (Boolean.getBoolean("terraforged.qa.exportNoiseVisitors")) {
+                require(!mode.startsWith("benchmark"), "Noise visitor capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-noise-visitors.tsv");
+                Class<?> probe = Class.forName("raccoonman.reterraforged.world.worldgen.noise.module.NativeNoiseVisitorProbe");
+                probe.getMethod("main", String[].class).invoke(null, (Object) new String[] { reference.toString() });
+                report.put("noiseVisitors", Map.of("status", "captured-genuine-java-graphs", "file", reference.toString(),
+                    "sha256", sha256(reference), "bytes", Files.size(reference)));
+            }
             report.put("classicBiomeStoredChunkChecks", ClassicBiomeChunkQa.verify(server, server.overworld()));
             TemplateBiomeDecoratorProbe.main(new String[0]);
             node(nodes, "biome-decorator-overrides", "passed", "Three production-helper assertions completed with real target holders");
