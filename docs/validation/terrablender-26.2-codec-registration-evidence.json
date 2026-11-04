@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "upstream-wrong-registry-value-confirmed",
+  "requiredRegistryValueType": "com.mojang.serialization.MapCodec",
+  "actualRegisteredExpression": "NamespacedSurfaceRuleSource.CODEC.codec() returns com.mojang.serialization.Codec",
+  "requiredRegisteredExpression": "NamespacedSurfaceRuleSource.CODEC",
+  "exactInvokeDescriptor": "Lnet/minecraft/core/Registry;register(Lnet/minecraft/core/Registry;Lnet/minecraft/resources/Identifier;Ljava/lang/Object;)Ljava/lang/Object;",
+  "registeredId": "terrablender:merged",
+  "registry": "minecraft:worldgen/material_rule",
+  "variants": [
+    {
+      "loader": "fabric",
+      "version": "26.2.0.0.2",
+      "latestOfficial26_2AtCheck": true,
+      "mavenRuntimeJar": "build/qa/modpack-compat/fabric/TerraBlender-fabric-26.2-26.2.0.0.2.jar",
+      "mavenRuntimeJarSha256": "72b64ba3eacf0d6956706467c952abb58f364beac9f6be896fb67d14621b2bf7",
+      "officialModrinthVersionUrl": "https://modrinth.com/mod/terrablender/version/KQix25Qc",
+      "officialModrinthJarSha256": "e4c54e7490cf6716ccc287f5ef674562666a13c6a4afabdc344d5cb62e9cb584",
+      "officialPublishedHashes": {
+        "sha1": "e0c8ebc305b9ca37feb0321bb2fbc909570424bd",
+        "sha512": "2bc1200180e615afe0ba57a6f8cff9a1a46ccc6849fdcf4108cd6000bfccb4b8900b9e168786f69e7fe48ce40a31d95c6b1d9d711768e0e19413ae2c05ef8de0"
+      },
+      "officialPublishedHashesMatch": true,
+      "registrationClassEntry": "terrablender/mixin/MixinBuiltInRegistries.class",
+      "registrationClassBytesIdentical": true,
+      "registrationClassSha256": "f33d38ed0f9eeb95210de26bff0bfbeeef7175fdf953ee04f4c8b2cdf0cca633",
+      "payloadEntriesThatDiffer": [
+        "META-INF/MANIFEST.MF"
+      ]
+    },
+    {
+      "loader": "neoforge",
+      "version": "26.2.0.0.2",
+      "latestOfficial26_2AtCheck": true,
+      "mavenRuntimeJar": "build/qa/modpack-compat/neoforge/TerraBlender-neoforge-26.2-26.2.0.0.2.jar",
+      "mavenRuntimeJarSha256": "b862ff5bd541c9d23d54025100ceef822db7c9d6bfe4e03a25aa4294191af92b",
+      "officialModrinthVersionUrl": "https://modrinth.com/mod/terrablender/version/TzDe72Nr",
+      "officialModrinthJarSha256": "bffac68485df253195b4f9a24241bfa07459962e2f2437de7b7b3fb37986d0b0",
+      "officialPublishedHashes": {
+        "sha1": "82ab30bc5cf0177e4ca1a0e5aad14d0e79e2aa13",
+        "sha512": "72c7ee0f075cea44a62543b98db5e4182acfb90a7c67410141d6a4fa83bab57fc61303e4510d9d2a9cc5bcc001aa80e42aad26603cef853211ca110942bfb1bd"
+      },
+      "officialPublishedHashesMatch": true,
+      "registrationClassEntry": "terrablender/mixin/MixinBuiltInRegistries.class",
+      "registrationClassBytesIdentical": true,
+      "registrationClassSha256": "f33d38ed0f9eeb95210de26bff0bfbeeef7175fdf953ee04f4c8b2cdf0cca633",
+      "payloadEntriesThatDiffer": [
+        "META-INF/MANIFEST.MF"
+      ]
+    }
+  ]
+}
