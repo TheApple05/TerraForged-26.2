@@ -202,7 +202,7 @@ impl Populator {
                         "selector expanded node budget 65536",
                     ));
                 }
-                let count = (ratio + 0.5).floor() as usize;
+                let count = u::round_java(ratio) as usize;
                 if nodes.len() + count > 65536 {
                     return Err(GraphError::InvalidSourceParameters(
                         "selector expanded node budget 65536",

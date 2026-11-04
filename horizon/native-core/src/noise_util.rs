@@ -92,6 +92,12 @@ pub fn round_legacy(f: f32) -> i32 {
     }
 }
 
+/// Java Math.round(float), distinct from NoiseUtil.round's negative-half rule.
+/// Widen before adding one half, avoiding an intermediate f32 rounding at 0.5.
+pub fn round_java(f: f32) -> i32 {
+    ((f as f64 + 0.5).floor()) as i32
+}
+
 #[inline]
 pub fn lerp_f32(a: f32, b: f32, alpha: f32) -> f32 {
     a + alpha * (b - a)
