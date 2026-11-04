@@ -98,6 +98,17 @@ pub fn round_java(f: f32) -> i32 {
     ((f as f64 + 0.5).floor()) as i32
 }
 
+/// Math.round(double) -> long, including positive-infinity tie direction and
+/// saturating nonfinite casts. Split the fraction to avoid rounding (a + 0.5).
+pub fn round_java_f64(value: f64) -> i64 {
+    let floor = value.floor();
+    if value - floor >= 0.5 {
+        (floor as i64).saturating_add(1)
+    } else {
+        floor as i64
+    }
+}
+
 #[inline]
 pub fn lerp_f32(a: f32, b: f32, alpha: f32) -> f32 {
     a + alpha * (b - a)

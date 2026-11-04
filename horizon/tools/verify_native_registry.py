@@ -27,6 +27,8 @@ FAMILIES={
                          'NATIVE_HEIGHTMAP_CLIMATE_GUARDS_OK supportedContinent derivedScales finiteQueries ownedTerrain reverseOrder parallelReaders noRiverExecution','passed-terrain-climate-stages-only'),
     'river-foundations':('river-foundations-v1','river_foundation_probe','River/lake/wetland configuration, variance, geometry, warp and domain functions',
                          'NATIVE_RIVER_FOUNDATIONS_OK sentinelIdentity exactRandomDraws wrappingConversions noCarvingOrNetworks','passed-river-foundations-only'),
+    'river-carvers':('river-carvers-v1','river_carver_probe','Original river/lake/wetland mutations, bounds, fork widths, curves, RNG and double rounding',
+                    'NATIVE_RIVER_CARVERS_OK exactMutations originalBounds forkRounding randomDraws noNetworks','passed-river-carvers-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 

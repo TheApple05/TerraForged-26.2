@@ -35,8 +35,9 @@ Terrain also matches all 726 terrain records from the older full kernel-v1 corpu
 River networks/carving and filtered-tile construction remain required. There is
 no full apply sampler until the real river stage is ported and qualified.
 River geometry, warps/domains, configurations, variance and fork conversions now
-match independent Java observations; see river-foundations.md. Carvers and network
-generation remain separate unfinished work.
+match independent Java observations; see river-foundations.md. River, lake and
+wetland carvers now match 3,919,986 observed Java fields per native build profile;
+river-carvers.md records their scope. Network generation remains unfinished.
 Then compare every field against the frozen kernel-v1 observations, complete
 filtered tile backings/halos, seams, cache ownership, query order and parallel work.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
