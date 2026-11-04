@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAt": "2026-11-04T07:59:32.216421400Z",
+  "stages": [
+    {
+      "name": "title-ready",
+      "at": "2026-11-04T07:59:40.384785300Z",
+      "detail": "Real title screen and production artifact verified"
+    },
+    {
+      "name": "screenshot-01-title.png",
+      "at": "2026-11-04T07:59:40.647366300Z",
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T075907Z-7a1a5b\\qa-output\\screenshots\\01-title.png"
+    },
+    {
+      "name": "create-world-ready",
+      "at": "2026-11-04T07:59:43.982937700Z",
+      "detail": "Actual CreateWorldScreen loaded its real world-creation resources"
+    },
+    {
+      "name": "screenshot-02-create-world.png",
+      "at": "2026-11-04T07:59:44.101939100Z",
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T075907Z-7a1a5b\\qa-output\\screenshots\\02-create-world.png"
+    },
+    {
+      "name": "preset-list-ready",
+      "at": "2026-11-04T07:59:45.643837800Z",
+      "detail": "5 actual list rows rendered"
+    },
+    {
+      "name": "screenshot-03-preset-list.png",
+      "at": "2026-11-04T07:59:45.760895600Z",
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T075907Z-7a1a5b\\qa-output\\screenshots\\03-preset-list.png"
+    },
+    {
+      "name": "preset-editor-ready",
+      "at": "2026-11-04T07:59:47.337643600Z",
+      "detail": "Real legacy preset editor generated and uploaded its preview texture"
+    },
+    {
+      "name": "screenshot-04-preset-editor-before.png",
+      "at": "2026-11-04T07:59:47.446674500Z",
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T075907Z-7a1a5b\\qa-output\\screenshots\\04-preset-editor-before.png"
+    }
+  ],
+  "screenshots": [
+    {
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev3-failed/01-title.png",
+      "bytes": 651165,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "cd94afa5cd9ab66ae759704c769dcbeafc859e350067325bdc5a90c79c241d64",
+      "screenClass": "net.minecraft.client.gui.screens.TitleScreen"
+    },
+    {
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev3-failed/02-create-world.png",
+      "bytes": 289659,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "04cf439d9ebc1bd5722c6b49b390697a79c437fee6394a234bfadee58df86826",
+      "screenClass": "net.minecraft.client.gui.screens.worldselection.CreateWorldScreen"
+    },
+    {
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev3-failed/03-preset-list.png",
+      "bytes": 268758,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "b7a997e28fa815865cc2bdb1ba650241ca1b698dc7873cb63310ca8b3ae8fa32",
+      "screenClass": "raccoonman.reterraforged.client.gui.screen.presetconfig.PresetConfigScreen"
+    },
+    {
+      "height": 720,
+      "width": 1280,
+      "path": "docs/validation/images/client-dev3-failed/04-preset-editor-before.png",
+      "bytes": 254765,
+      "captureApi": "net.minecraft.client.Screenshot.grab",
+      "sha256": "dbdc7cf0c87a37ce38b6298f40852db2ea1545e3d854c3e7354630818c218760",
+      "screenClass": "raccoonman.reterraforged.client.gui.screen.presetconfig.PresetConfigScreen"
+    }
+  ],
+  "preset": "Legacy default, selected through the actual preset-list callback",
+  "previewSeed": 123456789,
+  "notTested": [
+    "Every setting/page",
+    "Other mod combinations",
+    "NeoForge client",
+    "Visual acceptance by user"
+  ],
+  "runtime": {
+    "minecraft": "26.2",
+    "loader": "0.20.1",
+    "modVersion": "0.1.0-dev.3+26.2",
+    "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T075907Z-7a1a5b\\mods\\terraforged-revival-0.1.0-dev.3+26.2.jar",
+    "java": "25.0.5",
+    "modSha256": "f59b5a02b36a4133fafd8cf7a61aa550a2f4d9370dc774f9f5a66a6e57618d45",
+    "developmentEnvironment": false
+  },
+  "presetListRows": 5,
+  "previewBefore": {
+    "minHeight": 0.026860114,
+    "textureWidth": 256,
+    "maxHeight": 0.8095268,
+    "cells": 65536,
+    "textureHeight": 256,
+    "seed": 123456789,
+    "textureId": "reterraforged:preview/framebuffer_0",
+    "continentScale": 3000
+  },
+  "phase": "change-slider",
+  "finishedAt": "2026-11-04T07:59:47.577183300Z",
+  "cleanStopRequested": true,
+  "error": {
+    "message": "java.util.concurrent.CompletionException: java.lang.NullPointerException: Cannot invoke \"java.util.function.Supplier.get()\" because \"this.supplier\" is null",
+    "stackTrace": "java.util.concurrent.CompletionException: java.lang.NullPointerException: Cannot invoke \"java.util.function.Supplier.get()\" because \"this.supplier\" is null\r\n\tat java.base/java.util.concurrent.CompletableFuture.wrapInCompletionException(CompletableFuture.java:323)\r\n\tat java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:359)\r\n\tat java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:364)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1828)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\r\nCaused by: java.lang.NullPointerException: Cannot invoke \"java.util.function.Supplier.get()\" because \"this.supplier\" is null\r\n\tat knot//net.minecraft.core.RegistrySetBuilder$LazyHolder.value(RegistrySetBuilder.java:47)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.noise.module.Noises$HolderHolder.compute(Noises.java:420)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.cell.terrain.populator.TerrainPopulator.apply(TerrainPopulator.java:17)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionLerper.apply(RegionLerper.java:28)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.cell.terrain.Blender.apply(Blender.java:32)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.cell.continent.ContinentLerper2.apply(ContinentLerper2.java:36)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.cell.heightmap.Heightmap.applyTerrain(Heightmap.java:48)\r\n\tat knot//raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator.lambda$generateZoomed$0(TileGenerator.java:111)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1825)\r\n\t... 3 more\r\n"
+  },
+  "instance": "build/qa/client/instances/20261104T075907Z-7a1a5b",
+  "actualProcessExitCode": 0,
+  "diagnosis": {
+    "cause": "RegistrySetBuilder.LazyHolder has unsynchronized supplier check then dereference; bindValue clears supplier. Parallel preview workers can observe null between check and dereference.",
+    "fix": "Resolve patched NOISE registry values serially before provider escapes to parallel generation.",
+    "visualFindings": [
+      "Preview map correctly displays varied terrain and biomes.",
+      "All mod translation labels missing in dev3 packaged resources; raw keys overflow layout.",
+      "Initial scale3000 displays2999 due normalized slider double narrowing to float in message."
+    ]
+  }
+}

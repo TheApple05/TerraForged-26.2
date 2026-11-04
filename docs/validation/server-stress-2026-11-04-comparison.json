@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "status": "partial-pass-decoration-order-effects-observed",
+  "productionArtifactSha256": "94471bb542a308982bfb29c7340ed14dbf3494922cfd9f935c5f32b0485e80bd",
+  "seed": 8675309,
+  "sampledChunks": 64,
+  "fullRequestedChunksPerRun": 144,
+  "sampledColumns": 576,
+  "historicalColumnHashYBoundsInclusive": [
+    -64,
+    318
+  ],
+  "diagnosticRleYBoundsInclusive": [
+    -64,
+    319
+  ],
+  "freshRequestOrders": [
+    "ascendingXThenZ",
+    "descendingXThenZ"
+  ],
+  "customContextRequired": true,
+  "rawCellAndBiomeDeterminism": {
+    "matchedColumns": 576,
+    "totalColumns": 576,
+    "selectedFields": [
+      "x",
+      "z",
+      "biome",
+      "terrain",
+      "cellBiome",
+      "cellFloatBits"
+    ],
+    "pythonCanonicalDigestSha256": [
+      "57d58b5e25debd703e520fcf111d2b1419a6fa9977aeaeccde27710c16d803e5",
+      "57d58b5e25debd703e520fcf111d2b1419a6fa9977aeaeccde27710c16d803e5"
+    ],
+    "matches": true
+  },
+  "freshDifferences": {
+    "columnBlockStatesSha256": 212,
+    "terrainFloorY": 55,
+    "surfaceY": 60,
+    "surfaceBlock": 49
+  },
+  "diskReloadDigestMatch": {
+    "forward": true,
+    "reverse": true
+  },
+  "allFourRunsCleanExit": true,
+  "normalWatchdogMillis": 60000,
+  "sources": {
+    "forward": "server-stress-2026-11-03-forward.json",
+    "reverse": "server-stress-2026-11-03-reverse.json",
+    "forward-reload": "server-stress-2026-11-03-forward-reload.json",
+    "reverse-reload": "server-stress-2026-11-03-reverse-reload.json"
+  },
+  "pendingRuns": [],
+  "limits": [
+    "One seed and one legacy-default preset",
+    "Column sampling, not a complete block comparison of every generated chunk",
+    "Vanilla-generator control keeps TerraForged loaded; not a pure unmodded control",
+    "No claim that every custom decoration difference has the same cause",
+    "No gameplay, third-party compatibility, visual parity or benchmark acceptance"
+  ]
+}
