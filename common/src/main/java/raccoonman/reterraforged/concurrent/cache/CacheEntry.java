@@ -2,6 +2,7 @@ package raccoonman.reterraforged.concurrent.cache;
 
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.Future;
+import java.util.Objects;
 
 import raccoonman.reterraforged.concurrent.task.LazyCallable;
 
@@ -12,6 +13,19 @@ public class CacheEntry<T> extends LazyCallable<T> implements ExpiringEntry {
 	public CacheEntry(Future<T> task) {
 		this.task = task;
 		this.timestamp = System.currentTimeMillis();
+	}
+
+	@Override
+	public T call() {
+		T result = this.value;
+		if (result == null) {
+			// The supplied Future already owns single-shot computation. Do not hold
+			// LazyCallable's non-reentrant lock while awaiting it: ForkJoin's async
+			// helping can run another chunk task that reads this same cache entry.
+			result = Objects.requireNonNull(this.create());
+			this.value = result;
+		}
+		return result;
 	}
 
 	@Override

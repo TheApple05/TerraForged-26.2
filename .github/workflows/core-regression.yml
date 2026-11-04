@@ -1,4 +1,4 @@
-name: Math kernel regression (not full port)
+name: Core regressions (not full port)
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   kernels:
-    name: Java 25 kernels / ${{ matrix.os }}
+    name: Java 25 utilities / ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -30,3 +30,5 @@ jobs:
           python-version: '3.11'
       - name: Verify frozen reference and mutation detection
         run: python tools/verify_core.py --self-test
+      - name: Verify future-cache reentry and concurrent publication
+        run: python tools/verify_cache.py
