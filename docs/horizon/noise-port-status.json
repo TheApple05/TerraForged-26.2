@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "scope": "Registered custom noise codecs; numerical implementation only, no native terrain activation",
+  "scope": "Registered custom noise numerical types/constructor graphs only; registry decoding, visitors and native terrain activation unfinished",
   "registrySourceSha256Lf": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
   "registeredTypes": 41,
-  "numericallyVerifiedTypes": 4,
+  "numericallyVerifiedTypes": 15,
   "types": [
     {
       "id": "reterraforged:constant",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:sin",
@@ -77,23 +77,23 @@
     },
     {
       "id": "reterraforged:shift",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:frequency",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:add",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:multiply",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:power",
@@ -127,8 +127,8 @@
     },
     {
       "id": "reterraforged:invert",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:blend",
@@ -152,18 +152,18 @@
     },
     {
       "id": "reterraforged:abs",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:map",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:clamp",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:threshold",
@@ -172,13 +172,13 @@
     },
     {
       "id": "reterraforged:min",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:max",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:warp",

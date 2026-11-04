@@ -20,6 +20,7 @@ def main() -> int:
     parser.add_argument("--classpath-file", type=Path, default=ROOT / "build/qa/target/compile-classpath.txt")
     parser.add_argument("--production-jar", type=Path, help="Compile against this packaged artifact instead of production classes")
     parser.add_argument("--output", type=Path, default=ROOT / "build/qa/runtime/terraforged-runtime-qa.jar")
+    parser.add_argument("--noise-composition", action="store_true", help="Include the optional same-package genuine Java graph oracle (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -33,6 +34,8 @@ def main() -> int:
     javac = args.java_home.resolve() / "bin" / ("javac.exe" if os.name == "nt" else "javac")
     sources = sorted((ROOT / "tests/runtime").rglob("*.java"))
     sources.append(ROOT / "tests/terrain/TemplateBiomeDecoratorProbe.java")
+    if args.noise_composition:
+        sources.append(ROOT / "horizon/tests/java/NativeNoiseCompositionProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
