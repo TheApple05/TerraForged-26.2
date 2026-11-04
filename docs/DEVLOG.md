@@ -30,3 +30,28 @@ Dates use America/Los_Angeles. This log records outcomes and evidence, not an as
 - Added explicitly scoped Linux/Windows CI for these kernel checks. CI outcome is separate from the verified local result.
 
 Next: finish the full-source target compilation diagnostic, then migrate actual 26.2 API adapters using that evidence.
+
+### Full source migration
+
+- Pinned and resolved Java 25, Gradle 9.5.1, Fabric Loom 1.17.21, Loader 0.20.1, Fabric API 0.161.0+26.2 and target compile-only dependencies. Regenerated the wrapper and checked its published checksum.
+- Recorded successive coherent full-source inventories: 432 errors in 388 sources initially, then 251 errors, then 8 errors after component integration, followed by **zero errors in all 393 active source files**. Error counts are compiler-pass inventories, not feature-parity percentages. All source roots remain included.
+- Implemented explicit Fabric platform bindings, resource/bootstrap migration, map codec dispatch, density child traversal, registry cloning/export context, dimensions, vegetation/template/provider APIs, client extraction rendering and preview texture lifetime, and current chunk lifecycle hooks.
+- Enabled a new reviewed target access widener; current non-obfuscated Loom requires the `official` namespace. The legacy access widener remains reference-only. Target sources were generated into ignored caches for signature review.
+- The density adapters pass 235 assertions using actual 26.2 classes; the integrator independently reran them successfully. Observed inherited serialization defects are documented separately from arithmetic preservation.
+- The migrated legacy random patch feature matches actual Minecraft 1.20.1 execution in 216 cases, including 6,948 nested placements, success flags, and final RNG state. Nine dimension-height configurations encode correctly; default complete dimension data matches actual 26.2 vanilla data.
+- Adapted tree-soil eligibility explicitly because the modern vanilla dirt tag narrowed. Restored per-biome decorator identifier lookup and invalidated both feature caches after biome modifications.
+- Migrated all editor pages and live-preview source APIs. Actual UI appearance, controls, texture updates, world creation and dedicated-server behavior remain runtime gates.
+- Experimental packaging includes component license notices and requires `-PexperimentalPackage` for isolated validation. No release is being announced.
+
+Next: audit effective runtime injections, boot the exact packaged artifact in a disposable production server, exercise real preset export/custom generation and save/reload, and inspect the client visually.
+
+### Packaged generation and runtime corrections
+
+- User clarified that practical 26.2 modpack use is the priority, with both Fabric and NeoForge required. Started a loader-neutral service boundary and an independent NeoForge module; neither a compile nor Fabric runtime result will be labeled as NeoForge validation.
+- Reviewed effective 26.2 constructor, chunk-stage, spawn, reload, and optional TerraBlender injection signatures. Added scoped spawn-search context cleanup and 36 assertions, retaining the inherited unsupported islands preference in the feature inventory.
+- Installed official game/loader dependencies into disposable production QA instances and verified downloaded hashes. The actual Fabric package boots and exports a custom preset datapack using loaded server registries.
+- The first custom generation attempt hit the watchdog. Preserved the failure and identified a production cache self-deadlock caused by ForkJoin cooperative waiting while holding a non-reentrant lock. Corrected `CacheEntry` publication; 312 assertions reproduce the original failure and validate shared future reads, concurrency, failure propagation, and closing.
+- Fixed a real slider event regression introduced by the API migration. Retained the failing report and passed 29 actual event assertions after correction.
+- Packaged corrected dev.2 (`94471bb542a308982bfb29c7340ed14dbf3494922cfd9f935c5f32b0485e80bd`). Two fresh custom-world generation runs and one save/reload run pass under the normal watchdog, with clean saves and process exit. Fresh runs differ at one tree-canopy column on a chunk boundary; terrain cell fields match. Broader checks are investigating decoration completion rather than treating the aggregate digests as equal.
+- Production client review was deliberately aborted after two desktop capture failures. The client had reached its native window; no visual acceptance is claimed. Added a separate actual-game screenshot companion for continued review.
+- Recorded the 17 classic custom biome IDs absent from the selected revival baseline, distinguishing inherited gaps from current port failures. See [feature inventory](FEATURE-PARITY.md) and [runtime summary](validation/runtime-summary.md).

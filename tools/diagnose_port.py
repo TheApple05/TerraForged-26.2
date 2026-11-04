@@ -118,7 +118,7 @@ Source changed during the run: {report['sourceChangedDuringRun']}. A changed sna
 
 The [JSON report]({path.with_suffix('.json').name}) includes the actual resolved toolchain/classpath, source fingerprints, error headings and relative-path diagnostics. The raw log remains at `{report['rawLog']}` (SHA-256 `{report['rawLogSha256']}`). Gradle can stop before javac if configuration or dependency resolution fails; the result classification distinguishes that from source errors.
 
-All common and Fabric Java sources are included. Legacy access widening is unregistered, annotation processing is disabled and ExpectPlatform weaving is unresolved. Packaging remains guarded. This diagnostic does not prove mixin application, runtime loading, world generation or feature parity; see [decision 0001](../decisions/0001-build-layout.md).
+All common and Fabric Java sources are included. Reviewed 26.2 access widening is registered, annotation processing is disabled and platform services use explicit Fabric bindings. Packaging remains guarded. This diagnostic does not prove mixin application, runtime loading, world generation or feature parity; see [decision 0001](../decisions/0001-build-layout.md).
 
 Error totals are a compiler-pass inventory. Resolving missing types can expose additional errors, so a smaller count is not a fixed success gate. Only an exit-zero compiler result establishes compilation within this deliberately limited diagnostic scope.
 """
@@ -179,7 +179,7 @@ def main() -> int:
         "sourceChangedDuringRun": before != after,
         "diagnosticScope": {
             "allCommonAndFabricSources": True, "sourceExclusions": [],
-            "legacyAccessWidenerRegistered": False, "mixinAnnotationProcessing": False,
+            "legacyAccessWidenerRegistered": False, "reviewedTargetAccessWidenerRegistered": True, "mixinAnnotationProcessing": False,
             "expectPlatformWeaving": False, "packagingGuardEnabled": True, "runtimeTested": False,
         },
         "wrapperVerification": {

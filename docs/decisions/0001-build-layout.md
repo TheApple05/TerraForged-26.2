@@ -1,6 +1,6 @@
 # 0001: Direct Fabric build for the first 26.2 diagnostic
 
-Date: 2026-11-03. Status: implemented for compiler diagnostics; runtime port unfinished.
+Date: 2026-11-03. Status: full source compilation passes; packaged runtime validation in progress.
 
 The source baseline is the imported ReTerraForged 1.20.1 tree. Preserve its common and Fabric source directories, and compile all of them in a single modern Fabric Loom root project. Keep the historical `common/build.gradle`, `fabric/build.gradle` and `forge/build.gradle` as reference; none is included by the new `settings.gradle`.
 
@@ -27,3 +27,9 @@ For repeatable capture, run `python tools/diagnose_port.py --report docs/validat
 ## Gates before packaging
 
 Migrate source APIs, explicit platform dispatch, access widening, metadata, required mixin descriptors and all necessary resources; enable annotation processing or equivalent runtime audit; then remove the packaging guard only when a real candidate can be smoke-tested. A successful compiler invocation alone does not establish playable world generation or feature parity.
+
+## Subsequent implementation stages
+
+The initial limitations above describe the first inventory snapshot. The full 393-file source pass now succeeds. Platform bridges use explicit Fabric implementations, metadata declares the target, and a new `terraforged-26.2.accesswidener` contains only reviewed target members. Modern non-obfuscated Loom requires its `official` namespace; a first `named` attempt was rejected, corrected, and resolved successfully. The obsolete imported widener remains reference-only. Mixin annotation processing is still disabled; actual packaged runtime mixin application is a separate gate.
+
+The default JAR task guard now permits `-PexperimentalPackage` for isolated production validation. Experimental JARs include upstream/component license notices. This flag does not establish release readiness. Runtime tests must use this exact packaged artifact, its declared dependencies, and a disposable installation; no generated Minecraft source is committed.

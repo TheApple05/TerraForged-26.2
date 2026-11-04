@@ -11,7 +11,8 @@ Faithfully revive TerraForged for Minecraft Java 26.2. Preserve its generation a
 - Preserve source provenance and license notices. No upstream PR is planned.
 - Audit branch contents before selection: a newer branch name is not evidence of completeness.
 - Preserve algorithm behavior before deliberate terrain changes. Keep compatibility fixes separate from algorithm redesign.
-- Prioritize a working first loader without describing other loaders as supported until tested.
+- Deliver both Fabric and NeoForge for modpack use, as requested by the user. Fabric is the first runtime integration; each loader requires its own packaged validation.
+- The user wants the general TerraForged experience rather than an exact remembered seed or preset. Classic source remains a reference, with inherited omissions explicitly inventoried.
 
 ## Milestones
 
@@ -34,4 +35,4 @@ Faithfully revive TerraForged for Minecraft Java 26.2. Preserve its generation a
 
 ## Current status
 
-Research and implementation bootstrap are in progress. No gameplay, biome-mod compatibility, server compatibility, visual parity, or performance claim has been established.
+The experimental Fabric package loads in a real non-development 26.2 server, exports a custom preset datapack, generates full custom chunks, and saves/reloads. A production cache deadlock and a UI event defect were corrected with focused regressions. Two fresh runs differ at one sampled tree-canopy column; decoration completion and broader determinism checks remain active. Client visual validation and the NeoForge implementation are in progress. Third-party modpack compatibility, full classic feature parity, and generation performance remain unverified. See [runtime evidence](validation/runtime-summary.md).

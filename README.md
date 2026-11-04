@@ -2,7 +2,7 @@
 
 An independent, unofficial revival of TerraForged, focused on preserving its terrain algorithms, visual character, and customization.
 
-**Status: port in progress. There is no playable 26.2 release yet.** Successful compilation or a title-screen launch will not constitute feature parity.
+**Status: the experimental Fabric 26.2 package generates custom terrain, saves, and reloads in an isolated production server. Fabric client validation and NeoForge implementation are in progress. No release is published yet.** Both Fabric and NeoForge are requested targets for modpack use.
 
 The user confirmed **Minecraft Java Edition 26.2** on November 3, 2026. This is a new repository, not a GitHub fork. It is private during initial development; repository visibility is separate from software licensing.
 
@@ -20,6 +20,8 @@ The implementation starts from ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1
 - [Porting plan and completion criteria](docs/PORTING.md)
 - [Development log](docs/DEVLOG.md)
 - [Regression and acceptance protocol](docs/VALIDATION.md)
+- [Packaged runtime results and current limitations](docs/validation/runtime-summary.md)
+- [Classic feature inventory](docs/FEATURE-PARITY.md)
 - [Upstream audit](docs/research/upstream-audit.md)
 - [Target toolchain research](docs/research/target-toolchain.md)
 - [GitHub work tracker](https://github.com/TheApple05/TerraForged-26.2/issues)
@@ -35,5 +37,18 @@ python tools/verify_core.py --self-test
 ```
 
 CI runs the same scoped checks on Linux and Windows. A passing kernel workflow does not mean the full 26.2 mod builds or runs.
+
+The complete source compiler pass succeeded with the pinned Java 25/Fabric toolchain. [Compiler evidence](docs/validation/target-build-2026-11-03-compile.json) and the prior failed inventories are retained. Additional checks passed for [density adapters](docs/validation/density-regression.md), exact [legacy vegetation RNG parity](docs/validation/legacy-patch-parity-2026-11-03.json), and [dimension data](docs/validation/dimension-data-2026-11-03.json).
+
+Packaged validation found and corrected a tile-cache deadlock and a slider event bug. The corrected Fabric package passes two fresh custom-world generation runs and a save/reload run with the normal watchdog. A sampled tree canopy differed between fresh runs at a chunk edge; broader checks are investigating decoration completion before claiming whole-world determinism. [Runtime evidence](docs/validation/runtime-summary.md) records the artifact hashes, failures, and exact scope.
+
+On Windows, `tools/gradle.ps1` selects Java 25 for this project without changing global Java settings:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/gradle.ps1 compileJava --console=plain
+python tools/diagnose_port.py --report build/qa/target/local.json
+```
+
+Experimental packaging requires `jar -PexperimentalPackage` for isolated runtime checks. It is not a release designation. See [the build layout and validation boundaries](docs/decisions/0001-build-layout.md).
 
 Research records distinguish observed behavior, proposed implementation, and untested assumptions. Never install an experimental build into an existing world you care about; validation uses isolated, disposable worlds.

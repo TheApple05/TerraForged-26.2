@@ -1,0 +1,2247 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-03T23:04:44-08:00",
+  "finishedAt": "2026-11-03T23:04:59-08:00",
+  "result": "failed-source-compilation",
+  "exitCode": 1,
+  "executionError": null,
+  "reproductionCommand": "python tools/diagnose_port.py --report docs/validation/target-build-2026-11-03-api-pass.json",
+  "gradleArguments": [
+    "portToolchain",
+    "compileJava",
+    "--console=plain"
+  ],
+  "gitHead": "07a4104030214793eb4cdb167ebeacfa8c97f3c1",
+  "dirtySourceFiles": "M common/src/main/java/raccoonman/reterraforged/RTFCommon.java\n M common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java\n M common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java\n M common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/StructureSettingsPage.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/BiomeModifierData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/ClimateNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/NoiseData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFBiomeData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredCarvers.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFDimensionTypes.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFNoiseGeneratorSettings.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFNoiseRouterData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFPlacedFeatures.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/StrataNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/StructureRuleData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/SurfaceNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/TemplatePaths.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/TerrainNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/TerrainTypeNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/Preset.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetBiomeData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetBiomeModifierData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetClimateNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredCarvers.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetDimensionTypes.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetNoiseData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetNoiseGeneratorSettings.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetNoiseRouterData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetPlacedFeatures.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetStrataNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetStructureRuleData.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetSurfaceNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetTemplatePaths.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetTerrainNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetTerrainTypeNoise.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java\n M common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java\n M common/src/main/java/raccoonman/reterraforged/mixin/MixinSurfaceSystem.java\n M common/src/main/java/raccoonman/reterraforged/mixin/MixinUtil.java\n M common/src/main/java/raccoonman/reterraforged/platform/ConfigUtil.java\n M common/src/main/java/raccoonman/reterraforged/platform/DataGenUtil.java\n M common/src/main/java/raccoonman/reterraforged/platform/ModLoaderUtil.java\n M common/src/main/java/raccoonman/reterraforged/platform/RegistryUtil.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/BiomeModifiers.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/ClampToNearestUnit.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/LinearSplineFunction.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/TemplateFeature.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/decorator/DecoratorConfig.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplateManager.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/RTFSurfaceSystem.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/RTFSurfaceRules.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java\n M common/src/main/java/raccoonman/reterraforged/world/worldgen/terrablender/TBCompat.java\n M fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinBiomeModificationImpl.java\n M fabric/src/main/java/raccoonman/reterraforged/platform/fabric/DataGenUtilImpl.java\n M fabric/src/main/java/raccoonman/reterraforged/platform/fabric/RegistryUtilImpl.java",
+  "sourceBefore": {
+    "fileCount": 388,
+    "sha256": "b764ab8f5db63d84aafe82cac92d1b6ba2031fdd0a969d1d1ef73b7f74a00e5f"
+  },
+  "sourceAfter": {
+    "fileCount": 388,
+    "sha256": "b764ab8f5db63d84aafe82cac92d1b6ba2031fdd0a969d1d1ef73b7f74a00e5f"
+  },
+  "sourceChangedDuringRun": false,
+  "diagnosticScope": {
+    "allCommonAndFabricSources": true,
+    "sourceExclusions": [],
+    "legacyAccessWidenerRegistered": false,
+    "mixinAnnotationProcessing": false,
+    "expectPlatformWeaving": false,
+    "packagingGuardEnabled": true,
+    "runtimeTested": false
+  },
+  "wrapperVerification": {
+    "sha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
+    "publishedSha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
+    "matchesPublished": true,
+    "source": "https://services.gradle.org/distributions/gradle-9.5.1-wrapper.jar.sha256"
+  },
+  "rawLog": "build/qa/target/api-pass.log",
+  "rawLogSha256": "f39b76a8a56c966f1b38e5b468cbb276808d5b0819475e4156f4f219932204b4",
+  "toolchain": {
+    "minecraft": "26.2",
+    "gradle": "9.5.1",
+    "loom": "1.17.21",
+    "javaRuntime": "25.0.5",
+    "javaCompiler": 25,
+    "sourceFiles": 388,
+    "sourceRoots": [
+      "common\\src\\main\\java",
+      "fabric\\src\\main\\java"
+    ],
+    "excludedJavaSources": [],
+    "accessWidenerApplied": false,
+    "annotationProcessing": false,
+    "expectPlatformWeaving": false,
+    "classpath": [
+      "at.yawk.lz4:lz4-java:1.10.1",
+      "com.azure:azure-json:1.4.0",
+      "com.electronwill.night-config:core:3.6.7",
+      "com.electronwill.night-config:toml:3.6.7",
+      "com.github.glitchfiend:TerraBlender-fabric:26.2-26.2.0.0.2",
+      "com.github.oshi:oshi-core:6.9.0",
+      "com.google.code.gson:gson:2.14.0",
+      "com.google.guava:failureaccess:1.0.3",
+      "com.google.guava:guava:33.6.0-jre",
+      "com.ibm.icu:icu4j:78.3",
+      "com.microsoft.azure:msal4j:1.24.1",
+      "com.mojang:authlib:9.0.75",
+      "com.mojang:blocklist:1.0.10",
+      "com.mojang:brigadier:1.3.10",
+      "com.mojang:datafixerupper:10.0.21",
+      "com.mojang:jtracy:1.0.37",
+      "com.mojang:logging:1.7.12",
+      "com.mojang:patchy:2.2.10",
+      "com.mojang:text2speech:1.19.12",
+      "commons-codec:commons-codec:1.22.0",
+      "commons-io:commons-io:2.20.0",
+      "dev.architectury:architectury-injectables:1.0.10",
+      "io.github.llamalad7:mixinextras-fabric:0.5.5",
+      "io.netty:netty-buffer:4.2.15.Final",
+      "io.netty:netty-codec-base:4.2.15.Final",
+      "io.netty:netty-codec-compression:4.2.15.Final",
+      "io.netty:netty-codec-http:4.2.15.Final",
+      "io.netty:netty-common:4.2.15.Final",
+      "io.netty:netty-handler:4.2.15.Final",
+      "io.netty:netty-resolver:4.2.15.Final",
+      "io.netty:netty-transport-classes-epoll:4.2.15.Final",
+      "io.netty:netty-transport-classes-kqueue:4.2.15.Final",
+      "io.netty:netty-transport-native-epoll:4.2.15.Final",
+      "io.netty:netty-transport-native-epoll:4.2.15.Final",
+      "io.netty:netty-transport-native-kqueue:4.2.15.Final",
+      "io.netty:netty-transport-native-kqueue:4.2.15.Final",
+      "io.netty:netty-transport-native-unix-common:4.2.15.Final",
+      "io.netty:netty-transport:4.2.15.Final",
+      "it.unimi.dsi:fastutil:8.5.18",
+      "net.fabricmc.fabric-api:fabric-advancement-api-v1:1.0.0+58719a3b9e",
+      "net.fabricmc.fabric-api:fabric-api-base:2.0.4+ece063239e",
+      "net.fabricmc.fabric-api:fabric-api-lookup-api-v1:2.0.18+11e1c9a39e",
+      "net.fabricmc.fabric-api:fabric-api:0.161.0+26.2",
+      "net.fabricmc.fabric-api:fabric-biome-api-v1:18.0.6+c7bd5b8e9e",
+      "net.fabricmc.fabric-api:fabric-block-api-v1:3.1.0+53515aab9e",
+      "net.fabricmc.fabric-api:fabric-block-getter-api-v2:2.0.7+ec56b6019e",
+      "net.fabricmc.fabric-api:fabric-client-gametest-api-v1:6.0.2+0f4f1dca9e",
+      "net.fabricmc.fabric-api:fabric-command-api-v2:3.1.0+00cb03469e",
+      "net.fabricmc.fabric-api:fabric-content-registries-v0:11.3.2+37b1aa249e",
+      "net.fabricmc.fabric-api:fabric-convention-tags-v2:4.7.1+1f023a9e9e",
+      "net.fabricmc.fabric-api:fabric-crash-report-info-v1:1.0.5+086d547a9e",
+      "net.fabricmc.fabric-api:fabric-creative-tab-api-v1:5.0.15+6468574f9e",
+      "net.fabricmc.fabric-api:fabric-data-attachment-api-v1:2.2.19+515ac5339e",
+      "net.fabricmc.fabric-api:fabric-data-generation-api-v1:25.6.0+c0da0b829e",
+      "net.fabricmc.fabric-api:fabric-debug-api-v1:1.0.2+c792624d9e",
+      "net.fabricmc.fabric-api:fabric-dimensions-v1:5.1.12+515ac5339e",
+      "net.fabricmc.fabric-api:fabric-entity-events-v1:5.0.5+06488ac19e",
+      "net.fabricmc.fabric-api:fabric-events-interaction-v0:5.2.8+515ac5339e",
+      "net.fabricmc.fabric-api:fabric-game-rule-api-v1:4.0.8+46a6d00c9e",
+      "net.fabricmc.fabric-api:fabric-gametest-api-v1:4.0.22+4a7fa0819e",
+      "net.fabricmc.fabric-api:fabric-item-api-v1:14.5.0+c68f6cbe9e",
+      "net.fabricmc.fabric-api:fabric-key-mapping-api-v1:2.0.5+e2bdee789e",
+      "net.fabricmc.fabric-api:fabric-lifecycle-events-v1:4.1.4+29b6eb019e",
+      "net.fabricmc.fabric-api:fabric-loot-api-v3:3.0.17+06488ac19e",
+      "net.fabricmc.fabric-api:fabric-menu-api-v1:2.0.17+086d547a9e",
+      "net.fabricmc.fabric-api:fabric-message-api-v1:7.0.8+bb2ed3f79e",
+      "net.fabricmc.fabric-api:fabric-model-loading-api-v1:8.0.17+c80601bb9e",
+      "net.fabricmc.fabric-api:fabric-networking-api-v1:6.3.4+2989c6a09e",
+      "net.fabricmc.fabric-api:fabric-object-builder-api-v1:24.1.1+6fcd5f039e",
+      "net.fabricmc.fabric-api:fabric-particles-v1:5.0.19+d1756aa99e",
+      "net.fabricmc.fabric-api:fabric-permission-api-v1:1.0.5+e442d8d09e",
+      "net.fabricmc.fabric-api:fabric-recipe-api-v1:9.0.22+11e1c9a39e",
+      "net.fabricmc.fabric-api:fabric-registry-sync-v0:7.1.1+c7bd5b8e9e",
+      "net.fabricmc.fabric-api:fabric-renderer-api-v1:14.1.4+2b0d8a229e",
+      "net.fabricmc.fabric-api:fabric-renderer-indigo:9.1.4+2b0d8a229e",
+      "net.fabricmc.fabric-api:fabric-rendering-fluids-v1:6.0.4+06488ac19e",
+      "net.fabricmc.fabric-api:fabric-rendering-v1:25.3.3+515ac5339e",
+      "net.fabricmc.fabric-api:fabric-resource-conditions-api-v1:6.1.0+10e9a28b9e",
+      "net.fabricmc.fabric-api:fabric-resource-loader-v0:3.3.20+4fc5413f9e",
+      "net.fabricmc.fabric-api:fabric-resource-loader-v1:2.0.13+9edec1269e",
+      "net.fabricmc.fabric-api:fabric-screen-api-v1:5.2.1+5087f8249e",
+      "net.fabricmc.fabric-api:fabric-serialization-api-v1:2.0.4+11a26f319e",
+      "net.fabricmc.fabric-api:fabric-sound-api-v1:2.0.5+11a26f319e",
+      "net.fabricmc.fabric-api:fabric-tag-api-v1:2.1.4+515ac5339e",
+      "net.fabricmc.fabric-api:fabric-transfer-api-v1:8.0.13+11dbb7d79e",
+      "net.fabricmc.fabric-api:fabric-transitive-access-wideners-v1:8.1.4+67c847259e",
+      "net.fabricmc:fabric-loader:0.20.1",
+      "net.fabricmc:sponge-mixin:0.17.5+mixin.0.8.7",
+      "net.java.dev.jna:jna-platform:5.17.0",
+      "net.java.dev.jna:jna:5.17.0",
+      "net.minecraft:minecraft-merged-201bed67e3:26.2",
+      "net.sf.jopt-simple:jopt-simple:5.0.4",
+      "org.apache.commons:commons-compress:1.28.0",
+      "org.apache.commons:commons-lang3:3.20.0",
+      "org.apache.logging.log4j:log4j-api:2.26.0",
+      "org.apache.logging.log4j:log4j-core:2.26.0",
+      "org.apache.logging.log4j:log4j-slf4j2-impl:2.26.0",
+      "org.jcraft:jorbis:0.0.17",
+      "org.jetbrains:annotations:26.0.2",
+      "org.joml:joml:1.10.8",
+      "org.jspecify:jspecify:1.0.0",
+      "org.lwjgl:lwjgl-freetype:3.4.1",
+      "org.lwjgl:lwjgl-glfw:3.4.1",
+      "org.lwjgl:lwjgl-jemalloc:3.4.1",
+      "org.lwjgl:lwjgl-openal:3.4.1",
+      "org.lwjgl:lwjgl-opengl:3.4.1",
+      "org.lwjgl:lwjgl-shaderc:3.4.1",
+      "org.lwjgl:lwjgl-spvc:3.4.1",
+      "org.lwjgl:lwjgl-stb:3.4.1",
+      "org.lwjgl:lwjgl-tinyfd:3.4.1",
+      "org.lwjgl:lwjgl-vma:3.4.1",
+      "org.lwjgl:lwjgl-vulkan:3.4.1",
+      "org.lwjgl:lwjgl:3.4.1",
+      "org.ow2.asm:asm-analysis:9.10.1",
+      "org.ow2.asm:asm-commons:9.10.1",
+      "org.ow2.asm:asm-tree:9.10.1",
+      "org.ow2.asm:asm-util:9.10.1",
+      "org.ow2.asm:asm:9.10.1",
+      "org.slf4j:slf4j-api:2.0.17"
+    ]
+  },
+  "javacReportedErrors": 251,
+  "capturedErrors": 251,
+  "diagnosticCountMatchesJavac": true,
+  "javacReportedWarnings": 69,
+  "uniqueAffectedFiles": 67,
+  "errorHeadings": {
+    "cannot find symbol": 112,
+    "method does not override or implement a method from a supertype": 15,
+    "x has private access in ChunkPos": 7,
+    "z has private access in ChunkPos": 7,
+    "package GlStateManager does not exist": 6,
+    "no suitable method found for setBlockState(MutableBlockPos,BlockState,boolean)": 5,
+    "Context has protected access in SurfaceRules": 4,
+    "incompatible types: Optional<Integer> cannot be converted to int": 4,
+    "VeinType has protected access in OreVeinifier": 4,
+    "cannot infer type arguments for KeyDispatchDataCodec<>": 4,
+    "minecraft has protected access in Screen": 3,
+    "method buildPatch in class RegistrySetBuilder cannot be applied to given types;": 3,
+    "method updateShape in class BlockStateBase cannot be applied to given types;": 3,
+    "method getList in class CompoundTag cannot be applied to given types;": 3,
+    "constructor ChunkPos in record ChunkPos cannot be applied to given types;": 3,
+    "height has protected access in AbstractWidget": 2,
+    "no suitable method found for add(Order,Decoration,HolderSet<Biome>,Direct<PlacedFeature>)": 2,
+    "DataGenerator is abstract; cannot be instantiated": 2,
+    "DataGenerator.PackGenerator(boolean,String,PackOutput) has private access in DataGenerator.PackGenerator": 2,
+    "incompatible types: bad type in conditional expression": 2,
+    "package RuleBasedBlockStateProvider does not exist": 2,
+    "no suitable constructor found for TreeConfigurationBuilder(SimpleStateProvider,StraightTrunkPlacer,SimpleStateProvider,BushFoliagePlacer,TwoLayersFeatureSize)": 2,
+    "constructor MonsterSettings in record MonsterSettings cannot be applied to given types;": 2,
+    "method overworld in class SurfaceRuleData cannot be applied to given types;": 2,
+    "method register in class RTFDensityFunctions cannot be applied to given types;": 2,
+    "method register in class RegistryUtil cannot be applied to given types;": 2,
+    "no suitable method found for setBlockState(BlockPos,BlockState,boolean)": 2,
+    "incompatible types: bad return type in lambda expression": 2,
+    "reference to addProvider is ambiguous": 2,
+    "SurfaceRule has protected access in SurfaceRules": 1,
+    "no interface expected here": 1,
+    "constructor ContainerObjectSelectionList in class ContainerObjectSelectionList<E> cannot be applied to given types;": 1,
+    "raccoonman.reterraforged.client.gui.widget.WidgetList.Entry is not abstract and does not override abstract method extractContent(GuiGraphicsExtractor,int,int,boolean,float) in net.minecraft.client.gui.components.AbstractSelectionList.Entry": 1,
+    "font has protected access in Screen": 1,
+    "Label is not abstract and does not override abstract method extractContents(GuiGraphicsExtractor,int,int,float) in AbstractButton": 1,
+    "PresetEditorPage.Preview is not abstract and does not override abstract method extractContents(GuiGraphicsExtractor,int,int,float) in AbstractButton": 1,
+    "no suitable constructor found for DynamicTexture(NativeImage)": 1,
+    "method register in class TextureManager cannot be applied to given types;": 1,
+    "getDataPackSelectionSettings(WorldDataConfiguration) has private access in CreateWorldScreen": 1,
+    "tryApplyNewDataPacks(PackRepository,boolean,Consumer<WorldDataConfiguration>) has private access in CreateWorldScreen": 1,
+    "ValueButton is not abstract and does not override abstract method extractContents(GuiGraphicsExtractor,int,int,float) in AbstractButton": 1,
+    "cannot infer type arguments for Direct<>": 1,
+    "no suitable method found for dispatch(Domain::codec,Function<Object,Object>)": 1,
+    "no suitable method found for dispatch(CurveFunct[...]codec,Function<Object,Object>)": 1,
+    "no suitable method found for builder((e)->{ ret[...])); })": 1,
+    "method booleanBuilder in class CycleButton<T> cannot be applied to given types;": 1,
+    "salt() has protected access in StructurePlacement": 1,
+    "no suitable method found for dispatch(BiomeModif[...]codec,Function<Object,Object>)": 1,
+    "incompatible types: inference variable T has incompatible equality constraints raccoonman.reterraforged.data.worldgen.preset.Preset,raccoonman.reterraforged.data.worldgen.preset.settings.Preset": 1,
+    "no suitable method found for register(ResourceKey<raccoonman.reterraforged.data.worldgen.preset.Preset>,raccoonman.reterraforged.data.worldgen.preset.Preset)": 1,
+    "incompatible types: inference variable T has incompatible bounds": 1,
+    "no suitable method found for dispatch(TemplatePl[...]codec,Function<Object,Object>)": 1,
+    "no suitable method found for dispatch(TemplateDe[...]codec,Function<Object,Object>)": 1,
+    "no suitable method found for dispatch(ChanceModi[...]codec,Function<Object,Object>)": 1,
+    "no suitable method found for readCompressed(InputStream)": 1,
+    "incompatible types: Optional<CompoundTag> cannot be converted to CompoundTag": 1,
+    "no suitable method found for dispatch(StructureR[...]codec,Function<Object,Object>)": 1,
+    "StrataRule is not abstract and does not override abstract method codec() in RuleSource": 1,
+    "codec() in StrataRule cannot implement codec() in RuleSource": 1,
+    "apply(Context) in StrataRule cannot implement apply(T) in Function": 1,
+    "constructor Config in record Config cannot be applied to given types;": 1,
+    "constructor Config in record raccoonman.reterraforged.world.worldgen.feature.DecorateSnowFeature.Config cannot be applied to given types;": 1,
+    "method getTemperature in class Biome cannot be applied to given types;": 1,
+    "method isPathfindable in class BlockStateBase cannot be applied to given types;": 1,
+    "constructor Context in class Context cannot be applied to given types;": 1,
+    "BlockReader is not abstract and does not override abstract method getMinY() in LevelHeightAccessor": 1,
+    "method register in class RTFFloatProviderTypes cannot be applied to given types;": 1,
+    "no suitable method found for dispatch(Noise::codec,Function<Object,Object>)": 1,
+    "method setFlowerFeatures in interface MixinBiomeGenerationSettings cannot be applied to given types;": 1
+  },
+  "errorsBySubsystem": {
+    "terrain and world generation": 87,
+    "data generation and presets": 78,
+    "client UI and preview": 55,
+    "fabric integration": 20,
+    "density functions": 7,
+    "Minecraft and optional integration mixins": 4
+  },
+  "topAffectedFiles": {
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java": 23,
+    "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java": 19,
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java": 19,
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java": 13,
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java": 12,
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java": 10,
+    "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java": 9,
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java": 9,
+    "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java": 9,
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java": 8,
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java": 6,
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java": 6,
+    "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java": 5,
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/RTFFloatProviderTypes.java": 5,
+    "fabric/src/main/java/raccoonman/reterraforged/fabric/RTFFabric.java": 5
+  },
+  "diagnostics": [
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/page/LinkedPageScreen.java",
+      "line": 5,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: package net.minecraft.client.gui"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 8,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: package net.minecraft.client.gui"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 71,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: class Entry<T>"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/page/LinkedPageScreen.java",
+      "line": 70,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: class LinkedPageScreen"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java",
+      "line": 21,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class PartialResult",
+        "location: interface DataResult"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java",
+      "line": 30,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class SystemToastIds",
+        "location: class SystemToast"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 8,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GlStateManager",
+        "location: package com.mojang.blaze3d.platform"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 16,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: package net.minecraft.client.gui"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/Label.java",
+      "line": 6,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: package net.minecraft.client.gui"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 211,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: class PresetEditorPage.Preview"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 268,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: class PresetEditorPage.Preview"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/Label.java",
+      "line": 26,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class GuiGraphics",
+        "location: class Label"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/Toasts.java",
+      "line": 5,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class SystemToastIds",
+        "location: class SystemToast"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/Toasts.java",
+      "line": 11,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class SystemToastIds",
+        "location: class Toasts"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 30,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RandomPatchConfiguration",
+        "location: package net.minecraft.world.level.levelgen.feature.configurations"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 36,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RuleBasedBlockStateProvider",
+        "location: package net.minecraft.world.level.levelgen.feature.stateproviders"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 296,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RandomPatchConfiguration",
+        "location: class PresetConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 23,
+      "message": "Context has protected access in SurfaceRules",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 43,
+      "message": "Context has protected access in SurfaceRules",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 112,
+      "message": "SurfaceRule has protected access in SurfaceRules",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 113,
+      "message": "Context has protected access in SurfaceRules",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 120,
+      "message": "Context has protected access in SurfaceRules",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RandomPatchConfiguration",
+        "location: package net.minecraft.world.level.levelgen.feature.configurations"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 35,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RuleBasedBlockStateProvider",
+        "location: package net.minecraft.world.level.levelgen.feature.stateproviders"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 132,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RandomPatchConfiguration",
+        "location: class RTFConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 9,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class IntrinsicHolderTagsProvider",
+        "location: package net.minecraft.data.tags"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 17,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: class IntrinsicHolderTagsProvider"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/mixin/MixinChunkMap.java",
+      "line": 16,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class ChunkProgressListener",
+        "location: package net.minecraft.server.level.progress"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/mixin/MixinChunkMap.java",
+      "line": 23,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class DimensionDataStorage",
+        "location: package net.minecraft.world.level.storage"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/mixin/MixinChunkMap.java",
+      "line": 36,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class ChunkProgressListener",
+        "location: class MixinChunkMap"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/mixin/MixinChunkMap.java",
+      "line": 36,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class DimensionDataStorage",
+        "location: class MixinChunkMap"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/biome/RTFBiomes.java",
+      "line": 7,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class AmbientMoodSettings",
+        "location: package net.minecraft.world.level.biome"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 16,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class SpreadingSnowyDirtBlock",
+        "location: package net.minecraft.world.level.block"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 7,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FloatProviderType",
+        "location: package net.minecraft.util.valueproviders"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 10,
+      "message": "no interface expected here",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FloatProviderType",
+        "location: class LegacyCanyonYScale"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/RTFFloatProviderTypes.java",
+      "line": 7,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FloatProviderType",
+        "location: package net.minecraft.util.valueproviders"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/RTFFloatProviderTypes.java",
+      "line": 11,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FloatProviderType",
+        "location: class RTFFloatProviderTypes"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/RTFFloatProviderTypes.java",
+      "line": 16,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FloatProviderType",
+        "location: class RTFFloatProviderTypes"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 23,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class ChunkStatus",
+        "location: package net.minecraft.world.level.chunk"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 37,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class ChunkStatus",
+        "location: class MixinChunkStatus"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 37,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class ChunkLoadingFailure",
+        "location: class ChunkHolder"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 55,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class ChunkStatus",
+        "location: class MixinChunkStatus"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/RTFFabric.java",
+      "line": 7,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FabricDataOutput",
+        "location: package net.fabricmc.fabric.api.datagen.v1"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: class ChunkStatus"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/data/LanguageProvider.java",
+      "line": 81,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getDescriptionId()",
+        "location: variable key of type ItemStack"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/data/LanguageProvider.java",
+      "line": 89,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getDescriptionId()",
+        "location: variable key of type Enchantment"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/page/LinkedPageScreen.java",
+      "line": 69,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/page/BisectedPage.java",
+      "line": 28,
+      "message": "minecraft has protected access in Screen",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/page/BisectedPage.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method setLeftPos(int)",
+        "location: variable list of type WidgetList<T>"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 18,
+      "message": "constructor ContainerObjectSelectionList in class ContainerObjectSelectionList<E> cannot be applied to given types;",
+      "details": [
+        "required: Minecraft,int,int,int,int",
+        "found:    Minecraft,int,int,int,int,int",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 39,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 49,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 54,
+      "message": "raccoonman.reterraforged.client.gui.widget.WidgetList.Entry is not abstract and does not override abstract method extractContent(GuiGraphicsExtractor,int,int,boolean,float) in net.minecraft.client.gui.components.AbstractSelectionList.Entry",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 70,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 78,
+      "message": "height has protected access in AbstractWidget",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/WidgetList.java",
+      "line": 80,
+      "message": "height has protected access in AbstractWidget",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java",
+      "line": 82,
+      "message": "font has protected access in Screen",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java",
+      "line": 125,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable SystemToastIds",
+        "location: class PresetListPage"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetListPage.java",
+      "line": 220,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class PartialResult",
+        "location: class PresetListPage"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/Label.java",
+      "line": 11,
+      "message": "Label is not abstract and does not override abstract method extractContents(GuiGraphicsExtractor,int,int,float) in AbstractButton",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/Label.java",
+      "line": 25,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 121,
+      "message": "PresetEditorPage.Preview is not abstract and does not override abstract method extractContents(GuiGraphicsExtractor,int,int,float) in AbstractButton",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 125,
+      "message": "no suitable constructor found for DynamicTexture(NativeImage)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 126,
+      "message": "method register in class TextureManager cannot be applied to given types;",
+      "details": [
+        "required: Identifier,AbstractTexture",
+        "found:    String,DynamicTexture",
+        "reason: argument mismatch; String cannot be converted to Identifier"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 145,
+      "message": "minecraft has protected access in Screen",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 193,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method setPixelRGBA(int,int,int)",
+        "location: variable pixels of type NativeImage"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 195,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method setPixelRGBA(int,int,int)",
+        "location: variable pixels of type NativeImage"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 210,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 216,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method enableBlend()",
+        "location: class RenderSystem"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 217,
+      "message": "package GlStateManager does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 217,
+      "message": "package GlStateManager does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 217,
+      "message": "package GlStateManager does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 217,
+      "message": "package GlStateManager does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 218,
+      "message": "package GlStateManager does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 218,
+      "message": "package GlStateManager does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetEditorPage.java",
+      "line": 258,
+      "message": "minecraft has protected access in Screen",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetConfigScreen.java",
+      "line": 43,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method setScreen(CreateWorldScreen)",
+        "location: variable minecraft of type Minecraft"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetConfigScreen.java",
+      "line": 58,
+      "message": "getDataPackSelectionSettings(WorldDataConfiguration) has private access in CreateWorldScreen",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetConfigScreen.java",
+      "line": 64,
+      "message": "tryApplyNewDataPacks(PackRepository,boolean,Consumer<WorldDataConfiguration>) has private access in CreateWorldScreen",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/widget/ValueButton.java",
+      "line": 9,
+      "message": "ValueButton is not abstract and does not override abstract method extractContents(GuiGraphicsExtractor,int,int,float) in AbstractButton",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java",
+      "line": 16,
+      "message": "cannot infer type arguments for Direct<>",
+      "details": [
+        "reason: cannot infer type-variable(s) T"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+      "line": 62,
+      "message": "method buildPatch in class RegistrySetBuilder cannot be applied to given types;",
+      "details": [
+        "required: RegistryAccess,Provider,Factory",
+        "found:    Frozen,RegistryAccess",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domain.java",
+      "line": 11,
+      "message": "no suitable method found for dispatch(Domain::codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunction.java",
+      "line": 10,
+      "message": "no suitable method found for dispatch(CurveFunct[...]codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetWidgets.java",
+      "line": 66,
+      "message": "no suitable method found for builder((e)->{ ret[...])); })",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/PresetWidgets.java",
+      "line": 80,
+      "message": "method booleanBuilder in class CycleButton<T> cannot be applied to given types;",
+      "details": [
+        "required: Component,Component,boolean",
+        "found:    MutableComponent,MutableComponent",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/Toasts.java",
+      "line": 13,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getToasts()",
+        "location: variable mc of type Minecraft"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/Toasts.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable SystemToastIds",
+        "location: class Toasts"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/client/gui/screen/presetconfig/StructureSettingsPage.java",
+      "line": 54,
+      "message": "salt() has protected access in StructurePlacement",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/BiomeModifierData.java",
+      "line": 59,
+      "message": "no suitable method found for add(Order,Decoration,HolderSet<Biome>,Direct<PlacedFeature>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/BiomeModifierData.java",
+      "line": 69,
+      "message": "no suitable method found for add(Order,Decoration,HolderSet<Biome>,Direct<PlacedFeature>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/BiomeModifier.java",
+      "line": 12,
+      "message": "no suitable method found for dispatch(BiomeModif[...]codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/Preset.java",
+      "line": 39,
+      "message": "incompatible types: inference variable T has incompatible equality constraints raccoonman.reterraforged.data.worldgen.preset.Preset,raccoonman.reterraforged.data.worldgen.preset.settings.Preset",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/Preset.java",
+      "line": 47,
+      "message": "no suitable method found for register(ResourceKey<raccoonman.reterraforged.data.worldgen.preset.Preset>,raccoonman.reterraforged.data.worldgen.preset.Preset)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/Preset.java",
+      "line": 62,
+      "message": "method buildPatch in class RegistrySetBuilder cannot be applied to given types;",
+      "details": [
+        "required: RegistryAccess,Provider,Factory",
+        "found:    Frozen,RegistryAccess",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java",
+      "line": 31,
+      "message": "DataGenerator is abstract; cannot be instantiated",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java",
+      "line": 32,
+      "message": "DataGenerator.PackGenerator(boolean,String,PackOutput) has private access in DataGenerator.PackGenerator",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java",
+      "line": 38,
+      "message": "method buildPatch in class RegistrySetBuilder cannot be applied to given types;",
+      "details": [
+        "required: RegistryAccess,Provider,Factory",
+        "found:    Frozen,RegistryAccess",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java",
+      "line": 50,
+      "message": "DataGenerator is abstract; cannot be instantiated",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java",
+      "line": 51,
+      "message": "DataGenerator.PackGenerator(boolean,String,PackOutput) has private access in DataGenerator.PackGenerator",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/Datapacks.java",
+      "line": 60,
+      "message": "incompatible types: inference variable T has incompatible bounds",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetBiomeModifierData.java",
+      "line": 102,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable TREES_BIRCH_AND_OAK",
+        "location: class VegetationPlacements"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredCarvers.java",
+      "line": 68,
+      "message": "incompatible types: bad type in conditional expression",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 235,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 235,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable GRASS",
+        "location: class Blocks"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 237,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 237,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable GRASS",
+        "location: class Blocks"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 238,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 239,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 240,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 244,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 246,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 247,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 248,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 249,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 250,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 254,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RuleBasedBlockStateProvider",
+        "location: class PresetConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 255,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RuleBasedBlockStateProvider",
+        "location: class PresetConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 256,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RuleBasedBlockStateProvider",
+        "location: class PresetConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 256,
+      "message": "package RuleBasedBlockStateProvider does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 256,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getNormal()",
+        "location: variable DOWN of type Direction"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 265,
+      "message": "no suitable constructor found for TreeConfigurationBuilder(SimpleStateProvider,StraightTrunkPlacer,SimpleStateProvider,BushFoliagePlacer,TwoLayersFeatureSize)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetConfiguredFeatures.java",
+      "line": 297,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method simpleRandomPatchConfiguration(int,Holder<PlacedFeature>)",
+        "location: class FeatureUtils"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/placement/TemplatePlacement.java",
+      "line": 14,
+      "message": "no suitable method found for dispatch(TemplatePl[...]codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/decorator/TemplateDecorator.java",
+      "line": 13,
+      "message": "no suitable method found for dispatch(TemplateDe[...]codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/chance/ChanceModifier.java",
+      "line": 11,
+      "message": "no suitable method found for dispatch(ChanceModi[...]codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 275,
+      "message": "method updateShape in class BlockStateBase cannot be applied to given types;",
+      "details": [
+        "required: LevelReader,ScheduledTickAccess,BlockPos,Direction,BlockPos,BlockState,RandomSource",
+        "found:    Direction,BlockState,LevelAccessor,MutableBlockPos,MutableBlockPos",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 281,
+      "message": "method updateShape in class BlockStateBase cannot be applied to given types;",
+      "details": [
+        "required: LevelReader,ScheduledTickAccess,BlockPos,Direction,BlockPos,BlockState,RandomSource",
+        "found:    Direction,BlockState,LevelAccessor,MutableBlockPos,MutableBlockPos",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 281,
+      "message": "method updateShape in class BlockStateBase cannot be applied to given types;",
+      "details": [
+        "required: LevelReader,ScheduledTickAccess,BlockPos,Direction,BlockPos,BlockState,RandomSource",
+        "found:    Direction,BlockState,LevelAccessor,MutableBlockPos,MutableBlockPos,<any>,<any>",
+        "reason: argument mismatch; Direction cannot be converted to LevelReader"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 309,
+      "message": "no suitable method found for readCompressed(InputStream)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 313,
+      "message": "method getList in class CompoundTag cannot be applied to given types;",
+      "details": [
+        "required: String",
+        "found:    String,int",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 314,
+      "message": "method getList in class CompoundTag cannot be applied to given types;",
+      "details": [
+        "required: String",
+        "found:    String,int",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 327,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method asLookup()",
+        "location: variable BLOCK of type DefaultedRegistry<Block>"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 338,
+      "message": "incompatible types: Optional<CompoundTag> cannot be converted to CompoundTag",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 339,
+      "message": "incompatible types: Optional<Integer> cannot be converted to int",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 340,
+      "message": "method getList in class CompoundTag cannot be applied to given types;",
+      "details": [
+        "required: String",
+        "found:    String,int",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 388,
+      "message": "incompatible types: Optional<Integer> cannot be converted to int",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 389,
+      "message": "incompatible types: Optional<Integer> cannot be converted to int",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/template/FeatureTemplate.java",
+      "line": 390,
+      "message": "incompatible types: Optional<Integer> cannot be converted to int",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetDimensionTypes.java",
+      "line": 22,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable OVERWORLD_EFFECTS",
+        "location: class BuiltinDimensionTypes"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetDimensionTypes.java",
+      "line": 22,
+      "message": "constructor MonsterSettings in record MonsterSettings cannot be applied to given types;",
+      "details": [
+        "required: IntProvider,int",
+        "found:    boolean,boolean,UniformInt,int",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetNoiseRouterData.java",
+      "line": 96,
+      "message": "VeinType has protected access in OreVeinifier",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetNoiseRouterData.java",
+      "line": 97,
+      "message": "VeinType has protected access in OreVeinifier",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetNoiseRouterData.java",
+      "line": 122,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable WeirdScaledSampler",
+        "location: class DensityFunctions"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/structure/rule/StructureRule.java",
+      "line": 12,
+      "message": "no suitable method found for dispatch(StructureR[...]codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 30,
+      "message": "StrataRule is not abstract and does not override abstract method codec() in RuleSource",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 52,
+      "message": "codec() in StrataRule cannot implement codec() in RuleSource",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 43,
+      "message": "apply(Context) in StrataRule cannot implement apply(T) in Function",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 42,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 51,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 53,
+      "message": "cannot infer type arguments for KeyDispatchDataCodec<>",
+      "details": [
+        "reason: cannot infer type-variable(s) A"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/StrataRule.java",
+      "line": 128,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/PresetSurfaceRuleData.java",
+      "line": 25,
+      "message": "method overworld in class SurfaceRuleData cannot be applied to given types;",
+      "details": [
+        "required: HolderGetter<Biome>",
+        "found:    no arguments",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredCarvers.java",
+      "line": 68,
+      "message": "incompatible types: bad type in conditional expression",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 68,
+      "message": "constructor Config in record Config cannot be applied to given types;",
+      "details": [
+        "required: int,int,int,int,float,float,float,float,float,float,float,float",
+        "found:    no arguments",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 72,
+      "message": "constructor Config in record raccoonman.reterraforged.world.worldgen.feature.DecorateSnowFeature.Config cannot be applied to given types;",
+      "details": [
+        "required: boolean,boolean,raccoonman.reterraforged.world.worldgen.feature.ErodeFeature.Config",
+        "found:    boolean,boolean",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 81,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 81,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable GRASS",
+        "location: class Blocks"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 83,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 83,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable GRASS",
+        "location: class Blocks"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 84,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 85,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 86,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RANDOM_PATCH",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 90,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RuleBasedBlockStateProvider",
+        "location: class RTFConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 91,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable RuleBasedBlockStateProvider",
+        "location: class RTFConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 92,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class RuleBasedBlockStateProvider",
+        "location: class RTFConfiguredFeatures"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 92,
+      "message": "package RuleBasedBlockStateProvider does not exist",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 92,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getNormal()",
+        "location: variable DOWN of type Direction"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 101,
+      "message": "no suitable constructor found for TreeConfigurationBuilder(SimpleStateProvider,StraightTrunkPlacer,SimpleStateProvider,BushFoliagePlacer,TwoLayersFeatureSize)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFConfiguredFeatures.java",
+      "line": 133,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method simpleRandomPatchConfiguration(int,Holder<PlacedFeature>)",
+        "location: class FeatureUtils"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFDimensionTypes.java",
+      "line": 22,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable OVERWORLD_EFFECTS",
+        "location: class BuiltinDimensionTypes"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFDimensionTypes.java",
+      "line": 22,
+      "message": "constructor MonsterSettings in record MonsterSettings cannot be applied to given types;",
+      "details": [
+        "required: IntProvider,int",
+        "found:    boolean,boolean,UniformInt,int",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFNoiseRouterData.java",
+      "line": 93,
+      "message": "VeinType has protected access in OreVeinifier",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFNoiseRouterData.java",
+      "line": 94,
+      "message": "VeinType has protected access in OreVeinifier",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFNoiseRouterData.java",
+      "line": 119,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable WeirdScaledSampler",
+        "location: class DensityFunctions"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/RTFSurfaceRuleData.java",
+      "line": 25,
+      "message": "method overworld in class SurfaceRuleData cannot be applied to given types;",
+      "details": [
+        "required: HolderGetter<Biome>",
+        "found:    no arguments",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 26,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 30,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: method tag(TagKey<Block>)"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 31,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: method tag(TagKey<Block>)"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 32,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: method tag(TagKey<Block>)"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 33,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: method tag(TagKey<Block>)"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 33,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method identifier()",
+        "location: variable DIRT of type TagKey<Block>"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/data/worldgen/tags/RTFBlockTagsProvider.java",
+      "line": 36,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol: method tag(TagKey<Block>)"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/CellSampler.java",
+      "line": 113,
+      "message": "cannot infer type arguments for KeyDispatchDataCodec<>",
+      "details": [
+        "reason: cannot infer type-variable(s) A"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/NoiseFunction.java",
+      "line": 35,
+      "message": "cannot infer type arguments for KeyDispatchDataCodec<>",
+      "details": [
+        "reason: cannot infer type-variable(s) A"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/biome/RTFBiomes.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable AmbientMoodSettings",
+        "location: class RTFBiomes"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/biome/RTFBiomes.java",
+      "line": 29,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method waterFogColor(int)",
+        "location: class Builder"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/ConditionalArrayCache.java",
+      "line": 11,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable HOLDER_HELPER_CODEC",
+        "location: interface DensityFunction"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/ConditionalArrayCache.java",
+      "line": 21,
+      "message": "cannot infer type arguments for KeyDispatchDataCodec<>",
+      "details": [
+        "reason: cannot infer type-variable(s) A"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/RTFDensityFunctions.java",
+      "line": 16,
+      "message": "method register in class RTFDensityFunctions cannot be applied to given types;",
+      "details": [
+        "required: String,Codec<? extends DensityFunction>",
+        "found:    String,MapCodec<ClampToNearestUnit>",
+        "reason: argument mismatch; MapCodec<ClampToNearestUnit> cannot be converted to Codec<? extends DensityFunction>"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/RTFDensityFunctions.java",
+      "line": 17,
+      "message": "method register in class RTFDensityFunctions cannot be applied to given types;",
+      "details": [
+        "required: String,Codec<? extends DensityFunction>",
+        "found:    String,MapCodec<LinearSplineFunction>",
+        "reason: argument mismatch; MapCodec<LinearSplineFunction> cannot be converted to Codec<? extends DensityFunction>"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/RTFDensityFunctions.java",
+      "line": 38,
+      "message": "method register in class RegistryUtil cannot be applied to given types;",
+      "details": [
+        "required: Registry<T>,String,T",
+        "found:    Registry<MapCodec<? extends DensityFunction>>,String,Codec<CAP#1>",
+        "reason: inference variable T has incompatible bounds"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/ColumnDecorator.java",
+      "line": 23,
+      "message": "no suitable method found for setBlockState(BlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 56,
+      "message": "constructor ChunkPos in record ChunkPos cannot be applied to given types;",
+      "details": [
+        "required: int,int",
+        "found:    BlockPos",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 57,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 58,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 79,
+      "message": "method getTemperature in class Biome cannot be applied to given types;",
+      "details": [
+        "required: BlockPos,int",
+        "found:    MutableBlockPos",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 129,
+      "message": "no suitable method found for setBlockState(MutableBlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 135,
+      "message": "no suitable method found for setBlockState(MutableBlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 149,
+      "message": "no suitable method found for setBlockState(MutableBlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 162,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class SpreadingSnowyDirtBlock",
+        "location: class DecorateSnowFeature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/DecorateSnowFeature.java",
+      "line": 163,
+      "message": "no suitable method found for setBlockState(BlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/ErodeFeature.java",
+      "line": 51,
+      "message": "constructor ChunkPos in record ChunkPos cannot be applied to given types;",
+      "details": [
+        "required: int,int",
+        "found:    BlockPos",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/ErodeFeature.java",
+      "line": 52,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/ErodeFeature.java",
+      "line": 53,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java",
+      "line": 64,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java",
+      "line": 65,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java",
+      "line": 86,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java",
+      "line": 86,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java",
+      "line": 86,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/poisson/FastPoissonModifier.java",
+      "line": 86,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/placement/RTFPlacementModifiers.java",
+      "line": 40,
+      "message": "incompatible types: bad return type in lambda expression",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/SwampSurfaceFeature.java",
+      "line": 36,
+      "message": "constructor ChunkPos in record ChunkPos cannot be applied to given types;",
+      "details": [
+        "required: int,int",
+        "found:    BlockPos",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/SwampSurfaceFeature.java",
+      "line": 59,
+      "message": "no suitable method found for setBlockState(MutableBlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/SwampSurfaceFeature.java",
+      "line": 67,
+      "message": "no suitable method found for setBlockState(MutableBlockPos,BlockState,boolean)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/BlockUtils.java",
+      "line": 17,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method isDirt(BlockState)",
+        "location: class TreeFeature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/BlockUtils.java",
+      "line": 26,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable SAPLINGS",
+        "location: class BlockTags"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/BlockUtils.java",
+      "line": 39,
+      "message": "method isPathfindable in class BlockStateBase cannot be applied to given types;",
+      "details": [
+        "required: PathComputationType",
+        "found:    BlockGetter,BlockPos,PathComputationType",
+        "reason: actual and formal argument lists differ in length"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/BlockUtils.java",
+      "line": 44,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method isDirt(BlockState)",
+        "location: class TreeFeature"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/BlockUtils.java",
+      "line": 50,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getMaxBuildHeight()",
+        "location: variable world of type LevelAccessor"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/decorator/TreeDecorator.java",
+      "line": 32,
+      "message": "constructor Context in class Context cannot be applied to given types;",
+      "details": [
+        "required: WorldGenLevel,BiConsumer<BlockPos,BlockState>,RandomSource,Set<BlockPos>,Set<BlockPos>,Set<BlockPos>",
+        "found:    LevelAccessor,(pos,state[...], 19),RandomSource,Set<BlockPos>,Set<BlockPos>,ImmutableSet<Object>",
+        "reason: argument mismatch; LevelAccessor cannot be converted to WorldGenLevel"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/placement/AnyPlacement.java",
+      "line": 12,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method unit(AnyPlacement::new)",
+        "location: interface Codec"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/template/placement/TreePlacement.java",
+      "line": 12,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method unit(TreePlacement::new)",
+        "location: interface Codec"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/util/BlockReader.java",
+      "line": 10,
+      "message": "BlockReader is not abstract and does not override abstract method getMinY() in LevelHeightAccessor",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/feature/util/BlockReader.java",
+      "line": 23,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 11,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method unit(LegacyCany[...]::new)",
+        "location: interface Codec"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 13,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 18,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 23,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/LegacyCanyonYScale.java",
+      "line": 28,
+      "message": "method does not override or implement a method from a supertype",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/RTFFloatProviderTypes.java",
+      "line": 11,
+      "message": "method register in class RTFFloatProviderTypes cannot be applied to given types;",
+      "details": [
+        "required: String,Codec<T>",
+        "found:    String,Codec<LegacyCanyonYScale>",
+        "reason: inference variable T has incompatible bounds"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/floatproviders/RTFFloatProviderTypes.java",
+      "line": 17,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FloatProviderType",
+        "location: class RTFFloatProviderTypes"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/heightproviders/RTFHeightProviderTypes.java",
+      "line": 17,
+      "message": "incompatible types: bad return type in lambda expression",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectWarp.java",
+      "line": 8,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method unit(DirectWarp::new)",
+        "location: interface Codec"
+      ]
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java",
+      "line": 20,
+      "message": "no suitable method found for dispatch(Noise::codec,Function<Object,Object>)",
+      "details": []
+    },
+    {
+      "file": "common/src/main/java/raccoonman/reterraforged/world/worldgen/surface/rule/RTFSurfaceRules.java",
+      "line": 26,
+      "message": "method register in class RegistryUtil cannot be applied to given types;",
+      "details": [
+        "required: Registry<T>,String,T",
+        "found:    Registry<MapCodec<? extends RuleSource>>,String,Codec<CAP#1>",
+        "reason: inference variable T has incompatible bounds"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 45,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 45,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 63,
+      "message": "x has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinChunkStatus.java",
+      "line": 63,
+      "message": "z has private access in ChunkPos",
+      "details": []
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/RTFFabric.java",
+      "line": 31,
+      "message": "reference to addProvider is ambiguous",
+      "details": []
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/RTFFabric.java",
+      "line": 31,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FabricDataOutput",
+        "location: class RTFFabric"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/RTFFabric.java",
+      "line": 32,
+      "message": "reference to addProvider is ambiguous",
+      "details": []
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/fabric/RTFFabric.java",
+      "line": 32,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   class FabricDataOutput",
+        "location: class RTFFabric"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/AddModifier.java",
+      "line": 35,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getBiomeRegistryEntry()",
+        "location: variable selectionContext of type BiomeSelectionContext"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/FabricBiomeModifier.java",
+      "line": 21,
+      "message": "method setFlowerFeatures in interface MixinBiomeGenerationSettings cannot be applied to given types;",
+      "details": [
+        "required: java.util.function.Supplier<List<ConfiguredFeature<?,?>>>",
+        "found:    com.google.common.base.Supplier<ImmutableList<Holder<ConfiguredFeature<?,?>>>>",
+        "reason: argument mismatch; inference variable E has incompatible bounds"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/FabricBiomeModifier.java",
+      "line": 23,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method feature()",
+        "location: variable configuredFeature of type Holder<ConfiguredFeature<?,?>>"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/FabricBiomeModifier.java",
+      "line": 23,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   variable FLOWER",
+        "location: class Feature"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/BiomeModifiersImpl.java",
+      "line": 56,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method unit(Dummy::new)",
+        "location: interface Codec"
+      ]
+    },
+    {
+      "file": "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/ReplaceModifier.java",
+      "line": 31,
+      "message": "cannot find symbol",
+      "details": [
+        "symbol:   method getBiomeRegistryEntry()",
+        "location: variable selectionContext of type BiomeSelectionContext"
+      ]
+    }
+  ]
+}

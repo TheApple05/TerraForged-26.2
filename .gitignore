@@ -12,3 +12,6 @@ __pycache__/
 .env.*
 !*.example
 local.properties
+logs/
+crash-reports/
+.fabric/

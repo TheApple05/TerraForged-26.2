@@ -26,6 +26,9 @@
 ## Current results
 
 - **Passed:** unchanged math/hash utility slice, 2,167 reference records across four independent Java 25 processes, shuffled/parallel comparison, and temporary mutation detection. See [core regression evidence](validation/core-regression.md) and [integrator verification](validation/core-reviewed.json).
-- **Unverified:** complete noise composition, continents/climate/rivers/erosion, real chunk/tile seams, target gameplay, packaged mod, UI, server parity, visual approval, and generation performance.
+- **Passed, scoped components:** 235 density adapter assertions against actual 26.2 classes; 216 legacy vegetation cases with 6,948 nested placements matching 1.20.1 RNG behavior; nine dimension configurations; 36 spawn-scope assertions; 29 slider event assertions; and 312 cache assertions including reproduction of the pinned original deadlock. Individual reports record their narrower scope.
+- **Passed, packaged Fabric server:** real preset export, active custom generator checks, six full chunks / 54 sampled columns in each of two fresh runs, and save/reload matching the first run. Normal watchdog enabled, clean process exit, actual packaged JAR origin and hash verified. See [runtime results](validation/runtime-summary.md).
+- **Under investigation:** the two fresh runs differ at one sampled tree-canopy column at a chunk boundary. Raw terrain cell fields match at all 54 samples; whole-world output determinism is not yet established.
+- **Unverified:** full noise composition/reference terrain parity, full block seams, completed client gameplay/UI review, integrated/dedicated parity, NeoForge runtime, third-party modpacks, visual approval, and generation performance.
 
 Results live under `docs/validation/` with their exact scope.
