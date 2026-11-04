@@ -20,15 +20,15 @@ def main():
     parser.add_argument('--java-home', type=Path, required=True)
     parser.add_argument('--jar', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--family', choices=['base','second','sources','power','cell'], default='base')
+    parser.add_argument('--family', choices=['base','second','sources','power','cell','terrain'], default='base')
     args = parser.parse_args()
     metadata = args.output.with_suffix('.json')
     if args.output.exists() or metadata.exists():
         parser.error('Refusing to replace a frozen oracle')
     modules = {'base':['Perlin','Simplex'],'second':['Perlin2','Simplex2'],
-               'sources':['White','Cubic','PerlinRidge','SimplexRidge','Billow','Perlin','Simplex2'],'power':[],'cell':[]}[args.family]
+               'sources':['White','Cubic','PerlinRidge','SimplexRidge','Billow','Perlin','Simplex2'],'power':[],'cell':[],'terrain':[]}[args.family]
     probe = {'base':'NativeNoiseProbe','second':'NativeNoiseFamilyProbe',
-             'sources':'NativeNoiseSourcesProbe','power':'NativePowerProbe','cell':'NativeCellFoundationProbe'}[args.family]
+             'sources':'NativeNoiseSourcesProbe','power':'NativePowerProbe','cell':'NativeCellFoundationProbe','terrain':'NativeTerrainProbe'}[args.family]
     source = ROOT/('horizon/tests/java/'+probe+'.java')
     jar = args.jar.resolve()
     cp = str(jar) + os.pathsep + (ROOT/'build/qa/target/compile-classpath.txt').read_text().strip()
@@ -46,13 +46,13 @@ def main():
             result = subprocess.run([str(args.java_home/'bin'/('java'+suffix)),
                 '-Xlog:class+load=info:file='+log.relative_to(ROOT).as_posix(),
                 '-cp',temporary+os.pathsep+cp,
-                ('' if args.family in ('power','cell') else 'raccoonman.reterraforged.world.worldgen.noise.module.')+probe],
+                ('' if args.family in ('power','cell','terrain') else 'raccoonman.reterraforged.world.worldgen.noise.module.')+probe],
                 cwd=ROOT, capture_output=True, timeout=90)
             if result.returncode:
                 raise RuntimeError(result.stderr.decode(errors='replace'))
             text = log.read_text()
             names = (['cell.Cell','cell.heightmap.Levels','cell.terrain.TerrainType','cell.biome.type.BiomeType','densityfunction.tile.Size','noise.NoiseUtil']
-                     if args.family=='cell' else ['noise.NoiseUtil']+['noise.module.'+name for name in modules])
+                     if args.family=='cell' else ['cell.terrain.TerrainType','cell.terrain.Terrain','cell.terrain.CompositeTerrain','cell.terrain.ConfiguredTerrain','noise.NoiseUtil'] if args.family=='terrain' else ['noise.NoiseUtil']+['noise.module.'+name for name in modules])
             for name in names:
                 expected = 'raccoonman.reterraforged.world.worldgen.'+name+' source: '
                 lines = [line for line in text.splitlines() if expected in line]
@@ -73,11 +73,15 @@ def main():
         srcroot = ROOT/'common/src/main/java/raccoonman/reterraforged/world/worldgen'
         classes = ['cell/Cell.java','cell/heightmap/Levels.java','densityfunction/tile/Size.java',
                    'cell/terrain/TerrainType.java','cell/terrain/Terrain.java','cell/biome/type/BiomeType.java','noise/NoiseUtil.java']
+    if args.family=='terrain':
+        srcroot=ROOT/'common/src/main/java/raccoonman/reterraforged/world/worldgen'
+        classes=['cell/terrain/'+name+'.java' for name in ['ITerrain','Terrain','ConfiguredTerrain','CompositeTerrain','TerrainType','TerrainCategory']]+['noise/NoiseUtil.java']
     record = {'schemaVersion':1,'status':'frozen-java-reference','productionJarSha256':digest(jar),
         'sourceSha256Lf':{name:hashlib.sha256((srcroot/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in classes},
         'oracleSourceSha256Lf':hashlib.sha256(source.read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
         'fixtureSha256':digest(args.output),'recordCount':len(lines),'freshRunsAgree':True,
-        'scope':('Levels/Size arithmetic and all 24 Cell default/copy/reset fields; no terrain hierarchy or climate lookup' if args.family=='cell' else
+        'scope':('Built-in/named/composite terrain registry metadata and source flags; no terrain generation' if args.family=='terrain' else
+                 'Levels/Size arithmetic and all 24 Cell default/copy/reset fields; no terrain hierarchy or climate lookup' if args.family=='cell' else
                  'Float Math.pow overload and spectral weights' if args.family=='power' else
                  'White/Cubic/ridge/billow observations and reported metadata' if args.family=='sources' else
                  '296 literal vectors and '+','.join(modules)+' static/fractal')+'; independent of native output.',

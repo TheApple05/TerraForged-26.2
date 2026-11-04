@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-java-reference",
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "sourceSha256Lf": {
+    "cell/terrain/ITerrain.java": "234f21fcf72f2f40ad4bc9e6d8a65d3028a18b40f616b490abf35a4257258f2c",
+    "cell/terrain/Terrain.java": "e654dbffda5af3f8c83fd2a8685b4e8406aac330c0526b22b98a1f696661eb22",
+    "cell/terrain/ConfiguredTerrain.java": "ac66b44f0660cdc9e02aa53ff11476054da75725baa4f2abfd2df14079600066",
+    "cell/terrain/CompositeTerrain.java": "379d80e8aa62ca2ba1bf69139ed6dd000eeea522485629595b385c41df97eab9",
+    "cell/terrain/TerrainType.java": "7b3107ea316b1b0ca86459fb1fd521998320785cf0e2b8ed4c9e1fba472898e7",
+    "cell/terrain/TerrainCategory.java": "536d22406c635d90d28b801f30e5a6d0f37a8335f8326e19f9bcb6dc6a576ee7",
+    "noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139"
+  },
+  "oracleSourceSha256Lf": "37b7bf42370f798a7c4b227b25c882192c2bb6a2be231ed056e65bf23dc8d469",
+  "fixtureSha256": "8e1d898b8f7d6da5f5990f61d6c3b8ef142790f60c1d4270e830b021d0b2aecd",
+  "recordCount": 695,
+  "freshRunsAgree": true,
+  "scope": "Built-in/named/composite terrain registry metadata and source flags; no terrain generation; independent of native output.",
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+}
