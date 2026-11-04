@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-noise-foundation-only",
+  "startedAtUtc": "2026-11-04T14:34:26.452099+00:00",
+  "fixtureSha256": "cc925fbb7c64ba4984843d9e88ff1d7cd6ebb5b3ea5ec23b0575c8833615b660",
+  "javaOracle": {
+    "schemaVersion": 1,
+    "status": "frozen-java-reference",
+    "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+    "sourceSha256Lf": {
+      "NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+      "module/Perlin2.java": "18dd75b0b30cd963bb526ae547046ce859b1ea08fb017f7026a014a6f2096183",
+      "module/Simplex2.java": "d248bac6fdcc75e56368ccbb9ce938731c4bc44e87b11f2816631ce43557fda4",
+      "function/Interpolation.java": "422742353f669ce13af9fcbbc22647692cd7865bc6602a9c9fc4c815ada8ad3a"
+    },
+    "oracleSourceSha256Lf": "ba2a75b8d93b6a51597d885dfaf7e3ccc007375d0595617f8d80945cd55034c3",
+    "fixtureSha256": "cc925fbb7c64ba4984843d9e88ff1d7cd6ebb5b3ea5ec23b0575c8833615b660",
+    "recordCount": 34976,
+    "freshRunsAgree": true,
+    "scope": "296 literal vectors and Perlin2,Simplex2 static/fractal; independent of native output.",
+    "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+  },
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "outputSha256": "cc925fbb7c64ba4984843d9e88ff1d7cd6ebb5b3ea5ec23b0575c8833615b660",
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "constructorGuardsObserved": true,
+      "allJavaValuesMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "outputSha256": "cc925fbb7c64ba4984843d9e88ff1d7cd6ebb5b3ea5ec23b0575c8833615b660",
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "constructorGuardsObserved": true,
+      "allJavaValuesMatch": true
+    }
+  ],
+  "recordsPerProfile": 34976,
+  "valuesPerProfile": 56080,
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.1\nLLVM version: 23.1.1\n",
+  "family": "second",
+  "scope": "296 vectors and Perlin2/Simplex2 sample/fractal values; raw float bits, no native terrain activation.",
+  "notCovered": [
+    "Other noise modules or arbitrary graphs",
+    "Complete nonfinite/parameter domain",
+    "Cell/river/tile pipeline",
+    "Native density/surface/caves/decoration",
+    "Infinite generation",
+    "Native game save/rendering"
+  ],
+  "sourceSha256Lf": {
+    "horizon/native-core/src/bin/core_probe.rs": "2135bffcbc11eb44efc5b5fb9290c004877d52e28acea3585465efbffa8485b4",
+    "horizon/native-core/src/bin/math_probe.rs": "d59d6066dd3ab530c01f1b130d367469a48ce2bf63aab5ee8467177821bbe20e",
+    "horizon/native-core/src/bin/noise_composition_probe.rs": "41c700b6e80149a052b629198be0e1697bdd8b94de6571666a47b48b2ef962a4",
+    "horizon/native-core/src/bin/noise_family_probe.rs": "7c832f40f9a405decb3b28135427bac776267fa40342cecf1ef584cbf0bfa01a",
+    "horizon/native-core/src/bin/noise_probe.rs": "365ddc9f8419d0865d77f47d245327232a72d9d212def9efb1f45b4fcc892660",
+    "horizon/native-core/src/bin/noise_sources_probe.rs": "ec86d45f5a28f4f589c906ea86f1c04256a3f5fe2a795741bec74a9559835b00",
+    "horizon/native-core/src/bin/power_probe.rs": "d1590fd2bc8666e2e1b4cfe7299c5a87ce6c099391bf770ddba304b5c000635e",
+    "horizon/native-core/src/bin/scalar_probe.rs": "96aee09dbbbf80bb388e74404bbf7f9443bb6d34d38894f551eae4ff5cf92758",
+    "horizon/native-core/src/bin/utility_probe.rs": "293b0003ff5cd147c3aeeeafad73f486e8935e4563286fc127616b7f577c8ebc",
+    "horizon/native-core/src/fast_random.rs": "475dbaf5fb1b3a71b159c4d4d4ed4d1b1b66677aef151e54721eb951513f024f",
+    "horizon/native-core/src/graph.rs": "7c58da18dfac47749e0b513dc9cd452ad6e8ce454ddd5b171ca2d4524a3ca9d5",
+    "horizon/native-core/src/lib.rs": "59a94202036f0c035876035e16170676a412fa5af4812f6b47b5d6b5ac1ea461",
+    "horizon/native-core/src/math_table.rs": "a3e97af5cde9e96741262c7b6ce11d17c14107ff2e824525a4877d78a857f945",
+    "horizon/native-core/src/noise_util.rs": "99b3ca60416d08fc14df95cb27d719b00fcab9e67547c49090d2730d9f805bef",
+    "horizon/native-core/src/noise_vectors.rs": "aca424593d1b9c3fef680ea1920fcbcc9f8b7208b8fa3bb739b77d174602dfd0",
+    "horizon/native-core/src/perlin.rs": "1e4368d4939ab9334bd9061ce804bfcda5a2eb66f9161dd3bb6184431c36ce5b",
+    "horizon/native-core/src/perlin2.rs": "ceb66e08e4baa7d3b039645db4ba535d535f46182329ac5109b846ae04cb5bb4",
+    "horizon/native-core/src/pos_util.rs": "09237ff99c85e800b07e965d2af4b8cbc5132b1525ae51930f74212728dfcb6f",
+    "horizon/native-core/src/ridges.rs": "90319d54e4393469489330afb46451856c6f02291abe5aca8b312c987843b1f5",
+    "horizon/native-core/src/seed.rs": "7c296bc1bc07539034fd4f704e41b298d621173e9dd18158551ad7d78cf64430",
+    "horizon/native-core/src/simplex.rs": "09a9fa3aea602d3da6310c467af93fd6bc3fc96418094d828b4af1ee30c95b47",
+    "horizon/native-core/src/simplex2.rs": "0f2614e82178bc148180a76d13c8fd814a3e5aadd2c6e02a3cac9b250f963d1c",
+    "horizon/native-core/src/sources.rs": "0187f37e59fb6c21a5c62a1754beaf11dae8e51057835b45664c32106d7ddca3",
+    "horizon/native-core/src/data/noiseutil-sine.bin": "f2999391380fe1b7a8deb687380fdb51b278fa88ffb8201e9beb2ae125a9db81",
+    "horizon/native-core/Cargo.toml": "90828d3f94df0a4249961250593854170168ab2de8191bc4d7d9540394152366",
+    "horizon/native-core/Cargo.lock": "51e811941ccbf1984b0a3a36b105742bb4053403c4adb5ac5acffbef3b80fa40"
+  },
+  "sourceNormalization": "LF for text source/configuration; binary lookup bytes exact",
+  "finishedAtUtc": "2026-11-04T14:34:28.238382+00:00",
+  "verifierSha256": "b3a62f5bc7cd158848cb7b1175cddfaaaf855fd1da86835c4844e9b93a4d80a1"
+}

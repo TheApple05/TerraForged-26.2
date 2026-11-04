@@ -3,7 +3,7 @@
   "scope": "Registered custom noise numerical types/constructor graphs only; registry decoding, visitors and native terrain activation unfinished",
   "registrySourceSha256Lf": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
   "registeredTypes": 41,
-  "numericallyVerifiedTypes": 15,
+  "numericallyVerifiedTypes": 20,
   "types": [
     {
       "id": "reterraforged:constant",
@@ -17,8 +17,8 @@
     },
     {
       "id": "reterraforged:white",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "sample-fractal-metadata-fixture-verified",
+      "nativeType": "sources::White"
     },
     {
       "id": "reterraforged:perlin",
@@ -32,8 +32,8 @@
     },
     {
       "id": "reterraforged:perlin_ridge",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "sample-fractal-metadata-fixture-verified",
+      "nativeType": "ridges::PerlinRidge"
     },
     {
       "id": "reterraforged:simplex",
@@ -47,8 +47,8 @@
     },
     {
       "id": "reterraforged:simplex_ridge",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "sample-fractal-metadata-fixture-verified",
+      "nativeType": "ridges::SimplexRidge"
     },
     {
       "id": "reterraforged:worley",
@@ -62,13 +62,13 @@
     },
     {
       "id": "reterraforged:billow",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "sample-fractal-metadata-fixture-verified",
+      "nativeType": "ridges::Billow"
     },
     {
       "id": "reterraforged:cubic",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "sample-fractal-metadata-fixture-verified",
+      "nativeType": "sources::Cubic"
     },
     {
       "id": "reterraforged:line",

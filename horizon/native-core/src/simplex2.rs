@@ -32,13 +32,7 @@ impl Simplex2 {
         if !(0..=32).contains(&octaves) {
             return Err(Simplex2Error::InvalidOctaves(octaves));
         }
-        let signal = SIGNALS[octaves.min(6) as usize];
-        let mut max = 0.0f32;
-        let mut amp = 1.0f32;
-        for _ in 0..octaves {
-            max += amp * signal;
-            amp *= gain;
-        }
+        let max = Self::normalization_max(octaves, gain);
         Ok(Self {
             frequency,
             octaves,
@@ -52,6 +46,17 @@ impl Simplex2 {
 
     pub fn min_value(&self) -> f32 {
         0.0
+    }
+
+    pub(crate) fn normalization_max(octaves: i32, gain: f32) -> f32 {
+        let signal = SIGNALS[octaves.min(6) as usize];
+        let mut max = 0.0f32;
+        let mut amp = 1.0f32;
+        for _ in 0..octaves {
+            max += amp * signal;
+            amp *= gain;
+        }
+        max
     }
     pub fn max_value(&self) -> f32 {
         1.0

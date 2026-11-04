@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-java-reference",
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "sourceSha256Lf": {
+    "NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "function/Interpolation.java": "422742353f669ce13af9fcbbc22647692cd7865bc6602a9c9fc4c815ada8ad3a"
+  },
+  "oracleSourceSha256Lf": "48f483daf24a670795ea3c71cd4e48f1103e673d88e1b90827a0e66bc9e0eaf0",
+  "fixtureSha256": "4abba78c328501dce45bc3cf66993688262b55e831f3356cc9410b520d7ccb25",
+  "recordCount": 376,
+  "freshRunsAgree": true,
+  "scope": "Float Math.pow overload and spectral weights; independent of native output.",
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+}

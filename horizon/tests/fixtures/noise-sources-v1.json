@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-java-reference",
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "sourceSha256Lf": {
+    "NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "module/White.java": "95795d449477288f489d866d64ae80aff2c74d116b60e4531f356dd8fdaad465",
+    "module/Cubic.java": "0f1376eb1e163cdf614159abf2523d5025c2c575ba9d91066f9fb5c2ea7b66f4",
+    "module/PerlinRidge.java": "481916e7f3eea17ce475e38fbd553bc33e8ef759aed6c98dd27f0a8113518c7e",
+    "module/SimplexRidge.java": "45d8fc50034b0793d83c1213f0c02f58a1492aeb3885776dbcca8331c710a7eb",
+    "module/Billow.java": "185c12d27ad07e1370ad47ef3651948f53fd4f64a94df7f2a6543e146a859ac9",
+    "module/Perlin.java": "30bc31c35f9801ecfebdbbe121313ed4efa6afa3ce07bce97a227159346b8816",
+    "module/Simplex2.java": "d248bac6fdcc75e56368ccbb9ce938731c4bc44e87b11f2816631ce43557fda4",
+    "function/Interpolation.java": "422742353f669ce13af9fcbbc22647692cd7865bc6602a9c9fc4c815ada8ad3a"
+  },
+  "oracleSourceSha256Lf": "746c6b0fd31da7641a23eeaf6b46509e835e71559dd5220ffcce19e01ccb34d2",
+  "fixtureSha256": "2d78dd838d849cef0fc0713100cabfe907af913a8b77d308935d45ef889ddc1c",
+  "recordCount": 126653,
+  "freshRunsAgree": true,
+  "scope": "White/Cubic/ridge/billow observations and reported metadata; independent of native output.",
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+}

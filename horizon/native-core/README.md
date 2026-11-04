@@ -43,3 +43,8 @@ forbids unsafe code.
 Original ReTerraForged MIT attribution is retained with the source and in
 `LICENSE-RETERRAFORGED`. The root Horizon component license also applies to new
 integration code. This crate does not contain Minecraft binaries or resources.
+
+White/Cubic and three ridge/billow variants also match 128,458 independent Java
+fields per profile, including reported bounds and high octave behavior. See
+[noise sources](../../docs/horizon/noise-sources.md); use `--family sources` and
+`--family power` for the source corpus and fractional-power foundation.
