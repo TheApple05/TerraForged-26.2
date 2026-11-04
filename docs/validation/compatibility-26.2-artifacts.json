@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-11-04T09:53:22.306220+00:00",
+  "minecraft": "26.2",
+  "selection": "Explicit immutable publisher version IDs, exact declared target and loader checked",
+  "artifacts": [
+    {
+      "slug": "sodium",
+      "loader": "fabric",
+      "projectId": "AANobbMI",
+      "title": "Sodium",
+      "publisherSourceUrl": "https://github.com/CaffeineMC/sodium",
+      "license": {
+        "id": "LicenseRef-Polyform-Shield-1.0.0",
+        "name": "",
+        "url": "https://github.com/CaffeineMC/sodium/blob/dev/LICENSE.md"
+      },
+      "versionId": "xJZxADzI",
+      "versionNumber": "mc26.2-0.9.2-fabric",
+      "versionType": "release",
+      "datePublished": "2026-09-11T18:08:28.513893Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "sodium-fabric-0.9.2+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/AANobbMI/versions/xJZxADzI/sodium-fabric-0.9.2%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/sodium/version/xJZxADzI",
+      "publishedHashes": {
+        "sha512": "9b7a7aade8824543ce2a804fddfd04e37f57d1f91c00574e7dc87e554eb1835d888313ee6f715a7599bd729840cf01fd74e02aeae87b4e5a3c10c34a016e407c",
+        "sha1": "62a70961a5b3e06938e06ab5f2dc4c5a51cf3323"
+      },
+      "sha256": "16a5e91db49750f8c046ecca3b8f2af5a28ea6f9b6581b42f123ca8fda20864f",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/sodium-fabric-0.9.2+mc26.2.jar",
+      "bytes": 1885572,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "sodium",
+      "loader": "neoforge",
+      "projectId": "AANobbMI",
+      "title": "Sodium",
+      "publisherSourceUrl": "https://github.com/CaffeineMC/sodium",
+      "license": {
+        "id": "LicenseRef-Polyform-Shield-1.0.0",
+        "name": "",
+        "url": "https://github.com/CaffeineMC/sodium/blob/dev/LICENSE.md"
+      },
+      "versionId": "DmnNKsfS",
+      "versionNumber": "mc26.2-0.9.2-neoforge",
+      "versionType": "release",
+      "datePublished": "2026-09-11T18:08:29.713803Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "sodium-neoforge-0.9.2+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/AANobbMI/versions/DmnNKsfS/sodium-neoforge-0.9.2%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/sodium/version/DmnNKsfS",
+      "publishedHashes": {
+        "sha1": "e0a7838c8f733fecf0f2cb729e3439f70c21809f",
+        "sha512": "15fb941bd58abe3e57b53eb91f070f00e9a5178c718d50cbae588986e4cd8349c5a2ef4f6c84cc4887320d85ec561aa2094214723f502fddd3aeb493c80b5c39"
+      },
+      "sha256": "8364f21b122ffe975392dea12eba0b3bc90609c982113e92dc2e30df2c335805",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/sodium-neoforge-0.9.2+mc26.2.jar",
+      "bytes": 1209565,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "iris",
+      "loader": "fabric",
+      "projectId": "YL57xq9U",
+      "title": "Iris Shaders",
+      "publisherSourceUrl": "https://github.com/IrisShaders/Iris",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "gxZWWnKH",
+      "versionNumber": "1.11.4+26.2-fabric",
+      "versionType": "release",
+      "datePublished": "2026-09-13T00:02:58.127328Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": "xJZxADzI",
+          "project_id": "AANobbMI",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "iris-fabric-1.11.4+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/YL57xq9U/versions/gxZWWnKH/iris-fabric-1.11.4%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/iris/version/gxZWWnKH",
+      "publishedHashes": {
+        "sha512": "dee955580976aebc92373f5c2d88398ad1019b043c6254a41fe7ab8a6ca3a5ff29d58df2b22ec43a31198beb769e814658eef06fbf980066a2e2c216eeafd32a",
+        "sha1": "bd0b24731a94b8fe164531e6345718d30ab08ed2"
+      },
+      "sha256": "f1f7ab57c974d193ba33aa285864a0ded949216f402116fceaf4dc7739b4dd7c",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/iris-fabric-1.11.4+mc26.2.jar",
+      "bytes": 2821616,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "iris",
+      "loader": "neoforge",
+      "projectId": "YL57xq9U",
+      "title": "Iris Shaders",
+      "publisherSourceUrl": "https://github.com/IrisShaders/Iris",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "k55HdONq",
+      "versionNumber": "1.11.4+26.2-neoforge",
+      "versionType": "release",
+      "datePublished": "2026-09-13T00:03:35.369049Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": "DmnNKsfS",
+          "project_id": "AANobbMI",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "iris-neoforge-1.11.4+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/YL57xq9U/versions/k55HdONq/iris-neoforge-1.11.4%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/iris/version/k55HdONq",
+      "publishedHashes": {
+        "sha512": "d163ae2b7ece209d4b56dc4e95dc7873c076a20c851bf625ec6e27909a07f2a73838a4336311afcfa8701d7a3bc28108aee3a27d4b926f48ab903e2582bd7e6a",
+        "sha1": "decfbe06505849620da8f1381c88af1e122ecdd3"
+      },
+      "sha256": "5faeb646ff117bfc29e636baa9085f6fff6d048a328618749a991fd01c70019d",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/iris-neoforge-1.11.4+mc26.2.jar",
+      "bytes": 2775477,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "distanthorizons",
+      "loader": "fabric",
+      "projectId": "uCdwusMi",
+      "title": "Distant Horizons",
+      "publisherSourceUrl": "https://gitlab.com/distant-horizons-team/distant-horizons",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "aAow4a9f",
+      "versionNumber": "3.3.3-26.2",
+      "versionType": "release",
+      "datePublished": "2026-09-29T00:05:39.942066Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "DistantHorizons-3.3.3-26.2-fabric-neoforge.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/uCdwusMi/versions/aAow4a9f/DistantHorizons-3.3.3-26.2-fabric-neoforge.jar",
+      "versionUrl": "https://modrinth.com/mod/distanthorizons/version/aAow4a9f",
+      "publishedHashes": {
+        "sha512": "cc0e5e13b7af9a1b7e3319f9328825cff5a6e4169649231a7acae44e1362034028cfb904e023e417063cf033ef2d7c481f1f0cfff60947dd32842eb529614959",
+        "sha1": "22fa56cc57d6ed045ef3c4a3758ea5207ca5bcff"
+      },
+      "sha256": "abd4b8504c703d6a4517c154fdcef8c9a9da12599a653b3bedcfb100788cd2be",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/DistantHorizons-3.3.3-26.2-fabric-neoforge.jar",
+      "bytes": 27766022,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "distanthorizons",
+      "loader": "neoforge",
+      "projectId": "uCdwusMi",
+      "title": "Distant Horizons",
+      "publisherSourceUrl": "https://gitlab.com/distant-horizons-team/distant-horizons",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "aAow4a9f",
+      "versionNumber": "3.3.3-26.2",
+      "versionType": "release",
+      "datePublished": "2026-09-29T00:05:39.942066Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "DistantHorizons-3.3.3-26.2-fabric-neoforge.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/uCdwusMi/versions/aAow4a9f/DistantHorizons-3.3.3-26.2-fabric-neoforge.jar",
+      "versionUrl": "https://modrinth.com/mod/distanthorizons/version/aAow4a9f",
+      "publishedHashes": {
+        "sha1": "22fa56cc57d6ed045ef3c4a3758ea5207ca5bcff",
+        "sha512": "cc0e5e13b7af9a1b7e3319f9328825cff5a6e4169649231a7acae44e1362034028cfb904e023e417063cf033ef2d7c481f1f0cfff60947dd32842eb529614959"
+      },
+      "sha256": "abd4b8504c703d6a4517c154fdcef8c9a9da12599a653b3bedcfb100788cd2be",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/DistantHorizons-3.3.3-26.2-fabric-neoforge.jar",
+      "bytes": 27766022,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "c2me-fabric",
+      "loader": "fabric",
+      "projectId": "VSNURh3q",
+      "title": "Concurrent Chunk Management Engine (Fabric)",
+      "publisherSourceUrl": "https://github.com/RelativityMC/C2ME-fabric",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "versionId": "4wjXxrDQ",
+      "versionNumber": "0.4.2-alpha.0.60+26.2",
+      "versionType": "alpha",
+      "datePublished": "2026-10-12T15:56:44.062382Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/VSNURh3q/versions/4wjXxrDQ/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+      "versionUrl": "https://modrinth.com/mod/c2me-fabric/version/4wjXxrDQ",
+      "publishedHashes": {
+        "sha512": "079ac7da5de422418a599e0fef1963b3094aa010b057582bc25233fa65bd62a5bea8659c7905eabbd4f6943914d56106c5c6ebe011b022a84583a061a99cc2d4",
+        "sha1": "388b8794f1ca5e9055434256920c73f62ded52e7"
+      },
+      "sha256": "6d9c3fd764c0e3dd94da59ab9bbd2aff7ca91b15cc235c418f5553e51d71ceed",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+      "bytes": 3843816,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "c2me-neoforge",
+      "loader": "neoforge",
+      "projectId": "COlSi5iR",
+      "title": "Concurrent Chunk Management Engine (NeoForge)",
+      "publisherSourceUrl": "https://github.com/RelativityMC/C2ME-neoforge",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "versionId": "XpuI7aLS",
+      "versionNumber": "0.4.2-alpha.0.98+26.2",
+      "versionType": "alpha",
+      "datePublished": "2026-10-03T15:35:48.293562Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/COlSi5iR/versions/XpuI7aLS/c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+      "versionUrl": "https://modrinth.com/mod/c2me-neoforge/version/XpuI7aLS",
+      "publishedHashes": {
+        "sha512": "9f760b83c09e7b02d65ca9742965aeb5129f86758d80a97648b71f7e3b1a2789d5e46d28b62ca5a2ca54697c4e7d4e12936e432db63f27210a39f4c00f228796",
+        "sha1": "a6675f28a3824ce550bd6d30c479e1885bbe7bc6"
+      },
+      "sha256": "d7d39638b373109a5f1ad85398850e8543bb3765f4087512f4a74a165c1ab66d",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+      "bytes": 3743271,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "lithium",
+      "loader": "fabric",
+      "projectId": "gvQqBUqZ",
+      "title": "Lithium",
+      "publisherSourceUrl": "https://github.com/caffeinemc/lithium-fabric",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "f7vZ0VWU",
+      "versionNumber": "mc26.2-0.25.3-fabric",
+      "versionType": "release",
+      "datePublished": "2026-07-29T12:19:55.348704Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "lithium-fabric-0.25.3+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/f7vZ0VWU/lithium-fabric-0.25.3%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/lithium/version/f7vZ0VWU",
+      "publishedHashes": {
+        "sha1": "435ad0289209bb72195e7a423756a03f5dfa5a9a",
+        "sha512": "148b638f3c6229fbaf487120a2344a0af5e411a5aa6533d5db9d75da0a8c0d8304f63eb4cca13f4d03b2c9b4c23d559dd74c1d832422ef8a3087bd005e62a8bd"
+      },
+      "sha256": "fdde92e238e8075f89ad7f701f2a3d5854af88ba9a67657184a4407b104ac563",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/lithium-fabric-0.25.3+mc26.2.jar",
+      "bytes": 912850,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "lithium",
+      "loader": "neoforge",
+      "projectId": "gvQqBUqZ",
+      "title": "Lithium",
+      "publisherSourceUrl": "https://github.com/caffeinemc/lithium-fabric",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "J9CowDXK",
+      "versionNumber": "mc26.2-0.25.3-neoforge",
+      "versionType": "release",
+      "datePublished": "2026-07-29T12:19:55.371250Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "lithium-neoforge-0.25.3+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/J9CowDXK/lithium-neoforge-0.25.3%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/lithium/version/J9CowDXK",
+      "publishedHashes": {
+        "sha1": "e834dc970751b97605e2d06565b8998e22dd543a",
+        "sha512": "56f5299bc84084f2112abf61ea58bad101a7495cc8a1db3df0963494bce096e474c0bde0975831c30ec15c5c977451a31f82de90a09b769c94df91dbcb9b9286"
+      },
+      "sha256": "7a080146f5c428e3a4a34cc3526c57c71cace5e962019081cb1d45c9d55dec7a",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/lithium-neoforge-0.25.3+mc26.2.jar",
+      "bytes": 904073,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "ferrite-core",
+      "loader": "fabric",
+      "projectId": "uXXizFIs",
+      "title": "FerriteCore",
+      "publisherSourceUrl": "https://github.com/malte0811/FerriteCore",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "versionId": "d5ddUdiB",
+      "versionNumber": "9.0.0-fabric",
+      "versionType": "release",
+      "datePublished": "2026-03-24T18:31:50.491773Z",
+      "gameVersions": [
+        "26.1",
+        "26.1.1",
+        "26.1.2",
+        "26.2",
+        "26.3"
+      ],
+      "dependencies": [],
+      "filename": "ferritecore-9.0.0-fabric.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar",
+      "versionUrl": "https://modrinth.com/mod/ferrite-core/version/d5ddUdiB",
+      "publishedHashes": {
+        "sha512": "d81fa97e11784c19d42f89c2f433831d007603dd7193cee45fa177e4a6a9c52b384b198586e04a0f7f63cd996fed713322578bde9a8db57e1188854ae5cbe584",
+        "sha1": "eac76ff0f3753422c61b2c44487d0d195d88d4bc"
+      },
+      "sha256": "213966c72ed967acc7392beb28a866fba301ff56b9976c2e7801c2db7de6bf22",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/ferritecore-9.0.0-fabric.jar",
+      "bytes": 72677,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "ferrite-core",
+      "loader": "neoforge",
+      "projectId": "uXXizFIs",
+      "title": "FerriteCore",
+      "publisherSourceUrl": "https://github.com/malte0811/FerriteCore",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "versionId": "LtVvw4uS",
+      "versionNumber": "9.0.0-neoforge",
+      "versionType": "release",
+      "datePublished": "2026-03-24T18:31:50.324216Z",
+      "gameVersions": [
+        "26.1",
+        "26.1.1",
+        "26.1.2",
+        "26.2",
+        "26.3"
+      ],
+      "dependencies": [],
+      "filename": "ferritecore-9.0.0-neoforge.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/uXXizFIs/versions/LtVvw4uS/ferritecore-9.0.0-neoforge.jar",
+      "versionUrl": "https://modrinth.com/mod/ferrite-core/version/LtVvw4uS",
+      "publishedHashes": {
+        "sha512": "e96a99ac5539f56a1f4cd109d62b668ebd5283f0068491ede956f52e67023beba7abe2e40021499352ffc41ead950bebcabce7792352249a1b45c5dccb3cf99c",
+        "sha1": "b8bfb14ba6ce7068aae08c3a132ca40bda6bd143"
+      },
+      "sha256": "a3292dadb1caf7ad220d3a4b68abff2ad58592ddd372160f9cf66c57d159b539",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/ferritecore-9.0.0-neoforge.jar",
+      "bytes": 71947,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "repurposed-structures-fabric",
+      "loader": "fabric",
+      "projectId": "muf0XoRe",
+      "title": "Repurposed Structures - Fabric",
+      "publisherSourceUrl": null,
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "CrmgMIJp",
+      "versionNumber": "7.7.6+26.2-fabric",
+      "versionType": "release",
+      "datePublished": "2026-08-20T01:35:53.805062Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "codAaoxh",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "repurposed_structures-7.7.6+26.2-fabric.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/muf0XoRe/versions/CrmgMIJp/repurposed_structures-7.7.6%2B26.2-fabric.jar",
+      "versionUrl": "https://modrinth.com/mod/repurposed-structures-fabric/version/CrmgMIJp",
+      "publishedHashes": {
+        "sha512": "0c0c6dd1ed38497f32cbd47202e7f85a06984df510673a8f7edb35a41c367c910595d14b0837fb84f229e346dc9733a98b6b8015e77f100923178fc3d349b6c0",
+        "sha1": "f56b118fd1129f5fd9def4c4b4c63ed974b8ba3c"
+      },
+      "sha256": "0175590776746f0ca691f60f8e82167430ec88bca5ca66045a61e818e68f9214",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/repurposed_structures-7.7.6+26.2-fabric.jar",
+      "bytes": 8327794,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "repurposed-structures-forge",
+      "loader": "neoforge",
+      "projectId": "QDNS5oAT",
+      "title": "Repurposed Structures - Neoforge/Forge",
+      "publisherSourceUrl": null,
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "versionId": "h9w0EGMo",
+      "versionNumber": "7.7.6+26.2-neoforge",
+      "versionType": "release",
+      "datePublished": "2026-08-20T01:42:19.999579Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "repurposed_structures-7.7.6+26.2-neoforge.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/QDNS5oAT/versions/h9w0EGMo/repurposed_structures-7.7.6%2B26.2-neoforge.jar",
+      "versionUrl": "https://modrinth.com/mod/repurposed-structures-forge/version/h9w0EGMo",
+      "publishedHashes": {
+        "sha512": "3ae96ec263810091e6e6372b3bcdbb1036dcbe848e16971e97c7f794a1f35ceba08e9a4a629a101848489ee3514e14e3b998cc4ce00d9cf61481ffcc9ae46a08",
+        "sha1": "9120762ea76ea00383458368c108c7cf1ed19989"
+      },
+      "sha256": "c10ca74311cf631720c0d3177adac999661fe7b5b9e56a4fdd7613504518f4f9",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/repurposed_structures-7.7.6+26.2-neoforge.jar",
+      "bytes": 8120436,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "midnightlib",
+      "loader": "fabric",
+      "projectId": "codAaoxh",
+      "title": "MidnightLib",
+      "publisherSourceUrl": "https://github.com/TeamMidnightDust/MidnightLib",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "versionId": "FYtROxFj",
+      "versionNumber": "1.10.0+26.2-fabric",
+      "versionType": "release",
+      "datePublished": "2026-10-14T22:49:54.638205Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "midnightlib-fabric-1.10.0+26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/codAaoxh/versions/FYtROxFj/midnightlib-fabric-1.10.0%2B26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/midnightlib/version/FYtROxFj",
+      "publishedHashes": {
+        "sha1": "8c4ee3680ff901e39f2a04049799d2c203f85fce",
+        "sha512": "a40a21aa0a9cfe6fd667b44f3813a22f63338bc1366230282670dc5f5c1dc7c9ecb0082e0f2f9bf90ee55ba4dbe8115c3f3cb439096ee5275933fadd2385f61c"
+      },
+      "sha256": "65a23077da0ef707b590a46d37e1642210ca20f21cdf06b05c479deca3ae495b",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/midnightlib-fabric-1.10.0+26.2.jar",
+      "bytes": 65792,
+      "communityPort": false,
+      "category": "mod"
+    },
+    {
+      "slug": "modernfix-mvus",
+      "loader": "fabric",
+      "projectId": "TjSm1wrD",
+      "title": "ModernFix-mVUS",
+      "publisherSourceUrl": "https://github.com/coredex-source/ModernFix---mVUS",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": "https://github.com/coredex-source/ModernFix---mVUS/blob/1.21.10/LICENSE"
+      },
+      "versionId": "50uUra83",
+      "versionNumber": "5.27.19-build.2",
+      "versionType": "release",
+      "datePublished": "2026-09-25T17:12:28.205127Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "modernfix-5.27.19-build.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/TjSm1wrD/versions/50uUra83/modernfix-5.27.19-build.2.jar",
+      "versionUrl": "https://modrinth.com/mod/modernfix-mvus/version/50uUra83",
+      "publishedHashes": {
+        "sha512": "75b1aecabdb13fb61969d730c328cfc102b1c50fa9620c60b8433d830a19b2d2bea32aca48ca4934b1be98f8a6fb5bde0039efd273b47bd05da40a87efce36ac",
+        "sha1": "a14d2ba0fd0d56d12d48bb9f1c44fd3d345bf5e2"
+      },
+      "sha256": "1bb69de32ca83f27f945e238ae4781795e42d6b5576ca5e6ee18b147fb02a2fd",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/fabric/modernfix-5.27.19-build.2.jar",
+      "bytes": 1173963,
+      "communityPort": true,
+      "category": "mod"
+    },
+    {
+      "slug": "modernfix-mvus",
+      "loader": "neoforge",
+      "projectId": "TjSm1wrD",
+      "title": "ModernFix-mVUS",
+      "publisherSourceUrl": "https://github.com/coredex-source/ModernFix---mVUS",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": "https://github.com/coredex-source/ModernFix---mVUS/blob/1.21.10/LICENSE"
+      },
+      "versionId": "dyZhmjnd",
+      "versionNumber": "5.27.21+mc26.2",
+      "versionType": "release",
+      "datePublished": "2026-09-16T16:35:59.495509Z",
+      "gameVersions": [
+        "26.2"
+      ],
+      "dependencies": [],
+      "filename": "modernfix-neoforge-5.27.21+mc26.2.jar",
+      "sourceUrl": "https://cdn.modrinth.com/data/TjSm1wrD/versions/dyZhmjnd/modernfix-neoforge-5.27.21%2Bmc26.2.jar",
+      "versionUrl": "https://modrinth.com/mod/modernfix-mvus/version/dyZhmjnd",
+      "publishedHashes": {
+        "sha512": "e6548dcba1ea0d54d58127966d2407d46a4b9cd09cb9cc34b8dbaa0fd05f49b1de60b6dc5b04ac3aacbc4ec5b6b19183ce17303e5994c03a7e7f0923031bd010",
+        "sha1": "6f4ac871338ecf0c51103f30d1327846854eca90"
+      },
+      "sha256": "857c90f486f271953ac9e3f8920486f930fd75e075611ad56a2d51d0ac2af767",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/neoforge/modernfix-neoforge-5.27.21+mc26.2.jar",
+      "bytes": 505514,
+      "communityPort": true,
+      "category": "mod"
+    },
+    {
+      "slug": "complementary-reimagined",
+      "loader": "iris",
+      "projectId": "HVnmMxH1",
+      "title": "Complementary Shaders - Reimagined",
+      "publisherSourceUrl": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined",
+      "license": {
+        "id": "LicenseRef-Custom",
+        "name": "",
+        "url": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt"
+      },
+      "versionId": "Bqen1mJX",
+      "versionNumber": "r5.9.3",
+      "versionType": "release",
+      "datePublished": "2026-09-15T06:35:41.918796Z",
+      "gameVersions": [
+        "1.10",
+        "1.10.1",
+        "1.10.2",
+        "1.11",
+        "1.11.1",
+        "1.11.2",
+        "1.12",
+        "1.12.1",
+        "1.12.2",
+        "1.13",
+        "1.13.1",
+        "1.13.2",
+        "1.14",
+        "1.14.1",
+        "1.14.2",
+        "1.14.3",
+        "1.14.4",
+        "1.15",
+        "1.15.1",
+        "1.15.2",
+        "1.16",
+        "1.16.1",
+        "1.16.2",
+        "1.16.3",
+        "1.16.4",
+        "1.16.5",
+        "1.17",
+        "1.17.1",
+        "1.18",
+        "1.18.1",
+        "1.18.2",
+        "1.19",
+        "1.19.1",
+        "1.19.2",
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4",
+        "1.20.5",
+        "1.20.6",
+        "1.21",
+        "1.21.1",
+        "1.21.10",
+        "1.21.11",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4",
+        "1.21.5",
+        "1.21.6",
+        "1.21.7",
+        "1.21.8",
+        "1.21.9",
+        "1.7.10",
+        "1.8",
+        "1.8.1",
+        "1.8.2",
+        "1.8.3",
+        "1.8.4",
+        "1.8.5",
+        "1.8.6",
+        "1.8.7",
+        "1.8.8",
+        "1.8.9",
+        "1.9",
+        "1.9.1",
+        "1.9.2",
+        "1.9.3",
+        "1.9.4",
+        "26.1",
+        "26.1.1",
+        "26.1.2",
+        "26.2",
+        "26.3"
+      ],
+      "dependencies": [],
+      "filename": "ComplementaryReimagined_r5.9.3.zip",
+      "sourceUrl": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+      "versionUrl": "https://modrinth.com/mod/complementary-reimagined/version/Bqen1mJX",
+      "publishedHashes": {
+        "sha1": "838139b54cddb56b2e83cd260d8efd960ac536d6",
+        "sha512": "45304b1d7862afdb2177b7e6226fc9c6737911d17a4ad46cc9c519ca4deb935f05072cd337cd8b19a15bb8062b57b54eceec7bdee4cd572d94858e2946d37d85"
+      },
+      "sha256": "fed6c879e732cf7fc7bc6570ebb1def43235aa7e96f62859fbdbdbfa0b484b38",
+      "publishedHashesMatch": true,
+      "file": "build/qa/modpack-compat-expanded/iris/ComplementaryReimagined_r5.9.3.zip",
+      "bytes": 553397,
+      "communityPort": false,
+      "category": "shaderpack"
+    }
+  ],
+  "officialModernFix26.2": {
+    "available": false,
+    "query": "https://api.modrinth.com/v2/project/modernfix/version?game_versions=%5B%2226.2%22%5D",
+    "matchingVersionIds": []
+  },
+  "notEvidenceOf": [
+    "Runtime compatibility",
+    "Performance improvement",
+    "Every modpack combination"
+  ]
+}

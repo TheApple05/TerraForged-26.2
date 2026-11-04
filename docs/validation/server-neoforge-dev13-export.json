@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "minecraft": "26.2",
+  "loader": "neoforge",
+  "neoforge": "26.2.0.93",
+  "preparation": {
+    "template": "build/qa/neoforge-server/template",
+    "neoforge": "26.2.0.93",
+    "minecraft": "26.2",
+    "installerUrl": "https://maven.neoforged.net/releases/net/neoforged/neoforge/26.2.0.93/neoforge-26.2.0.93-installer.jar",
+    "installerSha256": "7618883b9d87186281da2bd2a5e9a11af042ed15112bb63ccfc62bb0230ca699",
+    "matchesPublishedInstaller": true,
+    "minecraftServerSha1": "823e2250d24b3ddac457a60c92a6a941943fcd6a",
+    "argsFile": "libraries/net/neoforged/neoforge/26.2.0.93/win_args.txt"
+  },
+  "jvmCommand": [
+    "C:\\Users\\Main\\AppData\\Local\\Programs\\Java\\jdk-25.0.5+8\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx3G",
+    "-Xlog:class+load=info:file=qa-runs/972b33a535/class-load.log:level,tags",
+    "-Dterraforged.qa.mode=export",
+    "-Dterraforged.qa.output=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T095717Z-cb6e3b\\qa-output",
+    "-Dterraforged.qa.expectedModSha256=9909ece8f2542de7080a2cd2dffc56da79a2f80219428db9f2a40934fbc84fcf",
+    "@libraries/net/neoforged/neoforge/26.2.0.93/win_args.txt",
+    "nogui"
+  ],
+  "instance": "build/qa/neoforge-server/instances/20261104T095717Z-cb6e3b",
+  "pid": 43496,
+  "artifact": "neoforge/build/libs/terraforged-revival-0.1.0-dev.13+26.2-neoforge.jar",
+  "artifactSha256": "9909ece8f2542de7080a2cd2dffc56da79a2f80219428db9f2a40934fbc84fcf",
+  "extraMods": [
+    {
+      "path": "build/qa/neoforge-runtime-dev13/terraforged-neoforge-runtime-qa.jar",
+      "sha256": "4f5db0b9bd6932da2786cfc53c0064ff942a3b19754170c5e1ceeb1bfb9eb541"
+    }
+  ],
+  "serverProperties": {
+    "server-ip": "127.0.0.1",
+    "server-port": 63822,
+    "online-mode": "false",
+    "enable-query": "false",
+    "enable-rcon": "false",
+    "level-name": "qa-world",
+    "level-seed": 8675309,
+    "level-type": "minecraft:normal",
+    "view-distance": 2,
+    "simulation-distance": 2,
+    "max-players": 1,
+    "pause-when-empty-seconds": -1,
+    "max-tick-time": 60000,
+    "sync-chunk-writes": "true"
+  },
+  "developmentMode": false,
+  "qaMode": "export",
+  "rawLog": "build/qa/neoforge-server/instances/20261104T095717Z-cb6e3b/qa-runs/972b33a535/stdout.log",
+  "forcedStop": false,
+  "processMemory": {
+    "peakResidentBytes": 866295808,
+    "samples": 172,
+    "scope": "Entire owned Java process, including startup and shutdown",
+    "source": "Windows PeakWorkingSetSize",
+    "samplingIntervalSeconds": 0.1,
+    "errors": []
+  },
+  "logReaderCompleted": true,
+  "status": "failed",
+  "processExit": 0,
+  "ready": true,
+  "startupReached": true,
+  "saveObserved": false,
+  "cleanStop": true,
+  "artifactOriginObserved": true,
+  "targetGameObserved": true,
+  "artifactUnchanged": true,
+  "runtimeQa": {
+    "schemaVersion": 1,
+    "mode": "export",
+    "startedAt": "2026-11-04T09:57:35.365550300Z",
+    "serverStarted": true,
+    "saveCompleted": false,
+    "status": "failed",
+    "nodes": [
+      {
+        "status": "passed",
+        "detail": "Packaged origin and runtime recorded",
+        "at": "2026-11-04T09:57:35.368549500Z",
+        "name": "production-artifact"
+      },
+      {
+        "status": "failed",
+        "detail": "java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]=Configured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace=net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick=false]}} had type DIRECT, but list is of type REFERENCE",
+        "at": "2026-11-04T09:57:35.406549Z",
+        "name": "callback"
+      }
+    ],
+    "notTested": [
+      "Visual parity",
+      "All presets and configuration extremes",
+      "All biomes or structures",
+      "Multiplayer clients",
+      "Third-party mod combinations",
+      "Performance benchmark"
+    ],
+    "runtime": {
+      "minecraft": "26.2",
+      "java": "25.0.5",
+      "javaClassVersion": "69.0",
+      "developmentEnvironment": false,
+      "loader": "26.2.0.93",
+      "modVersion": "0.1.0-dev.13+26.2",
+      "modClassOrigin": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T095717Z-cb6e3b\\mods\\terraforged-revival-0.1.0-dev.13+26.2-neoforge.jar",
+      "modSha256": "9909ece8f2542de7080a2cd2dffc56da79a2f80219428db9f2a40934fbc84fcf",
+      "expectedModSha256": "9909ece8f2542de7080a2cd2dffc56da79a2f80219428db9f2a40934fbc84fcf",
+      "loaderModOrigins": [
+        "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T095717Z-cb6e3b\\mods\\terraforged-revival-0.1.0-dev.13+26.2-neoforge.jar"
+      ]
+    },
+    "export": {
+      "presetPack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T095717Z-cb6e3b\\qa-output\\presetpack",
+      "cache": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T095717Z-cb6e3b\\qa-output\\cache-export-aaf8e764-4f02-4374-ab02-067fc1d5fc70",
+      "fileCount": 0,
+      "jsonFileCount": 0
+    },
+    "error": {
+      "message": "java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]=Configured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace=net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick=false]}} had type DIRECT, but list is of type REFERENCE",
+      "type": "java.util.concurrent.CompletionException",
+      "stackTrace": "java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]=Configured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace=net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick=false]}} had type DIRECT, but list is of type REFERENCE\r\n\tat java.base/java.util.concurrent.CompletableFuture.wrapInCompletionException(CompletableFuture.java:323)\r\n\tat java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:359)\r\n\tat java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:364)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1791)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)\r\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)\r\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)\r\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)\r\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)\r\nCaused by: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]=Configured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace=net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick=false]}} had type DIRECT, but list is of type REFERENCE\r\n\tat com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287)\r\n\tat com.mojang.serialization.DataResult.getOrThrow(DataResult.java:81)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.world.worldgen.biome.ClassicBiomes.bootstrap(ClassicBiomes.java:78)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.PresetBiomeData.bootstrap(PresetBiomeData.java:36)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.settings.Preset.lambda$buildPatch$3(Preset.java:58)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.settings.Preset.lambda$addPatch$0(Preset.java:68)\r\n\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder$RegistryStub.apply(RegistrySetBuilder.java:396)\r\n\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder.lambda$createState$0(RegistrySetBuilder.java:78)\r\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1604)\r\n\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder.createState(RegistrySetBuilder.java:78)\r\n\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder.buildPatch(RegistrySetBuilder.java:210)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.RegistryPatches.build(RegistryPatches.java:28)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.settings.Preset.buildPatch(Preset.java:63)\r\n\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.Datapacks.lambda$makePreset$0(Datapacks.java:54)\r\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)\r\n\t... 5 more\r\n"
+    },
+    "finishedAt": "2026-11-04T09:57:35.406549Z",
+    "cleanStopRequested": true,
+    "holdAfterGeneration": false
+  },
+  "customTerrainValidated": false,
+  "logTail": [
+    "\tat org.apache.logging.log4j.core.layout.PatternLayout$NoFormatPatternSerializer.toSerializable(PatternLayout.java:354)",
+    "\tat org.apache.logging.log4j.core.layout.PatternLayout.toText(PatternLayout.java:251)",
+    "\tat org.apache.logging.log4j.core.layout.PatternLayout.encode(PatternLayout.java:237)",
+    "\tat org.apache.logging.log4j.core.layout.PatternLayout.encode(PatternLayout.java:57)",
+    "\tat org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent(AbstractOutputStreamAppender.java:227)",
+    "\tat org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend(AbstractOutputStreamAppender.java:220)",
+    "\tat org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:211)",
+    "\tat org.apache.logging.log4j.core.appender.RollingRandomAccessFileAppender.append(RollingRandomAccessFileAppender.java:395)",
+    "\tat org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:160)",
+    "\t... 19 more",
+    "Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Only supported on Linux [in thread \"Server thread\"]",
+    "\tat io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:328)",
+    "\tat io.netty.channel.epoll.Native.<clinit>(Native.java:96)",
+    "\tat io.netty.channel.epoll.Epoll.<clinit>(Epoll.java:42)",
+    "\t... 6 more",
+    "",
+    "[01:57:32] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[01:57:32] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.",
+    "[01:57:32] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[01:57:32] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[01:57:32] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level \"qa-world\"",
+    "[01:57:32] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Selecting global world spawn...",
+    "[01:57:35] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Loading 0 persistent chunks...",
+    "[01:57:35] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Preparing spawn area: 100%",
+    "[01:57:35] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 2649 ms",
+    "[01:57:35] [Server thread/INFO] [minecraft/DedicatedServer]: Done (3.002s)! For help, type \"help\"",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[01:57:35] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler",
+    "TERRAFORGED_QA_NODE_JSON={\"status\":\"passed\",\"detail\":\"Packaged origin and runtime recorded\",\"at\":\"2026-11-04T09:57:35.368549500Z\",\"name\":\"production-artifact\"}",
+    "[01:57:35] [Server thread/INFO] [minecraft/DataGenerator]: Starting provider: vanilla/Registries",
+    "TERRAFORGED_QA_NODE_JSON={\"status\":\"failed\",\"detail\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]\\u003dConfigured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace\\u003dnet.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick\\u003dfalse]}} had type DIRECT, but list is of type REFERENCE\",\"at\":\"2026-11-04T09:57:35.406549Z\",\"name\":\"callback\"}",
+    "TERRAFORGED_QA_RESULT_JSON={\"schemaVersion\":1,\"mode\":\"export\",\"startedAt\":\"2026-11-04T09:57:35.365550300Z\",\"serverStarted\":true,\"saveCompleted\":false,\"status\":\"failed\",\"nodes\":[{\"status\":\"passed\",\"detail\":\"Packaged origin and runtime recorded\",\"at\":\"2026-11-04T09:57:35.368549500Z\",\"name\":\"production-artifact\"},{\"status\":\"failed\",\"detail\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]\\u003dConfigured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace\\u003dnet.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick\\u003dfalse]}} had type DIRECT, but list is of type REFERENCE\",\"at\":\"2026-11-04T09:57:35.406549Z\",\"name\":\"callback\"}],\"notTested\":[\"Visual parity\",\"All presets and configuration extremes\",\"All biomes or structures\",\"Multiplayer clients\",\"Third-party mod combinations\",\"Performance benchmark\"],\"runtime\":{\"minecraft\":\"26.2\",\"java\":\"25.0.5\",\"javaClassVersion\":\"69.0\",\"developmentEnvironment\":false,\"loader\":\"26.2.0.93\",\"modVersion\":\"0.1.0-dev.13+26.2\",\"modClassOrigin\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\neoforge-server\\\\instances\\\\20261104T095717Z-cb6e3b\\\\mods\\\\terraforged-revival-0.1.0-dev.13+26.2-neoforge.jar\",\"modSha256\":\"9909ece8f2542de7080a2cd2dffc56da79a2f80219428db9f2a40934fbc84fcf\",\"expectedModSha256\":\"9909ece8f2542de7080a2cd2dffc56da79a2f80219428db9f2a40934fbc84fcf\",\"loaderModOrigins\":[\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\neoforge-server\\\\instances\\\\20261104T095717Z-cb6e3b\\\\mods\\\\terraforged-revival-0.1.0-dev.13+26.2-neoforge.jar\"]},\"export\":{\"presetPack\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\neoforge-server\\\\instances\\\\20261104T095717Z-cb6e3b\\\\qa-output\\\\presetpack\",\"cache\":\"C:\\\\Users\\\\Main\\\\Documents\\\\Codex\\\\TerraForged\\\\build\\\\qa\\\\neoforge-server\\\\instances\\\\20261104T095717Z-cb6e3b\\\\qa-output\\\\cache-export-aaf8e764-4f02-4374-ab02-067fc1d5fc70\",\"fileCount\":0,\"jsonFileCount\":0},\"error\":{\"message\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]\\u003dConfigured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace\\u003dnet.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick\\u003dfalse]}} had type DIRECT, but list is of type REFERENCE\",\"type\":\"java.util.concurrent.CompletionException\",\"stackTrace\":\"java.util.concurrent.CompletionException: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]\\u003dConfigured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace\\u003dnet.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick\\u003dfalse]}} had type DIRECT, but list is of type REFERENCE\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.wrapInCompletionException(CompletableFuture.java:323)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:359)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:364)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1791)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)\\r\\n\\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)\\r\\nCaused by: java.lang.IllegalStateException: Mixed type list: element Direct{Placed Reference{ResourceKey[minecraft:worldgen/configured_feature / minecraft:dead_bush]\\u003dConfigured: net.minecraft.world.level.levelgen.feature.SimpleBlockFeature@76e67379: SimpleBlockConfiguration[toPlace\\u003dnet.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider@7e082121, scheduleTick\\u003dfalse]}} had type DIRECT, but list is of type REFERENCE\\r\\n\\tat com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287)\\r\\n\\tat com.mojang.serialization.DataResult.getOrThrow(DataResult.java:81)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.world.worldgen.biome.ClassicBiomes.bootstrap(ClassicBiomes.java:78)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.PresetBiomeData.bootstrap(PresetBiomeData.java:36)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.settings.Preset.lambda$buildPatch$3(Preset.java:58)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.settings.Preset.lambda$addPatch$0(Preset.java:68)\\r\\n\\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder$RegistryStub.apply(RegistrySetBuilder.java:396)\\r\\n\\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder.lambda$createState$0(RegistrySetBuilder.java:78)\\r\\n\\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1604)\\r\\n\\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder.createState(RegistrySetBuilder.java:78)\\r\\n\\tat TRANSFORMER/minecraft@26.2/net.minecraft.core.RegistrySetBuilder.buildPatch(RegistrySetBuilder.java:210)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.RegistryPatches.build(RegistryPatches.java:28)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.preset.settings.Preset.buildPatch(Preset.java:63)\\r\\n\\tat TRANSFORMER/reterraforged@0.1.0-dev.13+26.2/raccoonman.reterraforged.data.worldgen.Datapacks.lambda$makePreset$0(Datapacks.java:54)\\r\\n\\tat java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)\\r\\n\\t... 5 more\\r\\n\"},\"finishedAt\":\"2026-11-04T09:57:35.406549Z\",\"cleanStopRequested\":true,\"holdAfterGeneration\":false}",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds",
+    "[01:57:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:overworld",
+    "[01:57:36] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_end",
+    "[01:57:36] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[qa-world]'/minecraft:the_nether",
+    "[01:57:36] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "[01:57:36] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "[01:57:36] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "[01:57:36] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "[01:57:36] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Closing FML Loader 4eeb2c6",
+    "[01:57:36] [main/INFO] [ne.ne.fm.ModLoader/]: Clearing ModLoader"
+  ],
+  "notTested": [
+    "Visual parity",
+    "Third-party modpacks",
+    "Multiplayer clients",
+    "All presets"
+  ]
+}
