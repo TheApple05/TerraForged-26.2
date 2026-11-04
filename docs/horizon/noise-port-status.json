@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Registered custom noise numerical types/constructor graphs only; registry decoding, visitors and native terrain activation unfinished",
+  "scope": "Registered custom noise numerical types and source traversal; registry decoding and native terrain activation unfinished",
   "registrySourceSha256Lf": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
   "registeredTypes": 41,
   "numericallyVerifiedTypes": 41,
@@ -213,5 +213,6 @@
   ],
   "separateFoundation": "Scalar/hash/vector and coordinate/seed/RNG routines are independently verified; this does not implement arbitrary graphs, cell/tile terrain or Horizon density integration.",
   "domainTypesNumericallyVerified": 5,
-  "curveFunctionTypesNumericallyVerified": 2
+  "curveFunctionTypesNumericallyVerified": 2,
+  "visitorStatus": "All 41 types, bound holder and five domains match three finite Java transformation traces"
 }
