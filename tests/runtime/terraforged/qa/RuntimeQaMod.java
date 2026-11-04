@@ -181,6 +181,15 @@ public final class RuntimeQaMod implements ModInitializer {
                     "sha256", sha256(reference), "bytes", Files.size(reference)));
             }
             report.put("classicBiomeStoredChunkChecks", ClassicBiomeChunkQa.verify(server, server.overworld()));
+            if (Boolean.getBoolean("terraforged.qa.exportNoiseRegistry")) {
+                require(!mode.startsWith("benchmark"), "Noise registry capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-noise-registry.tsv");
+                Path inputs = output.resolve("native-noise-registry.inputs.json");
+                Class<?> probe = Class.forName("raccoonman.reterraforged.world.worldgen.noise.module.NativeNoiseRegistryProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("noiseRegistry", Map.of("status", "captured-genuine-java-registry", "file", reference.toString(),
+                    "sha256", sha256(reference), "bytes", Files.size(reference),"inputs",inputs.toString(),"inputsSha256",sha256(inputs)));
+            }
             TemplateBiomeDecoratorProbe.main(new String[0]);
             node(nodes, "biome-decorator-overrides", "passed", "Three production-helper assertions completed with real target holders");
             report.put("status", "passed");

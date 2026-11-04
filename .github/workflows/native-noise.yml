@@ -2,9 +2,9 @@ name: Horizon native noise foundation
 
 on:
   push:
-    paths: ['horizon/native-core/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
+    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
   pull_request:
-    paths: ['horizon/native-core/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
+    paths: ['horizon/native-core/**', 'horizon/native-adapter/**', 'horizon/tests/**', 'horizon/tools/**', 'tests/core/reference-*', '.github/workflows/native-noise.yml']
   workflow_dispatch:
 
 permissions:
@@ -40,6 +40,11 @@ jobs:
           python horizon/tools/verify_native_noise.py --family final --report build/qa/ci/native-noise-final.json
           python horizon/tools/verify_native_noise.py --family visitors --report build/qa/ci/native-noise-visitors.json
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
+      - name: Fetch locked registry adapter libraries
+        run: cargo fetch --locked --manifest-path horizon/native-adapter/Cargo.toml
+      - name: Check actual registry and codec observations
+        shell: bash
+        run: python horizon/tools/verify_native_registry.py --report build/qa/ci/native-registry.json
       - name: Retain foundation reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

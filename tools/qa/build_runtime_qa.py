@@ -25,6 +25,7 @@ def main() -> int:
     parser.add_argument("--noise-cellular", action="store_true", help="Include the optional same-package genuine Java cellular oracle (Fabric QA only).")
     parser.add_argument("--noise-final", action="store_true", help="Include the optional same-package genuine Java line/terrace/domain/erosion oracle (Fabric QA only).")
     parser.add_argument("--noise-visitors", action="store_true", help="Include the optional same-package genuine Java traversal oracle (Fabric QA only).")
+    parser.add_argument("--noise-registry", action="store_true", help="Include the optional same-package genuine Java registry oracle (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -48,6 +49,8 @@ def main() -> int:
         sources.append(ROOT / "horizon/tests/java/NativeNoiseFinalProbe.java")
     if args.noise_visitors:
         sources.append(ROOT / "horizon/tests/java/NativeNoiseVisitorProbe.java")
+    if args.noise_registry:
+        sources.append(ROOT / "horizon/tests/java/NativeNoiseRegistryProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
