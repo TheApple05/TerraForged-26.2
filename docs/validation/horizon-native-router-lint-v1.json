@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-warnings-denied-router-world-library",
+  "horizonRevision": "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5",
+  "command": "cargo +stable clippy --offline --locked --manifest-path <staged>/Cargo.toml -p horizon-world --lib --message-format short -- -D warnings",
+  "exitCode": 0,
+  "logSha256": "72575db693f8a6e40f217e79248eae1d5d4ebc49ccdf805baecbbf899eb5dea9",
+  "stageResultSha256": "36d0ac284560b995cb045bed657643a74a70d838ed33473bd38092a754e4329a",
+  "notCovered": [
+    "Full game/launcher build",
+    "World activation",
+    "Native world acceptance"
+  ]
+}

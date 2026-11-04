@@ -56,6 +56,13 @@ scalar/bulk observations through Horizon's real JSON registry in debug/release.
 Scope restoration, panic/error cleanup, thread isolation, vanilla passthrough
 and final world-owner release are exercised; see host-density-registry.md.
 This remains library-level integration, with no native world activation yet.
+
+An explicit default 26.3 router plan now passes 22,464 eight-field integration
+records per profile using the player's existing vanilla definitions. Its five
+climate outputs also match 14,040 independent Java observations per profile.
+World-local definition supply preserves the shared vanilla registry; surface
+units and vertical bounds are checked. See world-router.md for the narrower
+configuration support and remaining real-chunk/client/save acceptance.
 The ten cell density fields and custom clamp/spline/conditional-cache/noise
 primitives now match 430,254 independent Java fields in both profiles; see
 density-primitives.md. They are not bound into Horizon's density graph yet.

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-router-java-climate-anchors",
+  "completedAtUtc": "2026-11-04T19:27:44.511557+00:00",
+  "integrationReportSha256": "8a667623b982db2e9d7fe52fc29048dc6b4bef3be2e1e027208b4b08c47f93b3",
+  "referenceMetadataSha256": "1fe06ec7aaa9270f9506ce8292dc28dc9f4b1deba8505e150c4f769c07323b36",
+  "profiles": [
+    {
+      "profile": "debug",
+      "comparedJavaFields": 14040,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "routerStats": {
+        "temperature": {
+          "min": 0.02499999850988388,
+          "max": 0.02499999850988388,
+          "unique": 1,
+          "negative": 0,
+          "positive": 2808
+        },
+        "vegetation": {
+          "min": -0.675000011920929,
+          "max": 0.20000000298023224,
+          "unique": 4,
+          "negative": 1872,
+          "positive": 884
+        },
+        "continents": {
+          "min": -0.4174274504184723,
+          "max": 0.9999999403953552,
+          "unique": 54,
+          "negative": 936,
+          "positive": 1872
+        },
+        "erosion": {
+          "min": -1.100000023841858,
+          "max": 0.4449999928474426,
+          "unique": 27,
+          "negative": 728,
+          "positive": 2080
+        },
+        "depth": {
+          "min": -2.59125018119812,
+          "max": 1.0571874380111694,
+          "unique": 350,
+          "negative": 2025,
+          "positive": 783
+        },
+        "ridges": {
+          "min": -1.100000023841858,
+          "max": 1.100000023841858,
+          "unique": 37,
+          "negative": 1560,
+          "positive": 1248
+        },
+        "chunk_surface_level": {
+          "min": 8.0,
+          "max": 88.0,
+          "unique": 33,
+          "negative": 0,
+          "positive": 2808
+        },
+        "final_density": {
+          "min": -0.4583333432674408,
+          "max": 0.4542231559753418,
+          "unique": 787,
+          "negative": 1822,
+          "positive": 986
+        }
+      },
+      "nonconstantSurfaceAndDensitySigns": true,
+      "passed": true
+    },
+    {
+      "profile": "release",
+      "comparedJavaFields": 14040,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "routerStats": {
+        "temperature": {
+          "min": 0.02499999850988388,
+          "max": 0.02499999850988388,
+          "unique": 1,
+          "negative": 0,
+          "positive": 2808
+        },
+        "vegetation": {
+          "min": -0.675000011920929,
+          "max": 0.20000000298023224,
+          "unique": 4,
+          "negative": 1872,
+          "positive": 884
+        },
+        "continents": {
+          "min": -0.4174274504184723,
+          "max": 0.9999999403953552,
+          "unique": 54,
+          "negative": 936,
+          "positive": 1872
+        },
+        "erosion": {
+          "min": -1.100000023841858,
+          "max": 0.4449999928474426,
+          "unique": 27,
+          "negative": 728,
+          "positive": 2080
+        },
+        "depth": {
+          "min": -2.59125018119812,
+          "max": 1.0571874380111694,
+          "unique": 350,
+          "negative": 2025,
+          "positive": 783
+        },
+        "ridges": {
+          "min": -1.100000023841858,
+          "max": 1.100000023841858,
+          "unique": 37,
+          "negative": 1560,
+          "positive": 1248
+        },
+        "chunk_surface_level": {
+          "min": 8.0,
+          "max": 88.0,
+          "unique": 33,
+          "negative": 0,
+          "positive": 2808
+        },
+        "final_density": {
+          "min": -0.4583333432674408,
+          "max": 0.4542231559753418,
+          "unique": 787,
+          "negative": 1822,
+          "positive": 986
+        }
+      },
+      "nonconstantSurfaceAndDensitySigns": true,
+      "passed": true
+    }
+  ],
+  "scope": "Exact five climate-root f32 values against genuine independent Java mapped cell functions at all 13 native Y samples; nonconstant surface and both density signs.",
+  "notCovered": [
+    "Independent final-density/depth/surface parity",
+    "Real chunks",
+    "Native client/save/modpack/launcher acceptance"
+  ]
+}
