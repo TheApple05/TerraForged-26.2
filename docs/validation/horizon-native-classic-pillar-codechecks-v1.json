@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-core-library-tests-and-host-policy-lint",
+  "coreLibraryTests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "clippyCommand": "cargo +stable clippy --offline --locked --manifest-path horizon/native-core/Cargo.toml --lib --bin classic_pillar_math_probe -- -D warnings -A clippy::too_many_arguments",
+  "arityPolicy": "Matches the existing Horizon host allowance for unchanged source API arity; the initial standalone command without that allowance reports six existing arity warnings.",
+  "rustfmtCheckPassed": true,
+  "logsSha256": {
+    "tests.log": "236d899860c70fb15604fb357fd86c56b5ab97f6a83e5f798b15744fa717d8c3",
+    "clippy.log": "6bd14ab4409d26570a1aada86e5abc69403a2cbc988dc20966e17d9b824c01f8"
+  },
+  "scope": "Core library cache tests and targeted compilation/lint. Independent pillar arithmetic comparisons have their own separate report."
+}
