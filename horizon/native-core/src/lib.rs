@@ -13,3 +13,4 @@ pub mod seed;
 pub mod simplex;
 pub mod simplex2;
 pub mod sources;
+pub mod worley;

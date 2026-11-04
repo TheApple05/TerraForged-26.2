@@ -36,6 +36,7 @@ jobs:
           python horizon/tools/verify_native_noise.py --family sources --report build/qa/ci/native-noise-sources.json
           python horizon/tools/verify_native_noise.py --family power --report build/qa/ci/native-power.json
           python horizon/tools/verify_native_noise.py --family shaping --report build/qa/ci/native-noise-shaping.json
+          python horizon/tools/verify_native_noise.py --family cellular --report build/qa/ci/native-noise-cellular.json
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
       - name: Retain foundation reports
         if: always()

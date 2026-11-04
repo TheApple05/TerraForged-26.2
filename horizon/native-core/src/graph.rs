@@ -1,6 +1,7 @@
 // Numerical graph operations translated from MIT ReTerraForged noise records.
 // Baseline 29239f1f164d19dbfcccaca4a8277d64e784207c; see LICENSE-RETERRAFORGED.
 // This bounded immutable graph is not a registry decoder or an active terrain generator.
+use crate::worley::{self, DistanceFunction, EdgeFunction};
 use crate::{
     noise_util,
     perlin::{Interpolation, Perlin},
@@ -10,7 +11,30 @@ use crate::{
     simplex2::Simplex2,
     sources::{Cubic, White},
 };
+use std::collections::HashMap;
 use std::sync::Arc;
+use std::sync::Mutex;
+
+#[derive(Clone, Copy, Debug)]
+pub enum CellFunction {
+    CellValue,
+    NoiseLookup,
+    Distance,
+}
+
+#[derive(Debug)]
+struct Cached {
+    position: i64,
+    value: f32,
+}
+impl Default for Cached {
+    fn default() -> Self {
+        Self {
+            position: i64::MIN,
+            value: 0.0,
+        }
+    }
+}
 
 const MAX_DEPTH: u16 = 256;
 const MAX_EXPANDED_NODES: usize = 1_000_000;
@@ -32,6 +56,7 @@ pub enum GraphError {
     DepthLimit,
     NodeBudget,
     IterationLimit,
+    InvalidSpline,
 }
 
 #[derive(Clone, Copy, Debug)]
@@ -70,6 +95,35 @@ enum Node {
     PerlinRidge(PerlinRidge),
     SimplexRidge(SimplexRidge),
     Billow(Billow),
+    Worley {
+        frequency: f32,
+        jitter: f32,
+        function: CellFunction,
+        metric: DistanceFunction,
+        lookup: Noise,
+    },
+    WorleyEdge {
+        frequency: f32,
+        jitter: f32,
+        function: EdgeFunction,
+        metric: DistanceFunction,
+    },
+    LegacyTemperature {
+        frequency: f32,
+        power: i32,
+    },
+    LegacyMoisture {
+        input: Noise,
+        power: i32,
+    },
+    LinearSpline {
+        input: Noise,
+        points: Vec<(f32, Noise)>,
+    },
+    Cache {
+        input: Noise,
+        values: Mutex<HashMap<std::thread::ThreadId, Cached>>,
+    },
     Sin {
         frequency: f32,
         alpha: Noise,
@@ -193,6 +247,105 @@ impl Noise {
 
     pub fn white(value: White) -> Result<Self, GraphError> {
         Self::make(Node::White(value), 0.0, 1.0, &[])
+    }
+    pub fn worley(
+        frequency: f32,
+        jitter: f32,
+        function: CellFunction,
+        metric: DistanceFunction,
+        lookup: Self,
+    ) -> Result<Self, GraphError> {
+        Self::make(
+            Node::Worley {
+                frequency,
+                jitter,
+                function,
+                metric,
+                lookup: lookup.clone(),
+            },
+            0.0,
+            1.0,
+            &[&lookup],
+        )
+    }
+    pub fn worley_edge(
+        frequency: f32,
+        jitter: f32,
+        function: EdgeFunction,
+        metric: DistanceFunction,
+    ) -> Result<Self, GraphError> {
+        Self::make(
+            Node::WorleyEdge {
+                frequency,
+                jitter,
+                function,
+                metric,
+            },
+            0.0,
+            1.0,
+            &[],
+        )
+    }
+    pub fn legacy_temperature(frequency: f32, power: i32) -> Result<Self, GraphError> {
+        if power > 1024 {
+            return Err(GraphError::IterationLimit);
+        }
+        Self::make(Node::LegacyTemperature { frequency, power }, 0.0, 1.0, &[])
+    }
+    pub fn legacy_moisture(input: Self, power: i32) -> Result<Self, GraphError> {
+        if power > 1024 {
+            return Err(GraphError::IterationLimit);
+        }
+        Self::make(
+            Node::LegacyMoisture {
+                input: input.clone(),
+                power,
+            },
+            0.0,
+            1.0,
+            &[&input],
+        )
+    }
+    pub fn linear_spline(input: Self, points: Vec<(f32, Self)>) -> Result<Self, GraphError> {
+        // Codecs require nonempty points. Reject unsupported unordered knots explicitly.
+        if points.is_empty()
+            || points.iter().any(|p| !p.0.is_finite())
+            || points.windows(2).any(|p| p[0].0 > p[1].0)
+        {
+            return Err(GraphError::InvalidSpline);
+        }
+        let min = points
+            .iter()
+            .map(|p| p.1.min_value())
+            .reduce(java_min)
+            .unwrap();
+        let max = points
+            .iter()
+            .map(|p| p.1.max_value())
+            .reduce(java_max)
+            .unwrap();
+        let mut children = vec![&input];
+        children.extend(points.iter().map(|p| &p.1));
+        Self::make(
+            Node::LinearSpline {
+                input: input.clone(),
+                points: points.clone(),
+            },
+            min,
+            max,
+            &children,
+        )
+    }
+    pub fn cache(input: Self) -> Result<Self, GraphError> {
+        Self::make(
+            Node::Cache {
+                input: input.clone(),
+                values: Mutex::new(HashMap::new()),
+            },
+            input.min_value(),
+            input.max_value(),
+            &[&input],
+        )
     }
     pub fn cubic(value: Cubic) -> Result<Self, GraphError> {
         let (min, max) = (value.min_value(), value.max_value());
@@ -487,6 +640,102 @@ impl Noise {
             Node::PerlinRidge(n) => n.compute(x, z, seed),
             Node::SimplexRidge(n) => n.compute(x, z, seed),
             Node::Billow(n) => n.compute(x, z, seed),
+            Node::Worley {
+                frequency,
+                jitter,
+                function,
+                metric,
+                lookup,
+            } => {
+                let x = x * frequency;
+                let z = z * frequency;
+                let nearest = worley::closest(x, z, seed, *jitter, *metric);
+                match function {
+                    // Source DISTANCE overrides normalization to constant zero.
+                    CellFunction::Distance => 0.0,
+                    CellFunction::CellValue => {
+                        let (cx, cz) = nearest.map(|n| (n.x, n.z)).unwrap_or_else(|_| {
+                            (noise_util::floor_legacy(x), noise_util::floor_legacy(z))
+                        });
+                        noise_util::map_clamped_range(
+                            noise_util::val_coord_2d(seed, cx, cz),
+                            -1.0,
+                            1.0,
+                            2.0,
+                        )
+                    }
+                    CellFunction::NoiseLookup => match nearest {
+                        Ok(n) => {
+                            lookup.compute(n.x as f32 + n.vector.0, n.z as f32 + n.vector.1, seed)
+                        }
+                        Err(_) => f32::NAN,
+                    },
+                }
+            }
+            Node::WorleyEdge {
+                frequency,
+                jitter,
+                function,
+                metric,
+            } => worley::edge_compute(x, z, seed, *frequency, *jitter, *function, *metric),
+            Node::LegacyTemperature { frequency, power } => {
+                let sin = noise_util::clamp_f32(noise_util::sin(z * frequency), -1.0, 1.0);
+                let value = noise_util::copy_sign_legacy(noise_util::pow_i32(sin, *power), sin);
+                noise_util::map_clamped_range(value, -1.0, 1.0, 2.0)
+            }
+            Node::LegacyMoisture { input, power } => {
+                let value = input.compute(x, z, seed);
+                if *power < 2 {
+                    return value;
+                }
+                let value = (value - 0.5) * 2.0;
+                let result =
+                    noise_util::copy_sign_legacy(noise_util::pow_i32(value, *power), value);
+                noise_util::map_clamped_range(result, -1.0, 1.0, 2.0)
+            }
+            Node::LinearSpline { input, points } => {
+                let value = input.compute(x, z, seed);
+                let first = &points[0];
+                let last = &points[points.len() - 1];
+                if value <= first.0 {
+                    return first.1.compute(x, z, seed);
+                }
+                if value >= last.0 {
+                    return last.1.compute(x, z, seed);
+                }
+                // Mth.binarySearch returns the first point strictly above input.
+                let (mut low, mut high) = (0usize, points.len());
+                while low < high {
+                    let mid = low + (high - low) / 2;
+                    if value < points[mid].0 {
+                        high = mid;
+                    } else {
+                        low = mid + 1;
+                    }
+                }
+                if low == 0 || low >= points.len() {
+                    return f32::NAN;
+                }
+                let start = &points[low - 1];
+                let end = &points[low];
+                let from = start.1.compute(x, z, seed);
+                let to = end.1.compute(x, z, seed);
+                let amount = noise_util::map_f32(value, 0.0, 1.0, start.0, end.0);
+                noise_util::lerp_f32(from, to, noise_util::clamp_f32(amount, 0.0, 1.0))
+            }
+            Node::Cache { input, values } => {
+                // Exact deprecated source semantics: per thread, raw coordinate key,
+                // no seed in key, and Long.MIN_VALUE initially reads zero.
+                // State belongs to this graph; dropping it releases every entry.
+                let mut values = values.lock().unwrap_or_else(|p| p.into_inner());
+                let cached = values.entry(std::thread::current().id()).or_default();
+                let position = crate::pos_util::pack_floats(x, z);
+                if cached.position != position {
+                    cached.value = input.compute(x, z, seed);
+                    cached.position = position;
+                }
+                cached.value
+            }
             Node::Sin { frequency, alpha } => {
                 let a = alpha.compute(x, z, seed);
                 let x = x * frequency;

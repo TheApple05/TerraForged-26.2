@@ -10,6 +10,8 @@ NAMES = ['Constant','Add','Multiply','Frequency','ShiftSeed','Abs','Invert','Min
 SHAPING_NAMES = ['Constant','Add','Multiply','Map','Simplex','White','Cubic','PerlinRidge','SimplexRidge','Billow',
     'Sin','Power','PowerCurve','Curve','Gradient','Blend','Alpha','Boost','Steps','Threshold',
     'function.SCurveFunction','function.Interpolation','NoiseUtil']
+CELLULAR_NAMES = ['Constant','Add','Simplex','Worley','WorleyEdge','LegacyTemperature','LegacyMoisture','LinearSpline','Cache2d','Cache2d$Cached',
+    'function.CellFunction','function.DistanceFunction','function.EdgeFunction','NoiseUtil']
 
 
 def sha(data): return hashlib.sha256(data).hexdigest()
@@ -20,10 +22,11 @@ def main():
     parser.add_argument('--first',type=Path,required=True)
     parser.add_argument('--second',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--family',choices=['composition','shaping'],default='composition')
+    parser.add_argument('--family',choices=['composition','shaping','cellular'],default='composition')
     args = parser.parse_args()
-    names = NAMES if args.family=='composition' else SHAPING_NAMES
-    graph_count = 40 if args.family=='composition' else 85
+    names = {'composition':NAMES,'shaping':SHAPING_NAMES,'cellular':CELLULAR_NAMES}[args.family]
+    graph_count = {'composition':40,'shaping':85,'cellular':158}[args.family]
+    extra_records = 18 if args.family=='cellular' else 0
     metadata = args.output.with_suffix('.json')
     if args.output.exists() or metadata.exists(): parser.error('Refusing to replace graph reference bytes')
     snapshots, reports = [], []
@@ -33,7 +36,7 @@ def main():
         qa = report['qaResult']
         if report['result']!='passed' or report['processExitCode']!=0 or report['developmentMode'] is not False or not report['packagedArtifactOriginObserved']:
             raise ValueError('Genuine production runtime did not pass')
-        capture = qa['noiseComposition' if args.family=='composition' else 'noiseShaping']
+        capture = qa[{'composition':'noiseComposition','shaping':'noiseShaping','cellular':'noiseCellular'}[args.family]]
         data = Path(capture['file']).read_bytes()
         if capture['status']!='captured-genuine-java-graphs' or sha(data)!=capture['sha256']:
             raise ValueError('Reference capture bytes changed')
@@ -60,10 +63,10 @@ def main():
     records = dict(line.split('\t',1) for line in lines)
     if len(records)!=len(lines): raise ValueError('Duplicate graph record keys')
     graphs = {k:v for k,v in records.items() if k.startswith('graph/')}
-    if len(graphs)!=graph_count or len(lines)!=graph_count*(1+6*17*17): raise ValueError('Graph corpus incomplete')
+    if len(graphs)!=graph_count or len(lines)!=graph_count*(1+6*17*17)+extra_records: raise ValueError('Graph corpus incomplete')
     source_root = ROOT/'common/src/main/java/raccoonman/reterraforged/world/worldgen/noise'
-    sources = {name:hashlib.sha256((source_root/((name.replace('.','/') if '.' in name or name=='NoiseUtil' else 'module/'+name)+'.java')).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in names}
-    probe = ROOT/('horizon/tests/java/'+('NativeNoiseCompositionProbe' if args.family=='composition' else 'NativeNoiseShapingProbe')+'.java')
+    sources = {name:hashlib.sha256((source_root/((name.replace('.','/') if '.' in name or name=='NoiseUtil' else 'module/'+name).split('$')[0]+'.java')).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in names}
+    probe = ROOT/('horizon/tests/java/'+{'composition':'NativeNoiseCompositionProbe','shaping':'NativeNoiseShapingProbe','cellular':'NativeNoiseCellularProbe'}[args.family]+'.java')
     result = {'schemaVersion':1,'status':'frozen-genuine-game-java-reference','freshRunsAgree':True,
         'productionJarSha256':reports[0]['productionJarSha256'],'producerReports':reports,
         'fixtureSha256':sha(snapshots[0]),'recordCount':len(lines),'graphCount':len(graphs),
