@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "startedAtUtc": "2026-11-04T10:03:54.072392+00:00",
+  "status": "passed",
+  "upstreamCommit": "29239f1f164d19dbfcccaca4a8277d64e784207c",
+  "results": {
+    "upstream": {
+      "sourceSha256Lf": {
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/Cache.java": "c904aa0202170086c51fe9d843f52565937660c3172f99f03fb9dc7d8463e0e9",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/CacheManager.java": "d7b776fef1a5711ea871b011cb5d6978005ddfab15ab512130253b24c0ecfbe0",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/ExpiringEntry.java": "a24895b3a81e91568fce72d3d6b3baec948ab76ef51289c91a1076fe2ae534f5",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/map/LongMap.java": "010eda1e599144a79e2fbc6dbee230ecc5307105fe5cf2e944d5265d1f492248",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/map/StampedBoundLongMap.java": "40a6796fdb272fe0262ad8e608d672bc6e41f0a752ff04b88c0044e602f7776c",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/map/StampedLongMap.java": "abd64263d06388d04a97f8c3d89298003b6f6ae639b3e570eba21c12df2ae394"
+      },
+      "compileExit": 0,
+      "checks": {
+        "CacheLifecycleLeakProbe": {
+          "exitCode": 1,
+          "stdout": "ownersBefore=0,ownersAfter=1,entriesAfterClose=1",
+          "stderr": "Exception in thread \"main\" java.lang.AssertionError: Closed cache remains strongly owned and retains map entries\n\tat CacheLifecycleLeakProbe.main(CacheLifecycleLeakProbe.java:23)"
+        }
+      }
+    },
+    "candidate": {
+      "sourceSha256Lf": {
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/Cache.java": "004cb3fa4a2dacad8b24182edf12c49fec8bc28594c91f367399ab1ef46ec157",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/CacheManager.java": "3ad29af571bd6901c57d4cf7639afd9c4a98c1e6e24cbf450938c140fed15236",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/ExpiringEntry.java": "a24895b3a81e91568fce72d3d6b3baec948ab76ef51289c91a1076fe2ae534f5",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/map/LongMap.java": "010eda1e599144a79e2fbc6dbee230ecc5307105fe5cf2e944d5265d1f492248",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/map/StampedBoundLongMap.java": "40a6796fdb272fe0262ad8e608d672bc6e41f0a752ff04b88c0044e602f7776c",
+        "common/src/main/java/raccoonman/reterraforged/concurrent/cache/map/StampedLongMap.java": "abd64263d06388d04a97f8c3d89298003b6f6ae639b3e570eba21c12df2ae394"
+      },
+      "compileExit": 0,
+      "checks": {
+        "CacheLifecycleLeakProbe": {
+          "exitCode": 0,
+          "stdout": "ownersBefore=0,ownersAfter=0,entriesAfterClose=0",
+          "stderr": ""
+        },
+        "CacheLifecycleProbe": {
+          "exitCode": 0,
+          "stdout": "assertions=3506,repeatedCycles=500,concurrentCycles=400,retainedOwners=0,queuedTasks=0",
+          "stderr": ""
+        }
+      }
+    }
+  },
+  "upstreamLeakReproduced": true,
+  "candidateChecksPassed": true,
+  "finishedAtUtc": "2026-11-04T10:03:57.417627+00:00"
+}

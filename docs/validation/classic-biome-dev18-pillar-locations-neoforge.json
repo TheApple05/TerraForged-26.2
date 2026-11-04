@@ -1,0 +1,20 @@
+{
+  "reterraforged:bryce": {
+    "moisture": 0.039096102,
+    "region": 0.07042462,
+    "temperature": 0.6853331,
+    "terrain": "flats-plateau",
+    "x": -118400,
+    "y": 101,
+    "z": -107100
+  },
+  "reterraforged:stone_forest": {
+    "moisture": 0.69904286,
+    "region": 0.045300484,
+    "temperature": 0.98705685,
+    "terrain": "flats",
+    "x": 100864,
+    "y": 71,
+    "z": -100508
+  }
+}

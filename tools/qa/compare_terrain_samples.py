@@ -33,6 +33,8 @@ def main() -> int:
     right_generation, right = load(args.right)
     if left_generation["seed"] != right_generation["seed"] or left.keys() != right.keys():
         raise ValueError("Comparisons require the same seed and exact coordinate set")
+    if any(left_generation.get(bound) != right_generation.get(bound) for bound in ("minY", "maxY")):
+        raise ValueError("Comparisons require the same dimension height bounds")
     differences = []
     feature_differences = []
     canonical = []
@@ -41,7 +43,8 @@ def main() -> int:
         for field in FIELDS:
             if a[field] != b[field]:
                 differences.append({"position": position, "field": field, "left": a[field], "right": b[field]})
-        changed = [field for field in ("surfaceY", "surfaceBlock", "columnSha256", "oceanFloorWgY")
+        changed = [field for field in ("surfaceY", "surfaceBlock", "columnSha256", "oceanFloorWgY",
+                                      "columnBlockStatesSha256", "terrainFloorY")
                    if a.get(field) != b.get(field)]
         if changed:
             feature_differences.append({"position": position, "fields": changed})

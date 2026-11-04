@@ -49,10 +49,13 @@ def main() -> int:
         "name": "TerraForged runtime QA companion", "environment": "server", "license": "MIT",
         "description": "Test-only artifact, deliberately separate from the production mod.",
         "entrypoints": {"main": ["terraforged.qa.RuntimeQaMod"]},
+        "mixins": ["terraforged-runtime-qa.mixins.json"],
         "depends": {"reterraforged": "*", "fabricloader": ">=0.20.1", "fabric-lifecycle-events-v1": "*", "minecraft": "26.2", "java": ">=25"},
     }
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         archive.writestr("fabric.mod.json", json.dumps(metadata, indent=2) + "\n")
+        archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
+            "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")
         archive.writestr("META-INF/MANIFEST.MF", "Manifest-Version: 1.0\nImplementation-Title: Test-only TerraForged runtime QA\n\n")
         for file in sorted(classes.rglob("*.class")):
             archive.write(file, file.relative_to(classes).as_posix())

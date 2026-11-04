@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAtUtc": "2026-11-04T11:39:27.166935+00:00",
+  "performanceEvidence": false,
+  "scope": "Functional production export, own-stack preset consumption, actual generation and disk reload; optional actual structure checks",
+  "cases": [
+    {
+      "loader": "fabric",
+      "case": "optimized",
+      "status": "passed",
+      "artifactSha256": "0d7b64bc73a4ea1ddec8d4f2af5caabc3f06de50fc49f2f6a6f3b35c03e2a6b2",
+      "qaSha256": "efe5ecd7df8e58ae9ce9b1212d9bee6e28075e883668de236e98757e87234f89",
+      "extraMods": [
+        {
+          "slug": "c2me-fabric",
+          "loader": "fabric",
+          "projectId": "VSNURh3q",
+          "title": "Concurrent Chunk Management Engine (Fabric)",
+          "publisherSourceUrl": "https://github.com/RelativityMC/C2ME-fabric",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "4wjXxrDQ",
+          "versionNumber": "0.4.2-alpha.0.60+26.2",
+          "versionType": "alpha",
+          "datePublished": "2026-10-12T15:56:44.062382Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/VSNURh3q/versions/4wjXxrDQ/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "versionUrl": "https://modrinth.com/mod/c2me-fabric/version/4wjXxrDQ",
+          "publishedHashes": {
+            "sha512": "079ac7da5de422418a599e0fef1963b3094aa010b057582bc25233fa65bd62a5bea8659c7905eabbd4f6943914d56106c5c6ebe011b022a84583a061a99cc2d4",
+            "sha1": "388b8794f1ca5e9055434256920c73f62ded52e7"
+          },
+          "sha256": "6d9c3fd764c0e3dd94da59ab9bbd2aff7ca91b15cc235c418f5553e51d71ceed",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "bytes": 3843816,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "lithium",
+          "loader": "fabric",
+          "projectId": "gvQqBUqZ",
+          "title": "Lithium",
+          "publisherSourceUrl": "https://github.com/caffeinemc/lithium-fabric",
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": null
+          },
+          "versionId": "f7vZ0VWU",
+          "versionNumber": "mc26.2-0.25.3-fabric",
+          "versionType": "release",
+          "datePublished": "2026-07-29T12:19:55.348704Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "lithium-fabric-0.25.3+mc26.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/f7vZ0VWU/lithium-fabric-0.25.3%2Bmc26.2.jar",
+          "versionUrl": "https://modrinth.com/mod/lithium/version/f7vZ0VWU",
+          "publishedHashes": {
+            "sha1": "435ad0289209bb72195e7a423756a03f5dfa5a9a",
+            "sha512": "148b638f3c6229fbaf487120a2344a0af5e411a5aa6533d5db9d75da0a8c0d8304f63eb4cca13f4d03b2c9b4c23d559dd74c1d832422ef8a3087bd005e62a8bd"
+          },
+          "sha256": "fdde92e238e8075f89ad7f701f2a3d5854af88ba9a67657184a4407b104ac563",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/lithium-fabric-0.25.3+mc26.2.jar",
+          "bytes": 912850,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "ferrite-core",
+          "loader": "fabric",
+          "projectId": "uXXizFIs",
+          "title": "FerriteCore",
+          "publisherSourceUrl": "https://github.com/malte0811/FerriteCore",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "d5ddUdiB",
+          "versionNumber": "9.0.0-fabric",
+          "versionType": "release",
+          "datePublished": "2026-03-24T18:31:50.491773Z",
+          "gameVersions": [
+            "26.1",
+            "26.1.1",
+            "26.1.2",
+            "26.2",
+            "26.3"
+          ],
+          "dependencies": [],
+          "filename": "ferritecore-9.0.0-fabric.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar",
+          "versionUrl": "https://modrinth.com/mod/ferrite-core/version/d5ddUdiB",
+          "publishedHashes": {
+            "sha512": "d81fa97e11784c19d42f89c2f433831d007603dd7193cee45fa177e4a6a9c52b384b198586e04a0f7f63cd996fed713322578bde9a8db57e1188854ae5cbe584",
+            "sha1": "eac76ff0f3753422c61b2c44487d0d195d88d4bc"
+          },
+          "sha256": "213966c72ed967acc7392beb28a866fba301ff56b9976c2e7801c2db7de6bf22",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/ferritecore-9.0.0-fabric.jar",
+          "bytes": 72677,
+          "communityPort": false,
+          "category": "mod"
+        }
+      ],
+      "exportReport": "docs/validation/server-dev20-compat-fabric-optimized-export.json",
+      "exportReportSha256": "45faaedebfd2e52c5c66e6bec1616f6f3449d0cf0a540e58a011d6e935222882",
+      "generationReport": "docs/validation/server-dev20-compat-fabric-optimized-generation.json",
+      "reloadReport": "docs/validation/server-dev20-compat-fabric-optimized-reload.json",
+      "generationReportSha256": "d54126fcb318b6a3aa14596d882ddeab2248156a2e7106a9009ebad56db25d42",
+      "reloadReportSha256": "71c0a07a7b965a459f440b6a904b8d03eb3f80a1bc906c14b00a56f72525693e",
+      "exportedFiles": 2040,
+      "consumedPackMatchesEveryExportedFile": true,
+      "generationDigest": "b7edd2d59b7e8a37ebe489b1e7db6677ba6ad7c215f49dac50b9f51eefd391d4",
+      "reloadDigest": "b7edd2d59b7e8a37ebe489b1e7db6677ba6ad7c215f49dac50b9f51eefd391d4",
+      "registeredClassicVariants": 17,
+      "classicSourceCodecRoundTrip": true,
+      "observedBiomes": [
+        "minecraft:birch_forest",
+        "minecraft:plains"
+      ],
+      "structureChecks": null,
+      "structureReloadChecks": null
+    },
+    {
+      "loader": "neoforge",
+      "case": "optimized",
+      "status": "passed",
+      "artifactSha256": "19e28ddeb425f20cbb69c820dc3f637f64c743fc6a3c07ae944c36c3ceb3b4a7",
+      "qaSha256": "bc96468176035c8eea02a5434f54669b2024a229b3e4c2d302592cf5defc2b2b",
+      "extraMods": [
+        {
+          "slug": "c2me-neoforge",
+          "loader": "neoforge",
+          "projectId": "COlSi5iR",
+          "title": "Concurrent Chunk Management Engine (NeoForge)",
+          "publisherSourceUrl": "https://github.com/RelativityMC/C2ME-neoforge",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "XpuI7aLS",
+          "versionNumber": "0.4.2-alpha.0.98+26.2",
+          "versionType": "alpha",
+          "datePublished": "2026-10-03T15:35:48.293562Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/COlSi5iR/versions/XpuI7aLS/c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+          "versionUrl": "https://modrinth.com/mod/c2me-neoforge/version/XpuI7aLS",
+          "publishedHashes": {
+            "sha512": "9f760b83c09e7b02d65ca9742965aeb5129f86758d80a97648b71f7e3b1a2789d5e46d28b62ca5a2ca54697c4e7d4e12936e432db63f27210a39f4c00f228796",
+            "sha1": "a6675f28a3824ce550bd6d30c479e1885bbe7bc6"
+          },
+          "sha256": "d7d39638b373109a5f1ad85398850e8543bb3765f4087512f4a74a165c1ab66d",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/neoforge/c2me-neoforge-mc26.2-0.4.2-alpha.0.98.jar",
+          "bytes": 3743271,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "lithium",
+          "loader": "neoforge",
+          "projectId": "gvQqBUqZ",
+          "title": "Lithium",
+          "publisherSourceUrl": "https://github.com/caffeinemc/lithium-fabric",
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": null
+          },
+          "versionId": "J9CowDXK",
+          "versionNumber": "mc26.2-0.25.3-neoforge",
+          "versionType": "release",
+          "datePublished": "2026-07-29T12:19:55.371250Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "lithium-neoforge-0.25.3+mc26.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/J9CowDXK/lithium-neoforge-0.25.3%2Bmc26.2.jar",
+          "versionUrl": "https://modrinth.com/mod/lithium/version/J9CowDXK",
+          "publishedHashes": {
+            "sha1": "e834dc970751b97605e2d06565b8998e22dd543a",
+            "sha512": "56f5299bc84084f2112abf61ea58bad101a7495cc8a1db3df0963494bce096e474c0bde0975831c30ec15c5c977451a31f82de90a09b769c94df91dbcb9b9286"
+          },
+          "sha256": "7a080146f5c428e3a4a34cc3526c57c71cace5e962019081cb1d45c9d55dec7a",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/neoforge/lithium-neoforge-0.25.3+mc26.2.jar",
+          "bytes": 904073,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "ferrite-core",
+          "loader": "neoforge",
+          "projectId": "uXXizFIs",
+          "title": "FerriteCore",
+          "publisherSourceUrl": "https://github.com/malte0811/FerriteCore",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "LtVvw4uS",
+          "versionNumber": "9.0.0-neoforge",
+          "versionType": "release",
+          "datePublished": "2026-03-24T18:31:50.324216Z",
+          "gameVersions": [
+            "26.1",
+            "26.1.1",
+            "26.1.2",
+            "26.2",
+            "26.3"
+          ],
+          "dependencies": [],
+          "filename": "ferritecore-9.0.0-neoforge.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/uXXizFIs/versions/LtVvw4uS/ferritecore-9.0.0-neoforge.jar",
+          "versionUrl": "https://modrinth.com/mod/ferrite-core/version/LtVvw4uS",
+          "publishedHashes": {
+            "sha512": "e96a99ac5539f56a1f4cd109d62b668ebd5283f0068491ede956f52e67023beba7abe2e40021499352ffc41ead950bebcabce7792352249a1b45c5dccb3cf99c",
+            "sha1": "b8bfb14ba6ce7068aae08c3a132ca40bda6bd143"
+          },
+          "sha256": "a3292dadb1caf7ad220d3a4b68abff2ad58592ddd372160f9cf66c57d159b539",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/neoforge/ferritecore-9.0.0-neoforge.jar",
+          "bytes": 71947,
+          "communityPort": false,
+          "category": "mod"
+        }
+      ],
+      "exportReport": "docs/validation/server-dev20-compat-neoforge-optimized-export.json",
+      "exportReportSha256": "a4309bd55b81cecf7802a845bec2846218e0defaf20b84a7fef3aa1e59d15030",
+      "generationReport": "docs/validation/server-dev20-compat-neoforge-optimized-generation.json",
+      "reloadReport": "docs/validation/server-dev20-compat-neoforge-optimized-reload.json",
+      "generationReportSha256": "586238edfab6210af09e8e75c140ec07615bba29534f35a3ae94d183b863c4bc",
+      "reloadReportSha256": "fbb461e64c3201e654c20a3bd6c911e3d1df345c8638b8d09f91a4504625a4e8",
+      "exportedFiles": 2044,
+      "consumedPackMatchesEveryExportedFile": true,
+      "generationDigest": "833989a6b7504a06157234f3c3308dbf41b104e4896b2f12b198082d499c7e5f",
+      "reloadDigest": "833989a6b7504a06157234f3c3308dbf41b104e4896b2f12b198082d499c7e5f",
+      "registeredClassicVariants": 17,
+      "classicSourceCodecRoundTrip": true,
+      "observedBiomes": [
+        "minecraft:birch_forest",
+        "minecraft:plains"
+      ],
+      "structureChecks": null,
+      "structureReloadChecks": null
+    }
+  ],
+  "notTested": [
+    "All modpacks",
+    "Client rendering",
+    "Multiplayer",
+    "Controlled performance"
+  ],
+  "failures": [],
+  "finishedAtUtc": "2026-11-04T11:41:51.376039+00:00",
+  "harnessSha256": "9bfb9446c7bb4d14d760784616665c7d3e2d60d9b5dbfb115ddb99226dfb8504"
+}

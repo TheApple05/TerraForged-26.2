@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAtUtc": "2026-11-04T11:31:09.292374+00:00",
+  "input": "docs/validation/classic-biome-dev18-ruined-portal-columns.json",
+  "inputSha256": "91b32b5edaaad2bcf108a64f4146463174e2417ebf5c26fddd1dd78d596f8444",
+  "runs": [],
+  "comparisons": [],
+  "performanceEvidence": false,
+  "scope": "Actual native getBaseColumn on exact captured RuinedPortal inputs; all384 block states per column compared; timings are diagnostic",
+  "error": "KeyError('nativeColumnReplayChecks')",
+  "finishedAtUtc": "2026-11-04T11:31:55.250858+00:00",
+  "harnessSha256": "b056dd76793b0ad31658874ca1d694fff3e34c57632468a7547d677c866003ff"
+}

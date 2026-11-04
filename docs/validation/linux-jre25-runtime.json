@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "prepared-runtime-executable",
+  "checkedAtUtc": "2026-11-04T10:17:24.453619+00:00",
+  "publisherReleaseUrl": "https://github.com/adoptium/temurin25-binaries/releases/tag/jdk-25.0.5%2B8",
+  "sourceUrl": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5%2B8/OpenJDK25U-jre_x64_linux_hotspot_25.0.5_8.tar.gz",
+  "sha256": "6fac98f0c8202efc3135a9e9e42aa61963ec42d1c5cbb40caf231e7b14a24ef6",
+  "matchesPublisherGitHubReleaseDigest": true,
+  "bytes": 61736206,
+  "runtimeDirectory": ".tools/java-linux25",
+  "linuxRuntimeDirectory": "/mnt/c/Users/Main/Documents/Codex/TerraForged/.tools/java-linux25",
+  "wslDistribution": "Ubuntu",
+  "system": "Linux 5.15.167.4-microsoft-standard-WSL2 x86_64 GNU/Linux",
+  "javaVersionOutput": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)",
+  "globalEnvironmentChanged": false,
+  "notEvidenceOf": [
+    "Minecraft loading",
+    "Mod compatibility",
+    "Linux performance"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceExportReport": "docs\\validation\\server-linux-fabric-dev17-export.json",
+  "sourceExportReportSha256": "12bf87191f8b7344832bee6e9802741148e91814050c59f42aa13b1010541c67",
+  "zipPath": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\linux-packs\\fabric-dev17-base.zip",
+  "zipSha256": "563d1b0dc2bcf5ac3bfceefed6e14adaae8f1cf1793538a8fafed9eda652f828",
+  "files": 2040,
+  "everyMemberMatchesQualifiedExport": true,
+  "scope": "Packaging equivalence; requires separate native game load/generation evidence"
+}

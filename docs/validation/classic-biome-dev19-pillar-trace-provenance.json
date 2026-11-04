@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "productionJarSha256": "6bc1e881c2d52e4d1980d5eac28420d82b36f5763d347143f9dc0771bf89fc18",
+  "qaJarSha256": "7b4ef13b37e8771ea6d455ea3d02624cd15aa62b26bfa42d5d16a3b95a6f9291",
+  "qaSourceSha256Lf": {
+    "tests/runtime/terraforged/qa/CellSamplerCacheQa.java": "4cef8d426c2cbc9d362569bf94adc445a5835faad7ca548e29a1243dba023262",
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "09f98e6090e4bf78fbfe60dc3efc9c03817c755167018231987a2588f58adf22",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "420d1426f1f9656848454d282223579bb7aaa663f594fa967efc3477ecb5ce9c",
+    "tests/runtime/terraforged/qa/ClassicPillarCandidateQa.java": "a3b7cd86a10e361deafb4bbd42f4cf9cae761b52d28afbca4284a0c9814542dd",
+    "tests/runtime/terraforged/qa/ClassicPillarPlacementQa.java": "d9f12c0213874fa32989a4308345e1f1a610625fca15350d3614adcb78f0ae75",
+    "tests/runtime/terraforged/qa/mixin/ClassicPillarFeatureProbe.java": "54a4f3763f92bd6dc32352d53a26f9d9c366d80a6d0aceb2a0e2fc58aeb31f51",
+    "tests/runtime/terraforged/qa/mixin/StructureColumnProbe.java": "d59a84f88ceeb26a9f8496573f405fc301fb4079cd8d18c6a07f0bb34185ec90",
+    "tests/runtime/terraforged/qa/NativeColumnReplayQa.java": "b0dec36d981858719af2ca351ee25d189d355203182753e059244e7c547b9b44",
+    "tests/runtime/terraforged/qa/RuntimeQaMod.java": "8df17c0a72ed020b13bd27efb1c0bfaf8c3c1166991071210b709663dece1795",
+    "tests/runtime/terraforged/qa/StructureQa.java": "1c695bd5f12f560d1d85695f7e80136c049f657ddec6fb11d868a6d76a902a5c",
+    "tests/terrain/TemplateBiomeDecoratorProbe.java": "75b2d53e042ed0db56e08b7f6f865e258a98bd3f85073102813dd9d3bc677971"
+  },
+  "trace": "docs\\validation\\classic-biome-dev19-pillar-placement-trace.json",
+  "traceSha256": "020075f5eb6bbb05d8e005950f7560aa09833327c5d1a7884ba4212829f76f32",
+  "artifactReport": "docs/validation/server-fabric-dev19-pillar-trace.json",
+  "failure": "The real stone feature rejected all89 positive-mask natural grass-block footings because26.2 DIRT excludes the separate GRASS_BLOCKS family. Feature returnedfalse; Bryce returnedtrue. Captured probe mirrors exact19 guard, before20 adds GRASS_BLOCKS.",
+  "nonCause": "Final neighboring foliage initially suggested a canopy interaction, but actual HEAD current heightmap/material/empty-space evidence disproved it for this case."
+}

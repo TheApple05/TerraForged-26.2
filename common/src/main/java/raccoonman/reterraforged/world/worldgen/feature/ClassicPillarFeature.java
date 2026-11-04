@@ -62,7 +62,7 @@ public final class ClassicPillarFeature extends Feature<ClassicPillarFeature.Con
                 int surfaceY = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR, x, z);
                 if (surfaceY <= placement.chunkGenerator().getSeaLevel() || surfaceY >= level.getMaxY()) continue;
                 BlockState base = chunk.getBlockState(pos.set(worldX, surfaceY, worldZ));
-                if (!base.is(BlockTags.BASE_STONE_OVERWORLD) && !base.is(BlockTags.DIRT)
+                if (!base.is(BlockTags.GRASS_BLOCKS) && !base.is(BlockTags.BASE_STONE_OVERWORLD) && !base.is(BlockTags.DIRT)
                         && !base.is(BlockTags.SAND) && !base.is(BlockTags.TERRACOTTA)) continue;
                 Holder<Biome> biome = level.getNoiseBiome(QuartPos.fromBlock(worldX), QuartPos.fromBlock(surfaceY), QuartPos.fromBlock(worldZ));
                 if (!biome.is(key)) continue;

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "minecraft": "26.2",
+  "loader": "neoforge",
+  "neoforge": "26.2.0.93",
+  "preparation": {
+    "template": "build/qa/neoforge-server/template",
+    "neoforge": "26.2.0.93",
+    "minecraft": "26.2",
+    "installerUrl": "https://maven.neoforged.net/releases/net/neoforged/neoforge/26.2.0.93/neoforge-26.2.0.93-installer.jar",
+    "installerSha256": "7618883b9d87186281da2bd2a5e9a11af042ed15112bb63ccfc62bb0230ca699",
+    "matchesPublishedInstaller": true,
+    "minecraftServerSha1": "823e2250d24b3ddac457a60c92a6a941943fcd6a",
+    "argsFile": "libraries/net/neoforged/neoforge/26.2.0.93/unix_args.txt"
+  },
+  "status": "prepared"
+}

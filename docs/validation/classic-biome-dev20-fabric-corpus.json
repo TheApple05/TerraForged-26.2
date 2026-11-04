@@ -1,0 +1,678 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "loader": "fabric",
+  "candidate": "dev20",
+  "productionJar": "build\\libs\\terraforged-revival-0.1.0-dev.20+26.2.jar",
+  "productionJarSha256": "0d7b64bc73a4ea1ddec8d4f2af5caabc3f06de50fc49f2f6a6f3b35c03e2a6b2",
+  "qaJar": "build\\qa\\runtime-dev20\\terraforged-runtime-qa.jar",
+  "qaJarSha256": "30f8c1b5800505c0f6318007c72b6a40edc6b6b11ac4b86a049aba3ab6abbe13",
+  "seed": 8675309,
+  "cases": [
+    {
+      "group": "pillars",
+      "targets": "docs\\validation\\classic-biome-dev19-pillar-locations.json",
+      "targetsSha256": "4354b56204282f56b797f6066f09744f76878b90fb866bfcd3b78c6f7c1dd362",
+      "biomes": [
+        "reterraforged:bryce",
+        "reterraforged:stone_forest"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev20-classic-pillars-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T112753Z-6171ec",
+          "fullChunkTargets": 2,
+          "observations": [
+            {
+              "fullHeightColumnSha256": "8b1c8d7902c897a641e8de4088c5493895fc1e81452d5df327973a6a77f1bef6",
+              "surfaceY": 99,
+              "chunkZ": -6689,
+              "chunkX": -7409,
+              "queriedBiome": "reterraforged:bryce",
+              "z": -107012,
+              "y": 99,
+              "x": -118532,
+              "biome": "reterraforged:bryce"
+            },
+            {
+              "fullHeightColumnSha256": "6828cc7f70823be05fca30a0ccca61769f1173673772fd4360b148c6a60ef28c",
+              "surfaceY": 131,
+              "chunkZ": -6280,
+              "chunkX": 6300,
+              "queriedBiome": "reterraforged:stone_forest",
+              "z": -100468,
+              "y": 72,
+              "x": 100812,
+              "biome": "reterraforged:stone_forest"
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev20-classic-pillars-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T112753Z-6171ec",
+          "fullChunkTargets": 2,
+          "observations": [
+            {
+              "biome": "reterraforged:bryce",
+              "x": -118532,
+              "y": 99,
+              "z": -107012,
+              "queriedBiome": "reterraforged:bryce",
+              "chunkX": -7409,
+              "chunkZ": -6689,
+              "surfaceY": 99,
+              "fullHeightColumnSha256": "8b1c8d7902c897a641e8de4088c5493895fc1e81452d5df327973a6a77f1bef6"
+            },
+            {
+              "biome": "reterraforged:stone_forest",
+              "x": 100812,
+              "y": 72,
+              "z": -100468,
+              "queriedBiome": "reterraforged:stone_forest",
+              "chunkX": 6300,
+              "chunkZ": -6280,
+              "surfaceY": 131,
+              "fullHeightColumnSha256": "6828cc7f70823be05fca30a0ccca61769f1173673772fd4360b148c6a60ef28c"
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ],
+      "pillarSurfaceEvidence": [
+        {
+          "biome": "reterraforged:bryce",
+          "requestedBaselineStage": "minecraft:surface",
+          "observedBaselineStage": "minecraft:surface",
+          "surfaceBaselineAvailable": true,
+          "positiveAddedPillarColumns": 79,
+          "correctlyCappedColumns": 79,
+          "maximumAddedHeight": 25,
+          "heightCap": 30,
+          "actualAddedMaterialCounts": {
+            "minecraft:terracotta": 256,
+            "minecraft:orange_terracotta": 378,
+            "minecraft:brown_terracotta": 103,
+            "minecraft:yellow_terracotta": 123
+          },
+          "examples": [
+            {
+              "x": -118544,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 8,
+              "surfaceBeforeFeatures": 113,
+              "z": -107024
+            },
+            {
+              "x": -118543,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 113,
+              "z": -107024
+            },
+            {
+              "x": -118542,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 23,
+              "surfaceBeforeFeatures": 113,
+              "z": -107024
+            },
+            {
+              "x": -118541,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 24,
+              "surfaceBeforeFeatures": 112,
+              "z": -107024
+            },
+            {
+              "x": -118539,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 22,
+              "surfaceBeforeFeatures": 112,
+              "z": -107024
+            },
+            {
+              "x": -118538,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 21,
+              "surfaceBeforeFeatures": 111,
+              "z": -107024
+            },
+            {
+              "x": -118537,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 111,
+              "z": -107024
+            },
+            {
+              "x": -118536,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 111,
+              "z": -107024
+            },
+            {
+              "x": -118535,
+              "top": "minecraft:terracotta",
+              "addedHeight": 7,
+              "surfaceBeforeFeatures": 111,
+              "z": -107024
+            },
+            {
+              "x": -118534,
+              "top": "minecraft:terracotta",
+              "addedHeight": 7,
+              "surfaceBeforeFeatures": 112,
+              "z": -107024
+            },
+            {
+              "x": -118533,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 8,
+              "surfaceBeforeFeatures": 112,
+              "z": -107024
+            },
+            {
+              "x": -118544,
+              "top": "minecraft:orange_terracotta",
+              "addedHeight": 1,
+              "surfaceBeforeFeatures": 112,
+              "z": -107023
+            }
+          ],
+          "rawPaletteAddedColumns": 79,
+          "wrongCapColumns": 0,
+          "diagnosticColumns": [
+            {
+              "x": -118544,
+              "z": -107024,
+              "surfaceBeforeFeatures": 113,
+              "paletteAddedHeight": 8,
+              "oceanFloorAfter": 121,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:terracotta}",
+              "actualFilteredTileMask": 0.70740545,
+              "actualFilteredTileRegionEdge": 0.98777324,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.2838382,
+              "shape": 0.38967815,
+              "predictedAddedHeightBeforeBoundary": 8
+            },
+            {
+              "x": -118532,
+              "z": -107024,
+              "surfaceBeforeFeatures": 112,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 112,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.83358437,
+              "actualFilteredTileRegionEdge": 0.9933654,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.1608482,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118544,
+              "z": -107020,
+              "surfaceBeforeFeatures": 110,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 110,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.0,
+              "actualFilteredTileRegionEdge": 0.9858357,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 1.0,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118532,
+              "z": -107020,
+              "surfaceBeforeFeatures": 112,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 112,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.7923014,
+              "actualFilteredTileRegionEdge": 0.99225914,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.20151764,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118544,
+              "z": -107016,
+              "surfaceBeforeFeatures": 100,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 100,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.0,
+              "actualFilteredTileRegionEdge": 0.98585117,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 1.0,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118532,
+              "z": -107016,
+              "surfaceBeforeFeatures": 110,
+              "paletteAddedHeight": 3,
+              "oceanFloorAfter": 113,
+              "stateAtBase": "Block{minecraft:red_terracotta}",
+              "stateAboveBase": "Block{minecraft:yellow_terracotta}",
+              "actualFilteredTileMask": 0.36598554,
+              "actualFilteredTileRegionEdge": 0.99215394,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.6311202,
+              "shape": 0.324675,
+              "predictedAddedHeightBeforeBoundary": 3
+            },
+            {
+              "x": -118544,
+              "z": -107012,
+              "surfaceBeforeFeatures": 96,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 96,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.71035016,
+              "actualFilteredTileRegionEdge": 0.9870325,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.28031737,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118532,
+              "z": -107012,
+              "surfaceBeforeFeatures": 99,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 99,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.0,
+              "actualFilteredTileRegionEdge": 0.9926184,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 1.0,
+              "shape": 0.97402495,
+              "predictedAddedHeightBeforeBoundary": 0
+            }
+          ],
+          "actualFilteredTilePredictedPositiveBeforeBoundary": 81,
+          "actualFilteredTilePredictedMaximumBeforeBoundary": 25,
+          "scope": "Actual palette-only columns added after SURFACE, with current stored target biome; not a visual or original-world identity verdict"
+        },
+        {
+          "biome": "reterraforged:stone_forest",
+          "requestedBaselineStage": "minecraft:surface",
+          "observedBaselineStage": "minecraft:surface",
+          "surfaceBaselineAvailable": true,
+          "positiveAddedPillarColumns": 78,
+          "correctlyCappedColumns": 78,
+          "maximumAddedHeight": 48,
+          "heightCap": 50,
+          "actualAddedMaterialCounts": {
+            "minecraft:stone": 1519,
+            "minecraft:dirt": 76,
+            "minecraft:grass_block": 78
+          },
+          "examples": [
+            {
+              "x": 100811,
+              "top": "minecraft:grass_block",
+              "addedHeight": 13,
+              "surfaceBeforeFeatures": 72,
+              "z": -100476
+            },
+            {
+              "x": 100812,
+              "top": "minecraft:grass_block",
+              "addedHeight": 2,
+              "surfaceBeforeFeatures": 72,
+              "z": -100476
+            },
+            {
+              "x": 100811,
+              "top": "minecraft:grass_block",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 72,
+              "z": -100475
+            },
+            {
+              "x": 100812,
+              "top": "minecraft:grass_block",
+              "addedHeight": 15,
+              "surfaceBeforeFeatures": 72,
+              "z": -100475
+            },
+            {
+              "x": 100813,
+              "top": "minecraft:grass_block",
+              "addedHeight": 15,
+              "surfaceBeforeFeatures": 72,
+              "z": -100475
+            },
+            {
+              "x": 100814,
+              "top": "minecraft:grass_block",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 72,
+              "z": -100475
+            },
+            {
+              "x": 100815,
+              "top": "minecraft:grass_block",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 72,
+              "z": -100475
+            },
+            {
+              "x": 100808,
+              "top": "minecraft:grass_block",
+              "addedHeight": 3,
+              "surfaceBeforeFeatures": 72,
+              "z": -100474
+            },
+            {
+              "x": 100809,
+              "top": "minecraft:grass_block",
+              "addedHeight": 5,
+              "surfaceBeforeFeatures": 72,
+              "z": -100474
+            },
+            {
+              "x": 100810,
+              "top": "minecraft:grass_block",
+              "addedHeight": 13,
+              "surfaceBeforeFeatures": 72,
+              "z": -100474
+            },
+            {
+              "x": 100811,
+              "top": "minecraft:grass_block",
+              "addedHeight": 14,
+              "surfaceBeforeFeatures": 72,
+              "z": -100474
+            },
+            {
+              "x": 100812,
+              "top": "minecraft:grass_block",
+              "addedHeight": 15,
+              "surfaceBeforeFeatures": 72,
+              "z": -100474
+            }
+          ],
+          "rawPaletteAddedColumns": 86,
+          "wrongCapColumns": 8,
+          "diagnosticColumns": [
+            {
+              "x": 100800,
+              "z": -100480,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 79,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:fern}",
+              "actualFilteredTileMask": 0.84576005,
+              "actualFilteredTileRegionEdge": 0.8526902,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.008127391,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100480,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 84,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:vine}[east=false,north=true,south=false,up=false,west=false]",
+              "actualFilteredTileMask": 0.88147515,
+              "actualFilteredTileRegionEdge": 0.88476455,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.0037178397,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100800,
+              "z": -100476,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 91,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:oak_leaves}[distance=2,persistent=false,waterlogged=false]",
+              "actualFilteredTileMask": 0.88946646,
+              "actualFilteredTileRegionEdge": 0.9008055,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.012587607,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100476,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 2,
+              "oceanFloorAfter": 74,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:dirt}",
+              "actualFilteredTileMask": 0.92225647,
+              "actualFilteredTileRegionEdge": 0.9276525,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.0058168173,
+              "shape": 0.061239075,
+              "predictedAddedHeightBeforeBoundary": 2
+            },
+            {
+              "x": 100800,
+              "z": -100472,
+              "surfaceBeforeFeatures": 71,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 91,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.91760075,
+              "actualFilteredTileRegionEdge": 0.9251146,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.008122027,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100472,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 15,
+              "oceanFloorAfter": 94,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:stone}",
+              "actualFilteredTileMask": 0.94685656,
+              "actualFilteredTileRegionEdge": 0.95607615,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.009643137,
+              "shape": 0.33333334,
+              "predictedAddedHeightBeforeBoundary": 15
+            },
+            {
+              "x": 100800,
+              "z": -100468,
+              "surfaceBeforeFeatures": 71,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 100,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:short_grass}",
+              "actualFilteredTileMask": 0.92419565,
+              "actualFilteredTileRegionEdge": 0.9344051,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.010926127,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100468,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 48,
+              "oceanFloorAfter": 130,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:stone}",
+              "actualFilteredTileMask": 0.9659854,
+              "actualFilteredTileRegionEdge": 0.9733669,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.007583499,
+              "shape": 1.0,
+              "predictedAddedHeightBeforeBoundary": 48
+            }
+          ],
+          "actualFilteredTilePredictedPositiveBeforeBoundary": 89,
+          "actualFilteredTilePredictedMaximumBeforeBoundary": 48,
+          "scope": "Actual palette-only columns added after SURFACE, with current stored target biome; not a visual or original-world identity verdict"
+        }
+      ]
+    },
+    {
+      "group": "cold",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\cold.json",
+      "targetsSha256": "b9f70a3ce6ef4988f4a7206a5f9eab02df6a88249c3ea68b57b24f220906e764",
+      "biomes": [
+        "reterraforged:cold_marshland",
+        "reterraforged:cold_steppe",
+        "reterraforged:frozen_marsh"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev20-classic-cold-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T112926Z-0e144c",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "biome": "reterraforged:cold_steppe",
+              "fullHeightColumnSha256": "902afd7b3beca76c6f10f1e9f386a074dac8a77e73b3c8826eb73270dce88f94",
+              "surfaceY": 136,
+              "chunkZ": 4753,
+              "chunkX": -7936,
+              "queriedBiome": "reterraforged:cold_steppe",
+              "z": 76052,
+              "y": 136,
+              "x": -126976
+            },
+            {
+              "biome": "reterraforged:cold_marshland",
+              "fullHeightColumnSha256": "3f932571e420be20323a2be44516d7993d857d95e6848657da940b26bf8954ac",
+              "surfaceY": 62,
+              "chunkZ": 1561,
+              "chunkX": -1056,
+              "queriedBiome": "reterraforged:cold_marshland",
+              "z": 24988,
+              "y": 63,
+              "x": -16896
+            },
+            {
+              "biome": "reterraforged:frozen_marsh",
+              "fullHeightColumnSha256": "5fd8f23301c825470bf0c478cc8a0685f2105e2833eae265d669be83bdd6f3f0",
+              "surfaceY": 64,
+              "chunkZ": -761,
+              "chunkX": -6504,
+              "queriedBiome": "reterraforged:frozen_marsh",
+              "z": -12168,
+              "y": 63,
+              "x": -104064
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev20-classic-cold-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T112926Z-0e144c",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "chunkZ": 4753,
+              "chunkX": -7936,
+              "queriedBiome": "reterraforged:cold_steppe",
+              "z": 76052,
+              "y": 136,
+              "x": -126976,
+              "biome": "reterraforged:cold_steppe",
+              "fullHeightColumnSha256": "902afd7b3beca76c6f10f1e9f386a074dac8a77e73b3c8826eb73270dce88f94",
+              "surfaceY": 136
+            },
+            {
+              "chunkZ": 1561,
+              "chunkX": -1056,
+              "queriedBiome": "reterraforged:cold_marshland",
+              "z": 24988,
+              "y": 63,
+              "x": -16896,
+              "biome": "reterraforged:cold_marshland",
+              "fullHeightColumnSha256": "3f932571e420be20323a2be44516d7993d857d95e6848657da940b26bf8954ac",
+              "surfaceY": 62
+            },
+            {
+              "chunkZ": -761,
+              "chunkX": -6504,
+              "queriedBiome": "reterraforged:frozen_marsh",
+              "z": -12168,
+              "y": 63,
+              "x": -104064,
+              "biome": "reterraforged:frozen_marsh",
+              "fullHeightColumnSha256": "5fd8f23301c825470bf0c478cc8a0685f2105e2833eae265d669be83bdd6f3f0",
+              "surfaceY": 64
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    },
+    {
+      "group": "water",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\water.json",
+      "targetsSha256": "3583fd3fdfe3275cf0efc5d06e714cce2d182d99108d7ebb2b36c1db1480747b",
+      "biomes": [
+        "reterraforged:frozen_lake",
+        "reterraforged:lake",
+        "reterraforged:warm_beach"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev20-classic-water-generate.json",
+          "harnessExit": 1,
+          "status": "failed-runtime",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T113100Z-5f2420",
+          "fullChunkTargets": null,
+          "observations": null,
+          "reloadDigestsMatched": null,
+          "nativeSaveEverythingFlushCompleted": null
+        }
+      ]
+    }
+  ],
+  "scope": "Six separate fresh worlds with two or three surveyed variant targets each; native FULL generation, source/stored agreement, forced save, and same-world reload column hashes. Default sixty-second watchdog remains enabled.",
+  "error": "RuntimeError('Native fabric water generate failed or artifact changed: docs\\\\validation\\\\server-fabric-dev20-classic-water-generate.json')"
+}

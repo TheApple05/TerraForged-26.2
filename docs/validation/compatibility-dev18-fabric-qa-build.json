@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "built",
+  "compileExit": 0,
+  "jar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\runtime-dev18-compat\\terraforged-runtime-qa.jar",
+  "sha256": "53358979c516760bc4ef7b72465f39bd82499ea29ade50cc156b3195de6400e3",
+  "compileAgainst": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.18+26.2.jar",
+  "productionJarSha256": "dd5b075b6fcdb26e31159c97401de8e493308142599e5e193cbf886a3e55eb94",
+  "sourceSha256Lf": {
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "7f715dd79c9bc00c061e928a6cea24326aeecdc5df4d9227a4a1fadd76b14855",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "420d1426f1f9656848454d282223579bb7aaa663f594fa967efc3477ecb5ce9c",
+    "tests/runtime/terraforged/qa/RuntimeQaMod.java": "bd8879a43f169d4192c1f88cf34d5153f4d90a0ec2a16587ef03318982c195a1",
+    "tests/runtime/terraforged/qa/StructureQa.java": "1c695bd5f12f560d1d85695f7e80136c049f657ddec6fb11d868a6d76a902a5c",
+    "tests/terrain/TemplateBiomeDecoratorProbe.java": "75b2d53e042ed0db56e08b7f6f865e258a98bd3f85073102813dd9d3bc677971"
+  },
+  "notEvidenceOf": [
+    "Successful server launch",
+    "Preset export",
+    "Custom world generation",
+    "Visual parity"
+  ]
+}

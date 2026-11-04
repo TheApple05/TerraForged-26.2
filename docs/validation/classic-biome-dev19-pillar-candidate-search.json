@@ -1,0 +1,47 @@
+{
+  "requested": true,
+  "seed": 8675309,
+  "radius": 1024,
+  "candidates": {
+    "reterraforged:bryce": {
+      "x": -118532,
+      "y": 99,
+      "z": -107012,
+      "predictedAddedHeight": 29,
+      "shape": 0.97402495,
+      "mask": 0.9926184,
+      "regionEdge": 0.9926184,
+      "riverMask": 1.0,
+      "gradient": 0.0,
+      "terrain": "flats-plateau"
+    },
+    "reterraforged:stone_forest": {
+      "x": 100812,
+      "y": 72,
+      "z": -100468,
+      "predictedAddedHeight": 48,
+      "shape": 1.0,
+      "mask": 0.9733669,
+      "regionEdge": 0.9733669,
+      "riverMask": 1.0,
+      "gradient": 0.0,
+      "terrain": "flats"
+    }
+  },
+  "search": {
+    "reterraforged:bryce": {
+      "shapePointsExamined": 263169,
+      "actualBiomeMatchesExamined": 76,
+      "originZ": -107100,
+      "originX": -118400
+    },
+    "reterraforged:stone_forest": {
+      "shapePointsExamined": 263169,
+      "actualBiomeMatchesExamined": 191,
+      "originZ": -100508,
+      "originX": 100864
+    }
+  },
+  "elapsedMillis": 990.0623,
+  "scope": "Read-only real source/sampler, original production ridge objects and direct pre-filter heightmap mask forecast. No chunks generated, biome overrides, or block placement. Actual post-SURFACE added-block proof is required separately."
+}

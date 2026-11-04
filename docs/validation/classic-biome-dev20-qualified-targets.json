@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "source": "docs/validation/classic-biome-dev17-locations-fabric.json",
+  "sourceSha256": "e8b54511c6b25902e5d73fb830fbcc0e8ebeacc701fd5278e77daced735260f1",
+  "seed": 8675309,
+  "reason": "Use actual source after filtered terrain completion for water targets; retain rejected approximate warm-beach origin and unchanged seventeen expected variants.",
+  "groups": {
+    "pillars": {
+      "path": "docs/validation/classic-biome-corpus-targets/pillars.json",
+      "biomes": [
+        "reterraforged:bryce",
+        "reterraforged:stone_forest"
+      ],
+      "sha256": "3efa3580f71316c353f13f8b5e4fd881f295d28a39183a9e43db92fd08593c49"
+    },
+    "cold": {
+      "path": "docs/validation/classic-biome-corpus-targets/cold.json",
+      "biomes": [
+        "reterraforged:cold_steppe",
+        "reterraforged:cold_marshland",
+        "reterraforged:frozen_marsh"
+      ],
+      "sha256": "b9f70a3ce6ef4988f4a7206a5f9eab02df6a88249c3ea68b57b24f220906e764"
+    },
+    "water": {
+      "path": "docs/validation/classic-biome-dev20-qualified-water-targets.json",
+      "biomes": [
+        "reterraforged:frozen_lake",
+        "reterraforged:lake",
+        "reterraforged:warm_beach"
+      ],
+      "sha256": "12a228a87fd22904f4bf3c3f0c499be098a37ae0219b5fb6fb0d5779a73d8642"
+    },
+    "forests": {
+      "path": "docs/validation/classic-biome-corpus-targets/forests.json",
+      "biomes": [
+        "reterraforged:fir_forest",
+        "reterraforged:snowy_fir_forest",
+        "reterraforged:flower_plains"
+      ],
+      "sha256": "2befd23ed7b718e61313a3251838fc0589c3441c124c01aa1d9bc10de8eedd6d"
+    },
+    "scrub": {
+      "path": "docs/validation/classic-biome-corpus-targets/scrub.json",
+      "biomes": [
+        "reterraforged:taiga_scrub",
+        "reterraforged:snowy_taiga_scrub",
+        "reterraforged:marshland"
+      ],
+      "sha256": "e9f1e5ecbae7e4df0dd6123ca76b7793651caf330047ba52fed7cc32b9092170"
+    },
+    "savanna": {
+      "path": "docs/validation/classic-biome-corpus-targets/savanna.json",
+      "biomes": [
+        "reterraforged:savanna_scrub",
+        "reterraforged:shattered_savanna_scrub",
+        "reterraforged:steppe"
+      ],
+      "sha256": "33f0f541a66654310b1721f5a05a10b21094f89ae814d755b2f574390eb5d372"
+    }
+  },
+  "previousManifest": "docs/validation/classic-biome-corpus-targets.json",
+  "qualificationReport": "docs/validation/server-fabric-dev20-qualified-water-search.json"
+}

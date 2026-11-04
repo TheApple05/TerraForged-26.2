@@ -1,0 +1,29 @@
+{
+  "reterraforged:cold_steppe": {
+    "moisture": 0.50463754,
+    "region": 0.76726145,
+    "temperature": 0.40178826,
+    "terrain": "plateau-hills",
+    "x": -126976,
+    "y": 136,
+    "z": 76052
+  },
+  "reterraforged:cold_marshland": {
+    "moisture": 0.70629114,
+    "region": 0.5553675,
+    "temperature": 0.37414888,
+    "terrain": "wetland",
+    "x": -16896,
+    "y": 63,
+    "z": 24988
+  },
+  "reterraforged:frozen_marsh": {
+    "moisture": 0.2963042,
+    "region": 0.8556975,
+    "temperature": 0.08103396,
+    "terrain": "wetland",
+    "x": -104064,
+    "y": 63,
+    "z": -12168
+  }
+}

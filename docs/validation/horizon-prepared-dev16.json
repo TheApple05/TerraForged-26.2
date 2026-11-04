@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "status": "passed-prepared-terrain-native-probe",
+  "startedAt": "2026-11-04T10:26:30.142323+00:00",
+  "finishedAt": "2026-11-04T10:26:47.264241+00:00",
+  "processExit": 0,
+  "nativeExecutableSha256": "37a5e39b3da8fe4dcddb68bddaa06a0da71c9b6fca92bed263e122509b41560a",
+  "probeSourceSha256": "fb60014ccbdeb2e0eae05c00bf8b1bfae0946cc1b810dc7be8e53d53a8518e1f",
+  "horizonRevision": "7fb69700ca8065c546cfc63c5ca1a2cca94d4bc2",
+  "minecraftNative": "26.3",
+  "minecraftSource": "26.2",
+  "javaModSha256": "87ce5b165f2b828e694e3e77f9405b8752745e938578178b147057afc3ac9e6b",
+  "manifestSha256": "e3c6974402d30ddb8e9b1942c6c9ec8c540eea8f80492804edb773b24f4067c5",
+  "work": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\native-bridge-final\\probe-pz6m0zn_",
+  "resourcesWereLocalOnly": true,
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargoLockSha256": "d686ba005a8070536999a0d0a74792d527e2b082d51839436e28c3301e68c3d7",
+  "resourcesManifestSha256": "db3d64ba7b779dbda278aded406318940cdf37674fbdd2d1128fd20ea5e31c42",
+  "native": {
+    "biomeLocateInsideCoverage": true,
+    "cacheBytesBeforeClear": 3594240,
+    "cacheCleared": true,
+    "chunks": {
+      "127,-511": {
+        "blockCount": 98304,
+        "blockSha256": "17671623c37373b64890379bf9e8b9cf8b7253eed93f118d1abe57d6c144c93c",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "cba19c4c7e10e58c8fd03072ba380fa1af18f30c486aafe022f6730a8eb68f2f",
+        "surfaceColumnsChecked": 256
+      },
+      "127,-512": {
+        "blockCount": 98304,
+        "blockSha256": "c6aae5c874ab3a483da63fc8607db05a8444ba3993abd20dba48a73468461945",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "83a9cc8fcf291cfe9eee0d62fc734aeea760735b74f48d99532ba74be6dcfc12",
+        "surfaceColumnsChecked": 256
+      },
+      "127,-513": {
+        "blockCount": 98304,
+        "blockSha256": "ff2730f1e0bbc25aa9bbcc58abaefacdb21e1acf90963632637cf70dbaf97173",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "75ccf6935d8382ea50fd2ced50c7f4cd40c60e805a1ad1c13c4affbe4b9d82d3",
+        "surfaceColumnsChecked": 256
+      },
+      "128,-511": {
+        "blockCount": 98304,
+        "blockSha256": "ad46880f48b38c8c707f4dcf798b5b3de80ae67779145c902689798b5b4327f9",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "2575b1b8a800e1028ec95a17f5ebce1a2cb0ae6c443705ed61ac462b2f3d3f45",
+        "surfaceColumnsChecked": 256
+      },
+      "128,-512": {
+        "blockCount": 98304,
+        "blockSha256": "9fa60188b71b76f4b526e4e7a53c00ae971ce6955c444d0df14596749a048ba4",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "378b547229ab4b4de6b602a32e913cfb7e7858be9b36471a33abda7ed2f7ec8f",
+        "surfaceColumnsChecked": 256
+      },
+      "128,-513": {
+        "blockCount": 98304,
+        "blockSha256": "4ee967e92a652976892dc4b32b5dff85a85d087ed7c8ce60154c7de141e70faa",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "8da23dcf4007db6e3cd58209d10a6e3d41327b4a8f0af70e661ff696fb3d6ab4",
+        "surfaceColumnsChecked": 256
+      },
+      "129,-511": {
+        "blockCount": 98304,
+        "blockSha256": "59996fd85bb9e34783edf458d58d3b3670c54ac083759cbab0f74eb741f9e8f7",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "55345136a1d601d9d38a6adf716e30d8ff0206f31fe22dabc8c1ce2f1f3c3169",
+        "surfaceColumnsChecked": 256
+      },
+      "129,-512": {
+        "blockCount": 98304,
+        "blockSha256": "01ca35e5fc4e85114c0aa1681e058f542f415682fe6fb0bb09088c62b6669400",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "1a4835c39ff57b10c3b3de39c5df4cf3a28ae06bab5cf294fbb449dd76437d5e",
+        "surfaceColumnsChecked": 256
+      },
+      "129,-513": {
+        "blockCount": 98304,
+        "blockSha256": "47b3f3f0cc0f25ff9b7c95c4467599189d13a95193dd425129d0ef847ae23031",
+        "quartBiomeCount": 1536,
+        "quartBiomeSha256": "909ce571de0aee50cfb2ba65bdcca173656a52b4c62ca04639f671e922bda600",
+        "surfaceColumnsChecked": 256
+      }
+    },
+    "constructorInjectionObserved": true,
+    "importedBiomeIds": [
+      "reterraforged:bryce",
+      "reterraforged:cold_marshland",
+      "reterraforged:cold_steppe",
+      "reterraforged:fir_forest",
+      "reterraforged:flower_plains",
+      "reterraforged:frozen_lake",
+      "reterraforged:frozen_marsh",
+      "reterraforged:lake",
+      "reterraforged:marshland",
+      "reterraforged:savanna_scrub",
+      "reterraforged:shattered_savanna_scrub",
+      "reterraforged:snowy_fir_forest",
+      "reterraforged:snowy_taiga_scrub",
+      "reterraforged:steppe",
+      "reterraforged:stone_forest",
+      "reterraforged:taiga_scrub",
+      "reterraforged:warm_beach"
+    ],
+    "missingCoverageRejected": true,
+    "netherAndEndPreserved": true,
+    "notTested": [
+      "Rendered Horizon client",
+      "Horizon level.dat save/reload",
+      "Entities and block entities",
+      "Live infinite native terrain generation"
+    ],
+    "schema": 1,
+    "seed": 8675309,
+    "snapshotDiskReloadMatches": true,
+    "status": "passed-native-terrain-probe",
+    "wrongSeedRejected": true
+  },
+  "expectedDecoderFailures": [
+    {
+      "case": "unknown-biome",
+      "rejected": true,
+      "processExit": 1,
+      "diagnostic": "prepared biome absent from Horizon registry"
+    },
+    {
+      "case": "corrupt-chunk",
+      "rejected": true,
+      "processExit": 1,
+      "diagnostic": "prepared chunk checksum mismatch"
+    }
+  ],
+  "allJavaBlockAndQuartBiomeDigestsMatch": true,
+  "chunkCount": 9,
+  "blockCount": 884736,
+  "quartBiomeCount": 13824,
+  "surfaceColumnsChecked": 2304
+}

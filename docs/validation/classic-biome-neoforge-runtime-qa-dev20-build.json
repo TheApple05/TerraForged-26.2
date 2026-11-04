@@ -1,0 +1,30 @@
+{
+  "status": "built",
+  "compileExit": 0,
+  "output": "build\\qa\\neoforge-runtime-dev20\\terraforged-neoforge-runtime-qa.jar",
+  "sha256": "5c72b021bfbbea71a0a485917fcc27c21a61bfbb0881b417f90750acbdd2a4ce",
+  "sharedProbeSourceSha256Lf": "8df17c0a72ed020b13bd27efb1c0bfaf8c3c1166991071210b709663dece1795",
+  "helperSourceSha256Lf": {
+    "tests/runtime/terraforged/qa/CellSamplerCacheQa.java": "4cef8d426c2cbc9d362569bf94adc445a5835faad7ca548e29a1243dba023262",
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "09f98e6090e4bf78fbfe60dc3efc9c03817c755167018231987a2588f58adf22",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "420d1426f1f9656848454d282223579bb7aaa663f594fa967efc3477ecb5ce9c",
+    "tests/runtime/terraforged/qa/ClassicPillarCandidateQa.java": "a3b7cd86a10e361deafb4bbd42f4cf9cae761b52d28afbca4284a0c9814542dd",
+    "tests/runtime/terraforged/qa/ClassicPillarPlacementQa.java": "602a909e18caece48c207bb9b86c263636cf93bbb6f4c6cc4d66ec11918e1924",
+    "tests/runtime/terraforged/qa/NativeColumnReplayQa.java": "b0dec36d981858719af2ca351ee25d189d355203182753e059244e7c547b9b44",
+    "tests/runtime/terraforged/qa/StructureQa.java": "bad426fd7498d5e86fc7d5f258640ddca4586d700a5c409acb12e9da58bc3a69",
+    "tests/runtime/terraforged/qa/mixin/ClassicPillarFeatureProbe.java": "54a4f3763f92bd6dc32352d53a26f9d9c366d80a6d0aceb2a0e2fc58aeb31f51",
+    "tests/runtime/terraforged/qa/mixin/StructureColumnProbe.java": "d59a84f88ceeb26a9f8496573f405fc301fb4079cd8d18c6a07f0bb34185ec90"
+  },
+  "generatedAdapterSha256Lf": "8cc258aa9f7f1564d026f52357fc81deb0413a5ce2182c6c7a70d6a20c7ef029",
+  "productionJarSha256": "19e28ddeb425f20cbb69c820dc3f637f64c743fc6a3c07ae944c36c3ceb3b4a7",
+  "adapterChanges": [
+    "NeoForge ServerStartedEvent entrypoint",
+    "NeoForge production/metadata provenance",
+    "Relocate biome probe to test module and invoke same package-private helper reflectively to avoid split packages"
+  ],
+  "notEvidenceOf": [
+    "Server boot",
+    "Preset export",
+    "Custom generation"
+  ]
+}

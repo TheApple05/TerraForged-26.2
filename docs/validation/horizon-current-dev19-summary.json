@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "status": "passed-rehearsal-superseded-by-dev20",
+  "producerJarSha256": "6bc1e881c2d52e4d1980d5eac28420d82b36f5763d347143f9dc0771bf89fc18",
+  "producerReport": "docs/validation/server-horizon-prepared-dev19-export.json",
+  "producerReportSha256": "483856ce81518df9e9227b6e2c445606c260e1daeb3a6479163366e2c257122f",
+  "nativeReport": "docs/validation/horizon-current-dev19.json",
+  "nativeReportSha256": "653e98a240f5cee376ab247be0a88084511cc09b4182143ae86538aa614d8d44",
+  "horizonRevision": "9dd5c4093977c718c5c0349032fd3a5434e86afc",
+  "snapshot": {
+    "blockCount": 884736,
+    "entitiesOrStructureMetadataTransferred": false,
+    "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T111838Z-59cb97\\qa-output\\horizon-prepared",
+    "chunkCount": 9,
+    "sourceModSha256": "6bc1e881c2d52e4d1980d5eac28420d82b36f5763d347143f9dc0771bf89fc18",
+    "manifestSha256": "5709ecff55d2e3426f7a9e557c787b340a805e6dbea109608ffd22165a361ab9",
+    "quartBiomeCount": 13824
+  },
+  "observedClassicBiomeIds": [
+    "reterraforged:savanna_scrub"
+  ],
+  "allJavaBlockAndQuartBiomeDigestsMatch": true,
+  "surfaceColumnsChecked": 2304,
+  "exporterBuild": {
+    "jar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\terraforged-horizon-exporter-dev19.jar",
+    "sha256": "9f849d1a53101219e448c9a3590550ece518bc52fc78e2306c0b7fa35db1a57c",
+    "sourceSha256": "e1202aa62af5a7ba87c63c7fa45a1c14d2e40257d838ad18dc338b11b7ab1a7d",
+    "compileClasspathSha256": "22ab5aa9ca0d00d381225acb2c14fdac7783b14db7ea2a0c4d86244405e6032f",
+    "compilerVersion": "javac 25.0.5",
+    "productionJarSha256": "6bc1e881c2d52e4d1980d5eac28420d82b36f5763d347143f9dc0771bf89fc18"
+  },
+  "notAcceptanceOf": [
+    "Current dev20 Java artifact",
+    "Infinite native generation",
+    "Rendered native client",
+    "Native world save/reopen",
+    "Horizon modpack readiness"
+  ]
+}

@@ -1,0 +1,12 @@
+[02:07:53] [c2me-worker-3/ERROR]: Error upgrading chunk [143, -416] to "minecraft:features"
+java.lang.IllegalStateException: Feature order cycle found, involved sources: [Reference{ResourceKey[minecraft:worldgen/biome / minecraft:swamp]=net.minecraft.world.level.biome.Biome@66b0e3b8}, Reference{ResourceKey[minecraft:worldgen/biome / reterraforged:marshland]=net.minecraft.world.level.biome.Biome@307c5cb0}]
+	at knot//net.minecraft.world.level.biome.FeatureSorter.buildFeaturesPerStep(FeatureSorter.java:99)
+	at knot//net.fabricmc.fabric.impl.biome.modification.BiomeModificationImpl.lambda$finalizeWorldGen$2(BiomeModificationImpl.java:164)
+	at knot//com.google.common.base.Suppliers$NonSerializableMemoizingSupplier.get(Suppliers.java:194)
+	at knot//net.minecraft.world.level.chunk.ChunkGenerator.applyBiomeDecoration(ChunkGenerator.java:291)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStatusTasks.generateFeatures(ChunkStatusTasks.java:107)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStep.apply(ChunkStep.java:33)
+	at knot//com.ishland.c2me.rewrites.chunksystem.common.statuses.VanillaWorldGenerationDelegate.lambda$upgradeToThis$5(VanillaWorldGenerationDelegate.java:176)
+	at knot//com.ishland.c2me.base.common.scheduler.ScheduledTask.run(ScheduledTask.java:46)
+	at knot//com.ishland.flowsched.executor.WorkerThread.pollTasks(WorkerThread.java:60)
+	at knot//com.ishland.flowsched.executor.WorkerThread.run(WorkerThread.java:38)

@@ -48,50 +48,60 @@ public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) imp
 	public static class Cache2d {
         private final long[] positions;
         private final Cell[] cells;
-        private final boolean reuseSingleCell;
         private WeakReference<WorldLookup> owner = new WeakReference<>(null);
         private boolean climate;
         private int size;
         private int next;
 
-        /** The global caller is thread-local and can reuse its one mutable cell. */
-        public Cache2d() { this(1, true); }
+        /** The global caller only needs one entry, without retaining its world. */
+        public Cache2d() { this(1); }
 
         /** Small per-NoiseChunk cache; four interpolation corners must survive Y changes. */
-        public Cache2d(int capacity) { this(capacity, false); }
-
-        private Cache2d(int capacity, boolean reuseSingleCell) {
+        public Cache2d(int capacity) {
             if (capacity < 1 || capacity > 64) throw new IllegalArgumentException("Cell cache capacity must be 1..64");
             this.positions = new long[capacity];
             this.cells = new Cell[capacity];
-            this.reuseSingleCell = reuseSingleCell;
         }
 
         public synchronized Cell getAndUpdate(WorldLookup lookup, int blockX, int blockZ, boolean sampleClimate) {
-            if (this.owner.get() != lookup || this.climate != sampleClimate) {
-                // A static ThreadLocal must neither retain an old world nor reuse its values.
-                this.owner = new WeakReference<>(lookup);
-                this.climate = sampleClimate;
-                this.size = this.next = 0;
-            }
+            this.bind(lookup, sampleClimate);
             long packedPos = PosUtil.pack(blockX, blockZ);
             for (int index = 0; index < this.size; index++) {
                 if (this.positions[index] == packedPos) return this.cells[index];
             }
-            int index = this.size < this.positions.length ? this.size : this.next;
-            Cell cell = this.reuseSingleCell && this.cells[index] != null ? this.cells[index].reset() : new Cell();
+            // Future helping can re-enter this synchronized cache while applyCell
+            // waits. Keep the unfinished cell private, including the one-entry cache.
+            Cell cell = new Cell();
             try {
                 lookup.applyCell(cell, blockX, blockZ, false, sampleClimate);
             } catch (RuntimeException | Error failure) {
                 this.size = this.next = 0;
                 throw failure;
             }
+            // Nested work may have changed the lookup, mode, size or insertion
+            // cursor. Revalidate and choose a slot only after computation finishes.
+            this.bind(lookup, sampleClimate);
+            for (int index = 0; index < this.size; index++) {
+                if (this.positions[index] == packedPos) {
+                    this.cells[index] = cell;
+                    return cell;
+                }
+            }
+            int index = this.size < this.positions.length ? this.size : this.next;
             this.positions[index] = packedPos;
             this.cells[index] = cell;
             if (this.size < this.positions.length) this.size++;
             this.next = (index + 1) % this.positions.length;
-            // Multi-entry snapshots are not reset on eviction while another reader holds one.
+            // Snapshots are never reset while another reader may still hold one.
             return cell;
+        }
+
+        private void bind(WorldLookup lookup, boolean sampleClimate) {
+            if (this.owner.get() != lookup || this.climate != sampleClimate) {
+                this.owner = new WeakReference<>(lookup);
+                this.climate = sampleClimate;
+                this.size = this.next = 0;
+            }
         }
 	}
 	

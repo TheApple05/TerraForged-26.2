@@ -1,0 +1,27 @@
+{
+  "status": "built",
+  "compileExit": 0,
+  "output": "build\\qa\\neoforge-runtime-dev19\\terraforged-neoforge-runtime-qa.jar",
+  "sha256": "b4c729f57e78811a56ff33372e21528f29b6b4996dd90b4dceb8e3130d13f803",
+  "sharedProbeSourceSha256Lf": "a884aef263f9b393dd828836ffa36666a7664225f2668be1281a72cb4ee74f3c",
+  "helperSourceSha256Lf": {
+    "tests/runtime/terraforged/qa/CellSamplerCacheQa.java": "5eab8b7418a25f21dd70d43b53179efa13a3da524de75451bd3347a0fd98503e",
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "7f715dd79c9bc00c061e928a6cea24326aeecdc5df4d9227a4a1fadd76b14855",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "420d1426f1f9656848454d282223579bb7aaa663f594fa967efc3477ecb5ce9c",
+    "tests/runtime/terraforged/qa/ClassicPillarCandidateQa.java": "4dd112bbaf5b03b59bfbd70af9ff6e05584c7c7673659d1361a5ee6eafad2cdc",
+    "tests/runtime/terraforged/qa/StructureQa.java": "1c695bd5f12f560d1d85695f7e80136c049f657ddec6fb11d868a6d76a902a5c",
+    "tests/runtime/terraforged/qa/mixin/StructureColumnProbe.java": "d59a84f88ceeb26a9f8496573f405fc301fb4079cd8d18c6a07f0bb34185ec90"
+  },
+  "generatedAdapterSha256Lf": "df595b610014a57e18fff98b35855a8e159629cd7991990a18356288b9729f2f",
+  "productionJarSha256": "5568821e14b43cd1d40db562e933c99ab3426d7c66470d2c4ed2ebbb7935520b",
+  "adapterChanges": [
+    "NeoForge ServerStartedEvent entrypoint",
+    "NeoForge production/metadata provenance",
+    "Relocate biome probe to test module and invoke same package-private helper reflectively to avoid split packages"
+  ],
+  "notEvidenceOf": [
+    "Server boot",
+    "Preset export",
+    "Custom generation"
+  ]
+}

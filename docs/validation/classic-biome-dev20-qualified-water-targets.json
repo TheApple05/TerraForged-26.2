@@ -1,0 +1,26 @@
+{
+  "reterraforged:frozen_lake": {
+    "z": 33060,
+    "y": 63,
+    "x": -79680,
+    "terrain": "lake",
+    "filteredTerrainQualified": true,
+    "filteredHeight": 0.21536353
+  },
+  "reterraforged:lake": {
+    "z": 15280,
+    "y": 63,
+    "x": 56832,
+    "terrain": "lake",
+    "filteredTerrainQualified": true,
+    "filteredHeight": 0.24908584
+  },
+  "reterraforged:warm_beach": {
+    "z": 113064,
+    "y": 63,
+    "x": 43540,
+    "terrain": "beach",
+    "filteredTerrainQualified": true,
+    "filteredHeight": 0.24209478
+  }
+}

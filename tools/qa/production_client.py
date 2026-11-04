@@ -222,10 +222,27 @@ def argument_values(entries, replacements: dict, features: dict) -> list[str]:
     return values
 
 
+def stage_shader_pack(instance: Path, source: Path | None) -> dict | None:
+    if source is None:
+        return None
+    source = source.resolve()
+    with zipfile.ZipFile(source) as archive:
+        if not any(name.startswith("shaders/") for name in archive.namelist()):
+            raise ValueError("Shader pack does not contain the shader directory")
+    target = instance / "shaderpacks" / source.name
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, target)
+    config = instance / "config/iris.properties"
+    config.parent.mkdir(parents=True, exist_ok=True)
+    config.write_text("shaderPack=" + source.name + "\nenableShaders=true\n", encoding="utf-8")
+    return {"source": relative(source), "installed": relative(target), "sha256": hash_file(source), "requestedEnabled": True}
+
+
 def stage(args, mc, profile, runtime, prepared) -> tuple[Path, dict]:
     label = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:6]
     instance = CLIENT / "instances" / label
     instance.mkdir(parents=True)
+    shader_pack = stage_shader_pack(instance, args.shader_pack)
     mods = instance / "mods"
     mods.mkdir()
     artifact = args.jar.resolve()
@@ -309,6 +326,7 @@ def stage(args, mc, profile, runtime, prepared) -> tuple[Path, dict]:
     argfile.write_text("\n".join('"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"' for value in arguments) + "\n", encoding="utf-8")
     (instance / "options.txt").write_text(f"fullscreen:false\nrenderDistance:{args.render_distance}\nsimulationDistance:5\nmaxFps:60\nonboardAccessibility:false\ntutorialStep:none\n")
     plan = {"instance": relative(instance), "artifact": {"source": relative(artifact), "installed": relative(mods / artifact.name), "id": mod["id"], "version": mod["version"], "sha256": hash_file(artifact)}, "extraMods": extra_mods, "copiedQaWorld": world_copy, "copiedVanillaQaWorld": vanilla_world_copy, "javaArguments": arguments, "nativeDlls": native_records, "offlineIdentity": True, "developmentMode": False, "argfile": relative(argfile)}
+    plan["shaderPack"] = shader_pack
     (instance / "launch-plan.json").write_text(json.dumps(plan, indent=2) + "\n")
     return instance, plan
 
@@ -319,6 +337,7 @@ def main() -> int:
     parser.add_argument("--jar", type=Path)
     parser.add_argument("--launch", action="store_true", help="Explicitly open the native game window and wait for manual closure.")
     parser.add_argument("--extra-mod", action="append", default=[], type=Path)
+    parser.add_argument("--shader-pack", type=Path, help="Copy and enable this exact Iris shader pack in the isolated instance.")
     parser.add_argument("--jvm-arg", action="append", default=[])
     parser.add_argument("--client-qa", action="store_true", help="Read the separate client QA companion's result; requires that companion via --extra-mod.")
     parser.add_argument("--qa-world", type=Path, help="Copy a closed QA world into this fresh isolated client's saves for optional integrated-world rendering.")

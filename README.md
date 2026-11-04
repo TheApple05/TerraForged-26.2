@@ -4,6 +4,8 @@ An independent, unofficial revival of TerraForged for **Fabric and NeoForge**, f
 
 **Development status:** both loaders have passed real packaged client and dedicated-server workflows. The editor creates custom worlds, terrain renders, saves reload, and a normal world can load afterward without inheriting custom settings. The pinned Biomes O' Plenty, GlitchCore and TerraBlender stack also passes its recorded client/server checks. These are experimental candidates; no stable release or complete classic-parity claim is made.
 
+The current restoration candidate is **dev20**. All 17 classic biome definitions and a modern regional selector are implemented; the unforced survey reaches every variant on both loaders. Actual positive Bryce and grass-capped stone pillars now pass on both loaders. Final saved-biome, expanded modpack, Linux, network and performance acceptance is in progress in the [work record](docs/validation/modpack-readiness-worklog.md). The separate [Horizon prototype](horizon/README.md) reconstructs finite prepared terrain in native Rust; infinite native generation remains unfinished.
+
 ![Actual 26.2 river and forest capture](docs/validation/images/client-dev9-scenes/09-river.png)
 
 Actual Minecraft capture: Fabric dev9, seed `123456789`. [Scene evidence](docs/validation/client-dev9-scenes.json) records coordinates, terrain fields and verified camera poses. This is target-game evidence, not an original-version visual comparison.
@@ -12,7 +14,7 @@ Actual Minecraft capture: Fabric dev9, seed `123456789`. [Scene evidence](docs/v
 
 Use Minecraft Java **26.2** and **Java 25**, with either Fabric Loader **0.20.1** plus Fabric API **0.161.0+26.2**, or NeoForge **26.2.0.93**. Install the matching loader's JAR. [Installation and world-creation instructions](docs/INSTALLATION.md) cover the editor, preset folders, servers and building from source.
 
-The current package snapshots and SHA-256 values are in [the dev11 build record](docs/validation/dual-loader-dev11-build.json). Local Fabric JARs are in `build/libs`; NeoForge JARs are in `neoforge/build/libs`. GitHub's [packaging workflow](.github/workflows/package-candidates.yml) retains experimental artifacts. Only the exact hashes in runtime reports have their recorded game validation.
+The current package snapshots and SHA-256 values are in [the coherent dev20 build record](docs/validation/dual-loader-dev20-build.json). Dev11 remains the previous accepted delivery while dev20 completes qualification. Local Fabric JARs are in `build/libs`; NeoForge JARs are in `neoforge/build/libs`. GitHub's [packaging workflow](.github/workflows/package-candidates.yml) retains experimental artifacts. Only the exact hashes in runtime reports have their recorded game validation.
 
 ## Verification
 
@@ -37,6 +39,6 @@ This is a **new repository, not a GitHub fork**, private during initial developm
 - [TerraForged](https://github.com/TerraForged/TerraForged), the original mod and terrain engine.
 - [ReTerraForged](https://github.com/racoonman2/ReTerraForged), the subsequent modernization effort.
 
-The implementation baseline is ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1f164d19dbfcccaca4a8277d64e784207c`. Original TerraForged **1.16.5 / 0.2.16**, commit `3ada751ac25cd3eecee5d198870a3abb89734f52`, is the classic reference. [The audit](docs/research/upstream-audit.md) explains why newer experimental/stripped branches were not substituted. Seventeen classic custom biome variants and other inherited gaps remain explicitly inventoried; a complete classic restoration is not implied by the modern port.
+The implementation baseline is ReTerraForged **1.20.1 / 0.0.6**, commit `29239f1f164d19dbfcccaca4a8277d64e784207c`. Original TerraForged **1.16.5 / 0.2.16**, commit `3ada751ac25cd3eecee5d198870a3abb89734f52`, is the classic reference. [The audit](docs/research/upstream-audit.md) explains why newer experimental/stripped branches were not substituted. The [classic restoration decision](docs/decisions/0016-classic-biome-restoration.md) distinguishes authenticated definitions/equations from the modern selector and geology adaptations. Other inherited gaps remain inventoried; a complete classic restoration is not implied by the modern port.
 
 Imported code retains attribution and license notices. New history does not imply original authorship of upstream code. See [source provenance](docs/SOURCE-PROVENANCE.json) and [third-party notices](THIRD_PARTY_NOTICES.md). The root license is MIT, with the retained LGPL-2.1-only language-provider component and its license text included in both packages.

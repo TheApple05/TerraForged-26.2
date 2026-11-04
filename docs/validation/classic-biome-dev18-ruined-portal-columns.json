@@ -1,0 +1,224 @@
+{
+  "productionJarSha256": "dd5b075b6fcdb26e31159c97401de8e493308142599e5e193cbf886a3e55eb94",
+  "seed": 8675309,
+  "sourceLog": "build\\qa\\server\\instances\\20261104T111502Z-3e9c3d\\qa-runs\\20261104T111502Z-3476\\stdout.log",
+  "measurements": [
+    {
+      "id": 1,
+      "x": -79614,
+      "z": 32990,
+      "elapsedNanos": 111601100
+    },
+    {
+      "id": 2,
+      "x": -79608,
+      "z": 32990,
+      "elapsedNanos": 101493700
+    },
+    {
+      "id": 3,
+      "x": -79614,
+      "z": 32999,
+      "elapsedNanos": 98590800
+    },
+    {
+      "id": 4,
+      "x": -79608,
+      "z": 32999,
+      "elapsedNanos": 103651100
+    },
+    {
+      "id": 5,
+      "x": -79614,
+      "z": 32990,
+      "elapsedNanos": 106587500
+    },
+    {
+      "id": 6,
+      "x": -79608,
+      "z": 32990,
+      "elapsedNanos": 139701500
+    },
+    {
+      "id": 7,
+      "x": -79614,
+      "z": 32999,
+      "elapsedNanos": 148294000
+    },
+    {
+      "id": 8,
+      "x": -79608,
+      "z": 32999,
+      "elapsedNanos": 139835400
+    },
+    {
+      "id": 9,
+      "x": -79615,
+      "z": 32991,
+      "elapsedNanos": 121589600
+    },
+    {
+      "id": 10,
+      "x": -79607,
+      "z": 32991,
+      "elapsedNanos": 118556200
+    },
+    {
+      "id": 11,
+      "x": -79615,
+      "z": 33000,
+      "elapsedNanos": 119308800
+    },
+    {
+      "id": 12,
+      "x": -79607,
+      "z": 33000,
+      "elapsedNanos": 101127900
+    },
+    {
+      "id": 13,
+      "x": -79615,
+      "z": 32991,
+      "elapsedNanos": 155834600
+    },
+    {
+      "id": 14,
+      "x": -79607,
+      "z": 32991,
+      "elapsedNanos": 151227600
+    },
+    {
+      "id": 15,
+      "x": -79615,
+      "z": 33000,
+      "elapsedNanos": 117040000
+    },
+    {
+      "id": 16,
+      "x": -79607,
+      "z": 33000,
+      "elapsedNanos": 100492500
+    },
+    {
+      "id": 17,
+      "x": -79616,
+      "z": 32992,
+      "elapsedNanos": 116243700
+    },
+    {
+      "id": 18,
+      "x": -79608,
+      "z": 32992,
+      "elapsedNanos": 101307100
+    },
+    {
+      "id": 19,
+      "x": -79616,
+      "z": 32999,
+      "elapsedNanos": 156065300
+    },
+    {
+      "id": 20,
+      "x": -79608,
+      "z": 32999,
+      "elapsedNanos": 134927200
+    },
+    {
+      "id": 21,
+      "x": -79615,
+      "z": 32991,
+      "elapsedNanos": 162585900
+    },
+    {
+      "id": 22,
+      "x": -79607,
+      "z": 32991,
+      "elapsedNanos": 128250600
+    },
+    {
+      "id": 23,
+      "x": -79615,
+      "z": 33000,
+      "elapsedNanos": 120367000
+    },
+    {
+      "id": 24,
+      "x": -79607,
+      "z": 33000,
+      "elapsedNanos": 150285700
+    },
+    {
+      "id": 25,
+      "x": -79616,
+      "z": 32992,
+      "elapsedNanos": 159315900
+    },
+    {
+      "id": 26,
+      "x": -79608,
+      "z": 32992,
+      "elapsedNanos": 128129300
+    },
+    {
+      "id": 27,
+      "x": -79616,
+      "z": 32999,
+      "elapsedNanos": 182998100
+    },
+    {
+      "id": 28,
+      "x": -79608,
+      "z": 32999,
+      "elapsedNanos": 128843900
+    },
+    {
+      "id": 29,
+      "x": 56664,
+      "z": 15360,
+      "elapsedNanos": 154788300
+    },
+    {
+      "id": 30,
+      "x": 56672,
+      "z": 15360,
+      "elapsedNanos": 177322700
+    },
+    {
+      "id": 31,
+      "x": 56664,
+      "z": 15368,
+      "elapsedNanos": 143573100
+    },
+    {
+      "id": 32,
+      "x": 56672,
+      "z": 15368,
+      "elapsedNanos": 154259800
+    },
+    {
+      "id": 33,
+      "x": 56656,
+      "z": 15361,
+      "elapsedNanos": 183278100
+    },
+    {
+      "id": 34,
+      "x": 56664,
+      "z": 15361,
+      "elapsedNanos": 152296100
+    },
+    {
+      "id": 35,
+      "x": 56656,
+      "z": 15368,
+      "elapsedNanos": 265720900
+    },
+    {
+      "id": 36,
+      "x": 56664,
+      "z": 15368,
+      "elapsedNanos": 210055800
+    }
+  ],
+  "scope": "Actual native RuinedPortalStructure.findSuitableY -> NoiseBasedChunkGenerator.getBaseColumn. All17 far-target corpus in a single tick hit default60s watchdog; these individual completed columns are retained as exact reproduction inputs, not benchmark evidence."
+}

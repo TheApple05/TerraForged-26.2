@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "loader": "fabric",
+  "startedAtUtc": "2026-11-04T11:03:57.160732+00:00",
+  "scope": "One offline QA identity, isolated loopback dedicated server; no public/authenticated-server claim.",
+  "status": "failed",
+  "serverCommand": [
+    "C:\\Users\\Main\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\tools\\qa\\production_server_smoke.py",
+    "--java-home",
+    "C:\\Users\\Main\\AppData\\Local\\Programs\\Java\\jdk-25.0.5+8",
+    "--jar",
+    "build\\libs\\terraforged-revival-0.1.0-dev.18+26.2.jar",
+    "--extra-mod",
+    "build\\qa\\runtime-dev18\\terraforged-runtime-qa.jar",
+    "--datapack",
+    "build\\qa\\server\\instances\\20261104T104902Z-08a721\\qa-output\\datapack",
+    "--qa-mode",
+    "generate",
+    "--timeout",
+    "300",
+    "--hold-until-file",
+    "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\loopback\\fabric-246f18e9\\stop-requested",
+    "--jvm-arg=-Dterraforged.qa.holdAfterGeneration=true",
+    "--report",
+    "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\loopback\\fabric-246f18e9\\server.json"
+  ],
+  "error": "RuntimeError('Dedicated server stopped before the client join')",
+  "serverHarnessExit": 2,
+  "finishedAtUtc": "2026-11-04T11:03:57.445937+00:00"
+}

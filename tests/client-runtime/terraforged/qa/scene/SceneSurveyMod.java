@@ -112,7 +112,7 @@ public final class SceneSurveyMod implements ClientModInitializer {
                     int anchorX = client.player.getBlockX();
                     int anchorZ = client.player.getBlockZ();
                     search = server.submit(() -> {
-                        require(server.overworld().getSeed() == 123456789L, "Scene survey requires the validated dev8 UI-created world's seed");
+                        require(server.overworld().getSeed() == Long.getLong("terraforged.clientqa.sceneSeed", 123456789L), "Scene survey world has the wrong recorded seed");
                         return search(context(server.overworld()), server.overworld().getSeed(), anchorX, anchorZ);
                     });
                     client.options.pauseOnLostFocus = false;
@@ -130,7 +130,7 @@ public final class SceneSurveyMod implements ClientModInitializer {
                 }
                 case "next-scene" -> {
                     if (sceneIndex >= found.candidates().size()) {
-                        report.put("sceneCoverageComplete", scenes.size() == 3 && scenes.stream().allMatch(scene -> Boolean.TRUE.equals(scene.get("classificationVerified"))));
+                        report.put("sceneCoverageComplete", !scenes.isEmpty() && scenes.size() == found.candidates().size() && scenes.stream().allMatch(scene -> Boolean.TRUE.equals(scene.get("classificationVerified"))));
                         phase = "save";
                         return;
                     }
@@ -158,6 +158,17 @@ public final class SceneSurveyMod implements ClientModInitializer {
                     client.player.xRotO = requested.get(4).floatValue();
                     if (++ticks < 400) return;
                     require(client.level != null && client.player != null, "Actual world disappeared before screenshot");
+                    int radius = Math.min(6, Math.max(2, client.options.renderDistance().get() - 2));
+                    int centerX = client.player.getBlockX() >> 4, centerZ = client.player.getBlockZ() >> 4;
+                    int loaded = 0, expected = (radius * 2 + 1) * (radius * 2 + 1);
+                    for (int z = -radius; z <= radius; z++) for (int x = -radius; x <= radius; x++) {
+                        if (client.level.getChunkSource().getChunk(centerX + x, centerZ + z,
+                                net.minecraft.world.level.chunk.status.ChunkStatus.FULL, false) != null) loaded++;
+                    }
+                    boolean rendered = client.levelRenderer.hasRenderedAllSections();
+                    scene.put("renderReadiness", Map.of("innerRadius", radius, "loadedInnerChunks", loaded,
+                        "expectedInnerChunks", expected, "rendererComplete", rendered));
+                    if (loaded != expected || !rendered) return;
                     var observedCamera = client.gameRenderer.mainCamera();
                     require(Math.abs(observedCamera.xRot() - requested.get(4).floatValue()) < 0.1F && Math.abs(observedCamera.yRot() - requested.get(3).floatValue()) < 0.1F, "Actual rendered camera rotation does not match the requested scene pose");
                     require(Math.abs(observedCamera.position().x - requested.get(0).doubleValue()) < 0.1 && Math.abs(observedCamera.position().z - requested.get(2).doubleValue()) < 0.1, "Actual rendered camera position does not match the requested scene pose");
@@ -165,7 +176,7 @@ public final class SceneSurveyMod implements ClientModInitializer {
                     scene.put("actualRenderedCameraPose", List.of(observedCamera.position().x, observedCamera.position().y, observedCamera.position().z, observedCamera.yRot(), observedCamera.xRot()));
                     scene.put("poseHeldByQa", "Actual first-person spectator pose held while mouse is released; entity and rendered-camera rotation/position verified before capture");
                     String kind = found.candidates().get(sceneIndex).kind();
-                    String filename = String.format("%02d-%s.png", 8 + KINDS.indexOf(kind), kind);
+                    String filename = String.format("%02d-%s.png", 8 + sceneIndex, kind);
                     scene.put("capturedAt", Instant.now().toString());
                     scene.put("renderDistance", client.options.renderDistance().get());
                     scene.put("settleTicks", ticks);
@@ -194,6 +205,23 @@ public final class SceneSurveyMod implements ClientModInitializer {
     }
 
     private static SearchResult search(GeneratorContext context, long seed, int anchorX, int anchorZ) {
+        String targets = System.getProperty("terraforged.clientqa.classicSceneTargets");
+        if (targets != null) {
+            try {
+                Path path = Path.of(targets).toAbsolutePath().normalize();
+                var json = com.google.gson.JsonParser.parseString(Files.readString(path)).getAsJsonObject();
+                List<Candidate> candidates = new ArrayList<>();
+                for (String kind : List.of("bryce", "stone_forest")) {
+                    var location = json.getAsJsonObject("reterraforged:" + kind);
+                    require(location != null, "Missing recorded classic scene target " + kind);
+                    int x = location.get("x").getAsInt(), z = location.get("z").getAsInt();
+                    candidates.add(new Candidate(kind, x, z, fields(sample(context, x, z))));
+                }
+                return new SearchResult(candidates, Map.of("mode", "Recorded unforced classic biome survey locations", "seed", seed,
+                    "targets", path.toString(), "targetsSha256", sha256(path), "chunkRequestsDuringSearch", 0));
+            } catch (java.io.IOException failure) { throw new java.io.UncheckedIOException(failure); }
+            catch (Exception failure) { throw new IllegalStateException("Unable to read recorded classic scene targets", failure); }
+        }
         long begin = System.nanoTime();
         Map<String, Candidate> selected = new LinkedHashMap<>();
         Map<String, Float> scores = new LinkedHashMap<>();
@@ -285,8 +313,10 @@ public final class SceneSurveyMod implements ClientModInitializer {
         result.put("kind", candidate.kind()); result.put("seed", level.getSeed()); result.put("target", List.of(candidate.x(), targetY, candidate.z()));
         result.put("camera", List.of(cameraX + 0.5, cameraY, cameraZ + 0.5, yaw, pitch));
         result.put("cameraSurfaceHeight", cameraSurface); result.put("rawSearchCell", candidate.rawCell()); result.put("actualCachedTileCell", fields(actual));
-        result.put("classificationVerified", matches(candidate.kind(), actual)); result.put("customGeneratorActive", true);
-        result.put("actualBiome", level.getBiome(new BlockPos(candidate.x(), targetY, candidate.z())).unwrapKey().orElseThrow().identifier().toString());
+        String actualBiome = level.getBiome(new BlockPos(candidate.x(), targetY, candidate.z())).unwrapKey().orElseThrow().identifier().toString();
+        boolean classic = candidate.kind().equals("bryce") || candidate.kind().equals("stone_forest");
+        result.put("classificationVerified", classic ? actualBiome.equals("reterraforged:" + candidate.kind()) : matches(candidate.kind(), actual)); result.put("customGeneratorActive", true);
+        result.put("actualBiome", actualBiome);
         result.put("surfaceBlock", BuiltInRegistries.BLOCK.getKey(level.getBlockState(new BlockPos(candidate.x(), targetY - 1, candidate.z())).getBlock()).toString());
         result.put("preparationMillis", (System.nanoTime() - begin) / 1_000_000L);
         result.put("explicitFullChunkRequests", List.of(List.of(candidate.x() >> 4, candidate.z() >> 4), List.of(cameraX >> 4, cameraZ >> 4)));

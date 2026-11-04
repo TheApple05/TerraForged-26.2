@@ -1,0 +1,29 @@
+{
+  "reterraforged:savanna_scrub": {
+    "moisture": 0.24847859,
+    "region": 0.03647265,
+    "temperature": 0.94145685,
+    "terrain": "badlands-hills",
+    "x": 70656,
+    "y": 80,
+    "z": -41536
+  },
+  "reterraforged:shattered_savanna_scrub": {
+    "moisture": 1.0,
+    "region": 0.12941837,
+    "temperature": 0.55004764,
+    "terrain": "coast",
+    "x": 100428,
+    "y": 74,
+    "z": 42832
+  },
+  "reterraforged:steppe": {
+    "moisture": 0.32474786,
+    "region": 0.27540123,
+    "temperature": 0.84939915,
+    "terrain": "mountains_2",
+    "x": 68096,
+    "y": 144,
+    "z": 128192
+  }
+}

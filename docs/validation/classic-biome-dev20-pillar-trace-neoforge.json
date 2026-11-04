@@ -1,0 +1,275 @@
+{
+  "bryce:-7409,-6689": {
+    "biome": "reterraforged:bryce",
+    "chunkX": -7409,
+    "chunkZ": -6689,
+    "positiveShapeMaskColumnsBeforeBoundary": 81,
+    "positiveWithNaturalCurrentFooting": 81,
+    "positiveWithNaturalMatchingBiome": 81,
+    "positiveWithNaturalMatchingEmptySpace": 79,
+    "currentFootingsUnderPositiveMask": {
+      "Block{minecraft:terracotta}": 69,
+      "Block{minecraft:red_terracotta}": 12
+    },
+    "examples": [
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 8,
+        "x": -118544,
+        "currentOceanFloor": 113
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 14,
+        "x": -118543,
+        "currentOceanFloor": 113
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 23,
+        "x": -118542,
+        "currentOceanFloor": 113
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 24,
+        "x": -118541,
+        "currentOceanFloor": 112
+      },
+      {
+        "clearAboveCurrentFloor": false,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 24,
+        "x": -118540,
+        "currentOceanFloor": 112
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 22,
+        "x": -118539,
+        "currentOceanFloor": 112
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 21,
+        "x": -118538,
+        "currentOceanFloor": 111
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 14,
+        "x": -118537,
+        "currentOceanFloor": 111
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 14,
+        "x": -118536,
+        "currentOceanFloor": 111
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 7,
+        "x": -118535,
+        "currentOceanFloor": 111
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 7,
+        "x": -118534,
+        "currentOceanFloor": 112
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:terracotta}",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -107024,
+        "predictedHeightBeforeBoundary": 8,
+        "x": -118533,
+        "currentOceanFloor": 112
+      }
+    ],
+    "scope": "Read-only HEAD telemetry immediately before the real production pillar feature; no placement or registry changes. Predicted counts omit boundary taper and world-height/sea-level eligibility.",
+    "actualProductionFeatureReturnedChanged": true
+  },
+  "stone_forest:6300,-6280": {
+    "biome": "reterraforged:stone_forest",
+    "chunkX": 6300,
+    "chunkZ": -6280,
+    "positiveShapeMaskColumnsBeforeBoundary": 89,
+    "positiveWithNaturalCurrentFooting": 89,
+    "positiveWithNaturalMatchingBiome": 89,
+    "positiveWithNaturalMatchingEmptySpace": 88,
+    "currentFootingsUnderPositiveMask": {
+      "Block{minecraft:grass_block}[snowy\u003dfalse]": 89
+    },
+    "examples": [
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100476,
+        "predictedHeightBeforeBoundary": 13,
+        "x": 100811,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100476,
+        "predictedHeightBeforeBoundary": 2,
+        "x": 100812,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": false,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100475,
+        "predictedHeightBeforeBoundary": 5,
+        "x": 100810,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100475,
+        "predictedHeightBeforeBoundary": 14,
+        "x": 100811,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100475,
+        "predictedHeightBeforeBoundary": 15,
+        "x": 100812,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100475,
+        "predictedHeightBeforeBoundary": 15,
+        "x": 100813,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100475,
+        "predictedHeightBeforeBoundary": 14,
+        "x": 100814,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100475,
+        "predictedHeightBeforeBoundary": 14,
+        "x": 100815,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100474,
+        "predictedHeightBeforeBoundary": 3,
+        "x": 100808,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100474,
+        "predictedHeightBeforeBoundary": 5,
+        "x": 100809,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100474,
+        "predictedHeightBeforeBoundary": 13,
+        "x": 100810,
+        "currentOceanFloor": 72
+      },
+      {
+        "clearAboveCurrentFloor": true,
+        "base": "Block{minecraft:grass_block}[snowy\u003dfalse]",
+        "matchingBiomeAtCurrentFloor": true,
+        "naturalFooting": true,
+        "z": -100474,
+        "predictedHeightBeforeBoundary": 14,
+        "x": 100811,
+        "currentOceanFloor": 72
+      }
+    ],
+    "scope": "Read-only HEAD telemetry immediately before the real production pillar feature; no placement or registry changes. Predicted counts omit boundary taper and world-height/sea-level eligibility.",
+    "actualProductionFeatureReturnedChanged": true
+  }
+}

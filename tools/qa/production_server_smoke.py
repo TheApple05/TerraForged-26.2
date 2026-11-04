@@ -18,6 +18,7 @@ import time
 import urllib.request
 import uuid
 import zipfile
+from process_metrics import ProcessMetrics
 
 ROOT = Path(__file__).resolve().parents[2]
 SERVER_ROOT = ROOT / "build/qa/server"
@@ -28,6 +29,7 @@ INSTALLER = "1.1.2"
 INSTALLER_SHA256 = "61e035bf7bf70153e127440ce34de47c9036f0a2d0c65d1529454bd35ceefe4f"
 API_SHA256 = "e5b858ceb13290c274e31cb888ff5a1a40cb91067e7ffab0b5b775aec51e216a"
 MC_METADATA = "https://piston-meta.mojang.com/v1/packages/09165f570b16394790c4e37c93b0918729615d17/26.2.json"
+MC_METADATA_SHA1 = "09165f570b16394790c4e37c93b0918729615d17"
 NO_WINDOW = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
 
 
@@ -59,14 +61,30 @@ def download(url: str, path: Path, expected: str, algorithm="sha256") -> Path:
     return path
 
 
+def minecraft_metadata() -> dict:
+    # The official immutable descriptor URL carries its content SHA-1. Reuse a
+    # verified local copy on isolated/offline Linux hosts rather than relying on
+    # repeated network availability for the exact same target descriptor.
+    candidates = [SERVER_ROOT / "downloads/minecraft-26.2.json", ROOT / "build/qa/client/cache/metadata/minecraft-26.2.json"]
+    for path in candidates:
+        if path.is_file() and digest(path, "sha1") == MC_METADATA_SHA1:
+            return json.loads(path.read_bytes())
+    with urllib.request.urlopen(MC_METADATA, timeout=30) as response:
+        content = response.read()
+    if hashlib.sha1(content).hexdigest() != MC_METADATA_SHA1:
+        raise ValueError("Official Minecraft descriptor content hash mismatch")
+    candidates[0].parent.mkdir(parents=True, exist_ok=True)
+    candidates[0].write_bytes(content)
+    return json.loads(content)
+
+
 def prepare(java: Path) -> dict:
     downloads = SERVER_ROOT / "downloads"
     installer_url = f"https://maven.fabricmc.net/net/fabricmc/fabric-installer/{INSTALLER}/fabric-installer-{INSTALLER}.jar"
     api_url = f"https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/{API}/fabric-api-{API}.jar"
     installer = download(installer_url, downloads / f"fabric-installer-{INSTALLER}.jar", INSTALLER_SHA256)
     api = download(api_url, downloads / f"fabric-api-{API}.jar", API_SHA256)
-    with urllib.request.urlopen(MC_METADATA, timeout=30) as response:
-        metadata = json.load(response)
+    metadata = minecraft_metadata()
     if metadata["id"] != MC or metadata["javaVersion"]["majorVersion"] != 25:
         raise ValueError("Unexpected official Minecraft descriptor")
     template = owned(SERVER_ROOT / f"template-mc{MC}-loader{LOADER}")
@@ -90,7 +108,8 @@ def prepare(java: Path) -> dict:
         "template": relative(template),
         "installer": {"version": INSTALLER, "url": installer_url, "sha256": digest(installer), "matchesPublished": True},
         "fabricApi": {"version": API, "url": api_url, "sha256": digest(api), "matchesPublished": True, "path": relative(api)},
-        "minecraft": {"version": MC, "metadataUrl": MC_METADATA, "serverSha1": digest(template / "server.jar", "sha1"), "serverSha256": digest(template / "server.jar")},
+        "minecraft": {"version": MC, "metadataUrl": MC_METADATA, "metadataSha1": MC_METADATA_SHA1,
+            "metadataMatchesPublishedContentHash": True, "serverSha1": digest(template / "server.jar", "sha1"), "serverSha256": digest(template / "server.jar")},
         "loader": LOADER,
         "launcherSha256": digest(template / "fabric-server-launch.jar"),
     }
@@ -185,6 +204,8 @@ def smoke(args, java: Path, prepared: dict, report: dict) -> None:
     for variable in ("JAVA_TOOL_OPTIONS", "JDK_JAVA_OPTIONS", "_JAVA_OPTIONS"):
         environment.pop(variable, None)
     process = subprocess.Popen(command, cwd=instance, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace", bufsize=1, creationflags=NO_WINDOW, env=environment)
+    metrics = ProcessMetrics(process.pid)
+    report["jvmCommand"] = command
     report["runtimeExecuted"] = True
     report["pid"] = process.pid
     print("SERVER_PID=" + str(process.pid), flush=True)
@@ -246,7 +267,7 @@ def smoke(args, java: Path, prepared: dict, report: dict) -> None:
                     print("SERVER_THREAD_DUMP=" + relative(dump_file), flush=True)
                 except (OSError, subprocess.TimeoutExpired) as error:
                     report["threadDumpError"] = str(error)
-            if ready and not commands_sent and (not args.qa_mode or qa_data is not None):
+            if ready and not commands_sent and (not args.qa_mode or qa_data is not None) and (not args.hold_until_file or args.hold_until_file.is_file()):
                 send("list")
                 send("datapack list enabled")
                 send("save-all flush")
@@ -280,11 +301,17 @@ def smoke(args, java: Path, prepared: dict, report: dict) -> None:
                 process.kill()
                 process.wait(timeout=10)
                 forced_stop = True
+        report["processMemory"] = metrics.finish()
         thread.join(timeout=5)
         while not events.empty():
             lines.append(events.get_nowait())
         if process.stdin:
-            process.stdin.close()
+            try:
+                process.stdin.close()
+            except OSError:
+                # A cleanly exited JVM may close its pipe before the wrapper's
+                # final buffered flush. Preserve the actual exit/log checks.
+                report["stdinClosedDuringShutdown"] = True
     log = "\n".join(lines)
     if qa_data is None and args.qa_mode and qa_result.is_file():
         qa_data = json.loads(qa_result.read_text(encoding="utf-8"))
@@ -337,7 +364,8 @@ def main() -> int:
     parser.add_argument("--jar", type=Path)
     parser.add_argument("--extra-mod", type=Path, action="append", default=[])
     parser.add_argument("--jvm-arg", action="append", default=[])
-    parser.add_argument("--qa-mode", choices=("export", "generate", "reload"))
+    parser.add_argument("--hold-until-file", type=Path, help="For loopback QA: defer the harness save/stop commands until this controller signal file exists.")
+    parser.add_argument("--qa-mode", choices=("export", "generate", "reload", "benchmark", "benchmark-reload", "structures"))
     parser.add_argument("--datapack", type=Path)
     parser.add_argument("--reuse-instance", type=Path)
     parser.add_argument("--timeout", type=int, default=300)

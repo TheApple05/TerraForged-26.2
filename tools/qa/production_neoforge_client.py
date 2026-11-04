@@ -76,6 +76,7 @@ def stage(args, mc, profile, runtime, prepared) -> tuple[Path, dict]:
     instance = BASE / "instances" / label
     mods = instance / "mods"
     mods.mkdir(parents=True)
+    shader_pack = common.stage_shader_pack(instance, args.shader_pack)
     artifact = args.jar.resolve()
     with zipfile.ZipFile(artifact) as archive:
         mod = tomllib.loads(archive.read("META-INF/neoforge.mods.toml").decode())["mods"][0]
@@ -143,6 +144,7 @@ def stage(args, mc, profile, runtime, prepared) -> tuple[Path, dict]:
         "modVersion": mod["version"], "artifactSha256": common.hash_file(artifact), "extraMods": extras,
         "copiedWorlds": worlds, "nativeDlls": native_records, "offlineIdentity": True, "developmentMode": False,
         "argfile": common.relative(argfile)}
+    plan["shaderPack"] = shader_pack
     (instance / "launch-plan.json").write_text(json.dumps(plan, indent=2) + "\n")
     return instance, plan
 
@@ -152,6 +154,7 @@ def main() -> int:
     parser.add_argument("--java-home", type=Path, required=True)
     parser.add_argument("--jar", type=Path, required=True)
     parser.add_argument("--extra-mod", action="append", type=Path, default=[])
+    parser.add_argument("--shader-pack", type=Path, help="Copy and enable this exact Iris shader pack in the isolated instance.")
     parser.add_argument("--jvm-arg", action="append", default=[])
     parser.add_argument("--qa-world", type=Path)
     parser.add_argument("--qa-vanilla-world", type=Path)

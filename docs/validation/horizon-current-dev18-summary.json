@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-11-04T11:01:19.420689+00:00",
+  "status": "passed-finite-prepared-terrain-prototype",
+  "horizonMinecraft": "26.3",
+  "javaProducerMinecraft": "26.2",
+  "horizonBaseMain": "da6b3c353d9bc495704f3658bdb09fade27e2679",
+  "horizonIntegrationRevision": "9dd5c4093977c718c5c0349032fd3a5434e86afc",
+  "horizonPullRequest": "https://github.com/TheApple05/horizon/pull/1",
+  "horizonPullRequestDraft": false,
+  "horizonPullRequestMerged": true,
+  "producerReport": "docs/validation/server-horizon-prepared-dev18-export-verified.json",
+  "producerReportSha256": "0ff8fea6431168d871b19f87826affefe1c0006de18e1e8d47bd20b3993983c3",
+  "nativeReport": "docs/validation/horizon-current-dev18.json",
+  "nativeReportSha256": "b4b803975b2f59b552804275935b082a75d73018de2f7657ad6c597fab32ffaf",
+  "exporterBuild": {
+    "jar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\terraforged-horizon-exporter-dev18.jar",
+    "sha256": "06cdb46e8817e5cfb9ef3149de849dbf4146fd9603d444cfe5809c513db4bcf1",
+    "sourceSha256": "e1202aa62af5a7ba87c63c7fa45a1c14d2e40257d838ad18dc338b11b7ab1a7d",
+    "compileClasspathSha256": "22ab5aa9ca0d00d381225acb2c14fdac7783b14db7ea2a0c4d86244405e6032f",
+    "compilerVersion": "javac 25.0.5",
+    "productionJarSha256": "dd5b075b6fcdb26e31159c97401de8e493308142599e5e193cbf886a3e55eb94"
+  },
+  "staging": {
+    "schema": 1,
+    "horizonRevision": "9dd5c4093977c718c5c0349032fd3a5434e86afc",
+    "sourceCheckoutUnchanged": true,
+    "sourceArchiveSha256": "a8443d244f55eda7cd1ea20a0d95f677ff908b022b59e74425f57cf653e3d0ef",
+    "plan": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\current-native-final\\plan.json",
+    "planSha256": "13f71d1ea086980fe382c1479a0c954369c8a0cb5007ba7947500c0ea611666b",
+    "stagedWorkspace": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\horizon\\current-native-final\\staged",
+    "constructorCompatibilityCommit": "9dd5c4093977c718c5c0349032fd3a5434e86afc",
+    "requiresPinnedHorizonSource": true,
+    "cargoLockSha256": "d686ba005a8070536999a0d0a74792d527e2b082d51839436e28c3301e68c3d7",
+    "allDependencyVersionsRetainedFromPinnedLock": true,
+    "sourcePinIsNotFullRuntimeValidation": true
+  },
+  "snapshot": {
+    "sourceModSha256": "dd5b075b6fcdb26e31159c97401de8e493308142599e5e193cbf886a3e55eb94",
+    "manifestSha256": "d0de1d15598e117d03fedcfa2ab448dbd53c42f6f9aaa1edbc3f09657bc6b4ba",
+    "quartBiomeCount": 13824,
+    "blockCount": 884736,
+    "entitiesOrStructureMetadataTransferred": false,
+    "path": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T105618Z-ccce49\\qa-output\\horizon-prepared",
+    "chunkCount": 9
+  },
+  "observedClassicBiomeIds": [
+    "reterraforged:savanna_scrub"
+  ],
+  "registeredClassicBiomeCount": 17,
+  "blockCount": 884736,
+  "quartBiomeCount": 13824,
+  "surfaceColumnsChecked": 2304,
+  "nativeSourcePayloadBoundToPackagedBytes": true,
+  "biomeDefinitionsSha256VerifiedAfterProbe": {
+    "bryce.json": "c04350e373200b1579ca3f083aadb13baed37b72ae1f1ab25b68bf4cb0ab1b41",
+    "cold_marshland.json": "009791a438e6a2982f057ac963abe2bdc882431e07c9238914b038cf4294ee8f",
+    "cold_steppe.json": "c7bce75bd52836a2a2eab08c9eb389d44f0fc4d504df1f1f0dc26d615f0922b1",
+    "fir_forest.json": "77e3bf78f829d104027aca0ec9f714347e309e1b24b839b10cf940b8b0f0bd67",
+    "flower_plains.json": "7eae53836c27b03151cf373d34782813c0048dcffdc1df3f69185f50972d8499",
+    "frozen_lake.json": "7beea84eeea46c3f8225713690eca346c3b1ec0bb4817ad48c8613038266b603",
+    "frozen_marsh.json": "d1b69f3345aa6dd970a118c8921e694f8493bf0bb8810ad29a557a32336d8904",
+    "lake.json": "ed64ed81b80475c7321ab2318b9692139dbbb9d0407c84a7198c8db186def6e0",
+    "marshland.json": "27f3c58bc0413cbfb4cf6e1863492f1a858ad83de8cf0617e8f7df44c5d6e852",
+    "savanna_scrub.json": "52f2aee6645eba00e224fc97c085f502cb3a1fe52ef7bdbd41d240034110b3ba",
+    "shattered_savanna_scrub.json": "fe9558ce9e2b0f1304dbd4e2b8b2c38cfc509f305aad0135537f25b9b8a16fb0",
+    "snowy_fir_forest.json": "b0bd83980c21170b91b43415c633c2dba20e3cb96849154a299b6da2105828cc",
+    "snowy_taiga_scrub.json": "843a3385d63793f49e1259f2f99ef59fb038315e5ba2c33d21e73d0a7c8ac899",
+    "steppe.json": "3adb804b48594c0bab70b9ab968cab7da8e2214b0801b54c77bf87598bcf5be2",
+    "stone_forest.json": "57bc9aad2a5a073bef57b92bbda140497020c134b1f85a2adeb22b467e7193a9",
+    "taiga_scrub.json": "3efd5096582baa29289a78579a7193e7ede402565827e1e29559a0f6407ea5c7",
+    "warm_beach.json": "f98d9b26fde0ab1e085a66d65e6b4e3311845dde45234a2770cf306bea1c2152"
+  },
+  "packages": [
+    {
+      "schema": 1,
+      "status": "packaged-native-prototype",
+      "artifact": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\distributions\\terraforged-prepared-0.1.0-dev18-horizon26.3.hnmod",
+      "sha256": "97cf2307576d7f017bfe812c59aea2c300efda99d4ebe92965047fd38307602d",
+      "manifest": {
+        "schema": 1,
+        "id": "terraforged_prepared",
+        "version": "0.1.0",
+        "game": "26.3",
+        "horizon": "9dd5c4093977c718c5c0349032fd3a5434e86afc",
+        "mixins": "e8cd0aa38cffef49cb2e088ef716baa107148c02"
+      },
+      "entrySha256": {
+        "horizon-native.json": "259efb4bfb6b2ebd34bd83e72b5a0eb4f7673186fb03ee5360c320bec8105575",
+        "mixins/terraforged_prepared/LICENSE": "b773ac1dda8ef88d43f1e9ff384daca3b67c5fc6cc893bd10c49a9e50bfd98ae",
+        "mixins/terraforged_prepared/LICENSE-HORIZON": "b4b374ae9d0f2d8f7be35c6783e41327431da3b5662605da9ba31493630621df",
+        "mixins/terraforged_prepared/README.md": "56796b0aaa7fa529ce556a2bb7a4781219f9676d5278cdcc70a0f522d8688b40",
+        "mixins/terraforged_prepared/horizon-mixin.toml": "c7e3c8753d220adef9fd52e5c073e0781655d30d2048ec835e5daef7248074e3",
+        "mixins/terraforged_prepared/open.rs": "f5a90bfe3353bb8fe77d84ecff0f154a578f7803a7e76db864b5c03d23976cd7",
+        "mixins/terraforged_prepared/runtime.rs": "996d0af128941bf5cb0df4c4a2fa6b46eeb7d611e7308b99de760a8732f10af0"
+      },
+      "includedPreparedTerrainSnapshots": false,
+      "includedMinecraftBinariesOrPlayerPreparedResources": false,
+      "includedClassicBiomeIds": [],
+      "notEvidenceOf": [
+        "Normal launcher installation",
+        "Rendered native game",
+        "Infinite native generation",
+        "Horizon modpack readiness"
+      ]
+    },
+    {
+      "schema": 1,
+      "status": "packaged-native-prototype",
+      "artifact": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\distributions\\terraforged-prepared-0.1.0-dev18-horizon26.3.hmod",
+      "sha256": "71e7c0f00948aaee20e1d80f2fe3b9a36c7bdc839d53989c1e3f18bb0b49f532",
+      "manifest": {
+        "schema": 1,
+        "id": "terraforged_prepared",
+        "version": "0.1.0",
+        "game": "26.3",
+        "horizon": "9dd5c4093977c718c5c0349032fd3a5434e86afc",
+        "mixins": "e8cd0aa38cffef49cb2e088ef716baa107148c02"
+      },
+      "entrySha256": {
+        "assets/reterraforged/lang/en_us.json": "070db5fd0f4e136d224a12cf6f9b901df9d85bf914cd5a110071449b97d2de42",
+        "data/reterraforged/worldgen/biome/bryce.json": "c04350e373200b1579ca3f083aadb13baed37b72ae1f1ab25b68bf4cb0ab1b41",
+        "data/reterraforged/worldgen/biome/cold_marshland.json": "009791a438e6a2982f057ac963abe2bdc882431e07c9238914b038cf4294ee8f",
+        "data/reterraforged/worldgen/biome/cold_steppe.json": "c7bce75bd52836a2a2eab08c9eb389d44f0fc4d504df1f1f0dc26d615f0922b1",
+        "data/reterraforged/worldgen/biome/fir_forest.json": "77e3bf78f829d104027aca0ec9f714347e309e1b24b839b10cf940b8b0f0bd67",
+        "data/reterraforged/worldgen/biome/flower_plains.json": "7eae53836c27b03151cf373d34782813c0048dcffdc1df3f69185f50972d8499",
+        "data/reterraforged/worldgen/biome/frozen_lake.json": "7beea84eeea46c3f8225713690eca346c3b1ec0bb4817ad48c8613038266b603",
+        "data/reterraforged/worldgen/biome/frozen_marsh.json": "d1b69f3345aa6dd970a118c8921e694f8493bf0bb8810ad29a557a32336d8904",
+        "data/reterraforged/worldgen/biome/lake.json": "ed64ed81b80475c7321ab2318b9692139dbbb9d0407c84a7198c8db186def6e0",
+        "data/reterraforged/worldgen/biome/marshland.json": "27f3c58bc0413cbfb4cf6e1863492f1a858ad83de8cf0617e8f7df44c5d6e852",
+        "data/reterraforged/worldgen/biome/savanna_scrub.json": "52f2aee6645eba00e224fc97c085f502cb3a1fe52ef7bdbd41d240034110b3ba",
+        "data/reterraforged/worldgen/biome/shattered_savanna_scrub.json": "fe9558ce9e2b0f1304dbd4e2b8b2c38cfc509f305aad0135537f25b9b8a16fb0",
+        "data/reterraforged/worldgen/biome/snowy_fir_forest.json": "b0bd83980c21170b91b43415c633c2dba20e3cb96849154a299b6da2105828cc",
+        "data/reterraforged/worldgen/biome/snowy_taiga_scrub.json": "843a3385d63793f49e1259f2f99ef59fb038315e5ba2c33d21e73d0a7c8ac899",
+        "data/reterraforged/worldgen/biome/steppe.json": "3adb804b48594c0bab70b9ab968cab7da8e2214b0801b54c77bf87598bcf5be2",
+        "data/reterraforged/worldgen/biome/stone_forest.json": "57bc9aad2a5a073bef57b92bbda140497020c134b1f85a2adeb22b467e7193a9",
+        "data/reterraforged/worldgen/biome/taiga_scrub.json": "3efd5096582baa29289a78579a7193e7ede402565827e1e29559a0f6407ea5c7",
+        "data/reterraforged/worldgen/biome/warm_beach.json": "f98d9b26fde0ab1e085a66d65e6b4e3311845dde45234a2770cf306bea1c2152",
+        "horizon-mod.toml": "56babbc1b67c6f533f9a189abd208cd134bcaecfc7ebc9c4a376bdfc2e6231c2",
+        "horizon-native.json": "259efb4bfb6b2ebd34bd83e72b5a0eb4f7673186fb03ee5360c320bec8105575",
+        "mixins/terraforged_prepared/LICENSE": "b773ac1dda8ef88d43f1e9ff384daca3b67c5fc6cc893bd10c49a9e50bfd98ae",
+        "mixins/terraforged_prepared/LICENSE-HORIZON": "b4b374ae9d0f2d8f7be35c6783e41327431da3b5662605da9ba31493630621df",
+        "mixins/terraforged_prepared/README.md": "56796b0aaa7fa529ce556a2bb7a4781219f9676d5278cdcc70a0f522d8688b40",
+        "mixins/terraforged_prepared/horizon-mixin.toml": "c7e3c8753d220adef9fd52e5c073e0781655d30d2048ec835e5daef7248074e3",
+        "mixins/terraforged_prepared/open.rs": "f5a90bfe3353bb8fe77d84ecff0f154a578f7803a7e76db864b5c03d23976cd7",
+        "mixins/terraforged_prepared/runtime.rs": "996d0af128941bf5cb0df4c4a2fa6b46eeb7d611e7308b99de760a8732f10af0"
+      },
+      "includedPreparedTerrainSnapshots": false,
+      "includedMinecraftBinariesOrPlayerPreparedResources": false,
+      "includedClassicBiomeIds": [
+        "reterraforged:bryce",
+        "reterraforged:cold_marshland",
+        "reterraforged:cold_steppe",
+        "reterraforged:fir_forest",
+        "reterraforged:flower_plains",
+        "reterraforged:frozen_lake",
+        "reterraforged:frozen_marsh",
+        "reterraforged:lake",
+        "reterraforged:marshland",
+        "reterraforged:savanna_scrub",
+        "reterraforged:shattered_savanna_scrub",
+        "reterraforged:snowy_fir_forest",
+        "reterraforged:snowy_taiga_scrub",
+        "reterraforged:steppe",
+        "reterraforged:stone_forest",
+        "reterraforged:taiga_scrub",
+        "reterraforged:warm_beach"
+      ],
+      "notEvidenceOf": [
+        "Normal launcher installation",
+        "Rendered native game",
+        "Infinite native generation",
+        "Horizon modpack readiness"
+      ]
+    }
+  ],
+  "ciRunnerCorrection": {
+    "repository": "TheApple05/horizon",
+    "selfHostedRunnersObserved": 0,
+    "variableWasAbsent": true,
+    "repositoryVariable": "SELF_HOSTED_CI",
+    "value": "off",
+    "originalRunId": 41815675509,
+    "originalAttemptCancelled": true,
+    "restartedAttempt": 2,
+    "commandsAndPoliciesUnchanged": true,
+    "lastKnownStatus": "verify-in-progress; parity-scope and launcher classification succeeded"
+  },
+  "delegatedReview": {
+    "provider": "DeepSeek",
+    "jobId": "0fc732f783344d928c6d3da79223f766",
+    "outcome": "output_limit_reached; no draft accepted; not retried",
+    "reservedEstimatedUsd": 0.0077883
+  },
+  "retainedFailures": [
+    "docs/validation/server-horizon-prepared-dev14-export.json",
+    "docs/validation/server-horizon-prepared-dev18-export.json"
+  ],
+  "notAccepted": [
+    "Infinite native terrain generation",
+    "Rendered Horizon client",
+    "Normal launcher installation",
+    "Native level.dat save/reload",
+    "Typed entities and block entities",
+    "Structure metadata and locate",
+    "Scheduled tick restoration",
+    "General Horizon modpack readiness"
+  ],
+  "horizonMergeRevision": "21679eb68f770d3ac1c2cc1c51a535eea37787ab",
+  "testedAndMergedTree": "364e62339875b7e0362b7372c2a444adf7dd6e82",
+  "repositoryReviewUpdatedAt": "2026-11-04T11:29:43.710206+00:00",
+  "horizonCi": {
+    "runId": 41815675509,
+    "attempt": 2,
+    "verify": "success",
+    "parity-scope": "success",
+    "launcher": "success",
+    "vanilla-parity": "skipped",
+    "parity": "skipped",
+    "jfr": "skipped",
+    "commandsAndPermissionsUnchanged": true
+  }
+}

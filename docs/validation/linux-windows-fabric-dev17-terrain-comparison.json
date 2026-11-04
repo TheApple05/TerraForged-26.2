@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "inputs": [
+    {
+      "path": "docs\\validation\\server-fabric-dev17-classic-survey.json",
+      "sha256": "0094b915bf892f0fbd3d4291f6b272dafeb8032d9ed237226485e360cd1b2217"
+    },
+    {
+      "path": "docs\\validation\\server-linux-fabric-dev17-generation.json",
+      "sha256": "6126dd8910ab0af90933e20ebe552eb9714cdaab1089e52f71a4883ca40ecf9e"
+    }
+  ],
+  "seed": 8675309,
+  "sampleCount": 54,
+  "fields": [
+    "terrain",
+    "cellBiome",
+    "cellFloatBits",
+    "biome"
+  ],
+  "differences": [],
+  "postFeatureObservationsDiffer": [
+    {
+      "position": [
+        -144,
+        128
+      ],
+      "fields": [
+        "surfaceY",
+        "surfaceBlock"
+      ]
+    },
+    {
+      "position": [
+        112,
+        15
+      ],
+      "fields": [
+        "surfaceY"
+      ]
+    }
+  ],
+  "terrainFieldDigest": "8fe362a79ecc3226274d2ef98cb96d44f59fbd7ad0a40b8bbf3bdcfc6372dae7",
+  "scope": "Exact recorded field/classification/biome comparison; not complete block, visual or all-seed parity"
+}

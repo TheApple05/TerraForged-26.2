@@ -1,0 +1,29 @@
+{
+  "reterraforged:fir_forest": {
+    "moisture": 0.022473311,
+    "region": 0.5483101,
+    "temperature": 0.43558657,
+    "terrain": "hills",
+    "x": 0,
+    "y": 70,
+    "z": -43692
+  },
+  "reterraforged:snowy_fir_forest": {
+    "moisture": 0.9634585,
+    "region": 0.9984485,
+    "temperature": 0.1590419,
+    "terrain": "flats-plateau",
+    "x": -124928,
+    "y": 76,
+    "z": -62032
+  },
+  "reterraforged:flower_plains": {
+    "moisture": 0.35085768,
+    "region": 0.7470373,
+    "temperature": 0.8686857,
+    "terrain": "mountains_3",
+    "x": 68608,
+    "y": 71,
+    "z": -67424
+  }
+}

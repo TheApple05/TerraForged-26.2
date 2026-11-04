@@ -1,0 +1,26 @@
+{
+  "reterraforged:bryce": {
+    "x": -118532,
+    "y": 99,
+    "z": -107012,
+    "predictedAddedHeight": 29,
+    "shape": 0.97402495,
+    "mask": 0.9926184,
+    "regionEdge": 0.9926184,
+    "riverMask": 1.0,
+    "gradient": 0.0,
+    "terrain": "flats-plateau"
+  },
+  "reterraforged:stone_forest": {
+    "x": 100812,
+    "y": 72,
+    "z": -100468,
+    "predictedAddedHeight": 48,
+    "shape": 1.0,
+    "mask": 0.9733669,
+    "regionEdge": 0.9733669,
+    "riverMask": 1.0,
+    "gradient": 0.0,
+    "terrain": "flats"
+  }
+}

@@ -13,6 +13,7 @@ import subprocess
 import threading
 import time
 import uuid
+from process_metrics import ProcessMetrics
 
 from production_server_smoke import ROOT, NO_WINDOW, digest, download, free_port, relative
 
@@ -22,13 +23,13 @@ INSTALLER_SHA = "7618883b9d87186281da2bd2a5e9a11af042ed15112bb63ccfc62bb0230ca69
 
 
 def prepare(java: Path) -> dict:
-    import urllib.request
-    from production_server_smoke import MC_METADATA
+    from production_server_smoke import MC_METADATA_SHA1, minecraft_metadata
     url = f"https://maven.neoforged.net/releases/net/neoforged/neoforge/{NEO}/neoforge-{NEO}-installer.jar"
     installer = download(url, BASE / "downloads" / f"neoforge-{NEO}-installer.jar", INSTALLER_SHA)
     template = BASE / "template"
     template.mkdir(parents=True, exist_ok=True)
-    args_file = template / f"libraries/net/neoforged/neoforge/{NEO}/win_args.txt"
+    args_name = "win_args.txt" if os.name == "nt" else "unix_args.txt"
+    args_file = template / f"libraries/net/neoforged/neoforge/{NEO}/{args_name}"
     if not args_file.exists():
         result = subprocess.run([str(java), "-jar", str(installer), "--installServer", str(template)],
             cwd=template, capture_output=True, text=True, encoding="utf-8", errors="replace",
@@ -36,13 +37,13 @@ def prepare(java: Path) -> dict:
         (template / "installer.log").write_text(result.stdout + result.stderr, encoding="utf-8")
         if result.returncode or not args_file.is_file():
             raise RuntimeError(f"NeoForge installer failed: exit {result.returncode}")
-    with urllib.request.urlopen(MC_METADATA, timeout=30) as response:
-        metadata = json.load(response)
+    metadata = minecraft_metadata()
     server = template / "libraries/net/minecraft/server/26.2/server-26.2.jar"
     if metadata["id"] != "26.2" or digest(server, "sha1") != metadata["downloads"]["server"]["sha1"]:
             raise ValueError("Installed Minecraft does not match Mojang's published 26.2 artifact")
     return {"template": relative(template), "neoforge": NEO, "minecraft": "26.2",
         "installerUrl": url, "installerSha256": digest(installer), "matchesPublishedInstaller": True,
+        "minecraftMetadataSha1": MC_METADATA_SHA1, "minecraftMetadataMatchesPublishedContentHash": True,
         "minecraftServerSha1": digest(server, "sha1"), "argsFile": args_file.relative_to(template).as_posix()}
 
 
@@ -73,13 +74,16 @@ def run(args, java: Path, prepared: dict, report: dict) -> None:
     if args.datapack:
         destination = instance / "qa-world/datapacks/terraforged-qa"
         destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copytree(args.datapack.resolve(), destination)
+        if args.datapack.is_dir():
+            shutil.copytree(args.datapack.resolve(), destination)
+        else:
+            shutil.copy2(args.datapack.resolve(), destination.with_suffix(".zip"))
     settings = {"server-ip": "127.0.0.1", "server-port": free_port(), "online-mode": "false",
         "enable-query": "false", "enable-rcon": "false", "level-name": "qa-world", "level-seed": 8675309,
         "level-type": "minecraft:normal", "view-distance": 2, "simulation-distance": 2, "max-players": 1,
         "pause-when-empty-seconds": -1, "max-tick-time": 60000, "sync-chunk-writes": "true"}
     if args.datapack:
-        settings["initial-enabled-packs"] = "vanilla,mod_data,file/terraforged-qa"
+        settings["initial-enabled-packs"] = "vanilla,mod_data,file/terraforged-qa" + (".zip" if args.datapack.is_file() else "")
     (instance / "server.properties").write_text("\n".join(f"{key}={value}" for key, value in settings.items()) + "\n")
     (instance / "eula.txt").write_text("# Disposable isolated QA authorized for the port\neula=true\n")
     run_dir = instance / "qa-runs" / uuid.uuid4().hex[:10]
@@ -89,6 +93,7 @@ def run(args, java: Path, prepared: dict, report: dict) -> None:
     if args.qa_mode:
         command += [f"-Dterraforged.qa.mode={args.qa_mode}", f"-Dterraforged.qa.output={output}",
             "-Dterraforged.qa.expectedModSha256=" + digest(artifact)]
+    command += args.jvm_arg
     command += ["@" + prepared["argsFile"], "nogui"]
     environment = os.environ.copy()
     for key in ("JAVA_TOOL_OPTIONS", "JDK_JAVA_OPTIONS", "_JAVA_OPTIONS"):
@@ -96,6 +101,8 @@ def run(args, java: Path, prepared: dict, report: dict) -> None:
     process = subprocess.Popen(command, cwd=instance, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace", bufsize=1,
         env=environment, creationflags=NO_WINDOW)
+    metrics = ProcessMetrics(process.pid)
+    report["jvmCommand"] = command
     report.update({"instance": relative(instance), "pid": process.pid, "artifact": relative(artifact),
         "artifactSha256": digest(artifact), "extraMods": extras, "serverProperties": settings,
         "developmentMode": False, "qaMode": args.qa_mode, "rawLog": relative(run_dir / "stdout.log")})
@@ -136,6 +143,10 @@ def run(args, java: Path, prepared: dict, report: dict) -> None:
                         stopping = True
             except queue.Empty:
                 pass
+            if args.hold_until_file and args.hold_until_file.is_file() and not stopping:
+                send("save-all flush")
+                stopping = True
+                send("stop")
             if time.monotonic() - started > args.timeout:
                 report["timedOut"] = True
                 break
@@ -151,6 +162,7 @@ def run(args, java: Path, prepared: dict, report: dict) -> None:
                 process.wait(timeout=10)
                 forced = True
         report["forcedStop"] = forced
+        report["processMemory"] = metrics.finish()
         thread.join(timeout=5)
         report["logReaderCompleted"] = not thread.is_alive()
         try:
@@ -181,7 +193,10 @@ def run(args, java: Path, prepared: dict, report: dict) -> None:
         "artifactOriginObserved": origin, "targetGameObserved": target_game, "artifactUnchanged": unchanged,
         "forcedStop": forced, "runtimeQa": qa, "customTerrainValidated": bool(qa and any(
             node.get("name") == "custom-generator-active" and node.get("status") == "passed" for node in qa.get("nodes", []))),
-        "logTail": lines[-50:], "notTested": ["Visual parity", "Third-party modpacks", "Multiplayer clients", "All presets"]})
+        "logTail": [line[:2048] for line in lines[-50:]],
+        "logTailContainsTruncatedLines": any(len(line) > 2048 for line in lines[-50:]),
+        "rawLogSha256": digest(run_dir / "stdout.log"),
+        "notTested": ["Visual parity", "Third-party modpacks", "Multiplayer clients", "All presets"]})
 
 
 def main() -> int:
@@ -190,13 +205,15 @@ def main() -> int:
     parser.add_argument("--jar", type=Path)
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--extra-mod", action="append", type=Path, default=[])
-    parser.add_argument("--qa-mode", choices=["export", "generate", "reload"])
+    parser.add_argument("--qa-mode", choices=["export", "generate", "reload", "benchmark", "benchmark-reload", "structures"])
+    parser.add_argument("--jvm-arg", action="append", default=[])
+    parser.add_argument("--hold-until-file", type=Path, help="For loopback QA: save and stop when the controller signal file exists.")
     parser.add_argument("--datapack", type=Path)
     parser.add_argument("--reuse-instance", type=Path)
     parser.add_argument("--timeout", type=int, default=150)
     parser.add_argument("--report", required=True, type=Path)
     args = parser.parse_args()
-    java = args.java_home.resolve() / "bin/java.exe"
+    java = args.java_home.resolve() / "bin" / ("java.exe" if os.name == "nt" else "java")
     report = {"schemaVersion": 1, "minecraft": "26.2", "loader": "neoforge", "neoforge": NEO}
     try:
         prepared = prepare(java)

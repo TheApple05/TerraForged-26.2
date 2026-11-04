@@ -1,0 +1,17 @@
+{
+  "status": "fail",
+  "schemaVersion": 1,
+  "runAtUtc": "2026-11-04T10:24:01.166280+00:00",
+  "processExit": 1,
+  "compileExit": 0,
+  "productionJar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\neoforge\\build\\libs\\terraforged-revival-0.1.0-dev.16+26.2-neoforge.jar",
+  "productionSha256": "b3cf749b7b7d5a302469b0eeb503919ab8d195547c87972c947640561f2147c8",
+  "probeSha256Lf": "41b0b49e4d93afba4a2e51bf819785d3052dfbf6bdb9bdd1847022f3fabca89b",
+  "notEvidenceOf": [
+    "Biome reachability in a real world",
+    "Registry export",
+    "Mixin application",
+    "FULL chunk generation",
+    "Visual appearance"
+  ]
+}

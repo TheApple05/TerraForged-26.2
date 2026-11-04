@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "scope": "Exact package/class comparison and complete default export inventory equality; supports reusing scoped dev17 preset-data evidence, not dev17 pillar/runtime failures.",
+  "loaders": {
+    "fabric": {
+      "artifacts": [
+        {
+          "path": "build\\libs\\terraforged-revival-0.1.0-dev.17+26.2.jar",
+          "sha256": "cec346c9282adc86f10b4abc41ba59621fa6de58553542cdce806b2ab4c96e55"
+        },
+        {
+          "path": "build\\libs\\terraforged-revival-0.1.0-dev.18+26.2.jar",
+          "sha256": "dd5b075b6fcdb26e31159c97401de8e493308142599e5e193cbf886a3e55eb94"
+        }
+      ],
+      "changedOrAddedClasses": [
+        "raccoonman/reterraforged/mixin/terrablender/MixinLevelUtils.class",
+        "raccoonman/reterraforged/mixin/terrablender/MixinNoiseBasedChunkGenerator.class",
+        "raccoonman/reterraforged/mixin/terrablender/MultiNoiseBiomeSourceInvoker.class",
+        "raccoonman/reterraforged/world/worldgen/biome/ClassicBiomeSource.class",
+        "raccoonman/reterraforged/world/worldgen/feature/ClassicPillarFeature$Config.class",
+        "raccoonman/reterraforged/world/worldgen/feature/ClassicPillarFeature$Palette.class",
+        "raccoonman/reterraforged/world/worldgen/feature/ClassicPillarFeature.class",
+        "raccoonman/reterraforged/world/worldgen/terrablender/TBCompat.class"
+      ],
+      "criticalPresetDataClassesByteIdentical": [
+        "raccoonman/reterraforged/data/worldgen/BootstrapContextOps$1$1.class",
+        "raccoonman/reterraforged/data/worldgen/BootstrapContextOps$1.class",
+        "raccoonman/reterraforged/data/worldgen/BootstrapContextOps.class",
+        "raccoonman/reterraforged/data/worldgen/Datapacks.class",
+        "raccoonman/reterraforged/data/worldgen/preset/MiscellaneousSettings.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetBiomeData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetBiomeModifierData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetNoiseGeneratorSettings.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetSurfaceRuleData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetWorldPresetData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/settings/MiscellaneousSettings.class",
+        "raccoonman/reterraforged/data/worldgen/tags/ClassicBiomeTagsProvider.class",
+        "raccoonman/reterraforged/world/worldgen/biome/ClassicBiomes$Variant.class",
+        "raccoonman/reterraforged/world/worldgen/biome/ClassicBiomes.class"
+      ],
+      "defaultExportEveryFileHashEqual": true,
+      "defaultExportFiles": 2040
+    },
+    "neoforge": {
+      "artifacts": [
+        {
+          "path": "neoforge\\build\\libs\\terraforged-revival-0.1.0-dev.17+26.2-neoforge.jar",
+          "sha256": "19be1660029b1ec49dc49ad31623787efff8002086d9541b9b91d062a82f24d8"
+        },
+        {
+          "path": "neoforge\\build\\libs\\terraforged-revival-0.1.0-dev.18+26.2-neoforge.jar",
+          "sha256": "74bf21b1ef047f53b56ef3bd28e536bc39b0d538adce0f76099dab74a603b65c"
+        }
+      ],
+      "changedOrAddedClasses": [
+        "raccoonman/reterraforged/mixin/terrablender/MixinLevelUtils.class",
+        "raccoonman/reterraforged/mixin/terrablender/MixinNoiseBasedChunkGenerator.class",
+        "raccoonman/reterraforged/mixin/terrablender/MultiNoiseBiomeSourceInvoker.class",
+        "raccoonman/reterraforged/world/worldgen/biome/ClassicBiomeSource.class",
+        "raccoonman/reterraforged/world/worldgen/feature/ClassicPillarFeature$Config.class",
+        "raccoonman/reterraforged/world/worldgen/feature/ClassicPillarFeature$Palette.class",
+        "raccoonman/reterraforged/world/worldgen/feature/ClassicPillarFeature.class",
+        "raccoonman/reterraforged/world/worldgen/terrablender/TBCompat.class"
+      ],
+      "criticalPresetDataClassesByteIdentical": [
+        "raccoonman/reterraforged/data/worldgen/BootstrapContextOps$1$1.class",
+        "raccoonman/reterraforged/data/worldgen/BootstrapContextOps$1.class",
+        "raccoonman/reterraforged/data/worldgen/BootstrapContextOps.class",
+        "raccoonman/reterraforged/data/worldgen/Datapacks.class",
+        "raccoonman/reterraforged/data/worldgen/preset/MiscellaneousSettings.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetBiomeData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetBiomeModifierData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetNoiseGeneratorSettings.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetSurfaceRuleData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/PresetWorldPresetData.class",
+        "raccoonman/reterraforged/data/worldgen/preset/settings/MiscellaneousSettings.class",
+        "raccoonman/reterraforged/data/worldgen/tags/ClassicBiomeTagsProvider.class",
+        "raccoonman/reterraforged/world/worldgen/biome/ClassicBiomes$Variant.class",
+        "raccoonman/reterraforged/world/worldgen/biome/ClassicBiomes.class"
+      ],
+      "defaultExportEveryFileHashEqual": true,
+      "defaultExportFiles": 2044
+    }
+  }
+}

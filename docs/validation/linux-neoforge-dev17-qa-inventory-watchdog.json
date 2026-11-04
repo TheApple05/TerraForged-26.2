@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-qa-main-thread-inventory-io",
+  "rawReport": "docs/validation/server-linux-neoforge-dev17-export.json",
+  "crashExcerpt": "docs/validation/linux-neoforge-dev17-qa-inventory-watchdog.txt",
+  "crashExcerptSha256": "3b1ee1de8262585ccd9a29feaabaefd7511cc9670bdd9b41df0381c26e8623bf",
+  "nativeGenerationOrLoadingDefectEstablished": false,
+  "reason": "Datapack export completed in4.3s; serial QA hash inventory on mounted Windows files ran over60s on Server thread and triggered the normal watchdog. Terminalexit1 correctly excludes this run despite QA resultpassed.",
+  "fix": "All export-only read-only work now dispatches to a named QAworker; generation/structures/benchmarks stay on Server thread and watchdog remains60000ms.",
+  "nextValidation": "Exact18 companions include the fix; native Linux final export/generation/reload pending."
+}

@@ -1,0 +1,29 @@
+{
+  "reterraforged:taiga_scrub": {
+    "moisture": 0.690847,
+    "region": 0.073114276,
+    "temperature": 0.4317857,
+    "terrain": "volcano",
+    "x": -125952,
+    "y": 72,
+    "z": 41532
+  },
+  "reterraforged:snowy_taiga_scrub": {
+    "moisture": 1.0,
+    "region": 0.8416857,
+    "temperature": 0.063804984,
+    "terrain": "flats-hills",
+    "x": -28672,
+    "y": 98,
+    "z": 56636
+  },
+  "reterraforged:marshland": {
+    "moisture": 0.41818798,
+    "region": 0.4398384,
+    "temperature": 0.43815118,
+    "terrain": "wetland",
+    "x": -102528,
+    "y": 63,
+    "z": -26552
+  }
+}

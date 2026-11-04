@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Six built-in preset constructors and three independent classic-selection/custom-feature option cases exported on each loader; not generation of every preset.",
+  "loaders": {
+    "fabric": {
+      "report": "docs/validation/server-fabric-dev17-builtin-exports.json",
+      "reportSha256": "d3a68ff230ca9d097d1e8136bbf9289cf823ae521dde2af57444d197e56518ef",
+      "artifactSha256": "cec346c9282adc86f10b4abc41ba59621fa6de58553542cdce806b2ab4c96e55",
+      "processExit": 0,
+      "qaThread": "TerraForged-builtin-export-QA",
+      "cases": [
+        {
+          "case": "legacy-default",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2040,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\legacy-default\\presetpack"
+        },
+        {
+          "case": "legacy-beautiful",
+          "settings": {
+            "preset": "legacy-beautiful",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2040,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\legacy-beautiful\\presetpack"
+        },
+        {
+          "case": "legacy-huge-biomes",
+          "settings": {
+            "preset": "legacy-huge-biomes",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2040,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\legacy-huge-biomes\\presetpack"
+        },
+        {
+          "case": "legacy-lite",
+          "settings": {
+            "preset": "legacy-lite",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2040,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\legacy-lite\\presetpack"
+        },
+        {
+          "case": "legacy-vanillaish",
+          "settings": {
+            "preset": "legacy-vanillaish",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": false
+          },
+          "files": 1934,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": false,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\legacy-vanillaish\\presetpack"
+        },
+        {
+          "case": "rtf-default",
+          "settings": {
+            "preset": "rtf-default",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2040,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\rtf-default\\presetpack"
+        },
+        {
+          "case": "default-classic-off",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": false,
+            "customBiomeFeatures": true
+          },
+          "files": 2040,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "minecraft:multi_noise",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\default-classic-off\\presetpack"
+        },
+        {
+          "case": "default-features-off",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": false
+          },
+          "files": 1940,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": false,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\default-features-off\\presetpack"
+        },
+        {
+          "case": "default-both-off",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": false,
+            "customBiomeFeatures": false
+          },
+          "files": 1940,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "minecraft:multi_noise",
+          "exportedDimensionSourceType": null,
+          "customPineConfiguredFeaturePresent": false,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T103319Z-d2c8ee\\qa-output\\default-both-off\\presetpack"
+        }
+      ]
+    },
+    "neoforge": {
+      "report": "docs/validation/server-neoforge-dev17-builtin-exports.json",
+      "reportSha256": "f638fef2a125633f525a18639d0691743dc10146f0e9af40cdc14c4826d6ecc4",
+      "artifactSha256": "19be1660029b1ec49dc49ad31623787efff8002086d9541b9b91d062a82f24d8",
+      "processExit": 0,
+      "qaThread": "TerraForged-builtin-export-QA",
+      "cases": [
+        {
+          "case": "legacy-default",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2044,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\legacy-default\\presetpack"
+        },
+        {
+          "case": "legacy-beautiful",
+          "settings": {
+            "preset": "legacy-beautiful",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2044,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\legacy-beautiful\\presetpack"
+        },
+        {
+          "case": "legacy-huge-biomes",
+          "settings": {
+            "preset": "legacy-huge-biomes",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2044,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\legacy-huge-biomes\\presetpack"
+        },
+        {
+          "case": "legacy-lite",
+          "settings": {
+            "preset": "legacy-lite",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2044,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\legacy-lite\\presetpack"
+        },
+        {
+          "case": "legacy-vanillaish",
+          "settings": {
+            "preset": "legacy-vanillaish",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": false
+          },
+          "files": 1938,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": false,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\legacy-vanillaish\\presetpack"
+        },
+        {
+          "case": "rtf-default",
+          "settings": {
+            "preset": "rtf-default",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": true
+          },
+          "files": 2044,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\rtf-default\\presetpack"
+        },
+        {
+          "case": "default-classic-off",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": false,
+            "customBiomeFeatures": true
+          },
+          "files": 2044,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "minecraft:multi_noise",
+          "exportedDimensionSourceType": "minecraft:multi_noise",
+          "customPineConfiguredFeaturePresent": true,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\default-classic-off\\presetpack"
+        },
+        {
+          "case": "default-features-off",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": true,
+            "customBiomeFeatures": false
+          },
+          "files": 1944,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "reterraforged:classic_variants",
+          "exportedDimensionSourceType": "reterraforged:classic_variants",
+          "customPineConfiguredFeaturePresent": false,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\default-features-off\\presetpack"
+        },
+        {
+          "case": "default-both-off",
+          "settings": {
+            "preset": "legacy-default",
+            "classicBiomeVariants": false,
+            "customBiomeFeatures": false
+          },
+          "files": 1944,
+          "registeredVariantFiles": 17,
+          "normalSourceType": "minecraft:multi_noise",
+          "exportedDimensionSourceType": "minecraft:multi_noise",
+          "customPineConfiguredFeaturePresent": false,
+          "pack": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T103318Z-51515d\\qa-output\\default-both-off\\presetpack"
+        }
+      ]
+    }
+  }
+}

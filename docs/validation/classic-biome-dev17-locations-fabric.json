@@ -1,0 +1,155 @@
+{
+  "reterraforged:bryce": {
+    "moisture": 0.039096102,
+    "region": 0.07042462,
+    "temperature": 0.6853331,
+    "terrain": "flats-plateau",
+    "x": -118400,
+    "y": 101,
+    "z": -107100
+  },
+  "reterraforged:cold_marshland": {
+    "moisture": 0.70629114,
+    "region": 0.5553675,
+    "temperature": 0.37414888,
+    "terrain": "wetland",
+    "x": -16896,
+    "y": 63,
+    "z": 24988
+  },
+  "reterraforged:cold_steppe": {
+    "moisture": 0.50463754,
+    "region": 0.76726145,
+    "temperature": 0.40178826,
+    "terrain": "plateau-hills",
+    "x": -126976,
+    "y": 136,
+    "z": 76052
+  },
+  "reterraforged:fir_forest": {
+    "moisture": 0.022473311,
+    "region": 0.5483101,
+    "temperature": 0.43558657,
+    "terrain": "hills",
+    "x": 0,
+    "y": 70,
+    "z": -43692
+  },
+  "reterraforged:flower_plains": {
+    "moisture": 0.35085768,
+    "region": 0.7470373,
+    "temperature": 0.8686857,
+    "terrain": "mountains_3",
+    "x": 68608,
+    "y": 71,
+    "z": -67424
+  },
+  "reterraforged:frozen_lake": {
+    "moisture": 0.0,
+    "region": 0.50359213,
+    "temperature": 0.2491331,
+    "terrain": "lake",
+    "x": -79680,
+    "y": 63,
+    "z": 33060
+  },
+  "reterraforged:frozen_marsh": {
+    "moisture": 0.2963042,
+    "region": 0.8556975,
+    "temperature": 0.08103396,
+    "terrain": "wetland",
+    "x": -104064,
+    "y": 63,
+    "z": -12168
+  },
+  "reterraforged:lake": {
+    "moisture": 0.39206856,
+    "region": 0.47668684,
+    "temperature": 0.33533835,
+    "terrain": "lake",
+    "x": 56832,
+    "y": 63,
+    "z": 15280
+  },
+  "reterraforged:marshland": {
+    "moisture": 0.41818798,
+    "region": 0.4398384,
+    "temperature": 0.43815118,
+    "terrain": "wetland",
+    "x": -102528,
+    "y": 63,
+    "z": -26552
+  },
+  "reterraforged:savanna_scrub": {
+    "moisture": 0.24847859,
+    "region": 0.03647265,
+    "temperature": 0.94145685,
+    "terrain": "badlands-hills",
+    "x": 70656,
+    "y": 80,
+    "z": -41536
+  },
+  "reterraforged:shattered_savanna_scrub": {
+    "moisture": 1.0,
+    "region": 0.12941837,
+    "temperature": 0.55004764,
+    "terrain": "coast",
+    "x": 100428,
+    "y": 74,
+    "z": 42832
+  },
+  "reterraforged:snowy_fir_forest": {
+    "moisture": 0.9634585,
+    "region": 0.9984485,
+    "temperature": 0.1590419,
+    "terrain": "flats-plateau",
+    "x": -124928,
+    "y": 76,
+    "z": -62032
+  },
+  "reterraforged:snowy_taiga_scrub": {
+    "moisture": 1.0,
+    "region": 0.8416857,
+    "temperature": 0.063804984,
+    "terrain": "flats-hills",
+    "x": -28672,
+    "y": 98,
+    "z": 56636
+  },
+  "reterraforged:steppe": {
+    "moisture": 0.32474786,
+    "region": 0.27540123,
+    "temperature": 0.84939915,
+    "terrain": "mountains_2",
+    "x": 68096,
+    "y": 144,
+    "z": 128192
+  },
+  "reterraforged:stone_forest": {
+    "moisture": 0.69904286,
+    "region": 0.045300484,
+    "temperature": 0.98705685,
+    "terrain": "flats",
+    "x": 100864,
+    "y": 71,
+    "z": -100508
+  },
+  "reterraforged:taiga_scrub": {
+    "moisture": 0.690847,
+    "region": 0.073114276,
+    "temperature": 0.4317857,
+    "terrain": "volcano",
+    "x": -125952,
+    "y": 72,
+    "z": 41532
+  },
+  "reterraforged:warm_beach": {
+    "moisture": 0.4825197,
+    "region": 0.3447857,
+    "temperature": 0.9578765,
+    "terrain": "coast",
+    "x": 43520,
+    "y": 63,
+    "z": 113092
+  }
+}

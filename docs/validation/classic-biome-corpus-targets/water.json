@@ -1,0 +1,29 @@
+{
+  "reterraforged:frozen_lake": {
+    "moisture": 0.0,
+    "region": 0.50359213,
+    "temperature": 0.2491331,
+    "terrain": "lake",
+    "x": -79680,
+    "y": 63,
+    "z": 33060
+  },
+  "reterraforged:lake": {
+    "moisture": 0.39206856,
+    "region": 0.47668684,
+    "temperature": 0.33533835,
+    "terrain": "lake",
+    "x": 56832,
+    "y": 63,
+    "z": 15280
+  },
+  "reterraforged:warm_beach": {
+    "moisture": 0.4825197,
+    "region": 0.3447857,
+    "temperature": 0.9578765,
+    "terrain": "coast",
+    "x": 43520,
+    "y": 63,
+    "z": 113092
+  }
+}

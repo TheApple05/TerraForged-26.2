@@ -87,6 +87,9 @@ public final class ClientQaMod implements ClientModInitializer {
     private final boolean createFromUi = Boolean.getBoolean("terraforged.clientqa.createFromUi");
     private Screen handledCreationWarning;
     private String createdWorldFolder;
+    private int cacheBaseline, previewCacheCount;
+    private final List<Integer> previewCacheCounts = new ArrayList<>();
+    private final String loopbackAddress = System.getProperty("terraforged.clientqa.loopbackAddress", "");
 
     @Override
     public void onInitializeClient() {
@@ -114,10 +117,51 @@ public final class ClientQaMod implements ClientModInitializer {
                     if (++ticks < SETTLE_TICKS) return;
                     Files.createDirectories(output);
                     report.put("runtime", provenance());
+                    cacheBaseline = raccoonman.reterraforged.concurrent.cache.CacheManager.activeCacheCount();
+                    report.put("cacheBaseline", cacheBaseline);
                     originalGlobalModifierCount = globalModifierCount();
                     report.put("globalModifierBaseline", originalGlobalModifierCount);
                     stage("title-ready", "Real title screen and production artifact verified");
-                    capture(client, "01-title.png", Boolean.getBoolean("terraforged.clientqa.worldOnly") ? "open-copy" : "open-create");
+                    capture(client, "01-title.png", !loopbackAddress.isBlank() ? "connect-loopback" : Boolean.getBoolean("terraforged.clientqa.worldOnly") ? "open-copy" : "open-create");
+                }
+                case "connect-loopback" -> {
+                    require(loopbackAddress.matches("127\\.0\\.0\\.1:[0-9]{1,5}"), "Network QA is restricted to the disposable loopback server");
+                    var address = net.minecraft.client.multiplayer.resolver.ServerAddress.parseString(loopbackAddress);
+                    var data = new net.minecraft.client.multiplayer.ServerData("TerraForged disposable QA", loopbackAddress, net.minecraft.client.multiplayer.ServerData.Type.OTHER);
+                    phase = "network-loading"; ticks = 0;
+                    net.minecraft.client.gui.screens.ConnectScreen.startConnecting(new TitleScreen(), client, address, data, false, null);
+                    stage("loopback-connect-requested", "Actual multiplayer connection requested to " + loopbackAddress);
+                }
+                case "network-loading" -> {
+                    if (client.gui.screen() instanceof net.minecraft.client.gui.screens.DisconnectedScreen disconnected) throw new IllegalStateException("Loopback connection failed: " + disconnected.getTitle().getString());
+                    if (client.level == null || client.player == null || client.getConnection() == null) return;
+                    require(client.getSingleplayerServer() == null, "Expected a dedicated-server connection");
+                    if (!client.level.hasChunkAt(client.player.blockPosition())) return;
+                    if (++ticks < 200) return;
+                    var biomes = client.level.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.BIOME);
+                    var variants = biomes.keySet().stream().filter(id -> id.getNamespace().equals("reterraforged")).map(Object::toString).sorted().toList();
+                    require(variants.size() == 17, "Dedicated server did not synchronize all 17 custom biome definitions");
+                    var position = client.player.blockPosition();
+                    var chunk = client.level.getChunkAt(position);
+                    int top = chunk.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, position.getX(), position.getZ());
+                    require(top > client.level.getMinY() + 1, "Dedicated-server terrain did not arrive at client spawn");
+                    var surface = chunk.getBlockState(new net.minecraft.core.BlockPos(position.getX(), top, position.getZ()));
+                    require(!surface.isAir(), "Dedicated-server surface column is empty");
+                    report.put("networkTerrainRendering", Map.of("address", loopbackAddress, "dedicatedServer", true,
+                        "synchronizedVariants", variants, "surfaceHeight", top, "surfaceBlock", surface.toString(),
+                        "biome", client.level.getBiome(position).unwrapKey().orElseThrow().identifier().toString(),
+                        "position", List.of(position.getX(), position.getY(), position.getZ()),
+                        "connectionOpen", client.getConnection().getConnection().isConnected()));
+                    client.options.pauseOnLostFocus = false;
+                    client.gui.setScreen(null);
+                    client.mouseHandler.releaseMouse();
+                    stage("loopback-world-received", "Real dedicated-server registry synchronization and chunk reception passed");
+                    capture(client, "08-loopback-terrain.png", "disconnect-loopback");
+                }
+                case "disconnect-loopback" -> {
+                    client.disconnectWithSavingScreen();
+                    stage("loopback-disconnected", "Actual multiplayer disconnect completed");
+                    finish(client, true, null);
                 }
                 case "open-copy" -> openQaWorld(client);
                 case "open-create" -> {
@@ -160,6 +204,10 @@ public final class ClientQaMod implements ClientModInitializer {
                     if (++ticks < SETTLE_TICKS) return;
                     var evidence = previewEvidence();
                     report.put("previewBefore", evidence);
+                    previewCacheCount = raccoonman.reterraforged.concurrent.cache.CacheManager.activeCacheCount();
+                    require(previewCacheCount > cacheBaseline, "Preview has no owned river caches");
+                    previewCacheCounts.add(previewCacheCount);
+                    report.put("previewCacheCounts", previewCacheCounts);
                     initialHeightDigest = evidence.get("heightSha256").toString();
                     Map<String, String> translations = new LinkedHashMap<>();
                     for (String key : List.of(RTFTranslationKeys.GUI_WORLD_SETTINGS_TITLE, RTFTranslationKeys.GUI_SLIDER_CONTINENT_SCALE, RTFTranslationKeys.GUI_BUTTON_SEED, RTFTranslationKeys.GUI_LABEL_PREVIEW_AREA)) {
@@ -185,6 +233,7 @@ public final class ClientQaMod implements ClientModInitializer {
                     require(previewTile() != oldTile, "Real slider callback failed to regenerate the preview tile");
                     report.put("sliderChange", Map.of("setting", "world.continent.continentScale", "before", before, "after", after, "input", "Actual AbstractSliderButton.onClick(MouseButtonEvent,false) and onRelease"));
                     sliderChanges.add(Map.of("before", before, "after", after, "preview", previewEvidence()));
+                    verifyPreviewCacheCount();
                     phase = "changed"; ticks = 0;
                 }
                 case "changed" -> {
@@ -207,6 +256,7 @@ public final class ClientQaMod implements ClientModInitializer {
                     require(before != after && previewTile() != oldTile, "Repeated real slider callback failed to replace setting/preview");
                     var evidence = previewEvidence();
                     sliderChanges.add(Map.of("before", before, "after", after, "preview", evidence));
+                    verifyPreviewCacheCount();
                     if (sliderChanges.size() >= 8) {
                         require(after == 3000 && initialHeightDigest.equals(evidence.get("heightSha256")), "Restoring original setting did not restore exact preview height digest");
                         report.put("restoredBaselinePreviewDigest", initialHeightDigest);
@@ -223,6 +273,9 @@ public final class ClientQaMod implements ClientModInitializer {
                     stage("post-done-screen-observed", "Applied preset ready=" + appliedReady + "; parent visible=" + (immediateScreen == parent));
                     require(safeScreen, "World creation became interactive immediately after Done before preset datapack validation completed");
                     require(Boolean.TRUE.equals(field(field(editor, "preview"), "closed")), "Production preview did not close its texture resources");
+                    int cachesAfterEditor = raccoonman.reterraforged.concurrent.cache.CacheManager.activeCacheCount();
+                    require(cachesAfterEditor == cacheBaseline, "Closed editor retained generator caches");
+                    report.put("cacheCountAfterEditorClose", cachesAfterEditor);
                     stage("preset-editor-closed", "Production close path released the actual preview resources");
                     phase = "preset-applied"; ticks = 0;
                 }
@@ -238,6 +291,9 @@ public final class ClientQaMod implements ClientModInitializer {
                     if (++ticks < SETTLE_TICKS) return;
                     Preset applied = presets.getOrThrow(Preset.KEY).value();
                     require(applied.world().continent.continentScale == 3000, "Actual Done callback applied the wrong preset settings");
+                    require(applied.miscellaneous().classicBiomeVariants, "New built-in preset unexpectedly disabled classic variants");
+                    require(parent.getUiState().getSettings().selectedDimensions().overworld().getBiomeSource() instanceof raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource,
+                        "Reloaded world-creation dimensions retained the previous biome source");
                     require(parent.getUiState().getSettings().options().seed() == SEED, "Actual Done callback changed the selected seed");
                     report.put("presetApplication", Map.of("presetKey", Preset.KEY.identifier().toString(), "continentScale", applied.world().continent.continentScale, "seed", SEED, "actualDoneButton", true, "realDatapackReload", true));
                     stage("preset-datapack-applied", "Actual Done button exported the preset pack and reloaded it into the real world-creation context");
@@ -290,6 +346,13 @@ public final class ClientQaMod implements ClientModInitializer {
                             require(randomState.preset() == null && randomState.generatorContext() == null, "Vanilla world inherited a TerraForged preset/context from the prior world");
                         } else {
                             require(randomState.preset() != null && randomState.generatorContext() != null && randomState.generatorContext().cache != null, "Integrated world has no active TerraForged generation context");
+                            var source = level.getChunkSource().getGenerator().getBiomeSource();
+                            require(randomState.preset().miscellaneous().classicBiomeVariants && source instanceof raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource,
+                                "Created world is missing its enabled classic biome source");
+                            var registry = level.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.BIOME);
+                            for (var variant : raccoonman.reterraforged.world.worldgen.biome.ClassicBiomes.VARIANTS) {
+                                require(source.possibleBiomes().contains(registry.getOrThrow(variant.key())), "Created world cannot select " + variant.key());
+                            }
                             if (createFromUi) require(level.getSeed() == SEED, "Actual new custom world has the wrong selected seed");
                         }
                         Map<String, Object> sorter;
@@ -316,11 +379,44 @@ public final class ClientQaMod implements ClientModInitializer {
                 case "terrain" -> {
                     if (!cameraSetup.isDone()) return;
                     require(client.level != null && client.player != null, "Integrated level disappeared before terrain capture");
+                    @SuppressWarnings("unchecked")
+                    List<Number> requestedPose = (List<Number>) cameraSetup.join().get("camera");
+                    client.mouseHandler.releaseMouse();
+                    net.minecraft.client.KeyMapping.releaseAll();
+                    client.options.setCameraType(net.minecraft.client.CameraType.FIRST_PERSON);
+                    client.setCameraEntity(client.player);
+                    client.player.setPos(requestedPose.get(0).doubleValue(), requestedPose.get(1).doubleValue(), requestedPose.get(2).doubleValue());
+                    client.player.setYRot(requestedPose.get(3).floatValue());
+                    client.player.setXRot(requestedPose.get(4).floatValue());
+                    client.player.yRotO = requestedPose.get(3).floatValue();
+                    client.player.xRotO = requestedPose.get(4).floatValue();
                     int settleTicks = Integer.getInteger("terraforged.clientqa.terrainSettleTicks", 200);
                     require(settleTicks >= 60 && settleTicks <= 1200, "QA terrain settling must stay between 60 and 1200 ticks");
                     if (++ticks < settleTicks) return;
+                    if (Boolean.getBoolean("terraforged.clientqa.requireRenderReady")) {
+                        int radius = Math.min(6, Math.max(2, client.options.renderDistance().get() - 2));
+                        int centerX = client.player.getBlockX() >> 4, centerZ = client.player.getBlockZ() >> 4;
+                        int loaded = 0, expected = (radius * 2 + 1) * (radius * 2 + 1);
+                        for (int z = -radius; z <= radius; z++) for (int x = -radius; x <= radius; x++) {
+                            if (client.level.getChunkSource().getChunk(centerX + x, centerZ + z, net.minecraft.world.level.chunk.status.ChunkStatus.FULL, false) != null) loaded++;
+                        }
+                        boolean meshed = client.levelRenderer.hasRenderedAllSections();
+                        report.put(vanillaStage ? "vanillaRenderReadiness" : "customRenderReadiness", Map.of("innerRadius", radius,
+                            "loadedInnerChunks", loaded, "expectedInnerChunks", expected, "rendererComplete", meshed,
+                            "totalLoadedChunks", client.level.getChunkSource().getLoadedChunksCount(), "ticksAfterCamera", ticks));
+                        if (loaded != expected || !meshed) return;
+                    }
                     require(globalModifierCount() == originalGlobalModifierCount, "World-scoped biome modifiers leaked into Fabric's global list");
+                    var observedPose = client.gameRenderer.mainCamera();
+                    require(Math.abs(observedPose.xRot() - requestedPose.get(4).floatValue()) < 0.1F
+                        && Math.abs(observedPose.yRot() - requestedPose.get(3).floatValue()) < 0.1F, "Rendered terrain camera drifted from the recorded pose");
+                    report.put(vanillaStage ? "vanillaRenderedCamera" : "customRenderedCamera", List.of(observedPose.position().x,
+                        observedPose.position().y, observedPose.position().z, observedPose.yRot(), observedPose.xRot()));
                     report.put(vanillaStage ? "vanillaTerrainRendering" : "terrainRendering", cameraSetup.join());
+                    int caches = raccoonman.reterraforged.concurrent.cache.CacheManager.activeCacheCount();
+                    report.put(vanillaStage ? "cacheCountInVanillaAfterCustom" : "cacheCountInCustomWorld", caches);
+                    if (vanillaStage) require(caches == cacheBaseline, "Closed custom world retained generator caches in the next vanilla world");
+                    verifyShaderPipeline(vanillaStage ? "vanillaShaderPipeline" : "customShaderPipeline");
                     report.put("terrainCaptureSettings", Map.of("renderDistance", client.options.renderDistance().get(), "settleTicks", settleTicks));
                     stage(vanillaStage ? "vanilla-world-rendered" : "custom-world-rendered", "Real integrated world remained loaded for " + settleTicks + " ticks after camera setup; global modifier count unchanged");
                     capture(client, vanillaStage ? "07-vanilla-after-custom.png" : "06-custom-terrain.png", "world-close");
@@ -422,7 +518,14 @@ public final class ClientQaMod implements ClientModInitializer {
             }
         }
         require(references > 0, "Generator feature sorter check inspected no biome features");
-        return Map.of("possibleBiomes", generator.getBiomeSource().possibleBiomes().size(), "steps", sorted.size(), "featureReferencesChecked", references, "identityConsistent", true);
+        long variants = generator.getBiomeSource().possibleBiomes().stream().filter(biome -> biome.unwrapKey()
+            .map(key -> key.identifier().getNamespace().equals("reterraforged")).orElse(false)).count();
+        Map<String, Long> namespaces = generator.getBiomeSource().possibleBiomes().stream().collect(java.util.stream.Collectors.groupingBy(
+            biome -> biome.unwrapKey().orElseThrow().identifier().getNamespace(), java.util.TreeMap::new, java.util.stream.Collectors.counting()));
+        if (Boolean.getBoolean("terraforged.clientqa.requireBop")) require(namespaces.getOrDefault("biomesoplenty", 0L) == 59,
+            "Pinned Biomes O' Plenty overworld family lost possible-biome membership: " + namespaces);
+        return Map.of("possibleBiomes", generator.getBiomeSource().possibleBiomes().size(), "steps", sorted.size(), "featureReferencesChecked", references,
+            "identityConsistent", true, "sourceClass", generator.getBiomeSource().getClass().getName(), "classicVariants", variants, "possibleBiomeNamespaces", namespaces);
     }
 
     private Map<String, Object> previewEvidence() throws Exception {
@@ -500,6 +603,26 @@ public final class ClientQaMod implements ClientModInitializer {
         catch (Exception writeFailure) { report.put("status", "failed"); report.put("resultWriteError", writeFailure.toString()); }
         System.out.println("TERRAFORGED_CLIENT_QA_RESULT_JSON=" + COMPACT.toJson(report));
         client.stop();
+    }
+
+    private void verifyShaderPipeline(String key) throws Exception {
+        if (!Boolean.getBoolean("terraforged.clientqa.requireShader")) return;
+        Class<?> apiType = Class.forName("net.irisshaders.iris.api.v0.IrisApi");
+        Object api = apiType.getMethod("getInstance").invoke(null);
+        boolean active = (boolean) apiType.getMethod("isShaderPackInUse").invoke(api);
+        Class<?> iris = Class.forName("net.irisshaders.iris.Iris");
+        String name = (String) iris.getMethod("getCurrentPackName").invoke(null);
+        Object pipeline = iris.getMethod("getPipelineManager").invoke(null);
+        Object pack = iris.getMethod("getCurrentPack").invoke(null);
+        require(active && pack instanceof Optional<?> selected && selected.isPresent(), "Requested shader pack is not active while terrain is rendered");
+        require(name.equals(System.getProperty("terraforged.clientqa.expectedShaderName")), "Wrong shader pack is active: " + name);
+        report.put(key, Map.of("shaderPackActive", true, "packName", name, "pipelineManagerClass", pipeline.getClass().getName()));
+    }
+
+    private void verifyPreviewCacheCount() {
+        int count = raccoonman.reterraforged.concurrent.cache.CacheManager.activeCacheCount();
+        previewCacheCounts.add(count);
+        require(count == previewCacheCount, "Repeated preview generation retained old generator caches");
     }
 
     private static Object field(Object target, String name) throws Exception {

@@ -60,18 +60,28 @@ public final class RuntimeQaMod implements ModInitializer {
     }
 
     private static void run(MinecraftServer server) {
+        // Export-only work reads frozen registries and writes isolated files.
+        // Hashing many files can exceed a tick on slow filesystems; return the
+        // lifecycle callback before this read-only QA work starts. Generation,
+        // structures and benchmarks still run on the real server thread.
+        if ("export".equals(System.getProperty("terraforged.qa.mode"))
+                && !Thread.currentThread().getName().equals("TerraForged-export-QA")) {
+            Thread.ofPlatform().name("TerraForged-export-QA").start(() -> run(server));
+            return;
+        }
         String mode = System.getProperty("terraforged.qa.mode", "missing");
         Path output = Path.of(System.getProperty("terraforged.qa.output", "qa-output")).toAbsolutePath().normalize();
         Map<String, Object> report = new LinkedHashMap<>();
         List<Map<String, Object>> nodes = new ArrayList<>();
         report.put("schemaVersion", 1);
         report.put("mode", mode);
+        report.put("qaThread", Thread.currentThread().getName());
         report.put("startedAt", Instant.now().toString());
         report.put("serverStarted", true);
         report.put("saveCompleted", false);
         report.put("status", "failed");
         report.put("nodes", nodes);
-        report.put("notTested", List.of("Visual parity", "All presets and configuration extremes", "All biomes or structures", "Multiplayer clients", "Third-party mod combinations", "Performance benchmark"));
+        report.put("notTested", List.of("Visual parity", "All presets and configuration extremes", "All biomes or structures", "Multiplayer clients", "Unlisted third-party mod combinations", mode.startsWith("benchmark") ? "Performance outside this controlled benchmark" : "Controlled performance benchmark"));
         try {
             Files.createDirectories(output);
             report.put("runtime", provenance());
@@ -100,6 +110,11 @@ public final class RuntimeQaMod implements ModInitializer {
                     .filter(id -> id.getNamespace().equals("biomesoplenty"))
                     .map(Object::toString).sorted().toList();
                 require(!possible.isEmpty(), "Loaded Biomes O' Plenty is absent from the actual overworld possible-biome set");
+                int expectedRegistered = Integer.getInteger("terraforged.qa.expectedBopRegisteredCount", 68);
+                int expectedPossible = Integer.getInteger("terraforged.qa.expectedBopPossibleCount", 59);
+                require(registered.size() == expectedRegistered && possible.size() == expectedPossible,
+                    "Pinned BOP inventory changed or was dropped: registered=" + registered.size() + "/" + expectedRegistered
+                        + ", overworld possible=" + possible.size() + "/" + expectedPossible);
                 report.put("biomeContentMod", Map.of("modId", "biomesoplenty", "registeredBiomeCount", registered.size(),
                     "registeredBiomeIds", registered, "overworldPossibleBiomeCount", possible.size(),
                     "overworldPossibleBiomeIds", possible, "everyBiomeReachableOrGenerated", false));
@@ -109,8 +124,22 @@ public final class RuntimeQaMod implements ModInitializer {
             switch (mode) {
                 case "export" -> exportPreset(server, output, report, nodes);
                 case "generate", "reload" -> sampleWorld(server, output, mode, report, nodes);
-                default -> throw new IllegalArgumentException("Explicit terraforged.qa.mode=export|generate|reload is required");
+                case "structures" -> {
+                    var structures = StructureQa.verify(server, server.overworld());
+                    report.put("structureChecks", structures);
+                    Files.writeString(output.resolve("structure-baseline.json"), JSON.toJson(structures) + "\n", StandardCharsets.UTF_8);
+                    sampleWorld(server, output, "generate", report, nodes);
+                    node(nodes, "actual-structure-generation", "passed", "Native explicit placements and bounded locate generated actual starts and blocks");
+                }
+                case "benchmark", "benchmark-reload" -> benchmarkWorld(server, output, report, nodes);
+                default -> throw new IllegalArgumentException("Explicit terraforged.qa.mode=export|generate|reload|benchmark is required");
             }
+            report.put("classicBiomeChecks", ClassicBiomeQa.verify(server, server.overworld()));
+            report.put("cellSamplerCacheChecks", CellSamplerCacheQa.verify(server.overworld()));
+            report.put("classicPillarCandidateSearch", ClassicPillarCandidateQa.verify(server.overworld()));
+            report.put("nativeColumnReplay", NativeColumnReplayQa.verify(server.overworld()));
+            report.put("classicBiomeTargetQualification", ClassicBiomeTargetSearchQa.verify(server.overworld()));
+            report.put("classicBiomeStoredChunkChecks", ClassicBiomeChunkQa.verify(server, server.overworld()));
             TemplateBiomeDecoratorProbe.main(new String[0]);
             node(nodes, "biome-decorator-overrides", "passed", "Three production-helper assertions completed with real target holders");
             report.put("status", "passed");
@@ -119,7 +148,9 @@ public final class RuntimeQaMod implements ModInitializer {
             node(nodes, "callback", "failed", failure.toString());
         } finally {
             report.put("finishedAt", Instant.now().toString());
-            report.put("cleanStopRequested", true);
+            boolean hold = Boolean.getBoolean("terraforged.qa.holdAfterGeneration") && "passed".equals(report.get("status"));
+            report.put("cleanStopRequested", !hold);
+            report.put("holdAfterGeneration", hold);
             try {
                 Files.createDirectories(output);
                 Path pending = output.resolve("result.json.tmp");
@@ -131,7 +162,7 @@ public final class RuntimeQaMod implements ModInitializer {
             }
             System.out.println("TERRAFORGED_QA_RESULT_JSON=" + COMPACT.toJson(report));
             // The server harness must verify the process exit and shutdown log as well as this result.
-            server.halt(false);
+            if (!hold) server.halt(false);
         }
     }
 
@@ -160,6 +191,10 @@ public final class RuntimeQaMod implements ModInitializer {
     }
 
     private static void exportPreset(MinecraftServer server, Path output, Map<String, Object> report, List<Map<String, Object>> nodes) throws Throwable {
+        if (Boolean.getBoolean("terraforged.qa.exportAllBuiltins")) {
+            exportBuiltinPresets(server, output, report, nodes);
+            return;
+        }
         Path pack = output.resolve("presetpack");
         if (Files.exists(pack)) {
             try (var files = Files.walk(pack)) {
@@ -170,7 +205,29 @@ public final class RuntimeQaMod implements ModInitializer {
         Path cache = output.resolve("cache-export-" + UUID.randomUUID());
         long start = System.nanoTime();
         try {
-            Datapacks.makePreset(Presets.makeLegacyDefault(), server.registryAccess(), cache, pack, "Runtime QA legacy default").run();
+            String presetName = System.getProperty("terraforged.qa.preset", "legacy-default");
+            var presetForExport = switch (presetName) {
+                case "legacy-default" -> Presets.makeLegacyDefault();
+                case "legacy-beautiful" -> Presets.makeLegacyBeautiful();
+                case "legacy-huge-biomes" -> Presets.makeLegacyHugeBiomes();
+                case "legacy-lite" -> Presets.makeLegacyLite();
+                case "legacy-vanillaish" -> Presets.makeLegacyVanillaish();
+                case "rtf-default" -> Presets.makeRTFDefault();
+                default -> throw new IllegalArgumentException("Unknown QA built-in preset " + presetName);
+            };
+            String classicVariants = System.getProperty("terraforged.qa.classicBiomeVariants");
+            if (classicVariants != null) {
+                require(classicVariants.equals("true") || classicVariants.equals("false"), "Invalid explicit classic biome QA setting");
+                presetForExport.miscellaneous().classicBiomeVariants = Boolean.parseBoolean(classicVariants);
+            }
+            String customFeatures = System.getProperty("terraforged.qa.customBiomeFeatures");
+            if (customFeatures != null) {
+                require(customFeatures.equals("true") || customFeatures.equals("false"), "Invalid explicit custom feature QA setting");
+                presetForExport.miscellaneous().customBiomeFeatures = Boolean.parseBoolean(customFeatures);
+            }
+            report.put("selectedPresetSettings", Map.of("preset", presetName, "classicBiomeVariants", presetForExport.miscellaneous().classicBiomeVariants,
+                "customBiomeFeatures", presetForExport.miscellaneous().customBiomeFeatures));
+            Datapacks.makePreset(presetForExport, server.registryAccess(), cache, pack, "Runtime QA legacy default").run();
         } catch (Throwable failure) {
             Map<String, Object> partial = new LinkedHashMap<>();
             partial.put("presetPack", pack.toString());
@@ -211,6 +268,38 @@ public final class RuntimeQaMod implements ModInitializer {
         require(jsonCount > 0, "Preset export produced no JSON resources");
         report.put("export", Map.of("presetPack", pack.toString(), "cache", cache.toString(), "presetEntry", pack.relativize(presetPath).toString(), "fileCount", hashes.size(), "jsonFileCount", jsonCount, "packMetadata", metadata, "fileSha256", hashes, "elapsedMillis", (System.nanoTime() - start) / 1_000_000));
         node(nodes, "export-inventory", "passed", hashes.size() + " files inventoried, including the actual custom preset entry");
+    }
+
+    private static void exportBuiltinPresets(MinecraftServer server, Path output, Map<String, Object> report, List<Map<String, Object>> nodes) throws Throwable {
+        record ExportCase(String name, String preset, String classic, String features) {}
+        var cases = List.of(new ExportCase("legacy-default", "legacy-default", null, null),
+            new ExportCase("legacy-beautiful", "legacy-beautiful", null, null), new ExportCase("legacy-huge-biomes", "legacy-huge-biomes", null, null),
+            new ExportCase("legacy-lite", "legacy-lite", null, null), new ExportCase("legacy-vanillaish", "legacy-vanillaish", null, null),
+            new ExportCase("rtf-default", "rtf-default", null, null), new ExportCase("default-classic-off", "legacy-default", "false", "true"),
+            new ExportCase("default-features-off", "legacy-default", "true", "false"), new ExportCase("default-both-off", "legacy-default", "false", "false"));
+        Map<String, String> previous = new LinkedHashMap<>();
+        var propertyNames = List.of("terraforged.qa.exportAllBuiltins", "terraforged.qa.preset", "terraforged.qa.classicBiomeVariants", "terraforged.qa.customBiomeFeatures");
+        propertyNames.forEach(name -> previous.put(name, System.getProperty(name)));
+        List<Map<String, Object>> exports = new ArrayList<>();
+        report.put("builtinPresetExports", exports);
+        try {
+            System.setProperty("terraforged.qa.exportAllBuiltins", "false");
+            for (var export : cases) {
+                System.setProperty("terraforged.qa.preset", export.preset());
+                if (export.classic() == null) System.clearProperty("terraforged.qa.classicBiomeVariants"); else System.setProperty("terraforged.qa.classicBiomeVariants", export.classic());
+                if (export.features() == null) System.clearProperty("terraforged.qa.customBiomeFeatures"); else System.setProperty("terraforged.qa.customBiomeFeatures", export.features());
+                Map<String, Object> child = new LinkedHashMap<>();
+                child.put("case", export.name());
+                exports.add(child);
+                exportPreset(server, output.resolve(export.name()), child, nodes);
+                child.put("status", "passed");
+            }
+        } finally {
+            previous.forEach((name, value) -> { if (value == null) System.clearProperty(name); else System.setProperty(name, value); });
+        }
+        long files = exports.stream().mapToLong(child -> ((Number) ((Map<?, ?>) child.get("export")).get("fileCount")).longValue()).sum();
+        report.put("export", Map.of("fileCount", files, "builtinPresetCount", 6, "explicitOptionCases", 3));
+        node(nodes, "all-built-in-preset-exports", "passed", "All five UI presets, RTF default and three independent selection/decoration option cases exported");
     }
 
     private static void sampleWorld(MinecraftServer server, Path output, String mode, Map<String, Object> report, List<Map<String, Object>> nodes) throws Exception {
@@ -316,6 +405,15 @@ public final class RuntimeQaMod implements ModInitializer {
         }
 
         Map<String, Object> deterministic = new LinkedHashMap<>();
+        if (raccoonman.reterraforged.platform.ModLoaderUtil.isLoaded("biomesoplenty")) {
+            var observed = new TreeMap<String, Integer>();
+            for (var sample : samples) observed.merge((String) sample.get("biome"), 1, Integer::sum);
+            int bopColumns = observed.entrySet().stream().filter(entry -> entry.getKey().startsWith("biomesoplenty:"))
+                .mapToInt(Map.Entry::getValue).sum();
+            require(bopColumns > 0, "Pinned content workload observed no actual BOP biomes; registry presence is insufficient");
+            report.put("biomeContentObservations", Map.of("observedBiomeColumns", observed, "actualBopColumns", bopColumns,
+                "totalColumns", samples.size(), "actualContentGenerationObserved", true));
+        }
         deterministic.put("seed", level.getSeed());
         deterministic.put("minY", level.getMinY()); deterministic.put("maxY", level.getMaxY());
         deterministic.put("chunks", chunkEvidence); deterministic.put("samples", samples);
@@ -355,6 +453,12 @@ public final class RuntimeQaMod implements ModInitializer {
             JsonObject prior = JsonParser.parseString(Files.readString(baseline)).getAsJsonObject();
             require(prior.get("digestSha256").getAsString().equals(digest), "Persisted/recomputed observations differ from generation baseline");
             node(nodes, "disk-reload-digest", "passed", digest);
+            Path structureBaseline = output.resolve("structure-baseline.json");
+            if (Files.isRegularFile(structureBaseline)) {
+                report.put("structureReloadChecks", StructureQa.verifyReload(level,
+                    JsonParser.parseString(Files.readString(structureBaseline)).getAsJsonObject()));
+                node(nodes, "structure-block-reload-digests", "passed", "Explicitly placed structures retain their full bounding-box block hashes");
+            }
         } else {
             require(!Files.exists(baseline), "Generate requires a fresh baseline path; use reload for an existing world");
             Files.writeString(baseline, JSON.toJson(evidence) + "\n", StandardCharsets.UTF_8);
@@ -362,6 +466,177 @@ public final class RuntimeQaMod implements ModInitializer {
         server.saveEverything(false, true, true);
         report.put("saveCompleted", true);
         node(nodes, "world-save-flush", "passed", "Actual server saveEverything completed with flush and force");
+    }
+
+    /** Fixed sequential FULL-chunk workload. Wall time includes native neighbor dependencies. */
+    private static void benchmarkWorld(MinecraftServer server, Path output, Map<String, Object> report,
+            List<Map<String, Object>> nodes) throws Exception {
+        ServerLevel level = server.overworld();
+        boolean vanilla = Boolean.getBoolean("terraforged.qa.vanillaControl");
+        var state = (RTFRandomState) (Object) level.getChunkSource().randomState();
+        var presets = level.registryAccess().lookupOrThrow(RTFRegistries.PRESET);
+        require(presets.get(Preset.KEY).isPresent() != vanilla, "Benchmark generator/preset mismatch");
+        require((state.generatorContext() == null) == vanilla, "Benchmark generator/context mismatch");
+        report.put("generator", vanilla ? "vanilla-control" : "terraforged-custom");
+        report.put("benchmarkEnvironment", Map.of("java", System.getProperty("java.version"),
+            "vmName", System.getProperty("java.vm.name"), "vmArguments", java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments(),
+            "availableProcessors", Runtime.getRuntime().availableProcessors(), "maxHeapBytes", Runtime.getRuntime().maxMemory(),
+            "terrainPoolCoreSize", raccoonman.reterraforged.concurrent.ThreadPools.WORLD_GEN.getCorePoolSize(),
+            "seed", level.getSeed(), "nativeWorldHeight", List.of(level.getMinY(), level.getMaxY()),
+            "terrainSettings", raccoonman.reterraforged.config.PerformanceConfig.read(
+                raccoonman.reterraforged.config.PerformanceConfig.DEFAULT_FILE_PATH).result().orElseThrow().toString()));
+        report.put("performanceConfigProbe", performanceConfigProbe(output));
+        var phases = new ArrayList<Map<String, Object>>();
+        // Far from startup spawn, disjoint regions. First request may generate a whole terrain tile.
+        var first = benchmarkCoordinates(1024, 1024);
+        var second = benchmarkCoordinates(2048, -2048);
+        boolean reload = System.getProperty("terraforged.qa.mode").equals("benchmark-reload");
+        phases.add(benchmarkPhase(level, reload ? "disk-reload" : "first-new-region", first));
+        phases.add(benchmarkPhase(level, "resident-reread", first));
+        if (!reload) phases.add(benchmarkPhase(level, "second-new-region", second));
+        report.put("benchmarkPhases", phases);
+        report.put("benchmarkScope", List.of("Each phase requests 64 FULL chunks in fixed x-major order",
+            "New regions include any native neighbor generation and first terrain-tile cost",
+            "Resident reread is a cache access measurement, not newly generated chunk throughput",
+            "No forced GC, no JVM warmup outside recorded startup, no FPS claim"));
+        Path baseline = output.resolve("benchmark-column-baseline.json");
+        var observations = new TreeMap<String, Object>();
+        for (var coordinate : first) {
+            var chunk = level.getChunk(coordinate[0], coordinate[1]);
+            int x = coordinate[0] * 16 + 7, z = coordinate[1] * 16 + 7;
+            int y = chunk.getHeight(Heightmap.Types.WORLD_SURFACE, 7, 7);
+            observations.put(x + "," + z, Map.of("height", y,
+                "biome", level.getBiome(new BlockPos(x, y, z)).unwrapKey().orElseThrow().identifier().toString(),
+                "columnSha256", columnDigest(level, x, z)));
+        }
+        if (reload) {
+            require(Files.isRegularFile(baseline), "Benchmark reload requires its own previous world baseline");
+            require(JsonParser.parseString(Files.readString(baseline)).equals(JSON.toJsonTree(observations)), "Benchmark saved columns changed on reload");
+            node(nodes, "benchmark-reload-columns", "passed", "All 64 full-height column hashes, heights and biome holders match the same world's saved baseline");
+        } else {
+            require(!Files.exists(baseline), "Benchmark generation requires a fresh baseline");
+            Files.writeString(baseline, JSON.toJson(observations) + "\n", StandardCharsets.UTF_8);
+        }
+        report.put("benchmarkColumnBaseline", Map.of("path", baseline.toString(), "sha256", sha256(baseline), "columnCount", observations.size()));
+        // Structures are deliberately outside the timed chunk phases.
+        if (raccoonman.reterraforged.platform.ModLoaderUtil.isLoaded("repurposed_structures")) {
+            var structures = level.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.STRUCTURE);
+            var ids = structures.keySet().stream().filter(id -> id.getNamespace().equals("repurposed_structures"))
+                .map(Object::toString).sorted().toList();
+            require(!ids.isEmpty(), "Loaded Repurposed Structures registered no structures");
+            report.put("structureMod", Map.of("modId", "repurposed_structures", "registeredStructureIds", ids,
+                "registeredStructureCount", ids.size(), "naturalPlacementCoverage", false));
+        }
+        server.saveEverything(false, true, true);
+        report.put("saveCompleted", true);
+        node(nodes, "benchmark-full-chunks", "passed", reload
+            ? "64 persisted FULL chunks and 64 resident rereads; saved full-height columns verified"
+            : "128 FULL chunk requests in two new regions and 64 resident rereads; 64 full-height columns saved");
+    }
+
+    private static Map<String, Object> performanceConfigProbe(Path output) throws Exception {
+        var defaults = raccoonman.reterraforged.config.PerformanceConfig.makeDefault();
+        Path test = Files.createTempDirectory(output, "performance-config-probe-").resolve("settings.conf");
+        var created = raccoonman.reterraforged.config.PerformanceConfig.read(test).result().orElseThrow();
+        require(created.equals(defaults) && Files.isRegularFile(test), "Absent config did not create effective defaults");
+        Files.writeString(test, "tileSize=2\nbatchCount=3\nthreadCount=2\n", StandardCharsets.UTF_8);
+        var parsed = raccoonman.reterraforged.config.PerformanceConfig.read(test).result().orElseThrow();
+        require(parsed.tileSize() == 2 && parsed.batchCount() == 3 && parsed.threadCount() == 2, "Config values ignored");
+        require(raccoonman.reterraforged.config.PerformanceConfig.parse("# empty defaults\n").result().orElseThrow().equals(defaults), "Partial config fallback changed");
+        int rejected = 0;
+        for (String invalid : List.of("tileSize=0", "tileSize=-1", "tileSize=6", "tileSize=not-a-number",
+                "batchCount=0", "batchCount=21", "threadCount=0", "threadCount=" + (raccoonman.reterraforged.config.PerformanceConfig.MAX_THREAD_COUNT + 1),
+                "unknown=1")) {
+            require(raccoonman.reterraforged.config.PerformanceConfig.parse(invalid).error().isPresent(), "Invalid config accepted: " + invalid);
+            rejected++;
+        }
+        Files.writeString(test, "tileSize=0\n", StandardCharsets.UTF_8);
+        require(raccoonman.reterraforged.config.PerformanceConfig.read(test).error().isPresent(), "Invalid file accepted");
+        require(Files.readString(test).equals("tileSize=0\n"), "Invalid file overwritten");
+        require(raccoonman.reterraforged.config.PerformanceConfig.read(test.getParent()).error().isPresent(), "Directory accepted as config");
+        var pool = raccoonman.reterraforged.concurrent.ThreadPools.WORLD_GEN;
+        int restore = pool.getCorePoolSize();
+        var workers = java.util.concurrent.ConcurrentHashMap.<String>newKeySet();
+        var entered = new java.util.concurrent.CountDownLatch(3);
+        var release = new java.util.concurrent.CountDownLatch(1);
+        try {
+            raccoonman.reterraforged.concurrent.ThreadPools.configure(1);
+            require(pool.getCorePoolSize() == 1 && pool.getMaximumPoolSize() == 1, "Pool decrease ignored");
+            raccoonman.reterraforged.concurrent.ThreadPools.configure(3);
+            require(pool.getCorePoolSize() == 3 && pool.getMaximumPoolSize() == 3, "Pool increase ignored");
+            var futures = new ArrayList<java.util.concurrent.Future<?>>();
+            for (int i = 0; i < 3; i++) futures.add(pool.submit(() -> {
+                workers.add(Thread.currentThread().getName()); entered.countDown();
+                try { require(release.await(5, java.util.concurrent.TimeUnit.SECONDS), "Worker release timed out"); }
+                catch (InterruptedException failure) { Thread.currentThread().interrupt(); throw new RuntimeException(failure); }
+            }));
+            require(entered.await(5, java.util.concurrent.TimeUnit.SECONDS), "Configured pool did not execute three simultaneous workers");
+            require(workers.size() == 3, "Configured worker count was not observed");
+            release.countDown();
+            for (var future : futures) future.get(5, java.util.concurrent.TimeUnit.SECONDS);
+        } finally {
+            release.countDown();
+            raccoonman.reterraforged.concurrent.ThreadPools.configure(restore);
+        }
+        for (int invalid : new int[] {0, raccoonman.reterraforged.config.PerformanceConfig.MAX_THREAD_COUNT + 1}) {
+            boolean failed = false;
+            try { raccoonman.reterraforged.concurrent.ThreadPools.configure(invalid); } catch (IllegalArgumentException expected) { failed = true; }
+            require(failed, "Invalid executor size accepted");
+        }
+        return Map.of("status", "passed", "invalidInputsRejected", rejected, "createdDefaults", true,
+            "validFileSettingsApplied", true, "invalidFilePreserved", true, "actualConcurrentWorkers", workers.stream().sorted().toList(),
+            "poolRestored", pool.getCorePoolSize() == restore);
+    }
+
+    private static List<int[]> benchmarkCoordinates(int x, int z) {
+        var result = new ArrayList<int[]>();
+        for (int dx = 0; dx < 8; dx++) for (int dz = 0; dz < 8; dz++) result.add(new int[] {x + dx, z + dz});
+        return result;
+    }
+
+    private static Map<String, Object> benchmarkPhase(ServerLevel level, String name, List<int[]> coordinates) {
+        var heapPools = java.lang.management.ManagementFactory.getMemoryPoolMXBeans().stream()
+            .filter(pool -> pool.getType() == java.lang.management.MemoryType.HEAP).toList();
+        heapPools.forEach(java.lang.management.MemoryPoolMXBean::resetPeakUsage);
+        long gcCount = gcCount(), gcMillis = gcMillis();
+        int loadedBefore = level.getChunkSource().getLoadedChunksCount();
+        long start = System.nanoTime();
+        var durations = new ArrayList<Long>();
+        var biomes = new TreeMap<String, Integer>();
+        for (var coordinate : coordinates) {
+            long requested = System.nanoTime();
+            var chunk = level.getChunk(coordinate[0], coordinate[1]);
+            require(chunk.getPersistedStatus().isOrAfter(net.minecraft.world.level.chunk.status.ChunkStatus.FULL), "Benchmark chunk not FULL");
+            durations.add(System.nanoTime() - requested);
+            int y = chunk.getHeight(Heightmap.Types.WORLD_SURFACE, 7, 7);
+            String biome = level.getBiome(new BlockPos(coordinate[0] * 16 + 7, y, coordinate[1] * 16 + 7))
+                .unwrapKey().orElseThrow().identifier().toString();
+            biomes.merge(biome, 1, Integer::sum);
+        }
+        long elapsed = System.nanoTime() - start;
+        var sorted = durations.stream().sorted().toList();
+        Map<String, Object> phase = new LinkedHashMap<>();
+        phase.put("name", name); phase.put("requestedFullChunks", coordinates.size());
+        phase.put("originChunk", List.of(coordinates.getFirst()[0], coordinates.getFirst()[1]));
+        phase.put("elapsedNanos", elapsed); phase.put("requestsPerSecond", coordinates.size() * 1_000_000_000.0 / elapsed);
+        double median = (sorted.get((sorted.size() - 1) / 2) + sorted.get(sorted.size() / 2)) / 2.0;
+        phase.put("perRequestNanos", durations); phase.put("medianRequestNanos", median);
+        phase.put("p95RequestNanos", sorted.get((int) Math.ceil(sorted.size() * 0.95) - 1));
+        phase.put("loadedChunksBefore", loadedBefore); phase.put("loadedChunksAfter", level.getChunkSource().getLoadedChunksCount());
+        phase.put("heapUsedBytesAfter", java.lang.management.ManagementFactory.getMemoryMXBean().getHeapMemoryUsage().getUsed());
+        phase.put("heapCommittedBytesAfter", java.lang.management.ManagementFactory.getMemoryMXBean().getHeapMemoryUsage().getCommitted());
+        phase.put("heapPoolPeaks", heapPools.stream().map(pool -> Map.of("pool", pool.getName(), "peakUsedBytes", pool.getPeakUsage().getUsed())).toList());
+        phase.put("gcCollections", gcCount() - gcCount); phase.put("gcMillis", gcMillis() - gcMillis);
+        phase.put("observedBiomes", biomes);
+        return phase;
+    }
+
+    private static long gcCount() {
+        return java.lang.management.ManagementFactory.getGarbageCollectorMXBeans().stream().mapToLong(bean -> Math.max(0, bean.getCollectionCount())).sum();
+    }
+
+    private static long gcMillis() {
+        return java.lang.management.ManagementFactory.getGarbageCollectorMXBeans().stream().mapToLong(bean -> Math.max(0, bean.getCollectionTime())).sum();
     }
 
     private static List<int[]> boundaryChunks() {

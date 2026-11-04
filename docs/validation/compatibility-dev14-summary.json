@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-shared-production-defect",
+  "performanceEvidence": false,
+  "pausedAtUtc": "2026-11-04T10:10:25.068451+00:00",
+  "artifactVersion": "0.1.0-dev.14+26.2",
+  "completedCaseSteps": [
+    {
+      "loader": "fabric",
+      "case": "optimized",
+      "export": "docs/validation/server-dev14-compat-fabric-optimized-export.json",
+      "generation": "docs/validation/server-dev14-compat-fabric-optimized-generation.json",
+      "generationResult": "failed-runtime",
+      "processExitCode": 1,
+      "forcedStop": true,
+      "timedOut": true
+    }
+  ],
+  "defect": "FeatureSorter order cycle between minecraft:swamp and reterraforged:marshland; independently reproduced by root base runs, so not assigned to C2ME",
+  "failureExcerpt": "docs/validation/compatibility-dev14-feature-order-failure.txt",
+  "failureExcerptSha256": "14d4f92f76959dfcb98decf26e40a72c5e5a2a2bafb5939368328f1da4611a39",
+  "rawLog": "build/qa/server/instances/20261104T100735Z-6eae43/qa-runs/20261104T100735Z-5525/stdout.log",
+  "matrixDriverStopped": true,
+  "remainingCasesNotRun": [
+    "Fabric communityModernFix",
+    "Fabric content/structures",
+    "NeoForge optimized",
+    "NeoForge communityModernFix",
+    "NeoForge content/structures"
+  ],
+  "nextCandidate": "Run separately named cases after shared feature-order fix; retain all14 evidence",
+  "ownedServerProcessCleanupComplete": true
+}

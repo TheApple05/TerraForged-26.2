@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "built",
+  "compileExit": 0,
+  "jar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\runtime-dev19\\terraforged-runtime-qa.jar",
+  "sha256": "d083d6898822f7f67efeddd5e5787cac2b9ddbb08ca7089dc2947b37e9de73c5",
+  "compileAgainst": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.19+26.2.jar",
+  "productionJarSha256": "6bc1e881c2d52e4d1980d5eac28420d82b36f5763d347143f9dc0771bf89fc18",
+  "sourceSha256Lf": {
+    "tests/runtime/terraforged/qa/CellSamplerCacheQa.java": "5eab8b7418a25f21dd70d43b53179efa13a3da524de75451bd3347a0fd98503e",
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "7f715dd79c9bc00c061e928a6cea24326aeecdc5df4d9227a4a1fadd76b14855",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "420d1426f1f9656848454d282223579bb7aaa663f594fa967efc3477ecb5ce9c",
+    "tests/runtime/terraforged/qa/ClassicPillarCandidateQa.java": "4dd112bbaf5b03b59bfbd70af9ff6e05584c7c7673659d1361a5ee6eafad2cdc",
+    "tests/runtime/terraforged/qa/mixin/StructureColumnProbe.java": "d59a84f88ceeb26a9f8496573f405fc301fb4079cd8d18c6a07f0bb34185ec90",
+    "tests/runtime/terraforged/qa/RuntimeQaMod.java": "a884aef263f9b393dd828836ffa36666a7664225f2668be1281a72cb4ee74f3c",
+    "tests/runtime/terraforged/qa/StructureQa.java": "1c695bd5f12f560d1d85695f7e80136c049f657ddec6fb11d868a6d76a902a5c",
+    "tests/terrain/TemplateBiomeDecoratorProbe.java": "75b2d53e042ed0db56e08b7f6f865e258a98bd3f85073102813dd9d3bc677971"
+  },
+  "notEvidenceOf": [
+    "Successful server launch",
+    "Preset export",
+    "Custom world generation",
+    "Visual parity"
+  ]
+}

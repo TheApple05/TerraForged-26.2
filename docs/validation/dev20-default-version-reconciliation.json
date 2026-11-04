@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-11-04T11:41:39.357471+00:00",
+  "status": "passed-effective-version-reconciliation",
+  "version": "0.1.0-dev.20+26.2",
+  "buildReport": "docs/validation/dual-loader-dev20-build.json",
+  "onlyProductionInputEdited": "gradle.properties",
+  "oldDefault": "mod_version=0.1.0-dev.18+26.2",
+  "newDefault": "mod_version=0.1.0-dev.20+26.2",
+  "reason": "Both original coherent builds explicitly passed -Pmod_version=0.1.0-dev.20+26.2; the source default now agrees with that effective build input. No JAR was rebuilt or changed.",
+  "coherentBuildSnapshotsBeforeEdit": {
+    "fabric": {
+      "files": 535,
+      "javaSources": 409,
+      "sha256": "53959e2b8b0a1a9fd825ffb46e4ad26d58ad2be59c1ef6830e9a0649960feee1",
+      "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+    },
+    "neoforge": {
+      "files": 529,
+      "javaSources": 402,
+      "sha256": "b4ff983e1996b804dd26b266f4ff0476ba41aeb2e2abc9c6c5caa60fa857fdfb",
+      "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+    }
+  },
+  "sourceSnapshotsAfterDefaultUpdate": {
+    "fabric": {
+      "files": 535,
+      "javaSources": 409,
+      "sha256": "da0819eeb5ca7fa5d01d3ee32dd910637cda3ecc5ab6d44d9fe7160f5d46949f",
+      "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+    },
+    "neoforge": {
+      "files": 529,
+      "javaSources": 402,
+      "sha256": "5976b940a7295f125186e279874c066c9b95bcc9007955d2fb732830dccbfd8e",
+      "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+    }
+  },
+  "oldPropertiesSha256Lf": "b4023cbf42333540407722cdc5b226104a5ee93da15f402757fa5b4ad9cbf678",
+  "newPropertiesSha256Lf": "492da0d2c3ad1fbf8cd7d733749058a98035ff20f88f974765e315df63531e49",
+  "unchangedArtifacts": [
+    {
+      "path": "build/libs/terraforged-revival-0.1.0-dev.20+26.2.jar",
+      "sha256": "0d7b64bc73a4ea1ddec8d4f2af5caabc3f06de50fc49f2f6a6f3b35c03e2a6b2",
+      "bytes": 1251239,
+      "classes": 589,
+      "platformProviders": [
+        "raccoonman.reterraforged.platform.fabric.FabricPlatformServices"
+      ],
+      "qaClassesPackaged": false,
+      "languageEntries": 296,
+      "licenseNoticesPresent": true
+    },
+    {
+      "path": "neoforge/build/libs/terraforged-revival-0.1.0-dev.20+26.2-neoforge.jar",
+      "sha256": "19e28ddeb425f20cbb69c820dc3f637f64c743fc6a3c07ae944c36c3ceb3b4a7",
+      "bytes": 1198882,
+      "classes": 582,
+      "platformProviders": [
+        "raccoonman.reterraforged.platform.neoforge.NeoForgePlatformServices"
+      ],
+      "qaClassesPackaged": false,
+      "languageEntries": 296,
+      "licenseNoticesPresent": true
+    }
+  ]
+}

@@ -1,0 +1,1185 @@
+{
+  "schema": 1,
+  "status": "inventory-not-implemented-native-kernel",
+  "scope": "Complete cell/tile pipeline for one pinned preset before native chunk activation",
+  "groups": {
+    "noise": {
+      "directory": "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise",
+      "files": 58,
+      "nonemptyLines": 3368
+    },
+    "cell": {
+      "directory": "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell",
+      "files": 65,
+      "nonemptyLines": 4670
+    },
+    "tile": {
+      "directory": "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile",
+      "files": 16,
+      "nonemptyLines": 885
+    },
+    "presetSettings": {
+      "directory": "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings",
+      "files": 12,
+      "nonemptyLines": 1146
+    },
+    "utilities": {
+      "directory": "common/src/main/java/raccoonman/reterraforged/world/worldgen/util",
+      "files": 6,
+      "nonemptyLines": 224
+    }
+  },
+  "additionalSources": [
+    "world/worldgen/GeneratorContext.java",
+    "world/worldgen/WorldFilters.java",
+    "world/worldgen/WorldErosion.java"
+  ],
+  "totalFiles": 160,
+  "totalNonemptyLines": 10451,
+  "entries": {
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/CaveSettings.java": {
+      "sha256": "c1ed94a84ef5e5f4c970c13f6224a5eb4ad76558a9e78119b502502cc834c985",
+      "nonemptyLines": 44
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ClimateSettings.java": {
+      "sha256": "a49aa5cc661622349e71d257473123d3e8274f926cab19afcbdf00846e78471e",
+      "nonemptyLines": 154
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ContinentType.java": {
+      "sha256": "bda3f6173d31a908c423d17a2549f80dcade178009da582dee113adedb61ca0b",
+      "nonemptyLines": 49
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/FilterSettings.java": {
+      "sha256": "d1bbe25b141b7cf651d75186037764f70e863cae16682cc3df16555518554129",
+      "nonemptyLines": 63
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/MiscellaneousSettings.java": {
+      "sha256": "664fcc4fdeb124a7c7ba07193dc74b97278a661a79c1ac07356f16ce9435d322",
+      "nonemptyLines": 71
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java": {
+      "sha256": "a7c3b86eb9368efe0535e9c9943f5e4f27633e0b8938c690b8e3ec0372e57be1",
+      "nonemptyLines": 75
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Presets.java": {
+      "sha256": "f0ae5df7044fe503c22a72d904d9795546408e85f9b255b7e577400dce45436e",
+      "nonemptyLines": 269
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/RiverSettings.java": {
+      "sha256": "bde5678a1916711b3122161698d6734719c4bd5130475bc296fa2c332145da3f",
+      "nonemptyLines": 108
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/SpawnType.java": {
+      "sha256": "ac7f0360bb7f19103e209cd59896cb161d9bca10b4fed5dbfb9bac3e0f1f97a6",
+      "nonemptyLines": 58
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java": {
+      "sha256": "a5506ac6f2938ef774e263d97712a6cc318f331ef8e771dd8eeba2d9a8f66399",
+      "nonemptyLines": 50
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/TerrainSettings.java": {
+      "sha256": "0d983648400524757df7696f57b6493f2a81fbb4d5de70c3b3e9c71b2d080b61",
+      "nonemptyLines": 88
+    },
+    "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/WorldSettings.java": {
+      "sha256": "03f6e100f26f51ce6c2272e47c98ae92d687b98cd379974f4814909fb50770a3",
+      "nonemptyLines": 117
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java": {
+      "sha256": "ea3cdd068cd05b607c8f744664016b275a6e2a95e1ee78e267788a64b51c40b3",
+      "nonemptyLines": 149
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java": {
+      "sha256": "ab021cf03e5316ae5b63cf1136a0001f93ff289c0679aa6403e8d2830b31caed",
+      "nonemptyLines": 43
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeLoader.java": {
+      "sha256": "3430396f45bd5eb9aa8b0a5ee28ad0bb212c5c7a476f9e07a07ded7cd592de01",
+      "nonemptyLines": 94
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/Cell.java": {
+      "sha256": "0358968642627fdc77fa35505bfeb249248b03384216ac60f2e7c579086a6dce",
+      "nonemptyLines": 102
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/CellLookup.java": {
+      "sha256": "f5ffd9667133524681c3d2c9594f212824d42fedce39f34a119bd582553a4be6",
+      "nonemptyLines": 4
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/CellPopulator.java": {
+      "sha256": "184d1233b34284e9a9464ce37b99f4cb64e9da5d22d52bee2cb9340f10de9f3f",
+      "nonemptyLines": 4
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/climate/Climate.java": {
+      "sha256": "244002a55ba4e4d701a4b96c1002d1a1ac43e7161adf2dfcb29cfb9540c12c75",
+      "nonemptyLines": 51
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/climate/ClimateModule.java": {
+      "sha256": "76fc1b32a1b1aca96ee25c475f88cdabe07abf9481a580164a42155f537822db",
+      "nonemptyLines": 171
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/advanced/AbstractContinent.java": {
+      "sha256": "d268bcadd1e4c40631899102a9362edd269e5ff0310e551cfeeecaa3f168d2e8",
+      "nonemptyLines": 98
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/advanced/AdvancedContinentGenerator.java": {
+      "sha256": "396676d2f6546fd37cffa691506631cd346f07337ee7ff61c6dfe3e50c3612cd",
+      "nonemptyLines": 182
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/Continent.java": {
+      "sha256": "73ee9eff692962d1cd0a19be6de24e4a5ad7d83e3a923fb9b6529bf45133d618",
+      "nonemptyLines": 15
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/ContinentLerper2.java": {
+      "sha256": "d7368d1e0c9fef6b16ce08d3ae13f05286745113c88574d99c93706221809e6d",
+      "nonemptyLines": 41
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/ContinentLerper3.java": {
+      "sha256": "b2208416eaecc854744b8b9888193435c80a6b23f6d869bc6c93f0e210a7719e",
+      "nonemptyLines": 55
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyContinent.java": {
+      "sha256": "ae4dcce5cbe9fded2def8af97bb575cbb4546e00dfaacaada2122cc2c54e4e6b",
+      "nonemptyLines": 135
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyContinentGenerator.java": {
+      "sha256": "0cf9c1869fe470784dbf62b2a1f877b9b1089c97a8b363df6db079c5cfd94de9",
+      "nonemptyLines": 73
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyRiverGenerator.java": {
+      "sha256": "2e3e4ce9ce606bf0ed5a6640d321296409f641ba8405e5c07326da6d1eb10909",
+      "nonemptyLines": 136
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/Island.java": {
+      "sha256": "9bb56d70bded6e01e6fdd892bec686f73ecfb9355fa271c4439184921f7e36d0",
+      "nonemptyLines": 162
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/Segment.java": {
+      "sha256": "21429cf79fa275074abb9b85e3770a0c13e362254135228ec639b379da4bae22",
+      "nonemptyLines": 44
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/infinite/InfiniteContinentGenerator.java": {
+      "sha256": "793ff89fadab189e0c6dccb537a8970bc7a5fca79820695ea6792aac823a337f",
+      "nonemptyLines": 33
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/MushroomIslandPopulator.java": {
+      "sha256": "6d55b1040024a793196bf912dc1076a6e2e5ff4b9bb50044ccc79782cdaf8bb8",
+      "nonemptyLines": 24
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/ContinentGenerator.java": {
+      "sha256": "63e0a2c05ebadd999663b6625f77d381003940d80b25789d4470a55ed8201554",
+      "nonemptyLines": 245
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/MultiContinentGenerator.java": {
+      "sha256": "f15d1b92e773c4e7535b0bd8b79cde6a1a693545c27437e91f8b8602a3423556",
+      "nonemptyLines": 8
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/SimpleRiverGenerator.java": {
+      "sha256": "9eb43dd454dde0554d2dbc082ffd9ce72118eab779066a772be4f9d92d1d8bb0",
+      "nonemptyLines": 50
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/SingleContinentGenerator.java": {
+      "sha256": "24c8828b1085fcb6f7897920b01d639740df94e6df92ebb85fe8e3c9ec871142",
+      "nonemptyLines": 26
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/SimpleContinent.java": {
+      "sha256": "7ba8549b67cd5a7905329cd43fda7ebdce15235ac70139d053f95deff3bac442",
+      "nonemptyLines": 10
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/filter/BeachDetect.java": {
+      "sha256": "46c4a8ae392279accc7bbbb129e0f55e4f54ec5283a434235413625aed0dc6c6",
+      "nonemptyLines": 50
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/filter/NoiseCorrection.java": {
+      "sha256": "348d6376ab6d4d63e937fd844acb8c768bdb78a3b845181ee8183a35c6b8fac1",
+      "nonemptyLines": 43
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/ControlPoints.java": {
+      "sha256": "560d1a8546c32f6a8eca7bfcdb6803258556dbbe6c151e3dd4b6589896541857",
+      "nonemptyLines": 15
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Heightmap.java": {
+      "sha256": "aaaa06ede7688379264cfd71e644f855a86166253aefde93185aa5dffd9075db",
+      "nonemptyLines": 128
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Levels.java": {
+      "sha256": "4d5533a1e49ecd6d968d4e74d5908304d2e86e8e69a58ba30932ac360b9188c9",
+      "nonemptyLines": 51
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/RegionConfig.java": {
+      "sha256": "39ce833e534b6d6fe8eb42aaf29a4458bd8ea47ef34cf747cb867c9cda6094df",
+      "nonemptyLines": 4
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/WorldLookup.java": {
+      "sha256": "1bd7ae585fb33bf33fcfe23c87ce024bbfc2fb097fcf66b710e02397761ade05",
+      "nonemptyLines": 65
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/gen/GenWarp.java": {
+      "sha256": "073d69b8e0993a96c7a56d3513f22900a31b8fbba5c41ddbd459fd63001e52bc",
+      "nonemptyLines": 13
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/lake/Lake.java": {
+      "sha256": "55c9c8abafe7c8fd218bfb996081d373cee2510fbd70f5566b3b9fe2a72b1744",
+      "nonemptyLines": 86
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/lake/LakeConfig.java": {
+      "sha256": "90751f92a4330acb429048471c4fc32af2c5dfb15e5ac6add628071fb92f391b",
+      "nonemptyLines": 56
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/LegacyRiverCache.java": {
+      "sha256": "ff8bfa8d32193bde410f12321079398009b60cda9aada9029a3cac1ec6a2b793",
+      "nonemptyLines": 11
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/BaseRiverGenerator.java": {
+      "sha256": "42205a086f29b98b4f51e13be4f44b0f2e6ea41cc378807a839fbbf87a96d554",
+      "nonemptyLines": 203
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/Network.java": {
+      "sha256": "10e07b4cc14767d65f1ca7d04b4c84d8af2e0b6ce91fa3573d4271bd2d39c621",
+      "nonemptyLines": 144
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/Range.java": {
+      "sha256": "6801f1e72e5e2da5726c9915cbdffc6814048c0710ec6f6c743ea0c52e12b340",
+      "nonemptyLines": 3
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/River.java": {
+      "sha256": "ae5c134a893e05f1f0f3d9a5ea084f8b1bb01a92be2b88dd4cab0489b50feb40",
+      "nonemptyLines": 123
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/RiverCarver.java": {
+      "sha256": "726a3809e53244bea2c28e683ab7b7a1282cf1dfc1a7572e324cd228cc8f37aa",
+      "nonemptyLines": 169
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/RiverConfig.java": {
+      "sha256": "0fa3d113fb0f2204f5476d0c82acffabefe370db80ea29523310ddcf70860b6f",
+      "nonemptyLines": 114
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/RiverWarp.java": {
+      "sha256": "f53c6e2df3c90386ebdc37c9f6eca068a729aa0cf4c7e648b236c15ee57fccc3",
+      "nonemptyLines": 70
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/RiverCache.java": {
+      "sha256": "6e7d531beee716947e3c8c3037b675838f514f8f2c2c56c640b6e889f643c53d",
+      "nonemptyLines": 18
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/RiverGenerator.java": {
+      "sha256": "62c0f2265600250241c6e07a007c8c13220a33d19b1d7db19e4fdae528c8138e",
+      "nonemptyLines": 4
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/Rivermap.java": {
+      "sha256": "2713df1166bfb438b829ad073c724d750f409cf0424c1229af563faceefc452d",
+      "nonemptyLines": 53
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/wetland/Wetland.java": {
+      "sha256": "67889df4edd6a831dafb3f0b95233f900172b27f8cb8a77c9d886419c21da6c6",
+      "nonemptyLines": 96
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/wetland/WetlandConfig.java": {
+      "sha256": "9ecddac0211eaaf40e680ac4e03c63a505ae661c417e7c1964c480df2995cbf2",
+      "nonemptyLines": 14
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/Blender.java": {
+      "sha256": "0390bd62dac2db370850af6bedd0585e6053114963f7ebdf84d0b8fdf599e37c",
+      "nonemptyLines": 52
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/CompositeTerrain.java": {
+      "sha256": "ccd36a95bf92eeec3d52b1846e0e913c32f1ee89a6aaaf0b4907502399d969e4",
+      "nonemptyLines": 27
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/ConfiguredTerrain.java": {
+      "sha256": "afe77fad7921f76bfe025e1c63ee837a5247e170856bbc7c1353cfaf5de3c061",
+      "nonemptyLines": 33
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/ITerrain.java": {
+      "sha256": "804230a828b47b3d41b6ff32474a57d089d1dd836d6aa1fc69a0e5cc95b1e26e",
+      "nonemptyLines": 90
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/IslandPopulator.java": {
+      "sha256": "e0d8b628f023eb9d5c757e470b1448c9fc8c8ce0761bdd704740c420f32904a6",
+      "nonemptyLines": 8
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/OceanPopulator.java": {
+      "sha256": "16820fbad7d7953d00e38b879e343a5cfff5a4855a843bf84373c597735efd46",
+      "nonemptyLines": 14
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/TerrainPopulator.java": {
+      "sha256": "9271240af2ac7fff29eb07365155c33989da2b253b68b0a1a7b33fcc48509750",
+      "nonemptyLines": 23
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/VolcanoPopulator.java": {
+      "sha256": "1e371a4c88821b340c872d7a473d86ee3ad085e40611fe33767136dc66745c36",
+      "nonemptyLines": 94
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/WeightedPopulator.java": {
+      "sha256": "ed850a2273156f4dab2c134d2e29ec02b1a53612b632a39edad9fafa79ffffb9",
+      "nonemptyLines": 4
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/Populators.java": {
+      "sha256": "675f73af065d788512fa48851806cb8ac6d702a2c6a1e1fea9ca39a18e04e89b",
+      "nonemptyLines": 280
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java": {
+      "sha256": "d7e0e4fb1c21e3630f2ccba2de567c35563bc7ab1693b84eee1542d1c3bbf594",
+      "nonemptyLines": 90
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/region/RegionLerper.java": {
+      "sha256": "08aba2ac7ebb75c2060a5bd0920c0a2c40c661b9ea6fdc2e07c48d84c4d97dc1",
+      "nonemptyLines": 35
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/region/RegionModule.java": {
+      "sha256": "a215cab9d3e8ad1d565ee065a0d01c5e2aa725f56864a478c429b887bc2fc15f",
+      "nonemptyLines": 81
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/region/RegionSelector.java": {
+      "sha256": "8a907b8b00f2bc8b32f06f3fd0adeeff9d1a6a59b7cdda52e96d5dc57bac93dc",
+      "nonemptyLines": 58
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/Terrain.java": {
+      "sha256": "d10de5c801df51011ebe99c33302b289c67b4fa742e9cac9a45602cd97ceefe3",
+      "nonemptyLines": 44
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainCategory.java": {
+      "sha256": "37ca68c81566088c84d0cdb5ab6370d428940905386b305b2d31fb9419c3d57d",
+      "nonemptyLines": 118
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainType.java": {
+      "sha256": "e56632a2f711808caed9e2fab7c4fcb03b341e9afa5ee444bbe2b7f16675fd8f",
+      "nonemptyLines": 131
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/chunk/ChunkHolder.java": {
+      "sha256": "5297bfa4854bcb1af73a0f5068071a0ca7d134fff458564835145b70936cec6e",
+      "nonemptyLines": 7
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/chunk/ChunkReader.java": {
+      "sha256": "ae188c349c92598c53c85a70fbb3c0e20b575ea25d6dcab32811224ae03a4182",
+      "nonemptyLines": 6
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/chunk/ChunkWriter.java": {
+      "sha256": "d87af243c196f9882cdd916010dffa198d6001e8c2310da427391cdd91c442a3",
+      "nonemptyLines": 5
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/BeachDetect.java": {
+      "sha256": "06de52af8af9e8164651e953b133150641d2919fd0cae8b56a82c5abd8052c76",
+      "nonemptyLines": 48
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Erosion.java": {
+      "sha256": "a92613f4c2bae53c82153676aa13ad17801cd21029904cb93933066c928af16e",
+      "nonemptyLines": 226
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Filter.java": {
+      "sha256": "f6a5eddb81f94665ad47b797d6bd3a1e7c592e4b339a6ffb73768d3827e5967a",
+      "nonemptyLines": 16
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Filterable.java": {
+      "sha256": "1954fbddff74a514bfc9851eff5789f7260a3bab831e46d0d80052041f10f62a",
+      "nonemptyLines": 10
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Modifier.java": {
+      "sha256": "8547fce74a5d4fc44adc42ee1246ea4f4155d477c55b2d440046ce524a29aa08",
+      "nonemptyLines": 38
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/NoiseCorrection.java": {
+      "sha256": "1f9d38fe5f8e416bea1017b461e61c6f654879421db3be9384c142258bca54ca",
+      "nonemptyLines": 41
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Smoothing.java": {
+      "sha256": "97cddaf3db8f7834f57adc25e9fa55a1861de93a68e08ba7b5a0c4f9495b51f4",
+      "nonemptyLines": 52
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Steepness.java": {
+      "sha256": "ffb9d644f5ec92f7a54406a6d190bd6d2c8423edb9db2f6c73cdd54f2421bc9a",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/generation/TileGenerator.java": {
+      "sha256": "4f2d55175fdb852d974702e6d7b1be4f7b1ba239e00eab7b4180295685abfc65",
+      "nonemptyLines": 126
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/Size.java": {
+      "sha256": "d68cfbdd16599c28fa27589ac6b8456f5b788425e6d19276c42507051d5ef5fe",
+      "nonemptyLines": 34
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/Tile.java": {
+      "sha256": "dc55f46847bca594ca571985979c9703b8f20599a67ef023f9ba0aab0020968e",
+      "nonemptyLines": 146
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java": {
+      "sha256": "7eed5a169407ae7c4955473e4cdb98f5b5012eae2e2c270c4a7e8b1c424463cb",
+      "nonemptyLines": 83
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileFactory.java": {
+      "sha256": "6d8f295f5eda018d931531f553f6131dbcdaad233c5bf45849c070057f2a08fd",
+      "nonemptyLines": 16
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/GeneratorContext.java": {
+      "sha256": "b0848a644b63a30c8f6ce366e1ceeb49bd2419116b51e8fe9a798ea52af7bec5",
+      "nonemptyLines": 49
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/AddWarp.java": {
+      "sha256": "3e3e189af212e067638799afd0ed7acfddb1a9a7689abb96cc7844fae969319e",
+      "nonemptyLines": 27
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/CompoundWarp.java": {
+      "sha256": "9a21ca826f9b471d88a12075b40ebbeeb0663888ea7e17307624d88577e4ad9c",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectionWarp.java": {
+      "sha256": "8091c6fa5933bdd2c767508b0db21b9a114727d60c3de8f2e1b54b90acce81d9",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectWarp.java": {
+      "sha256": "a77ad3514be3fbf538e71ea2e3095494f72a06cdad9291c3c46efc6e0a9bf290",
+      "nonemptyLines": 23
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domain.java": {
+      "sha256": "6b69a33712a368c3ec08adf0bd4d24490182e3ea2dd052984c310a998a9f910f",
+      "nonemptyLines": 19
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domains.java": {
+      "sha256": "43a03c893f81383bdb0da8d4c03c89f20ac6b1ec4cbbf5f5c64d77acec356833",
+      "nonemptyLines": 48
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DomainWarp.java": {
+      "sha256": "d64372619f1bcc4b9954be399ea3c5cbfd8dc556ce8c52846af3e9abd23d5e9e",
+      "nonemptyLines": 39
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CellFunction.java": {
+      "sha256": "df3ad29c3b985e4474124503a48d7875ab10266d27a79407144ca939f89478c7",
+      "nonemptyLines": 46
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunction.java": {
+      "sha256": "56a1f8d7e9f3a2805f65c49dc6c277ced41f9a1b50dc3506937ac83be06e3ce1",
+      "nonemptyLines": 10
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunctions.java": {
+      "sha256": "824f5f1f26ac37e14eefe1fb16483d0f88bfc6a2014a7825a14e84e16513c260",
+      "nonemptyLines": 17
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/DistanceFunction.java": {
+      "sha256": "f40efc3679587c87dfe661d450ca9d19a58d366499ce01d8bb8b13742ef47757",
+      "nonemptyLines": 33
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/EdgeFunction.java": {
+      "sha256": "0c27400f83cc4817e3fbcddc2f302182fbde63c421a494928e766c598f9fb740",
+      "nonemptyLines": 108
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/Interpolation.java": {
+      "sha256": "422742353f669ce13af9fcbbc22647692cd7865bc6602a9c9fc4c815ada8ad3a",
+      "nonemptyLines": 39
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/SCurveFunction.java": {
+      "sha256": "fa2b00998ca121e1103884ca1caee528b1187f82d64e1023ceea08659af111ca",
+      "nonemptyLines": 22
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Abs.java": {
+      "sha256": "e43f10c01dc1034078c34b5611aa40a95d5f726c90035701adc595a002460cc3",
+      "nonemptyLines": 29
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Add.java": {
+      "sha256": "d3b16a276e0b78220bd67099d1baa61620fe81882f2bea3aadf70b4761b37bd8",
+      "nonemptyLines": 30
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/AdvancedTerrace.java": {
+      "sha256": "b6a3d720ebdfe1d5429e917852e54ea060f34d97821ff5ca2d5649fb2ffb2256",
+      "nonemptyLines": 75
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Alpha.java": {
+      "sha256": "fdc239b827ecf750abc7687427eb5fac30f46f1a2cf4b26992782ecf87903ad8",
+      "nonemptyLines": 32
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Billow.java": {
+      "sha256": "185c12d27ad07e1370ad47ef3651948f53fd4f64a94df7f2a6543e146a859ac9",
+      "nonemptyLines": 88
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Blend.java": {
+      "sha256": "a9705b9078e623c685f58bdfa821913bbc7c20c25f16091fc1c49f261dc89971",
+      "nonemptyLines": 47
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Boost.java": {
+      "sha256": "b7b4bbe22c396ce71e0d60d076ea472d84f5eba94fe581703600f4ebe47ad1fd",
+      "nonemptyLines": 39
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cache2d.java": {
+      "sha256": "747ad42200c2a73c27a1ace0ebebbf95c7e3a41dcb0ce082d81e224092ee06af",
+      "nonemptyLines": 70
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Clamp.java": {
+      "sha256": "0e4d08ac8698d147c63407da9dd449ef4498fddc3e5cd93ffef5d1a27ccba50e",
+      "nonemptyLines": 32
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Constant.java": {
+      "sha256": "29a632a40cb0158b5c3540d53a423a513d1be10828a715f7b2880ffe07459b43",
+      "nonemptyLines": 26
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cubic.java": {
+      "sha256": "0f1376eb1e163cdf614159abf2523d5025c2c575ba9d91066f9fb5c2ea7b66f4",
+      "nonemptyLines": 60
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Curve.java": {
+      "sha256": "67eed5e2f9e80589bb678c09d39db11fd5e0dd4de9d74b061ca809b8ee776a6b",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Erosion.java": {
+      "sha256": "5320dc3dd53ad61fd3033b8f748bbf7dba2d9c16f0549aca43dd2c86116d0452",
+      "nonemptyLines": 162
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Frequency.java": {
+      "sha256": "09431a307a613406d3a0ba500b329ce16366208e3cf55c65f0b7d1176d375d5a",
+      "nonemptyLines": 33
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Gradient.java": {
+      "sha256": "1ad217cfc913e611bd797b98136f787057e29b35648f68662023a65c30d662f0",
+      "nonemptyLines": 45
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Invert.java": {
+      "sha256": "b31aaf6f8b8c60ddeadd887cf6ddba76e10d87370fdb54d17c48551a548f3969",
+      "nonemptyLines": 32
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyMoisture.java": {
+      "sha256": "e06d214f74a3c1081ccbf07ffcdcb58fa30211da752175bbec7e16754dbdf9a0",
+      "nonemptyLines": 38
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyTemperature.java": {
+      "sha256": "1a27a5c7b339970c0178a890864a5b2314b81c5daac48656ba32b30d6712126e",
+      "nonemptyLines": 36
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Line.java": {
+      "sha256": "5d703372d3a8cbffcc8bca47cd564ddf2ad9ecd3de526b466a86df6541bbbea1",
+      "nonemptyLines": 120
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java": {
+      "sha256": "1429ee741705d118c0e2a375722d706d3e3a25e719eb20513d97bc8b2cf06389",
+      "nonemptyLines": 83
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Map.java": {
+      "sha256": "2de900f168aaae3e865f24d579726ea6eac014190efe404bcd25870d44034843",
+      "nonemptyLines": 37
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Max.java": {
+      "sha256": "c506b286eb20b044874a602fe3013d533932f28bd096bf414689505e3b1aa06e",
+      "nonemptyLines": 30
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Min.java": {
+      "sha256": "6cc0fec91d0c53360c09581ccd0c3bd96c677901b258302f4b6fab20902c0363",
+      "nonemptyLines": 30
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Multiply.java": {
+      "sha256": "924cd3a9f55094d1b76ce357f4c2b3dc0ce6cfc93136b561d9d1947f9f9e74fa",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java": {
+      "sha256": "e28e58b0fd819db499ade311d5511e738c55630e3a01abac70ba6b77e063f142",
+      "nonemptyLines": 24
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java": {
+      "sha256": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+      "nonemptyLines": 349
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin.java": {
+      "sha256": "30bc31c35f9801ecfebdbbe121313ed4efa6afa3ce07bce97a227159346b8816",
+      "nonemptyLines": 84
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin2.java": {
+      "sha256": "18dd75b0b30cd963bb526ae547046ce859b1ea08fb017f7026a014a6f2096183",
+      "nonemptyLines": 84
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PerlinRidge.java": {
+      "sha256": "481916e7f3eea17ce475e38fbd553bc33e8ef759aed6c98dd27f0a8113518c7e",
+      "nonemptyLines": 88
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Power.java": {
+      "sha256": "0961da806f3c7de7fdb7ea8bed4acd6d85299dbe1ffe46a16235afe22d72b5a3",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PowerCurve.java": {
+      "sha256": "2407ac770545af77aedf638f06d3677d6c2f61be04686e7412dacf17858c1376",
+      "nonemptyLines": 45
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/ShiftSeed.java": {
+      "sha256": "81b5c7a251df0729bc61905248d9a00bbfb357ddd31bf052bada47ddb5e8db9c",
+      "nonemptyLines": 30
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex.java": {
+      "sha256": "7b154b3c6804afc33248ca6b2c2942c9a94d54aeac1e0d58ed95a70671908a9a",
+      "nonemptyLines": 116
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex2.java": {
+      "sha256": "d248bac6fdcc75e56368ccbb9ce938731c4bc44e87b11f2816631ce43557fda4",
+      "nonemptyLines": 68
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/SimplexRidge.java": {
+      "sha256": "45d8fc50034b0793d83c1213f0c02f58a1492aeb3885776dbcca8331c710a7eb",
+      "nonemptyLines": 73
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Sin.java": {
+      "sha256": "ed59913903cbe52e0bd901a6f73fc8e0ea30c53f3d39d5eb72f6280b6fb7e92b",
+      "nonemptyLines": 44
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Steps.java": {
+      "sha256": "fdd83dc40edee520549308cb0099080364f2423bb69dc118385d8b64a5d535be",
+      "nonemptyLines": 47
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Terrace.java": {
+      "sha256": "087602c39508e0d32b1302d4a92abf039201958cae823867e0aaf646a2b95851",
+      "nonemptyLines": 86
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Threshold.java": {
+      "sha256": "ed268ad7975f6fa6474ccbf12418a25b87f02126fb885014199eed0543461bc1",
+      "nonemptyLines": 36
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Warp.java": {
+      "sha256": "4785bdda27a74dfa9c162be3e84ed49f990e177a11d0650c2138284dd79d630d",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/White.java": {
+      "sha256": "95795d449477288f489d866d64ae80aff2c74d116b60e4531f356dd8fdaad465",
+      "nonemptyLines": 41
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Worley.java": {
+      "sha256": "15c5911263366a66589d8d945d2ab5f8c879ef3f0424a318fe17bc5d3cc41217",
+      "nonemptyLines": 82
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/WorleyEdge.java": {
+      "sha256": "a4e576c38a3be9fc889fa08457c413cb316e06f4b086d6a82032f294a276b539",
+      "nonemptyLines": 62
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/NoiseUtil.java": {
+      "sha256": "fd4388ac96e81c1348d4343bd14172bf68906707e17dafff4184c6116101a1ab",
+      "nonemptyLines": 218
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/Boundsf.java": {
+      "sha256": "bf3641a2e65b163ecf59e318d77b2fd0d776e03abe4632e7c6cd03f4103d17fa",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/FastRandom.java": {
+      "sha256": "0f3197ad245c8f087c1e15290ffe9e8425a62da469095319691fcd59ed97f465",
+      "nonemptyLines": 61
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/PosUtil.java": {
+      "sha256": "090077be4198c5caa72121579495957bbd4b382e33ea33010326a2076bafb319",
+      "nonemptyLines": 36
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/Scaling.java": {
+      "sha256": "f9ee1e4e6d0190e6d98d59941838302755c8fc87283c74f7d88a2470240fef12",
+      "nonemptyLines": 41
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/Seed.java": {
+      "sha256": "3ffbb804fad067ceba2c55e18a47d94aecfa9b27392d660cb8046e2a78d5e9bf",
+      "nonemptyLines": 24
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/Variance.java": {
+      "sha256": "0d8fbe3cae49b9f80ee0148c97eeeae61ccef627a919d249fe89f0354e1e54e0",
+      "nonemptyLines": 31
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/WorldErosion.java": {
+      "sha256": "ad3c22df33af87b86fc664e6c4fc80ef48f608b0d2af91f8f0dab802c10e07e6",
+      "nonemptyLines": 52
+    },
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/WorldFilters.java": {
+      "sha256": "ef38223bef1cc2f120ead16296c8d45b1d7815d12055d3349b861de82f3aa9b2",
+      "nonemptyLines": 57
+    }
+  },
+  "importBoundaries": {
+    "externalAdapters": {
+      "com.mojang.serialization.Codec": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/CaveSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ClimateSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ContinentType.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/FilterSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/MiscellaneousSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/RiverSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/SpawnType.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/TerrainSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/WorldSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/AddWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/CompoundWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectionWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domain.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domains.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DomainWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CellFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunctions.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/DistanceFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/EdgeFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/Interpolation.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/SCurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Abs.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Add.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/AdvancedTerrace.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Alpha.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Billow.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Blend.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Boost.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cache2d.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Clamp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Constant.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cubic.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Curve.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Erosion.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Frequency.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Gradient.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Invert.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyMoisture.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyTemperature.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Line.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Map.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Max.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Min.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Multiply.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin2.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PerlinRidge.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Power.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PowerCurve.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/ShiftSeed.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex2.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/SimplexRidge.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Sin.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Steps.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Terrace.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Threshold.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Warp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/White.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Worley.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/WorleyEdge.java"
+      ],
+      "com.mojang.serialization.codecs.RecordCodecBuilder": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/CaveSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ClimateSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/FilterSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/MiscellaneousSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/RiverSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/TerrainSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/WorldSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/AddWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/CompoundWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectionWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DomainWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/SCurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Abs.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Add.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/AdvancedTerrace.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Alpha.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Billow.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Blend.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Boost.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Clamp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cubic.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Curve.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Erosion.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Frequency.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Gradient.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Invert.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyMoisture.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyTemperature.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Line.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Map.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Max.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Min.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Multiply.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin2.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PerlinRidge.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Power.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PowerCurve.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/ShiftSeed.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex2.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/SimplexRidge.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Sin.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Steps.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Terrace.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Threshold.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Warp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/White.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Worley.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/WorleyEdge.java"
+      ],
+      "net.minecraft.util.StringRepresentable": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ClimateSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ContinentType.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/SpawnType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CellFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/DistanceFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/EdgeFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/Interpolation.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Erosion.java"
+      ],
+      "net.minecraft.core.HolderLookup": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "net.minecraft.core.Registry": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "net.minecraft.core.RegistryAccess": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "net.minecraft.core.RegistrySetBuilder": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "net.minecraft.core.registries.BuiltInRegistries": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "net.minecraft.core.registries.Registries": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java"
+      ],
+      "net.minecraft.data.worldgen.BootstrapContext": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "net.minecraft.resources.ResourceKey": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java"
+      ],
+      "net.minecraft.core.BlockPos": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/SpawnType.java"
+      ],
+      "com.google.common.collect.ImmutableMap": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java"
+      ],
+      "net.minecraft.world.level.levelgen.structure.StructureSet": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java"
+      ],
+      "com.google.common.collect.ImmutableList": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java"
+      ],
+      "com.mojang.datafixers.util.Pair": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java"
+      ],
+      "javax.imageio.ImageIO": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeLoader.java"
+      ],
+      "net.minecraft.core.HolderGetter": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/climate/Climate.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Heightmap.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/GeneratorContext.java"
+      ],
+      "net.minecraft.core.QuartPos": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/filter/NoiseCorrection.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/NoiseCorrection.java"
+      ],
+      "org.jetbrains.annotations.Nullable": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/GeneratorContext.java"
+      ],
+      "com.mojang.serialization.MapCodec": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/AddWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/CompoundWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectionWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DirectWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domain.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domains.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/DomainWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunctions.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/Interpolation.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/SCurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Abs.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Add.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/AdvancedTerrace.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Alpha.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Billow.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Blend.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Boost.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cache2d.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Clamp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Constant.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Cubic.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Curve.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Erosion.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Frequency.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Gradient.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Invert.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyMoisture.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LegacyTemperature.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Line.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Map.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Max.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Min.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Multiply.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Perlin2.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PerlinRidge.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Power.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/PowerCurve.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/ShiftSeed.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Simplex2.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/SimplexRidge.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Sin.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Steps.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Terrace.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Threshold.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Warp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/White.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Worley.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/WorleyEdge.java"
+      ],
+      "net.minecraft.util.ExtraCodecs": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java"
+      ],
+      "net.minecraft.util.Mth": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java"
+      ],
+      "net.minecraft.core.Holder": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java"
+      ],
+      "net.minecraft.resources.RegistryFileCodec": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java"
+      ],
+      "com.mojang.datafixers.util.Either": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java"
+      ]
+    },
+    "javaLibrarySemantics": {
+      "java.util.function.BiFunction": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/ClimateSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java"
+      ],
+      "java.util.HashMap": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java"
+      ],
+      "java.util.Map": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java"
+      ],
+      "java.util.Map.Entry": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/StructureSettings.java"
+      ],
+      "java.awt.Color": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeLoader.java"
+      ],
+      "java.util.ArrayList": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/SimpleRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/Network.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java"
+      ],
+      "java.util.List": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/SimpleRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/BaseRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/Network.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/region/RegionSelector.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainType.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/LinearSpline.java"
+      ],
+      "java.io.FileWriter": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java"
+      ],
+      "java.io.IOException": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeLoader.java"
+      ],
+      "java.io.InputStream": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java"
+      ],
+      "java.util.Properties": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeColors.java"
+      ],
+      "java.awt.image.BufferedImage": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeTypeLoader.java"
+      ],
+      "java.util.Random": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyContinent.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/fancy/FancyRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/simple/SimpleRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/BaseRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/RiverCarver.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/RiverWarp.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/util/Variance.java"
+      ],
+      "java.util.Collections": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/river/BaseRiverGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java"
+      ],
+      "java.util.concurrent.TimeUnit": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/RiverCache.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java"
+      ],
+      "java.util.LinkedList": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/region/RegionSelector.java"
+      ],
+      "java.util.concurrent.CopyOnWriteArrayList": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainType.java"
+      ],
+      "java.util.Optional": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainType.java"
+      ],
+      "java.util.function.Predicate": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainType.java"
+      ],
+      "java.util.function.Consumer": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/TerrainType.java"
+      ],
+      "java.util.function.IntFunction": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/filter/Erosion.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/WorldErosion.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/WorldFilters.java"
+      ],
+      "java.util.concurrent.CompletableFuture": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/generation/TileGenerator.java"
+      ],
+      "java.util.Arrays": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/Tile.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Erosion.java"
+      ],
+      "java.util.concurrent.atomic.AtomicInteger": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java"
+      ],
+      "java.util.function.Function": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domain.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java"
+      ],
+      "java.util.concurrent.locks.StampedLock": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/WorldErosion.java"
+      ]
+    },
+    "additionalProjectAdapters": {
+      "raccoonman.reterraforged.data.worldgen.preset.PresetBiomeModifierData": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetNoiseData": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/climate/Climate.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Heightmap.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetBiomeData": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetConfiguredCarvers": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetConfiguredFeatures": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetDimensionTypes": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetNoiseGeneratorSettings": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetNoiseRouterData": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetPlacedFeatures": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetStructureRuleData": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java"
+      ],
+      "raccoonman.reterraforged.registries.RTFRegistries": [
+        "common/src/main/java/raccoonman/reterraforged/data/worldgen/preset/settings/Preset.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noise.java"
+      ],
+      "raccoonman.reterraforged.world.worldgen.biome.Humidity": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java"
+      ],
+      "raccoonman.reterraforged.world.worldgen.biome.Temperature": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/biome/type/BiomeType.java"
+      ],
+      "raccoonman.reterraforged.concurrent.Resource": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/Cell.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/continent/advanced/AdvancedContinentGenerator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/Tile.java"
+      ],
+      "raccoonman.reterraforged.concurrent.SimpleResource": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/Cell.java"
+      ],
+      "raccoonman.reterraforged.concurrent.pool.ThreadLocalPool": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/Cell.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetClimateNoise": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/climate/Climate.java"
+      ],
+      "raccoonman.reterraforged.data.worldgen.preset.PresetTerrainTypeNoise": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Heightmap.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/provider/TerrainProvider.java"
+      ],
+      "raccoonman.reterraforged.world.worldgen.biome.Erosion": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Heightmap.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/VolcanoPopulator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/Populators.java"
+      ],
+      "raccoonman.reterraforged.world.worldgen.biome.Weirdness": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/heightmap/Heightmap.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/populator/VolcanoPopulator.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/terrain/Populators.java"
+      ],
+      "raccoonman.reterraforged.concurrent.cache.Cache": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/RiverCache.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/GeneratorContext.java"
+      ],
+      "raccoonman.reterraforged.concurrent.cache.map.StampedLongMap": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/RiverCache.java"
+      ],
+      "raccoonman.reterraforged.concurrent.cache.ExpiringEntry": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/cell/rivermap/Rivermap.java"
+      ],
+      "raccoonman.reterraforged.concurrent.Disposable": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/chunk/ChunkReader.java"
+      ],
+      "raccoonman.reterraforged.concurrent.ThreadPools": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/generation/TileGenerator.java"
+      ],
+      "raccoonman.reterraforged.concurrent.pool.ArrayPool": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/generation/TileGenerator.java"
+      ],
+      "raccoonman.reterraforged.concurrent.cache.SafeCloseable": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/Tile.java"
+      ],
+      "raccoonman.reterraforged.concurrent.cache.CacheEntry": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java"
+      ],
+      "raccoonman.reterraforged.concurrent.cache.CacheManager": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/densityfunction/tile/TileCache.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/GeneratorContext.java"
+      ],
+      "raccoonman.reterraforged.registries.RTFBuiltInRegistries": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domain.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domains.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunction.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunctions.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java"
+      ],
+      "raccoonman.reterraforged.platform.RegistryUtil": [
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/domain/Domains.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/function/CurveFunctions.java",
+        "common/src/main/java/raccoonman/reterraforged/world/worldgen/noise/module/Noises.java"
+      ]
+    }
+  },
+  "limitations": [
+    "Conservative package inventory, not method reachability analysis",
+    "Preset/codec/bootstrap and Java concurrency APIs require explicit Rust adapters",
+    "Generated chunks also require native density, surface, biome and feature integration"
+  ]
+}

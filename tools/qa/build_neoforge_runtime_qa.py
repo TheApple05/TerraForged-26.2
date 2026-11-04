@@ -76,9 +76,10 @@ def main() -> int:
     public static void main(String[] args) throws Exception {""")
     terrain_probe = generated.parent / "TemplateBiomeDecoratorProbe.java"
     terrain_probe.write_text(probe_text, encoding="utf-8")
+    helpers = [file for file in (ROOT / "tests/runtime/terraforged/qa").rglob("*.java") if file.name != "RuntimeQaMod.java"]
     result = subprocess.run([str(javac), "--release", "25", "-proc:none", "-encoding", "UTF-8",
         "-cp", str(args.production_jar.resolve()) + os.pathsep + classpath, "-d", str(classes),
-        str(generated), str(terrain_probe)], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=90)
+        str(generated), str(terrain_probe), *map(str, helpers)], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=90)
     (work / "compile.log").write_text(result.stdout + result.stderr, encoding="utf-8")
     if result.returncode:
         print(result.stdout + result.stderr)
@@ -89,6 +90,8 @@ modId="terraforged_runtime_qa"
 version="0.1.0"
 displayName="TerraForged NeoForge runtime QA companion"
 description="Test-only artifact; never part of the production mod."
+[[mixins]]
+config="terraforged-runtime-qa.mixins.json"
 [[dependencies.terraforged_runtime_qa]]
 modId="reterraforged"
 type="required"
@@ -98,12 +101,15 @@ side="BOTH"
 '''
     with zipfile.ZipFile(args.output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         archive.writestr("META-INF/neoforge.mods.toml", metadata)
+        archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
+            "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")
         archive.writestr("META-INF/MANIFEST.MF", "Manifest-Version: 1.0\nImplementation-Title: Test-only TerraForged runtime QA\n\n")
         for file in sorted(classes.rglob("*.class")):
             archive.write(file, file.relative_to(classes).as_posix())
     report = {"status": "built", "compileExit": result.returncode, "output": str(args.output),
         "sha256": hashlib.sha256(args.output.read_bytes()).hexdigest(),
         "sharedProbeSourceSha256Lf": hashlib.sha256(original.replace("\r\n", "\n").encode()).hexdigest(),
+        "helperSourceSha256Lf": {file.relative_to(ROOT).as_posix(): hashlib.sha256(file.read_bytes().replace(b"\r\n", b"\n")).hexdigest() for file in helpers},
         "generatedAdapterSha256Lf": hashlib.sha256(text.replace("\r\n", "\n").encode()).hexdigest(),
         "productionJarSha256": hashlib.sha256(args.production_jar.read_bytes()).hexdigest(),
         "adapterChanges": ["NeoForge ServerStartedEvent entrypoint", "NeoForge production/metadata provenance",

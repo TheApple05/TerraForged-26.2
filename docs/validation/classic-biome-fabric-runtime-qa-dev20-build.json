@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "built",
+  "compileExit": 0,
+  "jar": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\runtime-dev20\\terraforged-runtime-qa.jar",
+  "sha256": "30f8c1b5800505c0f6318007c72b6a40edc6b6b11ac4b86a049aba3ab6abbe13",
+  "compileAgainst": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.20+26.2.jar",
+  "productionJarSha256": "0d7b64bc73a4ea1ddec8d4f2af5caabc3f06de50fc49f2f6a6f3b35c03e2a6b2",
+  "sourceSha256Lf": {
+    "tests/runtime/terraforged/qa/CellSamplerCacheQa.java": "4cef8d426c2cbc9d362569bf94adc445a5835faad7ca548e29a1243dba023262",
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "09f98e6090e4bf78fbfe60dc3efc9c03817c755167018231987a2588f58adf22",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "420d1426f1f9656848454d282223579bb7aaa663f594fa967efc3477ecb5ce9c",
+    "tests/runtime/terraforged/qa/ClassicPillarCandidateQa.java": "a3b7cd86a10e361deafb4bbd42f4cf9cae761b52d28afbca4284a0c9814542dd",
+    "tests/runtime/terraforged/qa/ClassicPillarPlacementQa.java": "602a909e18caece48c207bb9b86c263636cf93bbb6f4c6cc4d66ec11918e1924",
+    "tests/runtime/terraforged/qa/mixin/ClassicPillarFeatureProbe.java": "54a4f3763f92bd6dc32352d53a26f9d9c366d80a6d0aceb2a0e2fc58aeb31f51",
+    "tests/runtime/terraforged/qa/mixin/StructureColumnProbe.java": "d59a84f88ceeb26a9f8496573f405fc301fb4079cd8d18c6a07f0bb34185ec90",
+    "tests/runtime/terraforged/qa/NativeColumnReplayQa.java": "b0dec36d981858719af2ca351ee25d189d355203182753e059244e7c547b9b44",
+    "tests/runtime/terraforged/qa/RuntimeQaMod.java": "8df17c0a72ed020b13bd27efb1c0bfaf8c3c1166991071210b709663dece1795",
+    "tests/runtime/terraforged/qa/StructureQa.java": "bad426fd7498d5e86fc7d5f258640ddca4586d700a5c409acb12e9da58bc3a69",
+    "tests/terrain/TemplateBiomeDecoratorProbe.java": "75b2d53e042ed0db56e08b7f6f865e258a98bd3f85073102813dd9d3bc677971"
+  },
+  "notEvidenceOf": [
+    "Successful server launch",
+    "Preset export",
+    "Custom world generation",
+    "Visual parity"
+  ]
+}

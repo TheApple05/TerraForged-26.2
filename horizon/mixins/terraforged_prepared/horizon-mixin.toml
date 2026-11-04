@@ -1,0 +1,25 @@
+[mod]
+id = "terraforged_prepared"
+version = "0.1.0"
+
+[compatibility]
+horizon_revision = "9dd5c4093977c718c5c0349032fd3a5434e86afc"
+
+[[module]]
+id = "prepared-runtime"
+file = "crates/horizon-world/src/worldgen/generator.rs"
+name = "terraforged_prepared"
+source = "runtime.rs"
+visibility = "pub"
+
+[[injection]]
+id = "prepared-overworld"
+target = "horizon_world::worldgen::generator::OverworldGenerator::for_world_with_settings"
+kind = "HEAD"
+cancellable = true
+helper = "open.rs"
+bindings = [
+  { name = "data", ty = "&std::sync::Arc<GeneratorData>", value = "&data" },
+  { name = "seed", ty = "i64", value = "seed" },
+  { name = "dimension", ty = "&str", value = "dimension" },
+]

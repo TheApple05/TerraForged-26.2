@@ -1,0 +1,24 @@
+{
+  "status": "built",
+  "compileExit": 0,
+  "output": "build\\qa\\neoforge-runtime-dev17\\terraforged-neoforge-runtime-qa.jar",
+  "sha256": "eb6199e5e00e392b061d61f25bfd70d0922ed9fc3685b46a13eb1113769731d5",
+  "sharedProbeSourceSha256Lf": "fb8495f326d01d134872e38be91ffefe59e91df7b1d07905d9e92102208c9494",
+  "helperSourceSha256Lf": {
+    "tests/runtime/terraforged/qa/ClassicBiomeChunkQa.java": "7f715dd79c9bc00c061e928a6cea24326aeecdc5df4d9227a4a1fadd76b14855",
+    "tests/runtime/terraforged/qa/ClassicBiomeQa.java": "fa75a900634872be75b806107cc1897aa8cf3b14e4ba307cb1b825f94458ed62",
+    "tests/runtime/terraforged/qa/StructureQa.java": "1c695bd5f12f560d1d85695f7e80136c049f657ddec6fb11d868a6d76a902a5c"
+  },
+  "generatedAdapterSha256Lf": "b2fc3d185ffcc03daae7d6bd952462a84142ffe7c1798dfdd17c6ffb4c97164e",
+  "productionJarSha256": "19be1660029b1ec49dc49ad31623787efff8002086d9541b9b91d062a82f24d8",
+  "adapterChanges": [
+    "NeoForge ServerStartedEvent entrypoint",
+    "NeoForge production/metadata provenance",
+    "Relocate biome probe to test module and invoke same package-private helper reflectively to avoid split packages"
+  ],
+  "notEvidenceOf": [
+    "Server boot",
+    "Preset export",
+    "Custom generation"
+  ]
+}

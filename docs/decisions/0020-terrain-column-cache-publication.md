@@ -1,0 +1,13 @@
+# 0020: Bound terrain-column work and publish only under the matching world and mode
+
+Date: 2026-11-04, America/Los_Angeles.
+
+Native structure placement calls `NoiseBasedChunkGenerator.getBaseColumn`. Its one-cell noise chunks repeatedly visit four interpolation corners through the full world height. The inherited `CellSampler.Cache2d` remembered only the last XZ coordinate, causing almost every alternating corner visit to recompute the heightmap. The static ThreadLocal also omitted lookup identity and climate mode from its key, allowing stale same-coordinate values across worlds or modes.
+
+The dev19 candidate introduces a bounded 16-entry cache per noise chunk, with weak lookup identity and exact climate-mode invalidation. The global ThreadLocal remains single-entry. The ordinary actual-class regression passed 792 assertions, including all 24 Cell fields by raw float bits and 384 old heightmap calls reduced to four. Actual captured native structure-column coordinates are retained separately from that focused call-count test.
+
+Independent review found that Java monitor ownership alone does not make publication safe against reentry. `WorldLookup` can wait for a cache future; ForkJoin helping can execute nested work on the same thread, and synchronized monitors are reentrant. In a genuine nested-lookup probe, dev19 published the outer A result under the nested B owner/mode. Same-owner nesting could also change the insertion size after the outer slot was selected. The failure is retained in `server-fabric-dev19-cache-reentry-probe.json`; it is a controlled API-level reproduction, not a claim of an independently observed ordinary-play failure.
+
+The correction computes each miss into a private Cell. After computation, it rebinds the cache to that completed lookup and exact climate mode, invalidating nested entries from a different owner/mode, and chooses the insertion slot using the current cache state. The completed outer result is published under its own key. Misses and evictions never reset a Cell that a nested or concurrent reader may still hold. Weak lookup ownership prevents the static ThreadLocal from keeping a closed world's context alive. Capacity remains bounded; terrain equations and coordinate packing are unchanged.
+
+This deliberately accepts one Cell allocation per miss in exchange for safe immutable snapshots. Most expensive repeated structure-column work becomes cache hits. Final native workload timings, allocation/GC and process-memory budgets must be measured on the corrected exact package; focused call counts alone are not a performance verdict.
