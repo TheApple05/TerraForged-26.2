@@ -3,7 +3,7 @@
   "scope": "Registered custom noise numerical types/constructor graphs only; registry decoding, visitors and native terrain activation unfinished",
   "registrySourceSha256Lf": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
   "registeredTypes": 41,
-  "numericallyVerifiedTypes": 36,
+  "numericallyVerifiedTypes": 41,
   "types": [
     {
       "id": "reterraforged:constant",
@@ -72,8 +72,8 @@
     },
     {
       "id": "reterraforged:line",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:shift",
@@ -117,13 +117,13 @@
     },
     {
       "id": "reterraforged:terrace",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:advanced_terrace",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:invert",
@@ -182,13 +182,13 @@
     },
     {
       "id": "reterraforged:warp",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:erosion",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:linear_spline",
@@ -211,5 +211,7 @@
       "nativeType": "graph::Noise"
     }
   ],
-  "separateFoundation": "Scalar/hash/vector and coordinate/seed/RNG routines are independently verified; this does not implement arbitrary graphs, cell/tile terrain or Horizon density integration."
+  "separateFoundation": "Scalar/hash/vector and coordinate/seed/RNG routines are independently verified; this does not implement arbitrary graphs, cell/tile terrain or Horizon density integration.",
+  "domainTypesNumericallyVerified": 5,
+  "curveFunctionTypesNumericallyVerified": 2
 }

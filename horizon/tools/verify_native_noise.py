@@ -27,7 +27,7 @@ def rows(text):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--family', choices=['base','second','composition','math','core','sources','power','shaping','cellular'], default='base')
+    parser.add_argument('--family', choices=['base','second','composition','math','core','sources','power','shaping','cellular','final'], default='base')
     args = parser.parse_args()
     if args.report.exists():
         parser.error('Refusing to replace native parity evidence')
@@ -35,7 +35,7 @@ def main():
                     'composition':'horizon/tests/fixtures/noise-composition-v1.tsv','math':'horizon/tests/fixtures/math-v1/values.tsv',
                     'core':'tests/core/reference-output.tsv','sources':'horizon/tests/fixtures/noise-sources-v1.tsv',
                     'power':'horizon/tests/fixtures/power-v1.tsv','shaping':'horizon/tests/fixtures/noise-shaping-v1.tsv',
-                    'cellular':'horizon/tests/fixtures/noise-cellular-v1.tsv'}[args.family]
+                    'cellular':'horizon/tests/fixtures/noise-cellular-v1.tsv','final':'horizon/tests/fixtures/noise-final-v1.tsv'}[args.family]
     metadata_file = (ROOT/'tests/core/reference-metadata.json' if args.family=='core' else
                      fixture.parent/'metadata.json' if args.family=='math' else fixture.with_suffix('.json'))
     metadata = json.loads(metadata_file.read_text())
@@ -53,7 +53,8 @@ def main():
         'recordsPerProfile':len(expected),'valuesPerProfile':sum(map(len,expected.values())),
         'rustc':subprocess.check_output(['rustc','+stable','-Vv'],text=True),
         'family':args.family,
-        'scope':('158 genuine cellular/legacy/spline/cache Java graphs and thread cache sequences' if args.family=='cellular' else
+        'scope':('78 line/terrace/domain/erosion graphs, domain coordinates, line helpers and explicit NaN classifications' if args.family=='final' else
+                 '158 genuine cellular/legacy/spline/cache Java graphs and thread cache sequences' if args.family=='cellular' else
                  '85 genuine Java shaping constructor graphs and legacy min/max' if args.family=='shaping' else
                  'White/Cubic/ridge/billow static/fractal and metadata' if args.family=='sources' else
                  'Float power and spectral weight observations' if args.family=='power' else
@@ -67,7 +68,7 @@ def main():
         command = ['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin',
                    {'base':'noise_probe','second':'noise_family_probe','composition':'noise_composition_probe',
                     'math':'math_probe','core':'core_probe','sources':'noise_sources_probe','power':'power_probe',
-                    'shaping':'noise_shaping_probe','cellular':'noise_cellular_probe'}[args.family]]
+                    'shaping':'noise_shaping_probe','cellular':'noise_cellular_probe','final':'noise_final_probe'}[args.family]]
         if profile == 'release':
             command.append('--release')
         run = subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=90)
@@ -80,6 +81,7 @@ def main():
         guards = args.family!='composition' or 'NATIVE_GRAPH_GUARDS_OK depth=256 expandedBudget=1000000' in run.stderr
         guards = guards and (args.family!='shaping' or 'NATIVE_SHAPING_ITERATION_GUARD_OK max=1024' in run.stderr)
         guards = guards and (args.family!='cellular' or 'NATIVE_CELLULAR_GUARDS_OK orderedNonemptySpline legacyPowerLimit=1024' in run.stderr)
+        guards = guards and (args.family!='final' or 'NATIVE_FINAL_GUARDS_OK terrace=2..4096 octaves=0..32 combinedDomainDepth=256' in run.stderr)
         report['profiles'].append({'profile':profile,'exitCode':run.returncode,'outputSha256':digest(output),
             'differenceCount':len(differences),'firstDifferences':differences[:50],
             'constructorGuardsObserved':guards,

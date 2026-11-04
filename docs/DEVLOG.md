@@ -2,7 +2,7 @@
 
 Dates use America/Los_Angeles. This log records outcomes and evidence, not an assertion that the entire port works.
 
-## 2026-11-03 â€” project initiation
+## 2026-11-03 — project initiation
 
 - User authorized implementation, an independent GitHub repository, and ongoing documentation.
 - Workspace was empty. Created a fresh Git history and private repository `TheApple05/TerraForged-26.2`; GitHub's creation response reports `fork: false`.
@@ -56,7 +56,7 @@ Next: audit effective runtime injections, boot the exact packaged artifact in a 
 - Production client review was deliberately aborted after two desktop capture failures. The client had reached its native window; no visual acceptance is claimed. Added a separate actual-game screenshot companion for continued review.
 - Recorded the 17 classic custom biome IDs absent from the selected revival baseline, distinguishing inherited gaps from current port failures. See [feature inventory](FEATURE-PARITY.md) and [runtime summary](validation/runtime-summary.md).
 
-## 2026-11-04 â€” both loaders and real client workflows
+## 2026-11-04 — both loaders and real client workflows
 
 - Compiled and packaged complete common sources on Fabric and NeoForge. NeoForge uses native registry events, datapack codecs, biome modifiers, and editor registration through a single loader-owned service provider. Its first exact production package booted, saved, and stopped cleanly. Custom runtime checks continue separately.
 - Expanded Fabric generation to 144 full chunks and 576 sampled columns across positive/negative tile boundaries. Raw terrain fields/classifications and biomes match across opposite request orders, and both worlds retain exact recorded digests after reload. Post-feature block differences include trees, coral, dripstone, and intersecting ores/stone variants. An explicit vanilla-generator control shows similar order effects; this does not establish every difference's cause or full block determinism.
@@ -92,3 +92,5 @@ Next: audit effective runtime injections, boot the exact packaged artifact in a 
 - Merged exact lookup math and five additional sources after Windows/Linux CI.
 - Verified ten shaping operations against 85 genuine production Java graphs in two fresh game JVMs; native debug/release match all 147,645 fields. Thirty of 41 registered numerical types now have immutable fixture evidence. Full visitors, registry decoding and the procedural cell/river/tile pipeline remain unfinished.
 - Kept both published Java dev23 artifacts unchanged throughout this native work.
+
+- Completed finite numerical fixtures for all 41 registered noise types, five domains and two curve functions. The last corpus matches 198,780 fields per native profile, including separate domain coordinates and explicit inherited NaN classifications. Full visitor/registry and native cell/river/tile work remains open.

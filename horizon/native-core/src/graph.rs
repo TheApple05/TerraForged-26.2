@@ -2,6 +2,7 @@
 // Baseline 29239f1f164d19dbfcccaca4a8277d64e784207c; see LICENSE-RETERRAFORGED.
 // This bounded immutable graph is not a registry decoder or an active terrain generator.
 use crate::worley::{self, DistanceFunction, EdgeFunction};
+use crate::{domain::Domain, erosion::Erosion, line::Line};
 use crate::{
     noise_util,
     perlin::{Interpolation, Perlin},
@@ -57,6 +58,34 @@ pub enum GraphError {
     NodeBudget,
     IterationLimit,
     InvalidSpline,
+    InvalidSteps,
+}
+
+pub(crate) fn dependency_cost(
+    dependencies: impl IntoIterator<Item = (u16, usize)>,
+) -> Result<(u16, usize), GraphError> {
+    let mut depth = 1u16;
+    let mut expanded_nodes = 1usize;
+    for (child_depth, child_nodes) in dependencies {
+        depth = depth.max(child_depth.checked_add(1).ok_or(GraphError::DepthLimit)?);
+        if depth > MAX_DEPTH {
+            return Err(GraphError::DepthLimit);
+        }
+        expanded_nodes = expanded_nodes
+            .checked_add(child_nodes)
+            .ok_or(GraphError::NodeBudget)?;
+        if expanded_nodes > MAX_EXPANDED_NODES {
+            return Err(GraphError::NodeBudget);
+        }
+    }
+    Ok((depth, expanded_nodes))
+}
+
+#[derive(Clone, Copy, Debug)]
+struct TerraceStep {
+    value: f32,
+    lower: f32,
+    upper: f32,
 }
 
 #[derive(Clone, Copy, Debug)]
@@ -123,6 +152,37 @@ enum Node {
     Cache {
         input: Noise,
         values: Mutex<HashMap<std::thread::ThreadId, Cached>>,
+    },
+    Warp {
+        input: Noise,
+        domain: Domain,
+    },
+    Erosion {
+        input: Noise,
+        config: Erosion,
+    },
+    Line {
+        geometry: Line,
+        radius: Noise,
+        fade_in: Noise,
+        fade_out: Noise,
+    },
+    Terrace {
+        input: Noise,
+        ramp: Noise,
+        cliff: Noise,
+        ramp_height: Noise,
+        steps: Vec<TerraceStep>,
+    },
+    AdvancedTerrace {
+        source: Noise,
+        modulation: Noise,
+        mask: Noise,
+        slope: Noise,
+        blend_min: f32,
+        blend_max: f32,
+        steps: i32,
+        octaves: i32,
     },
     Sin {
         frequency: f32,
@@ -207,19 +267,7 @@ enum Node {
 
 impl Noise {
     fn make(node: Node, min: f32, max: f32, children: &[&Self]) -> Result<Self, GraphError> {
-        let depth = children.iter().map(|n| n.0.depth).max().unwrap_or(0) + 1;
-        if depth > MAX_DEPTH {
-            return Err(GraphError::DepthLimit);
-        }
-        let mut expanded_nodes = 1usize;
-        for child in children {
-            expanded_nodes = expanded_nodes
-                .checked_add(child.0.expanded_nodes)
-                .ok_or(GraphError::NodeBudget)?;
-            if expanded_nodes > MAX_EXPANDED_NODES {
-                return Err(GraphError::NodeBudget);
-            }
-        }
+        let (depth, expanded_nodes) = dependency_cost(children.iter().map(|n| n.cost()))?;
         Ok(Self(Arc::new(Data {
             node,
             min,
@@ -231,6 +279,117 @@ impl Noise {
 
     pub fn constant(value: f32) -> Result<Self, GraphError> {
         Self::make(Node::Constant(value), value, value, &[])
+    }
+    pub(crate) fn cost(&self) -> (u16, usize) {
+        (self.0.depth, self.0.expanded_nodes)
+    }
+    pub fn warp(input: Self, domain: Domain) -> Result<Self, GraphError> {
+        let (depth, expanded_nodes) = dependency_cost([input.cost(), domain.cost()])?;
+        Ok(Self(Arc::new(Data {
+            min: input.min_value(),
+            max: input.max_value(),
+            depth,
+            expanded_nodes,
+            node: Node::Warp { input, domain },
+        })))
+    }
+    pub fn erosion(input: Self, config: Erosion) -> Result<Self, GraphError> {
+        Self::make(
+            Node::Erosion {
+                input: input.clone(),
+                config,
+            },
+            0.0,
+            1.0,
+            &[&input],
+        )
+    }
+    pub fn line(
+        geometry: Line,
+        radius: Self,
+        fade_in: Self,
+        fade_out: Self,
+    ) -> Result<Self, GraphError> {
+        Self::make(
+            Node::Line {
+                geometry,
+                radius: radius.clone(),
+                fade_in: fade_in.clone(),
+                fade_out: fade_out.clone(),
+            },
+            0.0,
+            1.0,
+            &[&radius, &fade_in, &fade_out],
+        )
+    }
+    pub fn terrace(
+        input: Self,
+        ramp: Self,
+        cliff: Self,
+        ramp_height: Self,
+        blend_range: f32,
+        count: i32,
+    ) -> Result<Self, GraphError> {
+        if !(2..=4096).contains(&count) {
+            return Err(GraphError::InvalidSteps);
+        }
+        let spacing = (input.max_value() - input.min_value()) / (count - 1) as f32;
+        let steps = (0..count)
+            .map(|i| {
+                let value = i as f32 * spacing;
+                let blend = spacing * blend_range;
+                let bound = (spacing - blend) / 2.0;
+                TerraceStep {
+                    value,
+                    lower: value - bound,
+                    upper: value + bound,
+                }
+            })
+            .collect();
+        Self::make(
+            Node::Terrace {
+                input: input.clone(),
+                ramp: ramp.clone(),
+                cliff: cliff.clone(),
+                ramp_height: ramp_height.clone(),
+                steps,
+            },
+            input.min_value(),
+            input.max_value(),
+            &[&input, &ramp, &cliff, &ramp_height],
+        )
+    }
+    pub fn advanced_terrace(
+        source: Self,
+        modulation: Self,
+        mask: Self,
+        slope: Self,
+        blend_min: f32,
+        blend_max: f32,
+        steps: i32,
+        octaves: i32,
+    ) -> Result<Self, GraphError> {
+        if !(1..=4096).contains(&steps) {
+            return Err(GraphError::InvalidSteps);
+        }
+        if !(0..=32).contains(&octaves) {
+            return Err(GraphError::IterationLimit);
+        }
+        Self::make(
+            Node::AdvancedTerrace {
+                source: source.clone(),
+                modulation: modulation.clone(),
+                mask: mask.clone(),
+                slope: slope.clone(),
+                blend_min,
+                blend_max,
+                steps,
+                octaves,
+            },
+            source.min_value(),
+            source.max_value(),
+            &[&source, &modulation, &mask, &slope],
+        )
     }
     pub fn perlin(value: Perlin) -> Result<Self, GraphError> {
         Self::make(Node::Perlin(value), 0.0, 1.0, &[])
@@ -735,6 +894,88 @@ impl Noise {
                     cached.position = position;
                 }
                 cached.value
+            }
+            Node::Warp { input, domain } => {
+                input.compute(domain.get_x(x, z, seed), domain.get_z(x, z, seed), seed)
+            }
+            Node::Erosion { input, config } => config.compute(input, x, z, seed),
+            Node::Line {
+                geometry,
+                radius,
+                fade_in,
+                fade_out,
+            } => geometry.compute(radius, fade_in, fade_out, x, z, seed),
+            Node::Terrace {
+                input,
+                ramp,
+                cliff,
+                ramp_height,
+                steps,
+            } => {
+                let value = noise_util::clamp_f32(input.compute(x, z, seed), 0.0, 0.999999);
+                let index = noise_util::floor_legacy(value * steps.len() as f32) as usize;
+                let step = steps[index];
+                if index == steps.len() - 1 || value < step.lower {
+                    return step.value;
+                }
+                let next = steps[index + 1];
+                if value > step.upper {
+                    return next.value;
+                }
+                let ramp = 1.0 - ramp.compute(x, z, seed) * 0.5;
+                let cliff = 1.0 - cliff.compute(x, z, seed) * 0.5;
+                let alpha = (value - step.lower) / (step.upper - step.lower);
+                let mut result = step.value;
+                if alpha > ramp {
+                    let ramp_size = 1.0 - ramp;
+                    let ramp_alpha = (alpha - ramp) / ramp_size;
+                    let height = ramp_height.compute(x, z, seed);
+                    result += (next.value - result) * ramp_alpha * height;
+                }
+                if alpha > cliff {
+                    let cliff_alpha = (alpha - cliff) / (1.0 - cliff);
+                    result = noise_util::lerp_f32(result, next.value, cliff_alpha);
+                }
+                result
+            }
+            Node::AdvancedTerrace {
+                source,
+                modulation,
+                mask,
+                slope,
+                blend_min,
+                blend_max,
+                steps,
+                octaves,
+            } => {
+                let value = source.compute(x, z, seed);
+                if value <= *blend_min {
+                    return value;
+                }
+                let mask = mask.compute(x, z, seed);
+                if mask == 0.0 {
+                    return value;
+                }
+                let mut result = value;
+                let slope = slope.compute(x, z, seed);
+                let mod_value = modulation.compute(x, z, seed);
+                for i in 1..=*octaves {
+                    let count = steps.wrapping_mul(i);
+                    result = noise_util::round_legacy(result * count as f32) as f32 / count as f32;
+                    let delta = value - result;
+                    let amount = delta * slope;
+                    result += amount;
+                }
+                result = (result + mod_value) / (source.max_value() + modulation.max_value());
+                let mut alpha = if value > *blend_max {
+                    1.0
+                } else {
+                    (value - blend_min) / (blend_max - blend_min)
+                };
+                if mask != 1.0 {
+                    alpha *= mask;
+                }
+                noise_util::lerp_f32(value, result, alpha)
             }
             Node::Sin { frequency, alpha } => {
                 let a = alpha.compute(x, z, seed);
