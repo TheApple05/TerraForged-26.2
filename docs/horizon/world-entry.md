@@ -60,3 +60,9 @@ Native classic biome/feature restoration, source carver settings, spawn and
 structures, actual saves, rendered client/launcher behavior, controlled native
 performance and mod combinations remain acceptance work. Stored-stem selection
 alone does not qualify those paths.
+
+
+A later engine pin and actual client/save checks are documented in
+[current engine and client evidence](current-engine-client.md). The E4 archive
+above remains the exact historical reader-tested package; it is not silently
+replaced by a package for the newer engine.

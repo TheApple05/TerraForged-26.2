@@ -27,7 +27,7 @@ jobs:
         run: |
           git init build/qa/horizon/host-source
           git -C build/qa/horizon/host-source remote add origin https://github.com/TheApple05/horizon.git
-          git -C build/qa/horizon/host-source fetch --depth=1 origin e4d7699a8d4ff5b18a966601b9c3e8346f4571e5
+          git -C build/qa/horizon/host-source fetch --depth=1 origin 0e0f70ff1f8191479dbb5b1b173a74d38d324005
           git -C build/qa/horizon/host-source checkout --detach FETCH_HEAD
           git init build/qa/horizon/mixin-source
           git -C build/qa/horizon/mixin-source remote add origin https://github.com/horizon-rust/horizon-mixins.git
@@ -56,6 +56,7 @@ jobs:
           mkdir -p build/qa/ci
           python horizon/tools/generate_pipeline_forwarding.py --horizon build/qa/horizon/host-source --check > build/qa/ci/native-world-forwarding.log
           cargo test --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p horizon-core --lib terraforged_ > build/qa/ci/native-world-lifecycle.log
+          cargo test --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p horizon-world --lib --no-run > build/qa/ci/native-world-test-cfg.log 2>&1
       - name: Preserve qualification evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
