@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "scope": "Real production Slider and actual 26.2 input/superclass methods; no rendered client/window or complete preset editor",
+  "minecraft": "26.2",
+  "assertions": 30,
+  "scenarios": [
+    "actual_mouse_onClick_callback_and_label",
+    "actual_mouseDragged_callback_and_label",
+    "actual_keyboard_right_left_callback_and_label",
+    "normalized_value_clamping",
+    "unchanged_no_extra_callback",
+    "callback_correction_order",
+    "integer_format_and_null_callback"
+  ],
+  "schema_version": 1,
+  "run_at_utc": "2026-11-04T08:02:05.221653+00:00",
+  "compile_exit": 0,
+  "process_exit": 0,
+  "source_sha256_lf": {
+    "common/src/main/java/raccoonman/reterraforged/client/gui/widget/Slider.java": "8245ee1b233b910b60f55a29c33ba9a92b549ddeee17b0d1d10ea4e05da50112",
+    "tests/client/SliderProbe.java": "2a1ca0a679e2429b1ff142ade407953cb9338390ef699aaee568d487d580db92"
+  },
+  "observed_assertion_failures": [],
+  "not_tested": [
+    "Rendered slider appearance",
+    "Full editor navigation and preset persistence",
+    "Client GPU/window input routing"
+  ]
+}

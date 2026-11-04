@@ -84,6 +84,10 @@ public final class SliderProbe {
         integer.setValue(.8);
         equal(integer.scaleValue(integer.getValue()), 80, "Integer formatting retained");
         check(integer.getMessage().getString().contains("80"), "Null callback still updates label");
+        Slider continent = new Slider(0, 0, 108, 20, 3000, 100, 10000,
+            Component.literal("Continent Scale"), Slider.Format.INT, null);
+        check(continent.getMessage().getString().contains("3000"),
+            "Initial integer label must retain preset value without float narrowing");
         Bootstrap.realStdoutPrintln("SLIDER_QA_JSON=" + new Gson().toJson(Map.of(
             "status", "pass", "assertions", assertions, "minecraft", SharedConstants.getCurrentVersion().id(),
             "scenarios", List.of("actual_mouse_onClick_callback_and_label", "actual_mouseDragged_callback_and_label",

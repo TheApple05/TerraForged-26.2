@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "result": "failed-production-screen-render",
+  "artifact": "build/libs/terraforged-revival-0.1.0-dev.2+26.2.jar",
+  "artifactSha256": "94471bb542a308982bfb29c7340ed14dbf3494922cfd9f935c5f32b0485e80bd",
+  "instance": "build/qa/client/instances/20261104T075634Z-7486e5",
+  "runtimeReport": "docs/validation/client-2026-11-03-dev2-companion-1.json",
+  "titleAndCreateWorldScreensPassed": true,
+  "presetScreenRenderingPassed": false,
+  "exception": "net.minecraft.ReportedException: Rendering screen\n\tat knot//net.minecraft.client.Minecraft.runTick(Minecraft.java:1274)\n\tat knot//net.minecraft.client.Minecraft.run(Minecraft.java:959)\n\tat knot//net.minecraft.client.main.Main.main(Main.java:292)\n\tat net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517)\n\tat net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)\n\tat net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)\nCaused by: java.lang.IllegalStateException: Can only blur once per frame\n\tat knot//net.minecraft.client.renderer.state.gui.GuiRenderState.blurBeforeThisStratum(GuiRenderState.java:48)\n\tat knot//net.minecraft.client.gui.GuiGraphicsExtractor.blurBeforeThisStratum(GuiGraphicsExtractor.java:150)\n\tat knot//net.minecraft.client.gui.screens.Screen.extractBlurredBackground(Screen.java:388)\n\tat knot//net.minecraft.client.gui.screens.Screen.extractBackground(Screen.java:378)\n\tat knot//raccoonman.reterraforged.client.gui.screen.page.LinkedPageScreen.extractRenderState(LinkedPageScreen.java:71)\n\tat knot//net.minecraft.client.gui.screens.Screen.extractRenderStateWithTooltipAndSubtitles(Screen.java:119)\n\tat knot//net.minecraft.client.gui.Gui.mixinextras$bridge$extractRenderStateWithTooltipAndSubtitles$41(Gui.java)\n\tat knot//net.minecraft.client.gui.Gui.wrapOperation$bda000$fabric-screen-api-v1$onExtractGui(Gui.java:609)\n\tat knot//net.minecraft.client.gui.Gui.extractRenderState(Gui.java:183)\n\tat knot//net.minecraft.client.renderer.GameRenderer.extract(GameRenderer.java:401)\n\tat knot//net.minecraft.client.Minecraft.renderFrame(Minecraft.java:1366)\n\tat knot//net.minecraft.client.Minecraft.runTick(Minecraft.java:1269)\n\t... 5 more\n",
+  "cause": "LinkedPageScreen redundantly extracted the background after the final vanilla Screen extraction pipeline already did it; second blur in one frame throws.",
+  "fix": "Remove redundant extractRenderState override; inherited rendering already handles widgets.",
+  "screenshots": [
+    {
+      "path": "docs/validation/images/client-dev2-failed/01-title.png",
+      "sha256": "aa4a0eb7c01c31090aaab7e01b886df7f0ae367c2fdb91bde2a9beaf55113fff",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    },
+    {
+      "path": "docs/validation/images/client-dev2-failed/02-create-world.png",
+      "sha256": "f3387a62394d3a96e20547fe0e2b646637e5ea3b1f4faa09f0d4cdcedb539e16",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    }
+  ],
+  "notes": [
+    "Minecraft crash-report placeholder was one byte; complete actual exception retained from launcher XML log above.",
+    "No visual correctness inferred for editor because it crashed before rendering."
+  ]
+}

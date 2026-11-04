@@ -69,7 +69,7 @@ public class Slider extends AbstractSliderButton {
 
     @Override
     protected void updateMessage() {
-        this.setMessage(CommonComponents.optionNameValue(this.name, Component.literal(this.format.getMessage(this.scaleValue((float) this.value)))));
+        this.setMessage(CommonComponents.optionNameValue(this.name, Component.literal(this.format.getMessage(this.scaleValue(this.value)))));
     }
     
     public static enum Format {
