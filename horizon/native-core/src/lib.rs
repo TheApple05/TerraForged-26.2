@@ -1,5 +1,6 @@
 #![forbid(unsafe_code)]
 
+pub mod biome;
 pub mod cell;
 pub mod domain;
 pub mod erosion;

@@ -27,6 +27,7 @@ jobs:
         run: |
           python horizon/tools/generate_noise_vectors.py
           python horizon/tools/install_native_math_table.py
+          python horizon/tools/install_biome_table.py
           python horizon/tools/verify_native_scalars.py --report build/qa/ci/native-scalars.json
           python horizon/tools/verify_native_noise.py --report build/qa/ci/native-noise.json
           python horizon/tools/verify_native_noise.py --family second --report build/qa/ci/native-noise-second-family.json
@@ -41,6 +42,7 @@ jobs:
           python horizon/tools/verify_native_noise.py --family visitors --report build/qa/ci/native-noise-visitors.json
           python horizon/tools/verify_native_noise.py --family cell --report build/qa/ci/native-cell-foundation.json
           python horizon/tools/verify_native_noise.py --family terrain --report build/qa/ci/native-terrain.json
+          python horizon/tools/verify_native_noise.py --family biome --report build/qa/ci/native-biome.json
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
       - name: Fetch locked registry adapter libraries
         run: cargo fetch --locked --manifest-path horizon/native-adapter/Cargo.toml

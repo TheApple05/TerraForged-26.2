@@ -21,3 +21,4 @@ gradlew text eol=lf
 *.png binary
 horizon/native-core/src/data/*.bin binary
 **/Cargo.lock text eol=lf
+horizon/tests/fixtures/**/*.bin binary
