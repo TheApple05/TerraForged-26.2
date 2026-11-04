@@ -27,8 +27,9 @@ public class Slider extends AbstractSliderButton {
         this.updateMessage();
     }
     
+    @Override
     public void setValue(double value) {
-    	this.value = value;
+        super.setValue(value);
     }
     
     public double getValue() {

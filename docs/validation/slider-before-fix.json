@@ -1,0 +1,20 @@
+{
+  "status": "fail",
+  "reason": "Probe did not complete",
+  "schema_version": 1,
+  "run_at_utc": "2026-11-04T07:39:25.674642+00:00",
+  "compile_exit": 0,
+  "process_exit": 1,
+  "source_sha256_lf": {
+    "common/src/main/java/raccoonman/reterraforged/client/gui/widget/Slider.java": "91be473c1523f4f4d86fb506c24a1ad50f45a929a48b2424be97dff4cfdc9f9f",
+    "tests/client/SliderProbe.java": "46fb2ac8042424d7df62e45236ab0a18ca3ad051ac4018ceefe3f400b1648705"
+  },
+  "observed_assertion_failures": [
+    "[23:39:25] [main/INFO]: [STDERR]: java.lang.AssertionError: Mouse click must invoke the settings callback"
+  ],
+  "not_tested": [
+    "Rendered slider appearance",
+    "Full editor navigation and preset persistence",
+    "Client GPU/window input routing"
+  ]
+}
