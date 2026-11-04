@@ -1,6 +1,6 @@
 package raccoonman.reterraforged.data.worldgen;
 
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import raccoonman.reterraforged.data.worldgen.preset.MiscellaneousSettings;
 import raccoonman.reterraforged.data.worldgen.preset.Preset;
@@ -35,7 +35,7 @@ public class SurfaceNoise {
 	
 	public static final int GENERATOR_RESOURCE_SEED_OFFSET = 746382634;
 	
-	public static void bootstrap(Preset preset, BootstapContext<Noise> ctx) {
+	public static void bootstrap(Preset preset, BootstrapContext<Noise> ctx) {
 		WorldSettings worldSettings = preset.world();
 		WorldSettings.Properties properties = worldSettings.properties;
 		
@@ -78,7 +78,7 @@ public class SurfaceNoise {
 		return generatorResource(noise);
 	}
 	
-	private static void registerIceberg(BootstapContext<Noise> ctx, ResourceKey<Noise> shapeKey, ResourceKey<Noise> maskKey, ResourceKey<Noise> fadeDownKey, ResourceKey<Noise> fadeUpKey, ResourceKey<Noise> upKey, ResourceKey<Noise> downKey, ResourceKey<Noise> topKey, Scaling scaling, int height, int depth, int seedOffset) {
+	private static void registerIceberg(BootstrapContext<Noise> ctx, ResourceKey<Noise> shapeKey, ResourceKey<Noise> maskKey, ResourceKey<Noise> fadeDownKey, ResourceKey<Noise> fadeUpKey, ResourceKey<Noise> upKey, ResourceKey<Noise> downKey, ResourceKey<Noise> topKey, Scaling scaling, int height, int depth, int seedOffset) {
 		int seed = GENERATOR_RESOURCE_SEED_OFFSET + seedOffset;
 		
 		Noise shape = Noises.perlin(seed++, 65, 3);

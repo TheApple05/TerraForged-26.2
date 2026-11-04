@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableList;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import raccoonman.reterraforged.platform.ModLoaderUtil;
 
@@ -23,7 +23,7 @@ public class TBCompat {
 	
 	// has to be deferred to a function or else we get bootstrapping issues from MixinPlugin
 	public static ResourceKey<DensityFunction> uniquenessKey() {
-		return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("terrablender:uniqueness"));
+		return ResourceKey.create(Registries.DENSITY_FUNCTION, Identifier.parse("terrablender:uniqueness"));
 	}
 	
 	private static String mixinClass(String className) {

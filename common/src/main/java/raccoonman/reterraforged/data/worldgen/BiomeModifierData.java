@@ -6,7 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
@@ -28,7 +28,7 @@ public class BiomeModifierData {
 
 	public static final ResourceKey<BiomeModifier> REPLACE_ACACIA_TREES = createKey("replace_acacia_trees");
 	
-	public static void bootstrap(Preset preset, BootstapContext<BiomeModifier> ctx) {
+	public static void bootstrap(Preset preset, BootstrapContext<BiomeModifier> ctx) {
 		HolderGetter<Biome> biomes = ctx.lookup(Registries.BIOME);
 		HolderGetter<PlacedFeature> placedFeatures = ctx.lookup(Registries.PLACED_FEATURE);
 		

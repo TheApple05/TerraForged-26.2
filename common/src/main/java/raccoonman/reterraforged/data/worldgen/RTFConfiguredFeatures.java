@@ -9,12 +9,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.MiscOverworldFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
@@ -61,7 +61,7 @@ public class RTFConfiguredFeatures {
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> FOREST_GRASS = createKey("forest_grass");
 		
-	public static void bootstrap(Preset preset, BootstapContext<ConfiguredFeature<?, ?>> ctx) {
+	public static void bootstrap(Preset preset, BootstrapContext<ConfiguredFeature<?, ?>> ctx) {
 		MiscellaneousSettings miscellaneous = preset.miscellaneous();
 		
 		if(miscellaneous.erosionDecorator) {
@@ -101,15 +101,15 @@ public class RTFConfiguredFeatures {
 		return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaf), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).build();
 	}
 	
-	private static TemplateFeature.Config<?> makeTree(List<ResourceLocation> templates) {
+	private static TemplateFeature.Config<?> makeTree(List<Identifier> templates) {
 		return makeTree(templates, 3);
 	}
 
-	private static TemplateFeature.Config<?> makeTree(List<ResourceLocation> templates, int baseExtension) {
+	private static TemplateFeature.Config<?> makeTree(List<Identifier> templates, int baseExtension) {
 		return makeTree(templates, ImmutableList.of(), baseExtension);
 	}
 	
-	private static TemplateFeature.Config<?> makeTree(List<ResourceLocation> templates, List<TemplateDecorator<TreeContext>> decorators, int baseExtension) {
+	private static TemplateFeature.Config<?> makeTree(List<Identifier> templates, List<TemplateDecorator<TreeContext>> decorators, int baseExtension) {
 		return new TemplateFeature.Config<>(templates, TemplatePlacements.tree(), new PasteConfig(baseExtension, false, true, false, false), new DecoratorConfig<>(decorators, ImmutableMap.of()));
 	}
 	

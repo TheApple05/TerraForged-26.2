@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "id": "reterraforged",
   "version": "${version}",
-  "name": "ReTerraForged",
-  "description": "A continuation of https://github.com/TerraForged/TerraForged",
+  "name": "TerraForged Revival",
+  "description": "An independent, unofficial TerraForged revival for Minecraft Java 26.2. Development build.",
   "authors": [
 	"dags",
 	"Won-Ton",
-	"racconman"
+	"racoonman2",
+	"TerraForged 26.2 contributors"
   ],
   "contact": {
-    "repo": "https://github.com/racoonman2/reterraforged/",
-    "issues": "https://github.com/racoonman2/reterraforged/issues"
+    "sources": "https://github.com/TheApple05/TerraForged-26.2",
+    "issues": "https://github.com/TheApple05/TerraForged-26.2/issues"
   },
-  "license": "MIT",
+  "license": ["MIT", "LGPL-2.1-only"],
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -24,13 +25,14 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.14",
-    "fabric": ">=0.86.1",
-    "minecraft": ">=1.19.4"
+    "fabricloader": ">=0.20.1",
+    "fabric-api": ">=0.161.0+26.2",
+    "minecraft": "26.2",
+    "java": ">=25"
   },
   "mixins": [
     "reterraforged-common.mixins.json",
     "reterraforged-fabric.mixins.json"
   ],
-  "icon": "assets/reterraforged/icon.png"
+  "icon": "logo.png"
 }

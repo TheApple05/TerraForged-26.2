@@ -2,7 +2,7 @@ package raccoonman.reterraforged.data.worldgen;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.MiscOverworldFeatures;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
@@ -29,7 +29,7 @@ public class RTFPlacedFeatures {
 	
 	public static final ResourceKey<PlacedFeature> FOREST_GRASS = createKey("forest_grass");
     
-	public static void bootstrap(Preset preset, BootstapContext<PlacedFeature> ctx) {
+	public static void bootstrap(Preset preset, BootstrapContext<PlacedFeature> ctx) {
 		HolderGetter<ConfiguredFeature<?, ?>> features = ctx.lookup(Registries.CONFIGURED_FEATURE);
 		MiscellaneousSettings miscellaneous = preset.miscellaneous();
 

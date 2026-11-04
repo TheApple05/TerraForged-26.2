@@ -9,7 +9,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import raccoonman.reterraforged.data.worldgen.preset.PresetBiomeModifierData;
 import raccoonman.reterraforged.data.worldgen.preset.PresetNoiseData;
@@ -69,6 +69,6 @@ public record Preset(WorldSettings world, CaveSettings caves, ClimateSettings cl
     }
     
 	private interface Patch<T> {
-        void apply(Preset preset, BootstapContext<T> ctx);
+        void apply(Preset preset, BootstrapContext<T> ctx);
 	}
 }
