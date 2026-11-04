@@ -3,7 +3,7 @@
   "scope": "Registered custom noise numerical types/constructor graphs only; registry decoding, visitors and native terrain activation unfinished",
   "registrySourceSha256Lf": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
   "registeredTypes": 41,
-  "numericallyVerifiedTypes": 20,
+  "numericallyVerifiedTypes": 30,
   "types": [
     {
       "id": "reterraforged:constant",
@@ -12,8 +12,8 @@
     },
     {
       "id": "reterraforged:sin",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:white",
@@ -97,23 +97,23 @@
     },
     {
       "id": "reterraforged:power",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:power_curve",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:curve",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:gradient",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:terrace",
@@ -132,23 +132,23 @@
     },
     {
       "id": "reterraforged:blend",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:alpha",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:boost",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:steps",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:abs",
@@ -167,8 +167,8 @@
     },
     {
       "id": "reterraforged:threshold",
-      "status": "not-ported",
-      "nativeType": null
+      "status": "raw-constructor-graph-fixture-verified",
+      "nativeType": "graph::Noise"
     },
     {
       "id": "reterraforged:min",

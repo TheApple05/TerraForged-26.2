@@ -7,6 +7,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 NAMES = ['Constant','Add','Multiply','Frequency','ShiftSeed','Abs','Invert','Min','Max','Clamp','Map','Simplex','Perlin2']
+SHAPING_NAMES = ['Constant','Add','Multiply','Map','Simplex','White','Cubic','PerlinRidge','SimplexRidge','Billow',
+    'Sin','Power','PowerCurve','Curve','Gradient','Blend','Alpha','Boost','Steps','Threshold',
+    'function.SCurveFunction','function.Interpolation','NoiseUtil']
 
 
 def sha(data): return hashlib.sha256(data).hexdigest()
@@ -17,7 +20,10 @@ def main():
     parser.add_argument('--first',type=Path,required=True)
     parser.add_argument('--second',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--family',choices=['composition','shaping'],default='composition')
     args = parser.parse_args()
+    names = NAMES if args.family=='composition' else SHAPING_NAMES
+    graph_count = 40 if args.family=='composition' else 85
     metadata = args.output.with_suffix('.json')
     if args.output.exists() or metadata.exists(): parser.error('Refusing to replace graph reference bytes')
     snapshots, reports = [], []
@@ -27,7 +33,7 @@ def main():
         qa = report['qaResult']
         if report['result']!='passed' or report['processExitCode']!=0 or report['developmentMode'] is not False or not report['packagedArtifactOriginObserved']:
             raise ValueError('Genuine production runtime did not pass')
-        capture = qa['noiseComposition']
+        capture = qa['noiseComposition' if args.family=='composition' else 'noiseShaping']
         data = Path(capture['file']).read_bytes()
         if capture['status']!='captured-genuine-java-graphs' or sha(data)!=capture['sha256']:
             raise ValueError('Reference capture bytes changed')
@@ -37,8 +43,9 @@ def main():
         class_bytes = class_log.read_bytes()
         origins = class_bytes.decode('utf-8',errors='strict').splitlines()
         verified_origins = []
-        for name in NAMES:
-            expected = 'raccoonman.reterraforged.world.worldgen.noise.module.'+name+' source:'
+        for name in names:
+            suffix = name if '.' in name or name=='NoiseUtil' else 'module.'+name
+            expected = 'raccoonman.reterraforged.world.worldgen.noise.'+suffix+' source:'
             lines = [line for line in origins if expected in line]
             if len(lines)!=1 or jar_name not in lines[0]:
                 raise ValueError('Original production class origin absent: '+name)
@@ -53,15 +60,15 @@ def main():
     records = dict(line.split('\t',1) for line in lines)
     if len(records)!=len(lines): raise ValueError('Duplicate graph record keys')
     graphs = {k:v for k,v in records.items() if k.startswith('graph/')}
-    if len(graphs)!=40 or len(lines)!=40*(1+6*17*17): raise ValueError('Graph corpus incomplete')
+    if len(graphs)!=graph_count or len(lines)!=graph_count*(1+6*17*17): raise ValueError('Graph corpus incomplete')
     source_root = ROOT/'common/src/main/java/raccoonman/reterraforged/world/worldgen/noise'
-    sources = {name:hashlib.sha256((source_root/'module'/(name+'.java')).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in NAMES}
-    probe = ROOT/'horizon/tests/java/NativeNoiseCompositionProbe.java'
+    sources = {name:hashlib.sha256((source_root/((name.replace('.','/') if '.' in name or name=='NoiseUtil' else 'module/'+name)+'.java')).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in names}
+    probe = ROOT/('horizon/tests/java/'+('NativeNoiseCompositionProbe' if args.family=='composition' else 'NativeNoiseShapingProbe')+'.java')
     result = {'schemaVersion':1,'status':'frozen-genuine-game-java-reference','freshRunsAgree':True,
         'productionJarSha256':reports[0]['productionJarSha256'],'producerReports':reports,
         'fixtureSha256':sha(snapshots[0]),'recordCount':len(lines),'graphCount':len(graphs),
         'sourceSha256Lf':sources,'oracleSourceSha256Lf':sha(probe.read_bytes().replace(b'\r\n',b'\n')),
-        'graphManifests':graphs,'scope':'40 raw constructor graphs: compute values plus actual legacy min/max; no visitor or terrain integration.',
+        'graphManifests':graphs,'scope':str(graph_count)+' raw constructor graphs: compute values plus actual legacy min/max; no visitor or terrain integration.',
         'nativeExpectedValuesUsed':False,'format':'UTF-8 LF TSV; graph metadata and float values use raw bits',
         'notCovered':['mapAll visitor transforms','Registry graph decoding','Every float/input domain','Degenerate Map alpha ranges','Native terrain activation']}
     args.output.parent.mkdir(parents=True,exist_ok=True)
