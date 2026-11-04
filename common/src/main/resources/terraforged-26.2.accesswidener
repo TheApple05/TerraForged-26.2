@@ -1,0 +1,20 @@
+accessWidener v2 official
+
+# Required by the custom strata rule; verified against actual 26.2 sources.
+accessible class net/minecraft/world/level/levelgen/SurfaceRules$Context
+accessible class net/minecraft/world/level/levelgen/SurfaceRules$SurfaceRule
+accessible field net/minecraft/world/level/levelgen/SurfaceRules$Context system Lnet/minecraft/world/level/levelgen/SurfaceSystem;
+accessible field net/minecraft/world/level/levelgen/SurfaceRules$Context randomState Lnet/minecraft/world/level/levelgen/RandomState;
+accessible field net/minecraft/world/level/levelgen/SurfaceRules$Context chunk Lnet/minecraft/world/level/chunk/ChunkAccess;
+accessible field net/minecraft/world/level/levelgen/SurfaceRules$Context lastUpdateXZ J
+accessible field net/minecraft/world/level/levelgen/SurfaceRules$Context blockX I
+accessible field net/minecraft/world/level/levelgen/SurfaceRules$Context blockZ I
+
+# Preserve configured ore-vein height ranges and vanilla rarity threshold mapping.
+accessible class net/minecraft/world/level/levelgen/OreVeinifier$VeinType
+accessible field net/minecraft/world/level/levelgen/OreVeinifier$VeinType minY I
+accessible field net/minecraft/world/level/levelgen/OreVeinifier$VeinType maxY I
+accessible class net/minecraft/world/level/levelgen/NoiseRouterData$QuantizedSpaghettiRarity
+
+# Structure preset editing retains the real placement salt.
+accessible method net/minecraft/world/level/levelgen/structure/placement/StructurePlacement salt ()I

@@ -1,5 +1,7 @@
 package raccoonman.reterraforged.fabric.mixin;
 
+import java.util.concurrent.CompletableFuture;
+
 import org.spongepowered.asm.mixin.Implements;
 import org.spongepowered.asm.mixin.Interface;
 import org.spongepowered.asm.mixin.Mixin;
@@ -7,6 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -15,7 +18,7 @@ import raccoonman.reterraforged.world.worldgen.feature.template.template.Feature
 
 @Implements(@Interface(iface = RTFMinecraftServer.class, prefix = "reterraforged$RTFMinecraftServer$"))
 @Mixin(MinecraftServer.class)
-public class MixinMinecraftServer {
+public abstract class MixinMinecraftServer {
 	private FeatureTemplateManager templateManager;
 
 	@Inject(
@@ -30,18 +33,12 @@ public class MixinMinecraftServer {
 		return this.templateManager;
 	}
 	
-	@Inject(
-		method = { "method_29440" },
-		require = 0,
-		at = @At("TAIL"),
-		remap = false
-	)
-	private void method_29440(CallbackInfo callback) {
-		this.templateManager.onReload(this.getResourceManager());
-	}
+	@Inject(method = "reloadResources", at = @At("RETURN"), cancellable = true)
+    private void reterraforged$reloadTemplates(CallbackInfoReturnable<CompletableFuture<Void>> callback) {
+        callback.setReturnValue(callback.getReturnValue().thenRun(() ->
+            this.templateManager.onReload(this.getResourceManager())));
+    }
 
-	@Shadow
-	private ResourceManager getResourceManager() {
-		throw new UnsupportedOperationException();
-	}
+    @Shadow
+    public abstract ResourceManager getResourceManager();
 }

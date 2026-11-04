@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -22,15 +23,16 @@ import net.minecraft.world.level.levelgen.blending.Blender;
 import raccoonman.reterraforged.world.worldgen.terrablender.TBClimateSampler;
 
 @Mixin(NoiseChunk.class)
-public class MixinNoiseChunk {
-	private RandomState randomState;
+public abstract class MixinNoiseChunk {
+	@Unique
+	private RandomState reterraforged$randomState;
 
 	@Inject(
 		at = @At("TAIL"),
 		method = "<init>"
 	)
 	private void NoiseChunk(int cellCount, RandomState randomState, int x, int z, NoiseSettings noiseSettings, DensityFunctions.BeardifierOrMarker beardifierOrMarker, NoiseGeneratorSettings noiseGeneratorSettings, Aquifer.FluidPicker fluidPicker, Blender blender, CallbackInfo callback) {
-		this.randomState = randomState;
+		this.reterraforged$randomState = randomState;
 	}
 	
 	@Inject(
@@ -38,7 +40,7 @@ public class MixinNoiseChunk {
 		method = "cachedClimateSampler"
 	)
 	private void cachedClimateSampler(NoiseRouter noiseRouter, List<Climate.ParameterPoint> list, CallbackInfoReturnable<Climate.Sampler> callback) {
-    	if((Object) callback.getReturnValue() instanceof TBClimateSampler cachedSampler && (Object) this.randomState.sampler() instanceof TBClimateSampler globalSampler) {
+		if((Object) callback.getReturnValue() instanceof TBClimateSampler cachedSampler && (Object) this.reterraforged$randomState.sampler() instanceof TBClimateSampler globalSampler) {
     		DensityFunction uniqueness = globalSampler.getUniqueness();
 
     		if(uniqueness != null) {
@@ -48,7 +50,5 @@ public class MixinNoiseChunk {
     }
 
 	@Shadow
-    private DensityFunction wrap(DensityFunction densityFunction) {
-		throw new IllegalStateException();
-    }
+    protected abstract DensityFunction wrap(DensityFunction densityFunction);
 }

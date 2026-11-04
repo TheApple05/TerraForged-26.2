@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "scope": "Actual SpawnSearchContext helper with real Minecraft BlockPos; does not apply or validate runtime mixins",
+  "minecraft": "26.2",
+  "assertions": 36,
+  "scenarios": [
+    "vanilla_unscoped_distance",
+    "immutable_center_snapshot",
+    "nested_exception_restore",
+    "outer_success_and_failure_cleanup",
+    "long_coordinate_subtraction",
+    "concurrent_thread_isolation"
+  ],
+  "schema_version": 1,
+  "run_at_utc": "2026-11-04T07:27:38.738226+00:00",
+  "compile_exit": 0,
+  "process_exit": 0,
+  "source_sha256_lf": {
+    "common/src/main/java/raccoonman/reterraforged/world/worldgen/SpawnSearchContext.java": "108cef0a9912ab8a84e65120e230bf9ca511d9cf588852691bf11a34a15bf988",
+    "tests/spawn/SpawnScopeProbe.java": "b87894d8025220285df35d97e8f9af5af4463db39b5af560811711a1d91e302d"
+  },
+  "not_tested": [
+    "Mixin injection/application",
+    "Actual continent-center spawn",
+    "Island preference",
+    "Dedicated-server or client spawning",
+    "Optional TerraBlender runtime"
+  ]
+}

@@ -1,24 +1,18 @@
 package raccoonman.reterraforged.mixin.terrablender;
 
-import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.Implements;
-import org.spongepowered.asm.mixin.Interface;
-import org.spongepowered.asm.mixin.Mixin;
-
 import net.minecraft.world.level.biome.Climate;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import raccoonman.reterraforged.world.worldgen.terrablender.TBTargetPoint;
 
 @Mixin(Climate.TargetPoint.class)
-@Implements(@Interface(iface = TBTargetPoint.class, prefix = "reterraforged$TBTargetPoint$"))
-class MixinTargetPoint {
-	private double uniqueness = Double.NaN;
-	
-	public void reterraforged$TBTargetPoint$setUniqueness(double uniqueness) {
-		this.uniqueness = uniqueness;
-	}
-	
-	@Nullable
-	public double reterraforged$TBTargetPoint$getUniqueness() {
-		return this.uniqueness;
-	}
+class MixinTargetPoint implements TBTargetPoint {
+    @Unique
+    private double reterraforged$uniqueness = Double.NaN;
+
+    @Override
+    public void setUniqueness(double uniqueness) { this.reterraforged$uniqueness = uniqueness; }
+
+    @Override
+    public double getUniqueness() { return this.reterraforged$uniqueness; }
 }

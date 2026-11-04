@@ -37,9 +37,8 @@ public class MixinPlugin implements IMixinConfigPlugin {
 
 	@Override
 	public List<String> getMixins() {
-		return TBCompat.TERRABLENDER_COMPAT_MIXINS.stream().map((str) -> {
-			return str.replace("raccoonman.reterraforged.mixin.", "");
-		}).toList();
+		// Optional classes are already listed in the config and filtered above.
+		return null;
 	}
 
 	@Override
