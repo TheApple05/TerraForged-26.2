@@ -27,11 +27,12 @@ def rows(text):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--family', choices=['base','second'], default='base')
+    parser.add_argument('--family', choices=['base','second','composition'], default='base')
     args = parser.parse_args()
     if args.report.exists():
         parser.error('Refusing to replace native parity evidence')
-    fixture = ROOT/('horizon/tests/fixtures/noise-reference-v1.tsv' if args.family=='base' else 'horizon/tests/fixtures/noise-reference-v2.tsv')
+    fixture = ROOT/('horizon/tests/fixtures/'+{'base':'noise-reference-v1.tsv','second':'noise-reference-v2.tsv',
+                   'composition':'noise-composition-v1.tsv'}[args.family])
     metadata = json.loads(fixture.with_suffix('.json').read_text())
     if digest(fixture) != metadata['fixtureSha256'] or not metadata['freshRunsAgree']:
         raise ValueError('Independent Java oracle changed or lacks fresh-run agreement')
@@ -46,12 +47,13 @@ def main():
         'recordsPerProfile':len(expected),'valuesPerProfile':sum(map(len,expected.values())),
         'rustc':subprocess.check_output(['rustc','+stable','-Vv'],text=True),
         'family':args.family,
-        'scope':'296 vectors and '+('Perlin/Simplex' if args.family=='base' else 'Perlin2/Simplex2')+' sample/fractal values, raw float bits; no native terrain activation.',
+        'scope':('40 genuine Java constructor graphs and legacy min/max' if args.family=='composition' else
+                 '296 vectors and '+('Perlin/Simplex' if args.family=='base' else 'Perlin2/Simplex2')+' sample/fractal values')+'; raw float bits, no native terrain activation.',
         'notCovered':['Other noise modules or arbitrary graphs','Complete nonfinite/parameter domain','Cell/river/tile pipeline',
                       'Native density/surface/caves/decoration','Infinite generation','Native game save/rendering']}
     for profile in ('debug','release'):
         command = ['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin',
-                   'noise_probe' if args.family=='base' else 'noise_family_probe']
+                   {'base':'noise_probe','second':'noise_family_probe','composition':'noise_composition_probe'}[args.family]]
         if profile == 'release':
             command.append('--release')
         run = subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=90)
@@ -61,9 +63,11 @@ def main():
         actual = rows(run.stdout) if run.returncode == 0 else {}
         differences = [{'key':k,'expected':expected.get(k),'actual':actual.get(k)}
             for k in sorted(set(actual)|set(expected)) if actual.get(k)!=expected.get(k)]
+        guards = args.family!='composition' or 'NATIVE_GRAPH_GUARDS_OK depth=256 expandedBudget=1000000' in run.stderr
         report['profiles'].append({'profile':profile,'exitCode':run.returncode,'outputSha256':digest(output),
             'differenceCount':len(differences),'firstDifferences':differences[:50],
-            'allJavaValuesMatch':run.returncode==0 and not differences})
+            'constructorGuardsObserved':guards,
+            'allJavaValuesMatch':run.returncode==0 and not differences and guards})
     report['status'] = 'passed-noise-foundation-only' if all(p['allJavaValuesMatch'] for p in report['profiles']) else 'failed'
     sources = sorted((ROOT/'horizon/native-core/src').rglob('*.rs'))+[manifest,ROOT/'horizon/native-core/Cargo.lock']
     report['sourceSha256Lf'] = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sources}

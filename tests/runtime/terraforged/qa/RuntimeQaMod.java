@@ -137,6 +137,14 @@ public final class RuntimeQaMod implements ModInitializer {
             report.put("classicBiomeChecks", ClassicBiomeQa.verify(server, server.overworld()));
             report.put("cellSamplerCacheChecks", CellSamplerCacheQa.verify(server.overworld()));
             report.put("kernelOracle", KernelOracleQa.export(server, output));
+            if (Boolean.getBoolean("terraforged.qa.exportNoiseComposition")) {
+                require(!mode.startsWith("benchmark"), "Noise graph capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-noise-composition.tsv");
+                Class<?> probe = Class.forName("raccoonman.reterraforged.world.worldgen.noise.module.NativeNoiseCompositionProbe");
+                probe.getMethod("main", String[].class).invoke(null, (Object) new String[] { reference.toString() });
+                report.put("noiseComposition", Map.of("status", "captured-genuine-java-graphs", "file", reference.toString(),
+                    "sha256", sha256(reference), "bytes", Files.size(reference)));
+            }
             report.put("classicPillarCandidateSearch", ClassicPillarCandidateQa.verify(server.overworld()));
             report.put("nativeColumnReplay", NativeColumnReplayQa.verify(server.overworld()));
             report.put("classicBiomeTargetQualification", ClassicBiomeTargetSearchQa.verify(server.overworld()));
