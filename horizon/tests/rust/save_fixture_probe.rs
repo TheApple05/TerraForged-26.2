@@ -2,7 +2,7 @@
 //! This is QA setup; it does not claim the create-world UI offers the preset.
 use horizon_client_lib::{
     biome::Biomes,
-    save::{self, Level, WorldGen},
+    save::{self, Level, WorldGen, WorldPreset},
 };
 use horizon_core::position::ChunkPos;
 use horizon_world::{
@@ -66,6 +66,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "expected init/check, fresh QA world path, own preset JSON and own prepared resources"
     );
     let world = Path::new(&args[2]);
+    let ui = matches!(args[1].as_str(), "check_ui" | "check_ui_all");
     if args[1] == "init" {
         if world.exists() {
             return Err("Refusing to replace an existing world".into());
@@ -110,7 +111,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             &world.join("data/minecraft/world_gen_settings.dat"),
             Tag::compound([("data", settings), ("DataVersion", Tag::Int(DATA_VERSION))]),
         )?;
-    } else if args[1] != "check" && args[1] != "check_all" {
+    } else if args[1] != "check" && args[1] != "check_all" && !ui {
         return Err("expected init or check".into());
     }
     let settings = save::world_gen_settings(world)
@@ -140,6 +141,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     )?)?));
     let data = GeneratorData::load(&resources.join("worldgen"), registry)?;
     let preset: Value = serde_json::from_str(&fs::read_to_string(&args[3])?)?;
+    if ui {
+        assert_eq!(stem, &to_tag(&preset["dimensions"]["minecraft:overworld"])?);
+        let saved = WorldGen::read(world).ok_or("UI settings could not reopen")?;
+        assert_eq!(saved.preset.id(), "terraforged:default");
+        assert!(saved.structures, "UI run must preserve enabled structures");
+        assert!(!saved.bonus_chest);
+        let catalog = WorldPreset::all();
+        assert_eq!(catalog.len(), 6);
+        assert_eq!(catalog.last().unwrap().id(), "terraforged:default");
+        assert_eq!(WorldPreset::Normal.prev().id(), "terraforged:default");
+        assert_eq!(catalog.last().unwrap().next(), WorldPreset::Normal);
+    }
     let selected = OverworldGenerator::for_world_with_settings(
         data.clone(),
         8675309,
@@ -165,7 +178,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "chosen chunk must distinguish native generation from vanilla"
         );
         let mut stored_hash = None;
-        if args[1] == "check_all" || (args[1] == "check" && pos == ChunkPos::new(0, 0)) {
+        if matches!(args[1].as_str(), "check_all" | "check_ui_all")
+            || (matches!(args[1].as_str(), "check" | "check_ui") && pos == ChunkPos::new(0, 0))
+        {
             let region_pos = pos.region();
             let mut region = RegionFile::open(world.join(format!(
                 "dimensions/minecraft/overworld/region/r.{}.{}.mca",
@@ -200,7 +215,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "status":"passed-native-save-fixture-reader", "action":args[1],"seed":8675309,
             "overworldSettings":"terraforged:overworld","regionFiles":regions,
             "levelName":level.name,"position":level.position,
-        "qaSpawnSupplied":true,"structuresEnabled":false,
+        "qaSpawnSupplied":!ui,"structuresEnabled":settings.get("generate_structures")==Some(&Tag::Byte(1)),
+        "worldSpawn":level.world_spawn,"worldPresetUiReader":ui,
         "chunkChecks":checks,
             "notCovered":["UI world creation","Natural spawn","Structures","Full save/client acceptance without subsequent game runs"]
         }))?

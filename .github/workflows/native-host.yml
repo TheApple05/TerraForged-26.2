@@ -15,19 +15,22 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mode: [graph, registry, world, entry]
+        mode: [graph, registry, world, entry, ui]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Install stable Rust
         run: rustup toolchain install stable --profile minimal --component clippy --component rustfmt
+      - name: Install native client build headers
+        if: matrix.mode == 'ui'
+        run: sudo apt-get update && sudo apt-get install -y pkg-config libasound2-dev libudev-dev
       - name: Check out pinned source tools only
         shell: bash
         run: |
           git init build/qa/horizon/host-source
           git -C build/qa/horizon/host-source remote add origin https://github.com/TheApple05/horizon.git
-          git -C build/qa/horizon/host-source fetch --depth=1 origin 0e0f70ff1f8191479dbb5b1b173a74d38d324005
+          git -C build/qa/horizon/host-source fetch --depth=1 origin 61680d714bad3496a0ca5cef31537166f1232c4b
           git -C build/qa/horizon/host-source checkout --detach FETCH_HEAD
           git init build/qa/horizon/mixin-source
           git -C build/qa/horizon/mixin-source remote add origin https://github.com/horizon-rust/horizon-mixins.git
@@ -39,18 +42,18 @@ jobs:
           cargo fetch --locked --manifest-path build/qa/horizon/host-source/Cargo.toml
           cargo build --locked --manifest-path build/qa/horizon/mixin-source/Cargo.toml -p horizon-mixins-cli
       - name: Assemble and stage the native bundle
-        run: python horizon/tools/stage_native_host.py ${{ matrix.mode == 'entry' && '--entry' || matrix.mode == 'world' && '--world' || matrix.mode == 'registry' && '--registry' || '' }} --horizon build/qa/horizon/host-source --mixins build/qa/horizon/mixin-source/target/debug/horizon-mixins --output build/qa/horizon/ci-host
+        run: python horizon/tools/stage_native_host.py ${{ matrix.mode == 'ui' && '--ui' || matrix.mode == 'entry' && '--entry' || matrix.mode == 'world' && '--world' || matrix.mode == 'registry' && '--registry' || '' }} --horizon build/qa/horizon/host-source --mixins build/qa/horizon/mixin-source/target/debug/horizon-mixins --output build/qa/horizon/ci-host
       - name: Check compiled densities and ownership
         shell: bash
         run: |
-          cargo clippy --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p ${{ matrix.mode != 'graph' && 'horizon-world' || 'horizon-core' }} --lib -- -D warnings
+          cargo clippy --offline --locked --manifest-path build/qa/horizon/ci-host/staged/Cargo.toml -p ${{ matrix.mode == 'ui' && 'horizon-client-lib' || matrix.mode != 'graph' && 'horizon-world' || 'horizon-core' }} --lib -- -D warnings
       - name: Check density observations
         if: matrix.mode == 'graph' || matrix.mode == 'registry'
         shell: bash
         run: |
           python horizon/tools/verify_host_density.py ${{ matrix.mode == 'registry' && '--registry' || '' }} --workspace build/qa/horizon/ci-host/staged --report build/qa/ci/native-host-density.json
       - name: Check the pinned pipeline API and source-only lifecycle
-        if: matrix.mode == 'world' || matrix.mode == 'entry'
+        if: matrix.mode == 'world' || matrix.mode == 'entry' || matrix.mode == 'ui'
         shell: bash
         run: |
           mkdir -p build/qa/ci

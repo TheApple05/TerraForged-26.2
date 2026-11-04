@@ -15,7 +15,7 @@ import tarfile
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[2]
-PIN = "0e0f70ff1f8191479dbb5b1b173a74d38d324005"
+PIN = "61680d714bad3496a0ca5cef31537166f1232c4b"
 
 
 def sha(path: Path) -> str:
@@ -32,7 +32,10 @@ def main() -> int:
     p.add_argument("--world", action="store_true", help="Also stage the explicit procedural pipeline factory for QA; no automatic world selection")
     p.add_argument("--entry", action="store_true", help="Also select the native pipeline for the explicit TerraForged preset/saved stem")
     p.add_argument("--full", action="store_true", help="Export the full pinned engine for package/client integration; never download game resources")
+    p.add_argument("--ui", action="store_true", help="Also register the native preset in the real world selector; implies entry and full source")
     a = p.parse_args()
+    if a.ui:
+        a.entry = a.full = True
     if a.entry:
         a.world = True
     if a.world:
@@ -150,6 +153,30 @@ bindings = [
   { name = "saved_stem", ty = "Option<&serde_json::Value>", value = "saved_stem" },
 ]
 ''')
+    if a.ui:
+        for name in ("world_presets.rs", "register_preset_catalog.rs", "register_preset_reopen.rs"):
+            shutil.copy2(ROOT / "horizon/native-world" / name, bundle / name)
+        with (bundle / "horizon-mixin.toml").open("a", encoding="utf-8", newline="\n") as manifest:
+            manifest.write('''
+[[module]]
+id = "native-world-presets"
+file = "crates/horizon-client/src/save.rs"
+name = "terraforged_presets"
+source = "world_presets.rs"
+visibility = "pub"
+
+[[injection]]
+id = "native-world-preset-catalog"
+target = "horizon_client_lib::save::WorldPreset::all"
+kind = "HEAD"
+helper = "register_preset_catalog.rs"
+
+[[injection]]
+id = "native-world-preset-reopen"
+target = "horizon_client_lib::save::WorldPreset::of_generator"
+kind = "HEAD"
+helper = "register_preset_reopen.rs"
+''')
     if a.router:
         shutil.copy2(ROOT / "horizon/native-world/supply_density.rs", bundle / "supply_density.rs")
         with (bundle / "horizon-mixin.toml").open("a", encoding="utf-8", newline="\n") as manifest:
@@ -228,6 +255,10 @@ workspace = true
     if a.entry:
         file = ROOT / "horizon/native-world/open_world.rs"
         source_files[file.relative_to(ROOT).as_posix()] = sha(file)
+    if a.ui:
+        for name in ("world_presets.rs", "register_preset_catalog.rs", "register_preset_reopen.rs"):
+            file = ROOT / "horizon/native-world" / name
+            source_files[file.relative_to(ROOT).as_posix()] = sha(file)
     plan = output / "plan.json"
     stage = output / "staged"
     for action, destination in (("plan", plan), ("apply", stage)):
@@ -241,6 +272,7 @@ workspace = true
     report["routerDefinitionSupplyIncluded"] = a.router
     report["automaticWorldSelectionIncluded"] = a.entry
     report["fullEngineSourceIncluded"] = a.full
+    report["worldPresetUiIncluded"] = a.ui
     (output / "stage-result.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2))
     return 0

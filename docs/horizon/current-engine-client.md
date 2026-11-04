@@ -1,6 +1,8 @@
 # Current Horizon engine and client evidence
 
-This integration pins `TheApple05/horizon` commit
+The current integration advances to the [world selector API and real creation
+checks](native-world-selector.md) at commit `61680d714bad3496a0ca5cef31537166f1232c4b`.
+The following source/client checks describe the earlier integration pin
 `0e0f70ff1f8191479dbb5b1b173a74d38d324005` (merged in that fork by PR6).
 It includes the fork's existing Photon and compatibility changes. Those changes
 are inherited engine work; this port does not establish Photon pack compatibility.
@@ -68,7 +70,8 @@ accepts rendering smoke only. Client terrain queues are empty at the sampled
 readiness points; limited-distance silhouettes are visible, and this does not
 prove all server generation tasks or terrain-fidelity acceptance.
 
-Natural spawn, normal UI creation, structures, all 17 native classic biome
+The subsequent UI checks cover ordinary creation and a healthy natural survival
+spawn, while source spawn-algorithm parity remains open. Structures, all 17 native classic biome
 resources and their custom features, source carver configuration, standard
 launcher installation, controlled native performance and mod combinations
 remain open. These native checks do not change the Java 26.2 Fabric/NeoForge

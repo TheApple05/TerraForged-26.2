@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-targeted-preset-api-and-linux-ci-with-baseline-windows-failures",
+  "horizonRevision": "61680d714bad3496a0ca5cef31537166f1232c4b",
+  "horizonMergeCommit": "1e0b414687e13bb3f3bd9bbb8098261bdedb9085",
+  "pullRequest": "https://github.com/TheApple05/horizon/pull/7",
+  "saveLibraryTests": {
+    "passed": 68,
+    "failed": 0,
+    "ignored": 2
+  },
+  "customPresetIntegrationTests": {
+    "passed": 1,
+    "failed": 0
+  },
+  "windowsFullLibraryTests": {
+    "passed": 1706,
+    "failed": 1,
+    "ignored": 56,
+    "failure": "entities::drop_motion_tests::drops_match_vanillas_motion_bit_for_bit: existing 1-ULP result difference"
+  },
+  "windowsPythonTests": {
+    "run": 663,
+    "failed": 1,
+    "skipped": 14,
+    "failure": "test_server_panels.EggTests.test_scripts_parse: default WSL Bash cannot find /bin/bash"
+  },
+  "baselineRevision": "a68b9d0392f6d304aced798ac36dacbadd78ca21",
+  "bothWindowsFailuresReproducedOnUnchangedBaseline": true,
+  "prReadyClippyPassed": true,
+  "prReadyRustfmtPassed": true,
+  "prReadyPublicTreePassed": true,
+  "logsSha256": {
+    "world-preset-pr-ready-v1.log": "fd331c10d26e17237b2aa2363bac0efd7730a012ae970f9d6b0f03ad597e2c72",
+    "world-preset-save-tests-v2.log": "40163b79e84a2ca47b0e23f8624fed41777fc3315535de18eecce3d20a38a6a2",
+    "world-preset-integration-v2.log": "4fc72b20f6abec887fa40baae732656bf87478a5861dcb2df21255e2aacfca84",
+    "world-preset-baseline-float-v1.log": "36bc5945a42b70e5d8e37cfca118b92c57c86fc598d6dd7e8e532a8d07bcbca1",
+    "world-preset-baseline-bash-v1.log": "244cc79a742f3398a17c5ac2554aff372b4506f710e412511ecf10add1b69364"
+  },
+  "exactHeadCi": [
+    {
+      "id": 41922999439,
+      "name": "cancel-on-close",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/horizon/actions/runs/41922999439",
+      "run_attempt": 1,
+      "head_sha": "61680d714bad3496a0ca5cef31537166f1232c4b"
+    },
+    {
+      "id": 41921622577,
+      "name": "pr labels",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/horizon/actions/runs/41921622577",
+      "run_attempt": 1,
+      "head_sha": "61680d714bad3496a0ca5cef31537166f1232c4b"
+    },
+    {
+      "id": 41921622978,
+      "name": "overlap note",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/horizon/actions/runs/41921622978",
+      "run_attempt": 1,
+      "head_sha": "61680d714bad3496a0ca5cef31537166f1232c4b"
+    },
+    {
+      "id": 41921622304,
+      "name": "Fork compatibility",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/horizon/actions/runs/41921622304",
+      "run_attempt": 1,
+      "head_sha": "61680d714bad3496a0ca5cef31537166f1232c4b"
+    },
+    {
+      "id": 41921622465,
+      "name": "checks",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/TheApple05/horizon/actions/runs/41921622465",
+      "run_attempt": 1,
+      "head_sha": "61680d714bad3496a0ca5cef31537166f1232c4b"
+    }
+  ],
+  "notCovered": [
+    "Actual native UI creation and client rendering",
+    "Vanilla differential parity",
+    "Windows drop-motion baseline fix"
+  ]
+}
