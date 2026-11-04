@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "provider": "DeepSeek",
+  "model": "deepseek-flash",
+  "jobId": "635bae52f38d4502ab8b25b3fc825970",
+  "sessionId": "TerraForged-26.2",
+  "estimatedUsd": 0.0013971,
+  "costIsEstimate": true,
+  "scope": "Routine mechanical FastRandom draft from selected public MIT source. Codex kept architecture, seed/coordinate utilities, integration and final verification.",
+  "review": "Reviewed unsigned shifts, signed wrapping rejection arithmetic, constructor gamma behavior and exact f32 scaling. No worker commands executed.",
+  "validation": "docs/validation/horizon-native-utilities-v1.json",
+  "recordsPerProfile": 422,
+  "profiles": [
+    "debug",
+    "release"
+  ],
+  "limits": "Frozen RNG/seed/coordinate subset only; arbitrary gamma/64-bit inputs and a focused rejection-loop corpus remain separate."
+}

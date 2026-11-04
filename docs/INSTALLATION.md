@@ -2,6 +2,8 @@
 
 Use **Minecraft Java 26.2** and **Java 25**. Current candidate: **0.1.0-dev.23+26.2**. It is intended for new test worlds and modpack evaluation. Exact compatibility results are in [dev23 readiness](validation/dev23-readiness.md); [controlled performance qualification](validation/dev23-performance.md) passes on the recorded local workloads.
 
+[Download dev23 for both loaders](https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.23%2B26.2). Release asset filenames explicitly identify the loader and Minecraft version; their bytes match the build record.
+
 ## Choose the loader
 
 - Fabric Loader **0.20.1**, Fabric API **0.161.0+26.2**, and `terraforged-revival-0.1.0-dev.23+26.2.jar`.
