@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-warnings-denied-entry-and-test-cfg-compilation",
+  "horizonRevision": "0e0f70ff1f8191479dbb5b1b173a74d38d324005",
+  "stageResultSha256": "87b4d77765ad32567a190d3b8ac7d3523ca4745985789eec7e7f782e9d719699",
+  "clippyLogSha256": "ab17475cba0ab7f69af8e9c7e772fbdc82ae058a8ec5e34fc843fea33fc2c7aa",
+  "clippyCommand": "cargo +stable clippy --offline --locked --manifest-path <staged>/Cargo.toml -p horizon-world --lib --message-format short -- -D warnings",
+  "testCfgCompilationLogSha256": "a4e09b0e21abc8646ff376399f48a1dad0c584451555fa41f7591279d8803f18",
+  "testCfgTestsExecuted": 0,
+  "testCfgTestsFiltered": 349,
+  "forwardedMethods": 25,
+  "forwardedTestOnlyMethods": 1,
+  "scope": "The forwarding generator preserves the new test-only method attribute. The filtered command compiles the test configuration; it does not execute the 349 tests."
+}

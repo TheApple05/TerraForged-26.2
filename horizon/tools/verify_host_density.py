@@ -9,6 +9,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import os
+from stage_native_host import PIN
 
 ROOT=Path(__file__).resolve().parents[2]
 MARKER='realHorizonGraph scalar bulk conservativeBounds parallelContexts releasedWorldOwner'
@@ -26,7 +27,7 @@ def main():
     if not workspace.is_relative_to((ROOT/'build/qa/horizon').resolve()) or workspace.name!='staged':p.error('Use a freshly staged workspace below build/qa/horizon')
     if a.report.exists():p.error('Refusing to replace host graph qualification evidence')
     stage_result=workspace.parent/'stage-result.json';staging=json.loads(stage_result.read_text(encoding='utf-8'))
-    if staging['horizonRevision']!='e4d7699a8d4ff5b18a966601b9c3e8346f4571e5' or staging['worldActivationIncluded']:raise ValueError('Wrong host stage')
+    if staging['horizonRevision']!=PIN or staging['worldActivationIncluded']:raise ValueError('Wrong host stage')
     if bool(staging.get('registryDecoderIncluded',False))!=a.registry:raise ValueError('Wrong registry staging mode')
     for name,digest in staging['inputFiles'].items():
         if sha(ROOT/name)!=digest:raise ValueError('Restage changed input '+name)

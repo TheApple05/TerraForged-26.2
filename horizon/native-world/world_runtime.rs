@@ -108,7 +108,7 @@ struct NativePipeline {
 }
 
 // Pipeline forwarding follows below. Regenerate with the source-only helper.
-// Trait source SHA256: ef3b3fc18893a495b7c07644f32e86b885e5c232a2e85bb9bca8e4f2b8c453e1
+// Trait source SHA256: 5a6b64bd523082bde905ed3da148a7bf260aac093282f32040810c44e3925ee0
 impl SeededPipeline for NativePipeline {
     fn generate(
         &self,
@@ -197,6 +197,14 @@ impl SeededPipeline for NativePipeline {
     }
     fn ring_positions(&self, worker: &mut WorkerState, set: &str) -> Option<Vec<ChunkPos>> {
         self.inner.ring_positions(worker, set)
+    }
+    #[cfg(test)]
+    fn may_start_answers(
+        &self,
+        _worker: &mut WorkerState,
+        _chunk: ChunkPos,
+    ) -> Vec<(String, bool)> {
+        self.inner.may_start_answers(_worker, _chunk)
     }
     fn spawn_position(&self) -> Result<[i32; 2], GeneratorError> {
         self.inner.spawn_position()

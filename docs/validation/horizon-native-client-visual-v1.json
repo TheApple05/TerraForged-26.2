@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-scoped-native-rendering-image-review",
+  "reviewedAtUtc": "2026-11-04T21:57:19.887329+00:00",
+  "clientReportSha256": "01dbe27f0ad99a3626e5e372b2efcc62fa3375a7c6f293607623ce9b8fc5a035",
+  "reviewer": "Codex direct image inspection",
+  "reviewedImages": [
+    {
+      "run": 0,
+      "screenshotSha256": "126e482ca764b3cd11f9000b024b230d2937258493e0ae2912dcac33b03b3f67",
+      "description": "Birch forest, grass, flowers and foreground terrain render.",
+      "clientChunks": 115,
+      "drawnSections": 77,
+      "residentSections": 620,
+      "pendingClientChunks": 0,
+      "pendingUploads": 0,
+      "streaming": {
+        "decorating": 0,
+        "finishing": 0,
+        "generating": 0,
+        "lighting": 0,
+        "meshing": 0,
+        "protos": 0,
+        "queued": 0
+      }
+    },
+    {
+      "run": 1,
+      "screenshotSha256": "34b71f44c178034e8117a90d4036265fd2af7e42639d3496ca27843d65631619",
+      "description": "Desert, cacti, dead bushes and a water gully render at the newly generated distant location.",
+      "clientChunks": 85,
+      "drawnSections": 35,
+      "residentSections": 377,
+      "pendingClientChunks": 0,
+      "pendingUploads": 0,
+      "streaming": {
+        "decorating": 0,
+        "finishing": 0,
+        "generating": 0,
+        "lighting": 0,
+        "meshing": 0,
+        "protos": 0,
+        "queued": 0
+      }
+    }
+  ],
+  "scope": "Terrain visibly renders in both actual GPU-client screenshots. Limited-distance silhouettes remain visible at the horizon. This is a rendering and save/reopen smoke check, not terrain-fidelity, seam, LOD, natural-spawn or performance acceptance. Client queue snapshots do not prove every possible server generation task is finished.",
+  "notCovered": [
+    "UI world creation",
+    "Natural spawn",
+    "Structures",
+    "17 native classic biomes/features",
+    "Independent post-decoration block parity",
+    "Standard launcher installation",
+    "Controlled native performance and modpack qualification",
+    "Representative scenery across seeds/presets",
+    "Complete exploration or boundary/seam review",
+    "LOD and shader pack compatibility"
+  ]
+}

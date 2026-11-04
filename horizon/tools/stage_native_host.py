@@ -15,7 +15,7 @@ import tarfile
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[2]
-PIN = "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5"
+PIN = "0e0f70ff1f8191479dbb5b1b173a74d38d324005"
 
 
 def sha(path: Path) -> str:
