@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-real-horizon-density-registry",
+  "registryDecoderIncluded": true,
+  "startedAtUtc": "2026-11-04T18:59:06.809317+00:00",
+  "horizonRevision": "e4d7699a8d4ff5b18a966601b9c3e8346f4571e5",
+  "stageResultSha256": "5cbe0f517872869e340a4670d8730031eea19ef9d4fc9714a339e882dd425ab5",
+  "referenceMetadataSha256": "1fe06ec7aaa9270f9506ce8292dc28dc9f4b1deba8505e150c4f769c07323b36",
+  "probeSourceSha256": "115a469504a7c2646b061bac212c7f25b17a2e81aa870909215da47c0e165595",
+  "inputSha256": "caec3168f6e879304e42b64654545b5be07a425dac6651469355d32cd31776c4",
+  "recordsPerProfile": 24768,
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "lifecycleTestsPassed": true,
+      "lifecycleLogSha256": "5edec120f25ed168146519fed2828790c7cd72bcbd561fbb45875e8b006355f8",
+      "guardsObserved": true,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "outputSha256": "5ed96f7034781269b55b75c69664eb04b8a1bd51969e0cad8e163c60185698bd",
+      "allJavaValuesMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "lifecycleTestsPassed": true,
+      "lifecycleLogSha256": "5edec120f25ed168146519fed2828790c7cd72bcbd561fbb45875e8b006355f8",
+      "guardsObserved": true,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "outputSha256": "5ed96f7034781269b55b75c69664eb04b8a1bd51969e0cad8e163c60185698bd",
+      "allJavaValuesMatch": true
+    }
+  ],
+  "scope": "Actual scoped Horizon JSON registry decoding and compiled graph evaluation. Compiled Horizon graph scalar/bulk f32 outputs using the assembled procedural kernel, ten cell fields, three clamp resolutions, two noise bindings and one addition graph.",
+  "notCovered": [
+    "World activation",
+    "Full router conversion",
+    "f64 vanilla chunk parity",
+    "Biomes/surfaces/caves/features integration",
+    "Native client/save/modpack/launcher acceptance"
+  ],
+  "completedAtUtc": "2026-11-04T19:05:32.568413+00:00"
+}

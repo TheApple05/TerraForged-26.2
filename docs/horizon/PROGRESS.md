@@ -50,6 +50,12 @@ density bindings now have a separate real-graph qualification in
 host-density-graph.md. Full router/world integration, seam characterization,
 real client/save and mod combinations remain required; kernel timings are not
 game/FPS acceptance.
+
+The scoped custom-density resource decoder now also matches all 24,768 Java
+scalar/bulk observations through Horizon's real JSON registry in debug/release.
+Scope restoration, panic/error cleanup, thread isolation, vanilla passthrough
+and final world-owner release are exercised; see host-density-registry.md.
+This remains library-level integration, with no native world activation yet.
 The ten cell density fields and custom clamp/spline/conditional-cache/noise
 primitives now match 430,254 independent Java fields in both profiles; see
 density-primitives.md. They are not bound into Horizon's density graph yet.

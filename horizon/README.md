@@ -25,7 +25,10 @@ kernel records in debug/release. The bounded cached column sampler matches
 Custom density primitives also have independent coverage. The assembled native
 bundle now binds procedural cells/noise/clamps into real compiled Horizon
 density graphs, matching 24,768 independent Java scalar/bulk observations in
-debug and release. See [graph integration](../docs/horizon/host-density-graph.md)
+debug and release. The custom resource decoder also passes those observations
+through Horizon's JSON registry; see
+[resource integration](../docs/horizon/host-density-registry.md).
+See [graph integration](../docs/horizon/host-density-graph.md)
 and the [current checkpoint](../docs/horizon/PROGRESS.md). World activation,
 complete routers, biomes, surfaces, caves, decorations and structures remain
 integration work. The separate prepared bundle does not include this kernel.
