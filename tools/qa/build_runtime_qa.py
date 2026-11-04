@@ -28,6 +28,7 @@ def main() -> int:
     parser.add_argument("--noise-registry", action="store_true", help="Include the optional same-package genuine Java registry oracle (Fabric QA only).")
     parser.add_argument("--preset-model", action="store_true", help="Include the optional genuine Java preset/factory oracle and explicit inputs (Fabric QA only).")
     parser.add_argument("--continent", action="store_true", help="Include the optional genuine Java continent geometry oracle (Fabric QA only).")
+    parser.add_argument("--populators", action="store_true", help="Include the optional genuine Java region/terrain blending oracle (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -57,6 +58,8 @@ def main() -> int:
         sources.append(ROOT / "horizon/tests/java/NativePresetProbe.java")
     if args.continent:
         sources.append(ROOT / "horizon/tests/java/NativeContinentProbe.java")
+    if args.populators:
+        sources.append(ROOT / "horizon/tests/java/NativePopulatorProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
@@ -81,6 +84,8 @@ def main() -> int:
             archive.write(ROOT / "horizon/tests/inputs/preset-model-v1.json", "terraforged-qa-preset-model.json")
         if args.continent:
             archive.write(ROOT / "horizon/tests/inputs/continent-v1.json", "terraforged-qa-continent.json")
+        if args.populators:
+            archive.write(ROOT / "horizon/tests/inputs/populators-v1.json", "terraforged-qa-populators.json")
         archive.writestr("fabric.mod.json", json.dumps(metadata, indent=2) + "\n")
         archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
             "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-populators-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "56331da9c1545de98aa51ce4352fb4dfa8983589e6eb520eff513f29fd781225",
+  "inputsSha256": "43ae659ecdf8998d74fa6bb6a35a9e5328e209a14d695c1825ac49f7d7ee0588",
+  "recordCount": 58305,
+  "regionConfigs": 24,
+  "populatorGraphs": 27,
+  "cellSamples": 58305,
+  "allCellFields": 24,
+  "producerReports": [
+    {
+      "report": "server-horizon-populators-oracle-v1a.json",
+      "sha256": "6a27b9f45010f4cf6f2cf5901189c8e2fa080cebb1e398d04177c0c05d710621",
+      "pid": 67668,
+      "instance": "build/qa/server/instances/20261104T160424Z-40e60a",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "a810e7439424b488718bd9c17df973e877785642a7bf14a0985ad548e14e7ab3",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionModule source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionSelector source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionLerper source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.TerrainPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.OceanPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.Blender source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.ContinentLerper2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.ContinentLerper3 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.RegionConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.Cell source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-40e60a/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-populators-oracle-v1b.json",
+      "sha256": "36ce4a7f6ecb3ffc2661e3da36ce8295c8993e7d8ae188372971effe605384f2",
+      "pid": 44176,
+      "instance": "build/qa/server/instances/20261104T160424Z-9bc58e",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "f7eeb144e3535d6fcd3fe92187a7b0b19e3fdae4d0f4b948c59e744472d4e166",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionModule source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionSelector source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.region.RegionLerper source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.TerrainPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.populator.OceanPopulator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.Blender source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.ContinentLerper2 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.ContinentLerper3 source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.RegionConfig source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.Cell source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T160424Z-9bc58e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "world/worldgen/cell/terrain/region/RegionModule.java": "259ba943b05a166a09c045830f5d9dc0d5e2358262524faee3adba93a1bdd55f",
+    "world/worldgen/cell/terrain/region/RegionSelector.java": "fc343ceb005cc0454ea086530ab211b62ee292c53052276aedc0b15c0f32079f",
+    "world/worldgen/cell/terrain/region/RegionLerper.java": "3b996d9ad692a34ae4df1c35701f17a0ef7e9bf470665787d5c808f0b89c6bd4",
+    "world/worldgen/cell/terrain/populator/TerrainPopulator.java": "fceea9cd3d1089fc54dd5903a5858a636532848bd8f770d78508264306e30797",
+    "world/worldgen/cell/terrain/populator/OceanPopulator.java": "4271ef501a6a3d1e3fe7852e545e0d2ae610d1176324706c4b5b3627db9a4d57",
+    "world/worldgen/cell/terrain/Blender.java": "f1f028e1a791a77725fb9e868b700d5126f64231514e3bedf7f4ec637b9a78ed",
+    "world/worldgen/cell/continent/ContinentLerper2.java": "7874e21017faa3841957e7d30f905ee363a03bdd678dde07a38f0c5a3e35819f",
+    "world/worldgen/cell/continent/ContinentLerper3.java": "f59f144af473321ef28e0eb656daa7546773efd6af0705c54abc1154567551c3",
+    "world/worldgen/cell/heightmap/RegionConfig.java": "c406e18560781f0c3d3eadce466e287bb3ec09e0b4e977ec8929038562fef154",
+    "world/worldgen/cell/Cell.java": "931f88001501f707299fd030999d56f91174f955eade30fac1f7a7e85c42aa1c",
+    "world/worldgen/noise/module/Noises.java": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+    "world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139"
+  },
+  "oracleSourceSha256Lf": "8fcfd1ffa90dc1c57421a13cde9da5d1843402bb6ecd13276c067bb643e1ee1b",
+  "scope": "Original RegionModule and 27 terrain/ocean/selector/region/continent blending graphs; all 24 Cell fields.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Volcano and full Populators factory graphs",
+    "TerrainProvider construction order",
+    "River networks/cache",
+    "Whole terrain/climate/filtered tiles",
+    "Native chunks/client/save"
+  ]
+}

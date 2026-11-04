@@ -210,6 +210,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("continent", Map.of("status", "captured-genuine-java-continent", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportPopulators")) {
+                require(!mode.startsWith("benchmark"), "Populator capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-populators.tsv");
+                Path inputs = output.resolve("native-populators.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativePopulatorProbe");
+                probe.getMethod("capture", Path.class, Path.class).invoke(null, reference, inputs);
+                report.put("populators", Map.of("status", "captured-genuine-java-populators", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             report.put("status", "passed");
         } catch (Throwable failure) {
             report.put("error", describe(failure));
