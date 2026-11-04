@@ -86,6 +86,13 @@ engine presets, so player selection and actual on-disk save acceptance remain
 work. A source-only combined package is undergoing real mod-reader checks;
 packaging alone does not establish launcher or rendered-client acceptance.
 
+The deliberate Java dev23 classic-biome selection policy now also has a native
+port matching 154,936 independent observations in each profile. All 17 selection
+paths, modern/modded parent exclusions, raw-float hash thresholds, inherited
+terrain identities and nonfinite inputs are covered. See classic-biome-policy.md.
+Registry/feature/tag restoration and natural native biome reachability remain
+separate work; a policy match alone is not a restored biome.
+
 All expected numerical observations originate from the exact published Java JAR
 or original source-owned data, independently of Rust output. Capture/freezer and
 verification tools refuse replacement. Failed reports remain alongside corrected

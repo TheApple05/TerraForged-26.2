@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-published-java-classic-biome-policy",
+  "freshRunsAgree": true,
+  "capturedAtUtc": "2026-11-04T20:32:14.199986+00:00",
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "recordCount": 154936,
+  "fixtureSha256": "81e9d9a68bff81dc669da49c54019209f127f9d20c2b7b4089d87343dfb792e2",
+  "uncompressedValuesSha256": "f2cb456e3e70c03e4f0f872b9a647b76105d3fb9e56a4a6ea7543e94cd417f95",
+  "inputsSha256": "8775520be2c7a42a493f1c7fb5785cfec48d7823573f37b143647815a3a86180",
+  "oracleSourceSha256Lf": "26f792cd9eb83ba23eca7b628995b92eeddfc99141f4fc3e3b5775e4bdcf0e27",
+  "producerReports": [
+    {
+      "pid": 7520,
+      "exitCode": 0,
+      "records": 154936,
+      "observationsSha256": "f2cb456e3e70c03e4f0f872b9a647b76105d3fb9e56a4a6ea7543e94cd417f95",
+      "logSha256": "af32dad2a80fa08fce8f51633f425ee60d7703002c90f25cbd7b2723b664e514",
+      "verifiedPackagedOrigins": [
+        "PACKAGED_CLASS_ORIGIN=raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "PACKAGED_CLASS_ORIGIN=raccoonman.reterraforged.world.worldgen.cell.Cell=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "PACKAGED_CLASS_ORIGIN=raccoonman.reterraforged.world.worldgen.cell.terrain.TerrainType=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "pid": 67832,
+      "exitCode": 0,
+      "records": 154936,
+      "observationsSha256": "f2cb456e3e70c03e4f0f872b9a647b76105d3fb9e56a4a6ea7543e94cd417f95",
+      "logSha256": "8f16e1024fea53910ac4d25e6bec6e362068f320edc1123cee826bbd7a40d0d7",
+      "verifiedPackagedOrigins": [
+        "PACKAGED_CLASS_ORIGIN=raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "PACKAGED_CLASS_ORIGIN=raccoonman.reterraforged.world.worldgen.cell.Cell=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "PACKAGED_CLASS_ORIGIN=raccoonman.reterraforged.world.worldgen.cell.terrain.TerrainType=C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\libs\\terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "scope": "Deliberate dev23 modern biome selection and raw-float region hash. Eligible/ineligible families, temperature/hash thresholds, nonfinite values and inherited terrain identities.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Native biome registry/feature implementation",
+    "Natural native generation",
+    "Native wrapper cave passthrough",
+    "Full old Engine parity",
+    "Client/save/launcher/modpack acceptance"
+  ]
+}
