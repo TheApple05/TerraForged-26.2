@@ -48,6 +48,9 @@ Its failure/unwind/concurrent-publication lifecycle tests pass in both profiles.
 An optimized kernel-only benchmark is recorded in column-sampler.md. Native
 density/chunks, seam characterization, real client/save and mod combinations
 remain required; kernel timings are not game/FPS acceptance.
+The ten cell density fields and custom clamp/spline/conditional-cache/noise
+primitives now match 430,254 independent Java fields in both profiles; see
+density-primitives.md. They are not bound into Horizon's density graph yet.
 Never substitute height-only fill, prerecorded terrain or a snapshot fallback.
 
 After that, connect the complete kernel to real native density, biome, surface,

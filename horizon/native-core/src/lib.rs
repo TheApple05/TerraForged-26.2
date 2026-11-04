@@ -5,6 +5,7 @@ pub mod bounds;
 pub mod cell;
 pub mod climate;
 pub mod continent;
+pub mod density_primitives;
 pub mod domain;
 pub mod erosion;
 pub mod fast_random;

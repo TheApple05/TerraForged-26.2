@@ -33,6 +33,8 @@ FAMILIES={
                      'NATIVE_RIVER_NETWORKS_OK originalTree randomCheckpoints cachedReplay reverseOrder parallelReaders boundedOwnership lruRelease concurrentIdentity completeUnfilteredCells','passed-river-networks-and-unfiltered-cells-only'),
     'tile-filters':('tile-filters-v1','tile_filter_probe','Original filters, brushes, modifiers, backing boundaries and actual zoomed tile stages',
                    'NATIVE_TILE_FILTERS_OK originalBrushes flatIndexWrapping sequentialUpdates nestedInversion NaNClassification zoomOptional reverseOrder parallelTiles boundedInputs','passed-tile-filters-and-zoomed-cells-only'),
+    'density-primitives':('density-primitives-v1','density_primitive_probe','Ten cell fields and custom clamp/spline/conditional/noise density primitives before host binding',
+                         'NATIVE_DENSITY_PRIMITIVES_OK originalFields doubleFloatNarrowing splineCallbacks nestedCacheCoordinates ownedTables explicitUnsupportedInputs noHostBinding','passed-density-primitives-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 

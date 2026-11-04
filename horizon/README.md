@@ -18,11 +18,14 @@ as `21679eb68f770d3ac1c2cc1c51a535eea37787ab`, with the same tested source tree.
 The [dev23 package](../docs/validation/horizon-package-dev23.json) retains the
 finite-prototype label and contains neither snapshots nor prepared resources.
 
-Procedural work is isolated in [native-core](native-core/README.md). Its scalar,
-vector and Perlin/Simplex foundation matches independently captured Java raw
-float results in debug and release. It is not yet connected to world generation
-and is not included in the prepared bundle. The complete cell/tile and native
-density/surface/cave pipeline remains required for infinite terrain.
+Procedural work is isolated in [native-core](native-core/README.md). Complete
+cell/river/climate stages and filtered tiles now match all310,104 independent Java
+kernel records in debug/release. The bounded cached column sampler matches
+196,608 observed columns, with lifecycle checks and an optimized kernel benchmark.
+Custom density primitives also have independent coverage. See the
+[current checkpoint](../docs/horizon/PROGRESS.md). This kernel is not connected to
+Horizon world generation or included in the prepared bundle yet; native density,
+biomes, surfaces, caves, decorations and structures remain integration work.
 
 The player-facing bundle is under `mixins/terraforged_prepared/`. It uses the
 actual Horizon world-generator constructor through horizon-mixins, pinned to
@@ -61,8 +64,8 @@ No tool here downloads Minecraft, assets or prepared game resources. Use the
 player's own local resources. Developer archives and binaries remain under the
 repository's ignored `build/qa/horizon` folder.
 
-Remaining work: native infinite continent/river/erosion kernels; native preset
-UI; typed entities and block entities; structure metadata/locate; scheduled
+Remaining work: procedural kernel integration into real native chunks; native
+preset UI; typed entities and block entities; structure metadata/locate; scheduled
 ticks; full rendered client and native save/reload acceptance. The v1 exporter
 refuses chunks containing block entities instead of silently dropping them.
 Copied structure blocks do not restore structure starts. No claim of general
