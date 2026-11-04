@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "compiled",
+  "compileExit": 0,
+  "runAtUtc": "2026-11-04T08:09:13.762898+00:00",
+  "productionDependencyJar": "build\\libs\\terraforged-revival-0.1.0-dev.5+26.2.jar",
+  "productionDependencyJarSha256": "1c635ce93432e25c994f6a4a8252d102299d6b6dc0fcc5b29930318c22f894ae",
+  "sourceSha256Lf": {
+    "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinBiomeModificationImpl.java": "191791f66f3c2b504eb0b2e09c759bb3374fbbfac62cde1118952cb175a7537d",
+    "fabric/src/main/java/raccoonman/reterraforged/fabric/mixin/MixinGenerationSettingsContext.java": "7adb3325b9fc36aab1ee9e292ebcdfd4b6f40c0724ce1bb8ef7860154b95f468",
+    "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/FabricBiomeModifier.java": "2ca5ef5ea6db818070a65706e937fd2ac56caf18079304dfbd7dbafacd1cd14e",
+    "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/AddModifier.java": "f901c3cf5ef3296527ec4351f025222e709dccb6faf9d4ff861629d902a1daa3",
+    "fabric/src/main/java/raccoonman/reterraforged/world/worldgen/biome/modifier/fabric/ReplaceModifier.java": "5cb15ea391208715be1cc3e3d45960f12874f38dae365dcca855a4eb8b100460"
+  },
+  "scope": "Isolated javac against actual26.2/Fabric API dependencies; not a Gradle/package/runtime/mixin transformation verification",
+  "pendingRuntimeGate": "Exact dev6 packaged clientworldload and sorter-identity assertions"
+}

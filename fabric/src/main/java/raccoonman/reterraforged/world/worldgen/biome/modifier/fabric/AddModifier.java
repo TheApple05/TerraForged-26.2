@@ -46,7 +46,7 @@ record AddModifier(Order order, GenerationStep.Decoration step, Optional<Filter>
 
 		featureSteps.set(index, this.add(featureSteps.get(index)));
 		
-		this.rebuildFlowerFeatures(generationSettings);
+		this.markFeaturesChanged(modificationContext);
 	}
 
 	private HolderSet<PlacedFeature> add(@Nullable HolderSet<PlacedFeature> values) {

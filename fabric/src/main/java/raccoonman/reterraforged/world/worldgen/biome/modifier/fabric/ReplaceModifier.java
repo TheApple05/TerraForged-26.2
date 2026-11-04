@@ -43,7 +43,7 @@ record ReplaceModifier(GenerationStep.Decoration step, Optional<HolderSet<Biome>
 
 		featureSteps.set(index, this.replace(featureSteps.get(index)));
 		
-		this.rebuildFlowerFeatures(generationSettings);
+		this.markFeaturesChanged(modificationContext);
 	}
 	
 	private HolderSet<PlacedFeature> replace(HolderSet<PlacedFeature> features) {

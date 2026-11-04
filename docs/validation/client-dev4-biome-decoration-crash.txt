@@ -1,0 +1,293 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 2026-11-04 00:04:35
+Description: Biome decoration
+
+java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at knot//net.minecraft.world.level.chunk.ChunkGenerator.applyBiomeDecoration(ChunkGenerator.java:354)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStatusTasks.generateFeatures(ChunkStatusTasks.java:107)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStep.apply(ChunkStep.java:33)
+	at knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:671)
+	at knot//net.minecraft.server.level.GenerationChunkHolder.applyStep(GenerationChunkHolder.java:87)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleChunkInLayer(ChunkGenerationTask.java:144)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleLayer(ChunkGenerationTask.java:121)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleNextLayer(ChunkGenerationTask.java:72)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.runUntilWait(ChunkGenerationTask.java:57)
+	at knot//net.minecraft.server.level.ChunkMap.lambda$runGenerationTask$0(ChunkMap.java:697)
+	at knot//net.minecraft.server.level.ChunkTaskDispatcher.lambda$scheduleForExecution$1(ChunkTaskDispatcher.java:88)
+	at knot//net.minecraft.util.thread.TaskScheduler.lambda$scheduleWithResult$0(TaskScheduler.java:21)
+	at knot//net.minecraft.util.Util.runNamed(Util.java:346)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.pollTask(AbstractConsecutiveExecutor.java:50)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.run(AbstractConsecutiveExecutor.java:60)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745)
+	at java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at knot//net.minecraft.world.level.chunk.ChunkGenerator.applyBiomeDecoration(ChunkGenerator.java:354)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStatusTasks.generateFeatures(ChunkStatusTasks.java:107)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStep.apply(ChunkStep.java:33)
+	at knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:671)
+	at knot//net.minecraft.server.level.GenerationChunkHolder.applyStep(GenerationChunkHolder.java:87)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleChunkInLayer(ChunkGenerationTask.java:144)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleLayer(ChunkGenerationTask.java:121)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleNextLayer(ChunkGenerationTask.java:72)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.runUntilWait(ChunkGenerationTask.java:57)
+	at knot//net.minecraft.server.level.ChunkMap.lambda$runGenerationTask$0(ChunkMap.java:697)
+	at knot//net.minecraft.server.level.ChunkTaskDispatcher.lambda$scheduleForExecution$1(ChunkTaskDispatcher.java:88)
+	at knot//net.minecraft.util.thread.TaskScheduler.lambda$scheduleWithResult$0(TaskScheduler.java:21)
+	at knot//net.minecraft.util.Util.runNamed(Util.java:346)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.pollTask(AbstractConsecutiveExecutor.java:50)
+
+-- Generation --
+Details:
+	CenterX: 141
+	CenterZ: -417
+	Decoration Seed: 2601346044740587181
+Stacktrace:
+	at knot//net.minecraft.world.level.chunk.ChunkGenerator.applyBiomeDecoration(ChunkGenerator.java:354)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStatusTasks.generateFeatures(ChunkStatusTasks.java:107)
+	at knot//net.minecraft.world.level.chunk.status.ChunkStep.apply(ChunkStep.java:33)
+	at knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:671)
+	at knot//net.minecraft.server.level.GenerationChunkHolder.applyStep(GenerationChunkHolder.java:87)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleChunkInLayer(ChunkGenerationTask.java:144)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleLayer(ChunkGenerationTask.java:121)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleNextLayer(ChunkGenerationTask.java:72)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.runUntilWait(ChunkGenerationTask.java:57)
+	at knot//net.minecraft.server.level.ChunkMap.lambda$runGenerationTask$0(ChunkMap.java:697)
+	at knot//net.minecraft.server.level.ChunkTaskDispatcher.lambda$scheduleForExecution$1(ChunkTaskDispatcher.java:88)
+	at knot//net.minecraft.util.thread.TaskScheduler.lambda$scheduleWithResult$0(TaskScheduler.java:21)
+	at knot//net.minecraft.util.Util.runNamed(Util.java:346)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.pollTask(AbstractConsecutiveExecutor.java:50)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.run(AbstractConsecutiveExecutor.java:60)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745)
+	at java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+
+-- Chunk to be generated --
+Details:
+	Status being generated: minecraft:features
+	Location: 141,-417
+	Position hash: -1791001362291
+	Generator: net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator@2bd67fa2
+Stacktrace:
+	at knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:671)
+	at knot//net.minecraft.server.level.GenerationChunkHolder.applyStep(GenerationChunkHolder.java:87)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleChunkInLayer(ChunkGenerationTask.java:144)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleLayer(ChunkGenerationTask.java:121)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.scheduleNextLayer(ChunkGenerationTask.java:72)
+	at knot//net.minecraft.server.level.ChunkGenerationTask.runUntilWait(ChunkGenerationTask.java:57)
+	at knot//net.minecraft.server.level.ChunkMap.lambda$runGenerationTask$0(ChunkMap.java:697)
+	at knot//net.minecraft.server.level.ChunkTaskDispatcher.lambda$scheduleForExecution$1(ChunkTaskDispatcher.java:88)
+	at knot//net.minecraft.util.thread.TaskScheduler.lambda$scheduleWithResult$0(TaskScheduler.java:21)
+	at knot//net.minecraft.util.Util.runNamed(Util.java:346)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.pollTask(AbstractConsecutiveExecutor.java:50)
+	at knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.run(AbstractConsecutiveExecutor.java:60)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745)
+	at java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+
+-- ThreadInfo --
+Details:
+	Name: Worker-Main-15
+Stacktrace:
+	at knot//net.minecraft.util.Util.onThreadException(Util.java:308)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.onAuxExceptionSet(ForkJoinTask.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.trySetException(ForkJoinTask.java:384)
+	at java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1664)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+
+-- Uptime --
+Details:
+	JVM uptime: 44.276s
+	Wall uptime: 32.076s
+	High-res time: 31.296s
+	Client ticks: 381 ticks / 19.050s
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, fabric-advancement-api-v1, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
+
+-- System Details --
+Details:
+	Minecraft Version: 26.2
+	Minecraft Version ID: 26.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 25.0.5, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 416957976 bytes (397 MiB) / 845152256 bytes (806 MiB) up to 3221225472 bytes (3072 MiB)
+	Memory (heap): init: 512MiB, used: 407MiB, committed: 806MiB, max: 3072MiB
+	Memory (non-head): init: 007MiB, used: 205MiB, committed: 207MiB, max: 000MiB
+	CPUs: 16
+	Processor Vendor: GenuineIntel
+	Processor Name: 11th Gen Intel(R) Core(TM) i9-11900K @ 3.50GHz
+	Identifier: Intel64 Family 6 Model 167 Stepping 1
+	Microarchitecture: Rocket Lake
+	Frequency (GHz): 3.50
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: NVIDIA GeForce RTX 3090
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 24576.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.16.1692
+	Graphics card #1 name: Microsoft Basic Display Adapter
+	Graphics card #1 vendor: Microsoft
+	Graphics card #1 VRAM (MiB): 0.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 10.0.19041.3636
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 2.40
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 2.40
+	Memory slot #1 type: DDR4
+	Memory slot #2 capacity (MiB): 16384.00
+	Memory slot #2 clockSpeed (GHz): 2.40
+	Memory slot #2 type: DDR4
+	Memory slot #3 capacity (MiB): 16384.00
+	Memory slot #3 clockSpeed (GHz): 2.40
+	Memory slot #3 type: DDR4
+	Virtual memory max (MiB): 69519.95
+	Virtual memory used (MiB): 26822.71
+	Swap memory total (MiB): 4096.00
+	Swap memory used (MiB): 547.40
+	Space in storage for jna.tmpdir (MiB): available: 387965.94, total: 953241.31
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): available: 387965.94, total: 953241.31
+	Space in storage for io.netty.native.workdir (MiB): available: 387965.94, total: 953241.31
+	Space in storage for java.io.tmpdir (MiB): available: 387965.94, total: 953241.31
+	Space in storage for workdir (MiB): available: 387965.94, total: 953241.31
+	Operating System Version: Microsoft Windows 10 build 19044
+	Process Elevated: false
+	Process Loads: Uptime: 44s, user: 103s (234.39%), kernel: 7s (16.49%), total: 110s (250.88%)
+	Process Virtual Size (MiB): 3868.10
+	Process Resident Size (MiB): 1356.15
+	JVM Flags: 4 total; -Xms512M -Xmx3G -Xlog:class+load=info:file=class-load.log:level,tags -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Debug Flags: 0 total; 
+	Fabric Mods: 
+		fabric-api: Fabric API 0.161.0+26.2
+			fabric-advancement-api-v1: Fabric Advancement API (v1) 1.0.0+58719a3b9e
+			fabric-api-base: Fabric API Base 2.0.4+ece063239e
+			fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 2.0.18+11e1c9a39e
+			fabric-biome-api-v1: Fabric Biome API (v1) 18.0.6+c7bd5b8e9e
+			fabric-block-api-v1: Fabric Block API (v1) 3.1.0+53515aab9e
+			fabric-block-getter-api-v2: Fabric BlockGetter API (v2) 2.0.7+ec56b6019e
+			fabric-command-api-v2: Fabric Command API (v2) 3.1.0+00cb03469e
+			fabric-content-registries-v0: Fabric Content Registries (v0) 11.3.2+37b1aa249e
+			fabric-convention-tags-v2: Fabric Convention Tags (v2) 4.7.1+1f023a9e9e
+			fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 1.0.5+086d547a9e
+			fabric-creative-tab-api-v1: Fabric Creative Tab API (v1) 5.0.15+6468574f9e
+			fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 2.2.19+515ac5339e
+			fabric-data-generation-api-v1: Fabric Data Generation API (v1) 25.6.0+c0da0b829e
+			fabric-debug-api-v1: Fabric Debug API (v1) 1.0.2+c792624d9e
+			fabric-dimensions-v1: Fabric Dimensions API (v1) 5.1.12+515ac5339e
+			fabric-entity-events-v1: Fabric Entity Events (v1) 5.0.5+06488ac19e
+			fabric-events-interaction-v0: Fabric Events Interaction (v0) 5.2.8+515ac5339e
+			fabric-game-rule-api-v1: Fabric Game Rule API (v1) 4.0.8+46a6d00c9e
+			fabric-item-api-v1: Fabric Item API (v1) 14.5.0+c68f6cbe9e
+			fabric-key-mapping-api-v1: Fabric Key Mapping API (v1) 2.0.5+e2bdee789e
+			fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 4.1.4+29b6eb019e
+			fabric-loot-api-v3: Fabric Loot API (v3) 3.0.17+06488ac19e
+			fabric-menu-api-v1: Fabric Menu API (v1) 2.0.17+086d547a9e
+			fabric-message-api-v1: Fabric Message API (v1) 7.0.8+bb2ed3f79e
+			fabric-model-loading-api-v1: Fabric Model Loading API (v1) 8.0.17+c80601bb9e
+			fabric-networking-api-v1: Fabric Networking API (v1) 6.3.4+2989c6a09e
+			fabric-object-builder-api-v1: Fabric Object Builder API (v1) 24.1.1+6fcd5f039e
+			fabric-particles-v1: Fabric Particles (v1) 5.0.19+d1756aa99e
+			fabric-permission-api-v1: Fabric Permission API (v1) 1.0.5+e442d8d09e
+			fabric-recipe-api-v1: Fabric Recipe API (v1) 9.0.22+11e1c9a39e
+			fabric-registry-sync-v0: Fabric Registry Sync (v0) 7.1.1+c7bd5b8e9e
+			fabric-renderer-api-v1: Fabric Renderer API (v1) 14.1.4+2b0d8a229e
+			fabric-renderer-indigo: Fabric Renderer - Indigo 9.1.4+2b0d8a229e
+			fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 6.0.4+06488ac19e
+			fabric-rendering-v1: Fabric Rendering (v1) 25.3.3+515ac5339e
+			fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 6.1.0+10e9a28b9e
+			fabric-resource-loader-v0: Fabric Resource Loader (v0) 3.3.20+4fc5413f9e
+			fabric-resource-loader-v1: Fabric Resource Loader (v1) 2.0.13+9edec1269e
+			fabric-screen-api-v1: Fabric Screen API (v1) 5.2.1+5087f8249e
+			fabric-serialization-api-v1: Fabric Serialization API (v1) 2.0.4+11a26f319e
+			fabric-sound-api-v1: Fabric Sound API (v1) 2.0.5+11a26f319e
+			fabric-tag-api-v1: Fabric Tag API (v1) 2.1.4+515ac5339e
+			fabric-transfer-api-v1: Fabric Transfer API (v1) 8.0.13+11dbb7d79e
+			fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 8.1.4+67c847259e
+		fabricloader: Fabric Loader 0.20.1
+			mixinextras: MixinExtras 0.5.5
+		java: OpenJDK 64-Bit Server VM 25
+		minecraft: Minecraft 26.2
+		reterraforged: TerraForged Revival 0.1.0-dev.4+26.2
+		terraforged_client_qa: TerraForged client QA companion 0.1.0
+	Launched Version: 26.2
+	Launcher name: TerraForgedProductionQA
+	Backend library: LWJGL version 3.4.1-snapshot
+	Window size: 1280x720
+	Surface Info: FIFO, 1280 x 720
+	GFLW Platform: win32
+	Graphics Device: NVIDIA GeForce RTX 3090/PCIe/SSE2
+	Graphics Backend: OpenGL
+	Graphics Vendor: NVIDIA Corporation
+	Graphics Drivers: 3.3.0 NVIDIA 616.92
+	Graphics Device Extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+	Graphics Device Type: OTHER
+	Graphics Device Features: DeviceFeatures[shaderDrawParameters=true, multiDrawDirectInterleaved=false, multiDrawDirectSeparate=true, multiDrawIndirect=true, drawIndirect=true, nonZeroFirstInstance=true, persistentMapping=true]
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'fabric'
+	Universe: 400921fb54442d18
+	Type: Client
+	Transparency: regular
+	Render Distance: 6/6 chunks
+	Narrator config: OFF
+	Narrator status: true
+	Resource Packs: vanilla, fabric-advancement-api-v1, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
+	Sound Cache: 48816 bytes in 1 buffers
+	Current Language: en_us
+	Locale: en_US
+	System encoding: Cp1252
+	File encoding: UTF-8
+	CPU: 16x 11th Gen Intel(R) Core(TM) i9-11900K @ 3.50GHz
+	Server Running: true
+	Player Count: 0 / 8; []
+	Active Data Packs: vanilla, fabric-convention-tags-v2, reterraforged, file/terraforged-qa
+	Available Data Packs: fabric-convention-tags-v2, file/terraforged-qa, minecart_improvements, redstone_experiments, reterraforged, trade_rebalance, vanilla
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	World Seed: 8675309
+	Suppressed Exceptions: ~~NONE~~
+	Type: Integrated Server
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Launched Version: 26.2

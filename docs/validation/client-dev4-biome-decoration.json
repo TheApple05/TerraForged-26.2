@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "result": "failed-production-integrated-biome-decoration",
+  "artifactSha256": "f6cb43c8dd03e929fc11a01fa7b66efbc8a3ff8d49513b57fd7890f7aabd6fc2",
+  "instance": "build/qa/client/instances/20261104T080349Z-dc7f47",
+  "exception": "net.minecraft.ReportedException: Biome decoration\n\tat knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:682)\n\tat knot//net.minecraft.server.level.GenerationChunkHolder.applyStep(GenerationChunkHolder.java:87)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.scheduleChunkInLayer(ChunkGenerationTask.java:144)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.scheduleLayer(ChunkGenerationTask.java:121)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.scheduleNextLayer(ChunkGenerationTask.java:72)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.runUntilWait(ChunkGenerationTask.java:57)\n\tat knot//net.minecraft.server.level.ChunkMap.lambda$runGenerationTask$0(ChunkMap.java:697)\n\tat knot//net.minecraft.server.level.ChunkTaskDispatcher.lambda$scheduleForExecution$1(ChunkTaskDispatcher.java:88)\n\tat knot//net.minecraft.util.thread.TaskScheduler.lambda$scheduleWithResult$0(TaskScheduler.java:21)\n\tat knot//net.minecraft.util.Util.runNamed(Util.java:346)\n\tat knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.pollTask(AbstractConsecutiveExecutor.java:50)\n\tat knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.run(AbstractConsecutiveExecutor.java:60)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745)\n\tat java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)\nCaused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0\n\tat java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)\n\tat java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)\n\tat java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)\n\tat java.base/java.util.Objects.checkIndex(Objects.java:365)\n\tat java.base/java.util.ArrayList.get(ArrayList.java:428)\n\tat knot//net.minecraft.world.level.chunk.ChunkGenerator.applyBiomeDecoration(ChunkGenerator.java:354)\n\tat knot//net.minecraft.world.level.chunk.status.ChunkStatusTasks.generateFeatures(ChunkStatusTasks.java:107)\n\tat knot//net.minecraft.world.level.chunk.status.ChunkStep.apply(ChunkStep.java:33)\n\tat knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:671)\n\t... 18 more\n[00:04:35] [Render thread/ERROR]: Reported exception thrown!\nnet.minecraft.ReportedException: Biome decoration\n\tat knot//net.minecraft.util.thread.BlockableEventLoop.throwDelayedException(BlockableEventLoop.java:203)\n\tat knot//net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:137)\n\tat knot//net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:127)\n\tat knot//net.minecraft.client.Minecraft.runTick(Minecraft.java:1235)\n\tat knot//net.minecraft.client.Minecraft.run(Minecraft.java:959)\n\tat knot//net.minecraft.client.main.Main.main(Main.java:292)\n\tat net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517)\n\tat net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)\n\tat net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)\nCaused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0\n\tat java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)\n\tat java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)\n\tat java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)\n\tat java.base/java.util.Objects.checkIndex(Objects.java:365)\n\tat java.base/java.util.ArrayList.get(ArrayList.java:428)\n\tat knot//net.minecraft.world.level.chunk.ChunkGenerator.applyBiomeDecoration(ChunkGenerator.java:354)\n\tat knot//net.minecraft.world.level.chunk.status.ChunkStatusTasks.generateFeatures(ChunkStatusTasks.java:107)\n\tat knot//net.minecraft.world.level.chunk.status.ChunkStep.apply(ChunkStep.java:33)\n\tat knot//net.minecraft.server.level.ChunkMap.applyStep(ChunkMap.java:671)\n\tat knot//net.minecraft.server.level.GenerationChunkHolder.applyStep(GenerationChunkHolder.java:87)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.scheduleChunkInLayer(ChunkGenerationTask.java:144)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.scheduleLayer(ChunkGenerationTask.java:121)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.scheduleNextLayer(ChunkGenerationTask.java:72)\n\tat knot//net.minecraft.server.level.ChunkGenerationTask.runUntilWait(ChunkGenerationTask.java:57)\n\tat knot//net.minecraft.server.level.ChunkMap.lambda$runGenerationTask$0(ChunkMap.java:697)\n\tat knot//net.minecraft.server.level.ChunkTaskDispatcher.lambda$scheduleForExecution$1(ChunkTaskDispatcher.java:88)\n\tat knot//net.minecraft.util.thread.TaskScheduler.lambda$scheduleWithResult$0(TaskScheduler.java:21)\n\tat knot//net.minecraft.util.Util.runNamed(Util.java:346)\n\tat knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.pollTask(AbstractConsecutiveExecutor.java:50)\n\tat knot//net.minecraft.util.thread.AbstractConsecutiveExecutor.run(AbstractConsecutiveExecutor.java:60)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745)\n\tat java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)\n[00:04:35] [Server thread/INFO]: Stopping server\n[00:04:35] [Server thread/INFO]: Saving players\n[00:04:35] [Server thread/INFO]: Saving worlds\n[00:04:36] [Server thread/ERROR]: Exception stopping the server\njava.lang.NullPointerException: Cannot invoke \"it.unimi.dsi.fastutil.objects.ReferenceArrayList.get(int)\" because \"this.wrapped\" is null\n\tat knot//it.unimi.dsi.fastutil.objects.ReferenceOpenHashSet$SetIterator.next(ReferenceOpenHashSet.java:522)\n\tat knot//net.minecraft.server.level.DistanceManager.runAllUpdates(DistanceManager.java:85)\n\tat knot//net.minecraft.server.level.ServerChunkCache.runDistanceManagerUpdates(ServerChunkCache.java:275)\n\tat knot//net.minecraft.server.level.ServerChunkCache.tick(ServerChunkCache.java:317)\n\tat knot//net.minecraft.server.MinecraftServer.stopServer(MinecraftServer.java:691)\n\tat knot//net.minecraft.client.server.IntegratedServer.stopServer(IntegratedServer.java:357)\n\tat knot//net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:814)\n\tat knot//net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:320)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\n",
+  "generationChunk": [
+    141,
+    -417
+  ],
+  "seed": 8675309,
+  "stages": [
+    {
+      "detail": "Real title screen and production artifact verified",
+      "at": "2026-11-04T08:04:10.445834700Z",
+      "name": "title-ready"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T080349Z-dc7f47\\qa-output\\screenshots\\01-title.png",
+      "at": "2026-11-04T08:04:10.610978500Z",
+      "name": "screenshot-01-title.png"
+    },
+    {
+      "detail": "Actual CreateWorldScreen loaded its real world-creation resources",
+      "at": "2026-11-04T08:04:12.796929900Z",
+      "name": "create-world-ready"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T080349Z-dc7f47\\qa-output\\screenshots\\02-create-world.png",
+      "at": "2026-11-04T08:04:12.898903400Z",
+      "name": "screenshot-02-create-world.png"
+    },
+    {
+      "detail": "5 actual list rows rendered",
+      "at": "2026-11-04T08:04:14.441791700Z",
+      "name": "preset-list-ready"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T080349Z-dc7f47\\qa-output\\screenshots\\03-preset-list.png",
+      "at": "2026-11-04T08:04:14.558791Z",
+      "name": "screenshot-03-preset-list.png"
+    },
+    {
+      "detail": "Real legacy preset editor generated and uploaded its preview texture",
+      "at": "2026-11-04T08:04:16.090912500Z",
+      "name": "preset-editor-ready"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T080349Z-dc7f47\\qa-output\\screenshots\\04-preset-editor-before.png",
+      "at": "2026-11-04T08:04:16.184077600Z",
+      "name": "screenshot-04-preset-editor-before.png"
+    },
+    {
+      "detail": "Actual setting changed and a replacement preview tile was rendered",
+      "at": "2026-11-04T08:04:17.695235100Z",
+      "name": "slider-preview-updated"
+    },
+    {
+      "detail": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\client\\instances\\20261104T080349Z-dc7f47\\qa-output\\screenshots\\05-preset-editor-after.png",
+      "at": "2026-11-04T08:04:17.787752100Z",
+      "name": "screenshot-05-preset-editor-after.png"
+    },
+    {
+      "detail": "Eight actual setting changes each regenerated a finite nonconstant 65536-cell preview",
+      "at": "2026-11-04T08:04:18.801338300Z",
+      "name": "repeated-slider-previews"
+    },
+    {
+      "detail": "Production close path released the actual preview resources",
+      "at": "2026-11-04T08:04:28.356898700Z",
+      "name": "preset-editor-closed"
+    },
+    {
+      "detail": "Actual Done button exported the preset pack and reloaded it into the real world-creation context",
+      "at": "2026-11-04T08:04:30.785903700Z",
+      "name": "preset-datapack-applied"
+    },
+    {
+      "detail": "Selected real Skip Backup and Load callback for disposable copied world",
+      "at": "2026-11-04T08:04:32.047129600Z",
+      "name": "copied-world-experimental-warning"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/validation/images/client-dev4/01-title.png",
+      "sha256": "6505323c4c36f1c97341a5478c5dce7d879d6199b19b98500fe877566d84a8ee",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    },
+    {
+      "path": "docs/validation/images/client-dev4/02-create-world.png",
+      "sha256": "f99f5f875940e0d385700ab7af5a24f6be80de72b6110d58255da816995602f7",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    },
+    {
+      "path": "docs/validation/images/client-dev4/03-preset-list.png",
+      "sha256": "eb8987cd01c777383967b759174634b053e1e88cb1b7c60fec481dd22192bffa",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    },
+    {
+      "path": "docs/validation/images/client-dev4/04-preset-editor-before.png",
+      "sha256": "da8eb932bfe06f228027d2f170e3ecc9b869328f87462c5d4918f83a28b43fa7",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    },
+    {
+      "path": "docs/validation/images/client-dev4/05-preset-editor-after.png",
+      "sha256": "989dee4b57fcb26a4c7f4831905e5515450c92da1a77695f5b0c798abf572b83",
+      "captureApi": "net.minecraft.client.Screenshot.grab"
+    }
+  ],
+  "confirmedBeforeFailure": [
+    "Actual registered preset editor factory",
+    "Five built-in preset rows",
+    "Real preview framebuffer rendered",
+    "Eight actual slider callbacks completed with finite nonconstant previews",
+    "Restoring scale3000 restored complete raw-height digest",
+    "Actual Done exported1934files and reloaded Preset.KEY into real parent world-creation context",
+    "One experimental-warning callback",
+    "Integrated server started then decoration crashed"
+  ],
+  "diagnosisStatus": "investigating stale feature snapshot or mismatched registry feature identities; no feature skipping or vanilla fallback introduced",
+  "previewSeed": 123456789,
+  "seedCorrection": "Copied world seed comes from its actual server generation report; preview seed is separate."
+}
