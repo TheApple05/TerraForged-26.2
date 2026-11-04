@@ -1,0 +1,12 @@
+[package]
+name = "terraforged-native-core"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "Isolated TerraForged native terrain kernel under development"
+
+[lib]
+path = "src/lib.rs"
+
+[workspace]

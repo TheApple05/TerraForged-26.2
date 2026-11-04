@@ -1,0 +1,752 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAtUtc": "2026-11-04T12:49:07.291004+00:00",
+  "performanceEvidence": false,
+  "scope": "Functional production export, own-stack preset consumption, actual generation and disk reload; optional actual structure checks",
+  "cases": [
+    {
+      "loader": "fabric",
+      "case": "optimized",
+      "status": "passed",
+      "artifactSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "qaSha256": "95e417534cc43db93e463df9b95ad3f4c183593f626a540f458b0844d09f0f1e",
+      "extraMods": [
+        {
+          "slug": "c2me-fabric",
+          "loader": "fabric",
+          "projectId": "VSNURh3q",
+          "title": "Concurrent Chunk Management Engine (Fabric)",
+          "publisherSourceUrl": "https://github.com/RelativityMC/C2ME-fabric",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "4wjXxrDQ",
+          "versionNumber": "0.4.2-alpha.0.60+26.2",
+          "versionType": "alpha",
+          "datePublished": "2026-10-12T15:56:44.062382Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/VSNURh3q/versions/4wjXxrDQ/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "versionUrl": "https://modrinth.com/mod/c2me-fabric/version/4wjXxrDQ",
+          "publishedHashes": {
+            "sha512": "079ac7da5de422418a599e0fef1963b3094aa010b057582bc25233fa65bd62a5bea8659c7905eabbd4f6943914d56106c5c6ebe011b022a84583a061a99cc2d4",
+            "sha1": "388b8794f1ca5e9055434256920c73f62ded52e7"
+          },
+          "sha256": "6d9c3fd764c0e3dd94da59ab9bbd2aff7ca91b15cc235c418f5553e51d71ceed",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "bytes": 3843816,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "lithium",
+          "loader": "fabric",
+          "projectId": "gvQqBUqZ",
+          "title": "Lithium",
+          "publisherSourceUrl": "https://github.com/caffeinemc/lithium-fabric",
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": null
+          },
+          "versionId": "f7vZ0VWU",
+          "versionNumber": "mc26.2-0.25.3-fabric",
+          "versionType": "release",
+          "datePublished": "2026-07-29T12:19:55.348704Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "lithium-fabric-0.25.3+mc26.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/f7vZ0VWU/lithium-fabric-0.25.3%2Bmc26.2.jar",
+          "versionUrl": "https://modrinth.com/mod/lithium/version/f7vZ0VWU",
+          "publishedHashes": {
+            "sha1": "435ad0289209bb72195e7a423756a03f5dfa5a9a",
+            "sha512": "148b638f3c6229fbaf487120a2344a0af5e411a5aa6533d5db9d75da0a8c0d8304f63eb4cca13f4d03b2c9b4c23d559dd74c1d832422ef8a3087bd005e62a8bd"
+          },
+          "sha256": "fdde92e238e8075f89ad7f701f2a3d5854af88ba9a67657184a4407b104ac563",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/lithium-fabric-0.25.3+mc26.2.jar",
+          "bytes": 912850,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "ferrite-core",
+          "loader": "fabric",
+          "projectId": "uXXizFIs",
+          "title": "FerriteCore",
+          "publisherSourceUrl": "https://github.com/malte0811/FerriteCore",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "d5ddUdiB",
+          "versionNumber": "9.0.0-fabric",
+          "versionType": "release",
+          "datePublished": "2026-03-24T18:31:50.491773Z",
+          "gameVersions": [
+            "26.1",
+            "26.1.1",
+            "26.1.2",
+            "26.2",
+            "26.3"
+          ],
+          "dependencies": [],
+          "filename": "ferritecore-9.0.0-fabric.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar",
+          "versionUrl": "https://modrinth.com/mod/ferrite-core/version/d5ddUdiB",
+          "publishedHashes": {
+            "sha512": "d81fa97e11784c19d42f89c2f433831d007603dd7193cee45fa177e4a6a9c52b384b198586e04a0f7f63cd996fed713322578bde9a8db57e1188854ae5cbe584",
+            "sha1": "eac76ff0f3753422c61b2c44487d0d195d88d4bc"
+          },
+          "sha256": "213966c72ed967acc7392beb28a866fba301ff56b9976c2e7801c2db7de6bf22",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/ferritecore-9.0.0-fabric.jar",
+          "bytes": 72677,
+          "communityPort": false,
+          "category": "mod"
+        }
+      ],
+      "exportReport": "docs/validation/server-dev23-compat-fabric-optimized-export.json",
+      "exportReportSha256": "e775b5eb26ed745fa42c9c619147e3363e66fafc137ea046af558e686474bba5",
+      "generationReport": "docs/validation/server-dev23-compat-fabric-optimized-generation.json",
+      "reloadReport": "docs/validation/server-dev23-compat-fabric-optimized-reload.json",
+      "generationReportSha256": "e6f49bc9bdfe23c840692e377a87430a164e5824243512fe21926db863ed94e7",
+      "reloadReportSha256": "7c41ffca3eb2d7a92d10273139d4163d5b5d4bb6648e43ebe82bca1104d3340b",
+      "exportedFiles": 2040,
+      "consumedPackMatchesEveryExportedFile": true,
+      "generationDigest": "7d9ab889a80b26dde437f607cc3bed7c2d919a6973cff263967a54e7971e7dc9",
+      "reloadDigest": "7d9ab889a80b26dde437f607cc3bed7c2d919a6973cff263967a54e7971e7dc9",
+      "registeredClassicVariants": 17,
+      "classicSourceCodecRoundTrip": true,
+      "observedBiomes": [
+        "minecraft:birch_forest",
+        "minecraft:plains"
+      ],
+      "structureChecks": null,
+      "structureReloadChecks": null
+    },
+    {
+      "loader": "fabric",
+      "case": "modernfix-community",
+      "status": "passed",
+      "artifactSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "qaSha256": "95e417534cc43db93e463df9b95ad3f4c183593f626a540f458b0844d09f0f1e",
+      "extraMods": [
+        {
+          "slug": "modernfix-mvus",
+          "loader": "fabric",
+          "projectId": "TjSm1wrD",
+          "title": "ModernFix-mVUS",
+          "publisherSourceUrl": "https://github.com/coredex-source/ModernFix---mVUS",
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": "https://github.com/coredex-source/ModernFix---mVUS/blob/1.21.10/LICENSE"
+          },
+          "versionId": "50uUra83",
+          "versionNumber": "5.27.19-build.2",
+          "versionType": "release",
+          "datePublished": "2026-09-25T17:12:28.205127Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [
+            {
+              "version_id": null,
+              "project_id": "P7dR8mSH",
+              "file_name": null,
+              "dependency_type": "required"
+            }
+          ],
+          "filename": "modernfix-5.27.19-build.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/TjSm1wrD/versions/50uUra83/modernfix-5.27.19-build.2.jar",
+          "versionUrl": "https://modrinth.com/mod/modernfix-mvus/version/50uUra83",
+          "publishedHashes": {
+            "sha512": "75b1aecabdb13fb61969d730c328cfc102b1c50fa9620c60b8433d830a19b2d2bea32aca48ca4934b1be98f8a6fb5bde0039efd273b47bd05da40a87efce36ac",
+            "sha1": "a14d2ba0fd0d56d12d48bb9f1c44fd3d345bf5e2"
+          },
+          "sha256": "1bb69de32ca83f27f945e238ae4781795e42d6b5576ca5e6ee18b147fb02a2fd",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/modernfix-5.27.19-build.2.jar",
+          "bytes": 1173963,
+          "communityPort": true,
+          "category": "mod"
+        }
+      ],
+      "exportReport": "docs/validation/server-dev23-compat-fabric-modernfix-community-export.json",
+      "exportReportSha256": "67e6796c38ac196e74376a92d255e6856a1fb5bf6805d555ca373e5eaa99410c",
+      "generationReport": "docs/validation/server-dev23-compat-fabric-modernfix-community-generation.json",
+      "reloadReport": "docs/validation/server-dev23-compat-fabric-modernfix-community-reload.json",
+      "generationReportSha256": "f8c14769087c27d5237ed3397e7f109e54135d9b14a0206e190b2a4c4f5acac0",
+      "reloadReportSha256": "644ca24f818aface267a30a85fbff5092e75dd86c75c01258b42bbc8daa704c3",
+      "exportedFiles": 2040,
+      "consumedPackMatchesEveryExportedFile": true,
+      "generationDigest": "121bf2eaeebb48890af1f8a866924a3df5317efa64fc82b7cd2694edf6b95343",
+      "reloadDigest": "121bf2eaeebb48890af1f8a866924a3df5317efa64fc82b7cd2694edf6b95343",
+      "registeredClassicVariants": 17,
+      "classicSourceCodecRoundTrip": true,
+      "observedBiomes": [
+        "minecraft:birch_forest",
+        "minecraft:plains"
+      ],
+      "structureChecks": null,
+      "structureReloadChecks": null
+    },
+    {
+      "loader": "fabric",
+      "case": "content-structures",
+      "status": "passed",
+      "artifactSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "qaSha256": "95e417534cc43db93e463df9b95ad3f4c183593f626a540f458b0844d09f0f1e",
+      "extraMods": [
+        {
+          "slug": "c2me-fabric",
+          "loader": "fabric",
+          "projectId": "VSNURh3q",
+          "title": "Concurrent Chunk Management Engine (Fabric)",
+          "publisherSourceUrl": "https://github.com/RelativityMC/C2ME-fabric",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "4wjXxrDQ",
+          "versionNumber": "0.4.2-alpha.0.60+26.2",
+          "versionType": "alpha",
+          "datePublished": "2026-10-12T15:56:44.062382Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/VSNURh3q/versions/4wjXxrDQ/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "versionUrl": "https://modrinth.com/mod/c2me-fabric/version/4wjXxrDQ",
+          "publishedHashes": {
+            "sha512": "079ac7da5de422418a599e0fef1963b3094aa010b057582bc25233fa65bd62a5bea8659c7905eabbd4f6943914d56106c5c6ebe011b022a84583a061a99cc2d4",
+            "sha1": "388b8794f1ca5e9055434256920c73f62ded52e7"
+          },
+          "sha256": "6d9c3fd764c0e3dd94da59ab9bbd2aff7ca91b15cc235c418f5553e51d71ceed",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/c2me-fabric-mc26.2-0.4.2-alpha.0.60.jar",
+          "bytes": 3843816,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "lithium",
+          "loader": "fabric",
+          "projectId": "gvQqBUqZ",
+          "title": "Lithium",
+          "publisherSourceUrl": "https://github.com/caffeinemc/lithium-fabric",
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": null
+          },
+          "versionId": "f7vZ0VWU",
+          "versionNumber": "mc26.2-0.25.3-fabric",
+          "versionType": "release",
+          "datePublished": "2026-07-29T12:19:55.348704Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [],
+          "filename": "lithium-fabric-0.25.3+mc26.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/f7vZ0VWU/lithium-fabric-0.25.3%2Bmc26.2.jar",
+          "versionUrl": "https://modrinth.com/mod/lithium/version/f7vZ0VWU",
+          "publishedHashes": {
+            "sha1": "435ad0289209bb72195e7a423756a03f5dfa5a9a",
+            "sha512": "148b638f3c6229fbaf487120a2344a0af5e411a5aa6533d5db9d75da0a8c0d8304f63eb4cca13f4d03b2c9b4c23d559dd74c1d832422ef8a3087bd005e62a8bd"
+          },
+          "sha256": "fdde92e238e8075f89ad7f701f2a3d5854af88ba9a67657184a4407b104ac563",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/lithium-fabric-0.25.3+mc26.2.jar",
+          "bytes": 912850,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "ferrite-core",
+          "loader": "fabric",
+          "projectId": "uXXizFIs",
+          "title": "FerriteCore",
+          "publisherSourceUrl": "https://github.com/malte0811/FerriteCore",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "d5ddUdiB",
+          "versionNumber": "9.0.0-fabric",
+          "versionType": "release",
+          "datePublished": "2026-03-24T18:31:50.491773Z",
+          "gameVersions": [
+            "26.1",
+            "26.1.1",
+            "26.1.2",
+            "26.2",
+            "26.3"
+          ],
+          "dependencies": [],
+          "filename": "ferritecore-9.0.0-fabric.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar",
+          "versionUrl": "https://modrinth.com/mod/ferrite-core/version/d5ddUdiB",
+          "publishedHashes": {
+            "sha512": "d81fa97e11784c19d42f89c2f433831d007603dd7193cee45fa177e4a6a9c52b384b198586e04a0f7f63cd996fed713322578bde9a8db57e1188854ae5cbe584",
+            "sha1": "eac76ff0f3753422c61b2c44487d0d195d88d4bc"
+          },
+          "sha256": "213966c72ed967acc7392beb28a866fba301ff56b9976c2e7801c2db7de6bf22",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/ferritecore-9.0.0-fabric.jar",
+          "bytes": 72677,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "repurposed-structures-fabric",
+          "loader": "fabric",
+          "projectId": "muf0XoRe",
+          "title": "Repurposed Structures - Fabric",
+          "publisherSourceUrl": null,
+          "license": {
+            "id": "LGPL-3.0-only",
+            "name": "GNU Lesser General Public License v3.0 only",
+            "url": null
+          },
+          "versionId": "CrmgMIJp",
+          "versionNumber": "7.7.6+26.2-fabric",
+          "versionType": "release",
+          "datePublished": "2026-08-20T01:35:53.805062Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [
+            {
+              "version_id": null,
+              "project_id": "P7dR8mSH",
+              "file_name": null,
+              "dependency_type": "required"
+            },
+            {
+              "version_id": null,
+              "project_id": "codAaoxh",
+              "file_name": null,
+              "dependency_type": "required"
+            }
+          ],
+          "filename": "repurposed_structures-7.7.6+26.2-fabric.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/muf0XoRe/versions/CrmgMIJp/repurposed_structures-7.7.6%2B26.2-fabric.jar",
+          "versionUrl": "https://modrinth.com/mod/repurposed-structures-fabric/version/CrmgMIJp",
+          "publishedHashes": {
+            "sha512": "0c0c6dd1ed38497f32cbd47202e7f85a06984df510673a8f7edb35a41c367c910595d14b0837fb84f229e346dc9733a98b6b8015e77f100923178fc3d349b6c0",
+            "sha1": "f56b118fd1129f5fd9def4c4b4c63ed974b8ba3c"
+          },
+          "sha256": "0175590776746f0ca691f60f8e82167430ec88bca5ca66045a61e818e68f9214",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/repurposed_structures-7.7.6+26.2-fabric.jar",
+          "bytes": 8327794,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "slug": "midnightlib",
+          "loader": "fabric",
+          "projectId": "codAaoxh",
+          "title": "MidnightLib",
+          "publisherSourceUrl": "https://github.com/TeamMidnightDust/MidnightLib",
+          "license": {
+            "id": "MIT",
+            "name": "MIT License",
+            "url": null
+          },
+          "versionId": "FYtROxFj",
+          "versionNumber": "1.10.0+26.2-fabric",
+          "versionType": "release",
+          "datePublished": "2026-10-14T22:49:54.638205Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [
+            {
+              "version_id": null,
+              "project_id": "P7dR8mSH",
+              "file_name": null,
+              "dependency_type": "required"
+            }
+          ],
+          "filename": "midnightlib-fabric-1.10.0+26.2.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/codAaoxh/versions/FYtROxFj/midnightlib-fabric-1.10.0%2B26.2.jar",
+          "versionUrl": "https://modrinth.com/mod/midnightlib/version/FYtROxFj",
+          "publishedHashes": {
+            "sha1": "8c4ee3680ff901e39f2a04049799d2c203f85fce",
+            "sha512": "a40a21aa0a9cfe6fd667b44f3813a22f63338bc1366230282670dc5f5c1dc7c9ecb0082e0f2f9bf90ee55ba4dbe8115c3f3cb439096ee5275933fadd2385f61c"
+          },
+          "sha256": "65a23077da0ef707b590a46d37e1642210ca20f21cdf06b05c479deca3ae495b",
+          "publishedHashesMatch": true,
+          "file": "build/qa/modpack-compat-expanded/fabric/midnightlib-fabric-1.10.0+26.2.jar",
+          "bytes": 65792,
+          "communityPort": false,
+          "category": "mod"
+        },
+        {
+          "loader": "fabric",
+          "projectId": "HXF82T3G",
+          "versionId": "MNZPk6V0",
+          "versionNumber": "26.2.0.0.28",
+          "versionType": "beta",
+          "datePublished": "2026-09-07T18:52:27.600513Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [
+            {
+              "version_id": null,
+              "project_id": "s3dmwKy5",
+              "file_name": null,
+              "dependency_type": "required"
+            },
+            {
+              "version_id": null,
+              "project_id": "P7dR8mSH",
+              "file_name": null,
+              "dependency_type": "required"
+            }
+          ],
+          "file": "build/qa/modpack-compat/fabric/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+          "filename": "BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/HXF82T3G/versions/MNZPk6V0/BiomesOPlenty-fabric-26.2-26.2.0.0.28.jar",
+          "modrinthVersionUrl": "https://modrinth.com/mod/biomes-o-plenty/version/MNZPk6V0",
+          "publishedHashes": {
+            "sha512": "78308db65ecc3c75065adb227e678c8ee3edefe934cbe9e66a9887bab4fea40fd97f7be985dca144760371aee83cebb083cb799f21c3683adc972eb8384b71fa",
+            "sha1": "bf43109e92b00d81b98e28121dc75c513caff6d0"
+          },
+          "sha256": "e3a5571eb77225e800f8fc4334d452904705e945c26767bfb091f42889ae14b4",
+          "bytes": 23252511,
+          "publishedHashesMatch": true,
+          "jarDeclaredDependencies": {
+            "fabricloader": "*",
+            "fabric-api": "*",
+            "minecraft": "26.2",
+            "java": ">=17",
+            "glitchcore": ">=26.2.0.0.0",
+            "terrablender": ">=26.2.0.0.1"
+          },
+          "jarDeclaredModVersion": "26.2.0.0.28"
+        },
+        {
+          "loader": "fabric",
+          "projectId": "s3dmwKy5",
+          "versionId": "SDUCBYRU",
+          "versionNumber": "26.2.0.0.0",
+          "versionType": "beta",
+          "datePublished": "2026-06-28T04:20:58.138059Z",
+          "gameVersions": [
+            "26.2"
+          ],
+          "dependencies": [
+            {
+              "version_id": null,
+              "project_id": "P7dR8mSH",
+              "file_name": null,
+              "dependency_type": "required"
+            }
+          ],
+          "file": "build/qa/modpack-compat/fabric/GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+          "filename": "GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+          "sourceUrl": "https://cdn.modrinth.com/data/s3dmwKy5/versions/SDUCBYRU/GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+          "modrinthVersionUrl": "https://modrinth.com/mod/glitchcore/version/SDUCBYRU",
+          "publishedHashes": {
+            "sha512": "b3c7a07bd6b2b636e125b0d6541d6cb9b3c6f94d8032a50b021a4e95d6d8d0147c57fb4a378e12d0d009b7ea854991710407703efe9207af91cd3d586e50f470",
+            "sha1": "5e7b26c4cced1cce7784d811dfc91e69a54679c5"
+          },
+          "sha256": "f6c31bd291d1d19322dd0a7ec344df2c88e2d516d1985f09ffe50ef33a34afdc",
+          "bytes": 334860,
+          "publishedHashesMatch": true,
+          "jarDeclaredDependencies": {
+            "fabricloader": "*",
+            "fabric-api": "*",
+            "minecraft": "26.2",
+            "java": ">=21"
+          },
+          "jarDeclaredModVersion": "26.2.0.0.0"
+        },
+        {
+          "loader": "fabric",
+          "project": "TerraBlender",
+          "mavenCoordinate": "com.github.glitchfiend:TerraBlender-fabric:26.2-26.2.0.0.2",
+          "file": "build/qa/modpack-compat/fabric/TerraBlender-fabric-26.2-26.2.0.0.2.jar",
+          "sha256": "72b64ba3eacf0d6956706467c952abb58f364beac9f6be896fb67d14621b2bf7",
+          "source": "Existing exact resolved Gradle compile dependency; official project https://github.com/Glitchfiend/TerraBlender",
+          "jarDeclaredDependencies": {
+            "fabricloader": "*",
+            "fabric-api": "*",
+            "minecraft": "26.2",
+            "java": ">=17"
+          },
+          "jarDeclaredModVersion": "26.2.0.0.2"
+        }
+      ],
+      "exportReport": "docs/validation/server-dev23-compat-fabric-content-structures-export.json",
+      "exportReportSha256": "402b52579e629d233e5c3a9b1e01a854cf53b5354f8e2efdc85010fc99c73838",
+      "generationReport": "docs/validation/server-dev23-compat-fabric-content-structures-generation.json",
+      "reloadReport": "docs/validation/server-dev23-compat-fabric-content-structures-reload.json",
+      "generationReportSha256": "cb1a85b548b6ef01ed559b390408c0812ec047e35d3cb9fcb192075f51e53b60",
+      "reloadReportSha256": "9d294f6dba693be74ea1e3225e24bec223deae86eb03ac2e049e077175a57956",
+      "exportedFiles": 4801,
+      "consumedPackMatchesEveryExportedFile": true,
+      "generationDigest": "833abece88c305e6e351aa75d5ce8675c3d8d4349cb3ceb103c843250f3ee05d",
+      "reloadDigest": "833abece88c305e6e351aa75d5ce8675c3d8d4349cb3ceb103c843250f3ee05d",
+      "registeredClassicVariants": 17,
+      "classicSourceCodecRoundTrip": true,
+      "observedBiomes": [
+        "biomesoplenty:overgrown_greens",
+        "biomesoplenty:prairie"
+      ],
+      "structureChecks": {
+        "status": "passed",
+        "explicitPlacements": [
+          {
+            "changedBlocksObserved": true,
+            "afterSha256": "8ca1ab0c7f223209e51db0a50094a85ca26fdda9b5f4834d397b99f1d1f91bca",
+            "elapsedMillis": 3991,
+            "id": "minecraft:desert_pyramid",
+            "beforeSha256": "acc71cd80ad9362893340645249e0550784910c300a7262249d6902a64fc1224",
+            "boundingBox": [
+              2048,
+              64,
+              0,
+              2068,
+              78,
+              20
+            ],
+            "biomeEligibilityBypassedForExplicitPlacement": true,
+            "pieces": 1,
+            "fullChunksLoaded": 4
+          },
+          {
+            "changedBlocksObserved": true,
+            "afterSha256": "5a91cfd5e6da177699d3e2149f43a1c3e977839fdbaa9a7d918207ed9fecd9eb",
+            "elapsedMillis": 2133,
+            "id": "minecraft:swamp_hut",
+            "beforeSha256": "30095cc7d9e3508855de005707c6b8e90ce8e3d1165a7f0291584daf5acd2dbf",
+            "boundingBox": [
+              2560,
+              64,
+              -512,
+              2568,
+              70,
+              -506
+            ],
+            "biomeEligibilityBypassedForExplicitPlacement": true,
+            "pieces": 1,
+            "fullChunksLoaded": 1
+          },
+          {
+            "changedBlocksObserved": true,
+            "afterSha256": "7dc0ec4aa6cf1f2ba8d7f19e4a02fdf43a0a61622d12ef0c297c3b4c3b00be5b",
+            "elapsedMillis": 3058,
+            "id": "repurposed_structures:igloo_grassy",
+            "beforeSha256": "38f9b8c5029ae0785c5853b6afd72365c58dfb1bfcc3662345809fb6cae73daf",
+            "boundingBox": [
+              3056,
+              88,
+              -1039,
+              3087,
+              116,
+              -1009
+            ],
+            "biomeEligibilityBypassedForExplicitPlacement": true,
+            "pieces": 1,
+            "fullChunksLoaded": 4
+          },
+          {
+            "changedBlocksObserved": true,
+            "afterSha256": "a6b4ce139f9da62a423458ccccf372144020de2123fb14351a71e45ee9f50d32",
+            "elapsedMillis": 2852,
+            "id": "repurposed_structures:witch_hut_oak",
+            "beforeSha256": "0d66a3c6147a231b1fdff32a7fe85ade766e179de15271d8fdfce029c70293dc",
+            "boundingBox": [
+              1532,
+              83,
+              -3587,
+              1540,
+              90,
+              -3581
+            ],
+            "biomeEligibilityBypassedForExplicitPlacement": true,
+            "pieces": 1,
+            "fullChunksLoaded": 4
+          }
+        ],
+        "nativeLocateAndNaturalStarts": [
+          {
+            "elapsedMillis": 1535,
+            "validNaturalStart": true,
+            "radiusPlacementRegions": 8,
+            "id": "minecraft:mineshaft",
+            "position": [
+              -16,
+              0,
+              64
+            ],
+            "actualFullChunk": "[-1, 4]",
+            "pieces": 235
+          },
+          {
+            "elapsedMillis": 1961,
+            "validNaturalStart": true,
+            "radiusPlacementRegions": 64,
+            "id": "repurposed_structures:mineshaft_savanna",
+            "position": [
+              -48,
+              0,
+              432
+            ],
+            "actualFullChunk": "[-3, 27]",
+            "pieces": 653
+          }
+        ],
+        "explicitSiteAttempts": [
+          {
+            "id": "minecraft:desert_pyramid",
+            "chunk": [
+              128,
+              -128
+            ],
+            "status": "native-site-rejected",
+            "elapsedMillis": 26.4641,
+            "reason": "Native geometry/height/site rules rejected this explicit location despite bypassed biome eligibility"
+          },
+          {
+            "id": "minecraft:desert_pyramid",
+            "chunk": [
+              128,
+              0
+            ],
+            "status": "valid-native-start",
+            "elapsedMillis": 248.3569
+          },
+          {
+            "id": "minecraft:swamp_hut",
+            "chunk": [
+              160,
+              -160
+            ],
+            "status": "native-site-rejected",
+            "elapsedMillis": 5.1421,
+            "reason": "Native geometry/height/site rules rejected this explicit location despite bypassed biome eligibility"
+          },
+          {
+            "id": "minecraft:swamp_hut",
+            "chunk": [
+              160,
+              -32
+            ],
+            "status": "valid-native-start",
+            "elapsedMillis": 105.9281
+          },
+          {
+            "id": "repurposed_structures:igloo_grassy",
+            "chunk": [
+              192,
+              -192
+            ],
+            "status": "native-site-rejected",
+            "elapsedMillis": 175.6162,
+            "reason": "Native geometry/height/site rules rejected this explicit location despite bypassed biome eligibility"
+          },
+          {
+            "id": "repurposed_structures:igloo_grassy",
+            "chunk": [
+              192,
+              -64
+            ],
+            "status": "valid-native-start",
+            "elapsedMillis": 118.1106
+          },
+          {
+            "id": "repurposed_structures:witch_hut_oak",
+            "chunk": [
+              224,
+              -224
+            ],
+            "status": "native-site-rejected",
+            "elapsedMillis": 266.6422,
+            "reason": "Native geometry/height/site rules rejected this explicit location despite bypassed biome eligibility"
+          },
+          {
+            "id": "repurposed_structures:witch_hut_oak",
+            "chunk": [
+              224,
+              -96
+            ],
+            "status": "native-site-rejected",
+            "elapsedMillis": 196.1996,
+            "reason": "Native geometry/height/site rules rejected this explicit location despite bypassed biome eligibility"
+          },
+          {
+            "id": "repurposed_structures:witch_hut_oak",
+            "chunk": [
+              352,
+              -224
+            ],
+            "status": "native-site-rejected",
+            "elapsedMillis": 131.4062,
+            "reason": "Native geometry/height/site rules rejected this explicit location despite bypassed biome eligibility"
+          },
+          {
+            "id": "repurposed_structures:witch_hut_oak",
+            "chunk": [
+              96,
+              -224
+            ],
+            "status": "valid-native-start",
+            "elapsedMillis": 126.9874
+          }
+        ],
+        "siteAttemptsFile": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T125354Z-ccd867\\qa-output\\structure-site-attempts.json",
+        "scope": "Two vanilla plus two optional Repurposed Structures explicit placements; one native mineshaft locate/generation per namespace, not all structures"
+      },
+      "structureReloadChecks": {
+        "savedStructureBlockDigests": [
+          {
+            "id": "minecraft:desert_pyramid",
+            "sha256": "8ca1ab0c7f223209e51db0a50094a85ca26fdda9b5f4834d397b99f1d1f91bca"
+          },
+          {
+            "id": "minecraft:swamp_hut",
+            "sha256": "5a91cfd5e6da177699d3e2149f43a1c3e977839fdbaa9a7d918207ed9fecd9eb"
+          },
+          {
+            "id": "repurposed_structures:igloo_grassy",
+            "sha256": "7dc0ec4aa6cf1f2ba8d7f19e4a02fdf43a0a61622d12ef0c297c3b4c3b00be5b"
+          },
+          {
+            "id": "repurposed_structures:witch_hut_oak",
+            "sha256": "a6b4ce139f9da62a423458ccccf372144020de2123fb14351a71e45ee9f50d32"
+          }
+        ],
+        "status": "passed"
+      }
+    }
+  ],
+  "notTested": [
+    "All modpacks",
+    "Client rendering",
+    "Multiplayer",
+    "Controlled performance"
+  ],
+  "failures": [],
+  "finishedAtUtc": "2026-11-04T12:55:18.533570+00:00",
+  "harnessSha256": "9bfb9446c7bb4d14d760784616665c7d3e2d60d9b5dbfb115ddb99226dfb8504"
+}

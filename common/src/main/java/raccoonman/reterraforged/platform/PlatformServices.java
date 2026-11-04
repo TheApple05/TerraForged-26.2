@@ -35,6 +35,9 @@ public interface PlatformServices {
     Path getConfigPath();
     boolean isModLoaded(String modId);
 
+    /** Registry data before deferred native biome modifiers are applied again on load. */
+    default Biome biomeForExport(Biome biome) { return biome; }
+
     <T> Registry<T> createRegistry(ResourceKey<? extends Registry<T>> key);
     <T> void register(Registry<T> registry, ResourceKey<T> key, T value);
     <T> WritableRegistry<T> getWritable(Registry<T> registry);

@@ -1,0 +1,7 @@
+# Isolated production server QA
+
+Result: **passed**. Runtime executed: True.
+
+See the [machine-readable evidence](server-horizon-prepared-dev22-export.json) for artifact hashes, production installation, process exit, class origins and any companion checks.
+
+A vanilla server boot establishes loading only. Custom terrain and visual parity require separate evidence.

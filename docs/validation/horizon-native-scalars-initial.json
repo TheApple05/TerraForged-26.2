@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-scalars-only",
+  "startedAtUtc": "2026-11-04T12:47:27.438762+00:00",
+  "upstreamCommit": "29239f1f164d19dbfcccaca4a8277d64e784207c",
+  "frozenJavaFixtureSha256": "8070efecb62e736c3d22c64e8e22922ac468c0350804d3f8e0bfe615f3d35dc5",
+  "frozenJavaMetadataSha256": "d3f07c987aebd62098b14c17b00e20e690ed5ac87cbaee77eef97541b68c2eeb",
+  "recordsPerProfile": 1745,
+  "valuesPerProfile": 8771,
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "outputSha256": "d0c55825092d3d289a8f77da4fd812ad3bb3d29fcb06d76141e1ef945023d946",
+      "differences": [],
+      "allSelectedValuesMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "outputSha256": "d0c55825092d3d289a8f77da4fd812ad3bb3d29fcb06d76141e1ef945023d946",
+      "differences": [],
+      "allSelectedValuesMatch": true
+    }
+  ],
+  "scope": "Selected scalar/hash fields from genuine frozen Java records; not gradient tables, complete noise modules, terrain, chunks or native activation.",
+  "notCovered": [
+    "Vector/gradient tables",
+    "Perlin and composed noises",
+    "Cell/river/tile pipeline",
+    "Every exported scalar API or nonfinite input",
+    "Horizon infinite generation"
+  ],
+  "sourceSha256Lf": {
+    "horizon/native-core/src/noise_util.rs": "04a73b4491c5b91c855257192634aa380d6f5d60bf3e1e40e1462909a1b8238f",
+    "horizon/native-core/src/bin/scalar_probe.rs": "96aee09dbbbf80bb388e74404bbf7f9443bb6d34d38894f551eae4ff5cf92758",
+    "horizon/native-core/Cargo.toml": "90828d3f94df0a4249961250593854170168ab2de8191bc4d7d9540394152366"
+  },
+  "finishedAtUtc": "2026-11-04T12:47:28.425105+00:00",
+  "verifierSha256": "4a7dc8d7b2650a5d7516e0db941bafdefebd25435a648cfd0b67c6bb8956be0a"
+}

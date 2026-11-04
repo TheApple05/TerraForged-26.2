@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "task": "Initial isolated native scalar/hash translation",
+  "provider": "DeepSeek",
+  "model": "deepseek-flash",
+  "jobId": "d4f1c48b84b7430a90463a87443baf31",
+  "sessionId": "TerraForged-26.2",
+  "estimatedUsd": 0.0026994,
+  "costIsEstimate": true,
+  "review": "Codex reviewed Java wrapping/float branch semantics, exposed module functions, kept code outside the active Horizon bundle, and independently checked debug/release output against the existing frozen Java fixture.",
+  "validationReport": "docs/validation/horizon-native-scalars-initial.json",
+  "valuesCheckedPerProfile": 8771,
+  "profiles": [
+    "debug",
+    "release"
+  ],
+  "scope": "Scalar foundation only; composed noise/cell/tile pipeline and infinite generation unfinished."
+}

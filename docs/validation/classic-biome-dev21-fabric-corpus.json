@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "loader": "fabric",
+  "candidate": "dev21",
+  "productionJar": "build\\libs\\terraforged-revival-0.1.0-dev.21+26.2.jar",
+  "productionJarSha256": "ac963e71eabd010f55ec27eff4e55b1197339feeff533ceb3d73bea9273af741",
+  "qaJar": "build\\qa\\runtime-dev21-final\\terraforged-runtime-qa.jar",
+  "qaJarSha256": "0648821405242495113e9f92ae563fbc1adef5f94c00bba9828add9807753d0d",
+  "seed": 8675309,
+  "cases": [
+    {
+      "group": "pillars",
+      "targets": "docs\\validation\\classic-biome-dev19-pillar-locations.json",
+      "targetsSha256": "4354b56204282f56b797f6066f09744f76878b90fb866bfcd3b78c6f7c1dd362",
+      "biomes": [
+        "reterraforged:bryce",
+        "reterraforged:stone_forest"
+      ],
+      "runs": []
+    }
+  ],
+  "targetsManifest": "docs\\validation\\classic-biome-dev20-qualified-targets.json",
+  "targetsManifestSha256": "160b6cef9352927111aa431d32531a330dfa4f814e2c0cabeb32baa29f6207a2",
+  "scope": "Six separate fresh worlds with two or three surveyed variant targets each; native FULL generation, source/stored agreement, forced save, and same-world reload column hashes. Default sixty-second watchdog remains enabled.",
+  "error": "AttributeError(\"'NoneType' object has no attribute 'get'\")"
+}

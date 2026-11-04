@@ -58,7 +58,7 @@ public final class ClassicBiomes {
         HolderGetter<Biome> biomes = original.lookupOrThrow(Registries.BIOME);
         HolderGetter<PlacedFeature> features = ctx.lookup(Registries.PLACED_FEATURE);
         for (Variant variant : VARIANTS) {
-            Biome parent = biomes.getOrThrow(variant.parent()).value();
+            Biome parent = raccoonman.reterraforged.platform.PlatformServices.get().biomeForExport(biomes.getOrThrow(variant.parent()).value());
             BiomeGenerationSettings.PlainBuilder generation = new BiomeGenerationSettings.PlainBuilder();
             parent.getGenerationSettings().getCarvers().forEach(generation::addCarver);
             for (int step = 0; step < parent.getGenerationSettings().features().size(); step++) {
@@ -90,7 +90,8 @@ public final class ClassicBiomes {
             if (variant.key().equals(PresetBiomeData.MARSHLAND)) {
                 finalGeneration.addFeature(GenerationStep.Decoration.RAW_GENERATION, features.getOrThrow(MARSH_SURFACE));
             }
-            Biome ambience = variant.key().equals(PresetBiomeData.STEPPE) ? biomes.getOrThrow(Biomes.SAVANNA).value() : parent;
+            Biome ambience = variant.key().equals(PresetBiomeData.STEPPE)
+                ? raccoonman.reterraforged.platform.PlatformServices.get().biomeForExport(biomes.getOrThrow(Biomes.SAVANNA).value()) : parent;
             ctx.register(variant.key(), new Biome.BiomeBuilder()
                 .hasPrecipitation(!variant.key().equals(PresetBiomeData.STEPPE) && parent.hasPrecipitation())
                 .temperature(variant.temperature() == null ? parent.getBaseTemperature() : variant.temperature())

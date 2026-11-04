@@ -1,0 +1,1084 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "loader": "fabric",
+  "candidate": "dev22",
+  "productionJar": "build\\libs\\terraforged-revival-0.1.0-dev.22+26.2.jar",
+  "productionJarSha256": "3e16001ac365c7652efcdf6b24d543be1eab1fe57065acf4caee2e7be0990447",
+  "qaJar": "build\\qa\\runtime-dev22\\terraforged-runtime-qa.jar",
+  "qaJarSha256": "170e5326dad88877aa294215bec90b3aecdffe2af89ea9a0728d59ac6f66b1a6",
+  "seed": 8675309,
+  "cases": [
+    {
+      "group": "pillars",
+      "targets": "docs\\validation\\classic-biome-dev19-pillar-locations.json",
+      "targetsSha256": "4354b56204282f56b797f6066f09744f76878b90fb866bfcd3b78c6f7c1dd362",
+      "biomes": [
+        "reterraforged:bryce",
+        "reterraforged:stone_forest"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev22-classic-pillars-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121329Z-43bb94",
+          "fullChunkTargets": 2,
+          "observations": [
+            {
+              "z": -107012,
+              "queriedBiome": "reterraforged:bryce",
+              "chunkX": -7409,
+              "chunkZ": -6689,
+              "surfaceY": 99,
+              "fullHeightColumnSha256": "8b1c8d7902c897a641e8de4088c5493895fc1e81452d5df327973a6a77f1bef6",
+              "biome": "reterraforged:bryce",
+              "x": -118532,
+              "y": 99
+            },
+            {
+              "z": -100468,
+              "queriedBiome": "reterraforged:stone_forest",
+              "chunkX": 6300,
+              "chunkZ": -6280,
+              "surfaceY": 131,
+              "fullHeightColumnSha256": "6828cc7f70823be05fca30a0ccca61769f1173673772fd4360b148c6a60ef28c",
+              "biome": "reterraforged:stone_forest",
+              "x": 100812,
+              "y": 72
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev22-classic-pillars-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121329Z-43bb94",
+          "fullChunkTargets": 2,
+          "observations": [
+            {
+              "biome": "reterraforged:bryce",
+              "fullHeightColumnSha256": "8b1c8d7902c897a641e8de4088c5493895fc1e81452d5df327973a6a77f1bef6",
+              "surfaceY": 99,
+              "chunkZ": -6689,
+              "chunkX": -7409,
+              "queriedBiome": "reterraforged:bryce",
+              "z": -107012,
+              "y": 99,
+              "x": -118532
+            },
+            {
+              "biome": "reterraforged:stone_forest",
+              "fullHeightColumnSha256": "6828cc7f70823be05fca30a0ccca61769f1173673772fd4360b148c6a60ef28c",
+              "surfaceY": 131,
+              "chunkZ": -6280,
+              "chunkX": 6300,
+              "queriedBiome": "reterraforged:stone_forest",
+              "z": -100468,
+              "y": 72,
+              "x": 100812
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ],
+      "pillarSurfaceEvidence": [
+        {
+          "biome": "reterraforged:bryce",
+          "requestedBaselineStage": "minecraft:surface",
+          "observedBaselineStage": "minecraft:surface",
+          "surfaceBaselineAvailable": true,
+          "positiveAddedPillarColumns": 79,
+          "correctlyCappedColumns": 79,
+          "maximumAddedHeight": 25,
+          "heightCap": 30,
+          "actualAddedMaterialCounts": {
+            "minecraft:terracotta": 256,
+            "minecraft:orange_terracotta": 378,
+            "minecraft:brown_terracotta": 103,
+            "minecraft:yellow_terracotta": 123
+          },
+          "examples": [
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118544,
+              "z": -107024,
+              "surfaceBeforeFeatures": 113,
+              "addedHeight": 8
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118543,
+              "z": -107024,
+              "surfaceBeforeFeatures": 113,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118542,
+              "z": -107024,
+              "surfaceBeforeFeatures": 113,
+              "addedHeight": 23
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118541,
+              "z": -107024,
+              "surfaceBeforeFeatures": 112,
+              "addedHeight": 24
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118539,
+              "z": -107024,
+              "surfaceBeforeFeatures": 112,
+              "addedHeight": 22
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118538,
+              "z": -107024,
+              "surfaceBeforeFeatures": 111,
+              "addedHeight": 21
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118537,
+              "z": -107024,
+              "surfaceBeforeFeatures": 111,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118536,
+              "z": -107024,
+              "surfaceBeforeFeatures": 111,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:terracotta",
+              "x": -118535,
+              "z": -107024,
+              "surfaceBeforeFeatures": 111,
+              "addedHeight": 7
+            },
+            {
+              "top": "minecraft:terracotta",
+              "x": -118534,
+              "z": -107024,
+              "surfaceBeforeFeatures": 112,
+              "addedHeight": 7
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118533,
+              "z": -107024,
+              "surfaceBeforeFeatures": 112,
+              "addedHeight": 8
+            },
+            {
+              "top": "minecraft:orange_terracotta",
+              "x": -118544,
+              "z": -107023,
+              "surfaceBeforeFeatures": 112,
+              "addedHeight": 1
+            }
+          ],
+          "rawPaletteAddedColumns": 79,
+          "wrongCapColumns": 0,
+          "diagnosticColumns": [
+            {
+              "x": -118544,
+              "z": -107024,
+              "surfaceBeforeFeatures": 113,
+              "paletteAddedHeight": 8,
+              "oceanFloorAfter": 121,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:terracotta}",
+              "actualFilteredTileMask": 0.70740545,
+              "actualFilteredTileRegionEdge": 0.98777324,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.2838382,
+              "shape": 0.38967815,
+              "predictedAddedHeightBeforeBoundary": 8
+            },
+            {
+              "x": -118532,
+              "z": -107024,
+              "surfaceBeforeFeatures": 112,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 112,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.83358437,
+              "actualFilteredTileRegionEdge": 0.9933654,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.1608482,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118544,
+              "z": -107020,
+              "surfaceBeforeFeatures": 110,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 110,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.0,
+              "actualFilteredTileRegionEdge": 0.9858357,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 1.0,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118532,
+              "z": -107020,
+              "surfaceBeforeFeatures": 112,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 112,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.7923014,
+              "actualFilteredTileRegionEdge": 0.99225914,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.20151764,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118544,
+              "z": -107016,
+              "surfaceBeforeFeatures": 100,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 100,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.0,
+              "actualFilteredTileRegionEdge": 0.98585117,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 1.0,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118532,
+              "z": -107016,
+              "surfaceBeforeFeatures": 110,
+              "paletteAddedHeight": 3,
+              "oceanFloorAfter": 113,
+              "stateAtBase": "Block{minecraft:red_terracotta}",
+              "stateAboveBase": "Block{minecraft:yellow_terracotta}",
+              "actualFilteredTileMask": 0.36598554,
+              "actualFilteredTileRegionEdge": 0.99215394,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.6311202,
+              "shape": 0.324675,
+              "predictedAddedHeightBeforeBoundary": 3
+            },
+            {
+              "x": -118544,
+              "z": -107012,
+              "surfaceBeforeFeatures": 96,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 96,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.71035016,
+              "actualFilteredTileRegionEdge": 0.9870325,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.28031737,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": -118532,
+              "z": -107012,
+              "surfaceBeforeFeatures": 99,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 99,
+              "stateAtBase": "Block{minecraft:terracotta}",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.0,
+              "actualFilteredTileRegionEdge": 0.9926184,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 1.0,
+              "shape": 0.97402495,
+              "predictedAddedHeightBeforeBoundary": 0
+            }
+          ],
+          "actualFilteredTilePredictedPositiveBeforeBoundary": 81,
+          "actualFilteredTilePredictedMaximumBeforeBoundary": 25,
+          "scope": "Actual palette-only columns added after SURFACE, with current stored target biome; not a visual or original-world identity verdict"
+        },
+        {
+          "biome": "reterraforged:stone_forest",
+          "requestedBaselineStage": "minecraft:surface",
+          "observedBaselineStage": "minecraft:surface",
+          "surfaceBaselineAvailable": true,
+          "positiveAddedPillarColumns": 78,
+          "correctlyCappedColumns": 78,
+          "maximumAddedHeight": 48,
+          "heightCap": 50,
+          "actualAddedMaterialCounts": {
+            "minecraft:stone": 1519,
+            "minecraft:dirt": 76,
+            "minecraft:grass_block": 78
+          },
+          "examples": [
+            {
+              "top": "minecraft:grass_block",
+              "x": 100811,
+              "z": -100476,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 13
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100812,
+              "z": -100476,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 2
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100811,
+              "z": -100475,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100812,
+              "z": -100475,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 15
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100813,
+              "z": -100475,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 15
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100814,
+              "z": -100475,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100815,
+              "z": -100475,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100808,
+              "z": -100474,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 3
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100809,
+              "z": -100474,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 5
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100810,
+              "z": -100474,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 13
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100811,
+              "z": -100474,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 14
+            },
+            {
+              "top": "minecraft:grass_block",
+              "x": 100812,
+              "z": -100474,
+              "surfaceBeforeFeatures": 72,
+              "addedHeight": 15
+            }
+          ],
+          "rawPaletteAddedColumns": 86,
+          "wrongCapColumns": 8,
+          "diagnosticColumns": [
+            {
+              "x": 100800,
+              "z": -100480,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 79,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:fern}",
+              "actualFilteredTileMask": 0.84576005,
+              "actualFilteredTileRegionEdge": 0.8526902,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.008127391,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100480,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 84,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:vine}[east=false,north=true,south=false,up=false,west=false]",
+              "actualFilteredTileMask": 0.88147515,
+              "actualFilteredTileRegionEdge": 0.88476455,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.0037178397,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100800,
+              "z": -100476,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 91,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:oak_leaves}[distance=2,persistent=false,waterlogged=false]",
+              "actualFilteredTileMask": 0.88946646,
+              "actualFilteredTileRegionEdge": 0.9008055,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.012587607,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100476,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 2,
+              "oceanFloorAfter": 74,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:dirt}",
+              "actualFilteredTileMask": 0.92225647,
+              "actualFilteredTileRegionEdge": 0.9276525,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.0058168173,
+              "shape": 0.061239075,
+              "predictedAddedHeightBeforeBoundary": 2
+            },
+            {
+              "x": 100800,
+              "z": -100472,
+              "surfaceBeforeFeatures": 71,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 91,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:air}",
+              "actualFilteredTileMask": 0.91760075,
+              "actualFilteredTileRegionEdge": 0.9251146,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.008122027,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100472,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 15,
+              "oceanFloorAfter": 94,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:stone}",
+              "actualFilteredTileMask": 0.94685656,
+              "actualFilteredTileRegionEdge": 0.95607615,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.009643137,
+              "shape": 0.33333334,
+              "predictedAddedHeightBeforeBoundary": 15
+            },
+            {
+              "x": 100800,
+              "z": -100468,
+              "surfaceBeforeFeatures": 71,
+              "paletteAddedHeight": 0,
+              "oceanFloorAfter": 100,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:short_grass}",
+              "actualFilteredTileMask": 0.92419565,
+              "actualFilteredTileRegionEdge": 0.9344051,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.010926127,
+              "shape": 0.0,
+              "predictedAddedHeightBeforeBoundary": 0
+            },
+            {
+              "x": 100812,
+              "z": -100468,
+              "surfaceBeforeFeatures": 72,
+              "paletteAddedHeight": 48,
+              "oceanFloorAfter": 130,
+              "stateAtBase": "Block{minecraft:grass_block}[snowy=false]",
+              "stateAboveBase": "Block{minecraft:stone}",
+              "actualFilteredTileMask": 0.9659854,
+              "actualFilteredTileRegionEdge": 0.9733669,
+              "actualFilteredTileRiverMask": 1.0,
+              "actualFilteredTileGradient": 0.007583499,
+              "shape": 1.0,
+              "predictedAddedHeightBeforeBoundary": 48
+            }
+          ],
+          "actualFilteredTilePredictedPositiveBeforeBoundary": 89,
+          "actualFilteredTilePredictedMaximumBeforeBoundary": 48,
+          "scope": "Actual palette-only columns added after SURFACE, with current stored target biome; not a visual or original-world identity verdict"
+        }
+      ]
+    },
+    {
+      "group": "cold",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\cold.json",
+      "targetsSha256": "b9f70a3ce6ef4988f4a7206a5f9eab02df6a88249c3ea68b57b24f220906e764",
+      "biomes": [
+        "reterraforged:cold_marshland",
+        "reterraforged:cold_steppe",
+        "reterraforged:frozen_marsh"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev22-classic-cold-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121430Z-83ea2f",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "biome": "reterraforged:cold_steppe",
+              "fullHeightColumnSha256": "902afd7b3beca76c6f10f1e9f386a074dac8a77e73b3c8826eb73270dce88f94",
+              "surfaceY": 136,
+              "chunkZ": 4753,
+              "chunkX": -7936,
+              "queriedBiome": "reterraforged:cold_steppe",
+              "z": 76052,
+              "y": 136,
+              "x": -126976
+            },
+            {
+              "biome": "reterraforged:cold_marshland",
+              "fullHeightColumnSha256": "3f932571e420be20323a2be44516d7993d857d95e6848657da940b26bf8954ac",
+              "surfaceY": 62,
+              "chunkZ": 1561,
+              "chunkX": -1056,
+              "queriedBiome": "reterraforged:cold_marshland",
+              "z": 24988,
+              "y": 63,
+              "x": -16896
+            },
+            {
+              "biome": "reterraforged:frozen_marsh",
+              "fullHeightColumnSha256": "5fd8f23301c825470bf0c478cc8a0685f2105e2833eae265d669be83bdd6f3f0",
+              "surfaceY": 64,
+              "chunkZ": -761,
+              "chunkX": -6504,
+              "queriedBiome": "reterraforged:frozen_marsh",
+              "z": -12168,
+              "y": 63,
+              "x": -104064
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev22-classic-cold-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121430Z-83ea2f",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "fullHeightColumnSha256": "902afd7b3beca76c6f10f1e9f386a074dac8a77e73b3c8826eb73270dce88f94",
+              "surfaceY": 136,
+              "chunkZ": 4753,
+              "chunkX": -7936,
+              "queriedBiome": "reterraforged:cold_steppe",
+              "z": 76052,
+              "y": 136,
+              "x": -126976,
+              "biome": "reterraforged:cold_steppe"
+            },
+            {
+              "fullHeightColumnSha256": "3f932571e420be20323a2be44516d7993d857d95e6848657da940b26bf8954ac",
+              "surfaceY": 62,
+              "chunkZ": 1561,
+              "chunkX": -1056,
+              "queriedBiome": "reterraforged:cold_marshland",
+              "z": 24988,
+              "y": 63,
+              "x": -16896,
+              "biome": "reterraforged:cold_marshland"
+            },
+            {
+              "fullHeightColumnSha256": "5fd8f23301c825470bf0c478cc8a0685f2105e2833eae265d669be83bdd6f3f0",
+              "surfaceY": 64,
+              "chunkZ": -761,
+              "chunkX": -6504,
+              "queriedBiome": "reterraforged:frozen_marsh",
+              "z": -12168,
+              "y": 63,
+              "x": -104064,
+              "biome": "reterraforged:frozen_marsh"
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    },
+    {
+      "group": "water",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-dev20-qualified-water-targets.json",
+      "targetsSha256": "12a228a87fd22904f4bf3c3f0c499be098a37ae0219b5fb6fb0d5779a73d8642",
+      "biomes": [
+        "reterraforged:frozen_lake",
+        "reterraforged:lake",
+        "reterraforged:warm_beach"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev22-classic-water-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121545Z-061947",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "x": -79680,
+              "y": 63,
+              "z": 33060,
+              "queriedBiome": "reterraforged:frozen_lake",
+              "chunkX": -4980,
+              "chunkZ": 2066,
+              "surfaceY": 62,
+              "fullHeightColumnSha256": "0e26a40e96022cd523ff2fb9ad1049ad6da2a967f370af539d819439ea982589",
+              "biome": "reterraforged:frozen_lake"
+            },
+            {
+              "x": 56832,
+              "y": 63,
+              "z": 15280,
+              "queriedBiome": "reterraforged:lake",
+              "chunkX": 3552,
+              "chunkZ": 955,
+              "surfaceY": 63,
+              "fullHeightColumnSha256": "60af638b7877b013534c0e5c158fbf1844a7a1d1c5cd2deaf7395eed2059450d",
+              "biome": "reterraforged:lake"
+            },
+            {
+              "x": 43540,
+              "y": 63,
+              "z": 113064,
+              "queriedBiome": "reterraforged:warm_beach",
+              "chunkX": 2721,
+              "chunkZ": 7066,
+              "surfaceY": 62,
+              "fullHeightColumnSha256": "8c96fa0fe5ec47325d613880e55235044e2c6f0a544dd1bd833b65f9f6b66f28",
+              "biome": "reterraforged:warm_beach"
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev22-classic-water-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121545Z-061947",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "surfaceY": 62,
+              "chunkZ": 2066,
+              "chunkX": -4980,
+              "queriedBiome": "reterraforged:frozen_lake",
+              "z": 33060,
+              "y": 63,
+              "x": -79680,
+              "biome": "reterraforged:frozen_lake",
+              "fullHeightColumnSha256": "0e26a40e96022cd523ff2fb9ad1049ad6da2a967f370af539d819439ea982589"
+            },
+            {
+              "surfaceY": 63,
+              "chunkZ": 955,
+              "chunkX": 3552,
+              "queriedBiome": "reterraforged:lake",
+              "z": 15280,
+              "y": 63,
+              "x": 56832,
+              "biome": "reterraforged:lake",
+              "fullHeightColumnSha256": "60af638b7877b013534c0e5c158fbf1844a7a1d1c5cd2deaf7395eed2059450d"
+            },
+            {
+              "surfaceY": 62,
+              "chunkZ": 7066,
+              "chunkX": 2721,
+              "queriedBiome": "reterraforged:warm_beach",
+              "z": 113064,
+              "y": 63,
+              "x": 43540,
+              "biome": "reterraforged:warm_beach",
+              "fullHeightColumnSha256": "8c96fa0fe5ec47325d613880e55235044e2c6f0a544dd1bd833b65f9f6b66f28"
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    },
+    {
+      "group": "forests",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\forests.json",
+      "targetsSha256": "2befd23ed7b718e61313a3251838fc0589c3441c124c01aa1d9bc10de8eedd6d",
+      "biomes": [
+        "reterraforged:fir_forest",
+        "reterraforged:flower_plains",
+        "reterraforged:snowy_fir_forest"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev22-classic-forests-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121643Z-6d45e7",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "z": -43692,
+              "y": 70,
+              "x": 0,
+              "biome": "reterraforged:fir_forest",
+              "fullHeightColumnSha256": "64482c27809869249afe887741044df9a2fbd5765ad41c222f92f68f087de03e",
+              "surfaceY": 71,
+              "chunkZ": -2731,
+              "chunkX": 0,
+              "queriedBiome": "reterraforged:fir_forest"
+            },
+            {
+              "z": -62032,
+              "y": 76,
+              "x": -124928,
+              "biome": "reterraforged:snowy_fir_forest",
+              "fullHeightColumnSha256": "efc3cd22fa97eebf79971855899cf4d1e48cea137eca4e25a9229eece1d99af0",
+              "surfaceY": 74,
+              "chunkZ": -3877,
+              "chunkX": -7808,
+              "queriedBiome": "reterraforged:snowy_fir_forest"
+            },
+            {
+              "z": -67424,
+              "y": 71,
+              "x": 68608,
+              "biome": "reterraforged:flower_plains",
+              "fullHeightColumnSha256": "aa3e87509b27e826dbb91b331c689e04c27eca5b465eb4b2325f9067ad1e6b44",
+              "surfaceY": 71,
+              "chunkZ": -4214,
+              "chunkX": 4288,
+              "queriedBiome": "reterraforged:flower_plains"
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev22-classic-forests-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121643Z-6d45e7",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "x": 0,
+              "y": 70,
+              "z": -43692,
+              "queriedBiome": "reterraforged:fir_forest",
+              "chunkX": 0,
+              "chunkZ": -2731,
+              "surfaceY": 71,
+              "fullHeightColumnSha256": "64482c27809869249afe887741044df9a2fbd5765ad41c222f92f68f087de03e",
+              "biome": "reterraforged:fir_forest"
+            },
+            {
+              "x": -124928,
+              "y": 76,
+              "z": -62032,
+              "queriedBiome": "reterraforged:snowy_fir_forest",
+              "chunkX": -7808,
+              "chunkZ": -3877,
+              "surfaceY": 74,
+              "fullHeightColumnSha256": "efc3cd22fa97eebf79971855899cf4d1e48cea137eca4e25a9229eece1d99af0",
+              "biome": "reterraforged:snowy_fir_forest"
+            },
+            {
+              "x": 68608,
+              "y": 71,
+              "z": -67424,
+              "queriedBiome": "reterraforged:flower_plains",
+              "chunkX": 4288,
+              "chunkZ": -4214,
+              "surfaceY": 71,
+              "fullHeightColumnSha256": "aa3e87509b27e826dbb91b331c689e04c27eca5b465eb4b2325f9067ad1e6b44",
+              "biome": "reterraforged:flower_plains"
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    },
+    {
+      "group": "scrub",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\scrub.json",
+      "targetsSha256": "e9f1e5ecbae7e4df0dd6123ca76b7793651caf330047ba52fed7cc32b9092170",
+      "biomes": [
+        "reterraforged:marshland",
+        "reterraforged:snowy_taiga_scrub",
+        "reterraforged:taiga_scrub"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev22-classic-scrub-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121739Z-a5fdab",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "x": -125952,
+              "y": 72,
+              "z": 41532,
+              "queriedBiome": "reterraforged:taiga_scrub",
+              "chunkX": -7872,
+              "chunkZ": 2595,
+              "surfaceY": 72,
+              "fullHeightColumnSha256": "bfe2960aa0066d98c1e4bf4217ba4ef1a39312373c1f676c747e4e2a86f8705c",
+              "biome": "reterraforged:taiga_scrub"
+            },
+            {
+              "x": -28672,
+              "y": 98,
+              "z": 56636,
+              "queriedBiome": "reterraforged:snowy_taiga_scrub",
+              "chunkX": -1792,
+              "chunkZ": 3539,
+              "surfaceY": 98,
+              "fullHeightColumnSha256": "7e406f2cf2ca63dd0e7aa162429dee72c0abcb11fa4c87408af0f317a4e0a366",
+              "biome": "reterraforged:snowy_taiga_scrub"
+            },
+            {
+              "x": -102528,
+              "y": 63,
+              "z": -26552,
+              "queriedBiome": "reterraforged:marshland",
+              "chunkX": -6408,
+              "chunkZ": -1660,
+              "surfaceY": 64,
+              "fullHeightColumnSha256": "bc4c22c828131a94655a2fd6754ecaff92fee3322a0c5878134aa8b7e2ff7d26",
+              "biome": "reterraforged:marshland"
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev22-classic-scrub-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121739Z-a5fdab",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "chunkZ": 2595,
+              "surfaceY": 72,
+              "fullHeightColumnSha256": "bfe2960aa0066d98c1e4bf4217ba4ef1a39312373c1f676c747e4e2a86f8705c",
+              "biome": "reterraforged:taiga_scrub",
+              "x": -125952,
+              "y": 72,
+              "z": 41532,
+              "queriedBiome": "reterraforged:taiga_scrub",
+              "chunkX": -7872
+            },
+            {
+              "chunkZ": 3539,
+              "surfaceY": 98,
+              "fullHeightColumnSha256": "7e406f2cf2ca63dd0e7aa162429dee72c0abcb11fa4c87408af0f317a4e0a366",
+              "biome": "reterraforged:snowy_taiga_scrub",
+              "x": -28672,
+              "y": 98,
+              "z": 56636,
+              "queriedBiome": "reterraforged:snowy_taiga_scrub",
+              "chunkX": -1792
+            },
+            {
+              "chunkZ": -1660,
+              "surfaceY": 64,
+              "fullHeightColumnSha256": "bc4c22c828131a94655a2fd6754ecaff92fee3322a0c5878134aa8b7e2ff7d26",
+              "biome": "reterraforged:marshland",
+              "x": -102528,
+              "y": 63,
+              "z": -26552,
+              "queriedBiome": "reterraforged:marshland",
+              "chunkX": -6408
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    },
+    {
+      "group": "savanna",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\savanna.json",
+      "targetsSha256": "33f0f541a66654310b1721f5a05a10b21094f89ae814d755b2f574390eb5d372",
+      "biomes": [
+        "reterraforged:savanna_scrub",
+        "reterraforged:shattered_savanna_scrub",
+        "reterraforged:steppe"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-fabric-dev22-classic-savanna-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121838Z-a9da35",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "biome": "reterraforged:savanna_scrub",
+              "fullHeightColumnSha256": "2c5baddd42c63426208f328e355368db25dc17887239680346fbeb33c56a803c",
+              "surfaceY": 80,
+              "chunkZ": -2596,
+              "chunkX": 4416,
+              "queriedBiome": "reterraforged:savanna_scrub",
+              "z": -41536,
+              "y": 80,
+              "x": 70656
+            },
+            {
+              "biome": "reterraforged:shattered_savanna_scrub",
+              "fullHeightColumnSha256": "825d96ce73a2acc706bbc439f3a654ed7e0679a3e2ed8c5a327a79ef9c5f5c0d",
+              "surfaceY": 74,
+              "chunkZ": 2677,
+              "chunkX": 6276,
+              "queriedBiome": "reterraforged:shattered_savanna_scrub",
+              "z": 42832,
+              "y": 74,
+              "x": 100428
+            },
+            {
+              "biome": "reterraforged:steppe",
+              "fullHeightColumnSha256": "6937b3501099deb816c48e58e1931b5a7d96b2f7f8126f94c1debf6b75e140fa",
+              "surfaceY": 142,
+              "chunkZ": 8012,
+              "chunkX": 4256,
+              "queriedBiome": "reterraforged:steppe",
+              "z": 128192,
+              "y": 144,
+              "x": 68096
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-fabric-dev22-classic-savanna-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\server\\instances\\20261104T121838Z-a9da35",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "x": 70656,
+              "y": 80,
+              "z": -41536,
+              "queriedBiome": "reterraforged:savanna_scrub",
+              "chunkX": 4416,
+              "chunkZ": -2596,
+              "surfaceY": 80,
+              "fullHeightColumnSha256": "2c5baddd42c63426208f328e355368db25dc17887239680346fbeb33c56a803c",
+              "biome": "reterraforged:savanna_scrub"
+            },
+            {
+              "x": 100428,
+              "y": 74,
+              "z": 42832,
+              "queriedBiome": "reterraforged:shattered_savanna_scrub",
+              "chunkX": 6276,
+              "chunkZ": 2677,
+              "surfaceY": 74,
+              "fullHeightColumnSha256": "825d96ce73a2acc706bbc439f3a654ed7e0679a3e2ed8c5a327a79ef9c5f5c0d",
+              "biome": "reterraforged:shattered_savanna_scrub"
+            },
+            {
+              "x": 68096,
+              "y": 144,
+              "z": 128192,
+              "queriedBiome": "reterraforged:steppe",
+              "chunkX": 4256,
+              "chunkZ": 8012,
+              "surfaceY": 142,
+              "fullHeightColumnSha256": "6937b3501099deb816c48e58e1931b5a7d96b2f7f8126f94c1debf6b75e140fa",
+              "biome": "reterraforged:steppe"
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    }
+  ],
+  "targetsManifest": "docs\\validation\\classic-biome-dev20-qualified-targets.json",
+  "targetsManifestSha256": "160b6cef9352927111aa431d32531a330dfa4f814e2c0cabeb32baa29f6207a2",
+  "scope": "Six separate fresh worlds with two or three surveyed variant targets each; native FULL generation, source/stored agreement, forced save, and same-world reload column hashes. Default sixty-second watchdog remains enabled.",
+  "actualStoredAndReloadedVariants": [
+    "reterraforged:bryce",
+    "reterraforged:cold_marshland",
+    "reterraforged:cold_steppe",
+    "reterraforged:fir_forest",
+    "reterraforged:flower_plains",
+    "reterraforged:frozen_lake",
+    "reterraforged:frozen_marsh",
+    "reterraforged:lake",
+    "reterraforged:marshland",
+    "reterraforged:savanna_scrub",
+    "reterraforged:shattered_savanna_scrub",
+    "reterraforged:snowy_fir_forest",
+    "reterraforged:snowy_taiga_scrub",
+    "reterraforged:steppe",
+    "reterraforged:stone_forest",
+    "reterraforged:taiga_scrub",
+    "reterraforged:warm_beach"
+  ],
+  "variantCount": 17
+}

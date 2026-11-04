@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "running",
+  "status": "failed",
   "loader": "neoforge",
   "candidate": "dev20-qualified",
   "productionJar": "neoforge\\build\\libs\\terraforged-revival-0.1.0-dev.20+26.2-neoforge.jar",
@@ -546,9 +546,180 @@
           "scope": "Actual palette-only columns added after SURFACE, with current stored target biome; not a visual or original-world identity verdict"
         }
       ]
+    },
+    {
+      "group": "cold",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-corpus-targets\\cold.json",
+      "targetsSha256": "b9f70a3ce6ef4988f4a7206a5f9eab02df6a88249c3ea68b57b24f220906e764",
+      "biomes": [
+        "reterraforged:cold_marshland",
+        "reterraforged:cold_steppe",
+        "reterraforged:frozen_marsh"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-neoforge-dev20-qualified-classic-cold-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T114412Z-ef9a2e",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "biome": "reterraforged:cold_steppe",
+              "fullHeightColumnSha256": "902afd7b3beca76c6f10f1e9f386a074dac8a77e73b3c8826eb73270dce88f94",
+              "surfaceY": 136,
+              "chunkZ": 4753,
+              "chunkX": -7936,
+              "queriedBiome": "reterraforged:cold_steppe",
+              "z": 76052,
+              "y": 136,
+              "x": -126976
+            },
+            {
+              "biome": "reterraforged:cold_marshland",
+              "fullHeightColumnSha256": "3f932571e420be20323a2be44516d7993d857d95e6848657da940b26bf8954ac",
+              "surfaceY": 62,
+              "chunkZ": 1561,
+              "chunkX": -1056,
+              "queriedBiome": "reterraforged:cold_marshland",
+              "z": 24988,
+              "y": 63,
+              "x": -16896
+            },
+            {
+              "biome": "reterraforged:frozen_marsh",
+              "fullHeightColumnSha256": "5fd8f23301c825470bf0c478cc8a0685f2105e2833eae265d669be83bdd6f3f0",
+              "surfaceY": 64,
+              "chunkZ": -761,
+              "chunkX": -6504,
+              "queriedBiome": "reterraforged:frozen_marsh",
+              "z": -12168,
+              "y": 63,
+              "x": -104064
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-neoforge-dev20-qualified-classic-cold-reload.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T114412Z-ef9a2e",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "x": -126976,
+              "y": 136,
+              "z": 76052,
+              "queriedBiome": "reterraforged:cold_steppe",
+              "chunkX": -7936,
+              "chunkZ": 4753,
+              "surfaceY": 136,
+              "fullHeightColumnSha256": "902afd7b3beca76c6f10f1e9f386a074dac8a77e73b3c8826eb73270dce88f94",
+              "biome": "reterraforged:cold_steppe"
+            },
+            {
+              "x": -16896,
+              "y": 63,
+              "z": 24988,
+              "queriedBiome": "reterraforged:cold_marshland",
+              "chunkX": -1056,
+              "chunkZ": 1561,
+              "surfaceY": 62,
+              "fullHeightColumnSha256": "3f932571e420be20323a2be44516d7993d857d95e6848657da940b26bf8954ac",
+              "biome": "reterraforged:cold_marshland"
+            },
+            {
+              "x": -104064,
+              "y": 63,
+              "z": -12168,
+              "queriedBiome": "reterraforged:frozen_marsh",
+              "chunkX": -6504,
+              "chunkZ": -761,
+              "surfaceY": 64,
+              "fullHeightColumnSha256": "5fd8f23301c825470bf0c478cc8a0685f2105e2833eae265d669be83bdd6f3f0",
+              "biome": "reterraforged:frozen_marsh"
+            }
+          ],
+          "reloadDigestsMatched": true,
+          "nativeSaveEverythingFlushCompleted": true
+        }
+      ]
+    },
+    {
+      "group": "water",
+      "targets": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\docs\\validation\\classic-biome-dev20-qualified-water-targets.json",
+      "targetsSha256": "12a228a87fd22904f4bf3c3f0c499be098a37ae0219b5fb6fb0d5779a73d8642",
+      "biomes": [
+        "reterraforged:frozen_lake",
+        "reterraforged:lake",
+        "reterraforged:warm_beach"
+      ],
+      "runs": [
+        {
+          "mode": "generate",
+          "report": "docs\\validation\\server-neoforge-dev20-qualified-classic-water-generate.json",
+          "harnessExit": 0,
+          "status": "passed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T114535Z-58a0f8",
+          "fullChunkTargets": 3,
+          "observations": [
+            {
+              "x": -79680,
+              "y": 63,
+              "z": 33060,
+              "queriedBiome": "reterraforged:frozen_lake",
+              "chunkX": -4980,
+              "chunkZ": 2066,
+              "surfaceY": 62,
+              "fullHeightColumnSha256": "0e26a40e96022cd523ff2fb9ad1049ad6da2a967f370af539d819439ea982589",
+              "biome": "reterraforged:frozen_lake"
+            },
+            {
+              "x": 56832,
+              "y": 63,
+              "z": 15280,
+              "queriedBiome": "reterraforged:lake",
+              "chunkX": 3552,
+              "chunkZ": 955,
+              "surfaceY": 63,
+              "fullHeightColumnSha256": "60af638b7877b013534c0e5c158fbf1844a7a1d1c5cd2deaf7395eed2059450d",
+              "biome": "reterraforged:lake"
+            },
+            {
+              "x": 43540,
+              "y": 63,
+              "z": 113064,
+              "queriedBiome": "reterraforged:warm_beach",
+              "chunkX": 2721,
+              "chunkZ": 7066,
+              "surfaceY": 62,
+              "fullHeightColumnSha256": "8c96fa0fe5ec47325d613880e55235044e2c6f0a544dd1bd833b65f9f6b66f28",
+              "biome": "reterraforged:warm_beach"
+            }
+          ],
+          "reloadDigestsMatched": false,
+          "nativeSaveEverythingFlushCompleted": true
+        },
+        {
+          "mode": "reload",
+          "report": "docs\\validation\\server-neoforge-dev20-qualified-classic-water-reload.json",
+          "harnessExit": 1,
+          "status": "failed",
+          "instance": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\neoforge-server\\instances\\20261104T114535Z-58a0f8",
+          "fullChunkTargets": null,
+          "observations": null,
+          "reloadDigestsMatched": null,
+          "nativeSaveEverythingFlushCompleted": null
+        }
+      ]
     }
   ],
   "targetsManifest": "docs\\validation\\classic-biome-dev20-qualified-targets.json",
   "targetsManifestSha256": "160b6cef9352927111aa431d32531a330dfa4f814e2c0cabeb32baa29f6207a2",
-  "scope": "Six separate fresh worlds with two or three surveyed variant targets each; native FULL generation, source/stored agreement, forced save, and same-world reload column hashes. Default sixty-second watchdog remains enabled."
+  "scope": "Six separate fresh worlds with two or three surveyed variant targets each; native FULL generation, source/stored agreement, forced save, and same-world reload column hashes. Default sixty-second watchdog remains enabled.",
+  "error": "RuntimeError('Native neoforge water reload failed or artifact changed: docs\\\\validation\\\\server-neoforge-dev20-qualified-classic-water-reload.json')"
 }

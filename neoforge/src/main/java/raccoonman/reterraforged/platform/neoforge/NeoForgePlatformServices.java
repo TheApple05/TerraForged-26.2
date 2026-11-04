@@ -69,6 +69,23 @@ public final class NeoForgePlatformServices implements PlatformServices {
         return FMLLoader.getCurrent().getLoadingModList().getModFileById(id) != null;
     }
 
+    @Override public Biome biomeForExport(Biome biome) {
+        // A running server exposes modified generation/mob settings. Baking
+        // those into a new biome applies the same native modifiers twice.
+        var original = biome.modifiableBiomeInfo().getOriginalBiomeInfo();
+        var climate = original.climateSettings();
+        return new Biome.BiomeBuilder()
+            .hasPrecipitation(climate.hasPrecipitation())
+            .temperature(climate.temperature())
+            .temperatureAdjustment(climate.temperatureModifier())
+            .downfall(climate.downfall())
+            .putAttributes(biome.getAttributes())
+            .specialEffects(original.effects())
+            .generationSettings(original.generationSettings())
+            .mobSpawnSettings(original.mobSpawnSettings())
+            .build();
+    }
+
     @Override @SuppressWarnings({"unchecked", "rawtypes"})
     public <T> Registry<T> createRegistry(ResourceKey<? extends Registry<T>> key) {
         if (key.equals(NeoForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS)) {

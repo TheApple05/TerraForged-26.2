@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "loader": "neoforge",
+  "candidate": "dev21",
+  "productionJar": "neoforge\\build\\libs\\terraforged-revival-0.1.0-dev.21+26.2-neoforge.jar",
+  "productionJarSha256": "1c769f7971263ceb853e8a51fcaa8d80dc4d8dc7781ea55061a394ded706bc17",
+  "qaJar": "build\\qa\\neoforge-runtime-dev21-final\\terraforged-neoforge-runtime-qa.jar",
+  "qaJarSha256": "232fe46554e4fe8686e9f0a979184880fde08910e8357f6f15965d46c4ab1b8b",
+  "seed": 8675309,
+  "cases": [
+    {
+      "group": "pillars",
+      "targets": "docs\\validation\\classic-biome-dev19-pillar-locations.json",
+      "targetsSha256": "4354b56204282f56b797f6066f09744f76878b90fb866bfcd3b78c6f7c1dd362",
+      "biomes": [
+        "reterraforged:bryce",
+        "reterraforged:stone_forest"
+      ],
+      "runs": []
+    }
+  ],
+  "targetsManifest": "docs\\validation\\classic-biome-dev20-qualified-targets.json",
+  "targetsManifestSha256": "160b6cef9352927111aa431d32531a330dfa4f814e2c0cabeb32baa29f6207a2",
+  "scope": "Six separate fresh worlds with two or three surveyed variant targets each; native FULL generation, source/stored agreement, forced save, and same-world reload column hashes. Default sixty-second watchdog remains enabled.",
+  "error": "AttributeError(\"'NoneType' object has no attribute 'get'\")"
+}

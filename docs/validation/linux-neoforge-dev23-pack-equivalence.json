@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceExportReport": "docs\\validation\\server-neoforge-dev23-export.json",
+  "sourceExportReportSha256": "19155ebc255c3458b6637a27f2bf1d2cf86388eb72539f2528a1e50c358a96e7",
+  "zipPath": "C:\\Users\\Main\\Documents\\Codex\\TerraForged\\build\\qa\\linux-dev23\\neoforge-preset.zip",
+  "zipSha256": "95d916ce977740583724469fb97c1828238dccec5362b749ad51e9c8133bdbb7",
+  "files": 2044,
+  "everyMemberMatchesQualifiedExport": true,
+  "scope": "Packaging equivalence; requires separate native game load/generation evidence"
+}
