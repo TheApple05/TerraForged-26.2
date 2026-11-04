@@ -9,6 +9,7 @@ import raccoonman.reterraforged.world.worldgen.feature.chance.ChanceFeature;
 import raccoonman.reterraforged.world.worldgen.feature.template.TemplateFeature;
 
 public class RTFFeatures {
+	public static final Feature<ClassicPillarFeature.Config> CLASSIC_PILLAR = register("classic_pillar", new ClassicPillarFeature(ClassicPillarFeature.Config.CODEC));
 	public static final Feature<LegacyRandomPatchFeature.Config> LEGACY_RANDOM_PATCH = register("legacy_random_patch", new LegacyRandomPatchFeature(LegacyRandomPatchFeature.Config.CODEC));
 	public static final Feature<TemplateFeature.Config<?>> TEMPLATE = register("template", new TemplateFeature(TemplateFeature.Config.CODEC));
 	public static final Feature<BushFeature.Config> BUSH = register("bush", new BushFeature(BushFeature.Config.CODEC));

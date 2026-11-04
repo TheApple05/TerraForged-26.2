@@ -36,11 +36,11 @@ public class BiomeModifierData {
 		HolderSet<Biome> forests = HolderSet.direct(biomes.getOrThrow(Biomes.FOREST), biomes.getOrThrow(Biomes.DARK_FOREST));
 		HolderSet<Biome> swamps = HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP));
 
-		ctx.register(ADD_PRE_PROCESSING, prepend(GenerationStep.Decoration.RAW_GENERATION, placedFeatures.getOrThrow(RTFPlacedFeatures.ERODE)));
-		ctx.register(ADD_POST_PROCESSING, append(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, placedFeatures.getOrThrow(RTFPlacedFeatures.DECORATE_SNOW)));
+        if (preset.miscellaneous().erosionDecorator) ctx.register(ADD_PRE_PROCESSING, prepend(GenerationStep.Decoration.RAW_GENERATION, placedFeatures.getOrThrow(RTFPlacedFeatures.ERODE)));
+        if (preset.miscellaneous().naturalSnowDecorator || preset.miscellaneous().smoothLayerDecorator) ctx.register(ADD_POST_PROCESSING, append(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, placedFeatures.getOrThrow(RTFPlacedFeatures.DECORATE_SNOW)));
 		ctx.register(ADD_SWAMP_SURFACE, prepend(GenerationStep.Decoration.RAW_GENERATION, swamps, placedFeatures.getOrThrow(RTFPlacedFeatures.SWAMP_SURFACE)));
 		
-		ctx.register(REPLACE_ACACIA_TREES, replaceAcaciaTrees(placedFeatures));
+        if (preset.miscellaneous().customBiomeFeatures) ctx.register(REPLACE_ACACIA_TREES, replaceAcaciaTrees(placedFeatures));
 //		ctx.register(ADD_FOREST_GRASS, BiomeModifiers.add(Order.PREPEND, GenerationStep.Decoration.VEGETAL_DECORATION, forests, placedFeatures.getOrThrow(RTFPlacedFeatures.FOREST_GRASS)));
 	}
 	

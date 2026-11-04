@@ -1,6 +1,7 @@
 package raccoonman.reterraforged.world.worldgen.densityfunction;
 
 import java.util.function.Supplier;
+import java.lang.ref.WeakReference;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -45,17 +46,53 @@ public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) imp
 	}
 
 	public static class Cache2d {
-		private long lastPos = Long.MAX_VALUE;
-		private Cell cell = new Cell();
-		
-		public Cell getAndUpdate(WorldLookup lookup, int blockX, int blockZ, boolean sampleClimate) {
-			long packedPos = PosUtil.pack(blockX, blockZ);
-			if(this.lastPos != packedPos) {
-				lookup.applyCell(this.cell.reset(), blockX, blockZ, false, sampleClimate);
-				this.lastPos = packedPos;
-			}
-			return this.cell;
-		}
+        private final long[] positions;
+        private final Cell[] cells;
+        private final boolean reuseSingleCell;
+        private WeakReference<WorldLookup> owner = new WeakReference<>(null);
+        private boolean climate;
+        private int size;
+        private int next;
+
+        /** The global caller is thread-local and can reuse its one mutable cell. */
+        public Cache2d() { this(1, true); }
+
+        /** Small per-NoiseChunk cache; four interpolation corners must survive Y changes. */
+        public Cache2d(int capacity) { this(capacity, false); }
+
+        private Cache2d(int capacity, boolean reuseSingleCell) {
+            if (capacity < 1 || capacity > 64) throw new IllegalArgumentException("Cell cache capacity must be 1..64");
+            this.positions = new long[capacity];
+            this.cells = new Cell[capacity];
+            this.reuseSingleCell = reuseSingleCell;
+        }
+
+        public synchronized Cell getAndUpdate(WorldLookup lookup, int blockX, int blockZ, boolean sampleClimate) {
+            if (this.owner.get() != lookup || this.climate != sampleClimate) {
+                // A static ThreadLocal must neither retain an old world nor reuse its values.
+                this.owner = new WeakReference<>(lookup);
+                this.climate = sampleClimate;
+                this.size = this.next = 0;
+            }
+            long packedPos = PosUtil.pack(blockX, blockZ);
+            for (int index = 0; index < this.size; index++) {
+                if (this.positions[index] == packedPos) return this.cells[index];
+            }
+            int index = this.size < this.positions.length ? this.size : this.next;
+            Cell cell = this.reuseSingleCell && this.cells[index] != null ? this.cells[index].reset() : new Cell();
+            try {
+                lookup.applyCell(cell, blockX, blockZ, false, sampleClimate);
+            } catch (RuntimeException | Error failure) {
+                this.size = this.next = 0;
+                throw failure;
+            }
+            this.positions[index] = packedPos;
+            this.cells[index] = cell;
+            if (this.size < this.positions.length) this.size++;
+            this.next = (index + 1) % this.positions.length;
+            // Multi-entry snapshots are not reset on eviction while another reader holds one.
+            return cell;
+        }
 	}
 	
 	public class CacheChunk implements MarkerFunction.Mapped {
@@ -66,7 +103,7 @@ public record CellSampler(Supplier<WorldLookup> deferredLookup, Field field) imp
 		
 		public CacheChunk(@Nullable Tile.Chunk chunk, @Nullable Cache2d cache2d, int chunkX, int chunkZ) {
 			this.chunk = chunk;
-			this.cache2d = cache2d != null ? cache2d : new Cache2d();
+			this.cache2d = cache2d != null ? cache2d : new Cache2d(16);
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
 		}

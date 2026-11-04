@@ -18,7 +18,7 @@ import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 
 public final class PresetNoiseGeneratorSettings {
 	
-	public static void bootstrap(Preset preset, BootstrapContext<NoiseGeneratorSettings> ctx) {
+	public static void bootstrap(Preset preset, BootstrapContext<NoiseGeneratorSettings> ctx, net.minecraft.core.HolderLookup.Provider original) {
 		HolderGetter<DensityFunction> densityFunctions = ctx.lookup(Registries.DENSITY_FUNCTION);
 		HolderGetter<NormalNoise.NoiseParameters> noiseParams = ctx.lookup(Registries.NOISE);
 		HolderGetter<Noise> noises = ctx.lookup(RTFRegistries.NOISE);
@@ -34,7 +34,7 @@ public final class PresetNoiseGeneratorSettings {
 			NoiseSettings.create(-worldDepth, worldDepth + worldHeight, 1, 2), 
 			Blocks.STONE.defaultBlockState(), Blocks.WATER.defaultBlockState(), 
 			PresetNoiseRouterData.overworld(preset, densityFunctions, noiseParams, noises),
-			PresetSurfaceRuleData.overworld(preset, densityFunctions, noises, ctx.lookup(Registries.BIOME)),
+			PresetSurfaceRuleData.overworld(preset, densityFunctions, noises, original, ctx),
 //			i want to be able to do it with parameter points :(
 //			properties.spawnType.getParameterPoints(), 
 			ImmutableList.of(),

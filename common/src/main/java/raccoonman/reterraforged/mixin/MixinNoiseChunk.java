@@ -62,8 +62,16 @@ class MixinNoiseChunk {
 		if((Object) randomState instanceof RTFRandomState rtfRandomState && cellCountXZ > 1 && (generatorContext = rtfRandomState.generatorContext()) != null) {
 			this.chunk = generatorContext.cache.provideAtChunk(this.chunkX, this.chunkZ).getChunkReader(this.chunkX, this.chunkZ);
 		}
-		this.cache2d = new CellSampler.Cache2d();
+		this.cache2d = new CellSampler.Cache2d(16);
 	}
+
+    @Inject(method = "cachedClimateSampler", at = @At("RETURN"))
+    private void reterraforged$classicBiomeContext(NoiseRouter router, java.util.List<net.minecraft.world.level.biome.Climate.ParameterPoint> points,
+            CallbackInfoReturnable<net.minecraft.world.level.biome.Climate.Sampler> callback) {
+        if ((Object) this.randomState instanceof RTFRandomState state) {
+            ((raccoonman.reterraforged.world.worldgen.biome.RTFClimateSampler) (Object) callback.getReturnValue()).setGeneratorContext(state.generatorContext());
+        }
+    }
 
 	@ModifyVariable(
 		method = "<init>",

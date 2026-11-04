@@ -10,12 +10,25 @@ import net.minecraft.world.level.storage.ServerLevelData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import raccoonman.reterraforged.world.worldgen.GeneratorContext;
 import raccoonman.reterraforged.world.worldgen.RTFRandomState;
 import raccoonman.reterraforged.world.worldgen.SpawnSearchContext;
 
 @Mixin(MinecraftServer.class)
 class MixinMinecraftServer {
+    @Inject(method = "stopServer()V", at = @At("TAIL"), require = 1)
+    private void reterraforged$releaseWorldCaches(CallbackInfo callback) {
+        // Vanilla has drained chunk work and closed levels at this point.
+        for (ServerLevel level : ((MinecraftServer) (Object) this).getAllLevels()) {
+            if ((Object) level.getChunkSource().randomState() instanceof RTFRandomState state) {
+                GeneratorContext context = state.generatorContext();
+                if (context != null) context.close();
+            }
+        }
+    }
+
     @Redirect(method = "setInitialSpawn", require = 1, at = @At(
         value = "INVOKE",
         target = "Lnet/minecraft/world/level/biome/Climate$Sampler;findSpawnPosition()Lnet/minecraft/core/BlockPos;"

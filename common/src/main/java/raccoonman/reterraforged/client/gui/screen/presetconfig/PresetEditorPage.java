@@ -30,7 +30,6 @@ import raccoonman.reterraforged.client.gui.screen.page.BisectedPage;
 import raccoonman.reterraforged.client.gui.screen.presetconfig.PresetListPage.PresetEntry;
 import raccoonman.reterraforged.client.gui.widget.Slider;
 import raccoonman.reterraforged.client.gui.widget.ValueButton;
-import raccoonman.reterraforged.concurrent.cache.CacheManager;
 import raccoonman.reterraforged.config.PerformanceConfig;
 import raccoonman.reterraforged.data.worldgen.preset.settings.Preset;
 import raccoonman.reterraforged.data.worldgen.preset.settings.SpawnType;
@@ -126,6 +125,7 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	    private final DynamicTexture texture = new DynamicTexture(this.textureId::toString, new NativeImage(SIZE, SIZE, false));
 	    private boolean closed;
 	    private Tile tile;
+        private GeneratorContext generatorContext;
 	    private int centerX, centerZ;
 	    
 	    private String hoveredCoords = "";
@@ -159,16 +159,13 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	        Preset preset = presets.getOrThrow(Preset.KEY).value();
 	        WorldSettings world = preset.world();
 	        WorldSettings.Properties properties = world.properties;
-	        
-	        try {
-				CacheManager.clear();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+            this.closeGeneration();
 			PerformanceConfig config = PerformanceConfig.read(PerformanceConfig.DEFAULT_FILE_PATH)
 				.resultOrPartial(RTFCommon.LOGGER::error)
 				.orElseGet(PerformanceConfig::makeDefault);
+			raccoonman.reterraforged.concurrent.ThreadPools.configure(config.threadCount());
 	        GeneratorContext generatorContext = GeneratorContext.makeUncached(preset, noises, (int) settings.options().seed(), FACTOR, 0, config.batchCount());
+            this.generatorContext = generatorContext;
 	        
 	        this.centerX = 0;
 	        this.centerZ = 0;
@@ -205,12 +202,13 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 			Minecraft.getInstance().getTextureManager().release(this.textureId);
 			this.closed = true;
 			}
-	    	try {
-				CacheManager.clear();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+            this.closeGeneration();
 	    }
+
+        private void closeGeneration() {
+            if (this.tile != null) { this.tile.close(); this.tile = null; }
+            if (this.generatorContext != null) { this.generatorContext.close(); this.generatorContext = null; }
+        }
 
 	    @Override
 	    public void extractContents(GuiGraphicsExtractor guiGraphics, int mx, int my, float partialTicks) {

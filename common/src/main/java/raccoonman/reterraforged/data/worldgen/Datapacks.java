@@ -62,6 +62,7 @@ public class Datapacks {
 		packGenerator.addProvider((output) -> {
 			return new RTFBlockTagsProvider(preset, packOutput, lookup);
 		});
+		packGenerator.addProvider((output) -> new raccoonman.reterraforged.data.worldgen.tags.ClassicBiomeTagsProvider(packOutput, lookup, registryAccess));
 		packGenerator.addProvider((output) -> {
 			return PackMetadataGenerator.forFeaturePack(packOutput, Component.translatable(RTFTranslationKeys.PRESET_METADATA_DESCRIPTION));
 		});

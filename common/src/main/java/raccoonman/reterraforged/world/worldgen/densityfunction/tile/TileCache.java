@@ -11,7 +11,7 @@ import raccoonman.reterraforged.concurrent.cache.CacheManager;
 import raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator;
 import raccoonman.reterraforged.world.worldgen.util.PosUtil;
 
-public class TileCache implements TileFactory {
+public class TileCache implements TileFactory, AutoCloseable {
 	private int tileSize;
 	private boolean queue;
 	private Cache<CacheEntry<Entry>> cache;
@@ -72,6 +72,9 @@ public class TileCache implements TileFactory {
 			return CacheEntry.supply(this.generator.generate(tileX, tileZ).thenApply(Entry::new));
 		});
 	}
+
+    @Override
+    public void close() { this.cache.close(); }
 	
 	private class Entry {
 		private AtomicInteger refCount;

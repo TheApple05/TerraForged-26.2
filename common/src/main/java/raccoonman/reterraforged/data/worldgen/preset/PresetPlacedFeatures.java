@@ -28,6 +28,8 @@ import raccoonman.reterraforged.data.worldgen.preset.settings.Preset;
 import raccoonman.reterraforged.world.worldgen.feature.placement.RTFPlacementModifiers;
 
 public class PresetPlacedFeatures {
+	public static final ResourceKey<PlacedFeature> BRYCE_SURFACE = createKey("bryce_surface");
+	public static final ResourceKey<PlacedFeature> STONE_FOREST_SURFACE = createKey("stone_forest_surface");
 	public static final ResourceKey<PlacedFeature> ERODE = createKey("erode");
 	public static final ResourceKey<PlacedFeature> DECORATE_SNOW = createKey("decorate_snow");
 	public static final ResourceKey<PlacedFeature> SWAMP_SURFACE = createKey("swamp_surface");
@@ -81,6 +83,8 @@ public class PresetPlacedFeatures {
 	public static void bootstrap(Preset preset, BootstrapContext<PlacedFeature> ctx) {
 		HolderGetter<ConfiguredFeature<?, ?>> features = ctx.lookup(Registries.CONFIGURED_FEATURE);
 		MiscellaneousSettings miscellaneous = preset.miscellaneous();
+		PlacementUtils.register(ctx, BRYCE_SURFACE, features.getOrThrow(PresetConfiguredFeatures.BRYCE_SURFACE));
+		PlacementUtils.register(ctx, STONE_FOREST_SURFACE, features.getOrThrow(PresetConfiguredFeatures.STONE_FOREST_SURFACE));
 
 		PlacementModifier disableOnOverworld = RTFPlacementModifiers.blacklistDimensions(LevelStem.OVERWORLD);
 		

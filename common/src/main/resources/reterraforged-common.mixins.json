@@ -6,6 +6,7 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "MixinNoiseChunk",
+    "MixinClimateSampler",
     "MixinRandomState",
     "MixinChunkMap",
     "MixinUtil",
@@ -16,6 +17,9 @@
     "MixinMinecraftServer",
     "MixinSpawnFinder",
     "terrablender.MixinParameterList",
+    "terrablender.MixinLevelUtils",
+    "terrablender.MultiNoiseBiomeSourceInvoker",
+    "terrablender.MixinNoiseBasedChunkGenerator",
     "terrablender.MixinClimateSampler",
     "terrablender.MixinTargetPoint",
     "terrablender.MixinNoiseChunk",
@@ -23,6 +27,7 @@
   ],
   "client": [
     "ScreenInvoker",
+    "MixinWorldCreationUiState",
     "CreateWorldScreenInvoker"
   ],
   "injectors": {

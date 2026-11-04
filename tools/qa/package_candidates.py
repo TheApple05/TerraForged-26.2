@@ -82,6 +82,12 @@ def main() -> int:
     args = parser.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9.+_-]+", args.version):
         parser.error("Version must contain only alphanumeric characters and . + _ -")
+    if args.report.exists():
+        parser.error("Refusing to replace prior build evidence; use a new candidate version and report")
+    for prefix, classifier in (("", ""), ("neoforge/", "-neoforge")):
+        candidate = ROOT / f"{prefix}build/libs/terraforged-revival-{args.version}{classifier}.jar"
+        if candidate.exists():
+            parser.error("Refusing to replace an existing candidate JAR: " + str(candidate))
     started = dt.datetime.now(dt.timezone.utc).isoformat()
     with ThreadPoolExecutor(max_workers=2) as pool:
         reports = list(pool.map(lambda loader: build(loader, args), ("fabric", "neoforge")))

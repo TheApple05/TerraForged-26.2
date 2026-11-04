@@ -21,6 +21,31 @@ import raccoonman.reterraforged.world.worldgen.surface.rule.StrataRule.Strata;
 
 public final class PresetSurfaceRuleData {
 
+    public static SurfaceRules.RuleSource overworld(Preset preset, HolderGetter<DensityFunction> densityFunctions, HolderGetter<Noise> noise,
+            net.minecraft.core.HolderLookup.Provider original, net.minecraft.data.worldgen.BootstrapContext<?> context) {
+        SurfaceRules.RuleSource vanilla = SurfaceRuleData.overworld(original.lookupOrThrow(net.minecraft.core.registries.Registries.BIOME));
+        var json = SurfaceRules.RuleSource.CODEC.encodeStart(original.createSerializationContext(com.mojang.serialization.JsonOps.INSTANCE), vanilla).getOrThrow();
+        if (preset.miscellaneous().classicBiomeVariants) expandClassicConditions(json);
+        vanilla = SurfaceRules.RuleSource.CODEC.parse(raccoonman.reterraforged.data.worldgen.BootstrapContextOps.forDecoding(context), json).getOrThrow();
+        return overworld(preset, densityFunctions, noise, vanilla);
+    }
+
+    private static void expandClassicConditions(com.google.gson.JsonElement json) {
+        if (json.isJsonObject()) {
+            var object = json.getAsJsonObject();
+            if (object.has("biome_is") && object.get("biome_is").isJsonArray()) {
+                var entries = object.getAsJsonArray("biome_is");
+                var names = new java.util.HashSet<String>();
+                entries.forEach(entry -> { if (entry.isJsonPrimitive()) names.add(entry.getAsString()); });
+                for (var variant : raccoonman.reterraforged.world.worldgen.biome.ClassicBiomes.VARIANTS) {
+                    var parent = variant.key().equals(PresetBiomeData.STEPPE) ? net.minecraft.world.level.biome.Biomes.SAVANNA : variant.parent();
+                    if (names.contains(parent.identifier().toString()) && !names.contains(variant.key().identifier().toString())) entries.add(variant.key().identifier().toString());
+                }
+            }
+            object.entrySet().forEach(entry -> expandClassicConditions(entry.getValue()));
+        } else if (json.isJsonArray()) json.getAsJsonArray().forEach(PresetSurfaceRuleData::expandClassicConditions);
+    }
+
     // maybe have a custom meadow or cherry forest surface ?
     public static SurfaceRules.RuleSource overworld(Preset preset, HolderGetter<DensityFunction> densityFunctions, HolderGetter<Noise> noise, HolderGetter<Biome> biomes) {
         return overworld(preset, densityFunctions, noise, SurfaceRuleData.overworld(biomes));

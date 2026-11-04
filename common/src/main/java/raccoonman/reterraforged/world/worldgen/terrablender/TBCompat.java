@@ -11,7 +11,11 @@ import net.minecraft.world.level.levelgen.DensityFunction;
 import raccoonman.reterraforged.platform.ModLoaderUtil;
 
 public class TBCompat {
-	public static final List<String> TERRABLENDER_COMPAT_MIXINS = ImmutableList.of(mixinClass("terrablender.MixinClimateSampler"), mixinClass("terrablender.MixinNoiseChunk"), mixinClass("terrablender.MixinParameterList"), mixinClass("terrablender.MixinTargetPoint"), mixinClass("terrablender.MixinRegistry"));
+	public static final List<String> TERRABLENDER_COMPAT_MIXINS = ImmutableList.of(
+        mixinClass("terrablender.MixinClimateSampler"), mixinClass("terrablender.MixinNoiseChunk"),
+        mixinClass("terrablender.MixinParameterList"), mixinClass("terrablender.MixinTargetPoint"),
+        mixinClass("terrablender.MixinRegistry"), mixinClass("terrablender.MixinLevelUtils"),
+        mixinClass("terrablender.MixinNoiseBasedChunkGenerator"), mixinClass("terrablender.MultiNoiseBiomeSourceInvoker"));
 	
 	public static boolean isEnabled() {
 		return ModLoaderUtil.isLoaded("terrablender");

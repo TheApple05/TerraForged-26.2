@@ -112,13 +112,15 @@ class MixinRandomState {
 				PerformanceConfig config = PerformanceConfig.read(PerformanceConfig.DEFAULT_FILE_PATH)
 					.resultOrPartial(RTFCommon.LOGGER::error)
 					.orElseGet(PerformanceConfig::makeDefault);
-				this.generatorContext = GeneratorContext.makeCached(this.preset, noises, (int) this.seed, config.tileSize(), config.batchCount(), ThreadPools.availableProcessors() > 4);
+				ThreadPools.configure(config.threadCount());
+				this.generatorContext = GeneratorContext.makeCached(this.preset, noises, (int) this.seed, config.tileSize(), config.batchCount(), config.threadCount() > 4);
 			}
 		}, () -> {
 			if(this.hasContext) {
 //				throw new IllegalStateException("Missing preset!");
 			}
 		});
+		((raccoonman.reterraforged.world.worldgen.biome.RTFClimateSampler) (Object) this.sampler).setGeneratorContext(this.generatorContext);
 	}
 	
 	@Nullable

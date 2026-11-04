@@ -55,6 +55,8 @@ import raccoonman.reterraforged.world.worldgen.feature.template.paste.PasteConfi
 import raccoonman.reterraforged.world.worldgen.feature.template.placement.TemplatePlacements;
 
 public class PresetConfiguredFeatures {
+	public static final ResourceKey<ConfiguredFeature<?, ?>> BRYCE_SURFACE = createKey("bryce_surface");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> STONE_FOREST_SURFACE = createKey("stone_forest_surface");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> ERODE = createKey("erode");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DECORATE_SNOW = createKey("decorate_snow");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_SURFACE = createKey("swamp_surface");
@@ -104,6 +106,8 @@ public class PresetConfiguredFeatures {
 	
 	public static void bootstrap(Preset preset, BootstrapContext<ConfiguredFeature<?, ?>> ctx) {
 		MiscellaneousSettings miscellaneous = preset.miscellaneous();
+		FeatureUtils.register(ctx, BRYCE_SURFACE, RTFFeatures.CLASSIC_PILLAR, new raccoonman.reterraforged.world.worldgen.feature.ClassicPillarFeature.Config(false));
+		FeatureUtils.register(ctx, STONE_FOREST_SURFACE, RTFFeatures.CLASSIC_PILLAR, new raccoonman.reterraforged.world.worldgen.feature.ClassicPillarFeature.Config(true));
 
 		ErodeFeature.Config erodeConfig = new ErodeFeature.Config(30, 140, 40, 95, 0.65F, 0.475F, 0.4F, 6F / 255F, 3F / 255F, 256, 3F / 255F, 0.55F);
 		if(miscellaneous.erosionDecorator) {

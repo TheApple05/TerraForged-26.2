@@ -41,6 +41,7 @@ public class RTFCommon {
 		Domains.bootstrap();
 		CurveFunctions.bootstrap();
 		RTFFeatures.bootstrap();
+		RegistryUtil.register(net.minecraft.core.registries.BuiltInRegistries.BIOME_SOURCE, "classic_variants", raccoonman.reterraforged.world.worldgen.biome.ClassicBiomeSource.CODEC);
 		RTFHeightProviderTypes.bootstrap();
 		RTFFloatProviderTypes.bootstrap();
 		BiomeModifiers.bootstrap();

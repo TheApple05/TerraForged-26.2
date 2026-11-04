@@ -32,14 +32,8 @@ public final class PresetBiomeData {
     public static final ResourceKey<Biome> TAIGA_SCRUB = createKey("taiga_scrub");
     public static final ResourceKey<Biome> WARM_BEACH = createKey("warm_beach");
 	
-	public static void bootstrap(Preset preset, BootstrapContext<Biome> ctx) {
-		MiscellaneousSettings miscellaneousSettings = preset.miscellaneous();
-		
-		if(miscellaneousSettings.customBiomeFeatures) {
-			HolderGetter<PlacedFeature> placedFeatures = ctx.lookup(Registries.PLACED_FEATURE);
-			HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarvers = ctx.lookup(Registries.CONFIGURED_CARVER);
-
-		}
+	public static void bootstrap(Preset preset, BootstrapContext<Biome> ctx, net.minecraft.core.HolderLookup.Provider original) {
+		raccoonman.reterraforged.world.worldgen.biome.ClassicBiomes.bootstrap(ctx, original);
 	}
 	
     private static ResourceKey<Biome> createKey(String string) {

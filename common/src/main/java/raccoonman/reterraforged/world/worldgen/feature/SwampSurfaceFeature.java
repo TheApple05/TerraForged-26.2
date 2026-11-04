@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import raccoonman.reterraforged.world.worldgen.feature.SwampSurfaceFeature.Config;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noises;
+import raccoonman.reterraforged.data.worldgen.preset.PresetBiomeData;
 
 public class SwampSurfaceFeature extends Feature<Config> {
 	private static final Noise MATERIAL_NOISE = makeMaterialNoise();
@@ -38,6 +39,7 @@ public class SwampSurfaceFeature extends Feature<Config> {
 		ChunkGenerator generator = ctx.chunkGenerator();
 		BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 		int waterY = generator.getSeaLevel() - 1;
+		boolean changed = false;
 		
 		for(int x = 0; x < 16; x++) {
 			for(int z = 0; z < 16; z++) {
@@ -47,16 +49,18 @@ public class SwampSurfaceFeature extends Feature<Config> {
 				double noise = Biome.BIOME_INFO_NOISE.getValue(worldX * 0.25D, worldZ * 0.25D, false);
 				BlockState filler = getMaterial(worldX, waterY, worldZ, waterY, config);
 
-				if(chunk.getNoiseBiome(QuartPos.fromBlock(x), QuartPos.fromBlock(surfaceY), QuartPos.fromBlock(z)).is(Biomes.SWAMP)) {
+				var biome = chunk.getNoiseBiome(QuartPos.fromBlock(worldX), QuartPos.fromBlock(surfaceY), QuartPos.fromBlock(worldZ));
+				if(biome.is(Biomes.SWAMP) || biome.is(PresetBiomeData.MARSHLAND)) {
 			        if (noise > 0.0D) {
 			            for (int y = surfaceY; y >= surfaceY - 10; --y) {
-			                pos.set(x, y, z);
+				                pos.set(worldX, y, worldZ);
 			                if (chunk.getBlockState(pos).isAir()) {
 			                    continue;
 			                }
 
 			                if (y == waterY && !chunk.getFluidState(pos).isEmpty()) {
 			                    chunk.setBlockState(pos, filler);
+				                    changed = true;
 			                }
 			                break;
 			            }
@@ -64,12 +68,13 @@ public class SwampSurfaceFeature extends Feature<Config> {
 			        
 			        int y = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z);
 			        if (y <= waterY) {
-			            chunk.setBlockState(pos.set(x, y, z), getMaterial(x, y, z, waterY, config));
+			            chunk.setBlockState(pos.set(worldX, y, worldZ), getMaterial(worldX, y, worldZ, waterY, config));
+			            changed = true;
 			        }					
 				}
 			}	
 		}
-		return false;
+		return changed;
 	}
 
     private static BlockState getMaterial(int x, int y, int z, int waterY, Config config) {

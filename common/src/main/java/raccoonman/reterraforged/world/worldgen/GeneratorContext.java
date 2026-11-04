@@ -11,8 +11,11 @@ import raccoonman.reterraforged.world.worldgen.densityfunction.tile.TileCache;
 import raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.util.Seed;
+import raccoonman.reterraforged.concurrent.cache.Cache;
+import raccoonman.reterraforged.concurrent.cache.CacheManager;
 
-public class GeneratorContext {
+public class GeneratorContext implements AutoCloseable {
+    private final java.util.List<Cache<?>> ownedCaches;
     public Seed seed;
     public Levels levels;
     public Preset preset;
@@ -27,9 +30,17 @@ public class GeneratorContext {
         this.noiseLookup = noiseLookup;
         this.seed = new Seed(seed);
         this.levels = new Levels(preset.world().properties.terrainScaler(), preset.world().properties.seaLevel);
-        this.generator = new TileGenerator(Heightmap.make(this), new WorldFilters(this), tileSize, tileBorder, batchCount);
+        var captured = CacheManager.capture(() -> new TileGenerator(Heightmap.make(this), new WorldFilters(this), tileSize, tileBorder, batchCount));
+        this.generator = captured.value();
+        this.ownedCaches = captured.caches();
         this.cache = cache;
         this.lookup = new WorldLookup(this);
+    }
+
+    @Override
+    public void close() {
+        if (this.cache != null) this.cache.close();
+        this.ownedCaches.forEach(Cache::close);
     }
 
     public static GeneratorContext makeCached(Preset preset, HolderGetter<Noise> noiseLookup, int seed, int tileSize, int batchCount, boolean queue) {

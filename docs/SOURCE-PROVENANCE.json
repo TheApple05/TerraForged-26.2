@@ -22,9 +22,17 @@
       "commit": "3ada751ac25cd3eecee5d198870a3abb89734f52",
       "upstream_version": "0.2.16",
       "minecraft": "1.16.5",
-      "role": "Original stable feature and visual reference; no source tree imported",
+      "role": "Original stable reference; classic biome definitions, surface shape and mask equations adapted with attribution, without importing the whole tree",
       "license": "MIT; individual file headers also apply",
       "notice": "licenses/TerraForged-MIT.txt"
+    },
+    {
+      "repository": "https://github.com/TerraForged/Noise2D",
+      "branch": "master",
+      "commit": "a3c7f2d9e229b54b15783f8a202eb792ea942d39",
+      "role": "LegacyTerrace scalar arithmetic adaptation and independently compiled development oracle; not a substitute for the missing exact Engine revision",
+      "license": "MIT; individual file headers also apply",
+      "notice": "licenses/Noise2D-MIT.txt"
     }
   ]
 }

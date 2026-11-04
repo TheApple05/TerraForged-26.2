@@ -54,11 +54,20 @@ public record Preset(WorldSettings world, CaveSettings caves, ClimateSettings cl
 		this.addPatch(builder, Registries.CONFIGURED_CARVER, (preset, ctx) -> {
 			PresetConfiguredCarvers.bootstrap(preset, ctx);	
 		});
-		this.addPatch(builder, Registries.PLACED_FEATURE, PresetPlacedFeatures::bootstrap);
-		this.addPatch(builder, Registries.BIOME, PresetBiomeData::bootstrap);
+		this.addPatch(builder, Registries.PLACED_FEATURE, (preset, ctx) -> {
+			PresetPlacedFeatures.bootstrap(preset, ctx);
+			raccoonman.reterraforged.world.worldgen.biome.ClassicBiomes.bootstrapPlacedFeatures(ctx, registries);
+		});
+		this.addPatch(builder, Registries.BIOME, (preset, ctx) -> PresetBiomeData.bootstrap(preset, ctx, registries));
 		this.addPatch(builder, Registries.DIMENSION_TYPE, PresetDimensionTypes::bootstrap);
 		this.addPatch(builder, Registries.DENSITY_FUNCTION, PresetNoiseRouterData::bootstrap);
-		this.addPatch(builder, Registries.NOISE_SETTINGS, PresetNoiseGeneratorSettings::bootstrap);
+		this.addPatch(builder, Registries.NOISE_SETTINGS, (preset, ctx) -> PresetNoiseGeneratorSettings.bootstrap(preset, ctx, registries));
+		this.addPatch(builder, Registries.WORLD_PRESET, (preset, ctx) -> raccoonman.reterraforged.data.worldgen.preset.PresetWorldPresetData.bootstrap(preset, ctx, registries));
+		// Client world-creation lookups intentionally exclude the DIMENSIONS layer.
+		// RegistrySetBuilder requires every patched key to exist in its original view.
+		if (registries.lookup(Registries.LEVEL_STEM).isPresent()) {
+			this.addPatch(builder, Registries.LEVEL_STEM, (preset, ctx) -> raccoonman.reterraforged.data.worldgen.preset.PresetWorldPresetData.bootstrapDimensions(preset, ctx, registries));
+		}
 		return raccoonman.reterraforged.data.worldgen.RegistryPatches.build(builder, registries);
 	}
 	

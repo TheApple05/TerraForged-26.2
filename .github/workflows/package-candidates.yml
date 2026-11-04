@@ -35,10 +35,26 @@ jobs:
           else
             bash ./gradlew jar portToolchain -PexperimentalPackage --console=plain
           fi
+      - name: Verify packaged cache lifecycle and biome policy
+        shell: bash
+        run: |
+          prefix=""
+          if [ "${{ matrix.loader }}" = "neoforge" ]; then prefix="neoforge/"; fi
+          candidates=("${prefix}"build/libs/terraforged-revival-*.jar)
+          test "${#candidates[@]}" -eq 1
+          candidate="${candidates[0]}"
+          classpath="${prefix}build/qa/target/compile-classpath.txt"
+          python3 tools/qa/verify_cache_lifecycle.py --java-home "$JAVA_HOME" --candidate-only --production-jar "$candidate" --classpath-file "$classpath" --report build/qa/ci/cache-lifecycle.json
+          if [ "${{ matrix.loader }}" = "fabric" ]; then
+            python3 tools/verify_classic_biome_policy.py --java-home "$JAVA_HOME" --production-jar "$candidate" --classpath-file "$classpath" --report build/qa/ci/classic-biome-policy.json
+          fi
+          python3 tools/verify_classic_pillars.py --java-home "$JAVA_HOME" --report build/qa/ci/classic-pillar-math.json
       - name: Retain experimental candidate
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: terraforged-26.2-${{ matrix.loader }}-${{ github.sha }}
-          path: ${{ matrix.loader == 'neoforge' && 'neoforge/build/libs/*.jar' || 'build/libs/*.jar' }}
+          path: |
+            ${{ matrix.loader == 'neoforge' && 'neoforge/build/libs/*.jar' || 'build/libs/*.jar' }}
+            build/qa/ci/**
           if-no-files-found: error
           retention-days: 14

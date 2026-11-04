@@ -17,7 +17,8 @@ public class MiscellaneousSettings {
 		Codec.BOOL.fieldOf("vanillaLavaLakes").forGetter((s) -> s.vanillaLavaLakes),
 		Codec.BOOL.fieldOf("vanillaLavaSprings").forGetter((s) -> s.vanillaLavaSprings),
 		Codec.FLOAT.fieldOf("mountainBiomeUsage").forGetter((s) -> s.mountainBiomeUsage),
-		Codec.FLOAT.fieldOf("volcanoBiomeUsage").forGetter((s) -> s.volcanoBiomeUsage)
+		Codec.FLOAT.fieldOf("volcanoBiomeUsage").forGetter((s) -> s.volcanoBiomeUsage),
+		Codec.BOOL.optionalFieldOf("classicBiomeVariants", false).forGetter((s) -> s.classicBiomeVariants)
 	).apply(instance, MiscellaneousSettings::new));
 	
 	public boolean smoothLayerDecorator;
@@ -28,6 +29,7 @@ public class MiscellaneousSettings {
 	public boolean plainStoneErosion;
 	public boolean naturalSnowDecorator;
 	public boolean customBiomeFeatures;
+	public boolean classicBiomeVariants;
 	public boolean vanillaSprings;
 	public boolean vanillaLavaLakes;
 	public boolean vanillaLavaSprings;
@@ -49,6 +51,10 @@ public class MiscellaneousSettings {
 	    float mountainBiomeUsage,
 	    float volcanoBiomeUsage
 	) {
+		this(smoothLayerDecorator, strataRegionSize, strataDecorator, oreCompatibleStoneOnly, erosionDecorator, plainStoneErosion, naturalSnowDecorator, customBiomeFeatures, vanillaSprings, vanillaLavaLakes, vanillaLavaSprings, mountainBiomeUsage, volcanoBiomeUsage, true);
+	}
+
+	public MiscellaneousSettings(boolean smoothLayerDecorator, int strataRegionSize, boolean strataDecorator, boolean oreCompatibleStoneOnly, boolean erosionDecorator, boolean plainStoneErosion, boolean naturalSnowDecorator, boolean customBiomeFeatures, boolean vanillaSprings, boolean vanillaLavaLakes, boolean vanillaLavaSprings, float mountainBiomeUsage, float volcanoBiomeUsage, boolean classicBiomeVariants) {
 		this.smoothLayerDecorator = smoothLayerDecorator;
 		this.strataRegionSize = strataRegionSize;
 		this.strataDecorator = strataDecorator;
@@ -57,6 +63,7 @@ public class MiscellaneousSettings {
 		this.plainStoneErosion = plainStoneErosion;
 		this.naturalSnowDecorator = naturalSnowDecorator;
 		this.customBiomeFeatures = customBiomeFeatures;
+		this.classicBiomeVariants = classicBiomeVariants;
 		this.vanillaSprings = vanillaSprings;
 		this.vanillaLavaLakes = vanillaLavaLakes;
 		this.vanillaLavaSprings = vanillaLavaSprings;
@@ -65,6 +72,6 @@ public class MiscellaneousSettings {
 	}
 	
 	public MiscellaneousSettings copy() {
-		return new MiscellaneousSettings(this.smoothLayerDecorator, this.strataRegionSize, this.strataDecorator, this.oreCompatibleStoneOnly, this.erosionDecorator, this.plainStoneErosion, this.naturalSnowDecorator, this.customBiomeFeatures, this.vanillaSprings, this.vanillaLavaLakes, this.vanillaLavaSprings, this.mountainBiomeUsage, this.volcanoBiomeUsage);
+		return new MiscellaneousSettings(this.smoothLayerDecorator, this.strataRegionSize, this.strataDecorator, this.oreCompatibleStoneOnly, this.erosionDecorator, this.plainStoneErosion, this.naturalSnowDecorator, this.customBiomeFeatures, this.vanillaSprings, this.vanillaLavaLakes, this.vanillaLavaSprings, this.mountainBiomeUsage, this.volcanoBiomeUsage, this.classicBiomeVariants);
 	}
 }

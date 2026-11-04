@@ -16,6 +16,10 @@ Imported source: <https://github.com/racoonman2/ReTerraForged/tree/29239f1f164d1
 
 Copyright (c) 2023 ReTerraForged. Credit to racoonman2 and the contributors to that project. The root [LICENSE](LICENSE) and [preserved copy](licenses/ReTerraForged-MIT.txt) contain the upstream MIT grant. Individual file notices also apply.
 
+## Noise2D classic terrace arithmetic
+
+`ClassicPillarMath` adapts the MIT-licensed `LegacyTerrace` equations from [TerraForged/Noise2D](https://github.com/TerraForged/Noise2D/tree/a3c7f2d9e229b54b15783f8a202eb792ea942d39). The original source header credits Copyright (c) 2020 TerraForged; the repository license credits Copyright (c) 2018 dags. Both source attribution and the [original license](licenses/Noise2D-MIT.txt) are retained. The independently compiled development oracle, exact revision and source fingerprints are recorded in `tests/terrain/classic-pillar-reference.json`. This does not establish the missing original Engine revision or identical classic geology.
+
 ## Forge LanguageProvider component
 
 `common/src/main/java/raccoonman/reterraforged/client/data/LanguageProvider.java` states:
