@@ -30,6 +30,7 @@ def main() -> int:
     parser.add_argument("--continent", action="store_true", help="Include the optional genuine Java continent geometry oracle (Fabric QA only).")
     parser.add_argument("--populators", action="store_true", help="Include the optional genuine Java region/terrain blending oracle (Fabric QA only).")
     parser.add_argument("--terrain-factories", action="store_true", help="Include the optional genuine Java full terrain-factory oracle (Fabric QA only).")
+    parser.add_argument("--terrain-provider", action="store_true", help="Include the optional genuine Java provider/volcano oracle (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -63,6 +64,8 @@ def main() -> int:
         sources.append(ROOT / "horizon/tests/java/NativePopulatorProbe.java")
     if args.terrain_factories:
         sources.append(ROOT / "horizon/tests/java/NativeTerrainFactoryProbe.java")
+    if args.terrain_provider:
+        sources.append(ROOT / "horizon/tests/java/NativeTerrainProviderProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
@@ -91,6 +94,8 @@ def main() -> int:
             archive.write(ROOT / "horizon/tests/inputs/populators-v1.json", "terraforged-qa-populators.json")
         if args.terrain_factories:
             archive.write(ROOT / "horizon/tests/inputs/terrain-factories-v1.json", "terraforged-qa-terrain-factories.json")
+        if args.terrain_provider:
+            archive.write(ROOT / "horizon/tests/inputs/terrain-provider-v1.json", "terraforged-qa-terrain-provider.json")
         archive.writestr("fabric.mod.json", json.dumps(metadata, indent=2) + "\n")
         archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
             "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")

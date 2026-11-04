@@ -29,6 +29,7 @@ struct Data {
 #[derive(Debug)]
 enum Node {
     Terrain(TerrainPopulator),
+    Volcano(crate::volcano::Volcano),
     Ocean {
         terrain: usize,
         height: Noise,
@@ -87,6 +88,28 @@ impl Populator {
             p.weirdness.cost(),
         ];
         Self::make(Node::Terrain(p), &costs)
+    }
+    pub fn volcano(p: crate::volcano::Volcano) -> Result<Self> {
+        let costs = p.dependencies();
+        Self::make(Node::Volcano(p), &costs)
+    }
+    pub fn terrain_data(&self) -> Option<&TerrainPopulator> {
+        match &self.0.node {
+            Node::Terrain(p) => Some(p),
+            _ => None,
+        }
+    }
+    pub fn source_kind(&self) -> &'static str {
+        match &self.0.node {
+            Node::Terrain(_) => "TerrainPopulator",
+            Node::Volcano(_) => "VolcanoPopulator",
+            Node::Ocean { .. } => "OceanPopulator",
+            Node::RegionLerp { .. } => "RegionLerper",
+            Node::Blend { .. } => "Blender",
+            Node::Continent2 { .. } => "ContinentLerper2",
+            Node::Continent3 { .. } => "ContinentLerper3",
+            Node::Selector { .. } => "RegionSelector",
+        }
     }
     pub fn ocean(terrain: usize, height: Noise) -> Result<Self> {
         let costs = [height.cost()];
@@ -164,9 +187,10 @@ impl Populator {
             &costs,
         )
     }
-    fn weight(&self) -> Option<f32> {
+    pub fn weight(&self) -> Option<f32> {
         match &self.0.node {
             Node::Terrain(p) => Some(p.weight),
+            Node::Volcano(p) => Some(p.weight),
             _ => None,
         }
     }
@@ -237,6 +261,7 @@ impl Populator {
     }
     pub fn apply(&self, cell: &mut Cell, x: f32, z: f32) -> Result<()> {
         match &self.0.node {
+            Node::Volcano(p) => p.apply(cell, x, z),
             Node::Terrain(p) => {
                 let base = p.base.compute(x, z, 0) * p.base_scale;
                 let height = p.height.compute(x, z, 0) * p.height_scale;

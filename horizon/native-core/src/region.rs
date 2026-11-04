@@ -6,6 +6,15 @@ use crate::noise_util::{cell, floor_legacy, map_clamped_range, pow_f32, val_coor
 use crate::worley::{DistanceFunction, EdgeFunction};
 
 #[derive(Clone, Debug)]
+pub struct RegionConfig {
+    pub seed: i32,
+    pub scale: i32,
+    pub warp_x: Noise,
+    pub warp_z: Noise,
+    pub warp_strength: f32,
+}
+
+#[derive(Clone, Debug)]
 pub struct RegionModule {
     seed: i32,
     frequency: f32,

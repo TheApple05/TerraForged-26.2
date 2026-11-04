@@ -228,6 +228,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("terrainFactories", Map.of("status", "captured-genuine-java-terrain-factories", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportTerrainProvider")) {
+                require(!mode.startsWith("benchmark"), "Provider capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-terrain-provider.tsv");
+                Path inputs = output.resolve("native-terrain-provider.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativeTerrainProviderProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("terrainProvider", Map.of("status", "captured-genuine-java-terrain-provider", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             report.put("status", "passed");
         } catch (Throwable failure) {
             report.put("error", describe(failure));

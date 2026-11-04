@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import gzip
 import json
 from pathlib import Path
 import subprocess
@@ -20,6 +21,8 @@ FAMILIES={
                   'NATIVE_POPULATOR_GUARDS_OK weights selectorBounds depthBudget nodeBudget parallelOwnership','passed-populator-composition-only'),
     'terrain-factories':('terrain-factories-v1','terrain_factory_probe','Twenty original terrain factory branches, raw noise outputs, bounds, cells and constructor cursors',
                          'NATIVE_TERRAIN_FACTORY_GUARDS_OK originalCursors ownedGraphs replayOrder parallelReaders','passed-terrain-factories-only'),
+    'terrain-provider':('terrain-provider-v1','terrain_provider_probe','Terrain provider construction/composite/shuffle order, selection and original volcano mutations',
+                        'NATIVE_TERRAIN_PROVIDER_GUARDS_OK ownedRegistry originalOrder volcanoBranches replayOrder parallelReaders','passed-terrain-provider-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
@@ -28,10 +31,13 @@ def main():
     if args.report.exists():p.error('Refusing to replace registry parity evidence')
     directory,binary,scope,marker,passed_status=FAMILIES[args.family]
     folder=ROOT/'horizon/tests/fixtures'/directory;fixture=folder/'values.tsv';inputs=folder/'inputs.json'
+    if not fixture.exists():fixture=folder/'values.tsv.gz'
     metadata=json.loads((folder/'metadata.json').read_text(encoding='utf-8'))
     if sha(fixture)!=metadata['fixtureSha256'] or sha(inputs)!=metadata['inputsSha256'] or not metadata['freshRunsAgree']:
         raise ValueError('Independent registry inputs/observations changed')
-    expected=rows(fixture.read_text(encoding='utf-8'))
+    data=gzip.decompress(fixture.read_bytes()) if fixture.suffix=='.gz' else fixture.read_bytes()
+    if fixture.suffix=='.gz' and hashlib.sha256(data).hexdigest()!=metadata['uncompressedValuesSha256']:raise ValueError('Decompressed Java observations changed')
+    expected=rows(data.decode('utf-8'))
     if len(expected)!=metadata['recordCount']:raise ValueError('Registry record count changed')
     manifest=ROOT/'horizon/native-adapter/Cargo.toml';logroot=ROOT/'build/qa/horizon/registry'/args.report.stem
     logroot.mkdir(parents=True,exist_ok=True)
