@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-heightmap-climate-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "15df0706e5a2446832e66d13c90daeacb57b4f3623b17235a25f4c146c6619df",
+  "uncompressedValuesSha256": "bad46bb4f7c88d2d779918a32f2165602f6fd38ebb22ab995430861a50a40a48",
+  "inputsSha256": "94187132bc0aa4f1190cfebe8965e0cbcd6e2594edf37286c73f457a2e976848",
+  "recordCount": 173010,
+  "settingCases": 5,
+  "worldSeedCases": 6,
+  "cellSamples": 172980,
+  "syntheticClimateCells": 77760,
+  "allCellFields": 24,
+  "producerReports": [
+    {
+      "report": "server-horizon-heightmap-climate-oracle-v2a.json",
+      "sha256": "e9adc9414ddc8fd02ee6644d754b361c3c282b3d9e8b1a0594eef285059ff1b5",
+      "pid": 18092,
+      "instance": "build/qa/server/instances/20261104T163620Z-2084dd",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "47f4ab6dcffe213de8ae798adf861b50efb69383c96a92cadcf0c76f60eb6dd9",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.GeneratorContext source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.WorldFilters source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Heightmap source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.climate.Climate source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.climate.ClimateModule source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AdvancedContinentGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.provider.TerrainProvider source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises$HolderHolder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyMoisture source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyTemperature source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-2084dd/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-heightmap-climate-oracle-v2b.json",
+      "sha256": "493374ad435e6416c2c6cee1b98f5e13caba0afdb4e7f6d45e6d1043abd445ef",
+      "pid": 14044,
+      "instance": "build/qa/server/instances/20261104T163620Z-54e01c",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "527e64d5edee3b4f49de999dfb5b338e641b14cb616cb2bb64925558c69f234d",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.GeneratorContext source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.WorldFilters source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Heightmap source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.climate.Climate source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.climate.ClimateModule source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.continent.advanced.AdvancedContinentGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.terrain.provider.TerrainProvider source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.biome.type.BiomeType source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.Noises$HolderHolder source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyMoisture source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.noise.module.LegacyTemperature source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T163620Z-54e01c/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "world/worldgen/GeneratorContext.java": "90e7b8d57cb7646e7426fb5866b47617df35e8971fc1b0a3eddaa14d848b0224",
+    "world/worldgen/WorldFilters.java": "09a4b76ac0a8f3e1266079151ead29aacd1c91abcc0200665477731bba2ac8b8",
+    "world/worldgen/cell/heightmap/Heightmap.java": "940bf0689362e4a90d89926e4c6b441a1a5ca8fd4020f39766492406063bee97",
+    "world/worldgen/cell/heightmap/Levels.java": "d43a030691b7422216d4ea095407dba80ab5f28ece210fc7f1152e606b557d3b",
+    "world/worldgen/cell/climate/Climate.java": "01212887078bb4535cb8d3cdc8d07855dcf23acc40c6ee3ce2f62eb88fe95077",
+    "world/worldgen/cell/climate/ClimateModule.java": "34e2fa5165db09bc6a1c3bf0a64592e7f17dbd15657a5760f6298ff22af9daab",
+    "world/worldgen/cell/continent/advanced/AbstractContinent.java": "8de317c681159779ed4602cef0dc520c02aeb4778e5c435c4c7157c9bdc3f72b",
+    "world/worldgen/cell/continent/advanced/AdvancedContinentGenerator.java": "9bbb975806e7cd847ae3826da6557eb341b638f9f0d0aaaf16faa82888b30e9c",
+    "world/worldgen/cell/terrain/provider/TerrainProvider.java": "9639895043c67da090eb9c8aaefa69a902bc7d097fafc1878c59816e83c61129",
+    "world/worldgen/cell/terrain/region/RegionModule.java": "259ba943b05a166a09c045830f5d9dc0d5e2358262524faee3adba93a1bdd55f",
+    "world/worldgen/cell/biome/type/BiomeType.java": "09f424c8ed84794d2cbe1ae7a5cf196052fb187d7a5ea405587f49c484f82ab3",
+    "world/worldgen/noise/module/Noises.java": "e207ba42d4697b80ca235cb128617d2e94511d9b62ccb1380df3a7e5fb8ef352",
+    "world/worldgen/noise/module/LegacyMoisture.java": "e06d214f74a3c1081ccbf07ffcdcb58fa30211da752175bbec7e16754dbdf9a0",
+    "world/worldgen/noise/module/LegacyTemperature.java": "1a27a5c7b339970c0178a890864a5b2314b81c5daac48656ba32b30d6712126e",
+    "world/worldgen/noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+    "world/worldgen/util/Seed.java": "363f692f8f1af4238b083a16e012b78222cbd340775d38fb50fce1fe7ee0ccd4",
+    "data/worldgen/preset/settings/ClimateSettings.java": "7372afb9cf45a2358bed608db6a85f3f4fe012fb1ab314895ac38fd982ef4a41"
+  },
+  "oracleSourceSha256Lf": "73d4d9a1eeab72fb54a0586eea733c394a034784979cd3073e79781b8418a063",
+  "scope": "Actual complete terrain and climate stages without river execution, both climate modes, fresh/dirty cells, synthetic type/height/river/macro boundaries and context seed cursors.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Other continent generators",
+    "All preset/configuration domains",
+    "River networks/cache",
+    "Filtered tiles/erosion/smoothing",
+    "Native chunks/client/save"
+  ]
+}

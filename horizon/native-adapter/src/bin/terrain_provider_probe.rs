@@ -123,10 +123,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             selector.apply(&mut c, 17.0, -17.0)?;
             let expected = snapshot(&c);
             for &x in coords.iter().rev() {
-            let mut query=cell(true);query.terrain_region_id=0.5;
-            selector.apply(&mut query, x, -x)?;
+                let mut query = cell(true);
+                query.terrain_region_id = 0.5;
+                selector.apply(&mut query, x, -x)?;
             }
-        let mut c=cell(true);c.terrain_region_id=0.5;
+            let mut c = cell(true);
+            c.terrain_region_id = 0.5;
             selector.apply(&mut c, 17.0, -17.0)?;
             assert_eq!(snapshot(&c), expected);
             std::thread::scope(|s| {

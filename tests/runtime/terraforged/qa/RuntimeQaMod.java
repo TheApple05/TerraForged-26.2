@@ -237,6 +237,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("terrainProvider", Map.of("status", "captured-genuine-java-terrain-provider", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportHeightmapClimate")) {
+                require(!mode.startsWith("benchmark"), "Heightmap capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-heightmap-climate.tsv");
+                Path inputs = output.resolve("native-heightmap-climate.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativeHeightmapClimateProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("heightmapClimate", Map.of("status", "captured-genuine-java-heightmap-climate", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             report.put("status", "passed");
         } catch (Throwable failure) {
             report.put("error", describe(failure));

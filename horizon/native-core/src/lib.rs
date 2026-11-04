@@ -2,11 +2,13 @@
 
 pub mod biome;
 pub mod cell;
+pub mod climate;
 pub mod continent;
 pub mod domain;
 pub mod erosion;
 pub mod fast_random;
 pub mod graph;
+pub mod heightmap;
 pub mod java_random;
 pub mod layout;
 pub mod line;
