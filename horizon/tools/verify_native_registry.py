@@ -31,6 +31,8 @@ FAMILIES={
                     'NATIVE_RIVER_CARVERS_OK exactMutations originalBounds forkRounding randomDraws noNetworks','passed-river-carvers-only'),
     'river-networks':('river-networks-v1','river_network_probe','Original network generation/traversal and complete unfiltered Heightmap cells',
                      'NATIVE_RIVER_NETWORKS_OK originalTree randomCheckpoints cachedReplay reverseOrder parallelReaders boundedOwnership lruRelease concurrentIdentity completeUnfilteredCells','passed-river-networks-and-unfiltered-cells-only'),
+    'tile-filters':('tile-filters-v1','tile_filter_probe','Original filters, brushes, modifiers, backing boundaries and actual zoomed tile stages',
+                   'NATIVE_TILE_FILTERS_OK originalBrushes flatIndexWrapping sequentialUpdates nestedInversion NaNClassification zoomOptional reverseOrder parallelTiles boundedInputs','passed-tile-filters-and-zoomed-cells-only'),
 }
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
@@ -55,7 +57,7 @@ def main():
         'rustc':subprocess.check_output(['rustc','+stable','-Vv'],text=True),
         'family':args.family,
         'scope':scope+'; no native terrain activation.',
-        'notCovered':['Every invalid/codec parameter domain','Preset or cell/river/filtered-tile pipeline','Native density/surface/chunks','Client/save/launcher integration']}
+        'notCovered':['Every invalid/codec parameter domain','Unobserved preset and pipeline combinations','Native density/surface/chunks','Client/save/launcher integration']}
     for profile in ('debug','release'):
         cmd=['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin',binary]
         if profile=='release':cmd.append('--release')

@@ -1,7 +1,26 @@
 # Native procedural kernel
 
-This isolated crate starts the procedural Horizon port. It is not activated in
-the prepared-terrain bundle and cannot yet generate a terrain tile or chunk.
+This dependency-free crate implements the procedural cell and filtered-tile
+kernel for the supported TerraForged presets. It is not activated in Horizon
+and does not yet produce native game chunks. Current scope and remaining work:
+[port checkpoint](../../docs/horizon/PROGRESS.md).
+
+The complete default kernel matches all 310,104 independent Java records /
+7,442,496 fields in debug/release, including 12 complete filtered tile backings
+and halos. Separate corpora cover terrain/climate configurations, river networks,
+filter stages and zoomed tiles. See [tile qualification](../../docs/horizon/tile-filters.md).
+Public modules include Heightmap, RiverGenerator, owned river caches, TileBuffer
+and WorldFilters. Expected terrain is never supplied as an input to the core.
+
+The adapter crate loads bounded preset/registry JSON separately. Core arithmetic
+uses original Java float order, signed zero, wrapping integers and observed RNG/
+trigonometry/rounding semantics. It retains the original MIT attribution, uses no
+external dependencies, forbids unsafe code and contains no game assets or binaries.
+
+## Foundation capture history
+
+The following notes describe the initial arithmetic qualification, before the
+later graph/cell/river/tile implementations linked above.
 
 The initial scalar/hash routines preserve Java wrapping integers, float operation
 order, signed zero and the inherited negative-integer floor behavior. The probe
@@ -13,8 +32,8 @@ endpoints, zero/one/multiple octaves, interpolation modes and seed behavior.
 Perlin2/Simplex2 now match a second independently captured 34,976-record corpus
 (56,080 values per profile). These retain the 24-gradient Perlin variant and
 Simplex2's exact normalization/scaler, not aliases of the first families.
-Other composed noises and the cell/tile pipeline remain unfinished in the
-[native milestone](../../docs/horizon/infinite-native-milestone.md).
+The [native milestone](../../docs/horizon/infinite-native-milestone.md) retains
+the full implementation and acceptance contract.
 
 Run `python horizon/tools/verify_native_scalars.py` from the repository root.
 The verifier checks both debug and optimized Rust output, retains every mismatch,
@@ -36,7 +55,7 @@ existing evidence.
 Perlin deliberately uses its stored seed and ignores its compute-time seed;
 Simplex uses the compute-time seed. The unusual negative-integer floor and
 duplicate gradient entries are retained. Constructors bound octave counts to
-0..32 and report unsupported counts; arbitrary graph/parameter domains are not
+the supported source-specific ranges and report unsupported counts; arbitrary graph/parameter domains are not
 certified by these finite vectors. The crate has no external dependencies and
 forbids unsafe code.
 
@@ -52,5 +71,5 @@ fields per profile, including reported bounds and high octave behavior. See
 All 41 registered noise types, five domain types and two curve functions now have
 finite numerical fixture coverage in debug/release. See
 [final numerical modules](../../docs/horizon/noise-final-modules.md). This does
-not qualify visitors, registry loading, default cell/river/tile terrain, native
-chunks or client/save behavior.
+not by itself qualify later visitors, registry loading or cell/tile stages; their
+separate evidence is linked from the checkpoint. Native chunks/client/save remain unfinished.

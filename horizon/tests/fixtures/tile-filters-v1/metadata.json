@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-tile-filter-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "fixtureSha256": "f288c139f07fddc5c012cc91c5d99c2688f131d565adf001fe8e739648020437",
+  "uncompressedValuesSha256": "e346a932b92e10aa1f216d61da4241151fdea07e0f5f7c729bb903e0fe2bc8c7",
+  "inputsSha256": "54e36e03f6b0aa7b4ee38b5a6572e99e1aa8578eaff12e6ff878054ed042e69d",
+  "recordCount": 125104,
+  "fieldsPerProfile": 3151416,
+  "recordKinds": {
+    "brush": 3584,
+    "raw": 432,
+    "modifier": 2304,
+    "stage": 100352,
+    "zoom": 18432
+  },
+  "producerReports": [
+    {
+      "report": "server-horizon-tile-filters-oracle-v1a.json",
+      "sha256": "a71f3861c61293f218d6d1385d737d41325e8667f62563fe3404f609209c4386",
+      "pid": 26716,
+      "instance": "build/qa/server/instances/20261104T173332Z-a91c9e",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "c64671d028f93b72c3f56cb8f1ec92a95783a69754c8e4e99004eb7da4eeeb2d",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Smoothing source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Steepness source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.BeachDetect source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.NoiseCorrection source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Modifier source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.Tile source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.Size source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.WorldFilters source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.WorldErosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Levels source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.FastRandom source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-a91c9e/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    },
+    {
+      "report": "server-horizon-tile-filters-oracle-v1b.json",
+      "sha256": "27680cf78b0aacc585912e25947a318eb9c8e029f08bdb9e7c12eaeabe74a3ef",
+      "pid": 57240,
+      "instance": "build/qa/server/instances/20261104T173332Z-ac2139",
+      "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+      "classLoadLogSha256": "11399a1a3ee4a082431f235ba9879a2de0d8cf9a124e2822efd426e2b4dd95bf",
+      "verifiedOriginalClassOrigins": [
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Erosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Smoothing source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Steepness source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.BeachDetect source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.NoiseCorrection source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.filter.Modifier source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.generation.TileGenerator source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.Tile source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.densityfunction.tile.Size source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.WorldFilters source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.WorldErosion source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.cell.heightmap.Levels source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar",
+        "[info][class,load] raccoonman.reterraforged.world.worldgen.util.FastRandom source: file:/C:/Users/Main/Documents/Codex/TerraForged/build/qa/server/instances/20261104T173332Z-ac2139/mods/terraforged-revival-0.1.0-dev.23+26.2.jar"
+      ]
+    }
+  ],
+  "sourceSha256Lf": {
+    "densityfunction/tile/filter/Erosion.java": "6a9661073073f5c6966f9de9ac4cf61e4d0d8f88efc643abbc629784461c0502",
+    "densityfunction/tile/filter/Smoothing.java": "43792c3fa2daba9a36aba8b80ae8bd6d73e08f37095125a149d3dd3180f73637",
+    "densityfunction/tile/filter/Steepness.java": "8439452d933ed9e1802d08903524e2a2b394875ec5274fd1022d6e57f98db83f",
+    "densityfunction/tile/filter/BeachDetect.java": "2d96dca82a486a7ce1ee89d8a614f9e6363b3bbbdff0a7b0c7026f3153997248",
+    "densityfunction/tile/filter/NoiseCorrection.java": "67260cf4e752dc782243739eb078e577555c8696d05e2ad824a5f63fa8e0f945",
+    "densityfunction/tile/filter/Modifier.java": "bd50744fab3fc6cb12d8024c74837278a6b54eb83d38cef638cb0989c2f2e94b",
+    "densityfunction/tile/generation/TileGenerator.java": "38d3a7ad863e80744bc99cf34e72d26ad03cc1716e8bff3eca1647e26c099fd1",
+    "densityfunction/tile/Tile.java": "db50066651ef318c6d6c4b1e5470a57b66c6f6fbeef2a569fc9714d0190c0b3d",
+    "densityfunction/tile/Size.java": "c7e01d7b95075dc1c5a3ee7ac27c47e20080b573ae96f8bfeec73e099dc9e2c9",
+    "WorldFilters.java": "09a4b76ac0a8f3e1266079151ead29aacd1c91abcc0200665477731bba2ac8b8",
+    "WorldErosion.java": "e6248d469b53d16dbd3f5ab16c8c5a132c1e929200d41ca3a238b596af34dae6",
+    "cell/heightmap/Levels.java": "d43a030691b7422216d4ea095407dba80ab5f28ece210fc7f1152e606b557d3b",
+    "util/FastRandom.java": "eb40fa36cd2860bfdcb77d4cadffb1138d6537fd638168bb83c3bb9f0f6c3f2f"
+  },
+  "oracleSourceSha256Lf": "7c64895a97e16b8439640a2b684f5d28a508a1790a022c8a936664c1b6f739ce",
+  "scope": "Original erosion brush indices/weights; all seven individual/combined filter stages on controlled backing arrays; range/nested-invert modifiers; flat-index boundaries; actual zoomed TileGenerator with optional filters on/off.",
+  "nativeExpectedValuesUsed": false,
+  "notCovered": [
+    "Every numeric/configuration domain",
+    "All tile layouts/presets/zoom values",
+    "Native density/chunks/client/save"
+  ]
+}
