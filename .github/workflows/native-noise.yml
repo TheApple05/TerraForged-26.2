@@ -46,6 +46,7 @@ jobs:
           python horizon/tools/verify_native_noise.py --family random --report build/qa/ci/native-java-random.json
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
           python horizon/tools/verify_classic_pillar_math.py --report build/qa/ci/native-classic-pillar-math.json
+          python horizon/tools/verify_pillar_sampler.py --report build/qa/ci/native-pillar-sampler.json
       - name: Fetch locked registry adapter libraries
         run: cargo fetch --locked --manifest-path horizon/native-adapter/Cargo.toml
       - name: Check native biome resource transformations

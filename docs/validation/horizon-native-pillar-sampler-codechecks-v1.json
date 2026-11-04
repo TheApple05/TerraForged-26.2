@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "completedAtUtc": "2026-11-04T23:14:27.519551+00:00",
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "+stable",
+        "fmt",
+        "--manifest-path",
+        "horizon/native-core/Cargo.toml",
+        "--check"
+      ],
+      "exitCode": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "cargo",
+        "+stable",
+        "clippy",
+        "--offline",
+        "--locked",
+        "--manifest-path",
+        "horizon/native-core/Cargo.toml",
+        "--lib",
+        "--bin",
+        "pillar_sampler_probe",
+        "--",
+        "-D",
+        "warnings",
+        "-A",
+        "clippy::too_many_arguments"
+      ],
+      "exitCode": 0,
+      "logSha256": "8c798c75014ca8e4571a98e4be7530a89ec2ce9032dc7862466150bbd077d744"
+    },
+    {
+      "command": [
+        "cargo",
+        "+stable",
+        "test",
+        "--offline",
+        "--locked",
+        "--manifest-path",
+        "horizon/native-core/Cargo.toml",
+        "--lib"
+      ],
+      "exitCode": 0,
+      "logSha256": "4cdc2f7f5327c02196d394f8d77895f77a1235d1ac605dd0bc7decedd45aa9c6"
+    }
+  ],
+  "clippyAllowance": "Existing core too_many_arguments allowance, as used by host workspace"
+}
