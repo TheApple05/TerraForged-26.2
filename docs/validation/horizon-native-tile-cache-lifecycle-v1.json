@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-tile-cache-lifecycle-only",
+  "startedAtUtc": "2026-11-04T17:54:22.795809+00:00",
+  "scope": "Observable completed-tile publication, failure/unwind retry, LRU ownership, concurrent identity, in-flight clear and bounded parallel slots. Controlled builders isolate cache behavior; independent Java column/tile comparisons qualify terrain.",
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.1\nLLVM version: 23.1.1\n",
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "passed": true,
+      "testNames": [
+        "failed_or_unwound_work_can_retry_without_cache_publication",
+        "lru_touch_eviction_and_clear_release_owned_values",
+        "concurrent_readers_share_one_build_and_one_arc",
+        "clear_during_build_does_not_republish_old_generation",
+        "distinct_builds_run_in_parallel_with_bounded_slots"
+      ],
+      "stdoutSha256": "48f32889c54f5e8c88803b515e848896d09354af374d8f78e395f32ccc7aa359",
+      "stderrSha256": "0a268f102306c8d44c13906504c99a539f4f758529437cadffe03bfe637a1b7a"
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "passed": true,
+      "testNames": [
+        "failed_or_unwound_work_can_retry_without_cache_publication",
+        "lru_touch_eviction_and_clear_release_owned_values",
+        "clear_during_build_does_not_republish_old_generation",
+        "concurrent_readers_share_one_build_and_one_arc",
+        "distinct_builds_run_in_parallel_with_bounded_slots"
+      ],
+      "stdoutSha256": "e10da694c46491784a99ab5a7ce5f371231f0958ee6c201a86e4e7c8153a5a51",
+      "stderrSha256": "8282be38a3f3a0f6ee242a0a445924765d821cfca9b7faf58953e6e7cde21495"
+    }
+  ],
+  "sourceSha256Lf": {
+    "horizon/native-core/src/tile_work_cache.rs": "ad1e2e6c414c44760748aad65c8dad608518df1a1459b0bcb18cc89660ce06c9",
+    "horizon/native-core/src/kernel_sampler.rs": "52c9337e4c3e858b99e3187ef543cd7781a367c8a261f5e868af03ee0d39426f",
+    "horizon/native-core/Cargo.toml": "90828d3f94df0a4249961250593854170168ab2de8191bc4d7d9540394152366",
+    "horizon/native-core/Cargo.lock": "51e811941ccbf1984b0a3a36b105742bb4053403c4adb5ac5acffbef3b80fa40"
+  },
+  "verifierSha256": "b107431bdabd9ee61db63eb09cc27ff661dde97c2c2ab7cd4d361488e7d80431",
+  "finishedAtUtc": "2026-11-04T17:54:23.006403+00:00"
+}
