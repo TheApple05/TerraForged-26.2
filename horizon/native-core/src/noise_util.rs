@@ -3,6 +3,7 @@
 // (raccoonman/reterraforged, preservation baseline
 // 29239f1f164d19dbfcccaca4a8277d64e784207c). MIT license preserved upstream.
 // This isolated math module is not activated in Horizon terrain generation.
+pub use crate::math_table::{PI2, SQRT2, cos, sin, sqrt};
 
 #[inline]
 pub fn map_clamped_range(value: f32, min: f32, max: f32, range: f32) -> f32 {

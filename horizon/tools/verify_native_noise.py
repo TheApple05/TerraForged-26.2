@@ -27,17 +27,21 @@ def rows(text):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--family', choices=['base','second','composition'], default='base')
+    parser.add_argument('--family', choices=['base','second','composition','math','core'], default='base')
     args = parser.parse_args()
     if args.report.exists():
         parser.error('Refusing to replace native parity evidence')
-    fixture = ROOT/('horizon/tests/fixtures/'+{'base':'noise-reference-v1.tsv','second':'noise-reference-v2.tsv',
-                   'composition':'noise-composition-v1.tsv'}[args.family])
-    metadata = json.loads(fixture.with_suffix('.json').read_text())
-    if digest(fixture) != metadata['fixtureSha256'] or not metadata['freshRunsAgree']:
+    fixture = ROOT/{'base':'horizon/tests/fixtures/noise-reference-v1.tsv','second':'horizon/tests/fixtures/noise-reference-v2.tsv',
+                    'composition':'horizon/tests/fixtures/noise-composition-v1.tsv','math':'horizon/tests/fixtures/math-v1/values.tsv',
+                    'core':'tests/core/reference-output.tsv'}[args.family]
+    metadata_file = (ROOT/'tests/core/reference-metadata.json' if args.family=='core' else
+                     fixture.parent/'metadata.json' if args.family=='math' else fixture.with_suffix('.json'))
+    metadata = json.loads(metadata_file.read_text())
+    expected_sha = metadata['fixture_sha256'] if args.family=='core' else metadata['valuesSha256'] if args.family=='math' else metadata['fixtureSha256']
+    if digest(fixture) != expected_sha or (args.family!='core' and not metadata['freshRunsAgree']):
         raise ValueError('Independent Java oracle changed or lacks fresh-run agreement')
     expected = rows(fixture.read_text())
-    if len(expected) != metadata['recordCount']:
+    if len(expected) != metadata.get('recordCount',metadata.get('record_count')):
         raise ValueError('Oracle record count changed')
     manifest = ROOT/'horizon/native-core/Cargo.toml'
     logroot = ROOT/'build/qa/horizon/native-noise'/args.report.stem
@@ -47,13 +51,16 @@ def main():
         'recordsPerProfile':len(expected),'valuesPerProfile':sum(map(len,expected.values())),
         'rustc':subprocess.check_output(['rustc','+stable','-Vv'],text=True),
         'family':args.family,
-        'scope':('40 genuine Java constructor graphs and legacy min/max' if args.family=='composition' else
+        'scope':('Complete original frozen helper/core corpus' if args.family=='core' else
+                 'Source-owned lookup data and Java trig/sqrt observations' if args.family=='math' else
+                 '40 genuine Java constructor graphs and legacy min/max' if args.family=='composition' else
                  '296 vectors and '+('Perlin/Simplex' if args.family=='base' else 'Perlin2/Simplex2')+' sample/fractal values')+'; raw float bits, no native terrain activation.',
         'notCovered':['Other noise modules or arbitrary graphs','Complete nonfinite/parameter domain','Cell/river/tile pipeline',
                       'Native density/surface/caves/decoration','Infinite generation','Native game save/rendering']}
     for profile in ('debug','release'):
         command = ['cargo','+stable','run','--quiet','--offline','--locked','--manifest-path',str(manifest),'--bin',
-                   {'base':'noise_probe','second':'noise_family_probe','composition':'noise_composition_probe'}[args.family]]
+                   {'base':'noise_probe','second':'noise_family_probe','composition':'noise_composition_probe',
+                    'math':'math_probe','core':'core_probe'}[args.family]]
         if profile == 'release':
             command.append('--release')
         run = subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=90)
@@ -69,8 +76,10 @@ def main():
             'constructorGuardsObserved':guards,
             'allJavaValuesMatch':run.returncode==0 and not differences and guards})
     report['status'] = 'passed-noise-foundation-only' if all(p['allJavaValuesMatch'] for p in report['profiles']) else 'failed'
-    sources = sorted((ROOT/'horizon/native-core/src').rglob('*.rs'))+[manifest,ROOT/'horizon/native-core/Cargo.lock']
-    report['sourceSha256Lf'] = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sources}
+    sources = sorted((ROOT/'horizon/native-core/src').rglob('*.rs'))+sorted((ROOT/'horizon/native-core/src/data').glob('*.bin'))+[manifest,ROOT/'horizon/native-core/Cargo.lock']
+    report['sourceSha256Lf'] = {p.relative_to(ROOT).as_posix():hashlib.sha256(
+        p.read_bytes() if p.suffix=='.bin' else p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sources}
+    report['sourceNormalization'] = 'LF for text source/configuration; binary lookup bytes exact'
     report['finishedAtUtc'] = dt.datetime.now(dt.timezone.utc).isoformat()
     report['verifierSha256'] = digest(Path(__file__))
     args.report.parent.mkdir(parents=True,exist_ok=True)

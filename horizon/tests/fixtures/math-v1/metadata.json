@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-independent-java-math-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "noiseUtilSourceSha256Lf": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139",
+  "oracleSourceSha256Lf": "53541e6815205c0cc31f70d6fa68b1c0eb41184ff0877a264b4f068b011188a1",
+  "sineEntries": 4096,
+  "sineTableSha256": "f2999391380fe1b7a8deb687380fdb51b278fa88ffb8201e9beb2ae125a9db81",
+  "valuesSha256": "5546a7b3084da0064cee03be5f9bdb4d72fc8c99be6311776621e558b00de305",
+  "recordCount": 28680,
+  "properties": {
+    "SIN_COUNT": "4096",
+    "SIN_MASK": "4095",
+    "RAD_TO_INDEX_BITS": "4422f983",
+    "PI2_BITS": "40c90fdb",
+    "SQRT2_BITS": "3fb504f3",
+    "ORIGIN": "file:/C:/Users/Main/Documents/Codex/TerraForged/build/libs/terraforged-revival-0.1.0-dev.23+26.2.jar"
+  },
+  "scope": "Exact source-owned sine lookup constants and trig/sqrt observations; no terrain/game assets or native expected values.",
+  "notCovered": [
+    "Every float/nonfinite input",
+    "Fractional power",
+    "Terrain or native activation"
+  ]
+}

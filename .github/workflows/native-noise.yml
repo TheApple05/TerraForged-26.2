@@ -26,10 +26,13 @@ jobs:
         shell: bash
         run: |
           python horizon/tools/generate_noise_vectors.py
+          python horizon/tools/install_native_math_table.py
           python horizon/tools/verify_native_scalars.py --report build/qa/ci/native-scalars.json
           python horizon/tools/verify_native_noise.py --report build/qa/ci/native-noise.json
           python horizon/tools/verify_native_noise.py --family second --report build/qa/ci/native-noise-second-family.json
           python horizon/tools/verify_native_noise.py --family composition --report build/qa/ci/native-noise-composition.json
+          python horizon/tools/verify_native_noise.py --family math --report build/qa/ci/native-math.json
+          python horizon/tools/verify_native_noise.py --family core --report build/qa/ci/native-core.json
           python horizon/tools/verify_native_utilities.py --report build/qa/ci/native-utilities.json
       - name: Retain foundation reports
         if: always()
