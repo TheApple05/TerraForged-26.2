@@ -273,6 +273,15 @@ public final class RuntimeQaMod implements ModInitializer {
                 report.put("tileFilters", Map.of("status", "captured-genuine-java-tile-filters", "file", reference.toString(),
                     "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
             }
+            if (Boolean.getBoolean("terraforged.qa.exportHostDensity")) {
+                require(!mode.startsWith("benchmark"), "Host density capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-host-density.tsv");
+                Path inputs = output.resolve("native-host-density.inputs.json");
+                Class<?> probe = Class.forName("terraforged.qa.NativeHostDensityProbe");
+                probe.getMethod("capture", MinecraftServer.class, Path.class, Path.class).invoke(null, server, reference, inputs);
+                report.put("hostDensity", Map.of("status", "captured-genuine-java-host-density", "file", reference.toString(),
+                    "sha256", sha256(reference), "inputs", inputs.toString(), "inputsSha256", sha256(inputs)));
+            }
             if (Boolean.getBoolean("terraforged.qa.exportDensityPrimitives")) {
                 require(!mode.startsWith("benchmark"), "Density capture is forbidden during benchmarks");
                 Path reference = output.resolve("native-density-primitives.tsv");
