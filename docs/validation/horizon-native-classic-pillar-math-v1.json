@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-independent-classic-pillar-math",
+  "completedAtUtc": "2026-11-04T22:29:36.243986+00:00",
+  "recordsPerProfile": 24037,
+  "referenceMetadataSha256": "849e84d12229d1ddb8288c4f156c727b0707920446a7d61d8e38139dc2e9a3d9",
+  "nativeSourceSha256": "b3058b177cc3212d4eed52f5e6f69b12e8dbd0711ba42dacddc5ed96910c2b05",
+  "probeSourceSha256": "be5a112ce86cfe1fb581444d8a34882880e5777921b7fb5d9fd29c8fdde4ecae",
+  "profiles": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "recordCount": 24037,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "executableSha256": "41754e439e4c3672790fc1d94c8a01e0c9a1bba36401d3cd840d017aa3c010cf",
+      "outputSha256": "8a5a9ac8a8c673310fb8a36458700f910cdccfcb4192bfdc949a0f7fc41aa273",
+      "allJavaObservationsMatch": true
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "recordCount": 24037,
+      "differenceCount": 0,
+      "firstDifferences": [],
+      "executableSha256": "099c5f3f8fdd1c3b2cd6b8c982d7c698a437b530cdc1f3486a3883a721432fdf",
+      "outputSha256": "8a5a9ac8a8c673310fb8a36458700f910cdccfcb4192bfdc949a0f7fc41aa273",
+      "allJavaObservationsMatch": true
+    }
+  ],
+  "legacyTerraceReferenceSha256": "f6775d1e014df64c8a3171a5dd07e1f76a20013345c3a4f38ac296d20989d9c1",
+  "nanPayloadBitsCompared": false,
+  "scope": "Exact finite/infinite/zero f32 results and integer heights; NaN results compare as NaN. Unmodified project math source, plus an independently frozen original Noise2D terrace reference. No game APIs or downloads.",
+  "notCovered": [
+    "Pillar noise shapes/palettes",
+    "Biome boundary masks",
+    "Block placement",
+    "Native world integration or scenery"
+  ]
+}
