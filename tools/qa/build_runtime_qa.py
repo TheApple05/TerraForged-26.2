@@ -20,6 +20,7 @@ def main() -> int:
     parser.add_argument("--classpath-file", type=Path, default=ROOT / "build/qa/target/compile-classpath.txt")
     parser.add_argument("--production-jar", type=Path, help="Compile against this packaged artifact instead of production classes")
     parser.add_argument("--output", type=Path, default=ROOT / "build/qa/runtime/terraforged-runtime-qa.jar")
+    parser.add_argument("--oracle-root", type=Path, help="Separate TerraForged-Horizon checkout containing horizon/tests; required only with optional native-oracle flags.")
     parser.add_argument("--noise-composition", action="store_true", help="Include the optional same-package genuine Java graph oracle (Fabric QA only).")
     parser.add_argument("--noise-shaping", action="store_true", help="Include the optional same-package genuine Java shaping oracle (Fabric QA only).")
     parser.add_argument("--noise-cellular", action="store_true", help="Include the optional same-package genuine Java cellular oracle (Fabric QA only).")
@@ -39,6 +40,18 @@ def main() -> int:
     parser.add_argument("--density-primitives", action="store_true", help="Include the optional genuine Java custom density primitive oracle (Fabric QA only).")
     parser.add_argument("--host-density", action="store_true", help="Include genuine Java mapped density functions over filtered tiles (Fabric QA only).")
     args = parser.parse_args()
+    oracle_flags = (
+        "noise_composition", "noise_shaping", "noise_cellular", "noise_final", "noise_visitors",
+        "noise_registry", "preset_model", "continent", "populators", "terrain_factories",
+        "terrain_provider", "heightmap_climate", "river_foundations", "river_carvers",
+        "river_networks", "tile_filters", "density_primitives", "host_density",
+    )
+    oracle_requested = any(getattr(args, flag) for flag in oracle_flags)
+    if oracle_requested and args.oracle_root is None:
+        parser.error("Optional native-oracle flags require --oracle-root pointing to a TerraForged-Horizon checkout")
+    oracle_root = args.oracle_root.resolve() if args.oracle_root else None
+    if oracle_requested and not (oracle_root / "horizon/tests").is_dir():
+        parser.error("--oracle-root must contain horizon/tests from the separate TerraForged-Horizon repository")
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
     production = args.production_jar.resolve() if args.production_jar else ROOT / "build/classes/java/main"
@@ -52,41 +65,41 @@ def main() -> int:
     sources = sorted((ROOT / "tests/runtime").rglob("*.java"))
     sources.append(ROOT / "tests/terrain/TemplateBiomeDecoratorProbe.java")
     if args.noise_composition:
-        sources.append(ROOT / "horizon/tests/java/NativeNoiseCompositionProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeNoiseCompositionProbe.java")
     if args.noise_shaping:
-        sources.append(ROOT / "horizon/tests/java/NativeNoiseShapingProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeNoiseShapingProbe.java")
     if args.noise_cellular:
-        sources.append(ROOT / "horizon/tests/java/NativeNoiseCellularProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeNoiseCellularProbe.java")
     if args.noise_final:
-        sources.append(ROOT / "horizon/tests/java/NativeNoiseFinalProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeNoiseFinalProbe.java")
     if args.noise_visitors:
-        sources.append(ROOT / "horizon/tests/java/NativeNoiseVisitorProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeNoiseVisitorProbe.java")
     if args.noise_registry:
-        sources.append(ROOT / "horizon/tests/java/NativeNoiseRegistryProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeNoiseRegistryProbe.java")
     if args.preset_model:
-        sources.append(ROOT / "horizon/tests/java/NativePresetProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativePresetProbe.java")
     if args.continent:
-        sources.append(ROOT / "horizon/tests/java/NativeContinentProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeContinentProbe.java")
     if args.populators:
-        sources.append(ROOT / "horizon/tests/java/NativePopulatorProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativePopulatorProbe.java")
     if args.terrain_factories:
-        sources.append(ROOT / "horizon/tests/java/NativeTerrainFactoryProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeTerrainFactoryProbe.java")
     if args.terrain_provider:
-        sources.append(ROOT / "horizon/tests/java/NativeTerrainProviderProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeTerrainProviderProbe.java")
     if args.heightmap_climate:
-        sources.append(ROOT / "horizon/tests/java/NativeHeightmapClimateProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeHeightmapClimateProbe.java")
     if args.river_foundations:
-        sources.append(ROOT / "horizon/tests/java/NativeRiverFoundationProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeRiverFoundationProbe.java")
     if args.river_carvers:
-        sources.append(ROOT / "horizon/tests/java/NativeRiverCarverProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeRiverCarverProbe.java")
     if args.river_networks:
-        sources.append(ROOT / "horizon/tests/java/NativeRiverNetworkProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeRiverNetworkProbe.java")
     if args.tile_filters:
-        sources.append(ROOT / "horizon/tests/java/NativeTileFilterProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeTileFilterProbe.java")
     if args.density_primitives:
-        sources.append(ROOT / "horizon/tests/java/NativeDensityPrimitiveProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeDensityPrimitiveProbe.java")
     if args.host_density:
-        sources.append(ROOT / "horizon/tests/java/NativeHostDensityProbe.java")
+        sources.append(oracle_root / "horizon/tests/java/NativeHostDensityProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
@@ -108,29 +121,29 @@ def main() -> int:
     }
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         if args.preset_model:
-            archive.write(ROOT / "horizon/tests/inputs/preset-model-v1.json", "terraforged-qa-preset-model.json")
+            archive.write(oracle_root / "horizon/tests/inputs/preset-model-v1.json", "terraforged-qa-preset-model.json")
         if args.continent:
-            archive.write(ROOT / "horizon/tests/inputs/continent-v1.json", "terraforged-qa-continent.json")
+            archive.write(oracle_root / "horizon/tests/inputs/continent-v1.json", "terraforged-qa-continent.json")
         if args.populators:
-            archive.write(ROOT / "horizon/tests/inputs/populators-v1.json", "terraforged-qa-populators.json")
+            archive.write(oracle_root / "horizon/tests/inputs/populators-v1.json", "terraforged-qa-populators.json")
         if args.terrain_factories:
-            archive.write(ROOT / "horizon/tests/inputs/terrain-factories-v1.json", "terraforged-qa-terrain-factories.json")
+            archive.write(oracle_root / "horizon/tests/inputs/terrain-factories-v1.json", "terraforged-qa-terrain-factories.json")
         if args.terrain_provider:
-            archive.write(ROOT / "horizon/tests/inputs/terrain-provider-v1.json", "terraforged-qa-terrain-provider.json")
+            archive.write(oracle_root / "horizon/tests/inputs/terrain-provider-v1.json", "terraforged-qa-terrain-provider.json")
         if args.heightmap_climate:
-            archive.write(ROOT / "horizon/tests/inputs/heightmap-climate-v1.json", "terraforged-qa-heightmap-climate.json")
+            archive.write(oracle_root / "horizon/tests/inputs/heightmap-climate-v1.json", "terraforged-qa-heightmap-climate.json")
         if args.river_foundations:
-            archive.write(ROOT / "horizon/tests/inputs/river-foundations-v1.json", "terraforged-qa-river-foundations.json")
+            archive.write(oracle_root / "horizon/tests/inputs/river-foundations-v1.json", "terraforged-qa-river-foundations.json")
         if args.river_carvers:
-            archive.write(ROOT / "horizon/tests/inputs/river-carvers-v1.json", "terraforged-qa-river-carvers.json")
+            archive.write(oracle_root / "horizon/tests/inputs/river-carvers-v1.json", "terraforged-qa-river-carvers.json")
         if args.river_networks:
-            archive.write(ROOT / "horizon/tests/inputs/river-networks-v1.json", "terraforged-qa-river-networks.json")
+            archive.write(oracle_root / "horizon/tests/inputs/river-networks-v1.json", "terraforged-qa-river-networks.json")
         if args.tile_filters:
-            archive.write(ROOT / "horizon/tests/inputs/tile-filters-v1.json", "terraforged-qa-tile-filters.json")
+            archive.write(oracle_root / "horizon/tests/inputs/tile-filters-v1.json", "terraforged-qa-tile-filters.json")
         if args.density_primitives:
-            archive.write(ROOT / "horizon/tests/inputs/density-primitives-v1.json", "terraforged-qa-density-primitives.json")
+            archive.write(oracle_root / "horizon/tests/inputs/density-primitives-v1.json", "terraforged-qa-density-primitives.json")
         if args.host_density:
-            archive.write(ROOT / "horizon/tests/inputs/host-density-v1.json", "terraforged-qa-host-density.json")
+            archive.write(oracle_root / "horizon/tests/inputs/host-density-v1.json", "terraforged-qa-host-density.json")
         archive.writestr("fabric.mod.json", json.dumps(metadata, indent=2) + "\n")
         archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
             "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")
@@ -142,9 +155,16 @@ def main() -> int:
         "jar": str(output), "sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
         "compileAgainst": str(production),
         "productionJarSha256": hashlib.sha256(production.read_bytes()).hexdigest() if production.is_file() else None,
-        "sourceSha256Lf": {file.relative_to(ROOT).as_posix(): hashlib.sha256(file.read_bytes().replace(b"\r\n", b"\n")).hexdigest() for file in sources},
+        "sourceSha256Lf": {
+            (file.relative_to(ROOT).as_posix() if file.is_relative_to(ROOT)
+             else "oracle-root/" + file.relative_to(oracle_root).as_posix()):
+            hashlib.sha256(file.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+            for file in sources
+        },
         "notEvidenceOf": ["Successful server launch", "Preset export", "Custom world generation", "Visual parity"],
     }
+    if oracle_requested:
+        report["oracleRoot"] = str(oracle_root)
     (output.parent / "build-result.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return 0

@@ -1,6 +1,6 @@
-# Classic restoration, modpack validation and Horizon work
+# Classic restoration and Java modpack validation
 
-Started 2026-11-04 (America/Los_Angeles), following the user's request to restore all 17 classic biome variants, expand compatibility/performance testing on Fabric and NeoForge, and create a Horizon port.
+Started 2026-11-04 (America/Los_Angeles), following the user's request to restore all 17 classic biome variants, expand compatibility/performance testing on Fabric and NeoForge, and create a Horizon port. Native work has moved to [TerraForged-Horizon](https://github.com/TheApple05/TerraForged-Horizon); this worklog retains the Java validation history.
 
 This record tracks work in progress. The previous accepted experimental delivery remains dev11 until a newer exact artifact passes its required runtime checks.
 
@@ -12,7 +12,6 @@ This record tracks work in progress. The previous accepted experimental delivery
 - Test checksum-pinned rendering, optimization, biome and structure stacks on both loaders. Include an active shader pack, actual chunk generation/save/reload, structures and a real disposable loopback client/server join.
 - Run the predeclared [performance protocol](performance-protocol.md): fixed workloads, repeated matched generator controls, heap/process memory and GC records, normal watchdog and saved-column digests. No universal pack, player-capacity or FPS claim follows from local chunk timings.
 - Keep Java QA companions and third-party artifacts out of distributable production JARs.
-- Build Horizon integration separately against its actual Rust/native-mod API and 26.3 pin. A prepared-world bridge must be described as bounded and cannot be advertised as a complete infinite native generator.
 
 ## Results and retained failures
 
@@ -65,4 +64,4 @@ Both WSL Linux loaders pass new generation and cold reload using the exact dev23
 
 The aggregate functional checker passes 67 evidence files and 30 image hashes. Production-source commit b3da3829eb4e0bc501278cce48f5d890f7afa329 has successful Linux/Windows core and both Ubuntu package CI jobs. Performance acceptance remains pending: a separate workspace is compiling locally, so a bounded quiet-host scheduler waits before the fixed three-trial base/optimized matrices. It records preflight processes and rejects compiler interference during measurement. No timing results or release are invented while waiting.
 
-Horizon exact dev23 dense export and the current merged hook tree pass the full finite native comparison: 884,736 blocks, 13,824 quart-biome samples and 2,304 heightmap/LOD columns, failure gates, cache/disk reload and preserved Nether/End. The dev23 bundle excludes snapshots and player/game resources. New isolated native scalar/vector/Perlin/Simplex modules match independently frozen Java values in both debug and release. Composed graphs, full continent/river/filtered tiles and native density/surface/cave/decoration/client/save integration remain unfinished.
+The historical native dev23 prototype was excluded from the Java release. Its source and evidence now live in [TerraForged-Horizon](https://github.com/TheApple05/TerraForged-Horizon); the [pre-split development log](https://github.com/TheApple05/TerraForged-26.2/blob/c7a477a4a272ef34df9d3f55a95f185f264b40ec/docs/DEVLOG.md) preserves the earlier native milestones.

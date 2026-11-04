@@ -41,4 +41,4 @@ Scoped helper/reference checks and historical failures remain in `docs/validatio
 
 **Remaining limits:** full original Engine/classic appearance parity; every composed noise/preset/control/import extreme; island-preference spawning; long exploration and full post-feature block determinism; old-world and cross-loader migration; public authentication/player load; arbitrary pack/shader combinations; finished far-LOD visuals; and user visual acceptance.
 
-The Horizon **26.3** work is separate from Java26.2. Its finite bridge and scalar/vector/Perlin/Simplex foundation have exact numerical evidence. Infinite native terrain, the complete density/surface/cave/decorating pipeline and native rendered client/save acceptance are unfinished.
+Native Horizon **26.3** source and validation have moved to [TerraForged-Horizon](https://github.com/TheApple05/TerraForged-Horizon). This protocol covers Java 26.2 Fabric/NeoForge; native acceptance is documented in that separate repository.

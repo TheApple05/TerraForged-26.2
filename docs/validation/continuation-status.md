@@ -1,10 +1,10 @@
-# Current validation checkpoint
+# Dev23 validation checkpoint
 
-Updated 2026-11-04. Java modpack evaluation milestone is complete; procedural Horizon generation remains active work.
+Recorded 2026-11-04. This checkpoint preserves dev23 qualification; see the [README](../../README.md) for the current Java download. Native Horizon development continues in [TerraForged-Horizon](https://github.com/TheApple05/TerraForged-Horizon).
 
 ## Published Java candidate
 
-**0.1.0-dev.23+26.2** is published in one [Fabric + NeoForge prerelease](https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.23%2B26.2). The repository remains private and independent, fork=false. Release target is `a5381773145c72f13efe0be918ee302a39967685`; all three relevant workflows passed, including Windows/Linux native fixtures.
+**0.1.0-dev.23+26.2** is published in one [Fabric + NeoForge prerelease](https://github.com/TheApple05/TerraForged-26.2/releases/tag/v0.1.0-dev.23%2B26.2). At this release, the repository was private and independent, fork=false. Release target is `a5381773145c72f13efe0be918ee302a39967685`; all three relevant workflows passed, including Windows/Linux native fixtures.
 
 - Fabric SHA-256: `1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886`.
 - NeoForge SHA-256: `61ed42e28fbebbb1166b2a757e82ddc247038b70b19cdbdfc3a70a6621e80fce`.
@@ -24,18 +24,8 @@ Decisions 0020-0023 cover reentrant cache publication, actual grass footing tags
 
 Qualified natural inputs remain `classic-biome-dev20-qualified-targets.json`, its water targets and `classic-biome-dev19-pillar-locations.json`. The corpus omits the expensive approximate sparse survey while retaining actual saved/reloaded holders and pillar columns.
 
-Initial native Windows CI failed because Git changed the original frozen TSV to CRLF. The -text fixture rule preserves its unchanged LF Git blob, and bash now fails the multi-command check immediately. The retained failure is `ci-native-noise-windows-fixture-failure.json`; the next Windows/Linux run passes.
+Initial native Windows CI failed because Git changed the original frozen TSV to CRLF. The -text fixture rule preserves its unchanged LF Git blob, and bash now fails the multi-command check immediately. The [retained native CI failure](https://github.com/TheApple05/TerraForged-Horizon/blob/main/docs/validation/ci-native-noise-windows-fixture-failure.json) moved with the native evidence; the subsequent Windows/Linux run passed.
 
-## Horizon state and active worktree
+## Native port continuation
 
-The exact23 finite bridge, dense native probe and deterministic prototype package pass. `horizon-current-dev23.json` compares 884,736 blocks, 13,824 quart-biome samples and 2,304 heightmap/LOD columns. The merged minimal Horizon hook is `21679eb68f770d3ac1c2cc1c51a535eea37787ab`, with the tested tree of `9dd5c4093977c718c5c0349032fd3a5434e86afc`. Only the player's existing prepared26.3 resources were used. The prototype is excluded from the Java release.
-
-The isolated native-core scalar/vector/Perlin/Simplex foundation matches 34,976 independent Java records (56,080 values) in debug/release. Seed, PosUtil and FastRandom match another 422 frozen records. Native CI passes both Windows and Linux. Provenance and DeepSeek routine-draft review/cost estimates are in `docs/horizon/`. Planning/integration/final checks remain with Codex.
-
-Two independent Java JVMs also agree on the full kernel oracle: six long seed cases, all 24 Cell fields, terrain/rivers/climate modes and complete production-filtered tiles with their actual borders. Each capture set has 310,104 cells; repeat contexts produce 620,208 observations. The high32bit pair confirms Java's actual narrowing. Frozen files are under `horizon/tests/fixtures/kernel-v1`; the archive verifier checks raw schema/finite values/counts/completeness. This is an independent reference, not a native full-kernel pass.
-
-Further native work is isolated at **C:/Users/Main/Documents/Codex/TerraForged-native**, branch **codex/horizon-noise-graphs**, based on release-source a538177. It currently has uncommitted Perlin2/Simplex2 implementations and a shared interpolation visibility adjustment; these additional families are not validated yet. Continue there with independent Java fixtures, typed noise composition, then the complete continent/river/filtered-tile kernel. Keep this main checkout's published Java artifacts unchanged.
-
-Native infinite terrain, density/surface/cave/decoration integration and native rendered client/save acceptance are unfinished. Do not substitute a height-only terrain fill or the finite snapshot bridge. The dependency inventory and next milestone remain in `docs/horizon/`.
-
-The earlier parallel Codex workers stopped at a service usage limit. No retry or model substitution bypassed that limit. Root continued locally and used the separately authorized bounded DeepSeek routine tasks within their configured budget/session.
+Native Horizon 26.3 source, documentation, fixtures and evidence have moved to [TerraForged-Horizon](https://github.com/TheApple05/TerraForged-Horizon). That repository retains the `horizon/`, `docs/horizon/` and Horizon-specific `docs/validation/` paths. Follow its current checkpoint for native acceptance and remaining work. Historical Java release records retain their original paths and hashes; the [pre-split log](https://github.com/TheApple05/TerraForged-26.2/blob/c7a477a4a272ef34df9d3f55a95f185f264b40ec/docs/DEVLOG.md) records the earlier shared-repository milestones.

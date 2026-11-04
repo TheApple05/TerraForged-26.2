@@ -15,5 +15,3 @@ local.properties
 logs/
 crash-reports/
 .fabric/
-horizon/native-core/target/
-horizon/native-adapter/target/
