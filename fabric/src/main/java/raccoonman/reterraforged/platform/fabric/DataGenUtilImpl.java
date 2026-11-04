@@ -45,7 +45,7 @@ public class DataGenUtilImpl {
 	    @Override
 	    public CompletableFuture<?> run(CachedOutput arg) {
 	        return this.registries.thenCompose(provider -> {
-	            RegistryOps<JsonElement> ops = RegistryOps.create(JsonOps.INSTANCE, provider);
+	            DynamicOps<JsonElement> ops = provider.createSerializationContext(JsonOps.INSTANCE);
 	            return CompletableFuture.allOf(DynamicRegistries.getDynamicRegistries().stream().flatMap(arg3 -> this.dumpRegistryCap(arg, provider, ops, arg3).stream()).toArray(CompletableFuture[]::new));
 	        });
 	    }

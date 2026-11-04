@@ -20,6 +20,7 @@ import raccoonman.reterraforged.registries.RTFRegistries;
 import raccoonman.reterraforged.world.worldgen.biome.modifier.BiomeModifier;
 import raccoonman.reterraforged.world.worldgen.biome.modifier.BiomeModifiers;
 import raccoonman.reterraforged.world.worldgen.biome.modifier.Order;
+import raccoonman.reterraforged.world.worldgen.biome.modifier.Filter;
 
 public class BiomeModifierData {
 	public static final ResourceKey<BiomeModifier> ADD_PRE_PROCESSING = createKey("add_pre_processing");
@@ -56,7 +57,7 @@ public class BiomeModifierData {
 
 	@SafeVarargs
 	private static BiomeModifier prepend(GenerationStep.Decoration step, HolderSet<Biome> biomes, Holder<PlacedFeature>... features) {
-		return BiomeModifiers.add(Order.PREPEND, step, biomes, HolderSet.direct(features));
+		return BiomeModifiers.add(Order.PREPEND, step, Filter.Behavior.WHITELIST, biomes, HolderSet.direct(features));
 	}
 
 	@SafeVarargs
@@ -66,7 +67,7 @@ public class BiomeModifierData {
 	
 	@SafeVarargs
 	private static BiomeModifier append(GenerationStep.Decoration step, HolderSet<Biome> biomes, Holder<PlacedFeature>... features) {
-		return BiomeModifiers.add(Order.APPEND, step, biomes, HolderSet.direct(features));
+		return BiomeModifiers.add(Order.APPEND, step, Filter.Behavior.WHITELIST, biomes, HolderSet.direct(features));
 	}
 	
 	private static ResourceKey<BiomeModifier> createKey(String name) {

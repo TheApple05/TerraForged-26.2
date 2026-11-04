@@ -59,7 +59,7 @@ public record Preset(WorldSettings world, CaveSettings caves, ClimateSettings cl
 		this.addPatch(builder, Registries.DIMENSION_TYPE, PresetDimensionTypes::bootstrap);
 		this.addPatch(builder, Registries.DENSITY_FUNCTION, PresetNoiseRouterData::bootstrap);
 		this.addPatch(builder, Registries.NOISE_SETTINGS, PresetNoiseGeneratorSettings::bootstrap);
-		return builder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), registries);
+		return raccoonman.reterraforged.data.worldgen.RegistryPatches.build(builder, registries);
 	}
 	
 	private <T> void addPatch(RegistrySetBuilder builder, ResourceKey<? extends Registry<T>> key, Patch<T> patch) {

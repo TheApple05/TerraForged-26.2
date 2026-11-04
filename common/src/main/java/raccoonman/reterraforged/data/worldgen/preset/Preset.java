@@ -36,39 +36,25 @@ public record Preset(WorldSettings world, CaveSettings caves, ClimateSettings cl
 	).apply(instance, Preset::new));
 	
 	@Deprecated
-	public static final ResourceKey<Preset> KEY = RTFRegistries.createKey(RTFRegistries.PRESET, "preset");
+	public static final ResourceKey<raccoonman.reterraforged.data.worldgen.preset.settings.Preset> KEY = raccoonman.reterraforged.data.worldgen.preset.settings.Preset.KEY;
 	
 	public Preset copy() {
 		return new Preset(this.world.copy(), this.caves.copy(), this.climate.copy(), this.terrain.copy(), this.rivers.copy(), this.filters.copy(), this.structures.copy(), this.miscellaneous.copy());
 	}
 
+	/** Compatibility bridge for the superseded duplicate settings package. */
 	public HolderLookup.Provider buildPatch(RegistryAccess registries) {
-		RegistrySetBuilder builder = new RegistrySetBuilder();
-		this.addPatch(builder, RTFRegistries.PRESET, (preset, ctx) -> ctx.register(KEY, preset));
-		this.addPatch(builder, RTFRegistries.NOISE, NoiseData::bootstrap);
-		this.addPatch(builder, RTFRegistries.BIOME_MODIFIER, BiomeModifierData::bootstrap);
-		this.addPatch(builder, RTFRegistries.STRUCTURE_RULE, StructureRuleData::bootstrap);
-		this.addPatch(builder, Registries.CONFIGURED_FEATURE, (preset, ctx) -> {
-			RTFConfiguredFeatures.bootstrap(preset, ctx);
-		});
-		this.addPatch(builder, Registries.CONFIGURED_CARVER, (preset, ctx) -> {
-			RTFConfiguredCarvers.bootstrap(preset, ctx);	
-		});
-		this.addPatch(builder, Registries.PLACED_FEATURE, RTFPlacedFeatures::bootstrap);
-		this.addPatch(builder, Registries.BIOME, RTFBiomeData::bootstrap);
-		this.addPatch(builder, Registries.DIMENSION_TYPE, RTFDimensionTypes::bootstrap);
-		this.addPatch(builder, Registries.DENSITY_FUNCTION, RTFNoiseRouterData::bootstrap);
-		this.addPatch(builder, Registries.NOISE_SETTINGS, RTFNoiseGeneratorSettings::bootstrap);
-		return builder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), registries);
+		return this.toCurrentPreset().buildPatch(registries);
 	}
-	
-	private <T> void addPatch(RegistrySetBuilder builder, ResourceKey<? extends Registry<T>> key, Patch<T> patch) {
-    	builder.add(key, (ctx) -> {
-    		patch.apply(this, ctx);
-    	});
-    }
-    
-	private interface Patch<T> {
-        void apply(Preset preset, BootstrapContext<T> ctx);
+
+	public raccoonman.reterraforged.data.worldgen.preset.settings.Preset toCurrentPreset() {
+		com.google.gson.JsonElement source = DIRECT_CODEC.encodeStart(com.mojang.serialization.JsonOps.INSTANCE, this).getOrThrow();
+		var converted = raccoonman.reterraforged.data.worldgen.preset.settings.Preset.DIRECT_CODEC.parse(com.mojang.serialization.JsonOps.INSTANCE, source).getOrThrow();
+		com.google.gson.JsonElement convertedJson = raccoonman.reterraforged.data.worldgen.preset.settings.Preset.DIRECT_CODEC.encodeStart(com.mojang.serialization.JsonOps.INSTANCE, converted).getOrThrow();
+		Preset roundTrip = DIRECT_CODEC.parse(com.mojang.serialization.JsonOps.INSTANCE, convertedJson).getOrThrow();
+		if (!source.equals(DIRECT_CODEC.encodeStart(com.mojang.serialization.JsonOps.INSTANCE, roundTrip).getOrThrow())) {
+			throw new IllegalStateException("Legacy preset conversion would lose settings");
+		}
+		return converted;
 	}
 }

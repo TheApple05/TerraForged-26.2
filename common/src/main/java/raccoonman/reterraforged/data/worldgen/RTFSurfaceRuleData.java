@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableList;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.SurfaceRules;
@@ -21,8 +22,8 @@ import raccoonman.reterraforged.world.worldgen.surface.rule.StrataRule.Strata;
 public final class RTFSurfaceRuleData {
 
     // maybe have a custom meadow or cherry forest surface ?
-    public static SurfaceRules.RuleSource overworld(Preset preset, HolderGetter<DensityFunction> densityFunctions, HolderGetter<Noise> noise) {
-        return overworld(preset, densityFunctions, noise, SurfaceRuleData.overworld());
+    public static SurfaceRules.RuleSource overworld(Preset preset, HolderGetter<DensityFunction> densityFunctions, HolderGetter<Noise> noise, HolderGetter<Biome> biomes) {
+        return overworld(preset, densityFunctions, noise, SurfaceRuleData.overworld(biomes));
     }
     
     public static SurfaceRules.RuleSource overworld(Preset preset, HolderGetter<DensityFunction> densityFunctions, HolderGetter<Noise> noise, SurfaceRules.RuleSource defaultRules) {

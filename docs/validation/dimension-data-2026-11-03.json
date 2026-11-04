@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "result": "passed",
+  "minecraft": "26.2",
+  "defaultOverworldMatchesVanilla": true,
+  "heightCases": 9,
+  "encodedHeightCases": 9,
+  "checks": [
+    "Complete encoded default dimension equals actual vanilla 26.2 overworld",
+    "Nine worldDepth/worldHeight combinations retain min_y, height and logical_height",
+    "Encoded bounds preserve all nine combinations"
+  ],
+  "limitations": [
+    "Does not generate chunks",
+    "Decode round-trip requires loaded block/timeline tags, absent from standalone VanillaRegistries.createLookup; not claimed"
+  ],
+  "sourceSha256": "1da77df1ff954b98de8d2f50ca293fcb5754f03d47c5b41b8c42e501e6a067e5",
+  "probeSha256": "f105ef963241aeed3f499059d15a6e938fed68da7e1ddd3c9f32f4c146768738"
+}

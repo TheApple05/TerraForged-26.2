@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "result": "passed",
+  "comparison": "actual Minecraft 1.20.1 RandomPatchFeature versus migrated LegacyRandomPatchFeature on actual Minecraft 26.2",
+  "baseline": {
+    "cases": 216,
+    "placements": 6948,
+    "sha256": "1c70db1cb5f55a9ea98abf103f089a5912f92bc8cf69d7b46e68a3c7afc34e9a"
+  },
+  "modern": {
+    "cases": 216,
+    "placements": 6948,
+    "sha256": "1c70db1cb5f55a9ea98abf103f089a5912f92bc8cf69d7b46e68a3c7afc34e9a"
+  },
+  "tested": [
+    "attempt counts 0/1/24/48/56/64",
+    "six seeds including signed-long extremes",
+    "positive and negative origins",
+    "spreads 7/3, 0/0, 1/9",
+    "nested placement RNG consumption",
+    "success flags",
+    "final RNG states"
+  ],
+  "baselineGameJars": [
+    {
+      "component": "common",
+      "sha256": "63c5ad128e9342e6add1524ade9c0a267edc6cbf23336d9a5bdb6b1e8da14b6e"
+    },
+    {
+      "component": "clientonly",
+      "sha256": "fb40258f64de868b18f15e9ba0b2015a698e0a3e16b5bfb88566badfd9804cc8"
+    }
+  ],
+  "baselineVersionDescriptorSha256": "c966587c030c0c1ccfd60af3188be9a6b9b1aeb8299a0da0666fffd3d995e351",
+  "verifiedOfficialLibraries": 46,
+  "migratedFeatureSha256": "02c44b6e8e62d968f1aed315581808b826e76a73e0c2272d689cd0ad20e42e17",
+  "probeSha256": "ddde36f79179644f6e440797e8d8fa750bffe57e0cc1c69e77ce9844e9c74a5a",
+  "limitations": [
+    "Controlled recording child feature, not an in-world vegetation render",
+    "WorldGenLevel test proxy only permits placement and height queries",
+    "Reference named 1.20.1 Loom cache required; no Minecraft JAR is redistributed"
+  ]
+}

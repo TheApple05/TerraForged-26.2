@@ -28,40 +28,42 @@ import raccoonman.reterraforged.world.worldgen.feature.SwampSurfaceFeature;
 public class Datapacks {
 
 	public static DataGenerator makeMudSwamps(RegistryAccess registryAccess, Path dataGenPath, Path dataGenOutputPath) {
-		DataGenerator dataGenerator = new DataGenerator(dataGenPath, SharedConstants.getCurrentVersion(), true);
-		PackGenerator packGenerator = dataGenerator.new PackGenerator(true, "Mud Swamps", new PackOutput(dataGenOutputPath));
+		DataGenerator dataGenerator = new DataGenerator.Cached(dataGenPath, SharedConstants.getCurrentVersion(), true);
+		PackGenerator packGenerator = dataGenerator.getVanillaPack(true);
+		PackOutput packOutput = new PackOutput(dataGenOutputPath);
 		CompletableFuture<HolderLookup.Provider> lookup = CompletableFuture.supplyAsync(() -> {
 			RegistrySetBuilder builder = new RegistrySetBuilder();
 			builder.add(Registries.CONFIGURED_FEATURE, (ctx) -> {
 				FeatureUtils.register(ctx, PresetConfiguredFeatures.SWAMP_SURFACE, RTFFeatures.SWAMP_SURFACE, new SwampSurfaceFeature.Config(Blocks.CLAY.defaultBlockState(), Blocks.GRAVEL.defaultBlockState(), Blocks.MUD.defaultBlockState()));
 			});
-			return builder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), registryAccess);
+			return RegistryPatches.build(builder, registryAccess);
 		});
 		packGenerator.addProvider((output) -> {
-			return DataGenUtil.createRegistryProvider(output, lookup);
+			return DataGenUtil.createRegistryProvider(packOutput, lookup);
 		});
 		packGenerator.addProvider((output) -> {
-			return PackMetadataGenerator.forFeaturePack(output, Component.translatable(RTFTranslationKeys.MUD_SWAMPS_METADATA_DESCRIPTION));
+			return PackMetadataGenerator.forFeaturePack(packOutput, Component.translatable(RTFTranslationKeys.MUD_SWAMPS_METADATA_DESCRIPTION));
 		});
 		return dataGenerator;
 	}
 
 	public static DataGenerator makePreset(Preset preset, RegistryAccess registryAccess, Path dataGenPath, Path dataGenOutputPath, String presetName) {
-		DataGenerator dataGenerator = new DataGenerator(dataGenPath, SharedConstants.getCurrentVersion(), true);
-		PackGenerator packGenerator = dataGenerator.new PackGenerator(true, presetName, new PackOutput(dataGenOutputPath));
+		DataGenerator dataGenerator = new DataGenerator.Cached(dataGenPath, SharedConstants.getCurrentVersion(), true);
+		PackGenerator packGenerator = dataGenerator.getVanillaPack(true);
+		PackOutput packOutput = new PackOutput(dataGenOutputPath);
 		CompletableFuture<HolderLookup.Provider> lookup = CompletableFuture.supplyAsync(() -> preset.buildPatch(registryAccess));
 		
 		packGenerator.addProvider((output) -> {
-			return DataGenUtil.createRegistryProvider(output, lookup);
+			return DataGenUtil.createRegistryProvider(packOutput, lookup);
 		});
 		packGenerator.addProvider((output) -> {
-			return new RTFDensityFunctionTagsProvider(output, lookup);
+			return new RTFDensityFunctionTagsProvider(packOutput, lookup);
 		});
 		packGenerator.addProvider((output) -> {
-			return new RTFBlockTagsProvider(preset, output, lookup);
+			return new RTFBlockTagsProvider(preset, packOutput, lookup);
 		});
 		packGenerator.addProvider((output) -> {
-			return PackMetadataGenerator.forFeaturePack(output, Component.translatable(RTFTranslationKeys.PRESET_METADATA_DESCRIPTION));
+			return PackMetadataGenerator.forFeaturePack(packOutput, Component.translatable(RTFTranslationKeys.PRESET_METADATA_DESCRIPTION));
 		});
 		return dataGenerator;
 	}

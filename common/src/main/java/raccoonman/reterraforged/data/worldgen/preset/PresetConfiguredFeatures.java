@@ -27,13 +27,13 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.DiskConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import raccoonman.reterraforged.world.worldgen.feature.LegacyRandomPatchFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import raccoonman.reterraforged.RTFCommon;
@@ -232,28 +232,28 @@ public class PresetConfiguredFeatures {
 				makeWeighted(0.4F, jungleBush)
 			)));
 			FeatureUtils.register(ctx, FOREST_GRASS, Feature.RANDOM_SELECTOR, makeRandom(
-				makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.GRASS, 48)),
+				makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.SHORT_GRASS, 48)),
 				List.of(
-					makeWeighted(0.5F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.GRASS, 56))),
-					makeWeighted(0.4F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.TALL_GRASS, 56))),
-					makeWeighted(0.2F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.LARGE_FERN, 48))),
-					makeWeighted(0.2F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.FERN, 24)))
+					makeWeighted(0.5F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.SHORT_GRASS, 56))),
+					makeWeighted(0.4F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.TALL_GRASS, 56))),
+					makeWeighted(0.2F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.LARGE_FERN, 48))),
+					makeWeighted(0.2F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.FERN, 24)))
 				)
 			));
 			FeatureUtils.register(ctx, BIRCH_FOREST_GRASS, Feature.RANDOM_SELECTOR, makeRandom(
-				makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.TALL_GRASS, 48)),
+				makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.TALL_GRASS, 48)),
 				List.of(
-					makeWeighted(0.8F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.TALL_GRASS, 56))),
-					makeWeighted(0.5F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.LILAC, 64))),
-					makeWeighted(0.3F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.LARGE_FERN, 48))),
-					makeWeighted(0.2F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.FERN, 24))),
-					makeWeighted(0.1F, makeInlined(Feature.RANDOM_PATCH, makePatch(Blocks.PEONY, 32)))
+					makeWeighted(0.8F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.TALL_GRASS, 56))),
+					makeWeighted(0.5F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.LILAC, 64))),
+					makeWeighted(0.3F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.LARGE_FERN, 48))),
+					makeWeighted(0.2F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.FERN, 24))),
+					makeWeighted(0.1F, makeInlined(RTFFeatures.LEGACY_RANDOM_PATCH, makePatch(Blocks.PEONY, 32)))
 				)
 			));
 
-	        FeatureUtils.register(ctx, MiscOverworldFeatures.DISK_CLAY, RTFFeatures.DISK, new DiskConfiguration(RuleBasedBlockStateProvider.simple(Blocks.CLAY), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.CLAY)), UniformInt.of(2, 3), 1));
-	        FeatureUtils.register(ctx, MiscOverworldFeatures.DISK_GRAVEL, RTFFeatures.DISK, new DiskConfiguration(RuleBasedBlockStateProvider.simple(Blocks.GRAVEL), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)), UniformInt.of(2, 5), 2));
-	        FeatureUtils.register(ctx, MiscOverworldFeatures.DISK_SAND, RTFFeatures.DISK, new DiskConfiguration(new RuleBasedBlockStateProvider(BlockStateProvider.simple(Blocks.SAND), List.of(new RuleBasedBlockStateProvider.Rule(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.AIR), BlockStateProvider.simple(Blocks.SANDSTONE)))), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)), UniformInt.of(2, 6), 2));
+	        FeatureUtils.register(ctx, MiscOverworldFeatures.DISK_CLAY, RTFFeatures.DISK, new DiskConfiguration(BlockStateProvider.simple(Blocks.CLAY), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.CLAY)), UniformInt.of(2, 3), 1));
+	        FeatureUtils.register(ctx, MiscOverworldFeatures.DISK_GRAVEL, RTFFeatures.DISK, new DiskConfiguration(BlockStateProvider.simple(Blocks.GRAVEL), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)), UniformInt.of(2, 5), 2));
+	        FeatureUtils.register(ctx, MiscOverworldFeatures.DISK_SAND, RTFFeatures.DISK, new DiskConfiguration(new RuleBasedStateProvider(BlockStateProvider.simple(Blocks.SAND), List.of(new RuleBasedStateProvider.Rule(BlockPredicate.matchesBlocks(Direction.DOWN.getUnitVec3i(), Blocks.AIR), BlockStateProvider.simple(Blocks.SANDSTONE)))), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)), UniformInt.of(2, 6), 2));
 	    }
 	}
 
@@ -262,7 +262,7 @@ public class PresetConfiguredFeatures {
 	}
 	
 	private static TreeConfiguration makeLargeBush(Block log, Block leaf) {
-		return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaf), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).build();
+		return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaf), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0), BlockStateProvider.simple(Blocks.DIRT)).build();
 	}
 	
 	private static TemplateFeature.Config<?> makeTree(List<Identifier> templates) {
@@ -293,8 +293,8 @@ public class PresetConfiguredFeatures {
     	return new WeightedPlacedFeature(feature, weight);
     }
     
-    private static RandomPatchConfiguration makePatch(Block state, int tries) {
-        return FeatureUtils.simpleRandomPatchConfiguration(tries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(state.defaultBlockState()))));
+    private static LegacyRandomPatchFeature.Config makePatch(Block state, int tries) {
+        return new LegacyRandomPatchFeature.Config(tries, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(state.defaultBlockState()))));
     }
     
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<PlacedFeature> makeInlined(F feature, FC featureConfiguration) {

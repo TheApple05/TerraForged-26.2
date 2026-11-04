@@ -32,7 +32,7 @@ public final class RTFNoiseGeneratorSettings {
 			NoiseSettings.create(-worldDepth, worldDepth + worldHeight, 1, 2), 
 			Blocks.STONE.defaultBlockState(), Blocks.WATER.defaultBlockState(), 
 			RTFNoiseRouterData.overworld(preset, densityFunctions, noiseParams, noises),
-			RTFSurfaceRuleData.overworld(preset, densityFunctions, noises),
+			RTFSurfaceRuleData.overworld(preset, densityFunctions, noises, ctx.lookup(Registries.BIOME)),
 			properties.spawnType.getParameterPoints(), 
 			properties.seaLevel, 
 			false, 

@@ -34,7 +34,7 @@ public final class PresetNoiseGeneratorSettings {
 			NoiseSettings.create(-worldDepth, worldDepth + worldHeight, 1, 2), 
 			Blocks.STONE.defaultBlockState(), Blocks.WATER.defaultBlockState(), 
 			PresetNoiseRouterData.overworld(preset, densityFunctions, noiseParams, noises),
-			PresetSurfaceRuleData.overworld(preset, densityFunctions, noises),
+			PresetSurfaceRuleData.overworld(preset, densityFunctions, noises, ctx.lookup(Registries.BIOME)),
 //			i want to be able to do it with parameter points :(
 //			properties.spawnType.getParameterPoints(), 
 			ImmutableList.of(),

@@ -19,6 +19,6 @@ public final class PresetDimensionTypes {
 		int worldDepth = properties.worldDepth;
 		int totalHeight = worldDepth + worldHeight;
 		
-        ctx.register(BuiltinDimensionTypes.OVERWORLD, new DimensionType(OptionalLong.empty(), true, false, false, true, 1.0, true, false, -worldDepth, totalHeight, totalHeight, BlockTags.INFINIBURN_OVERWORLD, BuiltinDimensionTypes.OVERWORLD_EFFECTS, 0.0f, new DimensionType.MonsterSettings(false, true, UniformInt.of(0, 7), 0)));
+        ctx.register(BuiltinDimensionTypes.OVERWORLD, raccoonman.reterraforged.data.worldgen.OverworldDimensionData.create(ctx, worldDepth, worldHeight));
 	}
 }
