@@ -4,7 +4,7 @@ use horizon_core::density::terraforged_runtime::kernel::{
     noise_registry::NoiseRegistry,
     preset_input::CellPresetInput,
 };
-use std::{cell::RefCell, sync::Arc};
+use std::{cell::RefCell, collections::BTreeMap, sync::Arc};
 
 #[derive(Debug)]
 pub struct RegistryState {
@@ -12,6 +12,8 @@ pub struct RegistryState {
     pub noises: NoiseRegistry,
     pub world_seed: i64,
     pub legacy_random: bool,
+    /// Optional world-local formulas/aliases. Shared GeneratorData is immutable.
+    pub density_definitions: BTreeMap<String, String>,
 }
 impl RegistryState {
     pub fn from_json(
@@ -47,6 +49,7 @@ impl RegistryState {
             noises,
             world_seed: seed,
             legacy_random,
+            density_definitions: BTreeMap::new(),
         }))
     }
 }
