@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "status": "failed-preflight-before-native-probe",
+  "error": "The first QA tag resolver treated every feature_tags entry as a placed-feature tag and rejected configured-only minecraft:wildflower. The engine invalidates unrelated missing-member tags independently; this was a QA resolver error, not a native transform observation.",
+  "verifierSourceSha256": "b0d5640a2c3fb03ae788f2b80b09205e158e4f78503bf43573d35c54444d0c65",
+  "nativeProbeExecuted": false,
+  "gameAssetsDownloaded": false,
+  "recordedAtUtc": "2026-11-04T22:05:35.611664+00:00"
+}

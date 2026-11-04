@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-installed-resource-transform-smoke-not-runtime-integration",
+  "completedAtUtc": "2026-11-04T22:07:12.377743+00:00",
+  "resourceInputsSha256": {
+    "biomes": "9b26dc3b662627dc3bbbf8da209f287882ce79ff4daf8f454b994ddc7510df99",
+    "features": "1dc5430167695697df7077ae0ef1d1a652265e05c47634f2fc3f04750d697431",
+    "placed_features": "f49132b63263b9e8d763175860c1c90a10dc9977f01820fa878624e06434f136",
+    "biome_tags": "4006b76c24f616cb457a6fdad816db9b27f4528fe6daaed5747f1f79cf6225cf",
+    "feature_tags": "d66b2f97400514fc3c03b0dd8a60a93257071ab274dc132f41b79d6a454b074a"
+  },
+  "invalidUnusedTags": {
+    "biome_tags": {},
+    "feature_tags": {
+      "minecraft:can_spawn_from_bone_meal": "Required tag member absent: minecraft:wildflower"
+    }
+  },
+  "verifierSourceSha256": "5fe2994ec1964014633886f6635886867466f9a0b9814883103178064b20f87f",
+  "preparedInputSha256": "3044c27ff7cf6da7a0d39531b0e338d9779ed0736880f02aa826a41abde4359d",
+  "probeSourceSha256": "882e5726ecc01974a2d58dfdde009445c0e7e31a2452829923845e3533dadea3",
+  "transformSourceSha256": "e938e9855515bc1cc90d18a3cacd0ed2fd084ebc5362c0b588f6e74c5c00501c",
+  "runs": [
+    {
+      "profile": "debug",
+      "exitCode": 0,
+      "executableSha256": "d3c77874dd8773d680bb24e2a04e40054e73f3a69504e11f39a12097729002c5",
+      "outputSha256": "945cb1a4d0529a126a14c3ca8fb175f752346665432112bbf472928cd40ff1e1",
+      "biomes": 17,
+      "placedFeatures": 8,
+      "configuredFeatures": 3,
+      "inheritedTags": 44
+    },
+    {
+      "profile": "release",
+      "exitCode": 0,
+      "executableSha256": "95c5092f087a45cab06b76686f132de0f8c246e32990494e720345e983fdc789",
+      "outputSha256": "945cb1a4d0529a126a14c3ca8fb175f752346665432112bbf472928cd40ff1e1",
+      "biomes": 17,
+      "placedFeatures": 8,
+      "configuredFeatures": 3,
+      "inheritedTags": 44
+    }
+  ],
+  "profilesAgree": true,
+  "resourceInputsUnchanged": true,
+  "gameAssetsDownloaded": false,
+  "requiredCustomAlgorithms": [
+    "reterraforged:classic_pillar",
+    "reterraforged:swamp_surface"
+  ],
+  "notCovered": [
+    "Independent Java definition/feature parity",
+    "Native registry and renderer installation",
+    "Native custom feature execution",
+    "Natural biome generation or stored chunks",
+    "Client, launcher, performance and modpack acceptance"
+  ]
+}

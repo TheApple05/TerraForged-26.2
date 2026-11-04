@@ -33,3 +33,7 @@ being integrated before the pipeline's catalogs are built. Its wrapper must
 preserve parent cave biomes below quart Y zero and use the completed filtered
 cell for surface selection. Natural generation and feature acceptance follow
 that integration separately.
+
+The separate [resource transformer](classic-biome-resources.md) now has structural
+tests and installed-resource smoke evidence. That does not change the policy
+corpus or establish live native biome installation.
