@@ -26,6 +26,7 @@ def main() -> int:
     parser.add_argument("--noise-final", action="store_true", help="Include the optional same-package genuine Java line/terrace/domain/erosion oracle (Fabric QA only).")
     parser.add_argument("--noise-visitors", action="store_true", help="Include the optional same-package genuine Java traversal oracle (Fabric QA only).")
     parser.add_argument("--noise-registry", action="store_true", help="Include the optional same-package genuine Java registry oracle (Fabric QA only).")
+    parser.add_argument("--preset-model", action="store_true", help="Include the optional genuine Java preset/factory oracle and explicit inputs (Fabric QA only).")
     args = parser.parse_args()
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -51,6 +52,8 @@ def main() -> int:
         sources.append(ROOT / "horizon/tests/java/NativeNoiseVisitorProbe.java")
     if args.noise_registry:
         sources.append(ROOT / "horizon/tests/java/NativeNoiseRegistryProbe.java")
+    if args.preset_model:
+        sources.append(ROOT / "horizon/tests/java/NativePresetProbe.java")
     work = Path(tempfile.mkdtemp(prefix="compile-", dir=output.parent))
     classes = work / "classes"
     classes.mkdir()
@@ -71,6 +74,8 @@ def main() -> int:
         "depends": {"reterraforged": "*", "fabricloader": ">=0.20.1", "fabric-lifecycle-events-v1": "*", "minecraft": "26.2", "java": ">=25"},
     }
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        if args.preset_model:
+            archive.write(ROOT / "horizon/tests/inputs/preset-model-v1.json", "terraforged-qa-preset-model.json")
         archive.writestr("fabric.mod.json", json.dumps(metadata, indent=2) + "\n")
         archive.writestr("terraforged-runtime-qa.mixins.json", json.dumps({"required": True, "minVersion": "0.8", "package": "terraforged.qa.mixin",
             "compatibilityLevel": "JAVA_25", "mixins": ["StructureColumnProbe", "ClassicPillarFeatureProbe"], "injectors": {"defaultRequire": 1}}, indent=2) + "\n")

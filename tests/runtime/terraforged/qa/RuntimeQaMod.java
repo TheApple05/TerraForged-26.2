@@ -191,6 +191,15 @@ public final class RuntimeQaMod implements ModInitializer {
                     "sha256", sha256(reference), "bytes", Files.size(reference),"inputs",inputs.toString(),"inputsSha256",sha256(inputs)));
             }
             TemplateBiomeDecoratorProbe.main(new String[0]);
+            if (Boolean.getBoolean("terraforged.qa.exportPresetModel")) {
+                require(!mode.startsWith("benchmark"), "Preset model capture is forbidden during benchmarks");
+                Path reference = output.resolve("native-preset-model.tsv");
+                Path inputs = output.resolve("native-preset-model.inputs.json");
+                Class<?> probe = Class.forName("raccoonman.reterraforged.world.worldgen.noise.module.NativePresetProbe");
+                probe.getMethod("capture", Path.class, Path.class).invoke(null, reference, inputs);
+                report.put("presetModel", Map.of("status", "captured-genuine-java-preset-factories", "file", reference.toString(),
+                    "sha256", sha256(reference),"inputs",inputs.toString(),"inputsSha256",sha256(inputs)));
+            }
             node(nodes, "biome-decorator-overrides", "passed", "Three production-helper assertions completed with real target holders");
             report.put("status", "passed");
         } catch (Throwable failure) {
