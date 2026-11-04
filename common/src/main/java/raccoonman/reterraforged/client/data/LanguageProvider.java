@@ -15,6 +15,8 @@ import java.util.function.Supplier;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
@@ -78,7 +80,7 @@ public abstract class LanguageProvider implements DataProvider {
     }
 
     public void add(ItemStack key, String name) {
-        add(key.getDescriptionId(), name);
+        addTranslatable(key.getItemName(), name);
     }
 
     public void addEnchantment(Supplier<? extends Enchantment> key, String name) {
@@ -86,7 +88,15 @@ public abstract class LanguageProvider implements DataProvider {
     }
 
     public void add(Enchantment key, String name) {
-        add(key.getDescriptionId(), name);
+        addTranslatable(key.description(), name);
+    }
+
+    private void addTranslatable(Component description, String name) {
+        if (description.getContents() instanceof TranslatableContents contents) {
+            add(contents.getKey(), name);
+        } else {
+            throw new IllegalArgumentException("Cannot add a translation for a literal description: " + description.getString());
+        }
     }
 
     /*

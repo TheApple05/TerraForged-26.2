@@ -26,6 +26,7 @@ import raccoonman.reterraforged.client.gui.screen.page.LinkedPageScreen;
 import raccoonman.reterraforged.client.gui.screen.presetconfig.PresetListPage.PresetEntry;
 import raccoonman.reterraforged.data.worldgen.Datapacks;
 import raccoonman.reterraforged.data.worldgen.preset.settings.Preset;
+import raccoonman.reterraforged.mixin.CreateWorldScreenInvoker;
 
 //FIXME pressing the create world screen before the pack is copied will fuck the game up (surprisingly noone seems to have run into this?)
 public class PresetConfigScreen extends LinkedPageScreen {
@@ -40,7 +41,7 @@ public class PresetConfigScreen extends LinkedPageScreen {
 	public void onClose() {
 		super.onClose();
 
-		this.minecraft.setScreen(this.parent);
+		this.minecraft.gui.setScreen(this.parent);
 	}
 	
 	public void setSeed(long seed) {
@@ -55,13 +56,14 @@ public class PresetConfigScreen extends LinkedPageScreen {
 	}
 
 	public void applyPreset(PresetEntry preset) throws IOException {		
-		Pair<Path, PackRepository> path = this.parent.getDataPackSelectionSettings(this.parent.getUiState().getSettings().dataConfiguration());
+		CreateWorldScreenInvoker parentAccess = (CreateWorldScreenInvoker) this.parent;
+		Pair<Path, PackRepository> path = parentAccess.reterraforged$getDataPackSelectionSettings(this.parent.getUiState().getSettings().dataConfiguration());
 		Path exportPath = path.getFirst().resolve("reterraforged-preset.zip");
 		this.exportAsDatapack(exportPath, preset);
 		PackRepository repository = path.getSecond();
 		repository.reload();
 		if(repository.addPack("file/" + exportPath.getFileName())) {
-			this.parent.tryApplyNewDataPacks(repository, false, (data) -> {
+			parentAccess.reterraforged$tryApplyNewDataPacks(repository, false, (data) -> {
 			});
 		}
 	}

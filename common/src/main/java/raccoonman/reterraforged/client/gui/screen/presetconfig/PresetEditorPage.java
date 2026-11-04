@@ -3,17 +3,16 @@ package raccoonman.reterraforged.client.gui.screen.presetconfig;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.platform.NativeImage;
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+import org.joml.Matrix3x2fStack;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.MouseHandler;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.CycleButton;
@@ -46,6 +45,7 @@ import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.util.PosUtil;
 
 public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, AbstractWidget, AbstractWidget> {
+	private static final AtomicInteger PREVIEW_IDS = new AtomicInteger();
 	private Slider zoom;
 	private CycleButton<RenderMode> renderMode;
 	private ValueButton<Integer> seed;
@@ -122,8 +122,9 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	    private static final int FACTOR = 4;
 	    public static final int SIZE = (1 << 4) << FACTOR;
 	    private static final float[] LEGEND_SCALES = { 1, 0.9F, 0.75F, 0.6F };
-	    private DynamicTexture texture = new DynamicTexture(new NativeImage(SIZE, SIZE, false));
-	    private Identifier textureId = Minecraft.getInstance().getTextureManager().register(RTFCommon.MOD_ID + "-preview-framebuffer", this.texture);
+	    private final Identifier textureId = RTFCommon.location("preview/framebuffer_" + PREVIEW_IDS.getAndIncrement());
+	    private final DynamicTexture texture = new DynamicTexture(this.textureId::toString, new NativeImage(SIZE, SIZE, false));
+	    private boolean closed;
 	    private Tile tile;
 	    private int centerX, centerZ;
 	    
@@ -136,16 +137,17 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 
 	    public Preview() {
 	        super(-1, -1, -1, -1, CommonComponents.EMPTY, (b) -> {
-		    	System.out.println("clicked");
 	        	Minecraft mc = Minecraft.getInstance();
 	        	MouseHandler mouse = mc.mouseHandler;
 	        	if(b instanceof Preview self) {
-			        if (self.updateLegend((int) mouse.xpos(), (int) mouse.ypos()) && !self.hoveredCoords.isEmpty()) {
-			            self.playDownSound(Minecraft.getInstance().getSoundManager());
-			            PresetEditorPage.this.screen.minecraft.keyboardHandler.setClipboard(self.hoveredCoords);
+			        int mouseX = (int) mouse.getScaledXPos(mc.getWindow());
+			        int mouseY = (int) mouse.getScaledYPos(mc.getWindow());
+			        if (self.updateLegend(mouseX, mouseY) && !self.hoveredCoords.isEmpty()) {
+			            Minecraft.getInstance().keyboardHandler.setClipboard(self.hoveredCoords);
 			        }
 	        	}
 	        }, DEFAULT_NARRATION);
+	        Minecraft.getInstance().getTextureManager().register(this.textureId, this.texture);
 	    }
 
 	    public void regenerate() {
@@ -190,16 +192,19 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	        NativeImage pixels = this.texture.getPixels();
 	        this.tile.iterate((cell, x, z) -> {
 	            if (x < stroke || z < stroke || x >= width - stroke || z >= width - stroke) {
-	                pixels.setPixelRGBA(x, z, Color.BLACK.getRGB());
+	                pixels.setPixelABGR(x, z, Color.BLACK.getRGB());
 	            } else {
-	                pixels.setPixelRGBA(x, z, renderMode.getColor(cell, levels));
+	                pixels.setPixelABGR(x, z, renderMode.getColor(cell, levels));
 	            }
 	        });
 	        this.texture.upload();
 	    }
 	    
 	    public void close() throws Exception {
-	    	this.texture.close();
+			if (!this.closed) {
+			Minecraft.getInstance().getTextureManager().release(this.textureId);
+			this.closed = true;
+			}
 	    	try {
 				CacheManager.clear();
 			} catch (Exception e) {
@@ -208,19 +213,16 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	    }
 
 	    @Override
-	    public void render(GuiGraphics guiGraphics, int mx, int my, float partialTicks) {
+	    public void extractContents(GuiGraphicsExtractor guiGraphics, int mx, int my, float partialTicks) {
 	    	int x = this.getX();
 	    	int y = this.getY();
 	    	
 	    	this.height = this.getWidth();
-	        RenderSystem.enableBlend();
-	        RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-	        RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-	    	guiGraphics.blit(this.textureId, x, y, 0, 0, this.width, this.height, this.width, this.height);
+			guiGraphics.blit(this.textureId, x, y, x + this.width, y + this.height, 0, 1, 0, 1);
 
 	    	this.updateLegend(mx, my);
 
-	    	this.renderLegend(guiGraphics, mx, my, this.legendLabels, this.legendValues, x, y + this.width, 10, 0xFFFFFF);
+			this.renderLegend(guiGraphics, mx, my, this.legendLabels, this.legendValues, x, y + this.width, 10, 0xFFFFFFFF);
 	    }
 
 	    private boolean updateLegend(int mx, int my) {
@@ -233,11 +235,11 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	            int width = Math.max(1, this.tile.getBlockSize().size() * zoom);
 	            int height = Math.max(1, this.tile.getBlockSize().size() * zoom);
 	            this.legendValues[0] = width + "x" + height;
-	            if (mx >= left && mx <= left + size && my >= top && my <= top + size) {
+	            if (mx >= left && mx < left + size && my >= top && my < top + size) {
 	                float fx = (mx - left) / size;
 	                float fz = (my - top) / size;
-	                int ix = NoiseUtil.round(fx * this.tile.getBlockSize().size());
-	                int iz = NoiseUtil.round(fz * this.tile.getBlockSize().size());
+	                int ix = Math.min(this.tile.getBlockSize().size() - 1, NoiseUtil.round(fx * this.tile.getBlockSize().size()));
+	                int iz = Math.min(this.tile.getBlockSize().size() - 1, NoiseUtil.round(fz * this.tile.getBlockSize().size()));
 	                Cell cell = this.tile.lookup(ix, iz);
 	                this.legendValues[1] = getTerrainName(cell);
 	                this.legendValues[2] = getBiomeName(cell);
@@ -255,7 +257,7 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	    }
 
 	    private float getLegendScale() {
-	        int index = PresetEditorPage.this.screen.minecraft.options.guiScale().get() - 1;
+	        int index = Minecraft.getInstance().options.guiScale().get() - 1;
 	        if (index < 0 || index >= LEGEND_SCALES.length) {
 	            // index=-1 == GuiScale(AUTO) which is the same as GuiScale(4)
 	            // values above 4 don't exist but who knows what mods might try set it to
@@ -265,13 +267,13 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	        return LEGEND_SCALES[index];
 	    }
 
-	    private void renderLegend(GuiGraphics guiGraphics, int mx, int my, Component[] labels, String[] values, int left, int top, int lineHeight, int color) {
+	    private void renderLegend(GuiGraphicsExtractor guiGraphics, int mx, int my, Component[] labels, String[] values, int left, int top, int lineHeight, int color) {
 	        float scale = this.getLegendScale();
-	        PoseStack pose = guiGraphics.pose();
+	        Matrix3x2fStack pose = guiGraphics.pose();
 	        	
-	        pose.pushPose();
-	        pose.translate(left + 3.75F * scale, top - lineHeight * (3.2F * scale), 0);
-	        pose.scale(scale, scale, 1);
+	        pose.pushMatrix();
+	        pose.translate(left + 3.75F * scale, top - lineHeight * (3.2F * scale));
+	        pose.scale(scale, scale);
 	
 	        Minecraft mc = Minecraft.getInstance();
 	        Font renderer = mc.font;
@@ -289,14 +291,14 @@ public abstract class PresetEditorPage extends BisectedPage<PresetConfigScreen, 
 	                value = value.substring(0, value.length() - 1);
 	            }
 	
-	            guiGraphics.drawString(renderer, label, 0, i * lineHeight, color);
-	            guiGraphics.drawString(renderer, value, spacing, i * lineHeight, color);
+	            guiGraphics.text(renderer, label, 0, i * lineHeight, color);
+	            guiGraphics.text(renderer, value, spacing, i * lineHeight, color);
 	        }
 	
-	        pose.popPose();
+	        pose.popMatrix();
 	
 	        if (!this.hoveredCoords.isEmpty()) {
-	        	guiGraphics.drawCenteredString(renderer, this.hoveredCoords, mx, my - 10, 0xFFFFFF);
+			guiGraphics.centeredText(renderer, this.hoveredCoords, mx, my - 10, 0xFFFFFFFF);
 	        }
 	    }
 	
