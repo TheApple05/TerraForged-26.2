@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-genuine-java-biome-reference",
+  "freshRunsAgree": true,
+  "productionJarSha256": "1c9e5e7e8d286c145a647f466b2f908cda721d10672c40949864f1015570e886",
+  "tableSha256": "3f1db49ae1ae89f8a1224a2534f9b5a3ff313a747047a1ad4257eb73384900c7",
+  "fixtureSha256": "3890bf690168b607150f0f15397fa2532076b40a33d10d07d9abb47f334877f1",
+  "recordCount": 68929,
+  "sourceOwnedResourcesSha256": {
+    "biomes.png": "bd312c698fe795b2fd4f7a36b7c982285c803c613b5a4cc42c982d26cf4c4af7",
+    "biomes.txt": "679b4da482ee621a52a7adc1179ec197bd7a50491759b4414d3437ce2db02189"
+  },
+  "sourceSha256Lf": {
+    "cell/biome/type/BiomeType.java": "09f424c8ed84794d2cbe1ae7a5cf196052fb187d7a5ea405587f49c484f82ab3",
+    "cell/biome/type/BiomeTypeLoader.java": "c5625c10647e9d0c924f3e239abb3586aee5e9c0635944fbafdc54fab691bf83",
+    "biome/Temperature.java": "3742fe54f0f1164b6ccd8983a220fab3d8ce25cf0c0627ef1a21fa1ee69c6cc1",
+    "biome/Humidity.java": "37e77a30f3a6f8dcd0db191f78f4993fcba3ca1c1ab13dada8b91054064490f9",
+    "biome/BiomeParameter.java": "84050aa8a1ae2cbf371629919c1b9a0b28a8a9b92dc1c45dcc0848388828afa8",
+    "noise/NoiseUtil.java": "1b9647baea771ad9146992f34609b512258a8907ed2fab8a35c8b985b19ae139"
+  },
+  "oracleSourceSha256Lf": "4d72065c35d68c8e8bb8321c300f7ffc85cdc324217f4b69046232b3ac46058b",
+  "scope": "Finite source-owned climate category palette and Java curve/linear lookup, normalization and identity pair observations; not terrain snapshots or registered biome IDs.",
+  "captureJava": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n",
+  "notCovered": [
+    "Continent/river/climate cell generation",
+    "17 classic registered biome IDs",
+    "Native chunks/client/save activation"
+  ]
+}
