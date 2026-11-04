@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-04T21:41:49.656941+00:00",
+  "version": "0.1.0-dev.24+26.2",
+  "status": "failed",
+  "experimental": true,
+  "packages": [
+    {
+      "loader": "fabric",
+      "exitCode": 1,
+      "sourceBefore": {
+        "files": 536,
+        "javaSources": 410,
+        "sha256": "78a005e2754f71f73a9bd5bd23e9f9cd66cea92484124b065e3f89f74333918e",
+        "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+      },
+      "sourceAfter": {
+        "files": 536,
+        "javaSources": 410,
+        "sha256": "78a005e2754f71f73a9bd5bd23e9f9cd66cea92484124b065e3f89f74333918e",
+        "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+      },
+      "sourceChangedDuringRun": false,
+      "log": "build/qa/packages/fabric-0.1.0-dev.24+26.2.log",
+      "logSha256": "993ffb00dca9dacb67b9ea9400184a79f2ddd937acb812bdd3ead46755c55262",
+      "gradleArguments": [
+        "jar",
+        "portToolchain",
+        "-PexperimentalPackage",
+        "-Pmod_version=0.1.0-dev.24+26.2",
+        "--console=plain"
+      ],
+      "status": "failed"
+    },
+    {
+      "loader": "neoforge",
+      "exitCode": 1,
+      "sourceBefore": {
+        "files": 530,
+        "javaSources": 403,
+        "sha256": "03a75bd860fb9a7ae38484563c198f603f6776ec6dd5d766ccedc03e6e1ef8dc",
+        "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+      },
+      "sourceAfter": {
+        "files": 530,
+        "javaSources": 403,
+        "sha256": "03a75bd860fb9a7ae38484563c198f603f6776ec6dd5d766ccedc03e6e1ef8dc",
+        "normalization": "CRLF to LF for text source/configuration; filename plus content SHA-256 map"
+      },
+      "sourceChangedDuringRun": false,
+      "log": "build/qa/packages/neoforge-0.1.0-dev.24+26.2.log",
+      "logSha256": "993ffb00dca9dacb67b9ea9400184a79f2ddd937acb812bdd3ead46755c55262",
+      "gradleArguments": [
+        "--project-dir=neoforge",
+        "jar",
+        "portToolchain",
+        "-PexperimentalPackage",
+        "-Pmod_version=0.1.0-dev.24+26.2",
+        "--console=plain"
+      ],
+      "status": "failed"
+    }
+  ],
+  "notEvidenceOf": [
+    "Runtime loading",
+    "Custom generation",
+    "Visual parity",
+    "Third-party modpack compatibility"
+  ]
+}

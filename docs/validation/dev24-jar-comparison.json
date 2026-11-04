@@ -1,0 +1,14 @@
+[
+  {
+    "loader": "fabric",
+    "changedEntries": [
+      "fabric.mod.json"
+    ]
+  },
+  {
+    "loader": "neoforge",
+    "changedEntries": [
+      "META-INF/neoforge.mods.toml"
+    ]
+  }
+]
