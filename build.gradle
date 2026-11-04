@@ -1,45 +1,102 @@
 plugins {
-    id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.3.+" apply false
+    id 'net.fabricmc.fabric-loom' version '1.17.21'
 }
 
-architectury {
-    minecraft = rootProject.minecraft_version
+group = project.maven_group
+version = project.mod_version
+base.archivesName = project.archives_base_name
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.architectury.dev/' }
+    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
-subprojects {
-    apply plugin: "dev.architectury.loom"
-
-    loom {
-        silentMojangMappingsLicense()
-    }
-
-    dependencies {
-        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
-        mappings loom.officialMojangMappings()
+// Compile every upstream common/Fabric Java source, including UI and integrations.
+sourceSets {
+    main {
+        java.setSrcDirs(['common/src/main/java', 'fabric/src/main/java'])
+        resources.setSrcDirs([
+            'common/src/main/resources', 'fabric/src/main/resources',
+            'fabric/src/main/generated'
+        ])
     }
 }
 
-allprojects {
-    apply plugin: "java"
-    apply plugin: "architectury-plugin"
-    apply plugin: "maven-publish"
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-    archivesBaseName = rootProject.archives_base_name
-    version = rootProject.mod_version
-    group = rootProject.maven_group
-
-    repositories {
-        maven { url "https://maven.shedaniel.me" }
-        maven { url 'https://jitpack.io' }
+    // Real artifacts only. An annotation dependency does NOT weave ExpectPlatform.
+    compileOnly 'dev.architectury:architectury-injectables:1.0.10'
+    compileOnly("com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}") {
+        transitive = false
     }
+    compileOnly 'com.electronwill.night-config:toml:3.6.7'
+}
 
-    tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
-        options.release = 17
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+    // Diagnostic omits legacy AW and Mixin AP: obsolete descriptors can abort
+    // before javac exposes the actual source migration work. See decision 0001.
+    options.compilerArgs.addAll(['-proc:none', '-Xmaxerrs', '10000', '-Xdiags:verbose'])
+}
+
+tasks.named('processResources') {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand version: project.version
     }
+}
 
-    java {
-        withSourcesJar()
+tasks.register('writePortClasspath') {
+    group = 'verification'
+    description = 'Writes resolved diagnostic classpath for isolated QA adapters.'
+    doLast {
+        def output = layout.buildDirectory.file('qa/target/compile-classpath.txt').get().asFile
+        output.parentFile.mkdirs()
+        output.text = configurations.compileClasspath.asPath
+        println 'Resolved classpath written to build/qa/target/compile-classpath.txt'
+    }
+}
+
+tasks.register('portToolchain') {
+    group = 'verification'
+    description = 'Prints actual toolchain and resolved diagnostic classpath.'
+    dependsOn 'writePortClasspath'
+    doLast {
+        def compiler = javaToolchains.compilerFor(java.toolchain).get()
+        def report = [
+            minecraft: project.minecraft_version,
+            gradle: gradle.gradleVersion,
+            loom: '1.17.21',
+            javaRuntime: System.getProperty('java.version'),
+            javaCompiler: compiler.metadata.languageVersion.asInt(),
+            sourceFiles: sourceSets.main.allJava.files.size(),
+            sourceRoots: sourceSets.main.java.srcDirs.collect { relativePath(it) }.sort(),
+            excludedJavaSources: [],
+            accessWidenerApplied: false,
+            annotationProcessing: false,
+            expectPlatformWeaving: false,
+            classpath: configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts.collect {
+                "${it.moduleVersion.id.group}:${it.name}:${it.moduleVersion.id.version}"
+            }.sort()
+        ]
+        println 'PORT_TOOLCHAIN_JSON=' + groovy.json.JsonOutput.toJson(report)
+    }
+}
+
+// This is a compiler diagnostic, not a release build. Metadata, platform dispatch,
+// access widening and runtime mixins are still unported.
+tasks.named('jar') {
+    doFirst {
+        throw new GradleException('Packaging is blocked until the 26.2 runtime migration is validated; see docs/decisions/0001-build-layout.md.')
     }
 }
