@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
 import raccoonman.reterraforged.RTFCommon;
+import raccoonman.reterraforged.platform.fabric.ConfigUtilImpl;
 
 public class ConfigUtil {
 	public static final Path RTF_CONFIG_PATH = getConfigPath().resolve(RTFCommon.MOD_ID);
@@ -19,9 +19,8 @@ public class ConfigUtil {
 		return LEGACY_CONFIG_PATH.resolve(path);
 	}
 	
-	@ExpectPlatform
 	public static Path getConfigPath() {
-		throw new IllegalStateException();
+		return ConfigUtilImpl.getConfigPath();
 	}
 	
 	static {
